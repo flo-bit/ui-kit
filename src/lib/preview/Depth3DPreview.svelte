@@ -10,10 +10,11 @@
 	<Depth3D
 		sceneProps={{
 			image: {
-				image: base + '/images/depth3d/image.webp',
-				depth: base + '/images/depth3d/depth.webp'
+				image: base + '/images/depth3d/albert_einstein.webp',
+				depth: base + '/images/depth3d/albert_einstein-depth.webp'
 			},
-			mouseMovement: false
+			mouseMovement: false,
+			rounded: 1
 		}}
 	/>
 </div>

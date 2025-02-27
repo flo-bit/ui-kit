@@ -5,4 +5,23 @@
 
 <Subheading class="mb-4">Pie Chart</Subheading>
 
-<PieChart />
+<PieChart
+	data={[
+		{
+			name: 'Svelte',
+			value: 40
+		},
+		{
+			name: 'TypeScript',
+			value: 30
+		},
+		{
+			name: 'HTML',
+			value: 20
+		},
+		{
+			name: 'JavaScript',
+			value: 10
+		}
+	]}
+/>

@@ -23,11 +23,18 @@
 
 <script lang="ts">
 	import { Portal } from 'bits-ui';
-	import Plyr from 'plyr';
+	import { onMount } from 'svelte';
 
 	const { class: className }: { class?: string } = $props();
 
+	let Plyr: typeof import('plyr') | undefined = $state();
+	onMount(async () => {
+		Plyr = (await import('plyr')).default;
+	});
+
 	$effect(() => {
+		if (!Plyr) return;
+
 		const player = new Plyr('.js-player', {
 			settings: ['captions', 'quality', 'loop', 'speed'],
 			controls: [

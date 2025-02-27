@@ -1,9 +1,15 @@
 <script lang="ts">
-	import Plyr from 'plyr';
-
+	import { onMount } from 'svelte';
 	const { class: className, id }: { class?: string; id?: string } = $props();
 
+	let Plyr: typeof import('plyr') | undefined = $state();
+	onMount(async () => {
+		Plyr = (await import('plyr')).default;
+	});
+
 	$effect(() => {
+		if (!Plyr) return;
+
 		const player = new Plyr('.js-player', {
 			settings: ['captions', 'quality', 'loop', 'speed'],
 			controls: [
