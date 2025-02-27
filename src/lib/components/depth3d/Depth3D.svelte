@@ -1,0 +1,37 @@
+<script lang="ts">
+	import { Canvas } from '@threlte/core';
+	import Scene, { type Props } from './Scene.svelte';
+	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
+	import type { HTMLAttributes } from 'svelte/elements';
+
+	const {
+		class: className,
+		sceneProps,
+		...restProps
+	}: WithElementRef<WithoutChildrenOrChild<HTMLAttributes<HTMLDivElement>>> & {
+		sceneProps: Props;
+	} = $props();
+</script>
+
+<div id="depth3d" class={['h-80 w-80', className]} {...restProps}>
+	<Canvas>
+		<Scene {...sceneProps} />
+	</Canvas>
+</div>
+
+<noscript>
+	<style>
+		#depth3d {
+			display: none;
+		}
+	</style>
+
+	<img
+		src={sceneProps.image.image}
+		alt=""
+		class={[
+			'h-80 w-80 rounded-2xl border border-base-400 bg-base-100 object-cover dark:border-base-700 dark:bg-base-900',
+			className
+		]}
+	/>
+</noscript>
