@@ -44,6 +44,8 @@
 			progress = progress > 100 ? 0 : progress + Math.random() * 40;
 		}, 1000);
 	});
+
+	let review = $state('')
 </script>
 
 <ScrollArea type="scroll" class="h-[100dvh] w-screen">
@@ -168,10 +170,14 @@
 						<StarRating class="mt-2" rating={3} />
 
 						<div class="flex flex-col gap-3">
-							<Textarea class="mt-4 w-full" placeholder="Your review" />
+							<Textarea class="mt-4 w-full" placeholder="Your review" bind:value={review} />
 							<div class="flex justify-between gap-2">
-								<Button variant="link">Cancel</Button>
-								<Button>Submit</Button>
+								<Button variant="link" onclick={() => {
+									review = ''
+								}}>Cancel</Button>
+								<Button onclick={() => {
+									review = ''
+								}}>Submit</Button>
 							</div>
 						</div>
 					</div>
