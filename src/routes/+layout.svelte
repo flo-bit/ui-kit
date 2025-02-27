@@ -55,6 +55,7 @@
 		<Button variant="link" href="{base}/phone">Phone</Button>
 		<Button variant="link" href="{base}/piechart">Pie Chart</Button>
 		<Button variant="link" href="{base}/progress">Progress</Button>
+		<Button variant="link" href="{base}/scroll-area">Scroll Area</Button>
 		<Button variant="link" href="{base}/star-rating">Star Rating</Button>
 		<Button variant="link" href="{base}/textarea">Textarea</Button>
 		<Button variant="link" href="{base}/tooltip">Tooltip</Button>

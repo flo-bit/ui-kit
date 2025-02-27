@@ -14,6 +14,7 @@
 	import PhonePreview from '$lib/preview/PhonePreview.svelte';
 	import PieChartPreview from '$lib/preview/PieChartPreview.svelte';
 	import ProgressPreview from '$lib/preview/ProgressPreview.svelte';
+	import ScrollAreaPreview from '$lib/preview/ScrollAreaPreview.svelte';
 	import StarRatingPreview from '$lib/preview/StarRatingPreview.svelte';
 	import TextareaPreview from '$lib/preview/TextareaPreview.svelte';
 	import TooltipPreview from '$lib/preview/TooltipPreview.svelte';
@@ -64,6 +65,9 @@
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<ProgressPreview></ProgressPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<ScrollAreaPreview></ScrollAreaPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<StarRatingPreview></StarRatingPreview>
