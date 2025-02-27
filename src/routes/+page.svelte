@@ -26,6 +26,7 @@
 	} from '$lib/components/video-player/FullscreenVideoPlayer.svelte';
 	import SelectTheme from '$lib/preview/SelectTheme.svelte';
 	import svg from '$lib/preview/assets/demo.svg?raw';
+	import { toast } from 'svelte-sonner';
 
 	let background = 'bg-base-100 dark:bg-base-900 border border-base-200 dark:border-base-800';
 	let accentBackground =
@@ -45,7 +46,7 @@
 		}, 1000);
 	});
 
-	let review = $state('')
+	let review = $state('');
 </script>
 
 <ScrollArea type="scroll" class="h-[100dvh] w-screen">
@@ -172,12 +173,36 @@
 						<div class="flex flex-col gap-3">
 							<Textarea class="mt-4 w-full" placeholder="Your review" bind:value={review} />
 							<div class="flex justify-between gap-2">
-								<Button variant="link" onclick={() => {
-									review = ''
-								}}>Cancel</Button>
-								<Button onclick={() => {
-									review = ''
-								}}>Submit</Button>
+								<Button
+									variant="link"
+									onclick={() => {
+										review = '';
+
+										toast.error('So sad', {
+											description: 'Maybe review later? :('
+										});
+									}}>Cancel</Button
+								>
+								<Button
+									onclick={() => {
+										review = '';
+
+										const promise = new Promise((resolve, reject) =>
+											setTimeout(() => {
+												resolve({});
+											}, 1500)
+										);
+
+										toast.promise(promise, {
+											loading: 'Sending review...',
+											success: () => {
+												review = '';
+
+												return 'Review has been added!';
+											},
+										});
+									}}>Submit</Button
+								>
 							</div>
 						</div>
 					</div>
@@ -212,12 +237,21 @@
 						<Button>Submit</Button>
 					</div>
 					<Alert class="mt-8">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-							<path fill-rule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
-						  </svg>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							class="size-6"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+								clip-rule="evenodd"
+							/>
+						</svg>
 
-						  <AlertTitle>Very important please read</AlertTitle>
-						  
+						<AlertTitle>Very important please read</AlertTitle>
+
 						<p>Hah, tricked you! This is actually not important at all. But you still read it!</p>
 					</Alert>
 				</div>

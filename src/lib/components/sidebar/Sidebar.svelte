@@ -15,9 +15,9 @@
 	id="mobile-menu"
 	class="mobileMenuPopover inset-auto left-0 top-0 block h-[100dvh] w-72 border-r border-base-200 bg-base-50 shadow-lg dark:border-base-300/10 dark:bg-base-950"
 >
-<ScrollArea type="hover" class="h-full">
-	{@render children?.()}
-</ScrollArea>
+	<ScrollArea type="hover" class="h-full">
+		{@render children?.()}
+	</ScrollArea>
 </div>
 
 <div
