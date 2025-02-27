@@ -6,8 +6,8 @@
 	import ButtonsPreview from '$lib/preview/ButtonsPreview.svelte';
 	import CheckboxPreview from '$lib/preview/CheckboxPreview.svelte';
 	import ColorSelectPreview from '$lib/preview/ColorSelectPreview.svelte';
-	import Container from '$lib/preview/Container.svelte';
 	import Depth3DPreview from '$lib/preview/Depth3DPreview.svelte';
+	import ExcalidrawPreview from '$lib/preview/ExcalidrawPreview.svelte';
 	import GithubCornerPreview from '$lib/preview/GithubCornerPreview.svelte';
 	import HeatmapPreview from '$lib/preview/HeatmapPreview.svelte';
 	import InputPreview from '$lib/preview/InputPreview.svelte';
@@ -20,60 +20,61 @@
 	import VideoPlayerPreview from '$lib/preview/VideoPlayerPreview.svelte';
 </script>
 
-<Container>
-	<Heading class="mb-8">All</Heading>
+<Heading class="mb-8">All</Heading>
 
-	<div class="flex w-full flex-col divide-y divide-base-200 dark:divide-base-900">
-		<div class="flex flex-col gap-4 py-8">
-			<AlertPreview></AlertPreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<AvatarPreview></AvatarPreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<BadgesPreview></BadgesPreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<ButtonsPreview></ButtonsPreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<CheckboxPreview></CheckboxPreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<ColorSelectPreview></ColorSelectPreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<Depth3DPreview></Depth3DPreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<GithubCornerPreview></GithubCornerPreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<HeatmapPreview></HeatmapPreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<InputPreview></InputPreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<PhonePreview></PhonePreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<PieChartPreview></PieChartPreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<ProgressPreview></ProgressPreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<StarRatingPreview></StarRatingPreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<TextareaPreview></TextareaPreview>
-		</div>
-		<div class="flex flex-col gap-4 py-8">
-			<TooltipPreview></TooltipPreview>
-		</div>
-		<div class="flex flex-col items-start gap-4 py-8">
-			<VideoPlayerPreview></VideoPlayerPreview>
-		</div>
+<div class="flex w-full flex-col divide-y divide-base-200 dark:divide-base-900">
+	<div class="flex flex-col gap-4 py-8">
+		<AlertPreview></AlertPreview>
 	</div>
-</Container>
+	<div class="flex flex-col gap-4 py-8">
+		<AvatarPreview></AvatarPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<BadgesPreview></BadgesPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<ButtonsPreview></ButtonsPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<CheckboxPreview></CheckboxPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<ColorSelectPreview></ColorSelectPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<Depth3DPreview></Depth3DPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<ExcalidrawPreview></ExcalidrawPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<GithubCornerPreview></GithubCornerPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<HeatmapPreview></HeatmapPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<InputPreview></InputPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<PhonePreview></PhonePreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<PieChartPreview></PieChartPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<ProgressPreview></ProgressPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<StarRatingPreview></StarRatingPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<TextareaPreview></TextareaPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<TooltipPreview></TooltipPreview>
+	</div>
+	<div class="flex flex-col items-start gap-4 py-8">
+		<VideoPlayerPreview></VideoPlayerPreview>
+	</div>
+</div>

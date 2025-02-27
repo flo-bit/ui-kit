@@ -1,11 +1,13 @@
 <script lang="ts">
+	import '../app.css';
 	import { base } from '$app/paths';
+
 	import { Button } from '$lib/components/button';
-	import GithubCorner from '$lib/components/github-corner/GithubCorner.svelte';
+	import { ThemeToggle } from '$lib/components/theme-toggle';
 	import Navbar from '$lib/components/navbar/Navbar.svelte';
 	import Sidebar from '$lib/components/sidebar/Sidebar.svelte';
-	import { ThemeToggle } from '$lib/components/theme-toggle';
-	import '../app.css';
+	import Container from '$lib/preview/Container.svelte';
+	
 	let { children } = $props();
 </script>
 
@@ -29,7 +31,9 @@
 	<ThemeToggle />
 </Navbar>
 
-{@render children()}
+<Container>
+	{@render children()}
+</Container>
 
 <Sidebar>
 	<div class="flex flex-col items-start gap-1 p-4">
@@ -44,6 +48,7 @@
 		<Button variant="link" href="{base}/checkbox">Checkboxes</Button>
 		<Button variant="link" href="{base}/color-select">Color Select</Button>
 		<Button variant="link" href="{base}/depth-3d">Depth 3D</Button>
+		<Button variant="link" href="{base}/excalidraw">Excalidraw</Button>
 		<Button variant="link" href="{base}/github-corner">Github Corner</Button>
 		<Button variant="link" href="{base}/heatmap">Heatmap</Button>
 		<Button variant="link" href="{base}/input">Input</Button>

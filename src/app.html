@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="dark red stone">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -31,19 +31,17 @@
 			let accentColor = localStorage.getItem('accentColor');
 			if (accentColor) {
 				accentColor = JSON.parse(accentColor);
-			} else {
-				accentColor = 'red';
+				root.classList.remove('red');
+				root.classList.add(accentColor);
 			}
-			root.classList.add(accentColor);
 
 			// get base color from local storage
 			let baseColor = localStorage.getItem('baseColor');
 			if (baseColor) {
 				baseColor = JSON.parse(baseColor);
-			} else {
-				baseColor = 'stone';
+				root.classList.remove('stone');
+				root.classList.add(baseColor);
 			}
-			root.classList.add(baseColor);
 		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover" class="bg-base-50 transition-colors dark:bg-base-950">
