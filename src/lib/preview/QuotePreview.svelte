@@ -5,7 +5,8 @@
 
 <Subheading class="mb-4">Quote</Subheading>
 
-<Quote quote="Doggo ipsum you are doing me a frighten wrinkler you are doin me a concern super chub
+<Quote
+	quote="Doggo ipsum you are doing me a frighten wrinkler you are doin me a concern super chub
 				pupper, very jealous pupper much ruin diet I am bekom fat."
 	author={{
 		name: 'Shadcn',

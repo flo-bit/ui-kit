@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { PieChart, Tooltip } from 'layerchart';
-;
-
-	const { data, ...restProps }: {
+	const {
+		data,
+		...restProps
+	}: {
 		data: {
 			name: string;
 			value: number;
@@ -17,7 +18,7 @@
 	];
 </script>
 
-<div class="flex items-center justify-between w-full gap-2 overflow-hidden">
+<div class="flex w-full items-center justify-between gap-2 overflow-hidden">
 	<div class="flex flex-col gap-2">
 		{#each data as point, index}
 			<div class="flex items-center justify-start gap-2">

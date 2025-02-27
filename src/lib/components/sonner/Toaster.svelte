@@ -29,7 +29,8 @@
 		fuchsia:
 			'bg-fuchsia-200/70 dark:bg-fuchsia-950/70 text-fuchsia-600 [&_.title]:text-fuchsia-800 [&_.description]:text-fuchsia-700 dark:text-fuchsia-500 border-fuchsia-700/20 dark:border-fuchsia-500/20 dark:[&_.title]:text-fuchsia-300 dark:[&_.description]:text-fuchsia-400',
 		base: 'bg-base-50/80 border-base-200 dark:bg-base-900/70 dark:border-base-800 [&_.title]:text-base-900 dark:[&_.title]:text-base-50 [&_.description]:text-base-800 dark:[&_.description]:text-base-100',
-		accent: 'bg-accent-200/70 dark:bg-accent-950/70 text-accent-600 [&_.title]:text-accent-800 [&_.description]:text-accent-700 dark:text-accent-500 border-accent-700/20 dark:border-accent-500/20 dark:[&_.title]:text-accent-300 dark:[&_.description]:text-accent-400'
+		accent:
+			'bg-accent-200/70 dark:bg-accent-950/70 text-accent-600 [&_.title]:text-accent-800 [&_.description]:text-accent-700 dark:text-accent-500 border-accent-700/20 dark:border-accent-500/20 dark:[&_.title]:text-accent-300 dark:[&_.description]:text-accent-400'
 	};
 
 	type Colors = keyof typeof colorClasses;

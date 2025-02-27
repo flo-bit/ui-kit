@@ -199,7 +199,7 @@
 												review = '';
 
 												return 'Review has been added!';
-											},
+											}
 										});
 									}}>Submit</Button
 								>

@@ -33,7 +33,8 @@
 		borking doggo with a long snoot for pats super chub, fat boi h*ck. Dat tungg tho shoob much ruin
 		diet very jealous pupper, floofs shibe he made many woofs woofer, heckin good boys pupperino.`;
 
-	let classes = 'h-[200px] w-[350px] rounded-2xl border border-base-200 dark:border-base-800 text-base-900 dark:text-base-100 bg-base-100 dark:bg-base-900';
+	let classes =
+		'h-[200px] w-[350px] rounded-2xl border border-base-200 dark:border-base-800 text-base-900 dark:text-base-100 bg-base-100 dark:bg-base-900';
 </script>
 
 <Subheading class="mb-4">Scroll Area</Subheading>

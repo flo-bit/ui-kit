@@ -12,7 +12,7 @@
 		twitter,
 		youtube,
 		bluesky,
-		facebook,
+		facebook
 	}: {
 		discord?: string;
 		github?: string;

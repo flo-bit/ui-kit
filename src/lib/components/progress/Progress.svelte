@@ -49,6 +49,6 @@
 			progress > 0 ? 'border' : '',
 			progressClass
 		]}
-		style="width: {Math.min(progress / max * 100, 100)}%"
+		style="width: {Math.min((progress / max) * 100, 100)}%"
 	></div>
 </ProgressPrimitive.Root>

@@ -6,7 +6,7 @@
 	import Navbar from '$lib/components/navbar/Navbar.svelte';
 	import Sidebar from '$lib/components/sidebar/Sidebar.svelte';
 	import Container from '$lib/preview/Container.svelte';
-	
+
 	let { children } = $props();
 </script>
 

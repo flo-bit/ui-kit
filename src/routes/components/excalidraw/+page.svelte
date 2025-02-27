@@ -1,6 +1,5 @@
 <script>
-	import ExcalidrawPreview from "$lib/preview/ExcalidrawPreview.svelte";
-
+	import ExcalidrawPreview from '$lib/preview/ExcalidrawPreview.svelte';
 </script>
 
 <ExcalidrawPreview />
