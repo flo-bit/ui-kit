@@ -15,12 +15,15 @@ demo: https://flo-bit.dev/ui-kit
 2. install the main dependencies
 
 ```bash
-npm install bits-ui tailwind-variants
+npm install bits-ui tailwind-variants @tailwindcss/forms @tailwindcss/typography
 ```
 
-3. set theme variables in your app.css (changing `gray` and `blue` to your preferred colors)
+3. set theme variables in your app.css (changing `gray` and `blue` to your preferred colors, using find and replace) and add the tailwind plugins
 
 ```css
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/forms';
+
 @theme {
   --color-base-50: var(--color-gray-50);
   --color-base-100: var(--color-gray-100);
@@ -58,10 +61,9 @@ Some components might need additional dependencies, just install once you get an
 npm install bits-ui tailwind-variants layerchart plyr svelte-sonner tailwindcss-animate three @threlte/extras @threlte/core @types/three
 ```
 
-tailwind plugins should be added to your `app.css`
+again tailwind plugins should be added to your `app.css`
 
 ```css
-@plugin '@tailwindcss/typography';
-@plugin '@tailwindcss/forms';
+// [other plugins...]
 @plugin 'tailwindcss-animate';
 ```
