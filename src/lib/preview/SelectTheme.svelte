@@ -42,26 +42,26 @@
 		{ class: 'bg-slate-500', label: 'slate' }
 	];
 
-	onMount(async () => {
-		await tick();
-		let root = document.getElementsByTagName('html')[0];
-		// check if one of the accent colors is already in the document body
-		const color = accentColors.find((color) => root.classList.contains(color.label.toLowerCase()));
-		if (color) {
-			accentColor.label = color.label;
+	onMount(() => {
+		let savedAccentColor = localStorage.getItem('accentColor');
+		if (savedAccentColor) {
+			accentColor.label = JSON.parse(savedAccentColor);
+		} else {
+			accentColor.label = 'pink';
 		}
-		console.log(document.getElementsByTagName('html')[0]);
 
-		const bColor = baseColors.find((color) => root.classList.contains(color.label.toLowerCase()));
-		if (bColor) {
-			baseColor.label = bColor.label;
+		let savedBaseColor = localStorage.getItem('baseColor');
+		if (savedBaseColor) {
+			baseColor.label = JSON.parse(savedBaseColor);
+		} else {
+			baseColor.label = 'stone';
 		}
 	});
 </script>
 
 <Subheading>Select Theme</Subheading>
 
-<Text class="mb-2 mt-4">Accent Color</Text>
+<Text class="mt-4 mb-2">Accent Color</Text>
 <ColorSelect
 	bind:selected={accentColor}
 	colors={accentColors}
@@ -73,7 +73,7 @@
 	}}
 />
 
-<Text class="mb-2 mt-4">Base Color</Text>
+<Text class="mt-4 mb-2">Base Color</Text>
 <ColorSelect
 	bind:selected={baseColor}
 	colors={baseColors}

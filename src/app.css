@@ -34,17 +34,29 @@
 
 @layer base {
 	:root {
-		--accent-50: var(--color-blue-50);
-		--accent-100: var(--color-blue-100);
-		--accent-200: var(--color-blue-200);
-		--accent-300: var(--color-blue-300);
-		--accent-400: var(--color-blue-400);
-		--accent-500: var(--color-blue-500);
-		--accent-600: var(--color-blue-600);
-		--accent-700: var(--color-blue-700);
-		--accent-800: var(--color-blue-800);
-		--accent-900: var(--color-blue-900);
-		--accent-950: var(--color-blue-950);
+		--accent-50: var(--color-pink-50);
+		--accent-100: var(--color-pink-100);
+		--accent-200: var(--color-pink-200);
+		--accent-300: var(--color-pink-300);
+		--accent-400: var(--color-pink-400);
+		--accent-500: var(--color-pink-500);
+		--accent-600: var(--color-pink-600);
+		--accent-700: var(--color-pink-700);
+		--accent-800: var(--color-pink-800);
+		--accent-900: var(--color-pink-900);
+		--accent-950: var(--color-pink-950);
+
+		--base-50: var(--color-stone-50);
+		--base-100: var(--color-stone-100);
+		--base-200: var(--color-stone-200);
+		--base-300: var(--color-stone-300);
+		--base-400: var(--color-stone-400);
+		--base-500: var(--color-stone-500);
+		--base-600: var(--color-stone-600);
+		--base-700: var(--color-stone-700);
+		--base-800: var(--color-stone-800);
+		--base-900: var(--color-stone-900);
+		--base-950: var(--color-stone-950);
 	}
 
   .red {
