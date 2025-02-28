@@ -1,4 +1,6 @@
 <script lang="ts">
+	// todo convert to radio group
+	import { cn } from '$lib/utils';
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 
@@ -9,6 +11,8 @@
 		class: className,
 		ref = $bindable(null),
 		strokeWidth = 0.8,
+		buttonClasses,
+		svgClasses,
 		...restProps
 	}: WithElementRef<WithoutChildrenOrChild<HTMLAttributes<HTMLDivElement>>> & {
 		rating: number;
@@ -16,6 +20,9 @@
 		changeable?: boolean;
 
 		strokeWidth?: number;
+
+		buttonClasses?: string;
+		svgClasses?: string;
 	} = $props();
 
 	let hoverRating = $state(rating);
@@ -25,11 +32,14 @@
 	});
 </script>
 
-<div class={['flex items-center', className]} {...restProps} bind:this={ref}>
+<div class={cn('flex items-center', className)} {...restProps} bind:this={ref}>
 	{#if changeable}
 		{#each Array.from({ length: 5 }).map((_, i) => i + 1) as i}
 			<button
-				class="group rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-base-900 dark:focus-visible:outline-base-100"
+				class={cn(
+					'group rounded-xl cursor-pointer focus-visible:outline-2 focus-visible:outline-base-900 dark:focus-visible:outline-base-100',
+					buttonClasses
+				)}
 				onclick={() => (rating = i)}
 				onfocus={() => (hoverRating = i)}
 				onblur={() => (hoverRating = rating)}
@@ -37,7 +47,7 @@
 				onmouseleave={() => (hoverRating = rating)}
 			>
 				<svg
-					class={[
+					class={cn(
 						size,
 						'shrink-0',
 						i > rating &&
@@ -48,8 +58,9 @@
 							'stroke-accent-600 text-accent-400 dark:stroke-accent-500/80 dark:text-accent-500/40',
 
 						((i > rating && i <= hoverRating) || (i > hoverRating && i <= rating)) &&
-							'stroke-accent-600/50 text-accent-400/50 dark:stroke-accent-500/40 dark:text-accent-500/20'
-					]}
+							'stroke-accent-600/50 text-accent-400/50 dark:stroke-accent-500/40 dark:text-accent-500/20',
+						svgClasses
+					)}
 					viewBox="0 0 24 24"
 					fill="currentColor"
 					aria-hidden="true"
@@ -69,12 +80,13 @@
 	{:else}
 		{#each Array.from({ length: 5 }).map((_, i) => i + 1) as i}
 			<svg
-				class={[
+				class={cn(
 					size,
 					'shrink-0 stroke-base-400 text-base-100 dark:stroke-base-700 dark:text-base-800',
 					i <= rating &&
-						'stroke-accent-600 text-accent-400 dark:stroke-accent-500/80 dark:text-accent-500/50'
-				]}
+						'stroke-accent-600 text-accent-400 dark:stroke-accent-500/80 dark:text-accent-500/50',
+					svgClasses
+				)}
 				viewBox="0 0 24 24"
 				fill="currentColor"
 				aria-hidden="true"

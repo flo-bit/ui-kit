@@ -131,7 +131,7 @@
 							They don't actually know me :(
 						</div>
 						<AvatarGroup
-							avatarClass="bg-base-100 dark:bg-base-900 size-16"
+							avatarClass="border-base-100 dark:border-base-900 size-16"
 							users={[
 								{
 									src: 'https://github.com/flo-bit.png',

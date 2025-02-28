@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { ScrollArea, type WithoutChild } from 'bits-ui';
+	import { cn } from '$lib/utils';
 
 	type Props = WithoutChild<ScrollArea.RootProps> & {
 		orientation?: 'vertical' | 'horizontal' | 'both';
@@ -31,12 +32,12 @@
 })}
 	<ScrollArea.Scrollbar
 		{orientation}
-		class={[
+		class={cn(
 			'z-10 flex touch-none select-none transition-colors',
 			orientation === 'vertical' && 'h-full w-2 border-l border-l-transparent p-px',
 			orientation === 'horizontal' && 'h-2 w-full border-t border-t-transparent p-px',
 			className
-		]}
+		)}
 		{...restProps}
 	>
 		<ScrollArea.Thumb
@@ -48,8 +49,8 @@
 	</ScrollArea.Scrollbar>
 {/snippet}
 
-<ScrollArea.Root bind:ref {...restProps} class={['relative overflow-hidden', className]}>
-	<ScrollArea.Viewport class={['h-full w-full rounded-[inherit]', viewportClasses]}>
+<ScrollArea.Root bind:ref {...restProps} class={cn('relative overflow-hidden', className)}>
+	<ScrollArea.Viewport class={cn('h-full w-full rounded-[inherit]', viewportClasses)}>
 		{@render children?.()}
 	</ScrollArea.Viewport>
 	{#if orientation === 'vertical' || orientation === 'both'}

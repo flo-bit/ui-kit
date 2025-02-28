@@ -1,6 +1,7 @@
 <script lang="ts" module>
 	import type { WithElementRef, WithoutChildren } from 'bits-ui';
 	import { type VariantProps, tv } from 'tailwind-variants';
+	import { cn } from '$lib/utils';
 
 	import type { HTMLTextareaAttributes } from 'svelte/elements';
 
@@ -50,7 +51,7 @@
 
 <textarea
 	bind:this={ref}
-	class={[inputVariants({ variant, sizeVariant }), className]}
+	class={cn(inputVariants({ variant, sizeVariant }), className)}
 	bind:value
 	{...restProps}
 ></textarea>

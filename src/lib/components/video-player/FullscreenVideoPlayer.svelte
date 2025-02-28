@@ -90,10 +90,10 @@
 {#key videoPlayer.id}
 	{#if videoPlayer.showing && videoPlayer.id}
 		<Portal>
-			<div class="fixed inset-0 z-[100] flex h-[100dvh] w-screen items-center justify-center">
+			<div class="fixed inset-0 z-100 flex h-[100dvh] w-screen items-center justify-center">
 				<button
 					onclick={() => videoPlayer.hide()}
-					class="absolute inset-0 cursor-default bg-white/70 backdrop-blur-sm dark:bg-black/70"
+					class="absolute inset-0 cursor-default bg-white/70 backdrop-blur-xs dark:bg-black/70"
 				>
 					<span class="sr-only">Close</span>
 				</button>
@@ -103,7 +103,7 @@
 						'relative mx-4 aspect-video max-h-screen w-full overflow-hidden rounded-xl border border-base-400 bg-white object-cover dark:border-white/10 dark:bg-white/5 sm:mx-20',
 						className
 					]}
-					style="filter: url(#blur); width: 100%;"
+					style="filter: url(#blur-sm); width: 100%;"
 				>
 					<div
 						id="player"
@@ -122,7 +122,7 @@
 					onclick={() => {
 						videoPlayer.hide();
 					}}
-					class="absolute right-2 top-2 z-20 p-2 text-base-900 backdrop-blur-sm dark:text-base-50"
+					class="absolute right-2 top-2 z-20 p-2 text-base-900 backdrop-blur-xs dark:text-base-50"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +145,7 @@
 {/key}
 
 <svg width="0" height="0">
-	<filter id="blur" y="-50%" x="-50%" width="200%" height="200%">
+	<filter id="blur-sm" y="-50%" x="-50%" width="200%" height="200%">
 		<feGaussianBlur in="SourceGraphic" stdDeviation={glow} result="blurred" />
 		<feColorMatrix type="saturate" in="blurred" values="3" />
 		<feComposite in="SourceGraphic" operator="over" />

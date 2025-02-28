@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLBaseAttributes } from 'svelte/elements';
+	import { cn } from '$lib/utils';
 
 	let {
 		ref = $bindable(null),
@@ -16,7 +17,7 @@
 <svelte:element
 	this={'h' + level}
 	bind:this={ref}
-	class={['text-base font-semibold text-base-900 dark:text-base-50 sm:text-lg', className]}
+	class={cn('text-base font-semibold text-base-900 dark:text-base-50 sm:text-lg', className)}
 	{...restProps}
 >
 	{@render children?.()}

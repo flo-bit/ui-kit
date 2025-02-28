@@ -11,10 +11,10 @@
 	} = $props();
 
 	let colors = [
-		{ key: 0, color: 'hsl(var(--accent-800))' },
-		{ key: 1, color: 'hsl(var(--accent-600))' },
-		{ key: 2, color: 'hsl(var(--accent-400))' },
-		{ key: 3, color: 'hsl(var(--accent-200))' }
+		{ key: 0, color: 'var(--accent-800)' },
+		{ key: 1, color: 'var(--accent-600)' },
+		{ key: 2, color: 'var(--accent-400)' },
+		{ key: 3, color: 'var(--accent-200)' }
 	];
 </script>
 
@@ -40,7 +40,7 @@
 			<div slot="tooltip">
 				<Tooltip.Root
 					let:data
-					class="rounded-2xl border border-base-300 bg-base-200/80 py-2 backdrop-blur-sm dark:border-base-800 dark:bg-base-900/80"
+					class="rounded-2xl border border-base-300 bg-base-200/80 py-2 backdrop-blur-xs dark:border-base-800 dark:bg-base-900/80"
 				>
 					<Tooltip.Header
 						class="border-b-0 text-xs font-medium text-accent-700 dark:text-accent-600"

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { cn } from '$lib/utils';
 	import { Avatar as AvatarPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
 
 	let {
@@ -28,16 +29,16 @@
 </script>
 
 <AvatarPrimitive.Root
-	class={[
+	class={cn(
 		'relative flex size-10 shrink-0 overflow-hidden rounded-full border border-base-200 bg-base-100 text-base-900 dark:border-base-800 dark:bg-base-900 dark:text-base-50',
 		className
-	]}
+	)}
 	{...restProps}
 	bind:ref
 >
 	{#if src}
 		<AvatarPrimitive.Image
-			class={['aspect-square size-full', imageClass]}
+			class={cn('aspect-square size-full', imageClass)}
 			{src}
 			{alt}
 			bind:ref={imageRef}
@@ -47,7 +48,7 @@
 	{#if fallback}
 		<AvatarPrimitive.Fallback
 			bind:ref={fallbackRef}
-			class={['flex size-full items-center justify-center', fallbackClass]}
+			class={cn('flex size-full items-center justify-center', fallbackClass)}
 		>
 			{fallback}
 		</AvatarPrimitive.Fallback>

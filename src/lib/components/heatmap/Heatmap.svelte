@@ -18,7 +18,7 @@
 	{#each data as week}
 		<div class="flex w-full flex-col gap-0.5 sm:gap-1">
 			{#each week as day}
-				<div class="size-2 rounded-sm sm:size-3 {colors[day]}"></div>
+				<div class="size-2 rounded-xs sm:size-3 {colors[day]}"></div>
 			{/each}
 		</div>
 	{/each}
