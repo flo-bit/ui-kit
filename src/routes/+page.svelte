@@ -50,7 +50,7 @@
 </script>
 
 <ScrollArea type="scroll" class="h-[100dvh] w-screen">
-	<div class="flex items-center justify-center p-8">
+	<div class="flex min-h-screen items-center justify-center p-8">
 		<div class="h-full w-full max-w-6xl text-black dark:text-white">
 			<div
 				class={[
