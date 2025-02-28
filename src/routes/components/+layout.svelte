@@ -56,6 +56,7 @@
 		<Button variant="link" href="{base}/components/progress">Progress</Button>
 		<Button variant="link" href="{base}/components/quote">Quote</Button>
 		<Button variant="link" href="{base}/components/scroll-area">Scroll Area</Button>
+		<Button variant="link" href="{base}/components/select">Select</Button>
 		<Button variant="link" href="{base}/components/slider">Slider</Button>
 		<Button variant="link" href="{base}/components/sonner">Sonner</Button>
 		<Button variant="link" href="{base}/components/star-rating">Star Rating</Button>

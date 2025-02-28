@@ -16,6 +16,7 @@
 	import ProgressPreview from '$lib/preview/ProgressPreview.svelte';
 	import QuotePreview from '$lib/preview/QuotePreview.svelte';
 	import ScrollAreaPreview from '$lib/preview/ScrollAreaPreview.svelte';
+	import SelectPreview from '$lib/preview/SelectPreview.svelte';
 	import SliderPreview from '$lib/preview/SliderPreview.svelte';
 	import SonnerPreview from '$lib/preview/SonnerPreview.svelte';
 	import StarRatingPreview from '$lib/preview/StarRatingPreview.svelte';
@@ -74,6 +75,9 @@
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<ScrollAreaPreview></ScrollAreaPreview>
+	</div>
+	<div class="flex flex-col items-start gap-4 py-8">
+		<SelectPreview></SelectPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<SliderPreview></SliderPreview>
