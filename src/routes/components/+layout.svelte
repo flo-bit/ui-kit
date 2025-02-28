@@ -52,9 +52,9 @@
 		<Button variant="link" href="{base}/components/heatmap">Heatmap</Button>
 		<Button variant="link" href="{base}/components/input">Input</Button>
 		<Button variant="link" href="{base}/components/phone">Phone</Button>
-		<Button variant="link" href="{base}/components/piechart">Pie Chart</Button>
 		<Button variant="link" href="{base}/components/progress">Progress</Button>
 		<Button variant="link" href="{base}/components/quote">Quote</Button>
+		<Button variant="link" href="{base}/components/ring-chart">Ring Chart</Button>
 		<Button variant="link" href="{base}/components/scroll-area">Scroll Area</Button>
 		<Button variant="link" href="{base}/components/select">Select</Button>
 		<Button variant="link" href="{base}/components/slider">Slider</Button>

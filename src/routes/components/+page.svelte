@@ -12,7 +12,7 @@
 	import HeatmapPreview from '$lib/preview/HeatmapPreview.svelte';
 	import InputPreview from '$lib/preview/InputPreview.svelte';
 	import PhonePreview from '$lib/preview/PhonePreview.svelte';
-	import PieChartPreview from '$lib/preview/PieChartPreview.svelte';
+	import RingChartPreview from '$lib/preview/RingChartPreview.svelte';
 	import ProgressPreview from '$lib/preview/ProgressPreview.svelte';
 	import QuotePreview from '$lib/preview/QuotePreview.svelte';
 	import ScrollAreaPreview from '$lib/preview/ScrollAreaPreview.svelte';
@@ -27,7 +27,7 @@
 
 <Heading class="mb-8">All Components</Heading>
 
-<div class="flex w-full flex-col divide-y divide-base-200 dark:divide-base-900">
+<div class="divide-base-200 dark:divide-base-900 flex w-full flex-col divide-y">
 	<div class="flex flex-col gap-4 py-8">
 		<AlertPreview></AlertPreview>
 	</div>
@@ -65,13 +65,13 @@
 		<PhonePreview></PhonePreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
-		<PieChartPreview></PieChartPreview>
-	</div>
-	<div class="flex flex-col gap-4 py-8">
 		<ProgressPreview></ProgressPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<QuotePreview></QuotePreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<RingChartPreview></RingChartPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<ScrollAreaPreview></ScrollAreaPreview>

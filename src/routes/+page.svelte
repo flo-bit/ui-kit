@@ -13,7 +13,7 @@
 	import Heatmap from '$lib/components/heatmap/Heatmap.svelte';
 	import Input from '$lib/components/input/Input.svelte';
 	import { Label } from '$lib/components/label';
-	import PieChart from '$lib/components/piechart/PieChart.svelte';
+	import RingChart from '$lib/components/ring-chart/RingChart.svelte';
 	import { Progress } from '$lib/components/progress';
 	import ScrollArea from '$lib/components/scroll-area/ScrollArea.svelte';
 	import { SocialIcons } from '$lib/components/social-icons';
@@ -257,15 +257,21 @@
 				</div>
 				<div class={['order-6 col-span-1 row-span-3 rounded-2xl p-6 md:col-span-4', background]}>
 					<Subheading class="mb-4">This project is made of...</Subheading>
-					<PieChart
+					<RingChart
+						colors={[
+							{ key: 0, color: 'var(--accent-800)' },
+							{ key: 1, color: 'var(--accent-600)' },
+							{ key: 2, color: 'var(--accent-400)' },
+							{ key: 3, color: 'var(--accent-200)' }
+						]}
 						data={[
-							{
-								name: 'Bits UI',
-								value: 40
-							},
 							{
 								name: 'Coffee',
 								value: 30
+							},
+							{
+								name: 'Bits UI',
+								value: 40
 							},
 							{
 								name: 'Sweat',
