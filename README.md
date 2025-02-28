@@ -1,10 +1,22 @@
 # my ui kit
 
-svelte + tailwind
-
-**Work in progress, not usable yet**
+svelte v5 + tailwind v4
 
 demo: https://flo-bit.dev/ui-kit
+
+## How to use
+
+**Work in progress, only for testing purposes**
+
+1. setup a new svelte project with tailwind
+
+2. install the main dependencies
+
+```bash
+npm install bits-ui tailwind-variants
+```
+
+3. set theme variables in your app.css (changing `gray` and `blue` to your preferred colors)
 
 ```css
 @theme {
@@ -32,4 +44,20 @@ demo: https://flo-bit.dev/ui-kit
   --color-accent-900: var(--color-blue-900);
   --color-accent-950: var(--color-blue-950);
 }
+```
+
+4. copy components from `src/lib/components` to your project
+
+Some components might need additional dependencies, just install once you get an error, or install all of them at once:
+
+```bash
+npm install bits-ui tailwind-variants layerchart plyr svelte-sonner tailwindcss-animate three @threlte/extras @threlte/core @types/three
+```
+
+tailwind plugins should be added to your `app.css`
+
+```css
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/forms';
+@plugin 'tailwindcss-animate';
 ```

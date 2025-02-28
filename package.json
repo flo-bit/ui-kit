@@ -47,7 +47,6 @@
 		"svelte-sonner": "^0.3.28",
 		"tailwind-variants": "^0.3.1",
 		"tailwindcss-animate": "^1.0.7",
-		"three": "^0.173.0",
-		"tw-colors": "^3.3.2"
+		"three": "^0.173.0"
 	}
 }
