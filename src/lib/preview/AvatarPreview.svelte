@@ -6,14 +6,14 @@
 
 <Subheading>Avatar</Subheading>
 
-<Text class="mb-2 mt-4">Single Avatar</Text>
+<Text class="mt-4 mb-2">Single Avatar</Text>
 
 <div class="flex items-center gap-2">
 	<Avatar fallback="AB" />
 	<Avatar src="https://github.com/flo-bit.png" alt="flo-bit" fallback="FB" />
 </div>
 
-<Text class="mb-2 mt-4">Avatars Group</Text>
+<Text class="mt-4 mb-2">Avatars Group</Text>
 
 <AvatarGroup
 	users={[

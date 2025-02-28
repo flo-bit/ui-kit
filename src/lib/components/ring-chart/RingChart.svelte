@@ -79,8 +79,8 @@
 			key="name"
 			value="value"
 			innerRadius={-thickness}
-			cornerRadius={cornerRadius}
-			padAngle={padAngle}
+			{cornerRadius}
+			{padAngle}
 			series={colors}
 		>
 			<div slot="tooltip">

@@ -2,7 +2,7 @@
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils';
-	
+
 	let {
 		ref = $bindable(null),
 		class: className,
@@ -13,7 +13,7 @@
 
 <p
 	bind:this={ref}
-	class={cn('text-sm font-medium text-base-700 dark:text-base-200', className)}
+	class={cn('text-base-700 dark:text-base-200 text-sm font-medium', className)}
 	{...restProps}
 >
 	{@render children?.()}

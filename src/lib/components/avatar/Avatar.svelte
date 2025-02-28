@@ -30,7 +30,7 @@
 
 <AvatarPrimitive.Root
 	class={cn(
-		'relative flex size-10 shrink-0 overflow-hidden rounded-full border border-base-200 bg-base-100 text-base-900 dark:border-base-800 dark:bg-base-900 dark:text-base-50',
+		'border-base-200 bg-base-100 text-base-900 dark:border-base-800 dark:bg-base-900 dark:text-base-50 relative flex size-10 shrink-0 overflow-hidden rounded-full border',
 		className
 	)}
 	{...restProps}

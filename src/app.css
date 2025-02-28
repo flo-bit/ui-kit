@@ -59,19 +59,19 @@
 		--base-950: var(--color-stone-950);
 	}
 
-  .red {
-    --accent-50: var(--color-red-50);
-    --accent-100: var(--color-red-100);
-    --accent-200: var(--color-red-200);
-    --accent-300: var(--color-red-300);
-    --accent-400: var(--color-red-400);
-    --accent-500: var(--color-red-500);
-    --accent-600: var(--color-red-600);
-    --accent-700: var(--color-red-700);
-    --accent-800: var(--color-red-800);
-    --accent-900: var(--color-red-900);
-    --accent-950: var(--color-red-950);
-  }
+	.red {
+		--accent-50: var(--color-red-50);
+		--accent-100: var(--color-red-100);
+		--accent-200: var(--color-red-200);
+		--accent-300: var(--color-red-300);
+		--accent-400: var(--color-red-400);
+		--accent-500: var(--color-red-500);
+		--accent-600: var(--color-red-600);
+		--accent-700: var(--color-red-700);
+		--accent-800: var(--color-red-800);
+		--accent-900: var(--color-red-900);
+		--accent-950: var(--color-red-950);
+	}
 
 	.orange {
 		--accent-50: var(--color-orange-50);
@@ -296,74 +296,73 @@
 		--accent-950: var(--color-rose-950);
 	}
 
-  .gray {
-    --base-50: var(--color-gray-50);
-    --base-100: var(--color-gray-100);
-    --base-200: var(--color-gray-200);
-    --base-300: var(--color-gray-300);
-    --base-400: var(--color-gray-400);
-    --base-500: var(--color-gray-500);
-    --base-600: var(--color-gray-600);
-    --base-700: var(--color-gray-700);
-    --base-800: var(--color-gray-800);
-    --base-900: var(--color-gray-900);
-    --base-950: var(--color-gray-950);
-  }
+	.gray {
+		--base-50: var(--color-gray-50);
+		--base-100: var(--color-gray-100);
+		--base-200: var(--color-gray-200);
+		--base-300: var(--color-gray-300);
+		--base-400: var(--color-gray-400);
+		--base-500: var(--color-gray-500);
+		--base-600: var(--color-gray-600);
+		--base-700: var(--color-gray-700);
+		--base-800: var(--color-gray-800);
+		--base-900: var(--color-gray-900);
+		--base-950: var(--color-gray-950);
+	}
 
-  .zinc {
-    --base-50: var(--color-zinc-50);
-    --base-100: var(--color-zinc-100);
-    --base-200: var(--color-zinc-200);
-    --base-300: var(--color-zinc-300);
-    --base-400: var(--color-zinc-400);
-    --base-500: var(--color-zinc-500);
-    --base-600: var(--color-zinc-600);
-    --base-700: var(--color-zinc-700);
-    --base-800: var(--color-zinc-800);
-    --base-900: var(--color-zinc-900);
-    --base-950: var(--color-zinc-950);
-  }
+	.zinc {
+		--base-50: var(--color-zinc-50);
+		--base-100: var(--color-zinc-100);
+		--base-200: var(--color-zinc-200);
+		--base-300: var(--color-zinc-300);
+		--base-400: var(--color-zinc-400);
+		--base-500: var(--color-zinc-500);
+		--base-600: var(--color-zinc-600);
+		--base-700: var(--color-zinc-700);
+		--base-800: var(--color-zinc-800);
+		--base-900: var(--color-zinc-900);
+		--base-950: var(--color-zinc-950);
+	}
 
-  .neutral {
-    --base-50: var(--color-neutral-50);
-    --base-100: var(--color-neutral-100);
-    --base-200: var(--color-neutral-200);
-    --base-300: var(--color-neutral-300);
-    --base-400: var(--color-neutral-400);
-    --base-500: var(--color-neutral-500);
-    --base-600: var(--color-neutral-600);
-    --base-700: var(--color-neutral-700);
-    --base-800: var(--color-neutral-800);
-    --base-900: var(--color-neutral-900);
-    --base-950: var(--color-neutral-950);
-  }
+	.neutral {
+		--base-50: var(--color-neutral-50);
+		--base-100: var(--color-neutral-100);
+		--base-200: var(--color-neutral-200);
+		--base-300: var(--color-neutral-300);
+		--base-400: var(--color-neutral-400);
+		--base-500: var(--color-neutral-500);
+		--base-600: var(--color-neutral-600);
+		--base-700: var(--color-neutral-700);
+		--base-800: var(--color-neutral-800);
+		--base-900: var(--color-neutral-900);
+		--base-950: var(--color-neutral-950);
+	}
 
-  .stone {
-    --base-50: var(--color-stone-50);
-    --base-100: var(--color-stone-100);
-    --base-200: var(--color-stone-200);
-    --base-300: var(--color-stone-300);
-    --base-400: var(--color-stone-400);
-    --base-500: var(--color-stone-500);
-    --base-600: var(--color-stone-600);
-    --base-700: var(--color-stone-700);
-    --base-800: var(--color-stone-800);
-    --base-900: var(--color-stone-900);
-    --base-950: var(--color-stone-950);
-  }
-  
-  .slate {
-    --base-50: var(--color-slate-50);
-    --base-100: var(--color-slate-100);
-    --base-200: var(--color-slate-200);
-    --base-300: var(--color-slate-300);
-    --base-400: var(--color-slate-400);
-    --base-500: var(--color-slate-500);
-    --base-600: var(--color-slate-600);
-    --base-700: var(--color-slate-700);
-    --base-800: var(--color-slate-800);
-    --base-900: var(--color-slate-900);
-    --base-950: var(--color-slate-950);
-  }
-  
+	.stone {
+		--base-50: var(--color-stone-50);
+		--base-100: var(--color-stone-100);
+		--base-200: var(--color-stone-200);
+		--base-300: var(--color-stone-300);
+		--base-400: var(--color-stone-400);
+		--base-500: var(--color-stone-500);
+		--base-600: var(--color-stone-600);
+		--base-700: var(--color-stone-700);
+		--base-800: var(--color-stone-800);
+		--base-900: var(--color-stone-900);
+		--base-950: var(--color-stone-950);
+	}
+
+	.slate {
+		--base-50: var(--color-slate-50);
+		--base-100: var(--color-slate-100);
+		--base-200: var(--color-slate-200);
+		--base-300: var(--color-slate-300);
+		--base-400: var(--color-slate-400);
+		--base-500: var(--color-slate-500);
+		--base-600: var(--color-slate-600);
+		--base-700: var(--color-slate-700);
+		--base-800: var(--color-slate-800);
+		--base-900: var(--color-slate-900);
+		--base-950: var(--color-slate-950);
+	}
 }

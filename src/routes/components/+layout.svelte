@@ -33,9 +33,13 @@
 	<div class="flex items-center gap-4">
 		<Popover.Root>
 			<Popover.Trigger class="flex items-center -space-x-2">
-				<div class="bg-accent-500 border-accent-700 dark:border-accent-400 z-10 size-6 rounded-full border"></div>
+				<div
+					class="bg-accent-500 border-accent-700 dark:border-accent-400 z-10 size-6 rounded-full border"
+				></div>
 
-				<div class="bg-base-500 border-base-700 dark:border-base-400 size-6 rounded-full border"></div>
+				<div
+					class="bg-base-500 border-base-700 dark:border-base-400 size-6 rounded-full border"
+				></div>
 			</Popover.Trigger>
 			<Popover.Content>
 				<SelectTheme showTitle={false} />

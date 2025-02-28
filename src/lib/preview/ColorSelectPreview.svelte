@@ -6,7 +6,7 @@
 
 <Subheading>Color Select</Subheading>
 
-<Text class="mb-2 mt-4">Tailwind Classes</Text>
+<Text class="mt-4 mb-2">Tailwind Classes</Text>
 <ColorSelect
 	colors={[
 		{ class: 'bg-red-500', label: 'red' },
@@ -16,7 +16,7 @@
 	]}
 />
 
-<Text class="mb-2 mt-4">Custom Colors</Text>
+<Text class="mt-4 mb-2">Custom Colors</Text>
 <ColorSelect
 	colors={[
 		{ value: '#690B22', label: 'red' },

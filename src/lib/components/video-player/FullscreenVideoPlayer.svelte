@@ -100,7 +100,7 @@
 
 				<div
 					class={[
-						'relative mx-4 aspect-video max-h-screen w-full overflow-hidden rounded-xl border border-base-400 bg-white object-cover dark:border-white/10 dark:bg-white/5 sm:mx-20',
+						'border-base-400 relative mx-4 aspect-video max-h-screen w-full overflow-hidden rounded-xl border bg-white object-cover sm:mx-20 dark:border-white/10 dark:bg-white/5',
 						className
 					]}
 					style="filter: url(#blur-sm); width: 100%;"
@@ -122,7 +122,7 @@
 					onclick={() => {
 						videoPlayer.hide();
 					}}
-					class="absolute right-2 top-2 z-20 p-2 text-base-900 backdrop-blur-xs dark:text-base-50"
+					class="text-base-900 dark:text-base-50 absolute top-2 right-2 z-20 p-2 backdrop-blur-xs"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

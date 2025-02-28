@@ -13,7 +13,7 @@
 
 <div
 	class={cn(
-		'header fixed left-0 right-0 top-0 z-50 flex h-16 items-center justify-between p-2',
+		'header fixed top-0 right-0 left-0 z-50 flex h-16 items-center justify-between p-2',
 		hasSidebar ? 'lg:left-72 xl:left-80' : '',
 		className
 	)}
@@ -21,11 +21,11 @@
 >
 	{@render children?.()}
 	<div
-		class="backdrop pointer-events-none absolute inset-0 -z-10 bg-linear-to-b from-base-50/90 via-base-50/0 backdrop-blur-md dark:from-base-950/90 dark:via-base-950/0"
+		class="backdrop from-base-50/90 via-base-50/0 dark:from-base-950/90 dark:via-base-950/0 pointer-events-none absolute inset-0 -z-10 bg-linear-to-b backdrop-blur-md"
 	></div>
 
 	<div
-		class="backdrop-edge pointer-events-none absolute bottom-0 left-0 right-0 -z-10 translate-y-full bg-base-900/10 backdrop-blur-sm dark:bg-base-500/10"
+		class="backdrop-edge bg-base-900/10 dark:bg-base-500/10 pointer-events-none absolute right-0 bottom-0 left-0 -z-10 translate-y-full backdrop-blur-sm"
 	></div>
 </div>
 

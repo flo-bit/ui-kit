@@ -35,7 +35,7 @@
 			src={user.src}
 			alt={user.alt}
 			fallback={user.fallback}
-			class={cn('border-base-50 border-2 dark:border-base-950', avatarClass)}
+			class={cn('border-base-50 dark:border-base-950 border-2', avatarClass)}
 			{imageClass}
 			{fallbackClass}
 		/>

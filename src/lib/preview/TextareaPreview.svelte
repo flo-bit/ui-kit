@@ -6,13 +6,13 @@
 
 <Subheading>Textarea</Subheading>
 
-<Text class="mb-2 mt-4">Primary</Text>
+<Text class="mt-4 mb-2">Primary</Text>
 
 <Textarea placeholder="Enter text here (small)" sizeVariant="sm" />
 <Textarea placeholder="Enter text here (default)" />
 <Textarea placeholder="Enter text here (large)" sizeVariant="lg" />
 
-<Text class="mb-2 mt-4">Secondary</Text>
+<Text class="mt-4 mb-2">Secondary</Text>
 
 <Textarea placeholder="Enter text here (small)" variant="secondary" sizeVariant="sm" />
 <Textarea placeholder="Enter text here (default)" variant="secondary" />

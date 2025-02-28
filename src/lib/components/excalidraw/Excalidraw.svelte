@@ -83,7 +83,9 @@
 		{@html modifiedSvg}
 	</div>
 	{#if caption}
-		<figcaption class={cn('mt-4 text-center text-xs text-base-700 dark:text-base-300', captionClass)}>
+		<figcaption
+			class={cn('text-base-700 dark:text-base-300 mt-4 text-center text-xs', captionClass)}
+		>
 			{caption}
 		</figcaption>
 	{/if}
@@ -91,7 +93,7 @@
 
 <noscript>
 	<div
-		class="w-full rounded-2xl border border-base-200 bg-base-100 p-4 text-sm text-base-700 dark:border-base-700 dark:bg-base-900 dark:text-base-300"
+		class="border-base-200 bg-base-100 text-base-700 dark:border-base-700 dark:bg-base-900 dark:text-base-300 w-full rounded-2xl border p-4 text-sm"
 	>
 		JavaScript is required to view this content.
 	</div>

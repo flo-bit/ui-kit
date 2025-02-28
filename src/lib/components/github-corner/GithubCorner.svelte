@@ -9,7 +9,7 @@
 <a
 	{target}
 	class={cn(
-		'github-corner fixed -right-1 -top-1 z-50 fill-accent-600 text-base-50 dark:fill-accent-500 dark:text-base-950',
+		'github-corner fill-accent-600 text-base-50 dark:fill-accent-500 dark:text-base-950 fixed -top-1 -right-1 z-50',
 		className
 	)}
 	{...restProps}

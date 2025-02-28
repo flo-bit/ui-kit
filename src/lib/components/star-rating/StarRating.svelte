@@ -37,7 +37,7 @@
 		{#each Array.from({ length: 5 }).map((_, i) => i + 1) as i}
 			<button
 				class={cn(
-					'group rounded-xl cursor-pointer focus-visible:outline-2 focus-visible:outline-base-900 dark:focus-visible:outline-base-100',
+					'group focus-visible:outline-base-900 dark:focus-visible:outline-base-100 cursor-pointer rounded-xl focus-visible:outline-2',
 					buttonClasses
 				)}
 				onclick={() => (rating = i)}
@@ -82,7 +82,7 @@
 			<svg
 				class={cn(
 					size,
-					'shrink-0 stroke-base-400 text-base-100 dark:stroke-base-700 dark:text-base-800',
+					'stroke-base-400 text-base-100 dark:stroke-base-700 dark:text-base-800 shrink-0',
 					i <= rating &&
 						'stroke-accent-600 text-accent-400 dark:stroke-accent-500/80 dark:text-accent-500/50',
 					svgClasses

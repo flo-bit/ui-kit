@@ -2,20 +2,20 @@
 	const { children } = $props();
 </script>
 
-<div class="relative mx-auto h-[712px] w-[350px] max-w-full rounded-[60px] bg-accent-500">
-	<div class="absolute -left-0.5 top-20 h-8 w-3 rounded-xs bg-accent-500"></div>
-	<div class="absolute -left-[3px] top-[140px] h-14 w-3 rounded-xs bg-accent-500"></div>
-	<div class="absolute -left-[3px] top-[210px] h-14 w-3 rounded-xs bg-accent-500"></div>
-	<div class="absolute -right-[3px] top-[180px] h-20 w-3 rounded-xs bg-accent-500"></div>
+<div class="bg-accent-500 relative mx-auto h-[712px] w-[350px] max-w-full rounded-[60px]">
+	<div class="bg-accent-500 absolute top-20 -left-0.5 h-8 w-3 rounded-xs"></div>
+	<div class="bg-accent-500 absolute top-[140px] -left-[3px] h-14 w-3 rounded-xs"></div>
+	<div class="bg-accent-500 absolute top-[210px] -left-[3px] h-14 w-3 rounded-xs"></div>
+	<div class="bg-accent-500 absolute top-[180px] -right-[3px] h-20 w-3 rounded-xs"></div>
 
 	<div class="absolute top-[18px] z-10 flex w-full justify-center">
 		<div class="h-7 w-24 rounded-full bg-black"></div>
 	</div>
 
-	<div class="absolute -right-[3px] top-[180px] h-20 w-3 rounded-xs bg-accent-500"></div>
+	<div class="bg-accent-500 absolute top-[180px] -right-[3px] h-20 w-3 rounded-xs"></div>
 
 	<div class="absolute inset-0 h-full w-full p-3">
-		<div class="relative h-full w-full overflow-hidden rounded-[50px] bg-accent-200">
+		<div class="bg-accent-200 relative h-full w-full overflow-hidden rounded-[50px]">
 			{@render children?.()}
 		</div>
 	</div>

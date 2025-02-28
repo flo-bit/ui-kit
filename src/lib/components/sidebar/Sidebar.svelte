@@ -18,7 +18,7 @@
 	popover="auto"
 	id="mobile-menu"
 	class={cn(
-		'mobileMenuPopover inset-auto left-0 top-0 block h-[100dvh] w-72 border-r border-base-200 bg-base-50 shadow-lg dark:border-base-300/10 dark:bg-base-950',
+		'mobileMenuPopover border-base-200 bg-base-50 dark:border-base-300/10 dark:bg-base-950 inset-auto top-0 left-0 block h-[100dvh] w-72 border-r shadow-lg',
 		className,
 		mobileClasses
 	)}
@@ -30,7 +30,7 @@
 
 <div
 	class={cn(
-		'fixed bottom-0 left-0 top-0 z-40 h-full -translate-x-72 overflow-y-auto border-r border-base-200 bg-base-50 dark:border-base-300/10 dark:bg-base-950 lg:w-72 lg:translate-x-0 xl:w-80',
+		'border-base-200 bg-base-50 dark:border-base-300/10 dark:bg-base-950 fixed top-0 bottom-0 left-0 z-40 h-full -translate-x-72 overflow-y-auto border-r lg:w-72 lg:translate-x-0 xl:w-80',
 		className
 	)}
 >

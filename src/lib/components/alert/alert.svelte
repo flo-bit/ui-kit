@@ -76,7 +76,12 @@
 	}
 </script>
 
-<div bind:this={ref} class={cn(alertVariants({ variant: variant ?? 'default' }), className)} {...restProps} role="alert">
+<div
+	bind:this={ref}
+	class={cn(alertVariants({ variant: variant ?? 'default' }), className)}
+	{...restProps}
+	role="alert"
+>
 	{#if type === 'warning'}
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
 			<path

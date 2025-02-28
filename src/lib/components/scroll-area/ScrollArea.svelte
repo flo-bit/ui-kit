@@ -33,7 +33,7 @@
 	<ScrollArea.Scrollbar
 		{orientation}
 		class={cn(
-			'z-10 flex touch-none select-none transition-colors',
+			'z-10 flex touch-none transition-colors select-none',
 			orientation === 'vertical' && 'h-full w-2 border-l border-l-transparent p-px',
 			orientation === 'horizontal' && 'h-2 w-full border-t border-t-transparent p-px',
 			className
@@ -42,7 +42,7 @@
 	>
 		<ScrollArea.Thumb
 			class={[
-				'relative rounded-full bg-base-300 transition-colors hover:bg-base-400 dark:bg-base-700 dark:hover:bg-base-600',
+				'bg-base-300 hover:bg-base-400 dark:bg-base-700 dark:hover:bg-base-600 relative rounded-full transition-colors',
 				orientation === 'vertical' && 'flex-1'
 			]}
 		/>

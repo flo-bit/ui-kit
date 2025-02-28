@@ -54,7 +54,7 @@
 	{#if id}
 		<div
 			class={cn(
-				'relative aspect-video w-full overflow-hidden rounded-2xl border border-base-400 bg-white object-cover dark:border-white/10 dark:bg-white/5',
+				'border-base-400 relative aspect-video w-full overflow-hidden rounded-2xl border bg-white object-cover dark:border-white/10 dark:bg-white/5',
 				className
 			)}
 			style="filter: url(#blur-fullscreen); width: 100%;"

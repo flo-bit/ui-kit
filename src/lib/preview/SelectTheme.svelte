@@ -16,7 +16,6 @@
 	import Text from '$lib/components/text/Text.svelte';
 	import { onMount, tick } from 'svelte';
 
-
 	let accentColors = [
 		{ class: 'bg-red-500', label: 'red' },
 		{ class: 'bg-orange-500', label: 'orange' },
@@ -78,7 +77,9 @@
 
 		localStorage.setItem('accentColor', JSON.stringify(color.label));
 
-		window.dispatchEvent(new CustomEvent('theme-changed', { detail: { accentColor: color.label } }));
+		window.dispatchEvent(
+			new CustomEvent('theme-changed', { detail: { accentColor: color.label } })
+		);
 	}}
 />
 

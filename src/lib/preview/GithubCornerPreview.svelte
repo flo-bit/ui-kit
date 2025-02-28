@@ -6,9 +6,9 @@
 <Subheading>Github Corner</Subheading>
 
 <div
-	class="relative mt-6 h-96 w-full overflow-hidden rounded-2xl border border-base-300 p-6 dark:border-base-900"
+	class="border-base-300 dark:border-base-900 relative mt-6 h-96 w-full overflow-hidden rounded-2xl border p-6"
 >
-	<div class="text-pretty pr-52 text-7xl font-bold text-base-950 dark:text-base-50">
+	<div class="text-base-950 dark:text-base-50 pr-52 text-7xl font-bold text-pretty">
 		My cool github project
 	</div>
 	<GithubCorner class="absolute" href="https://github.com/flo-bit/ui-kit" />

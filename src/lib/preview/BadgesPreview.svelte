@@ -6,7 +6,7 @@
 
 <Subheading>Badges</Subheading>
 
-<Text class="mb-2 mt-4">Primary</Text>
+<Text class="mt-4 mb-2">Primary</Text>
 <div class="flex items-center gap-2">
 	<Badge size="sm"
 		><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -49,14 +49,14 @@
 	>
 </div>
 
-<Text class="mb-2 mt-4">Secondary</Text>
+<Text class="mt-4 mb-2">Secondary</Text>
 <div class="flex items-center gap-2">
 	<Badge size="sm" variant="secondary">Badge</Badge>
 	<Badge size="md" variant="secondary">Badge</Badge>
 	<Badge size="lg" variant="secondary">Badge</Badge>
 </div>
 
-<Text class="mb-2 mt-4">Colors</Text>
+<Text class="mt-4 mb-2">Colors</Text>
 
 <div class="flex flex-wrap items-center gap-2">
 	<Badge variant="red">Red</Badge>

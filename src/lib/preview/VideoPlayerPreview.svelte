@@ -10,12 +10,12 @@
 
 <Subheading>Video Player</Subheading>
 
-<Text class="mb-4 mt-4">Fullscreen Video Player</Text>
+<Text class="mt-4 mb-4">Fullscreen Video Player</Text>
 <Button onclick={() => videoPlayer.show('https://www.youtube.com/watch?v=u1ZB_rGFyeU')}
 	>Show Video</Button
 >
 
-<Text class="mb-4 mt-8">Inline Video Player</Text>
+<Text class="mt-8 mb-4">Inline Video Player</Text>
 
 <VideoPlayer id="https://www.youtube.com/watch?v=u1ZB_rGFyeU" />
 

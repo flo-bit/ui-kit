@@ -6,13 +6,13 @@
 
 <Subheading>Input</Subheading>
 
-<Text class="mb-2 mt-4">Primary</Text>
+<Text class="mt-4 mb-2">Primary</Text>
 
 <Input sizeVariant="sm" placeholder="Enter text here (small)" />
 <Input placeholder="Enter text here (default)" />
 <Input sizeVariant="lg" placeholder="Enter text here (large)" />
 
-<Text class="mb-2 mt-4">Secondary</Text>
+<Text class="mt-4 mb-2">Secondary</Text>
 
 <Input variant="secondary" sizeVariant="sm" placeholder="Enter text here (small)" />
 <Input variant="secondary" placeholder="Enter text here (default)" />

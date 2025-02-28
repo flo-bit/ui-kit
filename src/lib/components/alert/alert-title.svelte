@@ -2,7 +2,7 @@
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { WithElementRef } from 'bits-ui';
 	import { cn } from '$lib/utils';
-	
+
 	let {
 		ref = $bindable(null),
 		class: className,
@@ -18,7 +18,7 @@
 	role="heading"
 	aria-level={level}
 	bind:this={ref}
-	class={cn('mb-2 text-sm font-medium leading-none last:mb-0', className)}
+	class={cn('mb-2 text-sm leading-none font-medium last:mb-0', className)}
 	{...restProps}
 >
 	{@render children?.()}

@@ -2,7 +2,7 @@
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils';
-	
+
 	const {
 		class: className,
 		target = '_blank',

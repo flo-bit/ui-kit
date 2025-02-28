@@ -20,7 +20,7 @@
 
 <ScrollArea type="scroll" class="h-[100dvh] w-screen">
 	<div class="flex min-h-screen items-center justify-center p-8">
-		<div class="h-full w-full max-w-5xl text-base-900 dark:text-base-50">
+		<div class="text-base-900 dark:text-base-50 h-full w-full max-w-5xl">
 			<div
 				class={[
 					'mb-6 flex w-full items-start justify-between rounded-2xl p-6 md:items-center',

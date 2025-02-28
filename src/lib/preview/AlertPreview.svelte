@@ -6,7 +6,7 @@
 
 <Subheading>Alerts</Subheading>
 
-<Text class="mb-2 mt-4">Default Alert</Text>
+<Text class="mt-4 mb-2">Default Alert</Text>
 
 <Alert>
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -40,7 +40,7 @@
 	<AlertDescription>Alert Description</AlertDescription>
 </Alert>
 
-<Text class="mb-2 mt-4">Preset Alerts</Text>
+<Text class="mt-4 mb-2">Preset Alerts</Text>
 
 <Alert title="Warning alert" type="warning">
 	<span>Alert Description</span>

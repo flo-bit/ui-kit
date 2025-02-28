@@ -14,10 +14,10 @@
 </script>
 
 <Subheading class="mb-2">Loader</Subheading>
-<Text class="mb-2 mt-4">Bar Loader</Text>
+<Text class="mt-4 mb-2">Bar Loader</Text>
 
 <Progress {progress} />
 
-<Text class="mb-2 mt-4">Pulse Loader</Text>
+<Text class="mt-4 mb-2">Pulse Loader</Text>
 
 <PulseLoader />

@@ -27,7 +27,7 @@
 <ProgressPrimitive.Root
 	bind:ref
 	class={cn(
-		'relative h-2 w-full overflow-hidden rounded-2xl bg-base-100 dark:bg-base-900',
+		'bg-base-100 dark:bg-base-900 relative h-2 w-full overflow-hidden rounded-2xl',
 		className
 	)}
 	{value}
@@ -36,14 +36,14 @@
 >
 	<div
 		class={cn(
-			'absolute h-full w-full rounded-2xl border border-base-300 dark:border-base-800',
+			'border-base-300 dark:border-base-800 absolute h-full w-full rounded-2xl border',
 			backgroundClass
 		)}
 	></div>
 
 	<div
 		class={cn(
-			'absolute h-full w-full rounded-2xl border-accent-600/50 bg-accent-500/50 transition-all duration-300 ease-in-out dark:border-accent-600/50 dark:bg-accent-900/70',
+			'border-accent-600/50 bg-accent-500/50 dark:border-accent-600/50 dark:bg-accent-900/70 absolute h-full w-full rounded-2xl transition-all duration-300 ease-in-out',
 			progress > 0 ? 'border' : '',
 			progressClass
 		)}

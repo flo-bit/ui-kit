@@ -79,11 +79,11 @@
 					]}
 				>
 					<div class="w-full">
-						<Subheading class="text-pretty text-lg sm:text-xl sm:font-bold"
+						<Subheading class="text-lg text-pretty sm:text-xl sm:font-bold"
 							>Work in progress, please wait a few months for an actually working version...</Subheading
 						>
 
-						<Progress {progress} class="mb-6 mt-4" />
+						<Progress {progress} class="mt-4 mb-6" />
 					</div>
 					<div class="mt-4">
 						<div class="flex items-center space-x-2">
@@ -91,7 +91,7 @@
 							<Label
 								id="terms-label"
 								for="terms"
-								class="text-pretty text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+								class="text-sm leading-none font-medium text-pretty peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
 							>
 								I don't care, just show me what you got
 							</Label>
@@ -127,7 +127,7 @@
 					<div class="flex w-full max-w-full flex-col items-start justify-center gap-2">
 						<Subheading>Me and my bros</Subheading>
 
-						<div class="mb-4 text-sm text-base-600 dark:text-base-400">
+						<div class="text-base-600 dark:text-base-400 mb-4 text-sm">
 							They don't actually know me :(
 						</div>
 						<AvatarGroup
@@ -230,7 +230,7 @@
 						</ScrollArea>
 					</div>
 
-					<Subheading class="mb-2 mt-8">Login here:</Subheading>
+					<Subheading class="mt-8 mb-2">Login here:</Subheading>
 					<div class="mt-2 flex gap-2">
 						<Input placeholder="Enter password" class="grow" />
 
