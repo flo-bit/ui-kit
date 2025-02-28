@@ -3,6 +3,7 @@
 	import { type Snippet } from 'svelte';
 	import { buttonVariants, type ButtonSize, type ButtonVariant } from '../button';
 	import { TooltipContent } from '.';
+	import { cn } from '$lib/utils';
 
 	type Props = Tooltip.RootProps & {
 		trigger?: Snippet;
@@ -41,7 +42,7 @@
 			</Tooltip.Trigger>
 		{:else}
 			<Tooltip.Trigger
-				class={[buttonVariants({ variant: triggerVariant, size: triggerSize }), triggerClass]}
+				class={cn(buttonVariants({ variant: triggerVariant, size: triggerSize }), triggerClass)}
 			>
 				{triggerText}
 			</Tooltip.Trigger>

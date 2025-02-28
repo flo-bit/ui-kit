@@ -2,6 +2,7 @@
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { Avatar } from '.';
+	import { cn } from '$lib/utils';
 
 	let {
 		users,
@@ -28,13 +29,13 @@
 	} = $props();
 </script>
 
-<div class={['flex -space-x-2 overflow-hidden', className]} bind:this={ref} {...restProps}>
+<div class={cn('flex -space-x-2 overflow-hidden', className)} bind:this={ref} {...restProps}>
 	{#each users as user}
 		<Avatar
 			src={user.src}
 			alt={user.alt}
 			fallback={user.fallback}
-			class={['border-50 border-2 dark:border-base-950', avatarClass]}
+			class={cn('border-base-50 border-2 dark:border-base-950', avatarClass)}
 			{imageClass}
 			{fallbackClass}
 		/>

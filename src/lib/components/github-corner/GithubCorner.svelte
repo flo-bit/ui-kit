@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { cn } from '$lib/utils';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
 
 	type Props = HTMLAnchorAttributes;
@@ -7,10 +8,10 @@
 
 <a
 	{target}
-	class={[
+	class={cn(
 		'github-corner fixed -right-1 -top-1 z-50 fill-accent-600 text-base-50 dark:fill-accent-500 dark:text-base-950',
 		className
-	]}
+	)}
 	{...restProps}
 >
 	<svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true">

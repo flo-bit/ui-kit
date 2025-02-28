@@ -7,6 +7,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Button, { type ButtonProps } from '../button/Button.svelte';
+	import { cn } from '$lib/utils';
 
 	onMount(() => {
 		// load from local storage
@@ -55,10 +56,10 @@
 <Button
 	variant="link"
 	onclick={toggleTheme}
-	class={[
-		'theme-toggle flex items-center justify-center rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-base-900 dark:focus-visible:outline-base-100',
+	class={cn(
+		'theme-toggle flex items-center justify-center rounded-lg focus-visible:outline-2 focus-visible:outline-base-900 dark:focus-visible:outline-base-100',
 		className
-	]}
+	)}
 	{...restProps}
 >
 	<svg
@@ -67,7 +68,7 @@
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
 		stroke="currentColor"
-		class="block !size-6 transition-colors duration-500 dark:hidden"
+		class="block size-6! transition-colors duration-500 dark:hidden"
 	>
 		<path
 			stroke-linecap="round"
@@ -81,7 +82,7 @@
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
 		stroke="currentColor"
-		class="hidden !size-6 transition-colors duration-500 dark:block dark:text-white"
+		class="hidden size-6! transition-colors duration-500 dark:block dark:text-white"
 	>
 		<path
 			stroke-linecap="round"

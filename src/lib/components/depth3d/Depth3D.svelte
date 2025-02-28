@@ -3,6 +3,7 @@
 	import Scene, { type Props } from './Scene.svelte';
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
+	import { cn } from '$lib/utils';
 
 	const {
 		class: className,
@@ -13,12 +14,13 @@
 	} = $props();
 </script>
 
-<div id="depth3d" class={['h-80 w-80', className]} {...restProps}>
+<div id="depth3d" class={cn('h-80 w-80', className)} {...restProps}>
 	<Canvas>
 		<Scene {...sceneProps} />
 	</Canvas>
 </div>
 
+<!-- no js fallback -->
 <noscript>
 	<style>
 		#depth3d {
@@ -29,9 +31,9 @@
 	<img
 		src={sceneProps.image.image}
 		alt=""
-		class={[
+		class={cn(
 			'h-80 w-80 rounded-2xl border border-base-400 bg-base-100 object-cover dark:border-base-700 dark:bg-base-900',
 			className
-		]}
+		)}
 	/>
 </noscript>

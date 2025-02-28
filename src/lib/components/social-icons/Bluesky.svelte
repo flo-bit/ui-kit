@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
+	import { cn } from '$lib/utils';
 
 	const {
 		class: className,
@@ -14,10 +15,10 @@
 
 <a
 	{target}
-	class={[
+	class={cn(
 		'text-base-600 hover:text-base-800 dark:text-base-400 dark:hover:text-base-200',
 		className
-	]}
+	)}
 	{...restProps}
 >
 	<span class="sr-only">Bluesky</span>

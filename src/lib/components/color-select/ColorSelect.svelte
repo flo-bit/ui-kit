@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
+	import { cn } from '$lib/utils';
 
 	type Color = { class?: string; label: string; value?: string };
 
@@ -26,21 +27,21 @@
 </script>
 
 <div
-	class={['group flex flex-wrap items-center gap-2.5', className]}
+	class={cn('group flex flex-wrap items-center gap-2.5', className)}
 	{...restProps}
 	bind:this={ref}
 >
 	{#each colors as color}
 		<button
-			class={[
-				'peer cursor-pointer items-center justify-center rounded-full p-0.5 outline-offset-2 outline-base-900 transition-all duration-100 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-base-900 dark:outline-base-100 dark:focus:outline-base-100',
-				'size-8 rounded-full border border-black border-opacity-30 transition-all dark:border-white dark:border-opacity-30',
+			class={cn(
+				'peer cursor-pointer items-center justify-center rounded-full p-0.5 outline-offset-2 outline-base-900 transition-all duration-100 focus:outline-2 focus:outline-offset-2 focus:outline-base-900 dark:outline-base-100 dark:focus:outline-base-100',
+				'size-8 rounded-full border border-base-600 border-opacity-30 transition-all dark:border-base-400 dark:border-opacity-30',
 				selected.label === color.label
-					? 'bg-opacity-100 outline outline-2 group-focus-within:outline-base-500 group-focus-within:focus:outline-base-900 dark:group-focus-within:outline-base-400 dark:group-focus-within:focus:outline-base-100'
-					: 'bg-opacity-60 outline-0 hover:bg-opacity-100 focus:bg-opacity-100',
+					? 'bg-opacity-100 outline-2 group-focus-within:outline-base-500 focus:group-focus-within:outline-base-900 dark:group-focus-within:outline-base-400 dark:focus:group-focus-within:outline-base-100'
+					: 'opacity-90 outline-0 hover:opacity-100 focus:opacity-100',
 				colorsClass,
 				color.class
-			]}
+			)}
 			style={color.value ? `background-color: ${color.value}` : undefined}
 			onclick={() => {
 				if (selected === color) return;

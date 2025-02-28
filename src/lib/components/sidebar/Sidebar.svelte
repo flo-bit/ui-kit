@@ -2,18 +2,26 @@
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import ScrollArea from '../scroll-area/ScrollArea.svelte';
+	import { cn } from '$lib/utils';
 
 	const {
 		class: className,
+		mobileClasses,
 		children,
 		...restProps
-	}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
+	}: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
+		mobileClasses?: string;
+	} = $props();
 </script>
 
 <div
 	popover="auto"
 	id="mobile-menu"
-	class="mobileMenuPopover inset-auto left-0 top-0 block h-[100dvh] w-72 border-r border-base-200 bg-base-50 shadow-lg dark:border-base-300/10 dark:bg-base-950"
+	class={cn(
+		'mobileMenuPopover inset-auto left-0 top-0 block h-[100dvh] w-72 border-r border-base-200 bg-base-50 shadow-lg dark:border-base-300/10 dark:bg-base-950',
+		className,
+		mobileClasses
+	)}
 >
 	<ScrollArea type="hover" class="h-full">
 		{@render children?.()}
@@ -21,7 +29,10 @@
 </div>
 
 <div
-	class="fixed bottom-0 left-0 top-0 z-40 h-full -translate-x-72 overflow-y-auto border-r border-base-200 bg-base-50 dark:border-base-300/10 dark:bg-base-950 lg:w-72 lg:translate-x-0 xl:w-80"
+	class={cn(
+		'fixed bottom-0 left-0 top-0 z-40 h-full -translate-x-72 overflow-y-auto border-r border-base-200 bg-base-50 dark:border-base-300/10 dark:bg-base-950 lg:w-72 lg:translate-x-0 xl:w-80',
+		className
+	)}
 >
 	<ScrollArea type="hover" class="h-full">
 		{@render children?.()}

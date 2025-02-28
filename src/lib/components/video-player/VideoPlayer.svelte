@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { cn } from '$lib/utils';
+
 	const { class: className, id }: { class?: string; id?: string } = $props();
 
 	let Plyr: typeof import('plyr') | undefined = $state();
@@ -51,10 +53,10 @@
 {#key id}
 	{#if id}
 		<div
-			class={[
+			class={cn(
 				'relative aspect-video w-full overflow-hidden rounded-2xl border border-base-400 bg-white object-cover dark:border-white/10 dark:bg-white/5',
 				className
-			]}
+			)}
 			style="filter: url(#blur-fullscreen); width: 100%;"
 		>
 			<div

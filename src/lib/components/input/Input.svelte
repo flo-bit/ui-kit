@@ -1,6 +1,7 @@
 <script lang="ts" module>
 	import type { WithElementRef } from 'bits-ui';
 	import { type VariantProps, tv } from 'tailwind-variants';
+	import { cn } from '$lib/utils';
 
 	import type { HTMLInputAttributes, HTMLInputTypeAttribute } from 'svelte/elements';
 
@@ -52,7 +53,7 @@
 
 <input
 	bind:this={ref}
-	class={[inputVariants({ variant, sizeVariant }), className]}
+	class={cn(inputVariants({ variant, sizeVariant }), className)}
 	{type}
 	bind:value
 	{...restProps}

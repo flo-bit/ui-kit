@@ -2,6 +2,7 @@
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 	import { onMount } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
+	import { cn } from '$lib/utils';
 
 	let {
 		ref = $bindable(null),
@@ -75,14 +76,14 @@
 
 <figure
 	bind:this={ref}
-	class={['excalidraw-container mx-auto w-full max-w-full overflow-hidden', className]}
+	class={cn('excalidraw-container mx-auto w-full max-w-full overflow-hidden', className)}
 	{...restProps}
 >
 	<div class="excalidraw-svg w-full" aria-label={alt}>
 		{@html modifiedSvg}
 	</div>
 	{#if caption}
-		<figcaption class={['mt-4 text-center text-xs text-base-700 dark:text-base-300', captionClass]}>
+		<figcaption class={cn('mt-4 text-center text-xs text-base-700 dark:text-base-300', captionClass)}>
 			{caption}
 		</figcaption>
 	{/if}

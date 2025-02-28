@@ -49,11 +49,12 @@
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { WithElementRef } from 'bits-ui';
 	import { AlertTitle } from '.';
+	import { cn } from '$lib/utils';
 
 	let {
 		ref = $bindable(null),
 		class: className,
-		variant = 'default',
+		variant = undefined,
 		title,
 		type,
 		children,
@@ -64,18 +65,18 @@
 		type?: 'info' | 'warning' | 'success' | 'error';
 	} = $props();
 
-	if (type === 'warning' && variant === 'default') {
+	if (type === 'warning' && variant === undefined) {
 		variant = 'amber';
-	} else if (type === 'error' && variant === 'default') {
+	} else if (type === 'error' && variant === undefined) {
 		variant = 'red';
-	} else if (type === 'success' && variant === 'default') {
+	} else if (type === 'success' && variant === undefined) {
 		variant = 'green';
-	} else if (type === 'info' && variant === 'default') {
+	} else if (type === 'info' && variant === undefined) {
 		variant = 'sky';
 	}
 </script>
 
-<div bind:this={ref} class={[alertVariants({ variant }), className]} {...restProps} role="alert">
+<div bind:this={ref} class={cn(alertVariants({ variant: variant ?? 'default' }), className)} {...restProps} role="alert">
 	{#if type === 'warning'}
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
 			<path
@@ -110,7 +111,7 @@
 		</svg>
 	{/if}
 	{#if title}
-		<AlertTitle class="text-accent-500 dark:text-accent-500">{title}</AlertTitle>
+		<AlertTitle>{title}</AlertTitle>
 	{/if}
 	{@render children?.()}
 </div>
