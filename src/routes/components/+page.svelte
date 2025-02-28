@@ -24,6 +24,7 @@
 	import TooltipPreview from '$lib/preview/TooltipPreview.svelte';
 	import VideoPlayerPreview from '$lib/preview/VideoPlayerPreview.svelte';
 	import SwitchPreview from '$lib/preview/SwitchPreview.svelte';
+	import LineGraphPreview from '$lib/preview/LineGraphPreview.svelte';
 </script>
 
 <Heading class="mb-8">All Components</Heading>
@@ -61,6 +62,9 @@
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<InputPreview></InputPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<LineGraphPreview></LineGraphPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<PhonePreview></PhonePreview>

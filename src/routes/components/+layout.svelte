@@ -8,6 +8,9 @@
 	import Container from '$lib/preview/Container.svelte';
 
 	let { children } = $props();
+
+	import * as Popover from '$lib/components/popover';
+	import SelectTheme from '$lib/preview/SelectTheme.svelte';
 </script>
 
 <Navbar hasSidebar>
@@ -27,7 +30,19 @@
 			</svg>
 		</Button>
 	</div>
-	<ThemeToggle />
+	<div class="flex items-center gap-4">
+		<Popover.Root>
+			<Popover.Trigger class="flex items-center -space-x-2">
+				<div class="bg-accent-500 border-accent-700 dark:border-accent-400 z-10 size-6 rounded-full border"></div>
+
+				<div class="bg-base-500 border-base-700 dark:border-base-400 size-6 rounded-full border"></div>
+			</Popover.Trigger>
+			<Popover.Content>
+				<SelectTheme showTitle={false} />
+			</Popover.Content>
+		</Popover.Root>
+		<ThemeToggle />
+	</div>
 </Navbar>
 
 <Container>
@@ -51,6 +66,7 @@
 		<Button variant="link" href="{base}/components/github-corner">Github Corner</Button>
 		<Button variant="link" href="{base}/components/heatmap">Heatmap</Button>
 		<Button variant="link" href="{base}/components/input">Input</Button>
+		<Button variant="link" href="{base}/components/line-graph">Line Graph</Button>
 		<Button variant="link" href="{base}/components/phone">Phone</Button>
 		<Button variant="link" href="{base}/components/progress">Progress</Button>
 		<Button variant="link" href="{base}/components/quote">Quote</Button>

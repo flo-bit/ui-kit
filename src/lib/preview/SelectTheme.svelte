@@ -1,9 +1,4 @@
-<script>
-	import ColorSelect from '$lib/components/color-select/ColorSelect.svelte';
-	import Subheading from '$lib/components/heading/Subheading.svelte';
-	import Text from '$lib/components/text/Text.svelte';
-	import { onMount, tick } from 'svelte';
-
+<script lang="ts" module>
 	let accentColor = $state({
 		class: '',
 		label: ''
@@ -13,6 +8,14 @@
 		class: '',
 		label: ''
 	});
+</script>
+
+<script lang="ts">
+	import ColorSelect from '$lib/components/color-select/ColorSelect.svelte';
+	import Subheading from '$lib/components/heading/Subheading.svelte';
+	import Text from '$lib/components/text/Text.svelte';
+	import { onMount, tick } from 'svelte';
+
 
 	let accentColors = [
 		{ class: 'bg-red-500', label: 'red' },
@@ -57,11 +60,15 @@
 			baseColor.label = 'stone';
 		}
 	});
+
+	let { showTitle = true } = $props();
 </script>
 
-<Subheading>Select Theme</Subheading>
+{#if showTitle}
+	<Subheading class="mb-4">Select Theme</Subheading>
+{/if}
 
-<Text class="mt-4 mb-2">Accent Color</Text>
+<Text class="mb-2">Accent Color</Text>
 <ColorSelect
 	bind:selected={accentColor}
 	colors={accentColors}
@@ -70,6 +77,8 @@
 		document.body.classList.add(color.label.toLowerCase());
 
 		localStorage.setItem('accentColor', JSON.stringify(color.label));
+
+		window.dispatchEvent(new CustomEvent('theme-changed', { detail: { accentColor: color.label } }));
 	}}
 />
 
@@ -82,5 +91,7 @@
 		document.documentElement.classList.add(color.label.toLowerCase());
 
 		localStorage.setItem('baseColor', JSON.stringify(color.label));
+
+		window.dispatchEvent(new CustomEvent('theme-changed', { detail: { baseColor: color.label } }));
 	}}
 />
