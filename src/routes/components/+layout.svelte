@@ -60,6 +60,7 @@
 		<Button variant="link" href="{base}/components/slider">Slider</Button>
 		<Button variant="link" href="{base}/components/sonner">Sonner</Button>
 		<Button variant="link" href="{base}/components/star-rating">Star Rating</Button>
+		<Button variant="link" href="{base}/components/switch">Switch</Button>
 		<Button variant="link" href="{base}/components/textarea">Textarea</Button>
 		<Button variant="link" href="{base}/components/tooltip">Tooltip</Button>
 		<Button variant="link" href="{base}/components/video-player">Video Player</Button>

@@ -23,6 +23,7 @@
 	import TextareaPreview from '$lib/preview/TextareaPreview.svelte';
 	import TooltipPreview from '$lib/preview/TooltipPreview.svelte';
 	import VideoPlayerPreview from '$lib/preview/VideoPlayerPreview.svelte';
+	import SwitchPreview from '$lib/preview/SwitchPreview.svelte';
 </script>
 
 <Heading class="mb-8">All Components</Heading>
@@ -87,6 +88,9 @@
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<StarRatingPreview></StarRatingPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<SwitchPreview></SwitchPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<TextareaPreview></TextareaPreview>
