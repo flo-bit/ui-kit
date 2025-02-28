@@ -25,6 +25,7 @@
 	import VideoPlayerPreview from '$lib/preview/VideoPlayerPreview.svelte';
 	import SwitchPreview from '$lib/preview/SwitchPreview.svelte';
 	import LineGraphPreview from '$lib/preview/LineGraphPreview.svelte';
+	import ImagePreview from '$lib/preview/ImagePreview.svelte';
 </script>
 
 <Heading class="mb-8">All Components</Heading>
@@ -59,6 +60,9 @@
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<HeatmapPreview></HeatmapPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<ImagePreview></ImagePreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<InputPreview></InputPreview>

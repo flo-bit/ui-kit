@@ -3,7 +3,7 @@
 	import Heatmap from '$lib/components/heatmap/Heatmap.svelte';
 	import ScrollArea from '$lib/components/scroll-area/ScrollArea.svelte';
 
-	const heatmapData = Array.from({ length: 34 }, () =>
+	const heatmapData = Array.from({ length: 40 }, () =>
 		Array.from({ length: 7 }, () => Math.floor(Math.random() * 5))
 	) as (0 | 1 | 2 | 3 | 4)[][];
 </script>

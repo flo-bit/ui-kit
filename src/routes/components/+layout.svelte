@@ -65,6 +65,7 @@
 		<Button variant="link" href="{base}/components/excalidraw">Excalidraw</Button>
 		<Button variant="link" href="{base}/components/github-corner">Github Corner</Button>
 		<Button variant="link" href="{base}/components/heatmap">Heatmap</Button>
+		<Button variant="link" href="{base}/components/image">Image</Button>
 		<Button variant="link" href="{base}/components/input">Input</Button>
 		<Button variant="link" href="{base}/components/line-graph">Line Graph</Button>
 		<Button variant="link" href="{base}/components/phone">Phone</Button>

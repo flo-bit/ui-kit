@@ -11,5 +11,5 @@
 	<div class="text-pretty pr-52 text-7xl font-bold text-base-950 dark:text-base-50">
 		My cool github project
 	</div>
-	<GithubCorner class="absolute" />
+	<GithubCorner class="absolute" href="https://github.com/flo-bit/ui-kit" />
 </div>

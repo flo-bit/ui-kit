@@ -15,10 +15,20 @@ demo: https://flo-bit.dev/ui-kit
 2. install the main dependencies
 
 ```bash
-npm install bits-ui tailwind-variants @tailwindcss/forms @tailwindcss/typography
+npm install bits-ui tailwind-variants @tailwindcss/forms @tailwindcss/typography @zerodevx/svelte-img
 ```
 
-3. set theme variables in your app.css (changing `gray` and `blue` to your preferred colors, using find and replace) and add the tailwind plugins
+3. if you want to use the image component, add the plugin to your vite config
+
+```ts
+import { imagetools } from '@zerodevx/svelte-img/vite';
+
+export default defineConfig({
+	plugins: [sveltekit(), imagetools()]
+});
+```
+
+4. set theme variables in your app.css (changing `gray` and `blue` to your preferred colors, using find and replace) and add the tailwind plugins
 
 ```css
 @plugin '@tailwindcss/typography';
@@ -51,14 +61,14 @@ npm install bits-ui tailwind-variants @tailwindcss/forms @tailwindcss/typography
 }
 ```
 
-4. copy `src/lib/utils.ts` to your projects lib folder (has to be exactly this name and path)
+5. copy `src/lib/utils.ts` to your projects lib folder (has to be exactly this name and path)
 
-5. copy components from `src/lib/components` to your project
+6. copy components from `src/lib/components` to your project
 
 Some components might need additional dependencies, just install once you get an error, or install all of them at once:
 
 ```bash
-npm install bits-ui tailwind-variants @tailwindcss/forms @tailwindcss/typography layerchart plyr svelte-sonner tailwindcss-animate three @threlte/extras @threlte/core @types/three
+npm install bits-ui tailwind-variants @tailwindcss/forms @tailwindcss/typography layerchart plyr svelte-sonner tailwindcss-animate three @threlte/extras @threlte/core @types/three @zerodevx/svelte-img
 ```
 
 again tailwind plugins should be added to your `app.css`
