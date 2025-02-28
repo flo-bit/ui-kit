@@ -46,7 +46,9 @@ npm install bits-ui tailwind-variants
 }
 ```
 
-4. copy components from `src/lib/components` to your project
+4. copy `src/lib/utils.ts` to your projects lib folder (has to be exactly this name and path)
+
+5. copy components from `src/lib/components` to your project
 
 Some components might need additional dependencies, just install once you get an error, or install all of them at once:
 
