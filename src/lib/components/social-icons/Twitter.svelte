@@ -16,15 +16,22 @@
 <a
 	{target}
 	class={cn(
-		'text-base-600 hover:text-base-800 dark:text-base-400 dark:hover:text-base-200',
+		'text-base-800 hover:text-accent-600 dark:text-base-300 dark:hover:text-accent-400 transition-colors',
 		className
 	)}
 	{...restProps}
 >
 	<span class="sr-only">X</span>
-	<svg class={['size-6', svgClasses]} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-		<path
-			d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z"
-		/>
-	</svg>
+
+	<svg
+		role="img"
+		viewBox="0 0 24 24"
+		class={['size-6', svgClasses]}
+		fill="currentColor"
+		aria-hidden="true"
+		xmlns="http://www.w3.org/2000/svg"
+		><title>X</title><path
+			d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+		/></svg
+	>
 </a>

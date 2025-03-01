@@ -12,7 +12,8 @@
 		twitter,
 		youtube,
 		bluesky,
-		facebook
+		facebook,
+		svgClasses
 	}: {
 		discord?: string;
 		github?: string;
@@ -20,24 +21,27 @@
 		youtube?: string;
 		bluesky?: string;
 		facebook?: string;
+		svgClasses?: string;
 	} = $props();
 </script>
 
-{#if discord}
-	<Discord href={discord} />
-{/if}
-{#if github}
-	<Github href={github} />
-{/if}
-{#if twitter}
-	<Twitter href={twitter} />
-{/if}
-{#if youtube}
-	<Youtube href={youtube} />
-{/if}
-{#if bluesky}
-	<Bluesky href={bluesky} />
-{/if}
-{#if facebook}
-	<Facebook href={facebook} />
-{/if}
+<div class="flex gap-4 flex-wrap items-center">
+	{#if discord}
+		<Discord href={discord} {svgClasses} />
+	{/if}
+	{#if github}
+		<Github href={github} {svgClasses} />
+	{/if}
+	{#if twitter}
+		<Twitter href={twitter} {svgClasses} />
+	{/if}
+	{#if youtube}
+		<Youtube href={youtube} {svgClasses} />
+	{/if}
+	{#if bluesky}
+		<Bluesky href={bluesky} {svgClasses} />
+	{/if}
+	{#if facebook}
+		<Facebook href={facebook} {svgClasses} />
+	{/if}
+</div>

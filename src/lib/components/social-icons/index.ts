@@ -1,3 +1,5 @@
+// all icons from https://simpleicons.org/
+
 export { default as SocialIcons } from './All.svelte';
 export { default as Discord } from './Discord.svelte';
 export { default as Github } from './Github.svelte';

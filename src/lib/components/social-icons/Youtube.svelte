@@ -16,17 +16,21 @@
 <a
 	{target}
 	class={cn(
-		'text-base-600 hover:text-base-800 dark:text-base-400 dark:hover:text-base-200',
+		'text-base-800 hover:text-accent-600 dark:text-base-300 dark:hover:text-accent-400 transition-colors',
 		className
 	)}
 	{...restProps}
 >
 	<span class="sr-only">YouTube</span>
-	<svg class={['size-7', svgClasses]} fill="currentColor" viewBox="1 2 21 22" aria-hidden="true">
-		<path
-			fill-rule="evenodd"
-			d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
-			clip-rule="evenodd"
-		/>
-	</svg>
+	<svg
+		class={['size-7', svgClasses]}
+		fill="currentColor"
+		aria-hidden="true"
+		role="img"
+		viewBox="0 0 24 24"
+		xmlns="http://www.w3.org/2000/svg"
+		><path
+			d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+		/></svg
+	>
 </a>

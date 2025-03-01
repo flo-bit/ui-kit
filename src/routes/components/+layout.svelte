@@ -12,6 +12,7 @@
 	import * as Popover from '$lib/components/popover';
 	import SelectTheme from '$lib/preview/SelectTheme.svelte';
 	import { cn } from '$lib/utils';
+	import Github from '$lib/components/social-icons/Github.svelte';
 
 	const components = [
 		{ label: 'Alerts', href: 'alert' },
@@ -88,6 +89,8 @@
 			</Popover.Content>
 		</Popover.Root>
 		<ThemeToggle />
+
+		<Github href="https://github.com/flo-bit/ui-kit" class="py-2 pr-2" />
 	</div>
 </Navbar>
 

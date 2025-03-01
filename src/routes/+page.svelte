@@ -209,16 +209,7 @@
 
 					<div class={['flex flex-col items-start justify-end gap-4 rounded-2xl p-6', background]}>
 						<Subheading>These don't actually do anything:</Subheading>
-						<div class="flex flex-wrap items-center gap-2">
-							<SocialIcons
-								discord="#"
-								github="#"
-								twitter="#"
-								youtube="#"
-								bluesky="#"
-								facebook="#"
-							/>
-						</div>
+						<SocialIcons discord="#" github="#" twitter="#" youtube="#" bluesky="#" facebook="#" />
 					</div>
 				</div>
 
