@@ -59,12 +59,12 @@
 <Dialog.Root bind:open {...restProps}>
 	<Dialog.Portal>
 		<Dialog.Overlay
-			class="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 bg-base-50/10 dark:bg-base-900/10 fixed inset-0 z-50 backdrop-blur-sm"
+			class="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 bg-base-200/10 dark:bg-base-900/10 fixed inset-0 z-50 backdrop-blur-sm"
 		/>
 		<Dialog.Content
 			{interactOutsideBehavior}
 			{...contentProps}
-			class="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-bottom-1/2 data-[state=open]:slide-in-from-bottom-1/2 bg-base-100 dark:bg-base-900 border-base-200 dark:border-base-800 fixed bottom-2 left-[50%] z-50 grid w-[calc(100%-1rem)] max-w-lg translate-x-[-50%] gap-4 rounded-2xl border p-6 duration-200 md:top-[50%] md:bottom-auto md:translate-y-[-50%]"
+			class="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-bottom-1/2 data-[state=open]:slide-in-from-bottom-1/2 bg-base-50 dark:bg-base-900 border-base-200/80 dark:border-base-800 fixed bottom-2 left-[50%] z-50 grid w-[calc(100%-1rem)] max-w-lg translate-x-[-50%] gap-4 rounded-2xl border p-6 duration-200 md:top-[50%] md:bottom-auto md:translate-y-[-50%]"
 		>
 			{#if title}
 				<Dialog.Title class="text-base-900 dark:text-base-100 text-lg font-semibold"

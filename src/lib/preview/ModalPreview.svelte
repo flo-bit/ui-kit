@@ -27,7 +27,7 @@
 />
 
 
-<Modal bind:open={openCustom}>
+<Modal bind:open={openCustom} closeButton={false}>
 	<Subheading>Custom modal</Subheading>
 
 	<Text>You can put anything in here... Like an image:</Text>
