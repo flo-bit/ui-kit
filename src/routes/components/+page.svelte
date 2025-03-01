@@ -29,6 +29,7 @@
 	import GradientPreview from '$lib/preview/GradientPreview.svelte';
 	import BoxPreview from '$lib/preview/BoxPreview.svelte';
 	import ChatBubblePreview from '$lib/preview/ChatBubblePreview.svelte';
+	import ModalPreview from '$lib/preview/ModalPreview.svelte';
 </script>
 
 <Heading class="mb-8">All Components</Heading>
@@ -81,6 +82,9 @@
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<LineGraphPreview></LineGraphPreview>
+	</div>
+	<div class="flex flex-col items-start gap-4 py-8">
+		<ModalPreview></ModalPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<PhonePreview></PhonePreview>

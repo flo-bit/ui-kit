@@ -42,7 +42,8 @@
 		{ label: 'Switch', href: 'switch' },
 		{ label: 'Textarea', href: 'textarea' },
 		{ label: 'Tooltip', href: 'tooltip' },
-		{ label: 'Video Player', href: 'video-player' }
+		{ label: 'Video Player', href: 'video-player' },
+		{ label: 'Modal', href: 'modal' }
 	];
 
 	// sort components by label

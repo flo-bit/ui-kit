@@ -9,7 +9,7 @@
 				primary:
 					'border border-accent-500/20 dark:border-accent-500/20 bg-accent-500/10 dark:bg-accent-500/10 text-accent-700 dark:text-accent-400',
 				secondary:
-					'bg-base-100 dark:bg-base-900 text-base-900 dark:text-base-50 border border-base-200 dark:border-base-800',
+					'bg-base-300/30 dark:bg-base-800/50 text-base-900 dark:text-base-50 border border-base-300/50 dark:border-base-700/30',
 
 				red: 'border border-red-500/20 dark:border-red-500/20 bg-red-500/10 dark:bg-red-500/10 text-red-700 dark:text-red-400',
 				yellow:
@@ -78,9 +78,9 @@
 		<div class="grow"></div>
 	{/if}
 
-<span bind:this={ref} class={cn(badgeVariants({ variant, size }), className)} {...restProps}>
-	{@render children?.()}
-</span>
+	<span bind:this={ref} class={cn(badgeVariants({ variant, size }), className)} {...restProps}>
+		{@render children?.()}
+	</span>
 
 	{#if side === 'right'}
 		<div class="grow"></div>
