@@ -53,7 +53,7 @@
 
 <div
 	class={cn(
-		'bg-accent-500/5 focus-within:ring-accent-400 dark:focus-within:ring-accent-600 text-accent-500 group ring-accent-500/20 dark:ring-accent-500/20 flex w-44 touch-manipulation items-stretch justify-between rounded-2xl text-3xl font-semibold ring transition-[box-shadow] focus-within:ring-2',
+		'bg-accent-500/5 focus-within:ring-accent-400 dark:focus-within:ring-accent-600 text-accent-500 group ring-accent-500/20 dark:ring-accent-500/20 flex w-full max-w-44 touch-manipulation items-stretch justify-between rounded-2xl text-3xl font-semibold ring transition-[box-shadow] focus-within:ring-2',
 		className
 	)}
 	bind:this={ref}
@@ -62,7 +62,7 @@
 	<button
 		aria-hidden="true"
 		tabindex={-1}
-		class="hover:text-accent-600 dark:hover:text-accent-400 disabled:hover:text-accent-500 dark:disabled:hover:text-accent-500 flex cursor-pointer items-center pr-[.325em] pl-[.5em] transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+		class="button-number-input hover:text-accent-600 dark:hover:text-accent-400 disabled:hover:text-accent-500 dark:disabled:hover:text-accent-500 flex cursor-pointer items-center pr-[.325em] pl-[.5em] transition-colors disabled:cursor-not-allowed disabled:opacity-50"
 		disabled={min != null && value <= min}
 		onpointerdown={(event) => handlePointerDown(event, -step)}
 	>
@@ -78,10 +78,11 @@
 		</svg>
 	</button>
 	<div
-		class="relative grid items-center justify-items-center text-center [grid-template-areas:'overlap'] *:[grid-area:overlap]"
+		class="w-full relative grid items-center justify-items-center text-center [grid-template-areas:'overlap'] *:[grid-area:overlap]"
 	>
 		<input
 			class={cn(
+				'number-input',
 				showCaret ? 'caret-accent-500' : 'caret-transparent',
 				'w-full [appearance:textfield] border-0 bg-transparent py-2 text-center font-[inherit] text-3xl font-semibold text-transparent outline-none [-moz-appearance:_textfield] focus-visible:ring-0 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
 			)}
@@ -104,14 +105,14 @@
 			{animated}
 			on:animationsstart={() => (showCaret = false)}
 			on:animationsfinish={() => (showCaret = true)}
-			class="pointer-events-none"
+			class="pointer-events-none number-flow"
 			willChange
 		/>
 	</div>
 	<button
 		aria-hidden="true"
 		tabindex="-1"
-		class="hover:text-accent-600 dark:hover:text-accent-400 disabled:hover:text-accent-500 dark:disabled:hover:text-accent-500 flex cursor-pointer items-center pr-[.5em] pl-[.325em] transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+		class="button-number-input hover:text-accent-600 dark:hover:text-accent-400 disabled:hover:text-accent-500 dark:disabled:hover:text-accent-500 flex cursor-pointer items-center pr-[.5em] pl-[.325em] transition-colors disabled:cursor-not-allowed disabled:opacity-50"
 		disabled={max != null && value >= max}
 		onpointerdown={(event) => handlePointerDown(event, step)}
 	>
@@ -127,3 +128,17 @@
 		</svg>
 	</button>
 </div>
+
+<noscript>
+	<style>
+		.button-number-input {
+			display: none;
+		}
+		.number-input {
+			color: var(--color-accent-500);
+		}
+		.number-flow {
+			display: none;
+		}
+	</style>
+</noscript>
