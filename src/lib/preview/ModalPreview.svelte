@@ -21,7 +21,7 @@
 
 <Button onclick={() => (openCustom = true)} variant="secondary">Custom Modal</Button>
 
-<Button onclick={() => (blueskyLoginModalState.visible = true)} variant="secondary"
+<Button onclick={() => (blueskyLoginModalState.open = true)} variant="secondary"
 	>Bluesky Login Modal</Button
 >
 

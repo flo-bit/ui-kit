@@ -30,6 +30,9 @@
 	import BoxPreview from '$lib/preview/BoxPreview.svelte';
 	import ChatBubblePreview from '$lib/preview/ChatBubblePreview.svelte';
 	import ModalPreview from '$lib/preview/ModalPreview.svelte';
+	import NumberInputPreview from '$lib/preview/NumberInputPreview.svelte';
+	import SocialIconsPreview from '$lib/preview/SocialIconsPreview.svelte';
+	import TimerPreview from '$lib/preview/TimerPreview.svelte';
 </script>
 
 <Heading class="mb-8">All Components</Heading>
@@ -86,6 +89,9 @@
 	<div class="flex flex-col items-start gap-4 py-8">
 		<ModalPreview></ModalPreview>
 	</div>
+	<div class="flex flex-col items-start gap-4 py-8">
+		<NumberInputPreview></NumberInputPreview>
+	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<PhonePreview></PhonePreview>
 	</div>
@@ -108,6 +114,9 @@
 		<SliderPreview></SliderPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
+		<SocialIconsPreview></SocialIconsPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
 		<SonnerPreview></SonnerPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
@@ -118,6 +127,9 @@
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<TextareaPreview></TextareaPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<TimerPreview></TimerPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<TooltipPreview></TooltipPreview>

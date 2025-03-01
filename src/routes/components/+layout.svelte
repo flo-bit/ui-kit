@@ -44,7 +44,10 @@
 		{ label: 'Textarea', href: 'textarea' },
 		{ label: 'Tooltip', href: 'tooltip' },
 		{ label: 'Video Player', href: 'video-player' },
-		{ label: 'Modal', href: 'modal' }
+		{ label: 'Modal', href: 'modal' },
+		{ label: 'Timer', href: 'timer' },
+		{ label: 'Number Input', href: 'number-input' },
+		{ label: 'Social Icons', href: 'social-icons' }
 	];
 
 	// sort components by label
