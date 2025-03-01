@@ -25,7 +25,7 @@
 	} = $props();
 </script>
 
-<div class="flex gap-4 flex-wrap items-center">
+<div class="flex flex-wrap items-center gap-4">
 	{#if discord}
 		<Discord href={discord} {svgClasses} />
 	{/if}

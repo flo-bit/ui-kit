@@ -5,6 +5,4 @@
 
 <Subheading class="mb-4">Box</Subheading>
 
-<Box class="text-sm">
-	This is a box, put your stuff here.
-</Box>
+<Box class="text-sm">This is a box, put your stuff here.</Box>

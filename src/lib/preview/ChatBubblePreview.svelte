@@ -19,6 +19,8 @@
 		<p>This is a really long message that should wrap around the chat bubble and not overflow</p>
 	</ChatBubble>
 	<ChatBubble>
-		<p>This is another really long message that should wrap around the chat bubble and not overflow</p>
+		<p>
+			This is another really long message that should wrap around the chat bubble and not overflow
+		</p>
 	</ChatBubble>
 </Box>

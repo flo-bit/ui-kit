@@ -78,7 +78,11 @@
 		<div class="grow"></div>
 	{/if}
 
-	<span bind:this={ref} class={cn(badgeVariants({ variant, size }), 'max-w-2/3 whitespace-normal', className)} {...restProps}>
+	<span
+		bind:this={ref}
+		class={cn(badgeVariants({ variant, size }), 'max-w-2/3 whitespace-normal', className)}
+		{...restProps}
+	>
 		{@render children?.()}
 	</span>
 

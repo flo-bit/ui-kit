@@ -62,7 +62,7 @@
 	<button
 		aria-hidden="true"
 		tabindex={-1}
-		class="flex cursor-pointer items-center pr-[.325em] pl-[.5em] disabled:cursor-not-allowed disabled:opacity-50 hover:text-accent-600 dark:hover:text-accent-400 disabled:hover:text-accent-500 dark:disabled:hover:text-accent-500 transition-colors"
+		class="hover:text-accent-600 dark:hover:text-accent-400 disabled:hover:text-accent-500 dark:disabled:hover:text-accent-500 flex cursor-pointer items-center pr-[.325em] pl-[.5em] transition-colors disabled:cursor-not-allowed disabled:opacity-50"
 		disabled={min != null && value <= min}
 		onpointerdown={(event) => handlePointerDown(event, -step)}
 	>
@@ -111,7 +111,7 @@
 	<button
 		aria-hidden="true"
 		tabindex="-1"
-		class="flex cursor-pointer items-center pr-[.5em] pl-[.325em] disabled:cursor-not-allowed disabled:opacity-50 hover:text-accent-600 dark:hover:text-accent-400 disabled:hover:text-accent-500 dark:disabled:hover:text-accent-500 transition-colors"
+		class="hover:text-accent-600 dark:hover:text-accent-400 disabled:hover:text-accent-500 dark:disabled:hover:text-accent-500 flex cursor-pointer items-center pr-[.5em] pl-[.325em] transition-colors disabled:cursor-not-allowed disabled:opacity-50"
 		disabled={max != null && value >= max}
 		onpointerdown={(event) => handlePointerDown(event, step)}
 	>

@@ -23,7 +23,6 @@
 >
 	<span class="sr-only">Discord</span>
 
-
 	<svg
 		role="img"
 		viewBox="0 0 24 24"

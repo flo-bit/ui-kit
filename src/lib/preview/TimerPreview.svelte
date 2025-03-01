@@ -15,7 +15,7 @@
 	<Timer bind:timer />
 </Box>
 
-<div class="flex gap-2 justify-center w-full">
+<div class="flex w-full justify-center gap-2">
 	<Button onclick={() => timer.start()}>Start</Button>
 	<Button onclick={() => timer.stop()}>Stop</Button>
 	<Button onclick={() => timer.reset()}>Reset</Button>
