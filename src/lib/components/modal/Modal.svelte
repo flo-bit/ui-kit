@@ -34,6 +34,10 @@
 					disabled?: boolean;
 					class?: string;
 			  };
+
+		class?: string;
+
+		onOpenAutoFocus?: (event: Event) => void;
 	};
 
 	let {
@@ -50,6 +54,8 @@
 		closeButton = true,
 		yesButton,
 		noButton,
+		class: className,
+		onOpenAutoFocus,
 		...restProps
 	}: Props = $props();
 
@@ -62,9 +68,15 @@
 			class="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 bg-base-200/10 dark:bg-base-900/10 fixed inset-0 z-50 backdrop-blur-sm"
 		/>
 		<Dialog.Content
+			{onOpenAutoFocus}
 			{interactOutsideBehavior}
 			{...contentProps}
-			class="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-bottom-1/2 data-[state=open]:slide-in-from-bottom-1/2 bg-base-50 dark:bg-base-900 border-base-200/80 dark:border-base-800 fixed bottom-2 left-[50%] z-50 grid w-[calc(100%-1rem)] max-w-lg translate-x-[-50%] gap-4 rounded-2xl border p-6 duration-200 md:top-[50%] md:bottom-auto md:translate-y-[-50%]"
+			class={cn(
+				'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-bottom-1/2 data-[state=open]:slide-in-from-bottom-1/2',
+				'fixed bottom-2 left-[50%] z-50 grid w-[calc(100%-1rem)] max-w-lg translate-x-[-50%] md:top-[50%] md:bottom-auto md:translate-y-[-50%]',
+				'bg-base-50 dark:bg-base-900 border-base-200/80 dark:border-base-800 gap-4 rounded-2xl border p-6',
+				className
+			)}
 		>
 			{#if title}
 				<Dialog.Title class="text-base-900 dark:text-base-100 text-lg font-semibold"
@@ -88,7 +100,7 @@
 			{/if}
 
 			{#if yesButton || noButton}
-				<div class="flex flex-col md:flex-row items-stretch md:items-center justify-end gap-2">
+				<div class="flex flex-col items-stretch justify-end gap-2 md:flex-row md:items-center">
 					{#if yesButton}
 						<Button
 							bind:ref={yesButtonRef}
@@ -114,7 +126,9 @@
 								}
 							}}
 							class={cn(typeof noButton === 'object' ? noButton.class : '')}
-							variant={typeof noButton === 'object' ? noButton?.variant || 'secondary' : 'secondary'}
+							variant={typeof noButton === 'object'
+								? noButton?.variant || 'secondary'
+								: 'secondary'}
 							disabled={typeof noButton === 'object' ? noButton?.disabled : false}
 						>
 							{typeof noButton === 'object' ? noButton.label || 'No' : 'No'}

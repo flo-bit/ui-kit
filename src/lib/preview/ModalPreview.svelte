@@ -7,6 +7,9 @@
 	import Image from '$lib/components/image/Image.svelte';
 
 	import cute from '$lib/assets/cute.jpg?as=run';
+	import BlueskyLoginModal, {
+		blueskyLoginModalState
+	} from '$lib/components/modal/BlueskyLoginModal.svelte';
 
 	let openDefault = $state(false);
 	let openCustom = $state(false);
@@ -18,6 +21,10 @@
 
 <Button onclick={() => (openCustom = true)} variant="secondary">Custom Modal</Button>
 
+<Button onclick={() => (blueskyLoginModalState.visible = true)} variant="secondary"
+	>Bluesky Login Modal</Button
+>
+
 <Modal
 	bind:open={openDefault}
 	title="This is the default modal"
@@ -25,7 +32,6 @@
 	yesButton={{ label: 'Yes', onclick: () => toast('Yes', { description: 'Smart choice' }) }}
 	noButton={{ label: 'No', onclick: () => toast('No', { description: 'Why not though?' }) }}
 />
-
 
 <Modal bind:open={openCustom} closeButton={false}>
 	<Subheading>Custom modal</Subheading>
@@ -36,3 +42,14 @@
 
 	<Button onclick={() => (openCustom = false)}>Cool</Button>
 </Modal>
+
+<BlueskyLoginModal
+	login={async (handle) => {
+		await new Promise((resolve, reject) =>
+			setTimeout(
+				() => reject('This is just for UI testing, login is not actually implemented :/'),
+				1000
+			)
+		);
+	}}
+/>
