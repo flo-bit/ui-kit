@@ -26,6 +26,9 @@
 	import SwitchPreview from '$lib/preview/SwitchPreview.svelte';
 	import LineGraphPreview from '$lib/preview/LineGraphPreview.svelte';
 	import ImagePreview from '$lib/preview/ImagePreview.svelte';
+	import GradientPreview from '$lib/preview/GradientPreview.svelte';
+	import BoxPreview from '$lib/preview/BoxPreview.svelte';
+	import ChatBubblePreview from '$lib/preview/ChatBubblePreview.svelte';
 </script>
 
 <Heading class="mb-8">All Components</Heading>
@@ -41,7 +44,13 @@
 		<BadgesPreview></BadgesPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
+		<BoxPreview></BoxPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
 		<ButtonsPreview></ButtonsPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<ChatBubblePreview></ChatBubblePreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<CheckboxPreview></CheckboxPreview>
@@ -57,6 +66,9 @@
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<GithubCornerPreview></GithubCornerPreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<GradientPreview></GradientPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<HeatmapPreview></HeatmapPreview>

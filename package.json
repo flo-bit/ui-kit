@@ -38,6 +38,7 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
+		"@number-flow/svelte": "^0.3.3",
 		"@sveltejs/adapter-static": "^3.0.8",
 		"@threlte/core": "^8.0.1",
 		"@threlte/extras": "^9.0.1",

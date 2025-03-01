@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 
-	import { Button } from '$lib/components/button';
+	import { Button, buttonVariants } from '$lib/components/button';
 	import { ThemeToggle } from '$lib/components/theme-toggle';
 	import Navbar from '$lib/components/navbar/Navbar.svelte';
 	import Sidebar from '$lib/components/sidebar/Sidebar.svelte';
@@ -11,6 +11,42 @@
 
 	import * as Popover from '$lib/components/popover';
 	import SelectTheme from '$lib/preview/SelectTheme.svelte';
+	import { cn } from '$lib/utils';
+
+	const components = [
+		{ label: 'Alerts', href: 'alert' },
+		{ label: 'Avatars', href: 'avatar' },
+		{ label: 'Badges', href: 'badge' },
+		{ label: 'Box', href: 'box' },
+		{ label: 'Buttons', href: 'button' },
+		{ label: 'Chat Bubble', href: 'chat-bubble' },
+		{ label: 'Checkboxes', href: 'checkbox' },
+		{ label: 'Color Select', href: 'color-select' },
+		{ label: 'Depth 3D', href: 'depth-3d' },
+		{ label: 'Excalidraw', href: 'excalidraw' },
+		{ label: 'Github Corner', href: 'github-corner' },
+		{ label: 'Gradient', href: 'gradient' },
+		{ label: 'Heatmap', href: 'heatmap' },
+		{ label: 'Image', href: 'image' },
+		{ label: 'Input', href: 'input' },
+		{ label: 'Line Graph', href: 'line-graph' },
+		{ label: 'Phone', href: 'phone' },
+		{ label: 'Progress', href: 'progress' },
+		{ label: 'Quote', href: 'quote' },
+		{ label: 'Ring Chart', href: 'ring-chart' },
+		{ label: 'Scroll Area', href: 'scroll-area' },
+		{ label: 'Select', href: 'select' },
+		{ label: 'Slider', href: 'slider' },
+		{ label: 'Sonner', href: 'sonner' },
+		{ label: 'Star Rating', href: 'star-rating' },
+		{ label: 'Switch', href: 'switch' },
+		{ label: 'Textarea', href: 'textarea' },
+		{ label: 'Tooltip', href: 'tooltip' },
+		{ label: 'Video Player', href: 'video-player' }
+	];
+
+	// sort components by label
+	components.sort((a, b) => a.label.localeCompare(b.label));
 </script>
 
 <Navbar hasSidebar>
@@ -30,15 +66,20 @@
 			</svg>
 		</Button>
 	</div>
-	<div class="flex items-center gap-4">
+	<div class="flex items-end gap-4">
 		<Popover.Root>
-			<Popover.Trigger class="flex items-center -space-x-2">
+			<Popover.Trigger
+				class={cn(
+					buttonVariants({ variant: 'link', size: 'default' }),
+					'flex cursor-pointer items-center gap-0 -space-x-2'
+				)}
+			>
 				<div
-					class="bg-accent-500 border-accent-700 dark:border-accent-400 z-10 size-6 rounded-full border"
+					class=" from-accent-500 to-accent-600 border-accent-700 dark:border-accent-400 z-10 size-6 rounded-full border bg-gradient-to-b"
 				></div>
 
 				<div
-					class="bg-base-500 border-base-700 dark:border-base-400 size-6 rounded-full border"
+					class=" from-base-500 to-base-600 border-base-700 dark:border-base-400 size-6 rounded-full border bg-gradient-to-b"
 				></div>
 			</Popover.Trigger>
 			<Popover.Content>
@@ -59,31 +100,8 @@
 		<Button variant="link" href="{base}/components">All</Button>
 		<Button variant="link" href="{base}/components/theme" class="mb-8">Theme</Button>
 
-		<Button variant="link" href="{base}/components/alert">Alerts</Button>
-		<Button variant="link" href="{base}/components/avatar">Avatars</Button>
-		<Button variant="link" href="{base}/components/badge">Badges</Button>
-		<Button variant="link" href="{base}/components/button">Buttons</Button>
-		<Button variant="link" href="{base}/components/checkbox">Checkboxes</Button>
-		<Button variant="link" href="{base}/components/color-select">Color Select</Button>
-		<Button variant="link" href="{base}/components/depth-3d">Depth 3D</Button>
-		<Button variant="link" href="{base}/components/excalidraw">Excalidraw</Button>
-		<Button variant="link" href="{base}/components/github-corner">Github Corner</Button>
-		<Button variant="link" href="{base}/components/heatmap">Heatmap</Button>
-		<Button variant="link" href="{base}/components/image">Image</Button>
-		<Button variant="link" href="{base}/components/input">Input</Button>
-		<Button variant="link" href="{base}/components/line-graph">Line Graph</Button>
-		<Button variant="link" href="{base}/components/phone">Phone</Button>
-		<Button variant="link" href="{base}/components/progress">Progress</Button>
-		<Button variant="link" href="{base}/components/quote">Quote</Button>
-		<Button variant="link" href="{base}/components/ring-chart">Ring Chart</Button>
-		<Button variant="link" href="{base}/components/scroll-area">Scroll Area</Button>
-		<Button variant="link" href="{base}/components/select">Select</Button>
-		<Button variant="link" href="{base}/components/slider">Slider</Button>
-		<Button variant="link" href="{base}/components/sonner">Sonner</Button>
-		<Button variant="link" href="{base}/components/star-rating">Star Rating</Button>
-		<Button variant="link" href="{base}/components/switch">Switch</Button>
-		<Button variant="link" href="{base}/components/textarea">Textarea</Button>
-		<Button variant="link" href="{base}/components/tooltip">Tooltip</Button>
-		<Button variant="link" href="{base}/components/video-player">Video Player</Button>
+		{#each components as component}
+			<Button variant="link" href="{base}/components/{component.href}">{component.label}</Button>
+		{/each}
 	</div>
 </Sidebar>

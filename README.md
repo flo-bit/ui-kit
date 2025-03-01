@@ -68,7 +68,7 @@ export default defineConfig({
 Some components might need additional dependencies, just install once you get an error, or install all of them at once:
 
 ```bash
-npm install bits-ui tailwind-variants @tailwindcss/forms @tailwindcss/typography layerchart plyr svelte-sonner tailwindcss-animate three @threlte/extras @threlte/core @types/three @zerodevx/svelte-img
+npm install bits-ui tailwind-variants @tailwindcss/forms @tailwindcss/typography layerchart plyr svelte-sonner tailwindcss-animate three @threlte/extras @threlte/core @types/three @zerodevx/svelte-img @number-flow/svelte
 ```
 
 again tailwind plugins should be added to your `app.css`
