@@ -14,7 +14,7 @@
 	let { data } = $props();
 </script>
 
-<div class="h-44 w-full overflow-visible p-4">
+<div class="h-44 w-full overflow-visible p-4 line-graph-container">
 	<Chart
 		{data}
 		xScale={scaleTime()}
@@ -74,3 +74,18 @@
 		</Tooltip.Root>
 	</Chart>
 </div>
+
+
+<noscript>
+	<div
+		class="border-base-200 bg-base-100 text-base-700 dark:border-base-700 dark:bg-base-900 dark:text-base-300 w-full rounded-2xl border p-4 text-sm"
+	>
+		JavaScript is required to view this content.
+	</div>
+
+	<style>
+		.line-graph-container {
+			display: none;
+		}
+	</style>
+</noscript>

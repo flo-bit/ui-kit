@@ -32,7 +32,7 @@
 		src={sceneProps.image.image}
 		alt=""
 		class={cn(
-			'border-base-400 bg-base-100 dark:border-base-700 dark:bg-base-900 h-80 w-80 rounded-2xl border object-cover',
+			'h-80 w-80 rounded-2xl object-cover',
 			className
 		)}
 	/>

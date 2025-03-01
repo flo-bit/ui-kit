@@ -100,7 +100,7 @@
 
 	<style>
 		.excalidraw-container {
-			display: hidden;
+			display: none;
 		}
 	</style>
 </noscript>

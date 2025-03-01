@@ -46,8 +46,16 @@
 	/>
 	{#if blur}
 		<div
-			class="pointer-events-none absolute inset-0 backdrop-blur-md data-[loaded=true]:hidden"
+			class="image-blur pointer-events-none absolute inset-0 backdrop-blur-md data-[loaded=true]:hidden"
 			data-loaded={loaded}
 		></div>
 	{/if}
 </div>
+
+<noscript>
+	<style>
+		.image-blur {
+			display: none;
+		}
+	</style>
+</noscript>
