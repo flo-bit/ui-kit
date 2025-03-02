@@ -306,6 +306,143 @@
       "quoteCount": 0,
       "indexedAt": "2025-02-23T15:16:49.557Z",
       "labels": []
+    },
+    {
+      "uri": "at://did:plc:257wekqxg4hyapkq6k47igmp/app.bsky.feed.post/3ljgfoyheyc2b",
+      "cid": "bafyreig6ezdxinopozy525yplmkl62ywju2rzn5rv5tmlaqnahnsasaf3i",
+      "author": {
+        "did": "did:plc:257wekqxg4hyapkq6k47igmp",
+        "handle": "flo-bit.dev",
+        "displayName": "flo-bit",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreib3idjnvcejkgivewbt4jji4wuv2f4rx6tuzwe6xqrzyajp4lmpjm@jpeg",
+        "associated": {
+          "chat": {
+            "allowIncoming": "all"
+          }
+        },
+        "labels": [],
+        "createdAt": "2024-11-08T02:10:04.377Z"
+      },
+      "record": {
+        "$type": "app.bsky.feed.post",
+        "createdAt": "2025-03-02T21:42:17.766Z",
+        "embed": {
+          "$type": "app.bsky.embed.images",
+          "images": [
+            {
+              "alt": "screenshot of ui kit showing two social media posts, one with a video and one with links and an image ",
+              "aspectRatio": {
+                "height": 1472,
+                "width": 1410
+              },
+              "image": {
+                "$type": "blob",
+                "ref": {
+                  "$link": "bafkreigwg43qyxoq3q7vraoyyk3j7vaszvsd4t2bjsqdgvlw6rwgwcrrwm"
+                },
+                "mimeType": "image/jpeg",
+                "size": 555424
+              }
+            },
+            {
+              "alt": "screenshot of a heatmap component",
+              "aspectRatio": {
+                "height": 442,
+                "width": 1414
+              },
+              "image": {
+                "$type": "blob",
+                "ref": {
+                  "$link": "bafkreif4x3rlhaazt2gij56zkqwiue6udzzltnsf4vtxm3obcqqccdqvja"
+                },
+                "mimeType": "image/jpeg",
+                "size": 202538
+              }
+            },
+            {
+              "alt": "screenshot of a audio player component showing the waveform of the audio",
+              "aspectRatio": {
+                "height": 360,
+                "width": 1428
+              },
+              "image": {
+                "$type": "blob",
+                "ref": {
+                  "$link": "bafkreicdsnchw7oorja3zawcl5ukadczmh6bv22vfmbz2yw5eq3wmfj5xu"
+                },
+                "mimeType": "image/jpeg",
+                "size": 79355
+              }
+            },
+            {
+              "alt": "screenshot of a login with bluesky modal where you can enter your bluesky handle",
+              "aspectRatio": {
+                "height": 804,
+                "width": 1006
+              },
+              "image": {
+                "$type": "blob",
+                "ref": {
+                  "$link": "bafkreidql2zac2efayojuvvw564qikmvbbdyhnl6pdm66ryiui2nlexbmy"
+                },
+                "mimeType": "image/jpeg",
+                "size": 115154
+              }
+            }
+          ]
+        },
+        "langs": [
+          "en"
+        ],
+        "text": "one of my goals with my svelte ui kit is making components that allow me to quickly make lots of different web apps, which is why I'm adding lots of components that aren't in most ui kits (afaik).\n\nsome examples:\n- social media post\n- heatmap\n- waveform audio player\n- login with bluesky modal\n[1/2]"
+      },
+      "embed": {
+        "$type": "app.bsky.embed.images#view",
+        "images": [
+          {
+            "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreigwg43qyxoq3q7vraoyyk3j7vaszvsd4t2bjsqdgvlw6rwgwcrrwm@jpeg",
+            "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreigwg43qyxoq3q7vraoyyk3j7vaszvsd4t2bjsqdgvlw6rwgwcrrwm@jpeg",
+            "alt": "screenshot of ui kit showing two social media posts, one with a video and one with links and an image ",
+            "aspectRatio": {
+              "height": 1472,
+              "width": 1410
+            }
+          },
+          {
+            "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreif4x3rlhaazt2gij56zkqwiue6udzzltnsf4vtxm3obcqqccdqvja@jpeg",
+            "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreif4x3rlhaazt2gij56zkqwiue6udzzltnsf4vtxm3obcqqccdqvja@jpeg",
+            "alt": "screenshot of a heatmap component",
+            "aspectRatio": {
+              "height": 442,
+              "width": 1414
+            }
+          },
+          {
+            "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreicdsnchw7oorja3zawcl5ukadczmh6bv22vfmbz2yw5eq3wmfj5xu@jpeg",
+            "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreicdsnchw7oorja3zawcl5ukadczmh6bv22vfmbz2yw5eq3wmfj5xu@jpeg",
+            "alt": "screenshot of a audio player component showing the waveform of the audio",
+            "aspectRatio": {
+              "height": 360,
+              "width": 1428
+            }
+          },
+          {
+            "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreidql2zac2efayojuvvw564qikmvbbdyhnl6pdm66ryiui2nlexbmy@jpeg",
+            "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreidql2zac2efayojuvvw564qikmvbbdyhnl6pdm66ryiui2nlexbmy@jpeg",
+            "alt": "screenshot of a login with bluesky modal where you can enter your bluesky handle",
+            "aspectRatio": {
+              "height": 804,
+              "width": 1006
+            }
+          }
+        ]
+      },
+      "replyCount": 1,
+      "repostCount": 0,
+      "likeCount": 0,
+      "quoteCount": 0,
+      "indexedAt": "2025-03-02T21:42:25.055Z",
+      "labels": []
     }
   ]
 }
