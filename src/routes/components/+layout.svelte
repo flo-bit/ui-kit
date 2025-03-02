@@ -47,7 +47,8 @@
 		{ label: 'Modal', href: 'modal' },
 		{ label: 'Timer', href: 'timer' },
 		{ label: 'Number Input', href: 'number-input' },
-		{ label: 'Social Icons', href: 'social-icons' }
+		{ label: 'Social Icons', href: 'social-icons' },
+		{ label: 'Waveform Audio Player', href: 'waveform-audio-player' }
 	];
 
 	// sort components by label

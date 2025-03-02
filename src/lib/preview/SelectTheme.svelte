@@ -14,7 +14,7 @@
 	import ColorSelect from '$lib/components/color-select/ColorSelect.svelte';
 	import Subheading from '$lib/components/heading/Subheading.svelte';
 	import Text from '$lib/components/text/Text.svelte';
-	import { onMount, tick } from 'svelte';
+	import { onMount } from 'svelte';
 
 	let accentColors = [
 		{ class: 'bg-red-500', label: 'red' },
@@ -72,8 +72,8 @@
 	bind:selected={accentColor}
 	colors={accentColors}
 	onselected={(color, previous) => {
-		document.body.classList.remove(previous.label.toLowerCase());
-		document.body.classList.add(color.label.toLowerCase());
+		document.documentElement.classList.remove(previous.label.toLowerCase());
+		document.documentElement.classList.add(color.label.toLowerCase());
 
 		localStorage.setItem('accentColor', JSON.stringify(color.label));
 
