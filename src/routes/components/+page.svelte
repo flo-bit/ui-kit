@@ -34,6 +34,7 @@
 	import SocialIconsPreview from '$lib/preview/SocialIconsPreview.svelte';
 	import TimerPreview from '$lib/preview/TimerPreview.svelte';
 	import WaveformAudioPlayerPreview from '$lib/preview/WaveformAudioPlayerPreview.svelte';
+	import ImageCardPreview from '$lib/preview/ImageCardPreview.svelte';
 </script>
 
 <Heading class="mb-8">All Components</Heading>
@@ -80,6 +81,9 @@
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<ImagePreview></ImagePreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<ImageCardPreview></ImageCardPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<InputPreview></InputPreview>

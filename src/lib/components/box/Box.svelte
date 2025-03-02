@@ -8,7 +8,7 @@
 
 <div
 	class={cn(
-		'border-base-300/50 bg-base-300/20 dark:border-base-800/50 dark:bg-base-900/30 text-base-900 dark:text-base-100 relative isolate min-h-96 w-full overflow-hidden rounded-2xl border p-4',
+		'border-base-300/50 bg-base-300/20 dark:border-base-800/50 dark:bg-base-900/30 text-base-900 dark:text-base-100 relative isolate w-full overflow-hidden rounded-2xl border p-4',
 		className
 	)}
 >

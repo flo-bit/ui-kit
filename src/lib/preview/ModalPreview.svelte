@@ -6,10 +6,11 @@
 	import { toast } from 'svelte-sonner';
 	import Image from '$lib/components/image/Image.svelte';
 
-	import cute from '$lib/assets/cute.jpg?as=run';
+	import cute from '$lib/assets/images/cute.jpg?as=run';
 	import BlueskyLoginModal, {
 		blueskyLoginModalState
 	} from '$lib/components/modal/BlueskyLoginModal.svelte';
+	import ImageContainer from '$lib/components/image-container/ImageContainer.svelte';
 
 	let openDefault = $state(false);
 	let openCustom = $state(false);
@@ -38,7 +39,7 @@
 
 	<Text>You can put anything in here... Like an image:</Text>
 
-	<Image src={cute} alt="image in modal" useThemeColor />
+	<ImageContainer src={cute} alt="image in modal" useThemeColor />
 
 	<Button onclick={() => (openCustom = false)}>Cool</Button>
 </Modal>

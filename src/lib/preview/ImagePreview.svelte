@@ -1,9 +1,10 @@
 <script>
-	import cute from '$lib/assets/cute.jpg?as=run';
-	import cute2 from '$lib/assets/cute2.jpg?as=run';
 	import Subheading from '$lib/components/heading/Subheading.svelte';
 	import ImageContainer from '$lib/components/image-container/ImageContainer.svelte';
 	import Text from '$lib/components/text/Text.svelte';
+
+	import cute from '$lib/assets/images/cute.jpg?as=run';
+	import cute2 from '$lib/assets/images/cute2.jpg?as=run';
 </script>
 
 <Subheading class="mb-4">Images</Subheading>

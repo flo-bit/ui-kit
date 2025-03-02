@@ -4,8 +4,8 @@
 	import Heading from '$lib/components/heading/Heading.svelte';
 
 	import ImageContainer from '$lib/components/image-container/ImageContainer.svelte';
-	
-	import cute from '$lib/assets/cute.jpg?as=run';
+
+	import cute from '$lib/assets/images/cute.jpg?as=run';
 </script>
 
 <Heading class="mb-4">Chat Bubble</Heading>
@@ -31,6 +31,6 @@
 	<ChatBubble side="right" variant="secondary">
 		<p>This is me sending you an image</p>
 
-		<ImageContainer src={cute} alt="cute cat" class="-mx-1.5 rounded-xl" />
+		<ImageContainer src={cute} alt="cute cat" containerClasses="-mx-1.5 rounded-xl" />
 	</ChatBubble>
 </Box>
