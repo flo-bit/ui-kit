@@ -46,7 +46,7 @@
 	/>
 	{#if blur}
 		<div
-			class="image-blur pointer-events-none absolute inset-0 backdrop-blur-md data-[loaded=true]:hidden"
+			class="image-blur rounded-2xl pointer-events-none absolute inset-0 backdrop-blur-md data-[loaded=true]:hidden"
 			data-loaded={loaded}
 		></div>
 	{/if}

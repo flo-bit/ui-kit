@@ -3,7 +3,7 @@
 	import { cn } from '$lib/utils';
 
 	export const badgeVariants = tv({
-		base: 'inline-flex items-center justify-center whitespace-nowrap rounded-2xl text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 duration-300 active:duration-100 [&_svg]:pointer-events-none [&_svg]:shrink-0',
+		base: 'inline-flex items-center flex-col justify-start items-start whitespace-nowrap rounded-2xl text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 duration-300 active:duration-100 [&_svg]:pointer-events-none [&_svg]:shrink-0',
 		variants: {
 			variant: {
 				primary:
@@ -40,7 +40,7 @@
 			},
 			size: {
 				sm: 'px-2 text-xs py-0.5 [&_svg]:size-3 gap-1.5',
-				md: 'px-3 py-1 [&_svg]:size-4 gap-2',
+				md: 'px-3 py-1.5 [&_svg]:size-4 gap-2',
 				lg: 'px-4 text-lg py-1.5 [&_svg]:size-5 gap-2.5'
 			}
 		},
