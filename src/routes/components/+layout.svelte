@@ -53,6 +53,8 @@
 
 	// sort components by label
 	components.sort((a, b) => a.label.localeCompare(b.label));
+
+	console.log(components.length);
 </script>
 
 <Navbar hasSidebar>
@@ -94,7 +96,7 @@
 		</Popover.Root>
 		<ThemeToggle />
 
-		<Github href="https://github.com/flo-bit/ui-kit" class="py-2 pr-2" />
+		<Github href="https://github.com/flo-bit/ui-kit" class="py-2 pl-2 pr-4" />
 	</div>
 </Navbar>
 
@@ -103,7 +105,7 @@
 </Container>
 
 <Sidebar>
-	<div class="flex flex-col items-start p-4">
+	<div class="flex flex-col items-start p-4 mb-8">
 		<Button variant="link" href={base}>Home</Button>
 		<Button variant="link" href="{base}/components">All</Button>
 		<Button variant="link" href="{base}/components/theme" class="mb-8">Theme</Button>

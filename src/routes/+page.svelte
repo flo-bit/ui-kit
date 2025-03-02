@@ -50,11 +50,11 @@
 </script>
 
 <ScrollArea type="scroll" class="h-[100dvh] w-screen">
-	<div class="flex min-h-screen items-center justify-center p-8">
+	<div class="flex min-h-screen items-center justify-center p-4 md:p-8">
 		<div class="h-full w-full max-w-6xl text-black dark:text-white">
 			<div
 				class={[
-					'mb-6 flex w-full max-w-6xl items-start justify-between rounded-2xl p-6 md:items-center',
+					'mb-4 md:mb-6 flex w-full max-w-6xl items-start justify-between rounded-2xl p-6 md:items-center',
 					background
 				]}
 			>
@@ -71,7 +71,7 @@
 					<Github href="https://github.com/flo-bit/ui-kit" />
 				</div>
 			</div>
-			<div class="grid h-full w-full max-w-6xl grid-cols-1 gap-6 md:grid-cols-12 md:grid-rows-5">
+			<div class="grid h-full w-full max-w-6xl grid-cols-1 gap-4 md:gap-6 md:grid-cols-12 md:grid-rows-5">
 				<div
 					class={[
 						'order-1 col-span-1 row-span-2 flex w-full flex-col items-start justify-between rounded-2xl p-6 md:col-span-5',

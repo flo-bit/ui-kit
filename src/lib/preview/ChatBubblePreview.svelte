@@ -2,8 +2,9 @@
 	import Box from '$lib/components/box/Box.svelte';
 	import ChatBubble from '$lib/components/chat-bubble/ChatBubble.svelte';
 	import Heading from '$lib/components/heading/Heading.svelte';
-	import Image from '$lib/components/image/Image.svelte';
 
+	import ImageContainer from '$lib/components/image-container/ImageContainer.svelte';
+	
 	import cute from '$lib/assets/cute.jpg?as=run';
 </script>
 
@@ -30,6 +31,6 @@
 	<ChatBubble side="right" variant="secondary">
 		<p>This is me sending you an image</p>
 
-		<Image src={cute} alt="cute cat" class="-mx-1.5 rounded-xl" />
+		<ImageContainer src={cute} alt="cute cat" class="-mx-1.5 rounded-xl" />
 	</ChatBubble>
 </Box>

@@ -1,10 +1,22 @@
-<script lang="ts">
-	import Img from '@zerodevx/svelte-img';
+<script lang="ts" module>
+	import { cn } from '$lib/utils';
+	import type { HTMLImgAttributes } from 'svelte/elements';
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 
+	export type ImageProps = WithoutChildrenOrChild<
+		WithElementRef<HTMLImgAttributes, HTMLImageElement>
+	> & {
+		useThemeColor?: boolean;
+		containerClasses?: string;
+		blur?: boolean;
+		showNormalOnHover?: boolean;
+		alt: string;
+	};
+</script>
+
+<script lang="ts">
+	import Img from '@zerodevx/svelte-img';
 	import { onMount } from 'svelte';
-	import type { HTMLImgAttributes } from 'svelte/elements';
-	import { cn } from '$lib/utils';
 
 	let loaded = $state(false);
 
@@ -16,37 +28,58 @@
 		src,
 		alt,
 		class: className,
-		imageClasses,
+		containerClasses,
 		useThemeColor = false,
-		blur = true
-	}: WithoutChildrenOrChild<WithElementRef<HTMLImgAttributes, HTMLImageElement>> & {
-		useThemeColor?: boolean;
-		imageClasses?: string;
-		blur?: boolean;
-	} = $props();
+		showNormalOnHover = false,
+		blur = true,
+		...restProps
+	}: ImageProps = $props();
 </script>
 
-<div
-	class={cn(
-		'border-base-300 dark:border-base-700 relative overflow-hidden rounded-2xl border',
-		className
-	)}
->
+<div class={cn('group relative h-fit w-fit', containerClasses)}>
 	{#if useThemeColor}
-		<div class="bg-accent-500/30 pointer-events-none absolute inset-0 z-20 size-full"></div>
+		<div
+			class={[
+				'bg-accent-500/30 pointer-events-none absolute inset-0 z-20 size-full',
+				showNormalOnHover ? 'group-hover:opacity-0 transition-all duration-300 ease-in-out' : ''
+			]}
+		></div>
 	{/if}
 
-	<Img
-		{src}
-		bind:ref
-		{alt}
-		onload={() => (loaded = true)}
-		style={useThemeColor ? 'filter: grayscale(100%) brightness(1.2)' : ''}
-		class={imageClasses}
-	/>
-	{#if blur}
+	{#if typeof src === 'string'}
+		<img
+			{src}
+			bind:this={ref}
+			{alt}
+			onload={() => (loaded = true)}
+			class={cn(
+				useThemeColor ? 'brightness-125 grayscale' : '',
+				showNormalOnHover ? 'group-hover:filter-none transition-all duration-300 ease-in-out' : '',
+				className
+			)}
+			{...restProps}
+		/>
+	{:else}
+		<Img
+			{src}
+			bind:ref
+			{alt}
+			onload={() => (loaded = true)}
+			class={cn(
+				useThemeColor ? 'brightness-125 grayscale' : '',
+				showNormalOnHover ? 'group-hover:filter-none transition-all duration-300 ease-in-out' : '',
+				className
+			)}
+			width={restProps.width ? Number(restProps.width) : undefined}
+			height={restProps.height ? Number(restProps.height) : undefined}
+			loading={restProps.loading ?? 'lazy'}
+			decoding={restProps.decoding ?? 'async'}
+			sizes={restProps.sizes ?? undefined}
+		/>
+	{/if}
+	{#if !(typeof src === 'string') && blur}
 		<div
-			class="image-blur rounded-2xl pointer-events-none absolute inset-0 backdrop-blur-md data-[loaded=true]:hidden"
+			class="image-blur pointer-events-none absolute inset-0 rounded-2xl backdrop-blur-md data-[loaded=true]:hidden"
 			data-loaded={loaded}
 		></div>
 	{/if}

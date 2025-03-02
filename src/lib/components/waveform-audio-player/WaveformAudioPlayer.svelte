@@ -3,6 +3,8 @@
 	import { onMount } from 'svelte';
 	import WaveSurfer from 'wavesurfer.js';
 
+	import { ThemeWatcher } from '$lib/helper/ThemeWatcher.svelte';
+
 	let wavesurfer: WaveSurfer | null = $state(null);
 
 	let { url, darkMode = 'class' }: {
@@ -21,34 +23,24 @@
 	let isPlaying = $state(false);
 	let isLoaded = $state(false);
 
-	let darkModeMediaQuery: MediaQueryList | null = $state(null);
+	let themeWatcher: ThemeWatcher | null = $state(null);
 
 	function isDarkMode() {
-		if (darkMode === 'class') {
-			return document.documentElement.classList.contains('dark');
-		}
-
-		return darkModeMediaQuery?.matches ?? false;
+		return themeWatcher?.isDarkMode() ?? false;
 	}
 
 	function getCSSVar(variable: string) {
-		return getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+		return themeWatcher?.getCSSVar(variable) ?? '';
 	}
 
 	onMount(() => {
 		if (!audioContainer) return;
 
-		if (darkMode === 'mediaQuery') {
-			darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-			darkModeMediaQuery.addEventListener('change', updateWaveformColors);
-		}
+		themeWatcher = new ThemeWatcher(updateWaveformColors, darkMode);
 
 		wavesurfer = WaveSurfer.create({
 			container: audioContainer,
-			waveColor: 'black',
-			progressColor: 'black',
 			cursorWidth: 2,
-			backend: 'WebAudio',
 			height: 16,
 			barWidth: 2,
 			barGap: 1,
@@ -82,22 +74,11 @@
 			isPlaying = false;
 		});
 
-		const observer = new MutationObserver(() => {
-			updateWaveformColors();
-		});
-
-		observer.observe(document.documentElement, {
-			attributes: true,
-			attributeFilter: ['class']
-		});
-
 		return () => {
-			observer.disconnect();
-
 			wavesurfer?.pause();
 			wavesurfer?.destroy();
 
-			darkModeMediaQuery?.removeEventListener('change', updateWaveformColors);
+			themeWatcher?.destroy();
 		};
 	});
 
