@@ -38,12 +38,14 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
+		"@atproto/api": "^0.14.7",
 		"@number-flow/svelte": "^0.3.3",
 		"@sveltejs/adapter-static": "^3.0.8",
 		"@threlte/core": "^8.0.1",
 		"@threlte/extras": "^9.0.1",
 		"@types/three": "^0.173.0",
 		"bits-ui": "^1.3.4",
+		"hls.js": "^1.5.20",
 		"layerchart": "^1.0.0",
 		"plyr": "^3.7.8",
 		"svelte-sonner": "^0.3.28",

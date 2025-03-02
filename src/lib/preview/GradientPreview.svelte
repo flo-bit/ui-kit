@@ -6,6 +6,6 @@
 
 <Subheading class="mb-6">Gradient</Subheading>
 
-<Box class="bg-base-50 dark:bg-base-950">
+<Box class="bg-base-50 dark:bg-base-950 min-h-96">
 	<Gradient />
 </Box>

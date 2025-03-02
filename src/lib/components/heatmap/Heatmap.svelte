@@ -1,6 +1,6 @@
 <script lang="ts">
 	let colors = [
-		'bg-accent-200/50 dark:bg-accent-950/30',
+		'bg-accent-200/50 dark:bg-accent-950/50',
 		'bg-accent-300/50 dark:bg-accent-800/70',
 		'bg-accent-400/80 dark:bg-accent-700',
 		'bg-accent-500/80 dark:bg-accent-600',

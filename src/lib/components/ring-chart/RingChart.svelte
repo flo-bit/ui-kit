@@ -54,7 +54,7 @@
 <div
 	bind:this={ref}
 	class={cn(
-		'flex w-full items-center gap-2 overflow-hidden',
+		'flex w-full items-end gap-2 overflow-hidden',
 		showLegend ? 'justify-between' : 'justify-center',
 		className
 	)}

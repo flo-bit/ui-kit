@@ -35,6 +35,7 @@
 	import TimerPreview from '$lib/preview/TimerPreview.svelte';
 	import WaveformAudioPlayerPreview from '$lib/preview/WaveformAudioPlayerPreview.svelte';
 	import ImageCardPreview from '$lib/preview/ImageCardPreview.svelte';
+	import PostPreview from '$lib/preview/PostPreview.svelte';
 </script>
 
 <Heading class="mb-8">All Components</Heading>
@@ -99,6 +100,9 @@
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<PhonePreview></PhonePreview>
+	</div>
+	<div class="flex flex-col gap-4 py-8">
+		<PostPreview></PostPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<ProgressPreview></ProgressPreview>

@@ -1,0 +1,311 @@
+{
+  "posts": [
+    {
+      "uri": "at://did:plc:257wekqxg4hyapkq6k47igmp/app.bsky.feed.post/3lj3hqgiynk2v",
+      "cid": "bafyreiexa3h3f6s5t5xrvlpxyo3dusqaxkoxoisjcnt5q56izeiquykqza",
+      "author": {
+        "did": "did:plc:257wekqxg4hyapkq6k47igmp",
+        "handle": "flo-bit.dev",
+        "displayName": "flo-bit",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreib3idjnvcejkgivewbt4jji4wuv2f4rx6tuzwe6xqrzyajp4lmpjm@jpeg",
+        "associated": {
+          "chat": {
+            "allowIncoming": "all"
+          }
+        },
+        "labels": [],
+        "createdAt": "2024-11-08T02:10:04.377Z"
+      },
+      "record": {
+        "$type": "app.bsky.feed.post",
+        "createdAt": "2025-02-26T13:19:36.422Z",
+        "embed": {
+          "$type": "app.bsky.embed.images",
+          "images": [
+            {
+              "alt": "screenshot of different colored buttons, with the red button being focused and showing a red focus outline",
+              "aspectRatio": {
+                "height": 378,
+                "width": 1130
+              },
+              "image": {
+                "$type": "blob",
+                "ref": {
+                  "$link": "bafkreiekmbdm756egttouenhintcn7cljzv2sejwrlw4avnpog664yqkw4"
+                },
+                "mimeType": "image/jpeg",
+                "size": 150449
+              }
+            }
+          ]
+        },
+        "facets": [
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#tag",
+                "tag": "a11y"
+              }
+            ],
+            "index": {
+              "byteEnd": 22,
+              "byteStart": 17
+            }
+          }
+        ],
+        "langs": [
+          "en"
+        ],
+        "text": "question for any #a11y experts, is having different colored focus outlines a big no-no or is that ok?"
+      },
+      "embed": {
+        "$type": "app.bsky.embed.images#view",
+        "images": [
+          {
+            "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreiekmbdm756egttouenhintcn7cljzv2sejwrlw4avnpog664yqkw4@jpeg",
+            "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreiekmbdm756egttouenhintcn7cljzv2sejwrlw4avnpog664yqkw4@jpeg",
+            "alt": "screenshot of different colored buttons, with the red button being focused and showing a red focus outline",
+            "aspectRatio": {
+              "height": 378,
+              "width": 1130
+            }
+          }
+        ]
+      },
+      "replyCount": 2,
+      "repostCount": 0,
+      "likeCount": 5,
+      "quoteCount": 0,
+      "indexedAt": "2025-02-26T13:19:38.252Z",
+      "labels": []
+    },
+    {
+      "uri": "at://did:plc:257wekqxg4hyapkq6k47igmp/app.bsky.feed.post/3lj6idw2ibc22",
+      "cid": "bafyreihv5ytwewfrqfxhw6aw3r724tgox2bhxkwf46e7oa4ir775au53fq",
+      "author": {
+        "did": "did:plc:257wekqxg4hyapkq6k47igmp",
+        "handle": "flo-bit.dev",
+        "displayName": "flo-bit",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreib3idjnvcejkgivewbt4jji4wuv2f4rx6tuzwe6xqrzyajp4lmpjm@jpeg",
+        "associated": {
+          "chat": {
+            "allowIncoming": "all"
+          }
+        },
+        "labels": [],
+        "createdAt": "2024-11-08T02:10:04.377Z"
+      },
+      "record": {
+        "$type": "app.bsky.feed.post",
+        "createdAt": "2025-02-27T18:08:29.474Z",
+        "embed": {
+          "$type": "app.bsky.embed.external",
+          "external": {
+            "description": "my ui kit - work in progress",
+            "thumb": {
+              "$type": "blob",
+              "ref": {
+                "$link": "bafkreianchlkkifjggpd2rscx365cyzubsalvgcvk5qmnwjjpaooimevpi"
+              },
+              "mimeType": "image/jpeg",
+              "size": 519938
+            },
+            "title": "my ui kit",
+            "uri": "https://flo-bit.dev/ui-kit/"
+          }
+        },
+        "langs": [
+          "en"
+        ],
+        "reply": {
+          "parent": {
+            "cid": "bafyreiclsj47ieg2mtxmnlznr7vsahogotz2dsstg2qn4jqfg77ti52fqi",
+            "uri": "at://did:plc:257wekqxg4hyapkq6k47igmp/app.bsky.feed.post/3lj6hwahre222"
+          },
+          "root": {
+            "cid": "bafyreiclsj47ieg2mtxmnlznr7vsahogotz2dsstg2qn4jqfg77ti52fqi",
+            "uri": "at://did:plc:257wekqxg4hyapkq6k47igmp/app.bsky.feed.post/3lj6hwahre222"
+          }
+        },
+        "text": "not really ready to be used yet, but if you want to take a looksee:"
+      },
+      "embed": {
+        "$type": "app.bsky.embed.external#view",
+        "external": {
+          "uri": "https://flo-bit.dev/ui-kit/",
+          "title": "my ui kit",
+          "description": "my ui kit - work in progress",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreianchlkkifjggpd2rscx365cyzubsalvgcvk5qmnwjjpaooimevpi@jpeg"
+        }
+      },
+      "replyCount": 0,
+      "repostCount": 0,
+      "likeCount": 2,
+      "quoteCount": 0,
+      "indexedAt": "2025-02-27T18:08:31.951Z",
+      "labels": []
+    },
+    {
+      "uri": "at://did:plc:257wekqxg4hyapkq6k47igmp/app.bsky.feed.post/3lj6hwahre222",
+      "cid": "bafyreiclsj47ieg2mtxmnlznr7vsahogotz2dsstg2qn4jqfg77ti52fqi",
+      "author": {
+        "did": "did:plc:257wekqxg4hyapkq6k47igmp",
+        "handle": "flo-bit.dev",
+        "displayName": "flo-bit",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreib3idjnvcejkgivewbt4jji4wuv2f4rx6tuzwe6xqrzyajp4lmpjm@jpeg",
+        "associated": {
+          "chat": {
+            "allowIncoming": "all"
+          }
+        },
+        "labels": [],
+        "createdAt": "2024-11-08T02:10:04.377Z"
+      },
+      "record": {
+        "$type": "app.bsky.feed.post",
+        "createdAt": "2025-02-27T18:00:50.633Z",
+        "embed": {
+          "$type": "app.bsky.embed.video",
+          "alt": "screen recording of the hero section of my ui kit website, showcasing different themes and components",
+          "aspectRatio": {
+            "height": 1080,
+            "width": 1620
+          },
+          "video": {
+            "$type": "blob",
+            "ref": {
+              "$link": "bafkreie3uo63ncfttybgnm2vfaqjskkervo3qv2wbpwas4kianffr7f3qu"
+            },
+            "mimeType": "video/mp4",
+            "size": 569758
+          }
+        },
+        "langs": [
+          "en"
+        ],
+        "text": "now that svelte 5 and tailwind 4 has been out for a bit, i'm back to working on my very own svelte+tailwind ui kit"
+      },
+      "embed": {
+        "$type": "app.bsky.embed.video#view",
+        "cid": "bafkreie3uo63ncfttybgnm2vfaqjskkervo3qv2wbpwas4kianffr7f3qu",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3A257wekqxg4hyapkq6k47igmp/bafkreie3uo63ncfttybgnm2vfaqjskkervo3qv2wbpwas4kianffr7f3qu/playlist.m3u8",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3A257wekqxg4hyapkq6k47igmp/bafkreie3uo63ncfttybgnm2vfaqjskkervo3qv2wbpwas4kianffr7f3qu/thumbnail.jpg",
+        "alt": "screen recording of the hero section of my ui kit website, showcasing different themes and components",
+        "aspectRatio": {
+          "height": 1080,
+          "width": 1620
+        }
+      },
+      "replyCount": 3,
+      "repostCount": 0,
+      "likeCount": 27,
+      "quoteCount": 0,
+      "indexedAt": "2025-02-27T18:00:51.851Z",
+      "labels": []
+    },
+    {
+      "uri": "at://did:plc:257wekqxg4hyapkq6k47igmp/app.bsky.feed.post/3liu4v5sa7s2a",
+      "cid": "bafyreihe7omhgzthlnb4vitgstmbsgkve4djgb6judrq32hjfojgsmcoke",
+      "author": {
+        "did": "did:plc:257wekqxg4hyapkq6k47igmp",
+        "handle": "flo-bit.dev",
+        "displayName": "flo-bit",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreib3idjnvcejkgivewbt4jji4wuv2f4rx6tuzwe6xqrzyajp4lmpjm@jpeg",
+        "associated": {
+          "chat": {
+            "allowIncoming": "all"
+          }
+        },
+        "labels": [],
+        "createdAt": "2024-11-08T02:10:04.377Z"
+      },
+      "record": {
+        "$type": "app.bsky.feed.post",
+        "createdAt": "2025-02-23T15:16:45.727Z",
+        "embed": {
+          "$type": "app.bsky.embed.images",
+          "images": [
+            {
+              "alt": "screenshot of documentation showing the quick start section",
+              "aspectRatio": {
+                "height": 1051,
+                "width": 2000
+              },
+              "image": {
+                "$type": "blob",
+                "ref": {
+                  "$link": "bafkreiaxec7fj34235gkd2tsuh6u5zcntwwf3ehvqzbubqqiwrvyg7c6xq"
+                },
+                "mimeType": "image/jpeg",
+                "size": 351879
+              }
+            }
+          ]
+        },
+        "facets": [
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:6kf6jxl44h34mprhykvqljcx"
+              }
+            ],
+            "index": {
+              "byteEnd": 81,
+              "byteStart": 69
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://github.com/flo-bit/dogumentation"
+              }
+            ],
+            "index": {
+              "byteEnd": 118,
+              "byteStart": 92
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://flo-bit.dev/dogumentation/"
+              }
+            ],
+            "index": {
+              "byteEnd": 156,
+              "byteStart": 130
+            }
+          }
+        ],
+        "langs": [
+          "en"
+        ],
+        "text": "currently making a simple, minimalistic documentation template using @astro.build \n\nsource: github.com/flo-bit/dogu...\nlive demo: flo-bit.dev/dogumentation/"
+      },
+      "embed": {
+        "$type": "app.bsky.embed.images#view",
+        "images": [
+          {
+            "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreiaxec7fj34235gkd2tsuh6u5zcntwwf3ehvqzbubqqiwrvyg7c6xq@jpeg",
+            "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:257wekqxg4hyapkq6k47igmp/bafkreiaxec7fj34235gkd2tsuh6u5zcntwwf3ehvqzbubqqiwrvyg7c6xq@jpeg",
+            "alt": "screenshot of documentation showing the quick start section",
+            "aspectRatio": {
+              "height": 1051,
+              "width": 2000
+            }
+          }
+        ]
+      },
+      "replyCount": 1,
+      "repostCount": 0,
+      "likeCount": 7,
+      "quoteCount": 0,
+      "indexedAt": "2025-02-23T15:16:49.557Z",
+      "labels": []
+    }
+  ]
+}

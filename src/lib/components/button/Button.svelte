@@ -12,7 +12,7 @@
 					'focus-visible:outline-accent-500 border border-accent-500/20 dark:border-accent-500/20 hover:bg-accent-500/20 dark:hover:bg-accent-500/20 bg-accent-500/10 dark:bg-accent-500/10 text-accent-700 dark:text-accent-400',
 				secondary:
 					'focus-visible:outline-base-800 dark:focus-visible:outline-base-200 bg-base-300/30 dark:bg-base-800/50 text-base-900 dark:text-base-50 hover:bg-base-300/50 dark:hover:bg-base-700/50 border border-base-300/50 dark:border-base-700/30',
-				link: 'focus-visible:outline-base-900 dark:focus-visible:outline-base-50 text-base-800 dark:text-base-200 font-semibold hover:text-accent-600 dark:hover:text-accent-400',
+				link: 'focus-visible:outline-base-900 dark:focus-visible:outline-base-50 text-base-800 dark:text-base-200 font-semibold hover:text-accent-600 dark:hover:text-accent-400 data-[current=true]:text-accent-600 dark:data-[current=true]:text-accent-400',
 
 				red: 'focus-visible:outline-red-500 border border-red-500/20 dark:border-red-500/20 hover:bg-red-500/20 dark:hover:bg-red-500/20 bg-red-500/10 dark:bg-red-500/10 text-red-700 dark:text-red-400',
 				yellow:
@@ -63,10 +63,13 @@
 		WithElementRef<HTMLAnchorAttributes> & {
 			variant?: ButtonVariant;
 			size?: ButtonSize;
+			checkCurrent?: boolean;
 		};
 </script>
 
 <script lang="ts">
+	import { page } from '$app/state';
+
 	let {
 		class: className,
 		variant = 'primary',
@@ -75,12 +78,19 @@
 		href = undefined,
 		type = 'button',
 		children,
+		checkCurrent = true,
 		...restProps
 	}: ButtonProps = $props();
 </script>
 
 {#if href}
-	<a bind:this={ref} class={cn(buttonVariants({ variant, size }), className)} {href} {...restProps}>
+	<a
+		bind:this={ref}
+		data-current={variant === 'link' && checkCurrent && page.url.pathname === href}
+		class={cn(buttonVariants({ variant, size }), className)}
+		{href}
+		{...restProps}
+	>
 		{@render children?.()}
 	</a>
 {:else}

@@ -49,7 +49,8 @@
 		{ label: 'Number Input', href: 'number-input' },
 		{ label: 'Social Icons', href: 'social-icons' },
 		{ label: 'Waveform Audio Player', href: 'waveform-audio-player' },
-		{ label: 'Image Card', href: 'image-card' }
+		{ label: 'Image Card', href: 'image-card' },
+		{ label: 'Post', href: 'post' }
 	];
 
 	// sort components by label

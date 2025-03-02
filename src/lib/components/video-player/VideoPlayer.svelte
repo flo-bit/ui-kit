@@ -84,6 +84,6 @@
 
 <style>
 	* {
-		--plyr-color-main: hsl(var(--accent-500));
+		--plyr-color-main: var(--color-accent-500);
 	}
 </style>
