@@ -34,6 +34,10 @@ export class TimerState {
 	}
 
 	start() {
+		if (this.isRunning) {
+			this.stop();
+		}
+
 		this.time = new Date();
 		this.startAt = this.time;
 		this.endAt = new Date(this.time.getTime() + this.duration);
