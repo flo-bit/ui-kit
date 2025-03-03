@@ -36,6 +36,7 @@
 	import WaveformAudioPlayerPreview from '$lib/preview/WaveformAudioPlayerPreview.svelte';
 	import ImageCardPreview from '$lib/preview/ImageCardPreview.svelte';
 	import PostPreview from '$lib/preview/PostPreview.svelte';
+	import VoxelArtPreview from '$lib/preview/VoxelArtPreview.svelte';
 </script>
 
 <Heading class="mb-8">All Components</Heading>
@@ -145,6 +146,9 @@
 	</div>
 	<div class="flex flex-col items-start gap-4 py-8">
 		<VideoPlayerPreview></VideoPlayerPreview>
+	</div>
+	<div class="flex flex-col items-start gap-4 py-8">
+		<VoxelArtPreview></VoxelArtPreview>
 	</div>
 	<div class="flex flex-col items-start gap-4 py-8">
 		<WaveformAudioPlayerPreview></WaveformAudioPlayerPreview>
