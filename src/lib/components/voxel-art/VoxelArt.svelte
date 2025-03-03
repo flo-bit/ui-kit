@@ -17,7 +17,19 @@
 		stacks = undefined,
 		cubeSize = 20,
 		viewingAngle = 65,
-		colorMap = undefined,
+		colorMap = {
+			'050505': 'var(--color-accent-50)',
+			'101010': 'var(--color-accent-100)',
+			'202020': 'var(--color-accent-200)',
+			'303030': 'var(--color-accent-300)',
+			'404040': 'var(--color-accent-400)',
+			'505050': 'var(--color-accent-500)',
+			'606060': 'var(--color-accent-600)',
+			'707070': 'var(--color-accent-700)',
+			'808080': 'var(--color-accent-800)',
+			'909090': 'var(--color-accent-900)',
+			'959595': 'var(--color-accent-950)'
+		},
 		data
 	}: {
 		rows?: number;
@@ -47,35 +59,39 @@
 	}
 </script>
 
-<div class="flex h-fit w-full items-center justify-center" >
-	<div
-		class="scene"
-style="--columns: {columns}; --rows: {rows}; --stacks: {stacks}; --cube-size: {cubeSize}px; --viewing-angle: {viewingAngle}deg;"
-	>
-		<div class="floor">
-			{#each Array(stacks) as _, i}
-				<div class="z" style="transform: translateZ({i * cubeSize - (stacks * cubeSize)}px);">
-					{#each data.voxels as voxel}
-						{#if voxel.z === i}
-							{@render cube(
-								`grid-area: ${voxel.x} / ${voxel.y} / ${voxel.x + 1} / ${voxel.y + 1}; color: ${colorMap?.[voxel.color] ?? ('#' + voxel.color)};`
-							)}
-						{/if}
-					{/each}
-				</div>
-			{/each}
-		</div>
+<div
+	class="scene"
+	style="--columns: {columns}; --rows: {rows}; --stacks: {stacks}; --cube-size: {cubeSize}px; --viewing-angle: {viewingAngle}deg;"
+>
+	<div class="floor">
+		{#each Array(stacks) as _, i}
+			<div class="z" style="transform: translateZ({i * cubeSize - stacks * cubeSize}px);">
+				{#each data.voxels as voxel}
+					{#if voxel.z === i}
+						{@render cube(
+							`grid-area: ${voxel.x} / ${voxel.y} / ${voxel.x + 1} / ${voxel.y + 1}; color: ${colorMap?.[voxel.color] ?? '#' + voxel.color};`
+						)}
+					{/if}
+				{/each}
+			</div>
+		{/each}
 	</div>
 </div>
 
 {#snippet cube(style: string)}
 	<div class="cube" {style}>
-		<div class="face top"></div>
+		{#if viewingAngle < 90}
+			<div class="face top"></div>
+		{/if}
+
 		<div class="face frontRight"></div>
 		<div class="face frontLeft"></div>
 		<div class="face backLeft"></div>
 		<div class="face backRight"></div>
-		<div class="face bottom"></div>
+
+		{#if viewingAngle > 90}
+			<div class="face bottom"></div>
+		{/if}
 	</div>
 {/snippet}
 

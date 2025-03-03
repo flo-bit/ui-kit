@@ -50,6 +50,7 @@
 		"layerchart": "^1.0.0",
 		"paneforge": "^0.0.6",
 		"plyr": "^3.7.8",
+		"simplex-noise": "^4.0.3",
 		"svelte-sonner": "^0.3.28",
 		"tailwind-variants": "^0.3.1",
 		"tailwindcss-animate": "^1.0.7",
