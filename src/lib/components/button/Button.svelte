@@ -5,7 +5,7 @@
 	import { cn } from '$lib/utils';
 
 	export const buttonVariants = tv({
-		base: 'focus-visible:outline hover:cursor-pointer motion-save:focus-visible:transition-transform focus-visible:outline-2 outline-offset-2 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl motion-save:active:scale-95 text-sm font-medium motion-save:transition-all disabled:pointer-events-none disabled:opacity-50 duration-300 active:duration-100 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+		base: 'focus-visible:outline hover:cursor-pointer motion-save:focus-visible:transition-transform focus-visible:outline-2 outline-offset-2 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl active:scale-95 text-sm font-medium motion-save:transition-all disabled:pointer-events-none disabled:opacity-50 duration-300 active:duration-100 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
 		variants: {
 			variant: {
 				primary:
