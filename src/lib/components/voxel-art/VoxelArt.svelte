@@ -1,4 +1,7 @@
 <script lang="ts">
+	// from https://tympanus.net/codrops/2025/03/03/css-meets-voxel-art-building-a-rendering-engine-with-stacked-grids/
+	// editor: https://voxels.layoutit.com/
+
 	interface VoxelArtData {
 		voxels: {
 			x: number;
