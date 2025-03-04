@@ -1,7 +1,7 @@
 <script>
-	import { Button } from '$lib/components/button';
-	import { Subheading } from '$lib/components/heading';
-	import { Text } from '$lib/components/text';
+	import { Button } from '$lib/components/base/button';
+	import { Subheading } from '$lib/components/base/heading';
+	import { Text } from '$lib/components/base/text';
 </script>
 
 <Subheading>Buttons</Subheading>

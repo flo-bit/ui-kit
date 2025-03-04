@@ -1,7 +1,7 @@
 <script>
-	import { Subheading } from '$lib/components/heading';
-	import { Input } from '$lib/components/input';
-	import { Text } from '$lib/components/text';
+	import { Subheading } from '$lib/components/base/heading';
+	import { Input } from '$lib/components/base/input';
+	import { Text } from '$lib/components/base/text';
 </script>
 
 <Subheading>Input</Subheading>

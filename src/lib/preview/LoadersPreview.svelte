@@ -1,8 +1,8 @@
 <script>
-	import { Subheading } from '$lib/components/heading';
-	import { Progress } from '$lib/components/progress';
-	import { PulseLoader } from '$lib/components/pulse-loader';
-	import { Text } from '$lib/components/text';
+	import { Subheading } from '$lib/components/base/heading';
+	import { Progress } from '$lib/components/extra/progress';
+	import { PulseLoader } from '$lib/components/extra/pulse-loader';
+	import { Text } from '$lib/components/base/text';
 
 	let progress = $state(20);
 

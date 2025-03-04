@@ -1,6 +1,6 @@
 <script>
-	import Subheading from '$lib/components/heading/Subheading.svelte';
-	import Quote from '$lib/components/quote/Quote.svelte';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
+	import Quote from '$lib/components/extra/quote/Quote.svelte';
 </script>
 
 <Subheading class="mb-4">Quote</Subheading>

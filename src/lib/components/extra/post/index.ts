@@ -154,3 +154,5 @@ export function blueskyPostToHTML(post: any, baseBskyUrl: string = 'https://bsky
 
 	return html.replace(/\n/g, '<br>');
 }
+
+export { default as Post } from './Post.svelte';

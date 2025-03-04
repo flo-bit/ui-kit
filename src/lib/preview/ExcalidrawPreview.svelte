@@ -1,6 +1,6 @@
 <script>
-	import Excalidraw from '$lib/components/excalidraw/Excalidraw.svelte';
-	import Heading from '$lib/components/heading/Heading.svelte';
+	import Excalidraw from '$lib/components/extra/excalidraw/Excalidraw.svelte';
+	import Heading from '$lib/components/base/heading/Heading.svelte';
 
 	import svg from './assets/demo.svg?raw';
 </script>

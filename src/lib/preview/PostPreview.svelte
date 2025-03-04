@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { blueskyPostToPostData, type PostData } from '$lib/components/post';
-	import Post from '$lib/components/post/Post.svelte';
-	import { onMount } from 'svelte';
+	import { blueskyPostToPostData, type PostData, Post} from '$lib/components/extra/post';
 
 	import data from '$lib/assets/bluesky-posts.json';
-	import Subheading from '$lib/components/heading/Subheading.svelte';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
 
 	let blueskyPosts: PostData[] | null = $derived(
 		data.posts.map((post: unknown) => {
@@ -38,8 +36,6 @@
 	// 	a.click();
 
 	// });
-
-
 </script>
 
 <Subheading class="mb-4">Posts from Bluesky</Subheading>

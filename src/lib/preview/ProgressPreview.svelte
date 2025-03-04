@@ -1,6 +1,6 @@
 <script>
-	import { Subheading } from '$lib/components/heading';
-	import { Progress } from '$lib/components/progress';
+	import { Subheading } from '$lib/components/base/heading';
+	import { Progress } from '$lib/components/extra/progress';
 
 	let progress = $state(20);
 

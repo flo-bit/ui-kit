@@ -1,7 +1,7 @@
 <script>
-	import { Subheading } from '$lib/components/heading';
-	import { Text } from '$lib/components/text';
-	import { Alert, AlertDescription, AlertTitle } from '$lib/components/alert';
+	import { Subheading } from '$lib/components/base/heading';
+	import { Text } from '$lib/components/base/text';
+	import { Alert, AlertDescription, AlertTitle } from '$lib/components/base/alert';
 </script>
 
 <Subheading>Alerts</Subheading>

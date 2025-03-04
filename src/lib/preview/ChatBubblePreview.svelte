@@ -1,9 +1,9 @@
 <script>
-	import Box from '$lib/components/box/Box.svelte';
-	import ChatBubble from '$lib/components/chat-bubble/ChatBubble.svelte';
-	import Heading from '$lib/components/heading/Heading.svelte';
+	import Box from '$lib/components/base/box/Box.svelte';
+	import ChatBubble from '$lib/components/base/chat-bubble/ChatBubble.svelte';
+	import Heading from '$lib/components/base/heading/Heading.svelte';
 
-	import ImageContainer from '$lib/components/image-container/ImageContainer.svelte';
+	import ImageContainer from '$lib/components/base/image-container/ImageContainer.svelte';
 
 	import cute from '$lib/assets/images/cute.jpg?as=run';
 </script>

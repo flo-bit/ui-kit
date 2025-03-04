@@ -1,5 +1,5 @@
 <script>
-	import { Heading } from '$lib/components/heading';
+	import { Heading } from '$lib/components/base/heading';
 	import AlertPreview from '$lib/preview/AlertPreview.svelte';
 	import AvatarPreview from '$lib/preview/AvatarPreview.svelte';
 	import BadgesPreview from '$lib/preview/BadgesPreview.svelte';

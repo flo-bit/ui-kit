@@ -1,6 +1,6 @@
 <script>
-	import ThemeToggle from '$lib/components/theme-toggle/ThemeToggle.svelte';
-	import WavyBackground from '$lib/components/wavy-background/WavyBackground.svelte';
+	import ThemeToggle from '$lib/components/base/theme-toggle/ThemeToggle.svelte';
+	import WavyBackground from '$lib/sections/wavy-background/WavyBackground.svelte';
 </script>
 
 <ThemeToggle class="absolute top-4 right-4" />

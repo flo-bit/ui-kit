@@ -4,7 +4,7 @@
 	import RelativeTime from './relative-time';
 	import Embed from './embeds/Embed.svelte';
 	import { cn } from '$lib/utils';
-	import Avatar from '../avatar/Avatar.svelte';
+	import Avatar from '../../base/avatar/Avatar.svelte';
 	import type { WithChildren, WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { PostData } from '.';

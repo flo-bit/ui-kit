@@ -1,7 +1,7 @@
 <script>
-	import ColorSelect from '$lib/components/color-select/ColorSelect.svelte';
-	import Subheading from '$lib/components/heading/Subheading.svelte';
-	import Text from '$lib/components/text/Text.svelte';
+	import ColorSelect from '$lib/components/extra/color-select/ColorSelect.svelte';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
+	import Text from '$lib/components/base/text/Text.svelte';
 </script>
 
 <Subheading>Color Select</Subheading>

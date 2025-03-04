@@ -1,6 +1,6 @@
 <script lang="ts">
-	import GithubCorner from '$lib/components/github-corner/GithubCorner.svelte';
-	import { Subheading } from '$lib/components/heading';
+	import GithubCorner from '$lib/components/base/github-corner/GithubCorner.svelte';
+	import { Subheading } from '$lib/components/base/heading';
 </script>
 
 <Subheading>Github Corner</Subheading>

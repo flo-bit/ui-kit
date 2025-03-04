@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { Button } from '$lib/components/button';
-	import Subheading from '$lib/components/heading/Subheading.svelte';
-	import Text from '$lib/components/text/Text.svelte';
+	import { Button } from '$lib/components/base/button';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
+	import Text from '$lib/components/base/text/Text.svelte';
 	import FullscreenVideoPlayer, {
 		videoPlayer
-	} from '$lib/components/video-player/FullscreenVideoPlayer.svelte';
-	import VideoPlayer from '$lib/components/video-player/VideoPlayer.svelte';
+	} from '$lib/components/extra/video-player/FullscreenVideoPlayer.svelte';
+	import VideoPlayer from '$lib/components/extra/video-player/VideoPlayer.svelte';
 </script>
 
 <Subheading>Video Player</Subheading>

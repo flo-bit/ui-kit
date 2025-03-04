@@ -1,6 +1,6 @@
 <script>
-	import { Subheading } from '$lib/components/heading';
-	import RingChart from '$lib/components/ring-chart/RingChart.svelte';
+	import { Subheading } from '$lib/components/base/heading';
+	import RingChart from '$lib/components/charts/ring-chart/RingChart.svelte';
 </script>
 
 <Subheading class="mb-4">Ring Chart</Subheading>

@@ -1,16 +1,15 @@
 <script>
-	import Button from '$lib/components/button/Button.svelte';
-	import Subheading from '$lib/components/heading/Subheading.svelte';
-	import Modal from '$lib/components/modal/Modal.svelte';
-	import Text from '$lib/components/text/Text.svelte';
+	import Button from '$lib/components/base/button/Button.svelte';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
+	import Modal from '$lib/components/base/modal/Modal.svelte';
+	import Text from '$lib/components/base/text/Text.svelte';
 	import { toast } from 'svelte-sonner';
-	import Image from '$lib/components/image/Image.svelte';
 
 	import cute from '$lib/assets/images/cute.jpg?as=run';
 	import BlueskyLoginModal, {
 		blueskyLoginModalState
-	} from '$lib/components/modal/BlueskyLoginModal.svelte';
-	import ImageContainer from '$lib/components/image-container/ImageContainer.svelte';
+	} from '$lib/components/base/modal/BlueskyLoginModal.svelte';
+	import ImageContainer from '$lib/components/base/image-container/ImageContainer.svelte';
 
 	let openDefault = $state(false);
 	let openCustom = $state(false);

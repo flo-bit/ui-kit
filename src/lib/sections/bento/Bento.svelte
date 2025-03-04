@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ScrollArea from '$lib/components/scroll-area/ScrollArea.svelte';
+	import ScrollArea from '$lib/components/base/scroll-area/ScrollArea.svelte';
 	import { cn } from '$lib/utils';
 
 	let background = 'bg-base-100 dark:bg-base-900 border border-base-200 dark:border-base-800';

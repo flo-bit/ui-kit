@@ -1,6 +1,6 @@
 <script>
-	import Subheading from '$lib/components/heading/Subheading.svelte';
-	import LineGraph from '$lib/components/line-graph/LineGraph.svelte';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
+	import LineGraph from '$lib/components/charts/line-graph/LineGraph.svelte';
 
 	const data = [
 		{ x: new Date('2020-01-01'), value: 10 },

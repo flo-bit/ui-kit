@@ -1,7 +1,7 @@
 <script>
-	import { Subheading } from '$lib/components/heading';
-	import { Text } from '$lib/components/text';
-	import { Avatar, AvatarGroup } from '$lib/components/avatar/';
+	import { Subheading } from '$lib/components/base/heading';
+	import { Text } from '$lib/components/base/text';
+	import { Avatar, AvatarGroup } from '$lib/components/base/avatar';
 </script>
 
 <Subheading>Avatar</Subheading>

@@ -1,8 +1,8 @@
 <script>
-	import { Subheading } from '$lib/components/heading';
-	import { Text } from '$lib/components/text';
-	import { Checkbox } from '$lib/components/checkbox';
-	import { Label } from '$lib/components/label';
+	import { Subheading } from '$lib/components/base/heading';
+	import { Text } from '$lib/components/base/text';
+	import { Checkbox } from '$lib/components/base/checkbox';
+	import { Label } from '$lib/components/base/label';
 </script>
 
 <Subheading>Checkboxes</Subheading>

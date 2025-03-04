@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ScrollArea from '$lib/components/scroll-area/ScrollArea.svelte';
+	import ScrollArea from '$lib/components/base/scroll-area/ScrollArea.svelte';
 
 	let { children } = $props();
 </script>

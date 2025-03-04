@@ -1,18 +1,18 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 
-	import { Button, buttonVariants } from '$lib/components/button';
-	import { ThemeToggle } from '$lib/components/theme-toggle';
-	import Navbar from '$lib/components/navbar/Navbar.svelte';
-	import Sidebar from '$lib/components/sidebar/Sidebar.svelte';
+	import { Button, buttonVariants } from '$lib/components/base/button';
+	import { ThemeToggle } from '$lib/components/base/theme-toggle';
+	import Navbar from '$lib/components/base/navbar/Navbar.svelte';
+	import Sidebar from '$lib/components/base/sidebar/Sidebar.svelte';
 	import Container from '$lib/preview/Container.svelte';
 
 	let { children } = $props();
 
-	import * as Popover from '$lib/components/popover';
+	import * as Popover from '$lib/components/base/popover';
 	import SelectTheme from '$lib/preview/SelectTheme.svelte';
 	import { cn } from '$lib/utils';
-	import Github from '$lib/components/social-icons/Github.svelte';
+	import Github from '$lib/components/extra/social-icons/Github.svelte';
 
 	const components = [
 		{ label: 'Alerts', href: 'alert' },

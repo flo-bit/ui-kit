@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Button } from '$lib/components/button';
-	import Subheading from '$lib/components/heading/Subheading.svelte';
+	import { Button } from '$lib/components/base/button';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
 	import { toast } from 'svelte-sonner';
 </script>
 

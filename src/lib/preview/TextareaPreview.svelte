@@ -1,7 +1,7 @@
 <script>
-	import { Subheading } from '$lib/components/heading';
-	import { Text } from '$lib/components/text';
-	import { Textarea } from '$lib/components/textarea';
+	import { Subheading } from '$lib/components/base/heading';
+	import { Text } from '$lib/components/base/text';
+	import { Textarea } from '$lib/components/base/textarea';
 </script>
 
 <Subheading>Textarea</Subheading>

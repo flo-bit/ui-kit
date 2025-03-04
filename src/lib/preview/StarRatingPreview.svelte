@@ -1,6 +1,6 @@
 <script>
-	import { Subheading } from '$lib/components/heading';
-	import { StarRating } from '$lib/components/star-rating';
+	import { Subheading } from '$lib/components/base/heading';
+	import { StarRating } from '$lib/components/extra/star-rating';
 </script>
 
 <Subheading>Star Rating</Subheading>

@@ -1,6 +1,6 @@
 <script>
-	import Box from '$lib/components/box/Box.svelte';
-	import Subheading from '$lib/components/heading/Subheading.svelte';
+	import Box from '$lib/components/base/box/Box.svelte';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
 </script>
 
 <Subheading class="mb-4">Box</Subheading>

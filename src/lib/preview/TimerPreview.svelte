@@ -3,11 +3,11 @@
 </script>
 
 <script>
-	import Box from '$lib/components/box/Box.svelte';
-	import Button from '$lib/components/button/Button.svelte';
-	import Subheading from '$lib/components/heading/Subheading.svelte';
-	import Timer from '$lib/components/timer/Timer.svelte';
-	import { TimerState } from '$lib/components/timer/TimerState.svelte';
+	import Box from '$lib/components/base/box/Box.svelte';
+	import Button from '$lib/components/base/button/Button.svelte';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
+	import Timer from '$lib/components/extra/timer/Timer.svelte';
+	import { TimerState } from '$lib/components/extra/timer/TimerState.svelte';
 </script>
 
 <Subheading class="mb-4">Timer</Subheading>

@@ -1,7 +1,7 @@
 <script>
-	import ImageCard from '$lib/components/card/ImageCard.svelte';
-	import { Subheading } from '$lib/components/heading';
-	import { Text } from '$lib/components/text';
+	import ImageCard from '$lib/components/base/card/ImageCard.svelte';
+	import { Subheading } from '$lib/components/base/heading';
+	import { Text } from '$lib/components/base/text';
 
 	import nature1 from '$lib/assets/images/nature1.jpg?as=run';
 	import nature2 from '$lib/assets/images/nature2.jpg?as=run';

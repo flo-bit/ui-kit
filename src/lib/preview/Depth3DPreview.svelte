@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import Depth3D from '$lib/components/depth3d';
-	import Subheading from '$lib/components/heading/Subheading.svelte';
+	import Depth3D from '$lib/components/3d/depth3d';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
 </script>
 
 <Subheading class="mb-6">Depth 3D</Subheading>

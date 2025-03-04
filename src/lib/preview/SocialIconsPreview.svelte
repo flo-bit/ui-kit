@@ -1,6 +1,6 @@
 <script>
-	import { Subheading } from '$lib/components/heading';
-	import { SocialIcons } from '$lib/components/social-icons';
+	import { Subheading } from '$lib/components/base/heading';
+	import { SocialIcons } from '$lib/components/extra/social-icons';
 </script>
 
 <Subheading class="mb-4">Social Icons</Subheading>

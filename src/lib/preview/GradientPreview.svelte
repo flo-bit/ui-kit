@@ -1,7 +1,7 @@
 <script>
-	import Box from '$lib/components/box/Box.svelte';
-	import Gradient from '$lib/components/gradient/Gradient.svelte';
-	import Subheading from '$lib/components/heading/Subheading.svelte';
+	import Box from '$lib/components/base/box/Box.svelte';
+	import Gradient from '$lib/components/extra/gradient/Gradient.svelte';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
 </script>
 
 <Subheading class="mb-6">Gradient</Subheading>

@@ -1,7 +1,7 @@
 <script>
-	import Box from "$lib/components/box/Box.svelte";
-	import { Button } from "$lib/components/button";
-	import FollowingPointer from "$lib/components/following-pointer/FollowingPointer.svelte";
+	import Box from "$lib/components/base/box/Box.svelte";
+	import { Button } from "$lib/components/base/button";
+	import FollowingPointer from "$lib/components/extra/following-pointer/FollowingPointer.svelte";
 
 </script>
 

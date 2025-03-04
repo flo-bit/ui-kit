@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Subheading } from '$lib/components/heading';
-	import Heatmap from '$lib/components/heatmap/Heatmap.svelte';
-	import ScrollArea from '$lib/components/scroll-area/ScrollArea.svelte';
+	import { Subheading } from '$lib/components/base/heading';
+	import Heatmap from '$lib/components/charts/heatmap/Heatmap.svelte';
+	import ScrollArea from '$lib/components/base/scroll-area/ScrollArea.svelte';
 
 	const heatmapData = Array.from({ length: 40 }, () =>
 		Array.from({ length: 7 }, () => Math.floor(Math.random() * 5))

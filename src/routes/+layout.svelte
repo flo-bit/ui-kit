@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import Head from '$lib/components/head/Head.svelte';
-	import { Toaster } from '$lib/components/sonner';
+	import Head from '$lib/components/base/head/Head.svelte';
+	import { Toaster } from '$lib/components/base/sonner';
 	import '../app.css';
 	let { children } = $props();
 </script>

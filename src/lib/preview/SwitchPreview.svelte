@@ -1,8 +1,8 @@
 <script>
-	import { Subheading } from '$lib/components/heading';
-	import { Switch } from '$lib/components/switch';
-	import { Label } from '$lib/components/label';
-	import { Text } from '$lib/components/text';
+	import { Subheading } from '$lib/components/base/heading';
+	import { Switch } from '$lib/components/base/switch';
+	import { Label } from '$lib/components/base/label';
+	import { Text } from '$lib/components/base/text';
 
 	let checked = $state(false);
 

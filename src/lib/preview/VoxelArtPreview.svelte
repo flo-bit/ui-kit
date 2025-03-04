@@ -1,9 +1,9 @@
 <script>
-	import VoxelArt from '$lib/components/voxel-art/VoxelArt.svelte';
+	import VoxelArt from '$lib/components/3d/voxel-art/VoxelArt.svelte';
 	import data from '$lib/assets/model-apple.json';
-	import Subheading from '$lib/components/heading/Subheading.svelte';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
 
-	import Text from '$lib/components/text/Text.svelte';
+	import Text from '$lib/components/base/text/Text.svelte';
 </script>
 
 <Subheading class="mb-4">Voxel Art</Subheading>

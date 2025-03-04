@@ -1,7 +1,7 @@
 <script>
-	import Subheading from '$lib/components/heading/Subheading.svelte';
-	import ScrollArea from '$lib/components/scroll-area/ScrollArea.svelte';
-	import Text from '$lib/components/text/Text.svelte';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
+	import ScrollArea from '$lib/components/base/scroll-area/ScrollArea.svelte';
+	import Text from '$lib/components/base/text/Text.svelte';
 
 	let content = `Doggo ipsum puggorino shoob I am bekom fat. Clouds such treat big ol pupper vvv, porgo. Aqua
 		doggo ur givin me a spook corgo heckin good boys heck much ruin diet, ur givin me a spook doggo

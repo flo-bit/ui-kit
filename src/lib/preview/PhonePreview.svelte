@@ -1,6 +1,6 @@
 <script>
-	import { Subheading } from '$lib/components/heading';
-	import Phone from '$lib/components/phone/Phone.svelte';
+	import { Subheading } from '$lib/components/base/heading';
+	import Phone from '$lib/components/extra/phone/Phone.svelte';
 </script>
 
 <Subheading class="mb-4">Phone</Subheading>

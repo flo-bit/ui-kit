@@ -1,7 +1,7 @@
 <script>
-	import { Subheading } from '$lib/components/heading';
-	import { Tooltip } from '$lib/components/tooltip';
-	import { Text } from '$lib/components/text';
+	import { Subheading } from '$lib/components/base/heading';
+	import { Tooltip } from '$lib/components/base/tooltip';
+	import { Text } from '$lib/components/base/text';
 </script>
 
 <Subheading>Tooltip</Subheading>

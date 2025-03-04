@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Subheading } from '$lib/components/heading';
-	import { Slider } from '$lib/components/slider';
+	import { Subheading } from '$lib/components/base/heading';
+	import { Slider } from '$lib/components/base/slider';
 
 	let value = $state(50);
 </script>

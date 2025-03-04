@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { Button } from '$lib/components/button';
+	import { Button } from '$lib/components/base/button';
 	import {
 		AudioAnalysis,
 		normalizeArray,
 		MicrophoneVisualizer,
 		SpeakerVisualizer,
 		BarVisualizer
-	} from '$lib/components/audio-visualizations';
-	import Subheading from '$lib/components/heading/Subheading.svelte';
+	} from '$lib/components/audio/audio-visualizations';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
 	import { onMount } from 'svelte';
 	import { ThemeWatcher } from '$lib/helper/ThemeWatcher.svelte';
 
