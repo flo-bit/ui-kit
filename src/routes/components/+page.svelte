@@ -37,7 +37,7 @@
 	import ImageCardPreview from '$lib/preview/ImageCardPreview.svelte';
 	import PostPreview from '$lib/preview/PostPreview.svelte';
 	import VoxelArtPreview from '$lib/preview/VoxelArtPreview.svelte';
-	import FollowingPointerPreview from '$lib/preview/FollowingPointerPreview.svelte';
+	import AudioVisualizerPreview from '$lib/preview/AudioVisualizerPreview.svelte';
 </script>
 
 <Heading class="mb-8">All Components</Heading>
@@ -45,6 +45,9 @@
 <div class="divide-base-200 dark:divide-base-900 flex w-full flex-col divide-y">
 	<div class="flex flex-col gap-4 py-8">
 		<AlertPreview></AlertPreview>
+	</div>
+	<div class="flex flex-col items-start gap-4 py-8">
+		<AudioVisualizerPreview></AudioVisualizerPreview>
 	</div>
 	<div class="flex flex-col gap-4 py-8">
 		<AvatarPreview></AvatarPreview>

@@ -52,7 +52,8 @@
 		{ label: 'Image Card', href: 'image-card' },
 		{ label: 'Post', href: 'post' },
 		{ label: 'Voxel Art', href: 'voxel-art' },
-		{ label: 'Following Pointer', href: 'following-pointer' }
+		{ label: 'Following Pointer', href: 'following-pointer' },
+		{ label: 'Audio Visualizer', href: 'audio-visualizer' }
 	];
 
 	// sort components by label

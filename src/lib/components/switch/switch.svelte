@@ -21,7 +21,7 @@
 >
 	<SwitchPrimitive.Thumb
 		class={cn(
-			'bg-base-500 data-[state=checked]:bg-accent-600 dark:bg-base-600 dark:data-[state=checked]:bg-accent-500 pointer-events-none block size-5 rounded-full shadow-lg ring-0 motion-save:transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0'
+			'bg-base-500 data-[state=checked]:bg-accent-600 dark:bg-base-600 dark:data-[state=checked]:bg-accent-500 pointer-events-none block size-5 rounded-full shadow-lg ring-0 motion-safe:transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0'
 		)}
 	/>
 </SwitchPrimitive.Root>
