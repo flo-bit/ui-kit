@@ -12,7 +12,6 @@
 	import CardModal from '$lib/cards/CardModal.svelte';
 	import CardNumberInput from '$lib/cards/CardNumberInput.svelte';
 	import CardScrollArea from '$lib/cards/CardScrollArea.svelte';
-	import CardSelect from '$lib/cards/CardSelect.svelte';
 	import CardSlider from '$lib/cards/CardSlider.svelte';
 	import CardSonner from '$lib/cards/CardSonner.svelte';
 	import CardSwitch from '$lib/cards/CardSwitch.svelte';
@@ -21,9 +20,7 @@
 	import { Button, buttonVariants } from '$lib/components/base/button';
 	import Navbar from '$lib/components/base/navbar/Navbar.svelte';
 	import * as Popover from '$lib/components/base/popover';
-	import ScrollArea from '$lib/components/base/scroll-area/ScrollArea.svelte';
 
-	import { Text } from '$lib/components/base/text';
 	import { ThemeToggle } from '$lib/components/base/theme-toggle';
 	import { Github } from '$lib/components/extra/social-icons';
 	import SelectTheme from '$lib/preview/SelectTheme.svelte';
@@ -39,19 +36,19 @@
 		{
 			component: CardAvatar,
 			className: '',
-			label: 'Avatar',
+			label: 'Avatars',
 			href: '/avatar'
 		},
 		{
 			component: CardBadge,
 			className: '',
-			label: 'Badge',
+			label: 'Badges',
 			href: '/badge'
 		},
 		{
 			component: CardBox,
 			className: '',
-			label: 'Box',
+			label: 'Boxes',
 			href: '/box'
 		},
 		{
@@ -75,37 +72,37 @@
 		{
 			component: CardImage,
 			className: '',
-			label: 'Image',
+			label: 'Images',
 			href: '/image'
 		},
 		{
 			component: CardInput,
 			className: '',
-			label: 'Input',
+			label: 'Inputs',
 			href: '/input'
 		},
 		{
 			component: CardModal,
 			className: '',
-			label: 'Modal',
+			label: 'Modals',
 			href: '/modal'
 		},
 		{
 			component: CardNumberInput,
 			className: '',
-			label: 'Number Input',
+			label: 'Number Inputs',
 			href: '/number-input'
 		},
 		{
 			component: CardScrollArea,
 			className: 'p-2',
-			label: 'Scroll Area',
+			label: 'Scroll Areas',
 			href: '/scroll-area'
 		},
 		{
 			component: CardSlider,
 			className: '',
-			label: 'Slider',
+			label: 'Sliders',
 			href: '/slider'
 		},
 		{
@@ -117,19 +114,19 @@
 		{
 			component: CardSwitch,
 			className: '',
-			label: 'Switch',
+			label: 'Switches',
 			href: '/switch'
 		},
 		{
 			component: CardTextarea,
 			className: '',
-			label: 'Textarea',
+			label: 'Textareas',
 			href: '/textarea'
 		},
 		{
 			component: CardTooltip,
 			className: '',
-			label: 'Tooltip',
+			label: 'Tooltips',
 			href: '/tooltip'
 		}
 	];
@@ -191,12 +188,12 @@
 			{#each cards as card}
 				<div class="group relative transition-opacity duration-150 hover:opacity-90 flex flex-col gap-3 md:gap-4 items-start">
 					<div
-						class="bg-base-100 w-full dark:bg-base-900/30 border-base-200 dark:border-base-900 relative h-44 rounded-2xl border overflow-hidden"
+						class="bg-base-100 pointer-events-none w-full dark:bg-base-900/30 border-base-200 dark:border-base-900 relative h-44 rounded-2xl border overflow-hidden"
 					>
 						<div
 							class={cn(
 								'absolute inset-0 flex h-full w-full flex-col items-center justify-center gap-2 p-6 transition-transform duration-300 group-hover:scale-105',
-								card.className
+								card.className,
 							)}
 							aria-hidden="true"
 							tabindex="-1"

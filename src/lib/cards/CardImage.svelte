@@ -8,4 +8,5 @@
 	alt="Another cute animal"
 	class="object-cover max-h-full max-w-full"
 	containerClasses="border-base-300 dark:border-base-700 overflow-hidden rounded-2xl border rounded-2xl overflow-hidden"
+	useThemeColor
 />
