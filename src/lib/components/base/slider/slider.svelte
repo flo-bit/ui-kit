@@ -7,6 +7,7 @@
 		value = $bindable(),
 		orientation = 'horizontal',
 		class: className,
+		tabindex = undefined,
 		...restProps
 	}: WithoutChildrenOrChild<SliderPrimitive.RootProps> = $props();
 </script>
@@ -23,6 +24,7 @@ get along, so we shut typescript up by casting `value` to `never`.
 		"relative flex touch-none items-center select-none data-[orientation='horizontal']:w-full data-[orientation='vertical']:h-full data-[orientation='vertical']:min-h-44 data-[orientation='vertical']:w-auto data-[orientation='vertical']:flex-col",
 		className
 	)}
+	tabindex={tabindex}
 	{...restProps}
 >
 	{#snippet children({ thumbs })}
@@ -42,6 +44,7 @@ get along, so we shut typescript up by casting `value` to `never`.
 			<SliderPrimitive.Thumb
 				index={thumb}
 				class="border-accent-400 dark:border-accent-600 bg-accent-600 dark:bg-accent-800 focus-visible:outline-accent-700 dark:focus-visible:outline-accent-400 block size-6 rounded-full border-2 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50"
+				tabindex={tabindex}
 			/>
 		{/each}
 	{/snippet}

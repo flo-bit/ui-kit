@@ -13,6 +13,7 @@
 		class: className,
 		ref = $bindable(null),
 		inputRef = $bindable(null),
+		tabindex = undefined,
 		...restProps
 	}: WithElementRef<WithoutChildrenOrChild<HTMLAttributes<HTMLDivElement>>> & {
 		min?: number;
@@ -96,6 +97,7 @@
 			{value}
 			oninput={handleInput}
 			bind:this={inputRef}
+			tabindex={tabindex}
 		/>
 		<NumberFlow
 			{value}
