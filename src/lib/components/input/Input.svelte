@@ -15,7 +15,7 @@
 					'focus:ring-base-800 dark:focus:ring-base-200 bg-base-100/50 dark:bg-base-900/50 text-base-900 dark:text-base-50 ring-base-200 dark:ring-base-800 placeholder:text-base-900/50 dark:placeholder:text-base-50/50'
 			},
 			sizeVariant: {
-				default: 'px-3 py-1.5',
+				default: 'px-3 py-1.5 text-base',
 				sm: 'px-3 text-xs py-1.5 font-base',
 				lg: 'px-4 text-lg py-2 font-semibold'
 			}

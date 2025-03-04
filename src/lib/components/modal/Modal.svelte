@@ -73,7 +73,7 @@
 			{...contentProps}
 			class={cn(
 				'motion-safe:data-[state=open]:animate-in motion-safe:data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-bottom-1/2 data-[state=open]:slide-in-from-bottom-1/2',
-				'fixed bottom-2 left-[50%] z-50 grid w-[calc(100%-1rem)] max-w-lg translate-x-[-50%] md:top-[50%] md:bottom-auto md:translate-y-[-50%]',
+				'fixed left-[50%] z-50 grid w-[calc(100%-1rem)] max-w-lg translate-x-[-50%] top-[50%] translate-y-[-50%]',
 				'bg-base-50 dark:bg-base-900 border-base-200/80 dark:border-base-800 gap-4 rounded-2xl border p-6',
 				className
 			)}
