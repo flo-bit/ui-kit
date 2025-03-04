@@ -11,7 +11,10 @@
 		return formatDate(value, PeriodType.Month, { variant: 'short' });
 	};
 
-	let { data } = $props();
+	let { data, showYAxis = false }: {
+		data: { x: Date; value: number }[];
+		showYAxis?: boolean;
+	} = $props();
 </script>
 
 <div class="h-44 w-full overflow-visible p-4 line-graph-container">
@@ -31,13 +34,13 @@
 				tickLabelProps={{
 					rotate: 315,
 					textAnchor: 'end',
-					class: 'fill-accent-700 dark:fill-accent-600 font-medium text-xs'
+					class: 'fill-accent-700 dark:fill-accent-600 font-medium text-xs ' + (showYAxis ? '' : ' hidden')
 				}}
 				ticks={4}
 				classes={{
 					tickLabel: 'pl-4'
 				}}
-			/>
+				/>
 
 			<Axis
 				placement="bottom"
