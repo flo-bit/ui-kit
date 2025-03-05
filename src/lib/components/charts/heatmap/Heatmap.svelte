@@ -14,7 +14,7 @@
 	} = $props();
 </script>
 
-<div class="flex max-w-full gap-0.5 sm:gap-1 justify-end">
+<div class="flex max-w-full gap-0.5 sm:gap-1 justify-start">
 	{#each data as week}
 		<div class="flex w-full flex-col gap-0.5 sm:gap-1">
 			{#each week as day}

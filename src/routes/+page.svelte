@@ -23,12 +23,14 @@
 	import CardHeatmap from '$lib/cards/graphs/CardHeatmap.svelte';
 	import CardLineGraph from '$lib/cards/graphs/CardLineGraph.svelte';
 	import CardRingChart from '$lib/cards/graphs/CardRingChart.svelte';
-	import { Button, buttonVariants } from '$lib/components/base/button';
+	import Badge from '$lib/components/base/badge/Badge.svelte';
+	import { buttonVariants } from '$lib/components/base/button';
 	import Navbar from '$lib/components/base/navbar/Navbar.svelte';
 	import * as Popover from '$lib/components/base/popover';
 
 	import { ThemeToggle } from '$lib/components/base/theme-toggle';
 	import { Github } from '$lib/components/extra/social-icons';
+	import Logo from '$lib/docs/Logo.svelte';
 	import SelectTheme from '$lib/preview/SelectTheme.svelte';
 	import { cn } from '$lib/utils';
 
@@ -184,21 +186,8 @@
 </script>
 
 <Navbar>
-	<div>
-		<Button variant="link" class="block font-normal lg:hidden" popovertarget="mobile-menu">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 24 24"
-				fill="currentColor"
-				class="size-6!"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M3 9a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 9Zm0 6.75a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
-					clip-rule="evenodd"
-				></path>
-			</svg>
-		</Button>
+	<div class="flex items-center gap-2 ml-3">
+		<Logo />
 	</div>
 	<div class="flex items-end gap-4">
 		<Popover.Root>

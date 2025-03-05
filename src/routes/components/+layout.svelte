@@ -13,6 +13,7 @@
 	import SelectTheme from '$lib/preview/SelectTheme.svelte';
 	import { cn } from '$lib/utils';
 	import Github from '$lib/components/extra/social-icons/Github.svelte';
+	import Logo from '$lib/docs/Logo.svelte';
 
 	const components = [
 		{ label: 'Alerts', href: 'alert' },
@@ -53,7 +54,8 @@
 		{ label: 'Post', href: 'post' },
 		{ label: 'Voxel Art', href: 'voxel-art' },
 		{ label: 'Following Pointer', href: 'following-pointer' },
-		{ label: 'Audio Visualizer', href: 'audio-visualizer' }
+		{ label: 'Audio Visualizer', href: 'audio-visualizer' },
+		{ label: 'Accordion', href: 'accordion' }
 	];
 
 	// sort components by label
@@ -63,7 +65,7 @@
 </script>
 
 <Navbar hasSidebar>
-	<div>
+	<div class="flex items-center gap-2">
 		<Button variant="link" class="block font-normal lg:hidden" popovertarget="mobile-menu">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -78,6 +80,8 @@
 				></path>
 			</svg>
 		</Button>
+
+		<Logo />
 	</div>
 	<div class="flex items-end gap-4">
 		<Popover.Root>
