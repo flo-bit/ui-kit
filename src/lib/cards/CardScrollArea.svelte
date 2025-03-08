@@ -37,8 +37,10 @@
 		'h-[200px] w-[350px] rounded-2xl border border-base-200 dark:border-base-800 text-base-900 dark:text-base-100 bg-base-100 dark:bg-base-900';
 </script>
 
-<ScrollArea type="always" class={"h-full w-full text-base-900 dark:text-base-100 px-2 pt-0"} tabindex={-1}>
+<div class={"h-full w-full text-base-900 dark:text-base-100 px-2 pt-0 overflow-hidden relative"}>
 	<div class="p-4">
 		{content}
 	</div>
-</ScrollArea>
+
+	<div class="absolute top-2 right-2 w-1.5 h-16 rounded-full bg-base-200 dark:bg-base-800"></div>
+</div>

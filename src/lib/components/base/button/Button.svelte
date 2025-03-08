@@ -13,6 +13,7 @@
 				secondary:
 					'focus-visible:outline-base-800 dark:focus-visible:outline-base-200 bg-base-300/30 dark:bg-base-800/50 text-base-900 dark:text-base-50 hover:bg-base-300/50 dark:hover:bg-base-700/50 border border-base-300/50 dark:border-base-700/30',
 				link: 'focus-visible:outline-base-900 dark:focus-visible:outline-base-50 text-base-800 dark:text-base-200 font-semibold hover:text-accent-600 dark:hover:text-accent-400 data-[current=true]:text-accent-600 dark:data-[current=true]:text-accent-400',
+				ghost: 'focus-visible:outline-base-900 dark:focus-visible:outline-base-50 text-base-800 dark:text-base-200 font-semibold hover:text-accent-600 hover:bg-base-400/5 data-[current=true]:bg-base-500/5 dark:hover:text-accent-400 dark:hover:bg-base-700/5 data-[current=true]:text-accent-600 dark:data-[current=true]:text-accent-400 dark:data-[current=true]:bg-base-500/5',
 
 				red: 'focus-visible:outline-red-500 border border-red-500/20 dark:border-red-500/20 hover:bg-red-500/20 dark:hover:bg-red-500/20 bg-red-500/10 dark:bg-red-500/10 text-red-700 dark:text-red-400',
 				yellow:
@@ -86,7 +87,7 @@
 {#if href}
 	<a
 		bind:this={ref}
-		data-current={variant === 'link' && checkCurrent && page.url.pathname === href}
+		data-current={checkCurrent && page.url.pathname === href}
 		class={cn(buttonVariants({ variant, size }), className)}
 		{href}
 		{...restProps}

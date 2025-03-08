@@ -8,9 +8,11 @@
 		class: className,
 		mobileClasses,
 		children,
+		mobileOnly = false,
 		...restProps
 	}: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
 		mobileClasses?: string;
+		mobileOnly?: boolean;
 	} = $props();
 </script>
 
@@ -28,16 +30,18 @@
 	</ScrollArea>
 </div>
 
-<div
-	class={cn(
-		'border-base-200 bg-base-50 dark:border-base-300/10 dark:bg-base-950 fixed top-0 bottom-0 left-0 z-40 hidden h-full -translate-x-72 overflow-y-auto border-r lg:block lg:w-72 lg:translate-x-0 xl:w-80',
-		className
-	)}
->
-	<ScrollArea type="hover" class="h-full">
-		{@render children?.()}
-	</ScrollArea>
-</div>
+{#if !mobileOnly}
+	<div
+		class={cn(
+			'border-base-200 bg-base-50 dark:border-base-300/10 dark:bg-base-950 fixed top-0 bottom-0 left-0 z-40 hidden h-full -translate-x-72 overflow-y-auto border-r lg:block lg:w-72 lg:translate-x-0 xl:w-80',
+			className
+		)}
+	>
+		<ScrollArea type="hover" class="h-full">
+			{@render children?.()}
+		</ScrollArea>
+	</div>
+{/if}
 
 <style>
 	.mobileMenuPopover {

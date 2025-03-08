@@ -1,7 +1,73 @@
-<script lang="ts">
+<script lang="ts" module>
+	import type { WithElementRef } from 'bits-ui';
+	import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
+	import { type VariantProps, tv } from 'tailwind-variants';
 	import { cn } from '$lib/utils';
+
+	export const numberInputVariants = tv({
+		base: 'group flex w-full max-w-44 touch-manipulation items-stretch justify-between rounded-2xl ring focus-within:ring-2',
+		variants: {
+			variant: {
+				primary:
+					'bg-accent-500/5 focus-within:ring-accent-400 dark:focus-within:ring-accent-600 text-accent-500 ring-accent-500/20 dark:ring-accent-500/20',
+				secondary:
+					'',
+			},
+			size: {
+				default: 'text-base font-medium max-w-32',
+				sm: 'text-sm',
+				lg: 'text-3xl font-semibold max-w-44',
+			}
+		},
+		defaultVariants: {
+			variant: 'primary',
+			size: 'default'
+		}
+	});
+
+	export const numberInputButtonVariants = tv({
+		base: 'button-number-input flex cursor-pointer items-center pr-[.5em] pl-[.5em] transition-colors disabled:cursor-not-allowed disabled:opacity-50',
+		variants: {
+			variant: {
+				primary: 'hover:text-accent-600 dark:hover:text-accent-400 disabled:hover:text-accent-500 dark:disabled:hover:text-accent-500',
+				secondary: 'hover:text-base-600 dark:hover:text-base-400 disabled:hover:text-base-500 dark:disabled:hover:text-base-500',
+			},
+		},
+	});
+
+	export const numberInputInputVariants = tv({
+		base: 'number-input w-full [appearance:textfield] border-0 bg-transparent text-center font-[inherit] font-semibold text-transparent outline-none [-moz-appearance:_textfield] focus-visible:ring-0 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none',
+		variants: {
+			variant: {
+				primary: '',
+				secondary: '',
+			},
+			size: {
+				default: 'p-1',
+				sm: '',
+				lg: 'p-2',
+			}
+		},
+	});
+	export type NumberInputVariant = VariantProps<typeof numberInputVariants>['variant'];
+	export type NumberInputSize = VariantProps<typeof numberInputVariants>['size'];
+
+	export type NumberInputProps = WithElementRef<WithoutChildrenOrChild<HTMLAttributes<HTMLDivElement>>> & {
+			variant?: NumberInputVariant;
+			size?: NumberInputSize;
+		min?: number;
+		value?: number;
+		max?: number;
+		defaultValue?: number;
+		class?: string;
+		step?: number;
+		inputRef?: HTMLInputElement | null;
+		};
+</script>
+
+<script lang="ts">
 	import NumberFlow from '@number-flow/svelte';
-	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
+	import type { WithoutChildrenOrChild } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 
 	let {
@@ -14,16 +80,10 @@
 		ref = $bindable(null),
 		inputRef = $bindable(null),
 		tabindex = undefined,
+		variant = 'primary',
+		size = 'default',
 		...restProps
-	}: WithElementRef<WithoutChildrenOrChild<HTMLAttributes<HTMLDivElement>>> & {
-		min?: number;
-		value?: number;
-		max?: number;
-		defaultValue?: number;
-		class?: string;
-		step?: number;
-		inputRef?: HTMLInputElement | null;
-	} = $props();
+	}: NumberInputProps = $props();
 
 	let input: HTMLInputElement;
 	let animated = $state(true);
@@ -54,7 +114,7 @@
 
 <div
 	class={cn(
-		'bg-accent-500/5 focus-within:ring-accent-400 dark:focus-within:ring-accent-600 text-accent-500 group ring-accent-500/20 dark:ring-accent-500/20 flex w-full max-w-44 touch-manipulation items-stretch justify-between rounded-2xl text-3xl font-semibold ring transition-[box-shadow] focus-within:ring-2',
+		numberInputVariants({ variant, size }),
 		className
 	)}
 	bind:this={ref}
@@ -63,7 +123,7 @@
 	<button
 		aria-hidden="true"
 		tabindex={-1}
-		class="button-number-input hover:text-accent-600 dark:hover:text-accent-400 disabled:hover:text-accent-500 dark:disabled:hover:text-accent-500 flex cursor-pointer items-center pr-[.325em] pl-[.5em] transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+		class={numberInputButtonVariants({ variant })}
 		disabled={min != null && value <= min}
 		onpointerdown={(event) => handlePointerDown(event, -step)}
 	>
@@ -83,9 +143,8 @@
 	>
 		<input
 			class={cn(
-				'number-input',
+				numberInputInputVariants({ variant, size }),
 				showCaret ? 'caret-accent-500' : 'caret-transparent',
-				'w-full [appearance:textfield] border-0 bg-transparent py-2 text-center font-[inherit] text-3xl font-semibold text-transparent outline-none [-moz-appearance:_textfield] focus-visible:ring-0 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
 			)}
 			style="font-kerning: none"
 			type="number"
@@ -114,7 +173,7 @@
 	<button
 		aria-hidden="true"
 		tabindex="-1"
-		class="button-number-input hover:text-accent-600 dark:hover:text-accent-400 disabled:hover:text-accent-500 dark:disabled:hover:text-accent-500 flex cursor-pointer items-center pr-[.5em] pl-[.325em] transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+		class={numberInputButtonVariants({variant})}
 		disabled={max != null && value >= max}
 		onpointerdown={(event) => handlePointerDown(event, step)}
 	>

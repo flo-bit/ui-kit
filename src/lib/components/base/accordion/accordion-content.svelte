@@ -13,12 +13,10 @@
 <AccordionPrimitive.Content
 	bind:ref
 	class={cn(
-		'text-base-800 dark:text-base-200 overflow-hidden text-sm transition-all mt-2',
+		'text-base-800 dark:text-base-200 pt-2 overflow-hidden text-sm transition-all pb-4',
 		className
 	)}
 	{...restProps}
 >
-	<div class="pt-0 pb-4">
-		{@render children?.()}
-	</div>
+	{@render children?.()}
 </AccordionPrimitive.Content>
