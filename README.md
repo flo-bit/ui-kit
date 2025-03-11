@@ -1,6 +1,7 @@
-[![hero2](https://github.com/user-attachments/assets/2573273f-573b-44bf-8e2d-f0d1c261b79f)](https://flo-bit.dev/ui-kit)
-
 # my ui kit
+
+>[!WARNING]
+> This is a work in progress and not ready to be used yet.
 
 svelte v5 + tailwind v4
 

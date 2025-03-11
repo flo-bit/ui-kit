@@ -59,13 +59,21 @@
 	components.sort((a, b) => a.label.localeCompare(b.label));
 
 	let { mobileOnly = false } = $props();
+
+	const handleClick = (e: MouseEvent) => {
+		// close the mobile menu
+		const popover = document.getElementById("mobile-menu");
+		if (popover) {
+			popover.hidePopover();
+		}
+	};
 </script>
 
 <Sidebar {mobileOnly}>
 	<div class="mb-8 flex flex-col items-start p-4">
-		<Button variant="link" href={base}>Home</Button>
-		<Button variant="link" href="{base}/components">All</Button>
-		<Button variant="link" href="{base}/components/theme" class="mb-8">Theme</Button>
+		<Button variant="link" onclick={handleClick} href={base}>Home</Button>
+		<Button variant="link" onclick={handleClick} href="{base}/components">All</Button>
+		<Button variant="link" onclick={handleClick} href="{base}/components/theme" class="mb-8">Theme</Button>
 
 		<script lang="ts">
 			import { Accordion, AccordionItem } from '$lib/components/base/accordion';
@@ -75,7 +83,7 @@
 		<Accordion type="single" class="w-full" value="base-components">
 			<AccordionItem value="base-components" title="Base Components" triggerClasses="text-sm px-3 font-semibold" contentClasses="flex flex-col gap-1 items-start px-2">
 				{#each baseComponents as component}
-					<Button variant="ghost" href="{base}/components/{component.href}" class="w-full justify-start">{component.label}</Button
+					<Button variant="ghost" onclick={handleClick} href="{base}/components/{component.href}" class="w-full justify-start">{component.label}</Button
 					>
 				{/each}
 			</AccordionItem>
