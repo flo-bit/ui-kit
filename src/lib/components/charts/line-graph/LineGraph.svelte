@@ -6,18 +6,26 @@
 	import { scaleTime } from 'd3-scale';
 	import { formatDate, PeriodType } from '@layerstack/utils';
 	import { format } from 'date-fns';
+	import { cn } from '$lib/utils';
 
 	const defaultValueFormat = (value: any) => {
 		return formatDate(value, PeriodType.Month, { variant: 'short' });
 	};
 
-	let { data, showYAxis = false }: {
+	let {
+		data,
+		showYAxis = true,
+		showXAxis = true,
+		class: className
+	}: {
 		data: { x: Date; value: number }[];
 		showYAxis?: boolean;
+		showXAxis?: boolean;
+		class?: string;
 	} = $props();
 </script>
 
-<div class="h-44 w-full overflow-visible p-4 line-graph-container">
+<div class={cn('line-graph-container h-44 w-full overflow-visible p-4', className)}>
 	<Chart
 		{data}
 		xScale={scaleTime()}
@@ -34,18 +42,20 @@
 				tickLabelProps={{
 					rotate: 315,
 					textAnchor: 'end',
-					class: 'fill-accent-700 dark:fill-accent-600 font-medium text-xs ' + (showYAxis ? '' : ' hidden')
+					class:
+						'fill-accent-700 dark:fill-accent-600 font-medium text-xs ' +
+						(showYAxis ? '' : ' hidden')
 				}}
 				ticks={4}
 				classes={{
 					tickLabel: 'pl-4'
 				}}
-				/>
+			/>
 
 			<Axis
 				placement="bottom"
 				tickLabelProps={{
-					class: 'fill-accent-700 dark:fill-accent-600 font-medium text-xs'
+					class: 'fill-accent-700 dark:fill-accent-600 font-medium text-xs' + (showXAxis ? '' : ' hidden')
 				}}
 				rule
 				format={defaultValueFormat}
@@ -77,7 +87,6 @@
 		</Tooltip.Root>
 	</Chart>
 </div>
-
 
 <noscript>
 	<div

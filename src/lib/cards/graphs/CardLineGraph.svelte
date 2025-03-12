@@ -13,4 +13,4 @@
 	];
 </script>
 
-<LineGraph {data} />
+<LineGraph {data} class="h-36" showXAxis={false} showYAxis={false} />

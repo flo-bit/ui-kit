@@ -72,7 +72,7 @@
 <Sidebar {mobileOnly}>
 	<div class="mb-8 flex flex-col items-start p-4">
 		<Button variant="link" onclick={handleClick} href={base}>Home</Button>
-		<Button variant="link" onclick={handleClick} href="{base}/components">All</Button>
+		<Button variant="link" onclick={handleClick} href="{base}/components">Philosophy</Button>
 		<Button variant="link" onclick={handleClick} href="{base}/components/theme" class="mb-8">Theme</Button>
 
 		<script lang="ts">
