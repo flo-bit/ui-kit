@@ -15,7 +15,7 @@
 
 <Head
 	title="fox ui"
-	description="fox ui - work in progress"
+	description="🦊 fox ui, svelte 5 & tailwind 4"
 	image={base + '/opengraph.png'}
 	url="https://flo-bit.dev/ui-kit"
 	emojiFavicon="🦊"
