@@ -1,8 +1,4 @@
 <script>
-	import Subheading from '$lib/components/base/heading/Subheading.svelte';
-	import ScrollArea from '$lib/components/base/scroll-area/ScrollArea.svelte';
-	import Text from '$lib/components/base/text/Text.svelte';
-
 	let content = `Doggo ipsum puggorino shoob I am bekom fat. Clouds such treat big ol pupper vvv, porgo. Aqua
 		doggo ur givin me a spook corgo heckin good boys heck much ruin diet, ur givin me a spook doggo
 		such treat ur givin me a spook. What a nice floof extremely cuuuuuute waggy wags floofs dat
@@ -32,9 +28,6 @@
 		heckin snoot, maximum borkdrive wow such tempt you are doin me a concern. Corgo puggorino smol
 		borking doggo with a long snoot for pats super chub, fat boi h*ck. Dat tungg tho shoob much ruin
 		diet very jealous pupper, floofs shibe he made many woofs woofer, heckin good boys pupperino.`;
-
-	let classes =
-		'h-[200px] w-[350px] rounded-2xl border border-base-200 dark:border-base-800 text-base-900 dark:text-base-100 bg-base-100 dark:bg-base-900';
 </script>
 
 <div class={"h-full w-full text-base-900 dark:text-base-100 px-2 pt-0 overflow-hidden relative"}>

@@ -26,7 +26,9 @@
 		{ label: 'Number Input', href: 'number-input' },
 		{ label: 'Cards', href: 'cards' },
 		{ label: 'Accordion', href: 'accordion' },
-		{ label: 'Sonner', href: 'sonner' }
+		{ label: 'Sonner', href: 'sonner' },
+		{ label: 'Prose', href: 'prose' },
+		{ label: 'Head', href: 'head' }
 	];
 
 	baseComponents.sort((a, b) => a.label.localeCompare(b.label));

@@ -29,7 +29,6 @@ npm install fox-ui-svelte
 You can change the colors to your liking.
 
 ```css
-/* this is a comment */
 @source "../node_modules/fox-ui-svelte";
 
 @theme {

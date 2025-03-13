@@ -23,6 +23,8 @@
 	import CardHeatmap from '$docs/cards/graphs/CardHeatmap.svelte';
 	import CardLineGraph from '$docs/cards/graphs/CardLineGraph.svelte';
 	import CardRingChart from '$docs/cards/graphs/CardRingChart.svelte';
+	import CardProse from '$docs/cards/base/CardProse.svelte';
+	import CardAccordion from '$docs/cards/base/CardAccordion.svelte';
 	import { cn } from '$lib/utils';
 
 	let baseCards = [
@@ -139,6 +141,18 @@
 			className: 'px-0 gap-0',
 			label: 'Head',
 			href: 'head'
+		},
+		{
+			component: CardProse,
+			className: '',
+			label: 'Prose',
+			href: 'prose'
+		},
+		{
+			component: CardAccordion,
+			className: '',
+			label: 'Accordions',
+			href: 'accordion'
 		}
 	];
 
@@ -181,7 +195,7 @@
 	];
 </script>
 
-<h2 class="text-base-800 dark:text-base-200 mb-4 text-xl font-medium">Base components</h2>
+<h2 class="text-base-800 dark:text-base-200 mb-4 text-xl font-semibold">Base components</h2>
 <div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:grid-cols-4">
 	{#each baseCards as card}
 		<div
@@ -212,7 +226,7 @@
 	{/each}
 </div>
 
-<h2 class="text-base-800 dark:text-base-200 mt-24 mb-4 text-xl font-medium">Graph components</h2>
+<h2 class="text-base-800 dark:text-base-200 mt-24 mb-4 text-xl font-semibold">Graph components</h2>
 <div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:grid-cols-4">
 	{#each graphCards as card}
 		<div
