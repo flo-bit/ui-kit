@@ -77,16 +77,14 @@
 	<div class="mb-8 flex flex-col items-start p-4">
 		<Logo class="mb-8 py-1 px-3" />
 
-		
-		<Button variant="ghost" onclick={handleClick} href="{base}/docs/quick-start" class="w-full justify-start mb-1">Quick Start</Button>
-		<Button variant="ghost" onclick={handleClick} href="{base}/docs/philosophy" class="w-full justify-start mb-1">Philosophy</Button>
-		<Button variant="ghost" onclick={handleClick} href="{base}/components/theme" class="w-full justify-start mb-8">Theme</Button>
-
+		<Button data-sveltekit-keepfocus variant="ghost" onclick={handleClick} href="{base}/docs/quick-start" class="w-full justify-start mb-1">Quick Start</Button>
+		<Button data-sveltekit-keepfocus variant="ghost" onclick={handleClick} href="{base}/docs/philosophy" class="w-full justify-start mb-1">Philosophy</Button>
+		<Button data-sveltekit-keepfocus variant="ghost" onclick={handleClick} href="{base}/components/theme" class="w-full justify-start mb-6">Theme</Button>
 
 		<Accordion type="single" class="w-full" value="base-components">
-			<AccordionItem value="base-components" title="Base Components" triggerClasses="text-sm px-3 font-semibold" contentClasses="flex flex-col gap-1 items-start px-2">
+			<AccordionItem value="base-components" class="border-0" title="Base Components" triggerClasses="text-sm px-3 py-1 font-semibold" contentClasses="flex flex-col gap-1 items-start px-1">
 				{#each baseComponents as component}
-					<Button variant="ghost" onclick={handleClick} href="{base}/components/base/{component.href}" class="w-full justify-start">{component.label}</Button
+					<Button data-sveltekit-keepfocus variant="ghost" onclick={handleClick} href="{base}/components/base/{component.href}" class="w-full justify-start">{component.label}</Button
 					>
 				{/each}
 			</AccordionItem>

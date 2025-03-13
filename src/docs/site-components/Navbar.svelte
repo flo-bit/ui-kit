@@ -33,6 +33,6 @@
 		<ThemeSelectDropdown />
 		<ThemeToggle />
 
-		<Github href="https://github.com/flo-bit/ui-kit" class="py-2 pr-4 pl-2" />
+		<Github href="https://github.com/flo-bit/ui-kit" class="p-2 mr-2" />
 	</div>
 </Navbar>

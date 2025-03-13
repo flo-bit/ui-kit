@@ -1,6 +1,8 @@
 <script>
-	import AccordionPreview from '$docs/preview/base/AccordionPreview.svelte';
-
+	import Prose from '$lib/components/base/prose/Prose.svelte';
+	import AccordionDocs from './Accordion.md';
 </script>
 
-<AccordionPreview />
+<Prose>
+	<AccordionDocs />
+</Prose>

@@ -1,5 +1,8 @@
-<script>
-	import ButtonsPreview from '$docs/preview/base/ButtonsPreview.svelte';
+<script lang="ts">
+	import ButtonDocs from './Button.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<ButtonsPreview />
+<Prose>
+	<ButtonDocs />
+</Prose>

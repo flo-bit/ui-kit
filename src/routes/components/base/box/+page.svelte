@@ -1,5 +1,8 @@
-<script>
-	import BoxPreview from '$docs/preview/base/BoxPreview.svelte';
+<script lang="ts">
+	import BoxDocs from './Box.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<BoxPreview />
+<Prose>
+	<BoxDocs />
+</Prose>

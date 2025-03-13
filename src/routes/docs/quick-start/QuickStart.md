@@ -1,14 +1,10 @@
 <script>
-	import { Alert } from '$lib/components/base/alert';
+	import PublicAlphaAlert from '$docs/site-components/PublicAlphaAlert.svelte';
 </script>
 
-<Alert title="Work in progress" class="mb-8 not-prose" type="warning" variant="default">
-	<span>
-		This ui kit is still under development. Not really ready to be used yet. Public alpha coming soon.
-	</span>
-</Alert>
-
 # Quick Start
+
+<PublicAlphaAlert />
 
 ## 1. Create a new svelte project with tailwind css
 

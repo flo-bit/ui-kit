@@ -1,9 +1,8 @@
-<script>
-	import ProsePreview from "$docs/preview/base/ProsePreview.svelte";
-	import Test from "./test.md";
-
+<script lang="ts">
+	import ProseDocs from './Prose.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<ProsePreview>
-	<Test />
-</ProsePreview>
+<Prose>
+	<ProseDocs />
+</Prose>

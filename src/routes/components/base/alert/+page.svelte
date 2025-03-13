@@ -1,5 +1,8 @@
-<script>
-	import AlertPreview from '$docs/preview/base/AlertPreview.svelte';
+<script lang="ts">
+	import AlertDocs from './Alert.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<AlertPreview />
+<Prose>
+	<AlertDocs />
+</Prose>

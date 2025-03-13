@@ -8,6 +8,7 @@
 		title,
 		description,
 		href,
+		class: className,
 		onclick
 	}: {
 		src: string;
@@ -16,6 +17,7 @@
 		description?: string;
 		href?: string;
 		onclick?: () => void;
+		class?: string;
 	} = $props();
 </script>
 
@@ -26,7 +28,8 @@
 <div
 	class={cn(
 		'group relative flex w-full flex-col gap-5 transition-opacity duration-300 ease-in-out',
-		href || onclick ? 'hover:opacity-80' : ''
+		href || onclick ? 'hover:opacity-80' : '',
+		className
 	)}
 >
 	<ImageContainer

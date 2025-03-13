@@ -1,5 +1,8 @@
-<script>
-	import InputPreview from '$docs/preview/base/InputPreview.svelte';
+<script lang="ts">
+	import InputDocs from './Input.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<InputPreview />
+<Prose>
+	<InputDocs />
+</Prose>

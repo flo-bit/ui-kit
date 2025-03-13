@@ -1,5 +1,8 @@
-<script>
-	import ScrollAreaPreview from '$docs/preview/base/ScrollAreaPreview.svelte';
+<script lang="ts">
+	import ScrollAreaDocs from './ScrollArea.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<ScrollAreaPreview />
+<Prose>
+	<ScrollAreaDocs />
+</Prose>

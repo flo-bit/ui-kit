@@ -57,7 +57,7 @@
 	variant="link"
 	onclick={toggleTheme}
 	class={cn(
-		'theme-toggle focus-visible:outline-base-900 dark:focus-visible:outline-base-100 flex items-center justify-center rounded-lg focus-visible:outline-2',
+		'theme-toggle focus-visible:outline-base-900 dark:focus-visible:outline-base-100 flex items-center justify-center rounded-2xl focus-visible:outline-2',
 		className
 	)}
 	{...restProps}

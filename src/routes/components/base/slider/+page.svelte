@@ -1,5 +1,8 @@
-<script>
-	import SliderPreview from '$docs/preview/base/SliderPreview.svelte';
+<script lang="ts">
+	import SliderDocs from './Slider.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<SliderPreview />
+<Prose>
+	<SliderDocs />
+</Prose>

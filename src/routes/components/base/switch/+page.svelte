@@ -1,5 +1,8 @@
-<script>
-	import SwitchPreview from '$docs/preview/base/SwitchPreview.svelte';
+<script lang="ts">
+	import SwitchDocs from './Switch.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<SwitchPreview />
+<Prose>
+	<SwitchDocs />
+</Prose>

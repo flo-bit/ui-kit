@@ -1,5 +1,8 @@
-<script>
-	import ModalPreview from '$docs/preview/base/ModalPreview.svelte';
+<script lang="ts">
+	import ModalDocs from './Modal.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<ModalPreview />
+<Prose>
+	<ModalDocs />
+</Prose>

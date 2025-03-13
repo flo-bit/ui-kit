@@ -1,5 +1,8 @@
-<script>
-	import TooltipPreview from '$docs/preview/base/TooltipPreview.svelte';
+<script lang="ts">
+	import TooltipDocs from './Tooltip.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<TooltipPreview />
+<Prose>
+	<TooltipDocs />
+</Prose>

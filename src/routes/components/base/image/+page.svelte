@@ -1,5 +1,8 @@
-<script>
-	import ImagePreview from '$docs/preview/base/ImagePreview.svelte';
+<script lang="ts">
+	import ImageDocs from './Image.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<ImagePreview />
+<Prose>
+	<ImageDocs />
+</Prose>

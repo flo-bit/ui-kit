@@ -226,6 +226,7 @@
 	{/each}
 </div>
 
+<!-- 
 <h2 class="text-base-800 dark:text-base-200 mt-24 mb-4 text-xl font-semibold">Graph components</h2>
 <div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:grid-cols-4">
 	{#each graphCards as card}
@@ -255,4 +256,4 @@
 			</a>
 		</div>
 	{/each}
-</div>
+</div> -->

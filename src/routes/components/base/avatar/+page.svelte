@@ -1,5 +1,8 @@
-<script>
-	import AvatarPreview from '$docs/preview/base/AvatarPreview.svelte';
+<script lang="ts">
+	import AvatarDocs from './Avatar.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<AvatarPreview />
+<Prose>
+	<AvatarDocs />
+</Prose>

@@ -1,5 +1,8 @@
-<script>
-	import SonnerPreview from '$docs/preview/base/SonnerPreview.svelte';
+<script lang="ts">
+	import SonnerDocs from './Sonner.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<SonnerPreview />
+<Prose>
+	<SonnerDocs />
+</Prose>
