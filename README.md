@@ -5,25 +5,25 @@
 
 svelte v5 + tailwind v4
 
-demo: https://flo-bit.dev/ui-kit
+See all components here: https://flo-bit.dev/ui-kit
 
-## How to use
+## Quickstart
 
 **Work in progress, only for testing purposes**
 
-## 1. Create a new svelte project with tailwind css (including `@tailwindcss/typography` and `@tailwindcss/forms` plugins)
+### 1. Create a new svelte project with tailwind css (including `@tailwindcss/typography` and `@tailwindcss/forms` plugins)
 
 ```bash
 npx sv create my-project
 ```
 
-## 2. Install fox-ui-svelte
+### 2. Install fox-ui-svelte
 
 ```bash
 npm install fox-ui-svelte
 ```
 
-## 3. set theme variables in your app.css (changing `gray` and `blue` to your preferred colors, using find and replace).
+### 3. set theme variables in your app.css (changing `gray` and `blue` to your preferred colors, using find and replace).
 
 ```css
 @source "../node_modules/fox-ui-svelte";
@@ -55,7 +55,7 @@ npm install fox-ui-svelte
 }
 ```
 
-## 4. Use the components
+### 4. Use the components
 
 ```svelte
 <script>
