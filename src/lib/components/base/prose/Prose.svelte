@@ -10,14 +10,14 @@
 	{@render children?.()}
 </div>
 <div
-	class="prose prose-base-dark dark:prose-invert prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-500"
+	class="prose prose-base-dark dark:prose-invert prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-500 hidden dark:block"
 >
 	{@render children?.()}
 </div>
 
 <style>
 	.prose-base {
-		--tw-prose-body: var(--color-accent-700);
+		--tw-prose-body: var(--color-base-700);
 		--tw-prose-headings: var(--color-base-900);
 		--tw-prose-lead: var(--color-base-600);
 		--tw-prose-links: var(--color-base-900);

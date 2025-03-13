@@ -75,15 +75,11 @@
 		<Button variant="link" onclick={handleClick} href="{base}/components">Philosophy</Button>
 		<Button variant="link" onclick={handleClick} href="{base}/components/theme" class="mb-8">Theme</Button>
 
-		<script lang="ts">
-			import { Accordion, AccordionItem } from '$lib/components/base/accordion';
-			import Subheading from '$lib/components/base/heading/Subheading.svelte';
-		</script>
 
 		<Accordion type="single" class="w-full" value="base-components">
 			<AccordionItem value="base-components" title="Base Components" triggerClasses="text-sm px-3 font-semibold" contentClasses="flex flex-col gap-1 items-start px-2">
 				{#each baseComponents as component}
-					<Button variant="ghost" onclick={handleClick} href="{base}/components/{component.href}" class="w-full justify-start">{component.label}</Button
+					<Button variant="ghost" onclick={handleClick} href="{base}/components/base/{component.href}" class="w-full justify-start">{component.label}</Button
 					>
 				{/each}
 			</AccordionItem>

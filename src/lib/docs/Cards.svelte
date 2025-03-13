@@ -30,115 +30,115 @@
 			component: CardAlerts,
 			className: '',
 			label: 'Alerts',
-			href: '/alert'
+			href: 'alert'
 		},
 		{
 			component: CardAvatar,
 			className: '',
 			label: 'Avatars',
-			href: '/avatar'
+			href: 'avatar'
 		},
 		{
 			component: CardBadge,
 			className: '',
 			label: 'Badges',
-			href: '/badge'
+			href: 'badge'
 		},
 		{
 			component: CardBox,
 			className: '',
 			label: 'Boxes',
-			href: '/box'
+			href: 'box'
 		},
 		{
 			component: CardButtons,
 			className: '',
 			label: 'Buttons',
-			href: '/button'
+			href: 'button'
 		},
 		{
 			component: CardChatBubble,
 			className: '',
 			label: 'Chat Bubbles',
-			href: '/chat-bubble'
+			href: 'chat-bubble'
 		},
 		{
 			component: CardCheckbox,
 			className: '',
 			label: 'Checkboxes',
-			href: '/checkbox'
+			href: 'checkbox'
 		},
 		{
 			component: CardImage,
 			className: '',
 			label: 'Images',
-			href: '/image'
+			href: 'image'
 		},
 		{
 			component: CardInput,
 			className: '',
 			label: 'Inputs',
-			href: '/input'
+			href: 'input'
 		},
 		{
 			component: CardModal,
 			className: '',
 			label: 'Modals',
-			href: '/modal'
+			href: 'modal'
 		},
 		{
 			component: CardNumberInput,
 			className: '',
 			label: 'Number Inputs',
-			href: '/number-input'
+			href: 'number-input'
 		},
 		{
 			component: CardScrollArea,
 			className: 'p-2',
 			label: 'Scroll Areas',
-			href: '/scroll-area'
+			href: 'scroll-area'
 		},
 		{
 			component: CardSlider,
 			className: '',
 			label: 'Sliders',
-			href: '/slider'
+			href: 'slider'
 		},
 		{
 			component: CardSonner,
 			className: '',
 			label: 'Sonner',
-			href: '/sonner'
+			href: 'sonner'
 		},
 		{
 			component: CardSwitch,
 			className: '',
 			label: 'Switches',
-			href: '/switch'
+			href: 'switch'
 		},
 		{
 			component: CardTextarea,
 			className: '',
 			label: 'Textareas',
-			href: '/textarea'
+			href: 'textarea'
 		},
 		{
 			component: CardTooltip,
 			className: '',
 			label: 'Tooltips',
-			href: '/tooltip'
+			href: 'tooltip'
 		},
 		{
 			component: CardCard,
 			className: '',
 			label: 'Cards',
-			href: '/cards'
+			href: 'cards'
 		},
 		{
 			component: CardHead,
 			className: 'px-0 gap-0',
 			label: 'Head',
-			href: '/head'
+			href: 'head'
 		}
 	];
 
@@ -152,19 +152,19 @@
 			component: CardHeatmap,
 			className: '',
 			label: 'Heatmap',
-			href: '/heatmap'
+			href: 'heatmap'
 		},
 		{
 			component: CardLineGraph,
 			className: '',
 			label: 'Line Graph',
-			href: '/line-graph'
+			href: 'line-graph'
 		},
 		{
 			component: CardRingChart,
 			className: '',
 			label: 'Ring Chart',
-			href: '/ring-chart'
+			href: 'ring-chart'
 		}
 	];
 
@@ -176,7 +176,7 @@
 			component: CardGithubCorner,
 			className: '',
 			label: 'Github Corner',
-			href: '/github-corner'
+			href: 'github-corner'
 		}
 	];
 </script>
@@ -202,7 +202,7 @@
 				</div>
 			</div>
 			<a
-				href={base + `/components${card.href}`}
+				href={base + `/components/base/${card.href}`}
 				class="focus-visible:outline-accent-500 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2"
 			>
 				<span class="text-base-900 dark:text-base-50 mx-2 text-sm font-semibold">{card.label}</span>
@@ -233,7 +233,7 @@
 				</div>
 			</div>
 			<a
-				href={base + `/components${card.href}`}
+				href={base + `/components/graphs/${card.href}`}
 				class="focus-visible:outline-accent-500 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2"
 			>
 				<span class="text-base-900 dark:text-base-50 mx-2 text-sm font-semibold">{card.label}</span>
