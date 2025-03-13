@@ -1,5 +1,5 @@
 <script>
-	import WaveformAudioPlayerPreview from '$lib/preview/WaveformAudioPlayerPreview.svelte';
+	import WaveformAudioPlayerPreview from '$docs/preview/WaveformAudioPlayerPreview.svelte';
 </script>
 
 <WaveformAudioPlayerPreview />

@@ -1,5 +1,5 @@
 <script>
-	import AccordionPreview from "$lib/preview/AccordionPreview.svelte";
+	import AccordionPreview from '$docs/preview/base/AccordionPreview.svelte';
 
 </script>
 

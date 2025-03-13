@@ -1,5 +1,5 @@
 <script>
-	import ImagePreview from '$lib/preview/ImagePreview.svelte';
+	import ImagePreview from '$docs/preview/base/ImagePreview.svelte';
 </script>
 
 <ImagePreview />

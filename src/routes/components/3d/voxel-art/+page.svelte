@@ -1,5 +1,5 @@
 <script>
-	import VoxelArtPreview from '$lib/preview/VoxelArtPreview.svelte';
+	import VoxelArtPreview from '$docs/preview/VoxelArtPreview.svelte';
 </script>
 
 <VoxelArtPreview />

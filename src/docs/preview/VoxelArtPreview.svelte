@@ -1,6 +1,6 @@
 <script>
 	import VoxelArt from '$lib/components/3d/voxel-art/VoxelArt.svelte';
-	import data from '$lib/assets/model-apple.json';
+	import data from '$docs/assets/model-apple.json';
 	import Subheading from '$lib/components/base/heading/Subheading.svelte';
 
 	import Text from '$lib/components/base/text/Text.svelte';

@@ -1,5 +1,5 @@
 <script>
-	import FollowingPointerPreview from '$lib/preview/FollowingPointerPreview.svelte';
+	import FollowingPointerPreview from '$docs/preview/FollowingPointerPreview.svelte';
 </script>
 
 <FollowingPointerPreview />

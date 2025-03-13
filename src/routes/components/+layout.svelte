@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Navbar from '$lib/docs/Navbar.svelte';
-	import Sidebar from '$lib/docs/Sidebar.svelte';
-	import Container from '$lib/preview/Container.svelte';
+	import Navbar from '$docs/site-components/Navbar.svelte';
+	import Sidebar from '$docs/site-components/Sidebar.svelte';
+	import Container from '$docs/preview/Container.svelte';
 
 	let { children } = $props();
 </script>

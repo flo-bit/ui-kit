@@ -1,5 +1,5 @@
 <script>
-	import StarRatingPreview from '$lib/preview/StarRatingPreview.svelte';
+	import StarRatingPreview from '$docs/preview/StarRatingPreview.svelte';
 </script>
 
 <StarRatingPreview />

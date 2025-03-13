@@ -1,5 +1,5 @@
 <script>
-	import CheckboxPreview from '$lib/preview/CheckboxPreview.svelte';
+	import CheckboxPreview from '$docs/preview/base/CheckboxPreview.svelte';
 </script>
 
 <CheckboxPreview />

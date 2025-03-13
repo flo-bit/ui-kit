@@ -1,5 +1,5 @@
 <script>
-	import ChatBubblePreview from '$lib/preview/ChatBubblePreview.svelte';
+	import ChatBubblePreview from '$docs/preview/base/ChatBubblePreview.svelte';
 </script>
 
 <ChatBubblePreview />

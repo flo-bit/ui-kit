@@ -1,5 +1,5 @@
 <script>
-	import BadgesPreview from '$lib/preview/BadgesPreview.svelte';
+	import BadgesPreview from '$docs/preview/base/BadgesPreview.svelte';
 </script>
 
 <BadgesPreview />

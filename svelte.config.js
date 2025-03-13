@@ -15,6 +15,9 @@ const config = {
 		adapter: adapter(),
 		paths: {
 			base: '/ui-kit'
+		},
+		alias: {
+			$docs: 'src/docs'
 		}
 	},
 

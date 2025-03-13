@@ -1,5 +1,5 @@
 <script>
-	import ScrollAreaPreview from '$lib/preview/ScrollAreaPreview.svelte';
+	import ScrollAreaPreview from '$docs/preview/base/ScrollAreaPreview.svelte';
 </script>
 
 <ScrollAreaPreview />

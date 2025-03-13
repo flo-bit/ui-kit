@@ -1,5 +1,5 @@
 <script>
-	import ColorSelectPreview from '$lib/preview/ColorSelectPreview.svelte';
+	import ColorSelectPreview from '$docs/preview/ColorSelectPreview.svelte';
 </script>
 
 <ColorSelectPreview />

@@ -3,9 +3,9 @@
 	import { Subheading } from '$lib/components/base/heading';
 	import { Text } from '$lib/components/base/text';
 
-	import nature1 from '$lib/assets/images/nature1.jpg?as=run';
-	import nature2 from '$lib/assets/images/nature2.jpg?as=run';
-	import nature3 from '$lib/assets/images/nature3.jpg?as=run';
+	import nature1 from '$docs/assets/images/nature1.jpg?as=run';
+	import nature2 from '$docs/assets/images/nature2.jpg?as=run';
+	import nature3 from '$docs/assets/images/nature3.jpg?as=run';
 	import { toast } from 'svelte-sonner';
 </script>
 

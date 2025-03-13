@@ -1,5 +1,5 @@
 <script>
-	import nature from '$lib/assets/images/nature2.jpg?as=run';
+	import nature from '$docs/assets/images/nature2.jpg?as=run';
 	import Image from '$lib/components/base/image/Image.svelte';
 	import Text from '$lib/components/base/text/Text.svelte';
 </script>

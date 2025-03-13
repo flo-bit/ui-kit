@@ -1,5 +1,5 @@
 <script>
-	import PostPreview from '$lib/preview/PostPreview.svelte';
+	import PostPreview from '$docs/preview/PostPreview.svelte';
 </script>
 
 <PostPreview />

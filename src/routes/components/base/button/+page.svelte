@@ -1,5 +1,5 @@
 <script>
-	import ButtonsPreview from '$lib/preview/ButtonsPreview.svelte';
+	import ButtonsPreview from '$docs/preview/base/ButtonsPreview.svelte';
 </script>
 
 <ButtonsPreview />

@@ -1,5 +1,5 @@
 <script>
-	import RingChartPreview from '$lib/preview/RingChartPreview.svelte';
+	import RingChartPreview from '$docs/preview/RingChartPreview.svelte';
 </script>
 
 <RingChartPreview />

@@ -1,5 +1,5 @@
 <script>
-	import HeatmapPreview from '$lib/preview/HeatmapPreview.svelte';
+	import HeatmapPreview from '$docs/preview/HeatmapPreview.svelte';
 </script>
 
 <HeatmapPreview />

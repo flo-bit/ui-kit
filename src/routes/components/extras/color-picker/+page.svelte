@@ -1,5 +1,5 @@
 <script>
-	import ColorPickerPreview from "$lib/preview/ColorPickerPreview.svelte";
+	import ColorPickerPreview from "$docs/preview/ColorPickerPreview.svelte";
 
 </script>
 

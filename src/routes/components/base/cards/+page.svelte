@@ -1,5 +1,5 @@
 <script>
-	import ImageCardPreview from '$lib/preview/ImageCardPreview.svelte';
+	import ImageCardPreview from '$docs/preview/base/ImageCardPreview.svelte';
 </script>
 
 <ImageCardPreview />

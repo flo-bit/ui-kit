@@ -1,5 +1,5 @@
 <script>
-	import AvatarPreview from '$lib/preview/AvatarPreview.svelte';
+	import AvatarPreview from '$docs/preview/base/AvatarPreview.svelte';
 </script>
 
 <AvatarPreview />

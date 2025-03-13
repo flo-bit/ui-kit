@@ -1,5 +1,5 @@
 <script>
-	import TooltipPreview from '$lib/preview/TooltipPreview.svelte';
+	import TooltipPreview from '$docs/preview/base/TooltipPreview.svelte';
 </script>
 
 <TooltipPreview />

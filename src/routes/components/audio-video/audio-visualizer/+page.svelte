@@ -1,5 +1,5 @@
 <script>
-	import AudioVisualizerPreview from '$lib/preview/AudioVisualizerPreview.svelte';
+	import AudioVisualizerPreview from '$docs/preview/AudioVisualizerPreview.svelte';
 </script>
 
 <AudioVisualizerPreview />

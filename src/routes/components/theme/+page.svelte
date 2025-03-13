@@ -1,5 +1,5 @@
 <script>
-	import SelectTheme from '$lib/preview/SelectTheme.svelte';
+	import SelectTheme from '$docs/preview/SelectTheme.svelte';
 </script>
 
 <SelectTheme />

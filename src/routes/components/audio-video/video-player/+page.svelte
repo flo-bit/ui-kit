@@ -1,5 +1,5 @@
 <script>
-	import VideoPlayerPreview from '$lib/preview/VideoPlayerPreview.svelte';
+	import VideoPlayerPreview from '$docs/preview/VideoPlayerPreview.svelte';
 </script>
 
 <VideoPlayerPreview />

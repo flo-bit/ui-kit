@@ -5,7 +5,7 @@
 
 	import ImageContainer from '$lib/components/base/image-container/ImageContainer.svelte';
 
-	import cute from '$lib/assets/images/cute.jpg?as=run';
+	import cute from '$docs/assets/images/cute.jpg?as=run';
 </script>
 
 <Heading class="mb-4">Chat Bubble</Heading>

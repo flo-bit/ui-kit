@@ -1,5 +1,5 @@
 <script>
-	import AlertPreview from '$lib/preview/AlertPreview.svelte';
+	import AlertPreview from '$docs/preview/base/AlertPreview.svelte';
 </script>
 
 <AlertPreview />

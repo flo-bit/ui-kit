@@ -5,7 +5,7 @@
 	import Text from '$lib/components/base/text/Text.svelte';
 	import { toast } from 'svelte-sonner';
 
-	import cute from '$lib/assets/images/cute.jpg?as=run';
+	import cute from '$docs/assets/images/cute.jpg?as=run';
 	import BlueskyLoginModal, {
 		blueskyLoginModalState
 	} from '$lib/components/base/modal/BlueskyLoginModal.svelte';

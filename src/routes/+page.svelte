@@ -2,9 +2,9 @@
 	import { base } from '$app/paths';
 	import { Alert } from '$lib/components/base/alert';
 	import { Button } from '$lib/components/base/button';
-	import Cards from '$lib/docs/Cards.svelte';
-	import Navbar from '$lib/docs/Navbar.svelte';
-	import Sidebar from '$lib/docs/Sidebar.svelte';
+	import Cards from '$docs/site-components/Cards.svelte';
+	import Navbar from '$docs/site-components/Navbar.svelte';
+	import Sidebar from '$docs/site-components/Sidebar.svelte';
 </script>
 
 <Navbar />

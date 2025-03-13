@@ -3,11 +3,11 @@
 	import { PaneGroup, Pane, PaneResizer } from 'paneforge';
 	import { draggable, droppable, type DragDropState } from './dragndrop';
 
-	import TimerPreview from '$lib/preview/TimerPreview.svelte';
-	import WaveformAudioPlayerPreview from '$lib/preview/WaveformAudioPlayerPreview.svelte';
-	import NumberInputPreview from '$lib/preview/NumberInputPreview.svelte';
+	import TimerPreview from '$docs/preview/TimerPreview.svelte';
+	import WaveformAudioPlayerPreview from '$docs/preview/WaveformAudioPlayerPreview.svelte';
+	import NumberInputPreview from '$docs/preview/base/NumberInputPreview.svelte';
 	import ThemeToggle from '$lib/components/base/theme-toggle/ThemeToggle.svelte';
-	import SelectTheme from '$lib/preview/SelectTheme.svelte';
+	import SelectTheme from '$docs/preview/SelectTheme.svelte';
 
 	let contentToPanes = $state({
 		first: '#pane1',

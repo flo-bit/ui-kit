@@ -1,5 +1,5 @@
 <script>
-	import BoxPreview from '$lib/preview/BoxPreview.svelte';
+	import BoxPreview from '$docs/preview/base/BoxPreview.svelte';
 </script>
 
 <BoxPreview />

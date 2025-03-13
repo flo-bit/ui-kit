@@ -1,5 +1,5 @@
 <script>
-	import SwitchPreview from '$lib/preview/SwitchPreview.svelte';
+	import SwitchPreview from '$docs/preview/base/SwitchPreview.svelte';
 </script>
 
 <SwitchPreview />

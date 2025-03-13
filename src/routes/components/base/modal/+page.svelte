@@ -1,5 +1,5 @@
 <script>
-	import ModalPreview from '$lib/preview/ModalPreview.svelte';
+	import ModalPreview from '$docs/preview/base/ModalPreview.svelte';
 </script>
 
 <ModalPreview />

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import SelectPreview from '$lib/preview/SelectPreview.svelte';
+	import SelectPreview from '$docs/preview/base/SelectPreview.svelte';
 </script>
 
 <SelectPreview />

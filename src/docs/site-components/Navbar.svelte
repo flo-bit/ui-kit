@@ -4,8 +4,8 @@
 	import Navbar from '$lib/components/base/navbar/Navbar.svelte';
 
 	import Github from '$lib/components/extra/social-icons/Github.svelte';
-	import Logo from '$lib/docs/Logo.svelte';
-	import ThemeSelectDropdown from '$lib/docs/ThemeSelectDropdown.svelte';
+	import Logo from './Logo.svelte';
+	import ThemeSelectDropdown from './ThemeSelectDropdown.svelte';
 
 	let { hasSidebar = false } = $props();
 </script>

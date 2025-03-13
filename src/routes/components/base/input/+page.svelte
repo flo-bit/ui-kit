@@ -1,5 +1,5 @@
 <script>
-	import InputPreview from '$lib/preview/InputPreview.svelte';
+	import InputPreview from '$docs/preview/base/InputPreview.svelte';
 </script>
 
 <InputPreview />

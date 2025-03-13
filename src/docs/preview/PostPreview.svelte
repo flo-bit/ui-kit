@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { blueskyPostToPostData, type PostData, Post} from '$lib/components/extra/post';
 
-	import data from '$lib/assets/bluesky-posts.json';
+	import data from '$docs/assets/bluesky-posts.json';
 	import Subheading from '$lib/components/base/heading/Subheading.svelte';
 
 	let blueskyPosts: PostData[] | null = $derived(

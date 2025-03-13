@@ -1,5 +1,5 @@
 <script>
-	import SocialIconsPreview from '$lib/preview/SocialIconsPreview.svelte';
+	import SocialIconsPreview from '$docs/preview/SocialIconsPreview.svelte';
 </script>
 
 <SocialIconsPreview />

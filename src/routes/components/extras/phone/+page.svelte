@@ -1,5 +1,5 @@
 <script>
-	import PhonePreview from '$lib/preview/PhonePreview.svelte';
+	import PhonePreview from '$docs/preview/PhonePreview.svelte';
 </script>
 
 <PhonePreview />

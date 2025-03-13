@@ -3,8 +3,8 @@
 	import ImageContainer from '$lib/components/base/image-container/ImageContainer.svelte';
 	import Text from '$lib/components/base/text/Text.svelte';
 
-	import cute from '$lib/assets/images/cute.jpg?as=run';
-	import cute2 from '$lib/assets/images/cute2.jpg?as=run';
+	import cute from '$docs/assets/images/cute.jpg?as=run';
+	import cute2 from '$docs/assets/images/cute2.jpg?as=run';
 </script>
 
 <Subheading class="mb-4">Images</Subheading>

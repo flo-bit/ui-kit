@@ -1,5 +1,5 @@
 <script>
-	import TextareaPreview from '$lib/preview/TextareaPreview.svelte';
+	import TextareaPreview from '$docs/preview/base/TextareaPreview.svelte';
 </script>
 
 <TextareaPreview />

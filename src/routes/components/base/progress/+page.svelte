@@ -1,5 +1,5 @@
 <script>
-	import ProgressPreview from '$lib/preview/ProgressPreview.svelte';
+	import ProgressPreview from '$docs/preview/base/ProgressPreview.svelte';
 </script>
 
 <ProgressPreview />

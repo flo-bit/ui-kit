@@ -1,5 +1,5 @@
 <script>
-	import SonnerPreview from '$lib/preview/SonnerPreview.svelte';
+	import SonnerPreview from '$docs/preview/base/SonnerPreview.svelte';
 </script>
 
 <SonnerPreview />

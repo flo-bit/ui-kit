@@ -1,5 +1,5 @@
 <script>
-	import GithubCornerPreview from '$lib/preview/GithubCornerPreview.svelte';
+	import GithubCornerPreview from '$docs/preview/GithubCornerPreview.svelte';
 </script>
 
 <GithubCornerPreview />
