@@ -59,14 +59,3 @@ npm install fox-ui-svelte
 	import { Button } from 'fox-ui-svelte';
 </script>
 ```
-
-
-If you want to use the image component, add the plugin to your vite config
-
-```ts
-import { imagetools } from '@zerodevx/svelte-img/vite';
-
-export default defineConfig({
-	plugins: [sveltekit(), imagetools()]
-});
-```
