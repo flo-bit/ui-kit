@@ -1,7 +1,15 @@
 {
 	"name": "fox-ui-svelte",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"type": "module",
+	"description": "Beautiful UI components built with Tailwind 4 and Svelte 5",
+	"homepage": "https://flo-bit.dev/ui-kit",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/flo-bit/ui-kit.git"
+	},
+	"author": "flo-bit (http://flo-bit.dev/)",
+	"bugs": "https://github.com/flo-bit/ui-kit/issues",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
