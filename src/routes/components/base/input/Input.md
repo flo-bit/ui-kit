@@ -27,9 +27,15 @@ Secondary
 ## Usage
 
 ```svelte
+<script>
+	import { Input } from 'fox-ui-svelte';
+
+	let value = $state('');
+</script>
+
 <Input 
 	sizeVariant="sm" 
-	placeholder="Enter text here (small)" 
+	placeholder="Enter text here" 
 	bind:value={value}
 />
 ```

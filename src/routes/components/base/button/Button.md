@@ -178,6 +178,10 @@ Colors
 ## Usage
 
 ```svelte
+<script>
+	import { Button } from 'fox-ui-svelte';
+</script>
+
 <Button variant="primary" size="sm">
 	Button
 </Button>

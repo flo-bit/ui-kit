@@ -2,10 +2,13 @@
 	import { base } from '$app/paths';
 	import ModalPicker from '$lib/components/3d/model-picker/ModalPicker.svelte';
 	import Button from '$lib/components/base/button/Button.svelte';
+	import Subheading from '$lib/components/base/heading/Subheading.svelte';
 	import { toast } from 'svelte-sonner';
 
 	let open = $state(false);
 </script>
+
+<Subheading class="mb-4">Model Picker</Subheading>
 
 <ModalPicker
 	items={[

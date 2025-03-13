@@ -52,11 +52,15 @@ In a grid
 ## Usage
 
 ```svelte
+<script>
+	import { ImageCard } from 'fox-ui-svelte';
+</script>
+
 <ImageCard 
-	src={nature1} 
+	src={'/image.jpg'} 
 	alt="" 
-	title="Best places to visit" 
-	description="Hello World!" 
+	title="Card title" 
+	description="Card description" 
 	href="#" 
 />
 ```

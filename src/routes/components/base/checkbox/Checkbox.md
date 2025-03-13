@@ -40,9 +40,16 @@ With Label
 ## Usage
 
 ```svelte
+<script>
+	import { Checkbox } from 'fox-ui-svelte';
+
+	let checked = $state(false);
+</script>
+
 <Checkbox 
 	sizeVariant="sm"
 	variant="primary" 
+	bind:checked
 />
 ```
 

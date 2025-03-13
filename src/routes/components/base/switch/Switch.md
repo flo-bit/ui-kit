@@ -19,7 +19,8 @@
 	<Switch disabled />
 </div>
 
-<Text class="mt-4 mb-2">With Label</Text>
+With Label
+
 <div class="flex items-center space-x-2">
 	<Switch id="terms-switch" aria-labelledby="terms-switch-label" />
 	<Label
@@ -34,5 +35,11 @@
 ## Usage
 
 ```svelte
+<script>
+	import { Switch } from 'fox-ui-svelte';
+
+	let checked = $state(false);
+</script>
+
 <Switch bind:checked />
 ```

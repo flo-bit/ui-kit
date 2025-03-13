@@ -23,3 +23,15 @@ Secondary
 	<Textarea placeholder="Enter text here (default)" variant="secondary" />
 	<Textarea placeholder="Enter text here (large)" variant="secondary" sizeVariant="lg" />
 </div>
+
+## Usage
+
+```svelte
+<script>
+	import { Textarea } from 'fox-ui-svelte';
+
+	let value = $state('');
+</script>
+
+<Textarea placeholder="Enter text here" bind:value />
+```

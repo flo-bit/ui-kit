@@ -1,19 +1,23 @@
 <script lang="ts">
 	let { children } = $props();
 
+	import AddCopyCodeButtons from '$lib/components/base/copy-code-button/AddCopyCodeButtons.svelte';
+
 	// this is fucking hacky, todo fix that
 </script>
 
 <div
-	class="prose prose-base prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-500 dark:hidden w-full"
+	class="prose prose-base prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-500 dark:hidden w-full prose-pre:rounded-2xl"
 >
 	{@render children?.()}
 </div>
 <div
-	class="prose prose-base-dark dark:prose-invert prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-500 hidden dark:block w-full"
+	class="prose prose-base-dark dark:prose-invert prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-500 hidden dark:block w-full prose-pre:rounded-2xl"
 >
 	{@render children?.()}
 </div>
+
+<AddCopyCodeButtons />
 
 <style>
 	.prose-base {

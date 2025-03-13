@@ -46,7 +46,17 @@
 
 ```svelte
 <script>
+	import { Modal, Button } from 'fox-ui-svelte';
+
 	let open = $state(false);
+
+	function yesClicked() {
+		console.log('yes');
+	}
+
+	function noClicked() {
+		console.log('no');
+	}
 </script>
 
 <Modal bind:open title="This is the default modal" />

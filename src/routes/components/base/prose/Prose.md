@@ -18,6 +18,10 @@
 ## Usage
 
 ```svelte
+<script>
+	import Prose from 'fox-ui-svelte';
+</script>
+
 <Prose>
 	<h1>Prose</h1>
 

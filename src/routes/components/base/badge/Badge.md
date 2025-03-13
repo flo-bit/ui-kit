@@ -84,6 +84,10 @@ Colors
 ## Usage
 
 ```svelte
+<script>
+	import { Badge } from 'fox-ui-svelte';
+</script>
+
 <Badge size="sm" variant="primary">
 	Badge
 </Badge>

@@ -2,32 +2,41 @@
 	import { Subheading } from '$lib/components/base/heading';
 	import { Tooltip } from '$lib/components/base/tooltip';
 	import { Text } from '$lib/components/base/text';
+	import { Button } from '$lib/components/base/button';
+	import { toast } from 'svelte-sonner';
+
+	function handleClick() {
+		toast.error('Don\'t click, just hover!')
+	}
 </script>
 
 # Tooltip
 
 ## Example
 
-Primary
-
 <div class="flex w-full flex-col items-start gap-2 py-12">
-	<Tooltip triggerText="Hover me" triggerVariant="primary" withContext>Hello there!</Tooltip>
-</div>
-
-Secondary
-
-<div class="flex w-full flex-col items-start gap-2 py-12">
-	<Tooltip triggerText="Hover me" triggerVariant="secondary" withContext>Hello there!</Tooltip>
+	<Tooltip text="Hello there!" withContext>
+		{#snippet child({ props })}
+			<Button {...props} onclick={handleClick}>Hover me</Button>
+		{/snippet}
+	</Tooltip>
 </div>
 
 ## Usage
 
 ```svelte
-<Tooltip 
-	triggerText="Hover me" 
-	triggerVariant="primary" 
-	withContext>
-	Hello there!
+<script>
+	import { Tooltip, Button } from 'fox-ui-svelte';
+
+	function handleClick() {
+		console.log('clicked')
+	}
+</script>
+
+<Tooltip text="Hello there!" withContext>
+	{#snippet child({ props })}
+		<Button {...props} onclick={handleClick}>Hover me</Button>
+	{/snippet}
 </Tooltip>
 ```
 

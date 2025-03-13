@@ -1,55 +1,46 @@
 <script lang="ts">
 	import { Tooltip } from 'bits-ui';
 	import { type Snippet } from 'svelte';
-	import { buttonVariants, type ButtonSize, type ButtonVariant } from '../button';
 	import { TooltipContent } from '.';
-	import { cn } from '$lib/utils';
 
 	type Props = Tooltip.RootProps & {
-		trigger?: Snippet;
-
-		triggerText?: string;
-		triggerVariant?: ButtonVariant;
-		triggerSize?: ButtonSize;
-		triggerClass?: string;
-
 		withContext?: boolean;
 
 		triggerProps?: Tooltip.TriggerProps;
-	};
+
+		content?: Snippet;
+		text?: string;
+	} & Tooltip.TriggerProps;
 
 	let {
 		open = $bindable(false),
-		children,
-		trigger,
-		triggerText,
-		triggerVariant = 'primary',
-		triggerSize = 'default',
-		triggerClass,
+		child: myChild,
 
 		withContext = false,
 
 		triggerProps = {},
+		
+		content,
+		text,
 		...restProps
 	}: Props = $props();
 </script>
 
 {#snippet root()}
 	<Tooltip.Root bind:open {...restProps}>
-		{#if trigger}
-			<Tooltip.Trigger {...triggerProps}>
-				{@render trigger()}
-			</Tooltip.Trigger>
-		{:else}
-			<Tooltip.Trigger
-				class={cn(buttonVariants({ variant: triggerVariant, size: triggerSize }), triggerClass)}
-			>
-				{triggerText}
-			</Tooltip.Trigger>
-		{/if}
+		<Tooltip.Trigger {...triggerProps}>
+			{#snippet child({ props })}
+				{@render myChild?.({ props })}
+			{/snippet}
+		</Tooltip.Trigger>
+	
 		<Tooltip.Portal>
 			<TooltipContent sideOffset={10}>
-				{@render children?.()}
+				{#if content}
+					{@render content()}
+				{:else}
+					{text}
+				{/if}
 			</TooltipContent>
 		</Tooltip.Portal>
 	</Tooltip.Root>

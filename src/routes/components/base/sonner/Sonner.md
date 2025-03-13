@@ -41,16 +41,26 @@
 
 ## Usage
 
+In your root layout:
+
 ```svelte
 <script>
-	import { Toaster, Button, toast } from 'fox-ui-kit';
+	import { Toaster } from 'fox-ui-svelte';
+</script>
+
+<Toaster />
+```
+
+In your page:
+
+```svelte
+<script>
+	import { Button, toast } from 'fox-ui-svelte';
 
 	function handleClick() {
 		toast('Hello there', { description: 'General Kenobi!' });
 	}
 </script>
-
-<Toaster />
 
 <Button onclick={handleClick}>
 	Default

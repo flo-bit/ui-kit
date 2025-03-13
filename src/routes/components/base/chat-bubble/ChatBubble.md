@@ -41,6 +41,10 @@
 ## Usage
 
 ```svelte
+<script>
+	import { ChatBubble } from 'fox-ui-svelte';
+</script>
+
 <ChatBubble side="right" variant="secondary">
 	<p>Hello there</p>
 </ChatBubble>

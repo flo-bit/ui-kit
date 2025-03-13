@@ -13,6 +13,8 @@
 
 ```svelte
 <script>
+	import { NumberInput } from 'fox-ui-svelte';
+	
 	let value = $state(0);
 </script>
 

@@ -1,14 +1,10 @@
 <script>
-	import { Subheading } from '$lib/components/base/heading';
-	import { Text } from '$lib/components/base/text';
 	import { Alert, AlertDescription, AlertTitle } from '$lib/components/base/alert';
 </script>
 
 # Alert
 
 ## Examples
-
-Default Alert
 
 <Alert class="mb-2">
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -65,6 +61,10 @@ Default Alert
 ## Usage
 
 ```svelte
+<script>
+	import { Alert } from 'fox-ui-svelte';
+</script>
+
 <Alert title="Alert Title" type="info">
 	<span>Alert Description</span>
 </Alert>

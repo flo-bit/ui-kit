@@ -47,8 +47,13 @@
 ## Usage
 
 ```svelte
+<script>
+	import { ScrollArea } from 'fox-ui-svelte';
+</script>
+
 <ScrollArea class="h-52 w-96">
 	<div>
 		Your content here
 	</div>
 </ScrollArea>
+```
