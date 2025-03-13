@@ -7,9 +7,8 @@
 	import Logo from './Logo.svelte';
 	import ThemeSelectDropdown from './ThemeSelectDropdown.svelte';
 
-	let { hasSidebar = false } = $props();
+	let { hasSidebar = false, showLogo = true } = $props();
 </script>
-
 
 <Navbar {hasSidebar}>
 	<div class="flex items-center gap-2">
@@ -28,12 +27,12 @@
 			</svg>
 		</Button>
 
-		<Logo />
+		<Logo class={showLogo ? 'lg:ml-5' : 'lg:hidden'} />
 	</div>
 	<div class="flex items-end gap-4">
 		<ThemeSelectDropdown />
 		<ThemeToggle />
 
-		<Github href="https://github.com/flo-bit/ui-kit" class="py-2 pl-2 pr-4" />
+		<Github href="https://github.com/flo-bit/ui-kit" class="py-2 pr-4 pl-2" />
 	</div>
 </Navbar>

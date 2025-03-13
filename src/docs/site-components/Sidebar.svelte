@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { Badge } from '$lib';
 	import { Accordion, AccordionItem } from '$lib/components/base/accordion';
 
 	import { Button } from '$lib/components/base/button';
 	import Sidebar from '$lib/components/base/sidebar/Sidebar.svelte';
+	import Logo from './Logo.svelte';
 
 	const baseComponents = [
 		{ label: 'Alerts', href: 'alert' },
@@ -71,9 +73,12 @@
 
 <Sidebar {mobileOnly}>
 	<div class="mb-8 flex flex-col items-start p-4">
-		<Button variant="link" onclick={handleClick} href={base}>Home</Button>
-		<Button variant="link" onclick={handleClick} href="{base}/components">Philosophy</Button>
-		<Button variant="link" onclick={handleClick} href="{base}/components/theme" class="mb-8">Theme</Button>
+		<Logo class="mb-8 py-1 px-3" />
+
+		
+		<Button variant="ghost" onclick={handleClick} href="{base}/docs/quick-start" class="w-full justify-start mb-1">Quick Start</Button>
+		<Button variant="ghost" onclick={handleClick} href="{base}/docs/philosophy" class="w-full justify-start mb-1">Philosophy</Button>
+		<Button variant="ghost" onclick={handleClick} href="{base}/components/theme" class="w-full justify-start mb-8">Theme</Button>
 
 
 		<Accordion type="single" class="w-full" value="base-components">

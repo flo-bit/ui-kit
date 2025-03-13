@@ -81,6 +81,8 @@
 			new CustomEvent('theme-changed', { detail: { accentColor: color.label } })
 		);
 	}}
+
+	class="w-64"
 />
 
 <Text class="mt-4 mb-2">Base Color</Text>

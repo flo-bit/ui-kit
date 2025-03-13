@@ -5,12 +5,12 @@
 </script>
 
 <div
-	class="prose prose-base prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-500 dark:hidden"
+	class="prose prose-base prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-500 dark:hidden w-full"
 >
 	{@render children?.()}
 </div>
 <div
-	class="prose prose-base-dark dark:prose-invert prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-500 hidden dark:block"
+	class="prose prose-base-dark dark:prose-invert prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-500 hidden dark:block w-full"
 >
 	{@render children?.()}
 </div>
@@ -56,5 +56,15 @@
 		--tw-prose-invert-pre-bg: rgb(0 0 0 / 50%);
 		--tw-prose-invert-th-borders: var(--color-base-600);
 		--tw-prose-invert-td-borders: var(--color-base-700);
+	}
+
+	:global(.prose pre) {
+		background-color: var(--color-base-100);
+		color: var(--color-base-900);
+	}
+
+	:global(.dark .prose pre) {
+		background-color: var(--color-base-900);
+		color: var(--color-base-50);
 	}
 </style>

@@ -20,10 +20,12 @@
 	<h1
 		class="text-base-950 dark:text-base-50 my-8 mt-8 max-w-2xl text-4xl font-bold tracking-tight text-pretty md:text-5xl md:leading-14"
 	>
-		Easy to use UI components built with Tailwind and Svelte
+		Beautiful UI components built with Tailwind 4 and Svelte 5
 	</h1>
 
-	<Button href={base + '/components'} class="mb-8">Philosophy <span>&rarr;</span></Button>
-
+	<div class="flex gap-2">
+		<Button href={base + '/docs/quick-start'} class="mb-8">Quick Start</Button>
+		<Button variant="link" href={base + '/docs/philosophy'} class="mb-8">Learn more <span>&rarr;</span></Button>
+	</div>
 	<Cards />
 </div>
