@@ -60,3 +60,5 @@ See here for a few examples of work in progress components (some may be partiall
 
 
 If you have any suggestions for components, please open an issue on [github](https://github.com/flo-bit/ui-kit/issues).
+
+Also feel free to contribute yourself, preferably by first opening an issue about the component/feature you want to add!
