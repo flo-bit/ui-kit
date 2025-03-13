@@ -24,6 +24,12 @@ The main idea is having two colors (in all tailwind shades from 50 up to 950):
 
 You can try it out by setting the current theme colors in the navbar for this documentation site.
 
+## Copying components vs installing packages
+
+I'm a big fan of the philosophy of copying components (shadcn-style) for better customization, but also I think the quickest way to build something is to just install the package and use it.
+
+So the plan is to have both options (currently only installing as a package is available, but you can copy what you need from the [source code](https://github.com/flo-bit/ui-kit/tree/main/src/lib/components/base) though some imports might need to be adjusted).
+
 ## Lots of components
 
 While currently only the base components are visible, there are lots of components in the pipeline.
@@ -57,6 +63,18 @@ See here for a few examples of work in progress components (some may be partiall
 - [model-picker](/ui-kit/components/3d/model-picker/)
 - [voxel-art](/ui-kit/components/3d/voxel-art/)
 
-If you have any suggestions for components, please open an issue on [github](https://github.com/flo-bit/ui-kit/issues).
+## Dark mode
+
+This ui kit is designed to be used in both light and dark mode (and switch automatically depending on system settings).
+If you want to disable dark mode, add the following to your app.css:
+
+```css
+@custom-variant dark (&:is(.dark *));
+```
+
+
+## Contributing/Feedback
+
+If you have any suggestions for components or feedback in general, please open an issue on [github](https://github.com/flo-bit/ui-kit/issues).
 
 Also feel free to contribute yourself, preferably by first opening an issue about the component/feature you want to add!

@@ -58,4 +58,6 @@ npm install fox-ui-svelte
 <script>
 	import { Button } from 'fox-ui-svelte';
 </script>
+
+<Button onclick={() => alert('clicked')}>Click me</Button>
 ```
