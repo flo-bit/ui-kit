@@ -39,25 +39,7 @@
 
 <Subheading class="mb-4">Scroll Area</Subheading>
 
-<Text>Show on hover:</Text>
-
-<ScrollArea type="hover" class={classes}>
-	<div class="p-4">
-		{content}
-	</div>
-</ScrollArea>
-
-<Text>Show always:</Text>
-
-<ScrollArea type="always" class={classes}>
-	<div class="p-4">
-		{content}
-	</div>
-</ScrollArea>
-
-<Text>Show on scroll:</Text>
-
-<ScrollArea type="scroll" class={classes}>
+<ScrollArea class={classes}>
 	<div class="p-4">
 		{content}
 	</div>

@@ -1,63 +1,71 @@
 <script lang="ts">
-	import { ScrollArea, type WithoutChild } from 'bits-ui';
+	import { type WithElementRef } from 'bits-ui';
 	import { cn } from '$lib/utils';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-	type Props = WithoutChild<ScrollArea.RootProps> & {
+	type Props = WithElementRef<HTMLAttributes<HTMLDivElement>> & {
 		orientation?: 'vertical' | 'horizontal' | 'both';
-		viewportClasses?: string;
-		scrollbarYClasses?: string;
-		scrollbarXClasses?: string;
 	};
 
 	let {
 		ref = $bindable(null),
 		orientation = 'vertical',
-		viewportClasses,
 		class: className,
-		scrollbarYClasses = '',
-		scrollbarXClasses = '',
 		children,
 		...restProps
 	}: Props = $props();
+
+	function getOrientationClasses() {
+		if (orientation === 'vertical') return 'overflow-y-scroll';
+		if (orientation === 'horizontal') return 'overflow-x-scroll';
+		return 'overflow-y-scroll overflow-x-scroll';
+	}
 </script>
 
-{#snippet Scrollbar({
-	orientation,
-	class: className,
-	...restProps
-}: {
-	orientation: 'vertical' | 'horizontal';
-	class: string;
-	[key: string]: any;
-})}
-	<ScrollArea.Scrollbar
-		{orientation}
-		class={cn(
-			'z-10 flex touch-none transition-colors select-none',
-			orientation === 'vertical' && 'h-full w-2 border-l border-l-transparent p-px',
-			orientation === 'horizontal' && 'h-2 w-full border-t border-t-transparent p-px',
-			className
-		)}
-		{...restProps}
-	>
-		<ScrollArea.Thumb
-			class={[
-				'bg-base-300 hover:bg-base-400 dark:bg-base-700 dark:hover:bg-base-600 relative rounded-full transition-colors',
-				orientation === 'vertical' && 'flex-1'
-			]}
-		/>
-	</ScrollArea.Scrollbar>
-{/snippet}
+<div class={cn('scrollbar', getOrientationClasses(), className)}>
+	{@render children?.()}
+</div>
 
-<ScrollArea.Root bind:ref {...restProps} class={cn('relative overflow-hidden', className)}>
-	<ScrollArea.Viewport class={cn('h-full w-full rounded-[inherit]', viewportClasses)}>
-		{@render children?.()}
-	</ScrollArea.Viewport>
-	{#if orientation === 'vertical' || orientation === 'both'}
-		{@render Scrollbar({ orientation: 'vertical', class: scrollbarYClasses })}
-	{/if}
-	{#if orientation === 'horizontal' || orientation === 'both'}
-		{@render Scrollbar({ orientation: 'horizontal', class: scrollbarXClasses })}
-	{/if}
-	<ScrollArea.Corner />
-</ScrollArea.Root>
+<style>
+	.scrollbar::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+
+	@supports (scrollbar-width: auto) {
+		.scrollbar {
+			scrollbar-color: var(--color-base-400) transparent;
+			scrollbar-width: thin;
+		}
+
+		:global(.dark .scrollbar) {
+			scrollbar-color: var(--color-base-800) transparent;
+		}
+	}
+
+	@supports not (scrollbar-width: auto) {
+		:global(.scrollbar::-webkit-scrollbar) {
+			width: 14px;
+			height: 14px;
+		}
+	}
+
+	.scrollbar::-webkit-scrollbar-thumb {
+		background-color: var(--color-base-400);
+		border-radius: 20px;
+		border: 4px solid transparent;
+		background-clip: content-box;
+	}
+
+	.scrollbar::-webkit-scrollbar-thumb:hover {
+		background-color: var(--color-base-500);
+	}
+
+	/* Dark mode rules */
+	:global(.dark .scrollbar::-webkit-scrollbar-thumb) {
+		background-color: var(--color-base-800);
+	}
+
+	:global(.dark .scrollbar::-webkit-scrollbar-thumb:hover) {
+		background-color: var(--color-base-700);
+	}
+</style>
