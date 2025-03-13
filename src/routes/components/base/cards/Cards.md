@@ -56,11 +56,5 @@ In a grid
 	import { ImageCard } from 'fox-ui-svelte';
 </script>
 
-<ImageCard 
-	src={'/image.jpg'} 
-	alt="" 
-	title="Card title" 
-	description="Card description" 
-	href="#" 
-/>
+<ImageCard src={'/image.jpg'} alt="" title="Card title" description="Card description" href="#" />
 ```

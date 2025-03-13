@@ -8,7 +8,7 @@
 		barWidth = 0,
 		barSpacing = 4,
 		center = true,
-		class: className,
+		class: className
 	}: {
 		values: Float32Array;
 		barWidth?: number;
@@ -29,7 +29,6 @@
 
 		if (!ctx) return;
 
-		
 		// Update canvas size
 		canvas.width = Math.round(contentRect.width) * 2;
 		canvas.height = Math.round(contentRect.height) * 2;
@@ -75,4 +74,4 @@
 	});
 </script>
 
-<canvas bind:this={canvas} bind:contentRect class={cn('w-full h-full', className)}></canvas>
+<canvas bind:this={canvas} bind:contentRect class={cn('h-full w-full', className)}></canvas>

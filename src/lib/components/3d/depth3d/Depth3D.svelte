@@ -31,9 +31,6 @@
 	<img
 		src={sceneProps.image.image}
 		alt=""
-		class={cn(
-			'h-80 w-80 rounded-2xl object-cover',
-			className
-		)}
+		class={cn('h-80 w-80 rounded-2xl object-cover', className)}
 	/>
 </noscript>

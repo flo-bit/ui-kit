@@ -3,7 +3,7 @@
 </script>
 
 <AvatarGroup
-avatarClass="size-16"
+	avatarClass="size-16"
 	users={[
 		{
 			src: 'https://github.com/flo-bit.png',

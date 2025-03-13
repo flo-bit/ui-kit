@@ -20,7 +20,7 @@
 	popover="auto"
 	id="mobile-menu"
 	class={cn(
-		'mobileMenuPopover border-base-200 overflow-y-hidden rounded-2xl ml-2 my-2 bg-base-50 dark:border-base-300/10 dark:bg-base-950',
+		'mobileMenuPopover border-base-200 bg-base-50 dark:border-base-300/10 dark:bg-base-950 my-2 ml-2 overflow-y-hidden rounded-2xl',
 		'inset-auto top-0 left-0 block h-[calc(100dvh-1rem)] w-72 border shadow-lg lg:hidden',
 		className,
 		mobileClasses

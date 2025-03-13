@@ -66,7 +66,7 @@
 
 	const handleClick = (e: MouseEvent) => {
 		// close the mobile menu
-		const popover = document.getElementById("mobile-menu");
+		const popover = document.getElementById('mobile-menu');
 		if (popover) {
 			popover.hidePopover();
 		}
@@ -75,16 +75,45 @@
 
 <Sidebar {mobileOnly}>
 	<div class="mb-8 flex flex-col items-start p-4">
-		<Logo class="mb-8 py-1 px-3" />
+		<Logo class="mb-8 px-3 py-1" />
 
-		<Button data-sveltekit-keepfocus variant="ghost" onclick={handleClick} href="{base}/docs/quick-start" class="w-full justify-start mb-1">Quick Start</Button>
-		<Button data-sveltekit-keepfocus variant="ghost" onclick={handleClick} href="{base}/docs/philosophy" class="w-full justify-start mb-1">Philosophy</Button>
-		<Button data-sveltekit-keepfocus variant="ghost" onclick={handleClick} href="{base}/components/theme" class="w-full justify-start mb-6">Theme</Button>
+		<Button
+			data-sveltekit-keepfocus
+			variant="ghost"
+			onclick={handleClick}
+			href="{base}/docs/quick-start"
+			class="mb-1 w-full justify-start">Quick Start</Button
+		>
+		<Button
+			data-sveltekit-keepfocus
+			variant="ghost"
+			onclick={handleClick}
+			href="{base}/docs/philosophy"
+			class="mb-1 w-full justify-start">Philosophy</Button
+		>
+		<Button
+			data-sveltekit-keepfocus
+			variant="ghost"
+			onclick={handleClick}
+			href="{base}/components/theme"
+			class="mb-6 w-full justify-start">Theme</Button
+		>
 
 		<Accordion type="single" class="w-full" value="base-components">
-			<AccordionItem value="base-components" class="border-0" title="Base Components" triggerClasses="text-sm px-3 py-1 font-semibold" contentClasses="flex flex-col gap-1 items-start px-1">
+			<AccordionItem
+				value="base-components"
+				class="border-0"
+				title="Base Components"
+				triggerClasses="text-sm px-3 py-1 font-semibold"
+				contentClasses="flex flex-col gap-1 items-start px-1"
+			>
 				{#each baseComponents as component}
-					<Button data-sveltekit-keepfocus variant="ghost" onclick={handleClick} href="{base}/components/base/{component.href}" class="w-full justify-start">{component.label}</Button
+					<Button
+						data-sveltekit-keepfocus
+						variant="ghost"
+						onclick={handleClick}
+						href="{base}/components/base/{component.href}"
+						class="w-full justify-start">{component.label}</Button
 					>
 				{/each}
 			</AccordionItem>

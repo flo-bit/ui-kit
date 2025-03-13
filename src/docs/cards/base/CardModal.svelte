@@ -3,12 +3,12 @@
 </script>
 
 <div
-	class="relative flex flex-col bg-base-50 dark:bg-base-900 border-base-200/80 dark:border-base-800 gap-2 rounded-2xl border px-4 py-3 w-full"
+	class="bg-base-50 dark:bg-base-900 border-base-200/80 dark:border-base-800 relative flex w-full flex-col gap-2 rounded-2xl border px-4 py-3"
 >
 	<div class="text-base-900 dark:text-base-100 text-lg font-semibold">Title</div>
 	<div class="text-base-600 dark:text-base-400 text-sm">Description</div>
 
-	<div class="flex justify-end gap-2 flex-row items-center mt-4">
+	<div class="mt-4 flex flex-row items-center justify-end gap-2">
 		<Button class={'order-last'} variant={'primary'} tabindex={-1}>Yes</Button>
 		<Button variant={'secondary'} tabindex={-1}>No</Button>
 	</div>

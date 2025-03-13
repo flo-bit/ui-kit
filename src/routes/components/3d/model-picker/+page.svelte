@@ -83,7 +83,7 @@
 		{
 			path: base + '/models/gltf/Primitive_Slope_Half.gltf',
 			label: 'Primitive Slope Half'
-		},
+		}
 	]}
 	bind:open
 	onselect={(item) => {

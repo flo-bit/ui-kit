@@ -4,7 +4,9 @@
 	import Text from '$lib/components/base/text/Text.svelte';
 </script>
 
-<div class="flex w-fit flex-col items-start gap-1 mx-auto border border-base-300 bg-base-200 dark:border-base-800 dark:bg-base-900 rounded-2xl p-3 max-w-44">
+<div
+	class="border-base-300 bg-base-200 dark:border-base-800 dark:bg-base-900 mx-auto flex w-fit max-w-44 flex-col items-start gap-1 rounded-2xl border p-3"
+>
 	<Image
 		src={nature}
 		alt="Nature"
@@ -12,6 +14,6 @@
 		containerClasses="border-base-300 dark:border-base-700 overflow-hidden max-w-full max-h-20 rounded-2xl border rounded-2xl overflow-hidden"
 	/>
 
-	<Text class="font-semibold mt-2">Card Title</Text>
+	<Text class="mt-2 font-semibold">Card Title</Text>
 	<Text class="text-xs font-normal">Card Subtitle</Text>
 </div>

@@ -7,12 +7,12 @@
 </script>
 
 <div
-	class="prose prose-base prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-500 dark:hidden w-full prose-pre:rounded-2xl"
+	class="prose prose-base prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-500 prose-pre:rounded-2xl w-full dark:hidden"
 >
 	{@render children?.()}
 </div>
 <div
-	class="prose prose-base-dark dark:prose-invert prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-500 hidden dark:block w-full prose-pre:rounded-2xl"
+	class="prose prose-base-dark dark:prose-invert prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-500 prose-pre:rounded-2xl hidden w-full dark:block"
 >
 	{@render children?.()}
 </div>

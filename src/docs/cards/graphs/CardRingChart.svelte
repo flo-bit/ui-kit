@@ -2,7 +2,6 @@
 	import RingChart from '$lib/components/charts/ring-chart/RingChart.svelte';
 </script>
 
-
 <RingChart
 	height="h-30"
 	thickness={10}

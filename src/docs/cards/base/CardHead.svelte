@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="border-base-300 dark:border-base-800 from-base-300/50 dark:from-base-900/50 rounded-t-xl border bg-gradient-to-b via-transparent pt-2 mx-2"
+	class="border-base-300 dark:border-base-800 from-base-300/50 dark:from-base-900/50 mx-2 rounded-t-xl border bg-gradient-to-b via-transparent pt-2"
 >
 	<div class="flex items-center gap-2 px-2">
 		<div class="size-3 rounded-full border border-red-500 bg-red-500/80"></div>
@@ -19,5 +19,4 @@
 			</div>
 		</div>
 	</div>
-
 </div>

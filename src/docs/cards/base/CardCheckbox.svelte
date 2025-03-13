@@ -16,7 +16,7 @@
 	</Label>
 </div>
 
-<div class="flex items-center space-x-2 mt-4">
+<div class="mt-4 flex items-center space-x-2">
 	<Checkbox id="terms" aria-labelledby="terms-label" variant="secondary" tabindex={-1} />
 	<Label
 		id="terms-label"

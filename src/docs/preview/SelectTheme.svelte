@@ -81,7 +81,6 @@
 			new CustomEvent('theme-changed', { detail: { accentColor: color.label } })
 		);
 	}}
-
 	class="w-64"
 />
 

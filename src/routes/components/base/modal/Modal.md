@@ -24,23 +24,23 @@
 <Button onclick={() => (openCustom = true)} variant="secondary">Custom Modal</Button>
 
 <Modal
-	bind:open={openDefault}
-	title="This is the default modal"
-	description="It has a title, description, and two buttons (yes and no)"
-	yesButton={{ onclick: () => toast('Yes', { description: 'Smart choice' }) }}
-	noButton={{ onclick: () => toast('No', { description: 'Why not though?' }) }}
+bind:open={openDefault}
+title="This is the default modal"
+description="It has a title, description, and two buttons (yes and no)"
+yesButton={{ onclick: () => toast('Yes', { description: 'Smart choice' }) }}
+noButton={{ onclick: () => toast('No', { description: 'Why not though?' }) }}
 />
 
 <Modal bind:open={openCustom} closeButton={false}>
 	<Subheading>Custom modal</Subheading>
 
-	<Text>You can put anything in here... Like an image:</Text>
+    <Text>You can put anything in here... Like an image:</Text>
 
-	<ImageContainer src={cute} alt="image in modal" useThemeColor containerClasses="max-w-64 mx-auto" />
+    <ImageContainer src={cute} alt="image in modal" useThemeColor containerClasses="max-w-64 mx-auto" />
 
-	<Button onclick={() => (openCustom = false)}>Cool</Button>
+    <Button onclick={() => (openCustom = false)}>Cool</Button>
+
 </Modal>
-
 
 ## Usage
 
@@ -61,11 +61,11 @@
 
 <Modal bind:open title="This is the default modal" />
 
-<Button 
-	onclick={() => (open = true)} 
-	yesButton={{ onclick: yesClicked }} 
-	noButton={{ onclick: noClicked }}>
+<Button
+	onclick={() => (open = true)}
+	yesButton={{ onclick: yesClicked }}
+	noButton={{ onclick: noClicked }}
+>
 	Open modal
 </Button>
 ```
-

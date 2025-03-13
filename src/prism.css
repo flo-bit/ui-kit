@@ -36,7 +36,6 @@ pre[class*='language-'] {
 	white-space: normal;
 }
 
-
 .token.cdata,
 .token.comment,
 .token.doctype,
@@ -98,9 +97,9 @@ pre[class*='language-'] {
 	cursor: help;
 }
 
-
 .dark {
-	code[class*='language-'], pre[class*='language-'] {
+	code[class*='language-'],
+	pre[class*='language-'] {
 		color: #ccc;
 	}
 

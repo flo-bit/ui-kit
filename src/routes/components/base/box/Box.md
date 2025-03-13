@@ -16,7 +16,5 @@
 	import { Box } from 'fox-ui-svelte';
 </script>
 
-<Box class="text-sm">
-	This is a box, put your stuff here.
-</Box>
+<Box class="text-sm">This is a box, put your stuff here.</Box>
 ```

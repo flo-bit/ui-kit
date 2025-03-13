@@ -55,7 +55,9 @@
 			<Axis
 				placement="bottom"
 				tickLabelProps={{
-					class: 'fill-accent-700 dark:fill-accent-600 font-medium text-xs' + (showXAxis ? '' : ' hidden')
+					class:
+						'fill-accent-700 dark:fill-accent-600 font-medium text-xs' +
+						(showXAxis ? '' : ' hidden')
 				}}
 				rule
 				format={defaultValueFormat}

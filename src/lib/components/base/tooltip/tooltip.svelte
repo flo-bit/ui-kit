@@ -19,7 +19,7 @@
 		withContext = false,
 
 		triggerProps = {},
-		
+
 		content,
 		text,
 		...restProps
@@ -33,7 +33,7 @@
 				{@render myChild?.({ props })}
 			{/snippet}
 		</Tooltip.Trigger>
-	
+
 		<Tooltip.Portal>
 			<TooltipContent sideOffset={10}>
 				{#if content}

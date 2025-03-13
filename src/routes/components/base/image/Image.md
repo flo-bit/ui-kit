@@ -34,16 +34,7 @@ Show normal image on hover:
 	import { ImageContainer } from 'fox-ui-svelte';
 </script>
 
-<ImageContainer 
-	src="/image.jpg" 
-	alt="Alt tag"
-/>
+<ImageContainer src="/image.jpg" alt="Alt tag" />
 
-<ImageContainer
-	src="/image.jpg"
-	alt="Alt tag"
-	useThemeColor
-	showNormalOnHover
-/>
+<ImageContainer src="/image.jpg" alt="Alt tag" useThemeColor showNormalOnHover />
 ```
-

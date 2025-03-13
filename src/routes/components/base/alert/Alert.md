@@ -45,17 +45,18 @@
 		<span>Alert Description</span>
 	</Alert>
 
-	<Alert title="Error alert" type="error">
-		<span>Alert Description</span>
-	</Alert>
+    <Alert title="Error alert" type="error">
+    	<span>Alert Description</span>
+    </Alert>
 
-	<Alert title="Success alert" type="success">
-		<span>Alert Description</span>
-	</Alert>
+    <Alert title="Success alert" type="success">
+    	<span>Alert Description</span>
+    </Alert>
 
-	<Alert title="Info alert" type="info">
-		<span>Alert Description</span>
-	</Alert>
+    <Alert title="Info alert" type="info">
+    	<span>Alert Description</span>
+    </Alert>
+
 </div>
 
 ## Usage

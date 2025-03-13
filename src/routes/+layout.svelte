@@ -5,7 +5,7 @@
 	import { Toaster } from '$lib/components/base/sonner';
 	import '../app.css';
 	import '../prism.css';
-	
+
 	let { children } = $props();
 </script>
 
@@ -16,7 +16,7 @@
 <Head
 	title="fox ui"
 	description="fox ui - work in progress"
-	image={base + "/opengraph.png"}
+	image={base + '/opengraph.png'}
 	url="https://flo-bit.dev/ui-kit"
 	emojiFavicon="🦊"
 />

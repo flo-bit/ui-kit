@@ -1,26 +1,26 @@
 <script lang="ts">
-	import { afterNavigate } from "$app/navigation";
-	import { onMount } from "svelte";
-	import CopyCodeButton from "./CopyCodeButton.svelte";
+	import { afterNavigate } from '$app/navigation';
+	import { onMount } from 'svelte';
+	import CopyCodeButton from './CopyCodeButton.svelte';
 
-  onMount(() => {
-    addButtons();
-  });
+	onMount(() => {
+		addButtons();
+	});
 
-  afterNavigate(() => {
-    addButtons();
-  });
+	afterNavigate(() => {
+		addButtons();
+	});
 
 	let codeblocks: HTMLElement[] = $state([]);
 
-  function addButtons() {
-    codeblocks = Array.from(document.querySelectorAll("pre"));
-    for (let codeblock of codeblocks) {
-      codeblock.classList.add("group", "relative");
-    }
-  }
+	function addButtons() {
+		codeblocks = Array.from(document.querySelectorAll('pre'));
+		for (let codeblock of codeblocks) {
+			codeblock.classList.add('group', 'relative');
+		}
+	}
 </script>
 
 {#each codeblocks as codeblock}
-	<CopyCodeButton codeblock={codeblock} />
+	<CopyCodeButton {codeblock} />
 {/each}

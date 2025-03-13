@@ -14,15 +14,7 @@
 		}
 
 		new Plyr(element, {
-			controls: [
-				'play-large',
-				'play',
-				'progress',
-				'current-time',
-				'mute',
-				'volume',
-				'fullscreen',
-			],
+			controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
 			ratio: data.video.aspectRatio
 				? `${data.video.aspectRatio.width}:${data.video.aspectRatio.height}`
 				: '16:9'

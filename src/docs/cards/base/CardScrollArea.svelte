@@ -30,10 +30,10 @@
 		diet very jealous pupper, floofs shibe he made many woofs woofer, heckin good boys pupperino.`;
 </script>
 
-<div class={"h-full w-full text-base-900 dark:text-base-100 px-2 pt-0 overflow-hidden relative"}>
+<div class={'text-base-900 dark:text-base-100 relative h-full w-full overflow-hidden px-2 pt-0'}>
 	<div class="p-4">
 		{content}
 	</div>
 
-	<div class="absolute top-2 right-2 w-1.5 h-16 rounded-full bg-base-200 dark:bg-base-800"></div>
+	<div class="bg-base-200 dark:bg-base-800 absolute top-2 right-2 h-16 w-1.5 rounded-full"></div>
 </div>

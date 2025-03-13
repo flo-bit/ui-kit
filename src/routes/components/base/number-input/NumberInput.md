@@ -14,14 +14,9 @@
 ```svelte
 <script>
 	import { NumberInput } from 'fox-ui-svelte';
-	
+
 	let value = $state(0);
 </script>
 
-<NumberInput 
-	min={0} 
-	max={100} 
-	bind:value 
-/>
+<NumberInput min={0} max={100} bind:value />
 ```
-

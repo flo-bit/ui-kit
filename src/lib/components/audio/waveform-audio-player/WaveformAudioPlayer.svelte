@@ -7,7 +7,10 @@
 
 	let wavesurfer: WaveSurfer | null = $state(null);
 
-	let { url, darkMode = 'class' }: {
+	let {
+		url,
+		darkMode = 'class'
+	}: {
 		url: string;
 		darkMode?: 'class' | 'mediaQuery';
 	} = $props();
@@ -85,7 +88,9 @@
 	function updateWaveformColors() {
 		wavesurfer?.setOptions({
 			waveColor: isDarkMode() ? getCSSVar('--color-accent-950') : getCSSVar('--color-accent-200'),
-			progressColor: isDarkMode() ? getCSSVar('--color-accent-500') : getCSSVar('--color-accent-500')
+			progressColor: isDarkMode()
+				? getCSSVar('--color-accent-500')
+				: getCSSVar('--color-accent-500')
 		});
 	}
 
@@ -110,7 +115,7 @@
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
 				fill="currentColor"
-				class="size-6 md:size-9 text-base-50 dark:text-base-950"
+				class="text-base-50 dark:text-base-950 size-6 md:size-9"
 			>
 				<path
 					fill-rule="evenodd"
@@ -123,7 +128,7 @@
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
 				fill="currentColor"
-				class="ml-1 size-6 md:ml-1.5 md:size-9 text-base-50 dark:text-base-950"
+				class="text-base-50 dark:text-base-950 ml-1 size-6 md:ml-1.5 md:size-9"
 			>
 				<path
 					fill-rule="evenodd"
@@ -136,32 +141,31 @@
 	</button>
 	<div bind:this={audioContainer} class="h-4 w-full grow">
 		{#if !isLoaded}
-			<div class="m-1.5 h-1 w-full dark:bg-accent-950 bg-accent-100 rounded-full"></div>
+			<div class="dark:bg-accent-950 bg-accent-100 m-1.5 h-1 w-full rounded-full"></div>
 		{/if}
 	</div>
 	{#if isLoaded}
-	<NumberFlowGroup>
-		<div
-			class="text-accent-500 flex items-end justify-end font-semibold"
-			style="font-variant-numeric: tabular-nums;"
-		>
-			-<NumberFlow
-				value={remainingMinutes}
-				trend={-1}
-				format={{ minimumIntegerDigits: 2 }}
-				digits={{ 1: { max: 5 } }}
-			/>
-			<NumberFlow
-				value={remainingSeconds}
-				trend={-1}
-				format={{ minimumIntegerDigits: 2 }}
-				digits={{ 1: { max: 5 } }}
-				prefix=":"
-			/>
-		</div>
-	</NumberFlowGroup>
+		<NumberFlowGroup>
+			<div
+				class="text-accent-500 flex items-end justify-end font-semibold"
+				style="font-variant-numeric: tabular-nums;"
+			>
+				-<NumberFlow
+					value={remainingMinutes}
+					trend={-1}
+					format={{ minimumIntegerDigits: 2 }}
+					digits={{ 1: { max: 5 } }}
+				/>
+				<NumberFlow
+					value={remainingSeconds}
+					trend={-1}
+					format={{ minimumIntegerDigits: 2 }}
+					digits={{ 1: { max: 5 } }}
+					prefix=":"
+				/>
+			</div>
+		</NumberFlowGroup>
 	{:else}
-
 		<div class="text-accent-500 flex items-end justify-end text-sm font-medium">loading</div>
 	{/if}
 </div>

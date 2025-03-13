@@ -64,7 +64,6 @@
 			analyser.disconnect();
 			analyser = undefined;
 		}
-		
 	}
 
 	function trackAudio(): void {
@@ -81,7 +80,7 @@
 <Button onclick={() => (isPlaying ? stopTracking() : startTracking())}>
 	{isPlaying ? 'Stop microphone' : 'Start microphone'}
 </Button>
-<div class="mt-8 flex justify-between w-full gap-12">
+<div class="mt-8 flex w-full justify-between gap-12">
 	<BarVisualizer values={normalizeArray(values, 8)} class="size-12" />
 
 	<MicrophoneVisualizer value={normalizeArray(values, 1)[0] * 2} class="size-12" />

@@ -22,7 +22,9 @@
 
 	<div class="flex gap-2">
 		<Button href={base + '/docs/quick-start'} class="mb-8">Quick Start</Button>
-		<Button variant="link" href={base + '/docs/philosophy'} class="mb-8">Learn more <span>&rarr;</span></Button>
+		<Button variant="link" href={base + '/docs/philosophy'} class="mb-8"
+			>Learn more <span>&rarr;</span></Button
+		>
 	</div>
 	<Cards />
 </div>

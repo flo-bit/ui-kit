@@ -14,7 +14,6 @@
 	<p>This is a link: <a href="https://google.com">Google</a></p>
 </Box>
 
-
 ## Usage
 
 ```svelte
@@ -25,8 +24,6 @@
 <Prose>
 	<h1>Prose</h1>
 
-	<p>
-		Prose is a component
-	</p>
+	<p>Prose is a component</p>
 </Prose>
 ```

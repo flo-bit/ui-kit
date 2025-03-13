@@ -7,4 +7,3 @@
 <Prose>
 	{@render children?.()}
 </Prose>
-

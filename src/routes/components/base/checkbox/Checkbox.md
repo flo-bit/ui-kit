@@ -10,6 +10,7 @@
 ## Examples
 
 Primary
+
 <div class="flex items-center gap-2">
 	<Checkbox sizeVariant="sm" variant="primary" />
 	<Checkbox sizeVariant="default" variant="primary" />
@@ -46,10 +47,5 @@ With Label
 	let checked = $state(false);
 </script>
 
-<Checkbox 
-	sizeVariant="sm"
-	variant="primary" 
-	bind:checked
-/>
+<Checkbox sizeVariant="sm" variant="primary" bind:checked />
 ```
-

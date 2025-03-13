@@ -41,7 +41,7 @@
 		<div
 			class={[
 				'bg-accent-500/30 pointer-events-none absolute inset-0 z-20 size-full',
-				showNormalOnHover ? 'group-hover:opacity-0 transition-all duration-300 ease-in-out' : ''
+				showNormalOnHover ? 'transition-all duration-300 ease-in-out group-hover:opacity-0' : ''
 			]}
 		></div>
 	{/if}
@@ -54,7 +54,7 @@
 			onload={() => (loaded = true)}
 			class={cn(
 				useThemeColor ? 'brightness-125 grayscale' : '',
-				showNormalOnHover ? 'group-hover:filter-none transition-all duration-300 ease-in-out' : '',
+				showNormalOnHover ? 'transition-all duration-300 ease-in-out group-hover:filter-none' : '',
 				className
 			)}
 			{...restProps}
@@ -67,7 +67,7 @@
 			onload={() => (loaded = true)}
 			class={cn(
 				useThemeColor ? 'brightness-125 grayscale' : '',
-				showNormalOnHover ? 'group-hover:filter-none transition-all duration-300 ease-in-out' : '',
+				showNormalOnHover ? 'transition-all duration-300 ease-in-out group-hover:filter-none' : '',
 				className
 			)}
 			width={restProps.width ? Number(restProps.width) : undefined}

@@ -10,13 +10,12 @@
 			variant: {
 				primary:
 					'bg-accent-500/5 focus-within:ring-accent-400 dark:focus-within:ring-accent-600 text-accent-500 ring-accent-500/20 dark:ring-accent-500/20',
-				secondary:
-					'',
+				secondary: ''
 			},
 			size: {
 				default: 'text-base font-medium max-w-32',
 				sm: 'text-sm',
-				lg: 'text-3xl font-semibold max-w-44',
+				lg: 'text-3xl font-semibold max-w-44'
 			}
 		},
 		defaultVariants: {
@@ -29,10 +28,12 @@
 		base: 'button-number-input flex cursor-pointer items-center pr-[.5em] pl-[.5em] transition-colors disabled:cursor-not-allowed disabled:opacity-50',
 		variants: {
 			variant: {
-				primary: 'hover:text-accent-600 dark:hover:text-accent-400 disabled:hover:text-accent-500 dark:disabled:hover:text-accent-500',
-				secondary: 'hover:text-base-600 dark:hover:text-base-400 disabled:hover:text-base-500 dark:disabled:hover:text-base-500',
-			},
-		},
+				primary:
+					'hover:text-accent-600 dark:hover:text-accent-400 disabled:hover:text-accent-500 dark:disabled:hover:text-accent-500',
+				secondary:
+					'hover:text-base-600 dark:hover:text-base-400 disabled:hover:text-base-500 dark:disabled:hover:text-base-500'
+			}
+		}
 	});
 
 	export const numberInputInputVariants = tv({
@@ -40,21 +41,23 @@
 		variants: {
 			variant: {
 				primary: '',
-				secondary: '',
+				secondary: ''
 			},
 			size: {
 				default: 'p-1',
 				sm: '',
-				lg: 'p-2',
+				lg: 'p-2'
 			}
-		},
+		}
 	});
 	export type NumberInputVariant = VariantProps<typeof numberInputVariants>['variant'];
 	export type NumberInputSize = VariantProps<typeof numberInputVariants>['size'];
 
-	export type NumberInputProps = WithElementRef<WithoutChildrenOrChild<HTMLAttributes<HTMLDivElement>>> & {
-			variant?: NumberInputVariant;
-			size?: NumberInputSize;
+	export type NumberInputProps = WithElementRef<
+		WithoutChildrenOrChild<HTMLAttributes<HTMLDivElement>>
+	> & {
+		variant?: NumberInputVariant;
+		size?: NumberInputSize;
 		min?: number;
 		value?: number;
 		max?: number;
@@ -62,7 +65,7 @@
 		class?: string;
 		step?: number;
 		inputRef?: HTMLInputElement | null;
-		};
+	};
 </script>
 
 <script lang="ts">
@@ -112,14 +115,7 @@
 	}
 </script>
 
-<div
-	class={cn(
-		numberInputVariants({ variant, size }),
-		className
-	)}
-	bind:this={ref}
-	{...restProps}
->
+<div class={cn(numberInputVariants({ variant, size }), className)} bind:this={ref} {...restProps}>
 	<button
 		aria-hidden="true"
 		tabindex={-1}
@@ -139,12 +135,12 @@
 		</svg>
 	</button>
 	<div
-		class="w-full relative grid items-center justify-items-center text-center [grid-template-areas:'overlap'] *:[grid-area:overlap]"
+		class="relative grid w-full items-center justify-items-center text-center [grid-template-areas:'overlap'] *:[grid-area:overlap]"
 	>
 		<input
 			class={cn(
 				numberInputInputVariants({ variant, size }),
-				showCaret ? 'caret-accent-500' : 'caret-transparent',
+				showCaret ? 'caret-accent-500' : 'caret-transparent'
 			)}
 			style="font-kerning: none"
 			type="number"
@@ -156,7 +152,7 @@
 			{value}
 			oninput={handleInput}
 			bind:this={inputRef}
-			tabindex={tabindex}
+			{tabindex}
 		/>
 		<NumberFlow
 			{value}
@@ -166,14 +162,14 @@
 			{animated}
 			on:animationsstart={() => (showCaret = false)}
 			on:animationsfinish={() => (showCaret = true)}
-			class="pointer-events-none number-flow"
+			class="number-flow pointer-events-none"
 			willChange
 		/>
 	</div>
 	<button
 		aria-hidden="true"
 		tabindex="-1"
-		class={numberInputButtonVariants({variant})}
+		class={numberInputButtonVariants({ variant })}
 		disabled={max != null && value >= max}
 		onpointerdown={(event) => handlePointerDown(event, step)}
 	>

@@ -17,7 +17,7 @@
 	<AccordionPrimitive.Trigger
 		bind:ref
 		class={cn(
-			'flex flex-1 items-center rounded-2xl focus-visible:outline-2 focus-visible:outline-base-900 dark:focus-visible:outline-base-50 focus-visible:outline-offset-2 justify-between py-2 my-2 w-full text-base-950 dark:text-base-50 gap-2 font-medium transition-all hover:text-accent-600 cursor-pointer dark:hover:text-accent-400 [&[data-state=open]>svg]:rotate-180',
+			'focus-visible:outline-base-900 dark:focus-visible:outline-base-50 text-base-950 dark:text-base-50 hover:text-accent-600 dark:hover:text-accent-400 my-2 flex w-full flex-1 cursor-pointer items-center justify-between gap-2 rounded-2xl py-2 font-medium transition-all focus-visible:outline-2 focus-visible:outline-offset-2 [&[data-state=open]>svg]:rotate-180',
 			className
 		)}
 		{...restProps}

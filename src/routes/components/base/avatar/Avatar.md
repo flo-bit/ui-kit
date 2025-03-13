@@ -1,4 +1,3 @@
-
 <script>
 	import { Subheading } from '$lib/components/base/heading';
 	import { Text } from '$lib/components/base/text';
@@ -19,24 +18,24 @@ Single Avatar
 Avatars Group
 
 <AvatarGroup
-	users={[
-		{
-			src: 'https://github.com/flo-bit.png',
-			alt: 'flo-bit',
-			fallback: 'FB'
-		},
-		{
-			src: 'https://github.com/rich-harris.png',
-			alt: 'rich-harris',
-			fallback: 'RH'
-		},
-		{
-			src: 'https://github.com/huntabyte.png',
-			alt: 'huntabyte',
-			fallback: 'HB'
-		}
-	]}
-	class="not-prose"
+users={[
+{
+src: 'https://github.com/flo-bit.png',
+alt: 'flo-bit',
+fallback: 'FB'
+},
+{
+src: 'https://github.com/rich-harris.png',
+alt: 'rich-harris',
+fallback: 'RH'
+},
+{
+src: 'https://github.com/huntabyte.png',
+alt: 'huntabyte',
+fallback: 'HB'
+}
+]}
+class="not-prose"
 />
 
 ## Usage
@@ -46,11 +45,7 @@ Avatars Group
 	import { Avatar, AvatarGroup } from 'fox-ui-svelte';
 </script>
 
-<Avatar 
-	src="https://github.com/flo-bit.png" 
-	alt="flo-bit" 
-	fallback="FB" 
-/>
+<Avatar src="https://github.com/flo-bit.png" alt="flo-bit" fallback="FB" />
 
 <AvatarGroup
 	users={[
@@ -66,5 +61,4 @@ Avatars Group
 		}
 	]}
 />
-
 ```

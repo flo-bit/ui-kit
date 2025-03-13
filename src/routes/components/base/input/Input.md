@@ -33,10 +33,5 @@ Secondary
 	let value = $state('');
 </script>
 
-<Input 
-	sizeVariant="sm" 
-	placeholder="Enter text here" 
-	bind:value={value}
-/>
+<Input sizeVariant="sm" placeholder="Enter text here" bind:value />
 ```
-

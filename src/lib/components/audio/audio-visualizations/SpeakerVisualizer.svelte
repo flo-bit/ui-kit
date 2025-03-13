@@ -1,7 +1,7 @@
 <script lang="ts">
 	let {
 		value = 0,
-		class: className,
+		class: className
 	}: {
 		value: number;
 		class?: string;

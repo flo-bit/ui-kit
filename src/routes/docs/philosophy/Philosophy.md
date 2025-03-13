@@ -29,8 +29,7 @@ You can try it out by setting the current theme colors in the navbar for this do
 While currently only the base components are visible, there are lots of components in the pipeline.
 The aim is to have a component library that has lots of components that are useful for building webapps/websites/games, all in a consistent style/theme.
 
-See here for a few examples of work in progress components (some may be partially broken): 
-
+See here for a few examples of work in progress components (some may be partially broken):
 
 ### graphs
 
@@ -41,7 +40,7 @@ See here for a few examples of work in progress components (some may be partiall
 ### extras
 
 - [color picker](/ui-kit/components/extras/color-picker/)
-- [excalidraw](/ui-kit/components/extras/excalidraw/) 
+- [excalidraw](/ui-kit/components/extras/excalidraw/)
 - [quote](/ui-kit/components/extras/quote/)
 - [phone](/ui-kit/components/extras/phone/)
 - [timer](/ui-kit/components/extras/timer/)
@@ -57,7 +56,6 @@ See here for a few examples of work in progress components (some may be partiall
 - [depth 3d](/ui-kit/components/3d/depth-3d/)
 - [model-picker](/ui-kit/components/3d/model-picker/)
 - [voxel-art](/ui-kit/components/3d/voxel-art/)
-
 
 If you have any suggestions for components, please open an issue on [github](https://github.com/flo-bit/ui-kit/issues).
 

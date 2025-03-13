@@ -29,7 +29,7 @@
 	import { Tooltip, Button } from 'fox-ui-svelte';
 
 	function handleClick() {
-		console.log('clicked')
+		console.log('clicked');
 	}
 </script>
 
@@ -39,4 +39,3 @@
 	{/snippet}
 </Tooltip>
 ```
-

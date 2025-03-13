@@ -1,13 +1,15 @@
 <script lang="ts">
-	import { blueskyPostToPostData, type PostData, Post} from '$lib/components/extra/post';
+	import { blueskyPostToPostData, type PostData, Post } from '$lib/components/extra/post';
 
 	import data from '$docs/assets/bluesky-posts.json';
 	import Subheading from '$lib/components/base/heading/Subheading.svelte';
 
 	let blueskyPosts: PostData[] | null = $derived(
-		data.posts.map((post: unknown) => {
-			return blueskyPostToPostData(post);
-		}).reverse()
+		data.posts
+			.map((post: unknown) => {
+				return blueskyPostToPostData(post);
+			})
+			.reverse()
 	);
 
 	// onMount(async () => {
@@ -43,9 +45,7 @@
 <div class="divide-base-500/20 mx-auto flex w-full flex-col divide-y">
 	{#if blueskyPosts}
 		{#each blueskyPosts as post}
-			<Post data={post} class="py-4">
-				hello
-			</Post>
+			<Post data={post} class="py-4">hello</Post>
 		{/each}
 	{/if}
 </div>

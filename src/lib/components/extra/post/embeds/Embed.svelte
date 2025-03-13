@@ -16,7 +16,11 @@
 		{:else if data.embed.type === 'video' && data.embed.video}
 			<Video data={data.embed} />
 		{:else if data.embed.type === 'unknown'}
-			<div class="text-base-700 dark:text-base-300 text-sm p-4 rounded-2xl bg-base-200/50 dark:bg-base-900/50 border border-base-300 dark:border-base-600/30">Unknown embed type</div>
+			<div
+				class="text-base-700 dark:text-base-300 bg-base-200/50 dark:bg-base-900/50 border-base-300 dark:border-base-600/30 rounded-2xl border p-4 text-sm"
+			>
+				Unknown embed type
+			</div>
 		{/if}
 	</div>
 {/if}

@@ -26,4 +26,3 @@ export { Switch } from '$lib/components/base/switch/';
 export { Text as Paragraph } from '$lib/components/base/text/';
 export { Textarea } from '$lib/components/base/textarea';
 export { Tooltip } from '$lib/components/base/tooltip';
-

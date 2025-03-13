@@ -12,7 +12,9 @@
 			<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
 		</svg>
 	</div>
-	<div class="text-base-500 dark:text-base-400 mt-2 text-sm border-b border-base-200 dark:border-base-900 pb-4">
+	<div
+		class="text-base-500 dark:text-base-400 border-base-200 dark:border-base-900 mt-2 border-b pb-4 text-sm"
+	>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
 	</div>
 

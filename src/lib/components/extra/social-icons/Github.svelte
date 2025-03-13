@@ -16,8 +16,8 @@
 <a
 	{target}
 	class={cn(
-		'text-base-800 hover:text-accent-600 dark:text-base-300 dark:hover:text-accent-400 transition-colors rounded-2xl',
-		'focus-visible:outline-2 focus-visible:outline-base-900 dark:focus-visible:outline-base-100 focus-visible:outline-offset-2',
+		'text-base-800 hover:text-accent-600 dark:text-base-300 dark:hover:text-accent-400 rounded-2xl transition-colors',
+		'focus-visible:outline-base-900 dark:focus-visible:outline-base-100 focus-visible:outline-2 focus-visible:outline-offset-2',
 		className
 	)}
 	{...restProps}

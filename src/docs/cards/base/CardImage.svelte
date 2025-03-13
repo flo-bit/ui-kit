@@ -6,7 +6,7 @@
 <Image
 	src={cute}
 	alt="Another cute animal"
-	class="object-cover max-h-full max-w-full"
+	class="max-h-full max-w-full object-cover"
 	containerClasses="border-base-300 dark:border-base-700 overflow-hidden rounded-2xl border rounded-2xl overflow-hidden"
 	useThemeColor
 />

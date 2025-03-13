@@ -9,6 +9,7 @@
 ## Examples
 
 Primary
+
 <div class="flex items-center gap-2">
 	<Badge size="sm"
 		><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -88,7 +89,5 @@ Colors
 	import { Badge } from 'fox-ui-svelte';
 </script>
 
-<Badge size="sm" variant="primary">
-	Badge
-</Badge>
+<Badge size="sm" variant="primary">Badge</Badge>
 ```

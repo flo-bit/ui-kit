@@ -40,7 +40,8 @@
 		paneToContent[targetPane as keyof typeof paneToContent] = sourceContent;
 	}
 
-	let background = 'bg-base-100 dark:bg-base-900 border border-base-200 dark:border-base-800 relative overflow-hidden rounded-2xl p-6 pt-10 h-full w-full flex flex-col gap-4';
+	let background =
+		'bg-base-100 dark:bg-base-900 border border-base-200 dark:border-base-800 relative overflow-hidden rounded-2xl p-6 pt-10 h-full w-full flex flex-col gap-4';
 	let accentBackground =
 		'bg-accent-500/5 dark:bg-accent-500/5 border border-accent-500/20 dark:border-accent-500/20';
 </script>
@@ -90,9 +91,7 @@
 			handle: '.handle'
 		}}
 	>
-		<div
-			class={background}
-		>
+		<div class={background}>
 			<button class="handle bg-base-500/5 absolute top-0 right-0 left-0 h-5 w-full cursor-grab">
 				<span class="sr-only">drag</span>
 			</button>
@@ -100,7 +99,6 @@
 			<ThemeToggle class="absolute top-6 right-2" />
 
 			<SelectTheme />
-
 		</div>
 	</div>
 </Portal>
@@ -110,15 +108,13 @@
 		class="h-full w-full"
 		use:draggable={{ container: 'second', dragData: { id: 'second' }, handle: '.handle' }}
 	>
-		<div
-			class={background}
-		>
+		<div class={background}>
 			<button class="handle bg-base-500/5 absolute top-0 right-0 left-0 h-5 w-full cursor-grab">
 				<span class="sr-only">drag</span>
 			</button>
 
 			<NumberInputPreview />
-			
+
 			<WaveformAudioPlayerPreview />
 		</div>
 	</div>
@@ -129,9 +125,7 @@
 		class="h-full w-full"
 		use:draggable={{ container: 'third', dragData: { id: 'third' }, handle: '.handle' }}
 	>
-		<div
-			class={background}
-		>
+		<div class={background}>
 			<button class="handle bg-base-500/5 absolute top-0 right-0 left-0 h-5 w-full cursor-grab">
 				<span class="sr-only">drag</span>
 			</button>

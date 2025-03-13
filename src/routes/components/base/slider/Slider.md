@@ -16,13 +16,9 @@
 ```svelte
 <script>
 	import { Slider } from 'fox-ui-svelte';
-	
+
 	let value = $state(50);
 </script>
 
-<Slider 
-	bind:value 
-	min={0} 
-	max={100} 
-/>
+<Slider bind:value min={0} max={100} />
 ```

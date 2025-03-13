@@ -1,4 +1,3 @@
-
 <style>
 	:global(.body::-webkit-scrollbar-track) {
 		background-color: transparent;

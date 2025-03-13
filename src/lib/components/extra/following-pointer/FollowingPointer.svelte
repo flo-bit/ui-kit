@@ -81,10 +81,7 @@
 <Portal to={container}>
 	{#if isInside}
 		<div
-			class={cn(
-				'animate-in fade-in-0 pointer-events-none absolute z-50',
-				className
-			)}
+			class={cn('animate-in fade-in-0 pointer-events-none absolute z-50', className)}
 			style={`top: ${y}px; left: ${x}px`}
 		>
 			{#if title}

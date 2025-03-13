@@ -1,5 +1,3 @@
-
-
 <script lang="ts">
 	import RelativeTime from './relative-time';
 	import Embed from './embeds/Embed.svelte';
@@ -82,7 +80,7 @@
 						@{data.author.handle}
 					</div>
 				</a>
-				
+
 				{#if data.createdAt}
 					<a
 						href={'#'}
