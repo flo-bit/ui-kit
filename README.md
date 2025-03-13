@@ -1,15 +1,12 @@
-# my ui kit
+# 🦊 fox ui
 
->[!WARNING]
-> This is a work in progress and not ready to be used yet.
+> **This is a work in progress and not ready to be used yet. Public alpha coming soon!**
 
 svelte v5 + tailwind v4
 
 See all components here: https://flo-bit.dev/ui-kit
 
 ## Quickstart
-
-**Work in progress, only for testing purposes**
 
 ### 1. Create a new svelte project with tailwind css (including `@tailwindcss/typography` and `@tailwindcss/forms` plugins)
 
