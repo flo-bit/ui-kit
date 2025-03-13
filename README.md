@@ -11,29 +11,22 @@ demo: https://flo-bit.dev/ui-kit
 
 **Work in progress, only for testing purposes**
 
-1. setup a new svelte project with tailwind
-
-2. install the main dependencies
+## 1. Create a new svelte project with tailwind css (including `@tailwindcss/typography` and `@tailwindcss/forms` plugins)
 
 ```bash
-npm install bits-ui tailwind-variants @tailwindcss/forms @tailwindcss/typography @zerodevx/svelte-img
+npx sv create my-project
 ```
 
-3. if you want to use the image component, add the plugin to your vite config
+## 2. Install fox-ui-svelte
 
-```ts
-import { imagetools } from '@zerodevx/svelte-img/vite';
-
-export default defineConfig({
-	plugins: [sveltekit(), imagetools()]
-});
+```bash
+npm install fox-ui-svelte
 ```
 
-4. set theme variables in your app.css (changing `gray` and `blue` to your preferred colors, using find and replace) and add the tailwind plugins
+## 3. set theme variables in your app.css (changing `gray` and `blue` to your preferred colors, using find and replace).
 
 ```css
-@plugin '@tailwindcss/typography';
-@plugin '@tailwindcss/forms';
+@source "../node_modules/fox-ui-svelte";
 
 @theme {
 	--color-base-50: var(--color-gray-50);
@@ -62,19 +55,21 @@ export default defineConfig({
 }
 ```
 
-5. copy `src/lib/utils.ts` to your projects lib folder (has to be exactly this name and path)
+## 4. Use the components
 
-6. copy components from `src/lib/components` to your project
-
-Some components might need additional dependencies, just install once you get an error (recommended), or install all of them at once:
-
-```bash
-npm install bits-ui tailwind-variants @tailwindcss/forms @tailwindcss/typography layerchart plyr svelte-sonner tailwindcss-animate three @threlte/extras @threlte/core @types/three @zerodevx/svelte-img @number-flow/svelte wavesurfer.js hls.js @texel/color
+```svelte
+<script>
+	import { Button } from 'fox-ui-svelte';
+</script>
 ```
 
-again tailwind plugins should be added to your `app.css`
 
-```css
-// [other plugins...]
-@plugin 'tailwindcss-animate';
+If you want to use the image component, add the plugin to your vite config
+
+```ts
+import { imagetools } from '@zerodevx/svelte-img/vite';
+
+export default defineConfig({
+	plugins: [sveltekit(), imagetools()]
+});
 ```
