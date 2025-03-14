@@ -3,7 +3,7 @@
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils';
 
-	type Color = { class?: string; label: string; value?: string };
+	type Color = { class?: string; label: string; value?: string } | string;
 
 	let {
 		ref = $bindable(null),
@@ -24,6 +24,21 @@
 
 		onselected?: (color: Color, previous: Color) => void;
 	} = $props();
+
+	function getLabel(c: Color) {
+		if (typeof c === 'string') return c;
+		return c.label;
+	}
+
+	function getValue(c: Color) {
+		if (typeof c === 'string') return c;
+		return c.value;
+	}
+
+	function getColorClass(c: Color) {
+		if (typeof c === 'string') return '';
+		return c.class;
+	}
 </script>
 
 <div
@@ -36,13 +51,13 @@
 			class={cn(
 				'peer outline-base-900 focus:outline-base-900 dark:outline-base-100 dark:focus:outline-base-100 cursor-pointer items-center justify-center rounded-full p-0.5 outline-offset-2 transition-all duration-100 focus:outline-2 focus:outline-offset-2',
 				'border-base-600 border-opacity-30 dark:border-base-400 dark:border-opacity-30 size-8 rounded-full border transition-all',
-				selected.label === color.label
+				getLabel(selected) === getLabel(color)
 					? 'bg-opacity-100 group-focus-within:outline-base-500 focus:group-focus-within:outline-base-900 dark:group-focus-within:outline-base-400 dark:focus:group-focus-within:outline-base-100 outline-2'
 					: 'opacity-90 outline-0 hover:opacity-100 focus:opacity-100',
 				colorsClass,
-				color.class
+				getColorClass(color)
 			)}
-			style={color.value ? `background-color: ${color.value}` : undefined}
+			style={getValue(color) ? `background-color: ${getValue(color)}` : undefined}
 			onclick={() => {
 				if (selected === color) return;
 				let previous = selected;
@@ -51,7 +66,7 @@
 				if (onselected) onselected(color, previous);
 			}}
 		>
-			<span class="sr-only">{color.label}</span>
+			<span class="sr-only">{getLabel(color)}</span>
 		</button>
 	{/each}
 </div>

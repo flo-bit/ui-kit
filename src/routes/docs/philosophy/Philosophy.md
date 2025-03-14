@@ -72,7 +72,6 @@ If you want to disable dark mode, add the following to your app.css:
 @custom-variant dark (&:is(.dark *));
 ```
 
-
 ## Contributing/Feedback
 
 If you have any suggestions for components or feedback in general, please open an issue on [github](https://github.com/flo-bit/ui-kit/issues).

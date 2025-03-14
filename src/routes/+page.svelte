@@ -1,6 +1,5 @@
 <script>
 	import { base } from '$app/paths';
-	import { Alert } from '$lib/components/base/alert';
 	import { Button } from '$lib/components/base/button';
 	import Cards from '$docs/site-components/Cards.svelte';
 	import Navbar from '$docs/site-components/Navbar.svelte';
@@ -15,7 +14,7 @@
 	<h1
 		class="text-base-950 dark:text-base-50 my-8 mt-8 max-w-2xl text-4xl font-bold tracking-tight text-pretty md:text-5xl md:leading-14"
 	>
-		Beautiful UI components built with Tailwind 4 and Svelte 5
+		UI components built with Tailwind 4 and Svelte 5
 	</h1>
 
 	<PublicAlphaAlert class="w-fit" />

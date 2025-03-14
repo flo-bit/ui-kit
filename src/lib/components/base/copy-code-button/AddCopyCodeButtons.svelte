@@ -14,9 +14,21 @@
 	let codeblocks: HTMLElement[] = $state([]);
 
 	function addButtons() {
-		codeblocks = Array.from(document.querySelectorAll('pre'));
-		for (let codeblock of codeblocks) {
-			codeblock.classList.add('group', 'relative');
+		const preElements = Array.from(document.querySelectorAll('pre'));
+		for (let pre of preElements) {
+			if (pre.classList.contains('wrapped')) continue;
+
+			pre.classList.add('wrapped');
+
+			const wrapper = document.createElement('div');
+			wrapper.classList.add('relative', 'group');
+			const clone = pre.cloneNode(true);
+
+			wrapper.appendChild(clone);
+
+			pre.parentNode?.replaceChild(wrapper, pre);
+
+			codeblocks.push(wrapper);
 		}
 	}
 </script>
