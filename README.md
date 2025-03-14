@@ -1,3 +1,5 @@
+<img width="700" alt="open-graph" src="https://github.com/user-attachments/assets/912cf6b4-16f6-4a9e-a9cf-1add9d271f76" />
+
 # 🦊 fox ui
 
 > **This is a public alpha release. Expect bugs and breaking changes.**
