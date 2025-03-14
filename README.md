@@ -1,6 +1,6 @@
 # 🦊 fox ui
 
-> **This is a work in progress and not ready to be used yet. Public alpha coming soon!**
+> **This is a public alpha release. Expect bugs and breaking changes.**
 
 svelte v5 + tailwind v4
 
