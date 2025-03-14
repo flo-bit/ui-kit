@@ -1,23 +1,10 @@
 <script>
-	import { AvatarGroup } from '$lib/components/base/avatar';
+	import { Avatar, AvatarGroup } from '$lib/components/base/avatar';
 </script>
 
-<AvatarGroup
-	avatarClass="size-16"
-	users={[
-		{
-			src: 'https://github.com/flo-bit.png',
-			alt: 'flo-bit',
-			fallback: 'FB'
-		},
-		{
-			alt: 'rich-harris',
-			fallback: 'RH'
-		},
-		{
-			src: 'https://github.com/huntabyte.png',
-			alt: 'huntabyte',
-			fallback: 'HB'
-		}
-	]}
-/>
+
+<div class="flex items-center gap-2">
+	<Avatar fallback="AB" class="size-16 text-xl font-semibold" />
+	<Avatar class="size-16" />
+    <Avatar src="https://github.com/flo-bit.png" alt="flo-bit" fallback="FB" class="size-16" />
+</div>

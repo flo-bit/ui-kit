@@ -11,7 +11,7 @@
 		addButtons();
 	});
 
-	let codeblocks: HTMLElement[] = $state([]);
+	let codeblocks: { element: HTMLElement; text?: string }[] = $state([]);
 
 	function addButtons() {
 		const preElements = Array.from(document.querySelectorAll('pre'));
@@ -28,11 +28,11 @@
 
 			pre.parentNode?.replaceChild(wrapper, pre);
 
-			codeblocks.push(wrapper);
+			codeblocks.push({ element: wrapper, text: pre.innerText });
 		}
 	}
 </script>
 
 {#each codeblocks as codeblock}
-	<CopyCodeButton {codeblock} />
+	<CopyCodeButton element={codeblock.element} text={codeblock.text} />
 {/each}

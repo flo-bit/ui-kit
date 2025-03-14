@@ -49,7 +49,7 @@
 		{
 			component: CardBox,
 			className: '',
-			label: 'Boxes',
+			label: 'Box',
 			href: 'box'
 		},
 		{
@@ -133,7 +133,7 @@
 		{
 			component: CardCard,
 			className: '',
-			label: 'Cards',
+			label: 'Card',
 			href: 'cards'
 		},
 		{
@@ -151,7 +151,7 @@
 		{
 			component: CardAccordion,
 			className: '',
-			label: 'Accordions',
+			label: 'Accordion',
 			href: 'accordion'
 		}
 	];

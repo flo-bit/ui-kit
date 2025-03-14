@@ -2,12 +2,14 @@
 	import { cn } from '$lib';
 	import { Portal } from 'bits-ui';
 
-	let { codeblock } = $props();
+	let { element, text }: { element: HTMLElement; text?: string } = $props();
 
 	let copied = $state(false);
 
 	async function clickedCopy() {
-		let text = codeblock.innerText;
+		if (!text) {
+			text = element.innerText;
+		}
 
 		await navigator.clipboard.writeText(text);
 
@@ -18,12 +20,12 @@
 	}
 </script>
 
-<Portal to={codeblock}>
+<Portal to={element}>
 	{#if !copied}
 		<button
 			class={cn(
 				'not-prose focus-visible:outline-base-600 dark:focus-visible:outline-base-400 focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2',
-				'[@media(pointer:fine)]:opacity-0 bg-base-200 inline-flex size-8 items-center justify-center p-1 transition-opacity duration-150 group-hover:opacity-100',
+				'bg-base-200 inline-flex size-8 items-center justify-center p-1 transition-opacity duration-150 group-hover:opacity-100 [@media(pointer:fine)]:opacity-0',
 				'dark:bg-base-800 border-base-400 dark:border-base-700 dark:hover:bg-base-700 hover:bg-base-300 absolute top-3 right-3 rounded-2xl border'
 			)}
 			onclick={clickedCopy}
