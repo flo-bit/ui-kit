@@ -1,8 +1,9 @@
 <script lang="ts">
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
-	import { onMount } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils';
+
+	import { load } from 'cheerio';
 
 	let {
 		ref = $bindable(null),
@@ -19,59 +20,37 @@
 		captionClass?: string;
 	} = $props();
 
-	let modifiedSvg = $state('');
+	function modifySvg(svgString: string): string {
+		const loadedSvg = load(svgString, { xmlMode: true });
 
-	// Function to modify the SVG using the DOM API
-	function modifySvg(svgString: string) {
-		// Create a DOM parser
-		const parser = new DOMParser();
-		const doc = parser.parseFromString(svgString, 'image/svg+xml');
-		const svg = doc.documentElement;
+		const svg = loadedSvg('svg');
+		svg.attr('width', '100%');
+		svg.attr('height', '100%');
+		svg.addClass('w-full h-auto');
+		svg.removeAttr('filter');
 
-		// Modify the SVG element
-		svg.setAttribute('width', '100%');
-		svg.setAttribute('height', '100%');
-		svg.classList.add('w-full', 'h-auto');
-		svg.removeAttribute('filter');
-
-		// Modify text elements
-		const textElements = svg.querySelectorAll('text');
-		textElements.forEach((el) => {
-			el.removeAttribute('fill');
-			el.classList.add('fill-base-800', 'dark:fill-base-100');
+		loadedSvg('text').each((_, el) => {
+			loadedSvg(el).removeAttr('fill');
+			loadedSvg(el).addClass('fill-base-800 dark:fill-base-100');
 		});
 
-		// Modify rect elements
-		const rectElements = svg.querySelectorAll('rect');
-		rectElements.forEach((el) => {
-			el.removeAttribute('fill');
-			el.classList.add('fill-accent-600', 'dark:fill-accent-500');
+		loadedSvg('rect').each((_, el) => {
+			loadedSvg(el).removeAttr('fill');
+			loadedSvg(el).addClass('fill-accent-600 dark:fill-accent-500');
 		});
 
-		// Modify path elements
-		const pathElements = svg.querySelectorAll('path');
-		pathElements.forEach((el) => {
-			el.removeAttribute('stroke');
-			el.classList.add('stroke-accent-600', 'dark:stroke-accent-500');
-			if (el.getAttribute('fill') !== 'none') {
-				el.classList.add('fill-accent-600', 'dark:fill-accent-500');
-				el.removeAttribute('fill');
+		loadedSvg('path').each((_, el) => {
+			loadedSvg(el).removeAttr('stroke');
+			loadedSvg(el).addClass('stroke-accent-600 dark:stroke-accent-500');
+			if (loadedSvg(el).attr('fill') !== 'none') {
+				loadedSvg(el).addClass('fill-accent-600 dark:fill-accent-500');
+				loadedSvg(el).removeAttr('fill');
 			}
 		});
 
-		// Modify group elements
-		const groupElements = svg.querySelectorAll('g');
-		groupElements.forEach((el) => {
-			el.classList.add('excalidraw-element');
-		});
-
-		// Convert back to string
-		return new XMLSerializer().serializeToString(svg);
+		return loadedSvg.html();
 	}
 
-	onMount(async () => {
-		modifiedSvg = modifySvg(svg);
-	});
 </script>
 
 <figure
@@ -80,7 +59,7 @@
 	{...restProps}
 >
 	<div class="excalidraw-svg w-full" aria-label={alt}>
-		{@html modifiedSvg}
+		{@html modifySvg(svg)}
 	</div>
 	{#if caption}
 		<figcaption
@@ -90,17 +69,3 @@
 		</figcaption>
 	{/if}
 </figure>
-
-<noscript>
-	<div
-		class="border-base-200 bg-base-100 text-base-700 dark:border-base-700 dark:bg-base-900 dark:text-base-300 w-full rounded-2xl border p-4 text-sm"
-	>
-		JavaScript is required to view this content.
-	</div>
-
-	<style>
-		.excalidraw-container {
-			display: none;
-		}
-	</style>
-</noscript>

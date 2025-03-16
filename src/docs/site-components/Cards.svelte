@@ -26,6 +26,8 @@
 	import CardProse from '$docs/cards/base/CardProse.svelte';
 	import CardAccordion from '$docs/cards/base/CardAccordion.svelte';
 	import { cn } from '$lib/utils';
+	import CardExcalidraw from '$docs/cards/illustrations/CardExcalidraw.svelte';
+	import CardUndraw from '$docs/cards/illustrations/CardUndraw.svelte';
 
 	let baseCards = [
 		{
@@ -193,6 +195,24 @@
 			href: 'github-corner'
 		}
 	];
+
+	let illustrationsCards = [
+		{
+			component: CardExcalidraw,
+			className: '',
+			label: 'Excalidraw',
+			href: 'excalidraw'
+		},
+		{
+			component: CardUndraw,
+			className: '',
+			label: 'Undraw',
+			href: 'undraw'
+		}
+	];
+
+	// sort extraCards by label
+	illustrationsCards.sort((a, b) => a.label.localeCompare(b.label));
 </script>
 
 <h2 class="text-base-800 dark:text-base-200 mb-4 text-xl font-semibold">Base components</h2>
@@ -225,6 +245,39 @@
 		</div>
 	{/each}
 </div>
+
+
+<h2 class="hidden text-base-800 dark:text-base-200 mb-4 text-xl font-semibold mt-24">Illustrations components</h2>
+<div class="hidden w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:grid-cols-4">
+	{#each illustrationsCards as card}
+		<div
+			class="group relative flex flex-col items-start gap-3 transition-opacity duration-150 hover:opacity-90 md:gap-4"
+		>
+			<div
+				class="bg-base-100 dark:bg-base-900/30 border-base-200 dark:border-base-900 pointer-events-none relative h-44 w-full overflow-hidden rounded-2xl border"
+			>
+				<div
+					class={cn(
+						'absolute inset-0 flex h-full w-full flex-col items-center justify-center gap-2 p-6 transition-transform duration-300 will-change-transform group-hover:scale-103',
+						card.className
+					)}
+					aria-hidden="true"
+					tabindex="-1"
+				>
+					<card.component />
+				</div>
+			</div>
+			<a
+				href={base + `/components/extras/${card.href}`}
+				class="focus-visible:outline-accent-500 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2"
+			>
+				<span class="text-base-900 dark:text-base-50 mx-2 text-sm font-semibold">{card.label}</span>
+				<span class="absolute inset-0"></span>
+			</a>
+		</div>
+	{/each}
+</div>
+
 
 <!-- 
 <h2 class="text-base-800 dark:text-base-200 mt-24 mb-4 text-xl font-semibold">Graph components</h2>
