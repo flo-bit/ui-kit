@@ -42,7 +42,7 @@ With Label
 
 ```svelte
 <script>
-	import { Checkbox } from 'fox-ui-svelte';
+	import { Checkbox } from 'fuchs';
 
 	let checked = $state(false);
 </script>

@@ -44,7 +44,7 @@ class="not-prose"
 
 ```svelte
 <script>
-	import { Avatar, AvatarGroup } from 'fox-ui-svelte';
+	import { Avatar, AvatarGroup } from 'fuchs';
 </script>
 
 <Avatar src="https://github.com/flo-bit.png" alt="flo-bit" fallback="FB" />

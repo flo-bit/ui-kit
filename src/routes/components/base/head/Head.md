@@ -8,7 +8,7 @@ It's recommended to add this to your root layout.
 
 ```svelte
 <script>
-	import { Head } from 'fox-ui-svelte';
+	import { Head } from 'fuchs';
 </script>
 
 <Head

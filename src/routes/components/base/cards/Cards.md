@@ -13,7 +13,7 @@
 
 ## Examples
 
-Full width
+### Full width
 
 <ImageCard
 	src={nature1}
@@ -24,7 +24,7 @@ Full width
 	class="not-prose mb-16"
 />
 
-In a grid
+### In a grid
 
 <div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 not-prose">
 	<ImageCard
@@ -53,7 +53,7 @@ In a grid
 
 ```svelte
 <script>
-	import { ImageCard } from 'fox-ui-svelte';
+	import { ImageCard } from 'fuchs';
 </script>
 
 <ImageCard src={'/image.jpg'} alt="" title="Card title" description="Card description" href="#" />

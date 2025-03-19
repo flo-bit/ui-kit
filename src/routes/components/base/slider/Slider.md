@@ -15,7 +15,7 @@
 
 ```svelte
 <script>
-	import { Slider } from 'fox-ui-svelte';
+	import { Slider } from 'fuchs';
 
 	let value = $state(50);
 </script>

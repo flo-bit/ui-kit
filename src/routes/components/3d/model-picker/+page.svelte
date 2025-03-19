@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import ModalPicker from '$lib/components/3d/model-picker/ModalPicker.svelte';
+	import { ModelPicker } from '$lib';
 	import Button from '$lib/components/base/button/Button.svelte';
 	import Subheading from '$lib/components/base/heading/Subheading.svelte';
 	import { toast } from 'svelte-sonner';
@@ -10,7 +10,7 @@
 
 <Subheading class="mb-4">Model Picker</Subheading>
 
-<ModalPicker
+<ModelPicker
 	items={[
 		{
 			path: base + '/models/gltf/Barrel_A.gltf',

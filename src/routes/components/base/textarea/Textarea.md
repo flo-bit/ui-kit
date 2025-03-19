@@ -28,7 +28,7 @@ Secondary
 
 ```svelte
 <script>
-	import { Textarea } from 'fox-ui-svelte';
+	import { Textarea } from 'fuchs';
 
 	let value = $state('');
 </script>

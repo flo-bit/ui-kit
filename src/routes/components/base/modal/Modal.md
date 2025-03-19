@@ -46,7 +46,7 @@ noButton={{ onclick: () => toast('No', { description: 'Why not though?' }) }}
 
 ```svelte
 <script>
-	import { Modal, Button } from 'fox-ui-svelte';
+	import { Modal, Button } from 'fuchs';
 
 	let open = $state(false);
 

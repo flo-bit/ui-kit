@@ -26,14 +26,18 @@ You can try it out by setting the current theme colors in the navbar for this do
 
 ## Copying components vs installing packages
 
-I'm a big fan of the philosophy of copying components (shadcn-style) for better customization, but also I think the quickest way to build something is to just install the package and use it.
+I'm a big fan of the philosophy of copying components (shadcn-style) for better customization, 
+but also I think the quickest way to build something is to just install the package and use it.
 
-So the plan is to have both options (currently only installing as a package is available, but you can copy what you need from the [source code](https://github.com/flo-bit/ui-kit/tree/main/src/lib/components/base) though some imports might need to be adjusted).
+So the plan is to have both options (currently only installing as a package is available, 
+but you can copy what you need from the [source code](https://github.com/flo-bit/ui-kit/tree/main/src/lib/components/base) 
+though some imports might need to be adjusted).
 
 ## Lots of components
 
 While currently only the base components are visible, there are lots of components in the pipeline.
-The aim is to have a component library that has lots of components that are useful for building webapps/websites/games, all in a consistent style/theme.
+The aim is to have a component library that has lots of components that are useful for building 
+webapps/websites/games, all in a consistent style/theme.
 
 See here for a few examples of work in progress components (some may be partially broken):
 
@@ -45,8 +49,6 @@ See here for a few examples of work in progress components (some may be partiall
 
 ### extras
 
-- [color picker](/ui-kit/components/extras/color-picker/)
-- [excalidraw](/ui-kit/components/extras/excalidraw/)
 - [quote](/ui-kit/components/extras/quote/)
 - [phone](/ui-kit/components/extras/phone/)
 - [timer](/ui-kit/components/extras/timer/)
@@ -63,17 +65,35 @@ See here for a few examples of work in progress components (some may be partiall
 - [model-picker](/ui-kit/components/3d/model-picker/)
 - [voxel-art](/ui-kit/components/3d/voxel-art/)
 
+## Works without javascript when possible / is accessible
+
+Whenever possible components should work without javascript. 
+Also all components should be accessible to the best of my knowledge. 
+Please let me know [if you find any issues](https://github.com/flo-bit/ui-kit/issues).
+
 ## Dark mode
 
-This ui kit is designed to be used in both light and dark mode (and switch automatically depending on system settings).
+This ui kit is designed to be used in both light and dark mode 
+(and switch automatically depending on system settings).
 If you want to disable dark mode, add the following to your app.css:
 
 ```css
 @custom-variant dark (&:is(.dark *));
 ```
 
+Similarly you can disable light mode:
+
+1. Add the above code to your app.css
+2. Add the `dark` class to the `html` element in your app.
+
 ## Contributing/Feedback
 
 If you have any suggestions for components or feedback in general, please open an issue on [github](https://github.com/flo-bit/ui-kit/issues).
 
 Also feel free to contribute yourself, preferably by first opening an issue about the component/feature you want to add!
+
+You can also reach me on [bluesky](https://bsky.app/profile/flo-bit.dev).
+
+## Credits
+
+This ui kit is largely based on [bits-ui](https://bits-ui.com/).

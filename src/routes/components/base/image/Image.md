@@ -31,7 +31,7 @@ Show normal image on hover:
 
 ```svelte
 <script>
-	import { ImageContainer } from 'fox-ui-svelte';
+	import { ImageContainer } from 'fuchs';
 </script>
 
 <ImageContainer src="/image.jpg" alt="Alt tag" />

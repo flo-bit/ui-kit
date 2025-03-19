@@ -16,16 +16,16 @@ See all components here: https://flo-bit.dev/ui-kit
 npx sv create my-project
 ```
 
-### 2. Install fox-ui-svelte
+### 2. Install fuchs
 
 ```bash
-npm install fox-ui-svelte
+npm install fuchs
 ```
 
 ### 3. set theme variables in your app.css (changing `gray` and `blue` to your preferred colors, using find and replace).
 
 ```css
-@source "../node_modules/fox-ui-svelte";
+@source "../node_modules/fuchs";
 
 @theme {
 	--color-base-50: var(--color-gray-50);
@@ -58,7 +58,7 @@ npm install fox-ui-svelte
 
 ```svelte
 <script>
-	import { Button } from 'fox-ui-svelte';
+	import { Button } from 'fuchs';
 </script>
 
 <Button onclick={() => alert('clicked')}>Click me</Button>

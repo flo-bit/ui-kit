@@ -1,5 +1,8 @@
-<script>
-	import ExcalidrawPreview from '$docs/preview/ExcalidrawPreview.svelte';
+<script lang="ts">
+	import ExcalidrawDocs from './Excalidraw.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<ExcalidrawPreview />
+<Prose>
+	<ExcalidrawDocs />
+</Prose>

@@ -36,7 +36,7 @@ With Label
 
 ```svelte
 <script>
-	import { Switch } from 'fox-ui-svelte';
+	import { Switch } from 'fuchs';
 
 	let checked = $state(false);
 </script>

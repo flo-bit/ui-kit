@@ -42,7 +42,7 @@
 
 ```svelte
 <script>
-	import { ChatBubble } from 'fox-ui-svelte';
+	import { ChatBubble } from 'fuchs';
 </script>
 
 <ChatBubble side="right" variant="secondary">

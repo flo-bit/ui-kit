@@ -18,7 +18,7 @@
 
 ```svelte
 <script>
-	import Prose from 'fox-ui-svelte';
+	import Prose from 'fuchs';
 </script>
 
 <Prose>

@@ -63,7 +63,7 @@
 
 ```svelte
 <script>
-	import { Alert } from 'fox-ui-svelte';
+	import { Alert } from 'fuchs';
 </script>
 
 <Alert title="Alert Title" type="info">

@@ -19,7 +19,7 @@
 
 ```svelte
 <script lang="ts">
-	import { Accordion, AccordionItem } from 'fox-ui-svelte';
+	import { Accordion, AccordionItem } from 'fuchs';
 </script>
 
 <Accordion type="single">

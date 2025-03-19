@@ -3,31 +3,34 @@
 	import { render_main_image, render_slider_image } from './render';
 	import type { RGB, OKlab, OKhsv, OKlch } from './color';
 	import {
-		oklab_to_okhsv,
 		okhsv_to_oklab,
-		rgb_to_okhsv,
 		okhsv_to_rgb,
 		okhsv_to_oklch,
-		rgb_to_hex
+		rgb_to_hex,
+		oklab_to_okhsv,
+		rgb_to_okhsv
 	} from './color';
+	import { cn } from '$lib';
 
-	export let rgb: RGB | undefined = undefined;
-	export let oklab: OKlab | undefined = undefined;
-	export let okhsv: OKhsv | undefined = undefined;
-
-	export let onchange: (color: {
-		hex: string;
-		rgb: RGB;
-		oklab: OKlab;
-		okhsv: OKhsv;
-		oklch: OKlch;
-	}) => void = () => {};
+	let {
+		rgb = $bindable(),
+		oklab = $bindable(),
+		okhsv = $bindable(),
+		class: className,
+		onchange
+	}: {
+		rgb?: RGB;
+		oklab?: OKlab;
+		okhsv?: OKhsv;
+		class?: string;
+		onchange?: (color: { hex: string; rgb: RGB; oklab: OKlab; okhsv: OKhsv; oklch: OKlch }) => void;
+	} = $props();
 
 	const width = picker_size + slider_width + gap_size + border_size * 2;
 	const height = picker_size + border_size * 2;
 
-	$: color = convertToInternal(rgb, oklab, okhsv);
-	$: uihsv = scale_to_ui(color);
+	let color = $derived(convertToInternal(rgb, oklab, okhsv));
+	let uihsv = $derived(scale_to_ui(color));
 
 	function scale_to_ui(okhsv: OKhsv): OKhsv {
 		return {
@@ -84,7 +87,7 @@
 			rgb = new_rgb;
 		}
 
-		onchange({
+		onchange?.({
 			rgb: new_rgb,
 			oklab: new_oklab,
 			okhsv: new_okhsv,
@@ -196,14 +199,17 @@
 	}
 </script>
 
-<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
 <div
-	class={$$props.class}
+	class={cn(
+		'focus-visible:outline-base-900 dark:focus-visible:outline-base-100 relative rounded-xl border-none focus-visible:outline-2 focus-visible:outline-offset-2',
+		className
+	)}
 	tabindex="0"
 	style:width="{width}px"
 	style:height="{height}px"
-	on:keydown={onKeydown}
+	onkeydown={onKeydown}
 >
 	<canvas
 		id="okhsv_sv_canvas"
@@ -211,7 +217,7 @@
 		height={picker_size}
 		style:top="{border_size}px"
 		style:left="{border_size}px"
-		class="rounded-xl"
+		class="absolute touch-none rounded-xl"
 		use:pointer={update_sv}
 		use:render_main_image={color.h}
 	></canvas>
@@ -220,45 +226,27 @@
 		height={picker_size}
 		style:top="{border_size}px"
 		style:left="{picker_size + gap_size}px"
-		class="rounded-xl"
+		class="absolute touch-none rounded-xl"
 		use:pointer={update_h}
 		use:render_slider_image
 	></canvas>
 
-	<svg {width} {height}>
+	<svg {width} {height} class="pointer-events-none absolute touch-none">
 		<g transform="translate({border_size},{border_size})">
 			<g transform="translate({uihsv.s},{uihsv.v})">
-				<circle cx="0" cy="0" r="5" fill="none" stroke-width="1.75" stroke="#fff" />
-				<circle cx="0" cy="0" r="6" fill="none" stroke-width="1.25" stroke="#000" />
+				<circle cx="0" cy="0" r="5" fill="none" stroke-width="1.75" class="stroke-base-50" />
+				<circle cx="0" cy="0" r="6" fill="none" stroke-width="1.25" class="stroke-base-950" />
 			</g>
 		</g>
 		<g transform="translate({picker_size + gap_size},{border_size})">
 			<g transform="translate(0,{uihsv.h})">
-				<polygon points="-7,-4 -1,0 -7,4" fill="#fff" stroke-width="0.8" stroke="#000" />
+				<polygon points="-7,-4 -1,0 -7,4" stroke-width="0.8" class="stroke-base-950 fill-base-50" />
 				<polygon
 					points="{slider_width + 7},-4 {slider_width + 1},0 {slider_width + 7},4"
-					fill="#fff"
 					stroke-width="0.8"
-					stroke="#000"
+					class="stroke-base-950 fill-base-50"
 				/>
 			</g>
 		</g>
 	</svg>
 </div>
-
-<style>
-	div {
-		position: relative;
-		outline: 0;
-	}
-
-	canvas,
-	svg {
-		touch-action: none;
-		position: absolute;
-	}
-
-	svg {
-		pointer-events: none;
-	}
-</style>

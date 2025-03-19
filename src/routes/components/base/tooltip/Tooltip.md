@@ -26,7 +26,7 @@
 
 ```svelte
 <script>
-	import { Tooltip, Button } from 'fox-ui-svelte';
+	import { Tooltip, Button } from 'fuchs';
 
 	function handleClick() {
 		console.log('clicked');

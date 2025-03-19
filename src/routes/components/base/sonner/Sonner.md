@@ -46,7 +46,7 @@ In your root layout:
 
 ```svelte
 <script>
-	import { Toaster } from 'fox-ui-svelte';
+	import { Toaster } from 'fuchs';
 </script>
 
 <Toaster />
@@ -56,7 +56,7 @@ In your page:
 
 ```svelte
 <script>
-	import { Button, toast } from 'fox-ui-svelte';
+	import { Button, toast } from 'fuchs';
 
 	function handleClick() {
 		toast('Hello there', { description: 'General Kenobi!' });

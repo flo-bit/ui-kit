@@ -86,7 +86,7 @@ Colors
 
 ```svelte
 <script>
-	import { Badge } from 'fox-ui-svelte';
+	import { Badge } from 'fuchs';
 </script>
 
 <Badge size="sm" variant="primary">Badge</Badge>

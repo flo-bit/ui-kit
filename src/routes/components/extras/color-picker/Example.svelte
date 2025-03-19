@@ -7,6 +7,7 @@
 	import PopoverColorPicker from '$lib/components/extra/color-picker/popover/PopoverColorPicker.svelte';
 	import { ThemeWatcher } from '$lib/helper/ThemeWatcher.svelte';
 	import { hex_to_rgb, oklch_string_to_oklch, oklch_to_rgb } from '$lib/components/extra/color-picker/base/color';
+	import { onMount } from 'svelte';
 
 	let rgb = $state({
 		r: 0,
@@ -14,15 +15,21 @@
 		b: 0
 	});
 
-	$inspect(rgb);
+	onMount(() => {
+		const theme = new ThemeWatcher();
+		const color = theme.getCSSVar('--color-accent-500');
+		rgb = oklch_to_rgb(oklch_string_to_oklch(color));
+	});
 </script>
 
-<Subheading class="mb-4">Color Picker</Subheading>
-
-<PopoverColorPicker bind:rgb />
+<h3>Inline Color Picker</h3>
 
 <ColorPicker bind:rgb />
 
+<h3>Popover Color Picker</h3>
+
+<PopoverColorPicker bind:rgb />
+<!-- 
 <Button
 	onclick={() => {
 		// themewatcher
@@ -30,4 +37,4 @@
 		const color = theme.getCSSVar('--color-accent-500');
 		rgb = oklch_to_rgb(oklch_string_to_oklch(color));
 	}}>Reset Color</Button
->
+> -->

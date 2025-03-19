@@ -48,7 +48,7 @@
 
 ```svelte
 <script>
-	import { ScrollArea } from 'fox-ui-svelte';
+	import { ScrollArea } from 'fuchs';
 </script>
 
 <ScrollArea class="h-52 w-96">

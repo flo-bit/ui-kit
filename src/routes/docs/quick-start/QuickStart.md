@@ -14,18 +14,18 @@ npx sv create my-project
 
 Also add the `@tailwindcss/typography` and `@tailwindcss/forms` plugins.
 
-## 2. Install fox-ui-svelte
+## 2. Install fuchs
 
 ```bash
-npm install fox-ui-svelte
+npm install fuchs
 ```
 
-## 3. Add this to your `app.css`
+## 3. Set theme variables in your `app.css`
 
 You can change the colors to your liking.
 
 ```css
-@source "../node_modules/fox-ui-svelte";
+@source "../node_modules/fuchs";
 
 @theme {
 	--color-base-50: var(--color-gray-50);
@@ -58,7 +58,7 @@ You can change the colors to your liking.
 
 ```svelte
 <script>
-	import { Button } from 'fox-ui-svelte';
+	import { Button } from 'fuchs';
 </script>
 
 <Button>Click me</Button>

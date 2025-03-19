@@ -180,7 +180,7 @@ Colors
 
 ```svelte
 <script>
-	import { Button } from 'fox-ui-svelte';
+	import { Button } from 'fuchs';
 </script>
 
 <Button variant="primary" size="sm">Button</Button>

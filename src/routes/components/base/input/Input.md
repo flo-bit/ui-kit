@@ -28,7 +28,7 @@ Secondary
 
 ```svelte
 <script>
-	import { Input } from 'fox-ui-svelte';
+	import { Input } from 'fuchs';
 
 	let value = $state('');
 </script>

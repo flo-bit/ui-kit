@@ -5,34 +5,10 @@
 
 	import { Button } from '$lib/components/base/button';
 	import Sidebar from '$lib/components/base/sidebar/Sidebar.svelte';
+	import { baseComponents } from './components_base';
+	import { extraComponents } from './components_extra';
+
 	import Logo from './Logo.svelte';
-
-	const baseComponents = [
-		{ label: 'Alerts', href: 'alert' },
-		{ label: 'Avatars', href: 'avatar' },
-		{ label: 'Badges', href: 'badge' },
-		{ label: 'Box', href: 'box' },
-		{ label: 'Buttons', href: 'button' },
-		{ label: 'Chat Bubble', href: 'chat-bubble' },
-		{ label: 'Checkboxes', href: 'checkbox' },
-		{ label: 'Image', href: 'image' },
-		{ label: 'Input', href: 'input' },
-		{ label: 'Scroll Area', href: 'scroll-area' },
-		{ label: 'Slider', href: 'slider' },
-		{ label: 'Switch', href: 'switch' },
-		{ label: 'Textarea', href: 'textarea' },
-		{ label: 'Tooltip', href: 'tooltip' },
-		{ label: 'Modal', href: 'modal' },
-		{ label: 'Number Input', href: 'number-input' },
-		{ label: 'Cards', href: 'cards' },
-		{ label: 'Accordion', href: 'accordion' },
-		{ label: 'Sonner', href: 'sonner' },
-		{ label: 'Prose', href: 'prose' },
-		{ label: 'Head', href: 'head' }
-	];
-
-	baseComponents.sort((a, b) => a.label.localeCompare(b.label));
-	console.log('components', baseComponents.length);
 
 	const components = [
 		{ label: 'Select', href: 'select' },
@@ -95,11 +71,11 @@
 			data-sveltekit-keepfocus
 			variant="ghost"
 			onclick={handleClick}
-			href="{base}/components/theme"
+			href="{base}/docs/theme"
 			class="mb-6 w-full justify-start">Theme</Button
 		>
 
-		<Accordion type="single" class="w-full" value="base-components">
+		<Accordion type="multiple" class="w-full" value={["base-components", "extra-components"]}>
 			<AccordionItem
 				value="base-components"
 				class="border-0"
@@ -113,6 +89,23 @@
 						variant="ghost"
 						onclick={handleClick}
 						href="{base}/components/base/{component.href}"
+						class="w-full justify-start">{component.label}</Button
+					>
+				{/each}
+			</AccordionItem>
+			<AccordionItem
+				value="extra-components"
+				class="border-0"
+				title="Extra Components"
+				triggerClasses="text-sm px-3 py-1 font-semibold"
+				contentClasses="flex flex-col gap-1 items-start px-1"
+			>
+				{#each extraComponents as component}
+					<Button
+						data-sveltekit-keepfocus
+						variant="ghost"
+						onclick={handleClick}
+						href="{base}/components/extras/{component.href}"
 						class="w-full justify-start">{component.label}</Button
 					>
 				{/each}

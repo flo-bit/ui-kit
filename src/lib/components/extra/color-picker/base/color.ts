@@ -64,9 +64,39 @@ export function rgb_to_okhsv(rgb: RGB): OKhsv {
 	return { h, s, v };
 }
 
+export function rgb_to_oklab(rgb: RGB): OKlab {
+	const [l, a, b] = convert([rgb.r, rgb.g, rgb.b], sRGB, OKLab);
+	return { l, a, b };
+}
+
 export function okhsl_to_rgb(okhsl: OKhsl): RGB {
 	const [r, g, b] = convert([okhsl.h, okhsl.s, okhsl.l], OKHSL, sRGB);
 	return { r, g, b };
+}
+
+export function oklab_to_oklch(oklab: OKlab): OKlch {
+	const [l, c, h] = convert([oklab.l, oklab.a, oklab.b], OKLab, OKLCH);
+	return { l, c, h };
+}
+
+export function rgb_to_oklch(rgb: RGB): OKlch {
+	const [l, c, h] = convert([rgb.r, rgb.g, rgb.b], sRGB, OKLCH);
+	return { l, c, h };
+}
+
+export function oklab_to_rgb(oklab: OKlab): RGB {
+	const [r, g, b] = convert([oklab.l, oklab.a, oklab.b], OKLab, sRGB);
+	return { r, g, b };
+}
+
+export function oklch_to_rgb(oklch: OKlch): RGB {
+	const [r, g, b] = convert([oklch.l, oklch.c, oklch.h], OKLCH, sRGB);
+	return { r, g, b };
+}
+
+export function oklch_string_to_oklch(oklch: string): OKlch {
+	const converted = oklch.split('oklch(')[1].split(')')[0].split(' ');
+	return { l: parseFloat(converted[0]), c: parseFloat(converted[1]), h: parseFloat(converted[2]) };
 }
 
 export function rgb_to_hex(rgb: RGB): string {
