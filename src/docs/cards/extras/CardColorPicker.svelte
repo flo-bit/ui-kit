@@ -14,6 +14,11 @@
 		const theme = new ThemeWatcher();
 		const color = theme.getCSSVar('--color-accent-500');
 		rgb = oklch_to_rgb(oklch_string_to_oklch(color));
+
+		theme.subscribe(() => {
+			const color = theme.getCSSVar('--color-accent-500');
+			rgb = oklch_to_rgb(oklch_string_to_oklch(color));
+		});
 	});
 </script>
 

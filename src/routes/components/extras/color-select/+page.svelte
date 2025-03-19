@@ -1,5 +1,8 @@
-<script>
-	import ColorSelectPreview from '$docs/preview/ColorSelectPreview.svelte';
+<script lang="ts">
+	import ColorSelectDocs from './ColorSelect.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<ColorSelectPreview />
+<Prose>
+	<ColorSelectDocs />
+</Prose>

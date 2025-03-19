@@ -17,31 +17,31 @@
 	import { onMount } from 'svelte';
 
 	let accentColors = [
-		{ class: 'bg-red-500', label: 'red' },
-		{ class: 'bg-orange-500', label: 'orange' },
-		{ class: 'bg-amber-500', label: 'amber' },
-		{ class: 'bg-yellow-500', label: 'yellow' },
-		{ class: 'bg-lime-500', label: 'lime' },
-		{ class: 'bg-green-500', label: 'green' },
-		{ class: 'bg-emerald-500', label: 'emerald' },
-		{ class: 'bg-teal-500', label: 'teal' },
-		{ class: 'bg-cyan-500', label: 'cyan' },
-		{ class: 'bg-sky-500', label: 'sky' },
-		{ class: 'bg-blue-500', label: 'blue' },
-		{ class: 'bg-indigo-500', label: 'indigo' },
-		{ class: 'bg-violet-500', label: 'violet' },
-		{ class: 'bg-purple-500', label: 'purple' },
-		{ class: 'bg-fuchsia-500', label: 'fuchsia' },
-		{ class: 'bg-pink-500', label: 'pink' },
-		{ class: 'bg-rose-500', label: 'rose' }
+		{ class: 'text-red-500', label: 'red' },
+		{ class: 'text-orange-500', label: 'orange' },
+		{ class: 'text-amber-500', label: 'amber' },
+		{ class: 'text-yellow-500', label: 'yellow' },
+		{ class: 'text-lime-500', label: 'lime' },
+		{ class: 'text-green-500', label: 'green' },
+		{ class: 'text-emerald-500', label: 'emerald' },
+		{ class: 'text-teal-500', label: 'teal' },
+		{ class: 'text-cyan-500', label: 'cyan' },
+		{ class: 'text-sky-500', label: 'sky' },
+		{ class: 'text-blue-500', label: 'blue' },
+		{ class: 'text-indigo-500', label: 'indigo' },
+		{ class: 'text-violet-500', label: 'violet' },
+		{ class: 'text-purple-500', label: 'purple' },
+		{ class: 'text-fuchsia-500', label: 'fuchsia' },
+		{ class: 'text-pink-500', label: 'pink' },
+		{ class: 'text-rose-500', label: 'rose' }
 	];
 
 	let baseColors = [
-		{ class: 'bg-gray-500', label: 'gray' },
-		{ class: 'bg-stone-500', label: 'stone' },
-		{ class: 'bg-zinc-500', label: 'zinc' },
-		{ class: 'bg-neutral-500', label: 'neutral' },
-		{ class: 'bg-slate-500', label: 'slate' }
+		{ class: 'text-gray-500', label: 'gray' },
+		{ class: 'text-stone-500', label: 'stone' },
+		{ class: 'text-zinc-500', label: 'zinc' },
+		{ class: 'text-neutral-500', label: 'neutral' },
+		{ class: 'text-slate-500', label: 'slate' }
 	];
 
 	onMount(() => {

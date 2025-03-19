@@ -13,6 +13,8 @@
 		colors = $bindable([]),
 		selected = $bindable(colors[0]),
 
+		name = $bindable(crypto.randomUUID()),
+
 		onselected,
 		...restProps
 	}: WithElementRef<WithoutChildrenOrChild<HTMLAttributes<HTMLDivElement>>> & {
@@ -21,6 +23,8 @@
 		selected?: Color;
 
 		colorsClass?: string;
+
+		name?: string;
 
 		onselected?: (color: Color, previous: Color) => void;
 	} = $props();
@@ -42,31 +46,40 @@
 </script>
 
 <div
-	class={cn('group flex flex-wrap items-center gap-2.5', className)}
+	class={cn('group flex flex-wrap items-center gap-2', className)}
 	{...restProps}
 	bind:this={ref}
 >
 	{#each colors as color}
-		<button
+		<label
+			aria-label={getLabel(color)}
 			class={cn(
-				'peer outline-base-900 focus:outline-base-900 dark:outline-base-100 dark:focus:outline-base-100 cursor-pointer items-center justify-center rounded-full p-0.5 outline-offset-2 transition-all duration-100 focus:outline-2 focus:outline-offset-2',
-				'border-base-600 border-opacity-30 dark:border-base-400 dark:border-opacity-30 size-8 rounded-full border transition-all',
-				getLabel(selected) === getLabel(color)
-					? 'bg-opacity-100 group-focus-within:outline-base-500 focus:group-focus-within:outline-base-900 dark:group-focus-within:outline-base-400 dark:focus:group-focus-within:outline-base-100 outline-2'
-					: 'opacity-90 outline-0 hover:opacity-100 focus:opacity-100',
+				'group relative flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-current',
+				'has-focus-visible:outline-base-900 dark:has-focus-visible:outline-base-100 has-focus-visible:outline-2 has-focus-visible:outline-offset-0',
+				'has-checked:ring-3',
 				colorsClass,
 				getColorClass(color)
 			)}
-			style={getValue(color) ? `background-color: ${getValue(color)}` : undefined}
-			onclick={() => {
-				if (selected === color) return;
-				let previous = selected;
-				selected = color;
-
-				if (onselected) onselected(color, previous);
-			}}
+			style={getValue(color) ? `color: ${getValue(color)}` : undefined}
 		>
-			<span class="sr-only">{getLabel(color)}</span>
-		</button>
+			<input
+				type="radio"
+				{name}
+				value={getLabel(color)}
+				class="sr-only"
+				onchange={() => {
+					let previous = selected;
+					selected = color;
+
+					if (onselected) onselected(color, previous);
+				}}
+				checked={getLabel(selected) === getLabel(color)}
+			/>
+
+			<span
+				aria-hidden="true"
+				class="size-8 rounded-full bg-current"
+			></span>
+		</label>
 	{/each}
 </div>

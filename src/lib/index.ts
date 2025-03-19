@@ -31,6 +31,7 @@ export { Tooltip } from '$lib/components/base/tooltip';
 export { ColorPicker, PopoverColorPicker } from '$lib/components/extra/color-picker/';
 export { default as Excalidraw } from '$lib/components/extra/excalidraw/Excalidraw.svelte';
 export { default as Undraw } from '$lib/components/extra/undraw/Undraw.svelte';
+export { ColorSelect } from '$lib/components/extra/color-select';
 
 // 3d components
 export { default as ModelPicker } from '$lib/components/3d/model-picker/ModelPicker.svelte';
