@@ -19,4 +19,4 @@
 
 <div class="h-full w-full flex items-center justify-center">
 <!-- inline version -->
-<ColorPicker bind:rgb class="scale-[0.6]" /></div>
+<ColorPicker bind:rgb class="scale-[0.6] -ml-2" /></div>

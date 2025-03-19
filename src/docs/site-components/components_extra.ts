@@ -1,5 +1,5 @@
-import CardExcalidraw from '$docs/cards/illustrations/CardExcalidraw.svelte';
-import CardUndraw from '$docs/cards/illustrations/CardUndraw.svelte';
+import CardExcalidraw from '$docs/cards/extras/CardExcalidraw.svelte';
+import CardUndraw from '$docs/cards/extras/CardUndraw.svelte';
 import CardColorPicker from '$docs/cards/extras/CardColorPicker.svelte';
 
 export const extraComponents = [
