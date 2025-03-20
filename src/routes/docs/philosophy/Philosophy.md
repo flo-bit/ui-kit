@@ -50,8 +50,6 @@ See here for a few examples of work in progress components (some may be partiall
 ### extras
 
 - [quote](/ui-kit/components/extras/quote/)
-- [phone](/ui-kit/components/extras/phone/)
-- [timer](/ui-kit/components/extras/timer/)
 
 ### social
 
