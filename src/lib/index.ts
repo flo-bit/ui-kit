@@ -20,6 +20,7 @@ export { default as NumberInput } from '$lib/components/base/number-input/Number
 export { default as Prose } from '$lib/components/base/prose/Prose.svelte';
 export { default as ScrollArea } from '$lib/components/base/scroll-area/ScrollArea.svelte';
 export { Slider } from '$lib/components/base/slider';
+export { default as SliderNumber } from '$lib/components/base/slider/SliderNumber.svelte';
 export { Toaster } from '$lib/components/base/sonner/';
 export { toast } from 'svelte-sonner';
 export { Switch } from '$lib/components/base/switch/';

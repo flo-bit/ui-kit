@@ -1,4 +1,4 @@
-import Root from './slider.svelte';
+import Root from './Slider.svelte';
 
 export {
 	Root,

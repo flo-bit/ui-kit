@@ -7,13 +7,6 @@
 	let { children } = $props();
 </script>
 
-<Button class="fixed bottom-4 right-4 z-[1000]" onclick={() => {
-	// go to id content
-	window.location.href = '#content';
-}}>
-	skip to content
-</Button>
-
 <Navbar hasSidebar showLogo={false} />
 <Sidebar />
 

@@ -1,24 +1,24 @@
 <script lang="ts">
-	import { Subheading } from '$lib/components/base/heading';
-	import { Slider } from '$lib/components/base/slider';
-
-	let value = $state(50);
+	import SliderExample from './Example.svelte';
 </script>
 
-# Slider
+# Sliders
 
 ## Example
 
-<Slider bind:value />
+<SliderExample />
 
 ## Usage
 
 ```svelte
 <script>
-	import { Slider } from 'fuchs';
+	import { Slider, SliderNumber } from 'fuchs';
 
 	let value = $state(50);
 </script>
 
 <Slider bind:value min={0} max={100} />
+
+<!-- With Number -->
+<SliderNumber bind:value={value} />
 ```
