@@ -1,5 +1,8 @@
-<script>
-	import QuotePreview from '$docs/preview/QuotePreview.svelte';
+<script lang="ts">
+	import QuoteDocs from './Quote.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<QuotePreview />
+<Prose>
+	<QuoteDocs />
+</Prose>

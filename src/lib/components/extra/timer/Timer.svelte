@@ -33,7 +33,7 @@
 	<div
 		bind:this={ref}
 		class={cn(
-			'text-base-900 dark:text-base-100 flex w-full justify-center text-5xl font-bold sm:text-7xl',
+			'text-base-900 dark:text-base-100 flex w-full justify-center text-5xl font-bold',
 			className
 		)}
 		style="font-variant-numeric: tabular-nums;"

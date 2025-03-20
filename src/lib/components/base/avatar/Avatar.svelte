@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
 	import { Avatar as AvatarPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
+	import Image from '../image/Image.svelte';
 
 	let {
 		src,
@@ -14,6 +15,8 @@
 		fallbackRef = $bindable(null),
 		fallbackClass,
 
+		useThemeColor = false,
+
 		class: className,
 		...restProps
 	}: WithoutChildrenOrChild<AvatarPrimitive.RootProps> & {
@@ -25,6 +28,8 @@
 
 		src?: string;
 		alt?: string;
+
+		useThemeColor?: boolean;
 	} = $props();
 </script>
 
@@ -37,7 +42,9 @@
 	bind:this={ref}
 >
 	{#if fallback}
-		<span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-medium">{fallback}</span>
+		<span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-medium"
+			>{fallback}</span
+		>
 	{:else}
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -53,11 +60,11 @@
 		</svg>
 	{/if}
 	{#if src}
-		<img
-			class={cn('z-10 aspect-square size-full', imageClass)}
+		<Image
 			{src}
-			{alt}
-			bind:this={imageRef}
+			alt={alt ?? ''}
+			{useThemeColor}
+			class="z-10 aspect-square size-full object-cover"
 			onerror={() => {
 				imageRef?.classList.add('hidden');
 			}}

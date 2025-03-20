@@ -65,10 +65,13 @@
 	:global(.prose pre) {
 		background-color: var(--color-base-100);
 		color: var(--color-base-900);
+		border: 1px solid var(--color-base-200);
 	}
 
 	:global(.dark .prose pre) {
 		background-color: var(--color-base-900);
 		color: var(--color-base-50);
+
+		border: 1px solid var(--color-base-800);
 	}
 </style>
