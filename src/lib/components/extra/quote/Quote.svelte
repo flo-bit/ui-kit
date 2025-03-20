@@ -6,6 +6,7 @@
 	} from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils';
+	import Avatar from '$lib/components/base/avatar/Avatar.svelte';
 
 	let {
 		quote,
@@ -14,7 +15,7 @@
 
 		ref = $bindable(null),
 
-		imageUseThemeColor = false,
+		useThemeColor = false,
 
 		class: className,
 		...restProps
@@ -33,7 +34,7 @@
 			imageClass?: string;
 		};
 
-		imageUseThemeColor?: boolean;
+		useThemeColor?: boolean;
 	} = $props();
 </script>
 
@@ -46,32 +47,13 @@
 	{...restProps}
 >
 	<div class="h-24 w-24 shrink-0 md:h-32 md:w-32">
-		<AvatarPrimitive.Root
-			class={cn(
-				'border-base-200 bg-base-100 text-base-900 dark:border-base-800 dark:bg-base-900 dark:text-base-50 relative flex h-24 w-24 shrink-0 overflow-hidden rounded-2xl border md:h-32 md:w-32',
-				className
-			)}
-		>
-			{#if imageUseThemeColor}
-				<div class="bg-accent-500/30 absolute inset-0 z-20 size-full"></div>
-			{/if}
-			{#if author?.src}
-				<AvatarPrimitive.Image
-					class={cn('aspect-square size-full object-cover', author.imageClass)}
-					src={author.src}
-					alt={author.alt}
-					style={{ filter: imageUseThemeColor ? 'grayscale(100%) brightness(1.2)' : '' }}
-				/>
-			{/if}
-
-			{#if author?.fallback}
-				<AvatarPrimitive.Fallback
-					class={cn('flex size-full items-center justify-center', author.fallbackClass)}
-				>
-					{author.fallback}
-				</AvatarPrimitive.Fallback>
-			{/if}
-		</AvatarPrimitive.Root>
+		<Avatar
+			{useThemeColor}
+			fallback={author?.fallback}
+			src={author?.src}
+			alt={author?.alt}
+			class="size-24 rounded-2xl text-3xl md:size-32 object-cover"
+		/>
 	</div>
 	<div class="flex flex-col gap-2">
 		<blockquote class="text-base-900 dark:text-base-50 text-lg font-medium">

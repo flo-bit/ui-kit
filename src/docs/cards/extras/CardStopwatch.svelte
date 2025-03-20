@@ -12,5 +12,5 @@
 </script>
 
 <Box class="min-h-0">
-	<Stopwatch bind:stopwatch class="text-4xl lg:text-5xl" />
+	<Stopwatch bind:stopwatch class="text-4xl" />
 </Box>

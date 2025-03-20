@@ -14,5 +14,5 @@
 		src: 'https://github.com/shadcn.png',
 		fallback: 'SH'
 	}}
-	imageUseThemeColor
+	useThemeColor
 />

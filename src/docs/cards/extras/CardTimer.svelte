@@ -12,5 +12,5 @@
 </script>
 
 <Box class="min-h-0">
-	<Timer bind:timer class="text-4xl lg:text-5xl" />
+	<Timer bind:timer class="text-4xl" />
 </Box>
