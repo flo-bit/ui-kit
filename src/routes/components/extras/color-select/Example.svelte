@@ -4,9 +4,9 @@
 
 <ColorSelect
 	colors={[
-		{ class: 'text-accent-700', label: 'dark' },
-		{ class: 'text-accent-500', label: 'medium' },
-		{ class: 'text-accent-300', label: 'light' },
-		{ class: 'text-accent-100', label: 'lightest' }
+		{ class: 'text-accent-500', label: '1' },
+		{ label: '2', value: 'oklch(from var(--color-accent-500) l c calc(h + 20))' },
+		{ label: '3', value: 'oklch(from var(--color-accent-500) l c calc(h + 40))' },
+		{ label: '4', value: 'oklch(from var(--color-accent-500) l c calc(h + 60))' },
 	]}
 />

@@ -35,7 +35,7 @@ though some imports might need to be adjusted).
 
 ## Lots of components
 
-While currently only the base components are visible, there are lots of components in the pipeline.
+While currently only the base and some extra components are visible, there are lots of components in the pipeline.
 The aim is to have a component library that has lots of components that are useful for building 
 webapps/websites/games, all in a consistent style/theme.
 

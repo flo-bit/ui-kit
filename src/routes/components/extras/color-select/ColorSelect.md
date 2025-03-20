@@ -17,10 +17,10 @@
 
 <ColorSelect
 	colors={[
-		{ class: 'text-accent-700', label: 'dark' },
-		{ class: 'text-accent-500', label: 'medium' },
-		{ class: 'text-accent-300', label: 'light' },
-		{ class: 'text-accent-100', label: 'lightest' }
+		{ class: 'text-red-700', label: 'red' },
+		{ class: 'text-green-700', label: 'green' },
+		{ class: 'text-blue-700', label: 'blue' },
+		{ class: 'text-yellow-700', label: 'yellow' }
 	]}
 />
 
