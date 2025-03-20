@@ -19,6 +19,7 @@ import CardTextarea from '$docs/cards/base/CardTextarea.svelte';
 import CardTooltip from '$docs/cards/base/CardTooltip.svelte';
 import CardProse from '$docs/cards/base/CardProse.svelte';
 import CardAccordion from '$docs/cards/base/CardAccordion.svelte';
+import CardSelect from '$docs/cards/base/CardSelect.svelte';
 
 export const baseComponents = [
 	{
@@ -146,5 +147,11 @@ export const baseComponents = [
 		className: '',
 		label: 'Accordion',
 		href: 'accordion'
+	},
+	{
+		component: CardSelect,
+		className: '',
+		label: 'Select',
+		href: 'select'
 	}
 ].sort((a, b) => a.label.localeCompare(b.label));

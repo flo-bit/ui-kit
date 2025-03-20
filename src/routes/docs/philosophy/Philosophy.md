@@ -65,11 +65,11 @@ See here for a few examples of work in progress components (some may be partiall
 - [model-picker](/ui-kit/components/3d/model-picker/)
 - [voxel-art](/ui-kit/components/3d/voxel-art/)
 
-## Works without javascript when possible / is accessible
+## Works without javascript when possible & is accessible
 
 Whenever possible components should work without javascript. 
-Also all components should be accessible to the best of my knowledge. 
-Please let me know [if you find any issues](https://github.com/flo-bit/ui-kit/issues).
+Also all components should be accessible (to the best of my knowledge). 
+Please let me know [if you find any issues there](https://github.com/flo-bit/ui-kit/issues).
 
 ## Dark mode
 

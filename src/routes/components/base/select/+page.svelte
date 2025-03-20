@@ -1,5 +1,8 @@
 <script lang="ts">
-	import SelectPreview from '$docs/preview/base/SelectPreview.svelte';
+	import SelectDocs from './Select.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<SelectPreview />
+<Prose>
+	<SelectDocs />
+</Prose>
