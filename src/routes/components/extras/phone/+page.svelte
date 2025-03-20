@@ -1,5 +1,8 @@
-<script>
-	import PhonePreview from '$docs/preview/PhonePreview.svelte';
+<script lang="ts">
+	import PhoneDocs from './Phone.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<PhonePreview />
+<Prose>
+	<PhoneDocs />
+</Prose>

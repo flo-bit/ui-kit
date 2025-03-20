@@ -5,20 +5,18 @@ type Options = {
 	precision?: number;
 };
 
-export class TimerState {
+export class StopwatchState {
 	status = $state<Status>('stopped');
 	duration = $state<number>(0);
 	elapsed = $state<number>(0);
-	remaining = $derived(this.duration - this.elapsed);
 	startAt = $state<Date | null>(null);
-	endAt = $state<Date | null>(null);
+
 	time = $state<Date | null>(null);
 	precision: number;
 	#interval: number | null = null;
 
-	constructor(duration: number, options: Options = {}) {
-		this.duration = duration;
-		this.precision = options.precision ?? 300;
+	constructor(options: Options = {}) {
+		this.precision = options.precision ?? 1000 / 60;
 	}
 
 	get isRunning() {
@@ -40,7 +38,6 @@ export class TimerState {
 
 		this.time = new Date();
 		this.startAt = this.time;
-		this.endAt = new Date(this.time.getTime() + this.duration);
 		this.status = 'running';
 		this.elapsed = 0;
 		this.#schedule();
@@ -58,7 +55,6 @@ export class TimerState {
 
 	resume() {
 		this.time = new Date();
-		this.endAt = new Date(this.time.getTime() + this.remaining);
 		this.status = 'running';
 		this.#schedule();
 	}
@@ -69,10 +65,8 @@ export class TimerState {
 		}
 		this.#dispose();
 
-		this.status = 'stopped';
 		this.time = new Date();
 		this.startAt = this.time;
-		this.endAt = new Date(this.time.getTime() + this.duration);
 		this.elapsed = 0;
 	}
 
@@ -92,10 +86,5 @@ export class TimerState {
 
 		this.elapsed += now.getTime() - this.time!.getTime();
 		this.time = now;
-
-		if (this.time >= this.endAt!) {
-			this.elapsed = this.duration;
-			this.stop();
-		}
 	}
 }

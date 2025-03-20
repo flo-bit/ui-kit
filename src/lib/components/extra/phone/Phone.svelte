@@ -1,8 +1,16 @@
 <script lang="ts">
-	const { children } = $props();
+	import { cn } from '$lib';
+	import type { Snippet } from 'svelte';
+
+	const { children, class: className }: { children: Snippet; class?: string } = $props();
 </script>
 
-<div class="bg-accent-500 relative mx-auto h-[712px] w-[350px] max-w-full rounded-[60px]">
+<div
+	class={cn(
+		'isolate bg-accent-500 relative h-[712px] w-[350px] max-w-full rounded-[60px] aspect-[350/712]',
+		className
+	)}
+>
 	<div class="bg-accent-500 absolute top-20 -left-0.5 h-8 w-3 rounded-xs"></div>
 	<div class="bg-accent-500 absolute top-[140px] -left-[3px] h-14 w-3 rounded-xs"></div>
 	<div class="bg-accent-500 absolute top-[210px] -left-[3px] h-14 w-3 rounded-xs"></div>

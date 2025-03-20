@@ -30,4 +30,4 @@
 
 ### Credits
 
-Adapted from [svelte-color-select](https://github.com/CaptainCodeman/svelte-color-select).
+- Adapted from [svelte-color-select](https://github.com/CaptainCodeman/svelte-color-select).

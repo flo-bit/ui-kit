@@ -6,6 +6,7 @@ export { Alert, AlertDescription, AlertTitle } from '$lib/components/base/alert'
 export { Avatar, AvatarGroup } from '$lib/components/base/avatar';
 export { Badge } from '$lib/components/base/badge';
 export { Button } from '$lib/components/base/button';
+export { default as Box } from '$lib/components/base/box/Box.svelte';
 export { default as ImageCard } from '$lib/components/base/card/ImageCard.svelte';
 export { default as ChatBubble } from '$lib/components/base/chat-bubble/ChatBubble.svelte';
 export { Checkbox } from '$lib/components/base/checkbox';
@@ -34,6 +35,11 @@ export { ColorPicker, PopoverColorPicker } from '$lib/components/extra/color-pic
 export { default as Excalidraw } from '$lib/components/extra/excalidraw/Excalidraw.svelte';
 export { default as Undraw } from '$lib/components/extra/undraw/Undraw.svelte';
 export { ColorSelect } from '$lib/components/extra/color-select';
+export { default as Stopwatch } from '$lib/components/extra/stopwatch/Stopwatch.svelte';
+export { default as Timer } from '$lib/components/extra/timer/Timer.svelte';
+export { StopwatchState } from '$lib/components/extra/stopwatch/StopwatchState.svelte';
+export { TimerState } from '$lib/components/extra/timer/TimerState.svelte';
+export { default as Phone } from '$lib/components/extra/phone/Phone.svelte';
 
 // 3d components
 export { default as ModelPicker } from '$lib/components/3d/model-picker/ModelPicker.svelte';

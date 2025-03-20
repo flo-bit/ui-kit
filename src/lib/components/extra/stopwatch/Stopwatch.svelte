@@ -1,12 +1,12 @@
 <script lang="ts">
 	import NumberFlow, { NumberFlowGroup } from '@number-flow/svelte';
-	import { TimerState } from './TimerState.svelte';
+	import { StopwatchState } from './StopwatchState.svelte';
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils.js';
 
 	let {
-		timer = $bindable(),
+		stopwatch = $bindable(),
 		class: className,
 		ref = $bindable(null),
 		showHours = false,
@@ -14,19 +14,19 @@
 		showSeconds = true,
 		...restProps
 	}: WithElementRef<WithoutChildrenOrChild<HTMLAttributes<HTMLDivElement>>> & {
-		timer?: TimerState;
+		stopwatch?: StopwatchState;
 		showHours?: boolean;
 		showMinutes?: boolean;
 		showSeconds?: boolean;
 	} = $props();
 
-	if (!timer) {
-		timer = new TimerState(1000 * 60 * 10);
+	if (!stopwatch) {
+		stopwatch = new StopwatchState();
 	}
 
-	const hh = $derived(Math.floor(timer.remaining / 3600000));
-	const mm = $derived(Math.floor((timer.remaining % 3600000) / 60000));
-	const ss = $derived(Math.floor((timer.remaining % 60000) / 1000));
+	const hh = $derived(Math.floor(stopwatch.elapsed / 3600000));
+	const mm = $derived(Math.floor((stopwatch.elapsed % 3600000) / 60000));
+	const ss = $derived(Math.floor((stopwatch.elapsed % 60000) / 1000));
 </script>
 
 <NumberFlowGroup>
@@ -40,13 +40,13 @@
 		{...restProps}
 	>
 		{#if showHours}
-			<NumberFlow value={hh} trend={-1} format={{ minimumIntegerDigits: 2 }} />
+			<NumberFlow value={hh} trend={1} format={{ minimumIntegerDigits: 2 }} />
 		{/if}
 
 		{#if showMinutes}
 			<NumberFlow
 				value={mm}
-				trend={-1}
+				trend={1}
 				format={{ minimumIntegerDigits: 2 }}
 				prefix={showHours ? ':' : ''}
 				digits={{ 1: { max: 5 } }}
@@ -57,7 +57,7 @@
 			<NumberFlow
 				value={ss}
 				format={{ minimumIntegerDigits: 2 }}
-				trend={-1}
+				trend={1}
 				prefix={showHours || showMinutes ? ':' : ''}
 				digits={{ 1: { max: 5 } }}
 			/>
