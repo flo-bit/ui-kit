@@ -5,7 +5,6 @@
 
 	import TimerPreview from '$docs/preview/TimerPreview.svelte';
 	import WaveformAudioPlayerPreview from '$docs/preview/WaveformAudioPlayerPreview.svelte';
-	import NumberInputPreview from '$docs/preview/base/NumberInputPreview.svelte';
 	import ThemeToggle from '$lib/components/base/theme-toggle/ThemeToggle.svelte';
 	import SelectTheme from '$docs/preview/SelectTheme.svelte';
 
@@ -112,8 +111,6 @@
 			<button class="handle bg-base-500/5 absolute top-0 right-0 left-0 h-5 w-full cursor-grab">
 				<span class="sr-only">drag</span>
 			</button>
-
-			<NumberInputPreview />
 
 			<WaveformAudioPlayerPreview />
 		</div>

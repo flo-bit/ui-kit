@@ -1,5 +1,16 @@
 <script>
-	import ProgressPreview from '$docs/preview/base/ProgressPreview.svelte';
+	import { Subheading } from '$lib/components/base/heading';
+	import { Progress } from '$lib/components/extra/progress';
+
+	let progress = $state(20);
+
+	$effect(() => {
+		setInterval(() => {
+			progress = progress > 100 ? 0 : progress + Math.random() * 40;
+		}, 1000);
+	});
 </script>
 
-<ProgressPreview />
+<Subheading class="mb-8">Progress</Subheading>
+
+<Progress {progress} />
