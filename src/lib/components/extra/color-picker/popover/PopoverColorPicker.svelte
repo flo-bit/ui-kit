@@ -13,6 +13,8 @@
 		rgb = $bindable(),
 		oklab = $bindable(),
 		okhsv = $bindable(),
+		sideOffset = 10,
+		side = 'bottom',
 		class: className,
 		onchange
 	}: {
@@ -20,6 +22,8 @@
 		oklab?: OKlab;
 		okhsv?: OKhsv;
 		class?: string;
+		sideOffset?: number;
+		side?: 'top' | 'right' | 'bottom' | 'left';
 		onchange?: (color: { hex: string; rgb: RGB; oklab: OKlab; okhsv: OKhsv; oklch: OKlch }) => void;
 	} = $props();
 
@@ -57,7 +61,7 @@
 			style={`background-color: rgb(${internalColor.r * 255}, ${internalColor.g * 255}, ${internalColor.b * 255});`}
 		></div>
 	</Popover.Trigger>
-	<Popover.Content side="bottom" sideOffset={10}>
-		<ColorPicker bind:rgb class={className} />
+	<Popover.Content side={side} sideOffset={sideOffset}>
+		<ColorPicker bind:rgb bind:oklab bind:okhsv class={className} onchange={onchange} />
 	</Popover.Content>
 </Popover.Root>
