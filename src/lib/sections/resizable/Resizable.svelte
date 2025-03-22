@@ -6,7 +6,7 @@
 	import TimerPreview from '$docs/preview/TimerPreview.svelte';
 	import WaveformAudioPlayerPreview from '$docs/preview/WaveformAudioPlayerPreview.svelte';
 	import ThemeToggle from '$lib/components/base/theme-toggle/ThemeToggle.svelte';
-	import SelectTheme from '$docs/preview/SelectTheme.svelte';
+	import SelectTheme from '$docs/site-components/SelectTheme.svelte';
 
 	let contentToPanes = $state({
 		first: '#pane1',
