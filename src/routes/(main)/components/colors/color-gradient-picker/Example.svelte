@@ -1,10 +1,10 @@
 <script lang="ts">
-	import ColorGradientPicker from '$lib/components/extra/color-gradient-picker/ColorGradientPicker.svelte';
-	import type { OKlch } from '$lib/components/extra/color-picker/base/color';
+	import { ColorGradientPicker } from '$lib';
+	import type { OKlch } from '$lib/components/colors/color-picker/base/color';
 	import {
 		oklch_string_to_oklch,
 		oklch_to_rgb
-	} from '$lib/components/extra/color-picker/base/color';
+	} from '$lib/components/colors/color-picker/base/color';
 	import { ThemeWatcher } from '$lib/helper/ThemeWatcher.svelte';
 	import { onMount } from 'svelte';
 

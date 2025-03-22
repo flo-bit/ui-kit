@@ -1,5 +1,5 @@
 <script>
-	import ColorSelect from '$lib/components/extra/color-select/ColorSelect.svelte';
+	import { ColorSelect } from '$lib';
 </script>
 
 <ColorSelect

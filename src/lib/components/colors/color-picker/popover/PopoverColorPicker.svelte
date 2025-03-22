@@ -6,7 +6,7 @@
 		type OKhsv,
 		type OKlab,
 		type RGB
-	} from '$lib/components/extra/color-picker/base';
+	} from '$lib/components/colors/color-picker/base';
 	import { okhsv_to_rgb, oklab_to_rgb, type OKlch } from '../base/color';
 
 	let {

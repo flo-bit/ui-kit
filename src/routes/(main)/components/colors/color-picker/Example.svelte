@@ -1,12 +1,7 @@
 <script lang="ts">
-	import { ColorPicker } from '$lib/components/extra/color-picker/base';
-	import * as Popover from '$lib/components/base/popover';
-	import { cn } from '$lib/utils';
-	import Subheading from '$lib/components/base/heading/Subheading.svelte';
-	import Button from '$lib/components/base/button/Button.svelte';
-	import PopoverColorPicker from '$lib/components/extra/color-picker/popover/PopoverColorPicker.svelte';
+	import { ColorPicker, PopoverColorPicker } from '$lib';
 	import { ThemeWatcher } from '$lib/helper/ThemeWatcher.svelte';
-	import { hex_to_rgb, oklch_string_to_oklch, oklch_to_rgb } from '$lib/components/extra/color-picker/base/color';
+	import { oklch_string_to_oklch, oklch_to_rgb } from '$lib/components/colors/color-picker/base/color';
 	import { onMount } from 'svelte';
 
 	let rgb = $state({
@@ -34,12 +29,3 @@
 <h3>Popover Color Picker</h3>
 
 <PopoverColorPicker bind:rgb />
-<!-- 
-<Button
-	onclick={() => {
-		// themewatcher
-		const theme = new ThemeWatcher();
-		const color = theme.getCSSVar('--color-accent-500');
-		rgb = oklch_to_rgb(oklch_string_to_oklch(color));
-	}}>Reset Color</Button
-> -->
