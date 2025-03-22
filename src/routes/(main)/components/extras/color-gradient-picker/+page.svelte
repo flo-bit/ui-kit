@@ -1,6 +1,8 @@
-<script>
-	import ColorGradientPicker from "$lib/components/extra/color-gradient-picker/ColorGradientPicker.svelte";
-
+<script lang="ts">
+	import ColorGradientPickerDocs from './ColorGradientPicker.md';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
 </script>
 
-<ColorGradientPicker />
+<Prose>
+	<ColorGradientPickerDocs />
+</Prose>

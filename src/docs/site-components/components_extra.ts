@@ -6,6 +6,7 @@ import CardStopwatch from '$docs/cards/extras/CardStopwatch.svelte';
 import CardTimer from '$docs/cards/extras/CardTimer.svelte';
 import CardPhone from '$docs/cards/extras/CardPhone.svelte';
 import CardQuote from '$docs/cards/extras/CardQuote.svelte';
+import CardColorGradientPicker from '$docs/cards/extras/CardColorGradientPicker.svelte';
 
 export const extraComponents = [
 	{
@@ -55,5 +56,11 @@ export const extraComponents = [
 		className: '',
 		label: 'Quote',
 		href: 'quote'
+	},
+	{
+		component: CardColorGradientPicker,
+		className: '',
+		label: 'Color Gradient Picker',
+		href: 'color-gradient-picker'
 	}
 ].sort((a, b) => a.label.localeCompare(b.label));
