@@ -35,7 +35,7 @@ though some imports might need to be adjusted).
 
 ## Lots of components
 
-While currently only the base and some extra components are visible, there are lots of components in the pipeline.
+While currently only the base and some other components are visible, there are lots of components in the pipeline.
 The aim is to have a component library that has lots of components that are useful for building 
 webapps/websites/games, all in a consistent style/theme.
 
@@ -49,7 +49,6 @@ See here for a few examples of work in progress components (some may be partiall
 
 ### extras
 
-- [quote](/ui-kit/components/extras/quote/)
 - [swiper cards](/ui-kit/components/extras/swiper-cards/)
 
 ### social
@@ -60,9 +59,7 @@ See here for a few examples of work in progress components (some may be partiall
 
 ### 3d
 
-- [depth 3d](/ui-kit/components/3d/depth-3d/)
 - [model-picker](/ui-kit/components/3d/model-picker/)
-- [voxel-art](/ui-kit/components/3d/voxel-art/)
 
 ## Works without javascript when possible & is accessible
 
