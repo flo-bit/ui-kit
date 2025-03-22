@@ -1,5 +1,8 @@
 <script>
-	import Depth3DPreview from '$docs/preview/Depth3DPreview.svelte';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
+	import Depth3DDocs from './Depth3D.md';
 </script>
 
-<Depth3DPreview />
+<Prose>
+	<Depth3DDocs />
+</Prose>

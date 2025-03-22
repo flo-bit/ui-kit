@@ -6,7 +6,7 @@
 		type OKhsv,
 		type OKlab,
 		type RGB
-	} from '$lib/components/extra/color-picker/base';
+	} from '$lib/components/colors/color-picker/base';
 	import { onMount } from 'svelte';
 	import { type OKlch } from '../color-picker/base/color';
 	import { DragGesture } from '@use-gesture/vanilla';

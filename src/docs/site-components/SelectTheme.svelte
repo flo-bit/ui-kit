@@ -11,7 +11,7 @@
 </script>
 
 <script lang="ts">
-	import ColorSelect from '$lib/components/extra/color-select/ColorSelect.svelte';
+	import { ColorSelect } from '$lib';
 	import Subheading from '$lib/components/base/heading/Subheading.svelte';
 	import Text from '$lib/components/base/text/Text.svelte';
 	import { onMount } from 'svelte';
@@ -72,6 +72,10 @@
 	bind:selected={accentColor}
 	colors={accentColors}
 	onselected={(color, previous) => {
+		if (typeof previous === 'string' || typeof color === 'string') {
+			return;
+		}
+		
 		document.documentElement.classList.remove(previous.label.toLowerCase());
 		document.documentElement.classList.add(color.label.toLowerCase());
 
@@ -89,6 +93,10 @@
 	bind:selected={baseColor}
 	colors={baseColors}
 	onselected={(color, previous) => {
+		if (typeof previous === 'string' || typeof color === 'string') {
+			return;
+		}
+
 		document.documentElement.classList.remove(previous.label.toLowerCase());
 		document.documentElement.classList.add(color.label.toLowerCase());
 

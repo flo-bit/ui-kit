@@ -4,7 +4,6 @@
 	import { cn } from '$lib/utils';
 
 	import { load, type CheerioAPI } from 'cheerio';
-	import { okhsv_to_rgb, rgb_to_hex, rgb_to_okhsv } from '../color-picker/base/color';
 
 	let {
 		ref = $bindable(null),
@@ -74,26 +73,6 @@
 		loadedSvg('line').each((_, el) => {
 			applyClasses(loadedSvg, el);
 		});
-		
-
-		// loadedSvg('text').each((_, el) => {
-		// 	loadedSvg(el).removeAttr('fill');
-		// 	loadedSvg(el).addClass('fill-base-800 dark:fill-base-100');
-		// });
-
-		// loadedSvg('rect').each((_, el) => {
-		// 	loadedSvg(el).removeAttr('fill');
-		// 	loadedSvg(el).addClass('fill-accent-600 dark:fill-accent-500');
-		// });
-
-		// loadedSvg('path').each((_, el) => {
-		// 	loadedSvg(el).removeAttr('stroke');
-		// 	loadedSvg(el).addClass('stroke-accent-600 dark:stroke-accent-500');
-		// 	if (loadedSvg(el).attr('fill') !== 'none') {
-		// 		loadedSvg(el).addClass('fill-accent-600 dark:fill-accent-500');
-		// 		loadedSvg(el).removeAttr('fill');
-		// 	}
-		// });
 
 		return loadedSvg.html();
 	}
