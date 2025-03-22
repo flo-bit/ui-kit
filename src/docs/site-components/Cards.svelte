@@ -6,9 +6,7 @@
 	import CardHeatmap from '$docs/cards/graphs/CardHeatmap.svelte';
 	import CardLineGraph from '$docs/cards/graphs/CardLineGraph.svelte';
 	import CardRingChart from '$docs/cards/graphs/CardRingChart.svelte';
-	import { baseComponents } from './components_base';
-	import { extraComponents } from './components_extra';
-	import { colorComponents } from './components_colors';
+	import { components } from './components_all';
 
 	let graphCards = [
 		{
@@ -42,32 +40,10 @@
 			href: 'github-corner'
 		}
 	];
-
-	let cards: {
-		name: string;
-		components: typeof baseComponents | typeof extraComponents;
-		href: string;
-	}[] = [
-		{
-			name: 'Base components',
-			components: baseComponents,
-			href: 'base'
-		},
-		{
-			name: 'Colors',
-			components: colorComponents,
-			href: 'colors'
-		},
-		{
-			name: 'Extra components',
-			components: extraComponents,
-			href: 'extras'
-		}
-	];
 </script>
 
 <div class="flex w-full flex-col gap-16">
-	{#each cards as category}
+	{#each components as category}
 		<div>
 			<h2 class="text-base-800 dark:text-base-200 mb-6 text-xl font-semibold">{category.name}</h2>
 			<div class="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

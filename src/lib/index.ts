@@ -45,3 +45,5 @@ export { default as Quote } from '$lib/components/extra/quote/Quote.svelte';
 
 // 3d components
 export { default as ModelPicker } from '$lib/components/3d/model-picker/ModelPicker.svelte';
+export { default as Depth3D } from '$lib/components/3d/depth3d/Depth3D.svelte';
+export { default as VoxelArt } from '$lib/components/3d/voxel-art/VoxelArt.svelte';

@@ -1,5 +1,8 @@
 <script>
-	import VoxelArtPreview from '$docs/preview/VoxelArtPreview.svelte';
+	import Prose from '$lib/components/base/prose/Prose.svelte';
+	import VoxelArtDocs from './VoxelArt.md';
 </script>
 
-<VoxelArtPreview />
+<Prose>
+	<VoxelArtDocs />
+</Prose>
