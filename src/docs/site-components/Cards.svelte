@@ -44,7 +44,7 @@
 </script>
 
 <h2 class="text-base-800 dark:text-base-200 mb-4 text-xl font-semibold">Base components</h2>
-<div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:grid-cols-4">
+<div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4">
 	{#each baseComponents as card}
 		<div
 			class="group relative flex flex-col items-start gap-3 transition-opacity duration-150 hover:opacity-90 md:gap-4"
@@ -76,7 +76,7 @@
 
 
 <h2 class="text-base-800 dark:text-base-200 mb-4 text-xl font-semibold mt-24">Extra components</h2>
-<div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:grid-cols-4">
+<div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4">
 	{#each extraComponents as card}
 		<div
 			class="group relative flex flex-col items-start gap-3 transition-opacity duration-150 hover:opacity-90 md:gap-4"

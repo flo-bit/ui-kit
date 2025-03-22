@@ -1,6 +1,6 @@
 {
 	"name": "fuchs",
-	"version": "0.0.11",
+	"version": "0.0.12",
 	"type": "module",
 	"description": "Beautiful UI components built with Tailwind 4 and Svelte 5",
 	"homepage": "https://flo-bit.dev/ui-kit",
@@ -82,6 +82,7 @@
 		"@threlte/core": "^8.0.1",
 		"@threlte/extras": "^9.0.1",
 		"@types/three": "^0.173.0",
+		"@use-gesture/vanilla": "^10.3.1",
 		"bits-ui": "^1.3.4",
 		"cheerio": "^1.0.0",
 		"hls.js": "^1.5.20",

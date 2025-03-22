@@ -61,6 +61,7 @@
 		className
 	)}
 	{...restProps}
+	size="icon"
 >
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +69,7 @@
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
 		stroke="currentColor"
-		class="block size-6! transition-colors duration-500 dark:hidden"
+		class="block size-5! transition-colors duration-500 dark:hidden"
 	>
 		<path
 			stroke-linecap="round"
@@ -82,7 +83,7 @@
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
 		stroke="currentColor"
-		class="hidden size-6! transition-colors duration-500 dark:block dark:text-white"
+		class="hidden size-5! transition-colors duration-500 dark:block dark:text-white"
 	>
 		<path
 			stroke-linecap="round"

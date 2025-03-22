@@ -31,6 +31,7 @@ export { Textarea } from '$lib/components/base/textarea';
 export { Tooltip } from '$lib/components/base/tooltip';
 
 // extra components
+export { default as ColorGradientPicker } from '$lib/components/extra/color-gradient-picker/ColorGradientPicker.svelte';
 export { ColorPicker, PopoverColorPicker } from '$lib/components/extra/color-picker/';
 export { default as Excalidraw } from '$lib/components/extra/excalidraw/Excalidraw.svelte';
 export { default as Undraw } from '$lib/components/extra/undraw/Undraw.svelte';
