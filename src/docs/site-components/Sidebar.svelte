@@ -50,7 +50,7 @@
 </script>
 
 <Sidebar {mobileOnly}>
-	<div class="mb-8 flex flex-col items-start p-4">
+	<div class="mb-24 flex flex-col items-start p-4">
 		<Logo class="mb-8 px-3 py-1" />
 
 		<Button

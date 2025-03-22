@@ -21,70 +21,68 @@ import CardProse from '$docs/cards/base/CardProse.svelte';
 import CardAccordion from '$docs/cards/base/CardAccordion.svelte';
 import CardSelect from '$docs/cards/base/CardSelect.svelte';
 
-export const baseComponents = [
+import type { Component } from 'svelte';
+
+export type ComponentCard = {
+	component: Component;
+	className?: string;
+	label: string;
+	href: string;
+};
+
+export const baseComponents: ComponentCard[] = [
 	{
 		component: CardAlerts,
-		className: '',
 		label: 'Alerts',
 		href: 'alert'
 	},
 	{
 		component: CardAvatar,
-		className: '',
 		label: 'Avatars',
 		href: 'avatar'
 	},
 	{
 		component: CardBadge,
-		className: '',
 		label: 'Badges',
 		href: 'badge'
 	},
 	{
 		component: CardBox,
-		className: '',
 		label: 'Box',
 		href: 'box'
 	},
 	{
 		component: CardButtons,
-		className: '',
 		label: 'Buttons',
 		href: 'button'
 	},
 	{
 		component: CardChatBubble,
-		className: '',
 		label: 'Chat Bubbles',
 		href: 'chat-bubble'
 	},
 	{
 		component: CardCheckbox,
-		className: '',
 		label: 'Checkboxes',
 		href: 'checkbox'
 	},
 	{
 		component: CardImage,
-		className: '',
 		label: 'Images',
 		href: 'image'
 	},
 	{
 		component: CardInput,
-		className: '',
 		label: 'Text Inputs',
 		href: 'input'
 	},
 	{
 		component: CardModal,
-		className: '',
 		label: 'Modals',
 		href: 'modal'
 	},
 	{
 		component: CardNumberInput,
-		className: '',
 		label: 'Number Input',
 		href: 'number-input'
 	},
@@ -96,37 +94,31 @@ export const baseComponents = [
 	},
 	{
 		component: CardSlider,
-		className: '',
 		label: 'Sliders',
 		href: 'slider'
 	},
 	{
 		component: CardSonner,
-		className: '',
 		label: 'Sonner',
 		href: 'sonner'
 	},
 	{
 		component: CardSwitch,
-		className: '',
 		label: 'Switches',
 		href: 'switch'
 	},
 	{
 		component: CardTextarea,
-		className: '',
 		label: 'Textarea',
 		href: 'textarea'
 	},
 	{
 		component: CardTooltip,
-		className: '',
 		label: 'Tooltips',
 		href: 'tooltip'
 	},
 	{
 		component: CardCard,
-		className: '',
 		label: 'Card',
 		href: 'cards'
 	},
@@ -138,19 +130,16 @@ export const baseComponents = [
 	},
 	{
 		component: CardProse,
-		className: '',
 		label: 'Prose',
 		href: 'prose'
 	},
 	{
 		component: CardAccordion,
-		className: '',
 		label: 'Accordion',
 		href: 'accordion'
 	},
 	{
 		component: CardSelect,
-		className: '',
 		label: 'Select',
 		href: 'select'
 	}
