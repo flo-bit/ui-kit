@@ -29,7 +29,7 @@
 
 		<Logo class={showLogo ? 'lg:ml-5' : 'lg:hidden'} />
 	</div>
-	<div class="flex items-end gap-4">
+	<div class="flex items-end gap-3">
 		<ThemeSelectDropdown />
 		<ThemeToggle />
 
