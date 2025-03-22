@@ -65,6 +65,7 @@ export class StopwatchState {
 		}
 		this.#dispose();
 
+		this.status = 'stopped';
 		this.time = new Date();
 		this.startAt = this.time;
 		this.elapsed = 0;
