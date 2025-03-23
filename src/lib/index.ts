@@ -29,6 +29,7 @@ export { Switch } from '$lib/components/base/switch/';
 export { Text as Paragraph } from '$lib/components/base/text/';
 export { Textarea } from '$lib/components/base/textarea';
 export { Tooltip } from '$lib/components/base/tooltip';
+export { default as Popover } from '$lib/components/base/popover/Popover.svelte';
 
 // colors components
 export { default as ColorGradientPicker } from '$lib/components/colors/color-gradient-picker/ColorGradientPicker.svelte';

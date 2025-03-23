@@ -22,6 +22,7 @@ import CardAccordion from '$docs/cards/base/CardAccordion.svelte';
 import CardSelect from '$docs/cards/base/CardSelect.svelte';
 
 import type { Component } from 'svelte';
+import CardPopover from '$docs/cards/base/CardPopover.svelte';
 
 export type ComponentCard = {
 	component: Component;
@@ -142,5 +143,10 @@ export const baseComponents: ComponentCard[] = [
 		component: CardSelect,
 		label: 'Select',
 		href: 'select'
+	},
+	{
+		component: CardPopover,
+		label: 'Popover',
+		href: 'popover'
 	}
 ].sort((a, b) => a.label.localeCompare(b.label));
