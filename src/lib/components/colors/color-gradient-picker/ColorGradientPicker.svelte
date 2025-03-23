@@ -47,8 +47,6 @@
 			.join(', ')})`
 	);
 
-	$inspect(gradientString);
-
 	let colorsRef = $state<(HTMLDivElement | null)[]>(new Array(colors.length).fill(null));
 	let gradientRef = $state<HTMLDivElement | undefined>(undefined);
 	let isDragging = $state(new Array(colors.length).fill(false));
@@ -61,7 +59,6 @@
 
 			gestures.push(
 				new DragGesture(ref, (state) => {
-					console.log(state);
 					const { delta } = state;
 
 					const newPosition = delta[0] / (gradientRef?.clientWidth ?? 1);
@@ -75,9 +72,13 @@
 						isDragging[i] = state.active;
 					}
 
-					// let offset = Math.hypot(state.movement[0], state.movement[1]);
 					if (state.tap) {
 						allOpen[i] = !allOpen[i];
+					}
+				}, {
+					preventDefault: true,
+					eventOptions: {
+						passive: false
 					}
 				})
 			);
