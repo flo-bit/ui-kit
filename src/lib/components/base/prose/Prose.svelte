@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { AddCopyCodeButtons } from '$lib';
+	
 	let { children } = $props();
-
-	import AddCopyCodeButtons from '$lib/components/base/copy-code-button/AddCopyCodeButtons.svelte';
 
 	// this is fucking hacky, todo fix that
 </script>

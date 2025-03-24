@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { cn } from '$lib';
 	import { Avatar as AvatarPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
-	import Image from '../image/Image.svelte';
+	import { Image } from '$lib';
 
 	let {
 		src,

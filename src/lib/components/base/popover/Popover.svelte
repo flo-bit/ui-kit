@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { cn } from '$lib';
-	import { buttonVariants, type ButtonSize, type ButtonVariant } from '$lib/components/base/button';
-	import * as Popover from '$lib/components/base/popover';
+	import { cn, buttonVariants, type ButtonSize, type ButtonVariant } from '$lib';
+	import * as Popover from '.';
 	import { Popover as PopoverPrimitive } from 'bits-ui';
 
 	type Props = PopoverPrimitive.RootProps & {

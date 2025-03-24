@@ -1,6 +1,5 @@
 <script lang="ts" module>
 	import type { WithElementRef } from 'bits-ui';
-	import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 	import { type VariantProps, tv } from 'tailwind-variants';
 	import { cn } from '$lib';
 
@@ -88,9 +87,9 @@
 		...restProps
 	}: NumberInputProps = $props();
 
-	let input: HTMLInputElement;
 	let animated = $state(true);
 	let showCaret = $state(true);
+	
 	function handleInput() {
 		if (!inputRef) return;
 		animated = false;
@@ -104,6 +103,7 @@
 		inputRef.value = String(next);
 		value = next;
 	}
+
 	function handlePointerDown(event: PointerEvent, diff: number) {
 		animated = true;
 		if (event.pointerType === 'mouse') {

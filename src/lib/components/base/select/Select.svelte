@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Toolbar, type WithoutChildrenOrChild } from 'bits-ui';
-	import { cn } from '$lib';
 
 	type Item =
 		| {

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Slider as SliderPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
 	import { Slider } from '.';
-	import { cn } from '$lib';
 	import NumberFlow from '@number-flow/svelte';
 
 	let {

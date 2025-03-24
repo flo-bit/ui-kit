@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import ScrollArea from '../scroll-area/ScrollArea.svelte';
-	import { cn } from '$lib';
+	import { cn, ScrollArea } from '$lib';
 
 	const {
 		class: className,

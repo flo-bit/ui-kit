@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { cn } from '$lib';
-	import ImageContainer from '../image-container/ImageContainer.svelte';
+	import { ImageContainer } from '$lib';
 
 	const {
 		src,

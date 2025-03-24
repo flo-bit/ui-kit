@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/state';
-
 	const {
 		title,
 		description,
