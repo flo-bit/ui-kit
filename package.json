@@ -1,6 +1,6 @@
 {
 	"name": "fuchs",
-	"version": "0.0.17",
+	"version": "0.0.18",
 	"type": "module",
 	"description": "Beautiful UI components built with Tailwind 4 and Svelte 5",
 	"homepage": "https://flo-bit.dev/ui-kit",
@@ -50,7 +50,6 @@
 		"@tailwindcss/typography": "^0.5.16",
 		"@types/adm-zip": "^0.5.7",
 		"@types/node": "^22.13.11",
-		"@zerodevx/svelte-img": "^2.1.2",
 		"eslint": "^9.18.0",
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^2.46.1",
@@ -76,6 +75,7 @@
 		"svelte": "^5.0.0"
 	},
 	"dependencies": {
+		"@zerodevx/svelte-img": "^2.1.2",
 		"@atproto/api": "^0.14.7",
 		"@number-flow/svelte": "^0.3.3",
 		"@sveltejs/adapter-static": "^3.0.8",
