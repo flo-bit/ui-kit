@@ -58,9 +58,9 @@
 			)}
 			{...restProps}
 			onload={(evt) => {
-				loaded = true
-				if(restProps.onload) {
-					restProps.onload(evt)
+				loaded = true;
+				if (restProps.onload) {
+					restProps.onload(evt);
 				}
 			}}
 		/>
@@ -76,16 +76,13 @@
 			)}
 			width={restProps.width ? Number(restProps.width) : undefined}
 			height={restProps.height ? Number(restProps.height) : undefined}
-
 			loading={restProps.loading ?? 'lazy'}
 			decoding={restProps.decoding ?? 'async'}
-			
 			sizes={restProps.sizes ?? undefined}
-
 			onload={(evt) => {
-				loaded = true
-				if(restProps.onload) {
-					restProps.onload(evt)
+				loaded = true;
+				if (restProps.onload) {
+					restProps.onload(evt);
 				}
 			}}
 		/>

@@ -28,7 +28,7 @@
 			stop();
 		}
 	});
-	
+
 	const { renderer } = useThrelte();
 
 	onMount(() => {

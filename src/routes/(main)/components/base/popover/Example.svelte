@@ -2,7 +2,14 @@
 	import { Popover, ColorSelect, Button, toast } from '$lib';
 
 	let open = $state(false);
-	let selected: string = $state('red');
+
+	let colors = [
+		{ label: '1', value: 'oklch(from var(--color-accent-500) l c h)' },
+		{ label: '2', value: 'oklch(from var(--color-accent-500) l c calc(h + 40))' },
+		{ label: '3', value: 'oklch(from var(--color-accent-500) l c calc(h + 80))' }
+	];
+
+	let selected: { label: string; value: string } = $state(colors[0]);
 </script>
 
 <h3>Default trigger</h3>
@@ -11,10 +18,14 @@
 	<div class="flex items-center justify-between gap-2">
 		<div>Are you sure?</div>
 		<div>
-			<Button variant="secondary" size="iconSm" onclick={() => {
-				open = !open;
-				toast('Fair enough!');
-			}}>
+			<Button
+				variant="secondary"
+				size="iconSm"
+				onclick={() => {
+					open = !open;
+					toast('Fair enough!');
+				}}
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -27,10 +38,13 @@
 				</svg>
 			</Button>
 
-			<Button size="iconSm" onclick={() => {
-				open = !open;
-				toast('Good choice!');
-			}}>
+			<Button
+				size="iconSm"
+				onclick={() => {
+					open = !open;
+					toast('Good choice!');
+				}}
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -53,11 +67,11 @@
 		<button
 			{...props}
 			class="mt-2 size-8 cursor-pointer rounded-full"
-			style="background-color: {selected}"
+			style="background-color: {selected.value}"
 		></button>
 	{/snippet}
 
 	Select a color:
 
-	<ColorSelect colors={['red', 'green', 'blue']} bind:selected class="mt-2" />
+	<ColorSelect {colors} bind:selected class="mt-2" />
 </Popover>

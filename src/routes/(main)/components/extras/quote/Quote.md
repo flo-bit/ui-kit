@@ -20,7 +20,7 @@
 	author={{
 		name: 'Albert Einstein',
 		role: 'Scientist',
-		src: './einstein.png',
+		src: './einstein.png'
 	}}
 	useThemeColor
 />

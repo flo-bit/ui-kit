@@ -76,10 +76,7 @@
 				checked={getLabel(selected) === getLabel(color)}
 			/>
 
-			<span
-				aria-hidden="true"
-				class="size-8 rounded-full bg-current"
-			></span>
+			<span aria-hidden="true" class="size-8 rounded-full bg-current"></span>
 		</label>
 	{/each}
 </div>

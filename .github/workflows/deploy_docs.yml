@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - docs
 
 jobs:
   build_site:
@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'build/'
-  
+
   deploy:
     needs: build_site
     runs-on: ubuntu-latest

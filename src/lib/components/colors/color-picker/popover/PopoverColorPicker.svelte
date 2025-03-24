@@ -61,7 +61,7 @@
 			style={`background-color: rgb(${internalColor.r * 255}, ${internalColor.g * 255}, ${internalColor.b * 255});`}
 		></div>
 	</Popover.Trigger>
-	<Popover.Content side={side} sideOffset={sideOffset}>
-		<ColorPicker bind:rgb bind:oklab bind:okhsv class={className} onchange={onchange} />
+	<Popover.Content {side} {sideOffset}>
+		<ColorPicker bind:rgb bind:oklab bind:okhsv class={className} {onchange} />
 	</Popover.Content>
 </Popover.Root>

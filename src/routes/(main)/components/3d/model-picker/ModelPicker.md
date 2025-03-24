@@ -16,17 +16,19 @@
 
 	const items = [
 		{
-			path:'/path/to/model.gltf',
+			path: '/path/to/model.gltf',
 			label: 'Model A'
 		},
 		{
 			path: '/path/to/model.gltf',
 			label: 'Model B'
 		}
-	]
+	];
 </script>
 
-<ModelPicker items={items} onselect={({ path, label }) => {
+<ModelPicker
+	{items}
+	onselect={({ path, label }) => {
 		console.log(path, label);
 	}}
 />

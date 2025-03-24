@@ -1,4 +1,5 @@
 <script>
-	import PdfViewer from "$docs/wip/pdf-viewer/PDFViewer.svelte";
+	import PdfViewer from '$docs/wip/pdf-viewer/PDFViewer.svelte';
 </script>
+
 <PdfViewer />

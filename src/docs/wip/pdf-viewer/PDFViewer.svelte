@@ -52,8 +52,8 @@
 	});
 </script>
 
-<div class="relative max-w-full mx-auto">
-	<canvas bind:this={canvas} class="max-w-full max-h-[calc(100vh-8rem)] dark:invert"></canvas>
+<div class="relative mx-auto max-w-full">
+	<canvas bind:this={canvas} class="max-h-[calc(100vh-8rem)] max-w-full dark:invert"></canvas>
 
 	{#if loaded}
 		<Button

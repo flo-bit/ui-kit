@@ -37,13 +37,8 @@
 		style="font-variant-numeric: tabular-nums;"
 		{...restProps}
 	>
-
 		{#if showSeconds}
-			<NumberFlow
-				value={ss}
-				trend={-1}
-				digits={{ 1: { max: 5 } }}
-			/>
+			<NumberFlow value={ss} trend={-1} digits={{ 1: { max: 5 } }} />
 		{/if}
 	</div>
 </NumberFlowGroup>

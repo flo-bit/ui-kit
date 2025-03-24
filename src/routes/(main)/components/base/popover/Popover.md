@@ -21,7 +21,7 @@
 <!-- custom trigger -->
 <Popover>
 	{#snippet child({ props })}
-		<button {...props} class="bg-accent-500 size-8 rounded-full cursor-pointer mt-2"></button>
+		<button {...props} class="bg-accent-500 mt-2 size-8 cursor-pointer rounded-full"></button>
 	{/snippet}
 	Content of the popover here
 </Popover>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	// TODO: fix types
-	
+
 	import { onMount, type Snippet } from 'svelte';
 	import { DragGesture, type FullGestureState } from '@use-gesture/vanilla';
 	import type { CardData, Direction, SwipeEventData } from '.';
@@ -195,7 +195,7 @@
 		{#key image}
 			{#if image}
 				<Image
-				containerClasses="absolute inset-0 h-full w-full rounded-2xl"
+					containerClasses="absolute inset-0 h-full w-full rounded-2xl"
 					src={image}
 					alt={title ?? ''}
 					loading="eager"
@@ -206,7 +206,7 @@
 		<div
 			class="from-base-50/80 dark:from-base-950/80 absolute inset-0 rounded-b-xl bg-gradient-to-t via-transparent"
 		></div>
-		<div class="absolute bottom-0 flex w-full justify-start px-3 sm:px-12 py-16">
+		<div class="absolute bottom-0 flex w-full justify-start px-3 py-16 sm:px-12">
 			<div class="flex flex-col">
 				<h3 class="text-base-900 dark:text-base-50 pb-2 text-3xl font-bold">{title}</h3>
 				<p class="text-base-800 dark:text-base-200 text-sm">{description}</p>

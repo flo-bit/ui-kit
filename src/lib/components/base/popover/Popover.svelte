@@ -4,7 +4,6 @@
 	import * as Popover from '$lib/components/base/popover';
 	import { Popover as PopoverPrimitive } from 'bits-ui';
 
-
 	type Props = PopoverPrimitive.RootProps & {
 		triggerProps?: PopoverPrimitive.TriggerProps;
 		text?: string;
@@ -15,9 +14,8 @@
 		triggerSize?: ButtonSize;
 
 		triggerRef?: HTMLButtonElement | null;
-
-	} & PopoverPrimitive.ContentProps & PopoverPrimitive.TriggerProps;
-
+	} & PopoverPrimitive.ContentProps &
+		PopoverPrimitive.TriggerProps;
 
 	let {
 		open = $bindable(false),

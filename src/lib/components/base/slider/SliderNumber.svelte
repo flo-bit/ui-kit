@@ -22,7 +22,7 @@
 		locales="en-US"
 		format={{ useGrouping: false }}
 		aria-hidden="true"
-		class="pointer-events-none min-w-6 text-right text-lg font-semibold text-base-900 dark:text-base-100"
+		class="text-base-900 dark:text-base-100 pointer-events-none min-w-6 text-right text-lg font-semibold"
 		willChange
 	/>
 </div>

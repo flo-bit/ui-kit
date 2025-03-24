@@ -4,7 +4,7 @@
 	import svg from '$docs/assets/undraw_yoga.svg?raw';
 </script>
 
-<div class="w-full max-w-md mx-auto">
+<div class="mx-auto w-full max-w-md">
 	<Undraw
 		{svg}
 		alt="Undraw"

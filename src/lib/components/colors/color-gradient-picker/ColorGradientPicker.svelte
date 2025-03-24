@@ -12,7 +12,6 @@
 	import { DragGesture } from '@use-gesture/vanilla';
 	import Button from '$lib/components/base/button/Button.svelte';
 
-
 	type ColorStop = { rgb: RGB; position: number };
 
 	let initialColors: ColorStop[] = $state([
@@ -58,29 +57,33 @@
 			if (!ref) return;
 
 			gestures.push(
-				new DragGesture(ref, (state) => {
-					const { delta } = state;
+				new DragGesture(
+					ref,
+					(state) => {
+						const { delta } = state;
 
-					const newPosition = delta[0] / (gradientRef?.clientWidth ?? 1);
+						const newPosition = delta[0] / (gradientRef?.clientWidth ?? 1);
 
-					colors[i].position += newPosition;
-					colors[i].position = Math.max(0, Math.min(1, colors[i].position));
+						colors[i].position += newPosition;
+						colors[i].position = Math.max(0, Math.min(1, colors[i].position));
 
-					if (Math.abs(state.offset[0]) > 10) {
-						isDragging[i] = state.active;
-					} else {
-						isDragging[i] = state.active;
+						if (Math.abs(state.offset[0]) > 10) {
+							isDragging[i] = state.active;
+						} else {
+							isDragging[i] = state.active;
+						}
+
+						if (state.tap) {
+							allOpen[i] = !allOpen[i];
+						}
+					},
+					{
+						preventDefault: true,
+						eventOptions: {
+							passive: false
+						}
 					}
-
-					if (state.tap) {
-						allOpen[i] = !allOpen[i];
-					}
-				}, {
-					preventDefault: true,
-					eventOptions: {
-						passive: false
-					}
-				})
+				)
 			);
 		});
 

@@ -8,6 +8,10 @@
 			variant: {
 				primary:
 					'border border-accent-500/20 dark:border-accent-500/20 bg-accent-500/10 dark:bg-accent-500/10 text-accent-700 dark:text-accent-400',
+				primary_shift:
+					'border border-[oklch(from_var(--color-accent-500)_l_c_calc(h+35)_/_0.2)] dark:border-[oklch(from_var(--color-accent-500)_l_c_calc(h+35)_/_0.2)] bg-[oklch(from_var(--color-accent-500)_l_c_calc(h+35)_/_0.1)] text-[oklch(from_var(--color-accent-700)_l_c_calc(h+35))] dark:text-[oklch(from_var(--color-accent-400)_l_c_calc(h+35))]',
+				primary_shift_2:
+					'border border-[oklch(from_var(--color-accent-500)_l_c_calc(h+70)_/_0.2)] dark:border-[oklch(from_var(--color-accent-500)_l_c_calc(h+70)_/_0.2)] bg-[oklch(from_var(--color-accent-500)_l_c_calc(h+70)_/_0.1)] text-[oklch(from_var(--color-accent-700)_l_c_calc(h+70))] dark:text-[oklch(from_var(--color-accent-400)_l_c_calc(h+70))]',
 				secondary:
 					'bg-base-300/30 dark:bg-base-800/50 text-base-900 dark:text-base-50 border border-base-300/50 dark:border-base-700/30',
 

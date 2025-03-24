@@ -27,11 +27,7 @@
 	}
 </script>
 
-<Toolbar.Root
-	bind:ref
-	class={className}
-	{...restProps}
->
+<Toolbar.Root bind:ref class={className} {...restProps}>
 	<Toolbar.Group bind:value={selected} type="single" class="flex items-center gap-x-1 text-sm">
 		{#each items as item}
 			<Toolbar.GroupItem

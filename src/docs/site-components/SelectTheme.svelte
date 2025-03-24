@@ -75,7 +75,7 @@
 		if (typeof previous === 'string' || typeof color === 'string') {
 			return;
 		}
-		
+
 		document.documentElement.classList.remove(previous.label.toLowerCase());
 		document.documentElement.classList.add(color.label.toLowerCase());
 

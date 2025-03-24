@@ -26,16 +26,12 @@
 
 	function applyClasses(loadedSvg: CheerioAPI, el: any) {
 		let fill = loadedSvg(el).attr('fill');
-		if(!fill) return;
+		if (!fill) return;
 
 		if (fill === '#6c63ff') {
 			loadedSvg(el).removeAttr('fill');
 			loadedSvg(el).addClass('fill-accent-600 dark:fill-accent-500');
-		} else if (
-			fill.startsWith('#') &&
-			!fill.includes('url') &&
-			autoInvert
-		) {
+		} else if (fill.startsWith('#') && !fill.includes('url') && autoInvert) {
 			loadedSvg(el).addClass('dark:invert dark:hue-rotate-180');
 		} else if (colorMap[fill]) {
 			loadedSvg(el).removeAttr('fill');

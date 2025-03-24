@@ -31,7 +31,7 @@
 	<Popover.Content
 		side={'top'}
 		sideOffset={10}
-		class="max-h-[60dvh] w-full max-w-[calc(100vw-1rem)] overflow-y-scroll mx-2"
+		class="mx-2 max-h-[60dvh] w-full max-w-[calc(100vw-1rem)] overflow-y-scroll"
 	>
 		<ModelPicker
 			{items}

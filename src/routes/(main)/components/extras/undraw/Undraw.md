@@ -17,13 +17,12 @@
 	</span>
 </Alert>
 
-
 1. Download a svg illustration from [undraw](https://undraw.co/illustrations) leaving the theme color as it is (#6c63ff).
 2. Import that svg with the `?raw` extension and use it with the undraw component. The theme color will automatically change to your theme color, all other colors will have to be manually changed using the `colorMap` prop (or if not using dark mode, leave as is).
 
 ```svelte
 <script lang="ts">
-	import { Undraw } from 'fuchs';
+	import { Undraw } from 'fuchs';
 
 	import svg from './your-illustration.svg?raw';
 </script>

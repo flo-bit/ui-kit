@@ -13,7 +13,7 @@
 	<Timer bind:timer class="sm:text-7xl" />
 </Box>
 
-<div class="flex w-full justify-center gap-2 mt-2">
+<div class="mt-2 flex w-full justify-center gap-2">
 	<Button
 		onclick={() => {
 			if (timer?.isRunning) {

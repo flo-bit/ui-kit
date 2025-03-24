@@ -50,7 +50,6 @@
 
 		return loadedSvg.html();
 	}
-
 </script>
 
 <figure

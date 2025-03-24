@@ -7,7 +7,7 @@
 
 <div
 	class={cn(
-		'isolate bg-accent-500 relative h-[712px] w-[350px] max-w-full rounded-[60px] aspect-[350/712]',
+		'bg-accent-500 relative isolate aspect-[350/712] h-[712px] w-[350px] max-w-full rounded-[60px]',
 		className
 	)}
 >

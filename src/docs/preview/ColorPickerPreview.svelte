@@ -6,7 +6,11 @@
 	import Button from '$lib/components/base/button/Button.svelte';
 	import PopoverColorPicker from '$lib/components/extra/color-picker/popover/PopoverColorPicker.svelte';
 	import { ThemeWatcher } from '$lib/helper/ThemeWatcher.svelte';
-	import { hex_to_rgb, oklch_string_to_oklch, oklch_to_rgb } from '$lib/components/extra/color-picker/base/color';
+	import {
+		hex_to_rgb,
+		oklch_string_to_oklch,
+		oklch_to_rgb
+	} from '$lib/components/extra/color-picker/base/color';
 
 	let rgb = $state({
 		r: 0,

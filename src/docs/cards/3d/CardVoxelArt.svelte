@@ -3,7 +3,7 @@
 	import data from '$docs/assets/model-apple.json';
 </script>
 
-<div class="flex h-full w-full items-center justify-center -mt-8">
+<div class="-mt-8 flex h-full w-full items-center justify-center">
 	<VoxelArt
 		{data}
 		colorMap={{

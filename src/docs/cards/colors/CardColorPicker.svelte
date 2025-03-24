@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { ColorPicker } from '$lib';
-	import { oklch_string_to_oklch, oklch_to_rgb } from '$lib/components/colors/color-picker/base/color';
+	import {
+		oklch_string_to_oklch,
+		oklch_to_rgb
+	} from '$lib/components/colors/color-picker/base/color';
 	import { ThemeWatcher } from '$lib/helper/ThemeWatcher.svelte';
 	import { onMount } from 'svelte';
 
@@ -22,6 +25,7 @@
 	});
 </script>
 
-<div class="h-full w-full flex items-center justify-center">
-<!-- inline version -->
-<ColorPicker bind:rgb class="scale-[0.6] -ml-2" /></div>
+<div class="flex h-full w-full items-center justify-center">
+	<!-- inline version -->
+	<ColorPicker bind:rgb class="-ml-2 scale-[0.6]" />
+</div>

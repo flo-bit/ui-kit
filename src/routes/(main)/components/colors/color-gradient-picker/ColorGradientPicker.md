@@ -23,4 +23,3 @@
 
 <ColorGradientPicker bind:colors />
 ```
-

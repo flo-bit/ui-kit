@@ -25,14 +25,17 @@ Create your voxel art model with [this tool](https://voxels.layoutit.com/), down
 You can also pass a `colorMap` prop to the component to change the colors of the voxel art, e.g. like this:
 
 ```svelte
-<VoxelArt {data} colorMap={{
-	'050505': 'var(--color-accent-50)',
-	'101010': 'var(--color-accent-100)',
-	'202020': 'var(--color-accent-200)',
-	'303030': 'var(--color-accent-300)',
-	'404040': 'var(--color-accent-400)',
-	'505050': 'var(--color-accent-500)',
-}} />
+<VoxelArt
+	{data}
+	colorMap={{
+		'050505': 'var(--color-accent-50)',
+		'101010': 'var(--color-accent-100)',
+		'202020': 'var(--color-accent-200)',
+		'303030': 'var(--color-accent-300)',
+		'404040': 'var(--color-accent-400)',
+		'505050': 'var(--color-accent-500)'
+	}}
+/>
 ```
 
 ## Credits

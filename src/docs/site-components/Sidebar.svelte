@@ -93,7 +93,6 @@
 					{/each}
 				</AccordionItem>
 			{/each}
-			
 		</Accordion>
 	</div>
 </Sidebar>

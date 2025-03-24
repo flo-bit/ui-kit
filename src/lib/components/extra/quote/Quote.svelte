@@ -52,7 +52,7 @@
 			fallback={author?.fallback}
 			src={author?.src}
 			alt={author?.alt}
-			class="size-24 rounded-2xl text-3xl md:size-32 object-cover"
+			class="size-24 rounded-2xl object-cover text-3xl md:size-32"
 		/>
 	</div>
 	<div class="flex flex-col gap-2">

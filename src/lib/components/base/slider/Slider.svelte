@@ -8,7 +8,7 @@
 		orientation = 'horizontal',
 		class: className,
 		tabindex = undefined,
-		type = 'single',
+		type = 'single'
 	}: WithoutChildrenOrChild<SliderPrimitive.RootProps> = $props();
 </script>
 

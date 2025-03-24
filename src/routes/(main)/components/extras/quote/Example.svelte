@@ -8,7 +8,7 @@
 	author={{
 		name: 'Albert Einstein',
 		role: 'Scientist',
-		src: einstein,
+		src: einstein
 	}}
 	useThemeColor
 	class="not-prose"

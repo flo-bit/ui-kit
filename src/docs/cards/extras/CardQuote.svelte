@@ -8,7 +8,7 @@
 	author={{
 		name: 'Einstein',
 		role: 'Scientist',
-		src: einstein,
+		src: einstein
 	}}
 	useThemeColor
 	class="scale-75"

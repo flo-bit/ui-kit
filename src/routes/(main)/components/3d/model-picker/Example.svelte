@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { toast } from 'svelte-sonner';
-	
+
 	import { ModelPicker } from '$lib';
 	import ModalModelPicker from '$lib/components/3d/model-picker/modal/ModalModelPicker.svelte';
 	import PopoverModelPicker from '$lib/components/3d/model-picker/popover/PopoverModelPicker.svelte';
