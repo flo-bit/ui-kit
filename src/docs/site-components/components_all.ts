@@ -19,13 +19,13 @@ export const components: {
 		href: 'colors'
 	},
 	{
-		name: '3D components',
-		components: threeDComponents,
-		href: '3d'
-	},
-	{
 		name: 'Extra components',
 		components: extraComponents,
 		href: 'extras'
+	},
+	{
+		name: '3D components',
+		components: threeDComponents,
+		href: '3d'
 	}
 ];

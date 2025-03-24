@@ -46,6 +46,7 @@ export { StopwatchState } from '$lib/components/extra/stopwatch/StopwatchState.s
 export { TimerState } from '$lib/components/extra/timer/TimerState.svelte';
 export { default as Phone } from '$lib/components/extra/phone/Phone.svelte';
 export { default as Quote } from '$lib/components/extra/quote/Quote.svelte';
+export { default as CardSwiper } from '$lib/components/extra/swiper-cards/CardSwiper.svelte';
 
 // 3d components
 export { default as ModelPicker } from '$lib/components/3d/model-picker/base/ModelPicker.svelte';

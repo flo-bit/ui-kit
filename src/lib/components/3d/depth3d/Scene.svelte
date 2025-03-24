@@ -27,7 +27,7 @@
 		cameraPosition = [0, 0, 10],
 		rotationScale = 0.2,
 		rotationSpeed = 2,
-		detail = 200,
+		detail = 50,
 		depthScale = 1.5,
 		mouseMovement = true
 	}: Props = $props();

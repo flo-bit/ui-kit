@@ -153,7 +153,7 @@
 				}}
 			>
 				<div
-					class="border-base-400 dark:border-base-500 focus-visible:outline-accent-500 shadow-base-900/50 z-10 size-8 rounded-full border shadow-lg"
+					class="ring-base-400 dark:ring-base-500 focus-visible:outline-accent-500 shadow-base-900/50 z-10 size-8 rounded-full shadow-lg ring"
 					style={`background-color: rgb(${color.rgb.r * 255}, ${color.rgb.g * 255}, ${color.rgb.b * 255});`}
 				></div>
 			</Popover.Trigger>
@@ -172,7 +172,7 @@
 					}
 				}}
 			>
-				<ColorPicker bind:rgb={colors[i].rgb} class={className} />
+				<ColorPicker bind:rgb={colors[i].rgb} />
 
 				{#if colors.length > 2}
 					<Button

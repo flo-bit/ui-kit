@@ -1,52 +1,15 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 
-	import CardGithubCorner from '$docs/cards/base/CardGithubCorner.svelte';
-	import CardHeatmap from '$docs/cards/graphs/CardHeatmap.svelte';
-	import CardLineGraph from '$docs/cards/graphs/CardLineGraph.svelte';
-	import CardRingChart from '$docs/cards/graphs/CardRingChart.svelte';
 	import { components } from './components_all';
-
-	let graphCards = [
-		{
-			component: CardHeatmap,
-			className: '',
-			label: 'Heatmap',
-			href: 'heatmap'
-		},
-		{
-			component: CardLineGraph,
-			className: '',
-			label: 'Line Graph',
-			href: 'line-graph'
-		},
-		{
-			component: CardRingChart,
-			className: '',
-			label: 'Ring Chart',
-			href: 'ring-chart'
-		}
-	];
-
-	// sort graphCards by label
-	graphCards.sort((a, b) => a.label.localeCompare(b.label));
-
-	let socialCards = [
-		{
-			component: CardGithubCorner,
-			className: '',
-			label: 'Github Corner',
-			href: 'github-corner'
-		}
-	];
 </script>
 
-<div class="flex w-full flex-col gap-16">
+<div class="flex w-full flex-col gap-32">
 	{#each components as category}
 		<div>
-			<h2 class="text-base-800 dark:text-base-200 mb-6 text-xl font-semibold">{category.name}</h2>
-			<div class="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+			<h2 class="text-base-800 dark:text-base-200 mb-12 text-xl font-semibold">{category.name}</h2>
+			<div class="grid w-full grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
 				{#each category.components as card}
 					<div
 						class="group relative flex flex-col items-start gap-3 transition-opacity duration-150 hover:opacity-90 md:gap-4"
@@ -69,7 +32,7 @@
 							href={base + `/components/${category.href}/${card.href}`}
 							class="focus-visible:outline-accent-500 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2"
 						>
-							<span class="text-base-900 dark:text-base-50 mx-2 text-sm font-semibold"
+							<span class="text-base-900 dark:text-base-50 mx-2 text-sm font-semibold group-hover:text-accent-600 group-hover:dark:text-accent-400 transition-colors duration-150"
 								>{card.label}</span
 							>
 							<span class="absolute inset-0"></span>
