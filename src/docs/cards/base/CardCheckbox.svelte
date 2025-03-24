@@ -1,8 +1,5 @@
 <script>
-	import { Subheading } from '$lib/components/base/heading';
-	import { Text } from '$lib/components/base/text';
-	import { Checkbox } from '$lib/components/base/checkbox';
-	import { Label } from '$lib/components/base/label';
+	import { Checkbox, Label } from '$lib';
 </script>
 
 <div class="flex items-center space-x-2">

@@ -1,5 +1,5 @@
 <script>
-	import { Subheading } from '$lib/components/base/heading';
+	import { Subheading } from '$lib';
 	import { SocialIcons } from '$lib/components/extra/social-icons';
 </script>
 

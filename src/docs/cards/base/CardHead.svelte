@@ -1,5 +1,5 @@
 <script>
-	import Text from '$lib/components/base/text/Text.svelte';
+	import { Paragraph } from '$lib';
 </script>
 
 <div
@@ -14,7 +14,8 @@
 				class="border-base-300 dark:border-base-800 from-base-300/50 dark:from-base-900/50 -mb-0.25 flex w-full items-center gap-2 rounded-t-2xl border bg-gradient-to-b via-transparent px-3 pt-2 pb-1"
 			>
 				🫠
-				<Text class="text-base-900 dark:text-base-50 line-clamp-1 font-semibold">Website Title</Text
+				<Paragraph class="text-base-900 dark:text-base-50 line-clamp-1 font-semibold"
+					>Website Title</Paragraph
 				>
 			</div>
 		</div>

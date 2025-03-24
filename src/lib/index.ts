@@ -26,10 +26,11 @@ export { default as SliderNumber } from '$lib/components/base/slider/SliderNumbe
 export { Toaster } from '$lib/components/base/sonner/';
 export { toast } from 'svelte-sonner';
 export { Switch } from '$lib/components/base/switch/';
-export { Text as Paragraph } from '$lib/components/base/text/';
+export { Paragraph } from '$lib/components/base/paragraph/';
 export { Textarea } from '$lib/components/base/textarea';
 export { Tooltip } from '$lib/components/base/tooltip';
 export { default as Popover } from '$lib/components/base/popover/Popover.svelte';
+export { default as Subheading } from '$lib/components/base/heading/Subheading.svelte';
 
 // colors components
 export { default as ColorGradientPicker } from '$lib/components/colors/color-gradient-picker/ColorGradientPicker.svelte';

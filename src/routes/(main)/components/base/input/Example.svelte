@@ -1,0 +1,19 @@
+<script>
+	import { Input } from '$lib';
+</script>
+
+<h3>Primary</h3>
+
+<div class="flex flex-col gap-4 w-fit">
+	<Input sizeVariant="sm" placeholder="Enter text here (small)" />
+	<Input placeholder="Enter text here (default)" />
+	<Input sizeVariant="lg" placeholder="Enter text here (large)" />
+</div>
+
+<h3>Secondary</h3>
+
+<div class="flex flex-col gap-4 w-fit">
+	<Input variant="secondary" sizeVariant="sm" placeholder="Enter text here (small)" />
+	<Input variant="secondary" placeholder="Enter text here (default)" />
+	<Input variant="secondary" sizeVariant="lg" placeholder="Enter text here (large)" />
+</div>

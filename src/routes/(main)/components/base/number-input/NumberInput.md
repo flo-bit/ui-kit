@@ -1,11 +1,10 @@
 <script>
-	import Subheading from '$lib/components/base/heading/Subheading.svelte';
-	import NumberInput from '$lib/components/base/number-input/NumberInput.svelte';
+	import { NumberInput } from '$lib';
 </script>
 
 # Number Input
 
-## Examples
+## Example
 
 <NumberInput />
 

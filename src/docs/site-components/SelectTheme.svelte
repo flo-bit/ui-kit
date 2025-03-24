@@ -11,9 +11,7 @@
 </script>
 
 <script lang="ts">
-	import { ColorSelect } from '$lib';
-	import Subheading from '$lib/components/base/heading/Subheading.svelte';
-	import Text from '$lib/components/base/text/Text.svelte';
+	import { ColorSelect, Subheading, Paragraph } from '$lib';
 	import { onMount } from 'svelte';
 
 	let accentColors = [
@@ -67,7 +65,7 @@
 	<Subheading class="mb-4">Select Theme</Subheading>
 {/if}
 
-<Text class="mb-2">Accent Color</Text>
+<Paragraph class="mb-2">Accent Color</Paragraph>
 <ColorSelect
 	bind:selected={accentColor}
 	colors={accentColors}
@@ -88,7 +86,7 @@
 	class="w-64"
 />
 
-<Text class="mt-4 mb-2">Base Color</Text>
+<Paragraph class="mt-4 mb-2">Base Color</Paragraph>
 <ColorSelect
 	bind:selected={baseColor}
 	colors={baseColors}

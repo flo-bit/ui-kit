@@ -1,7 +1,7 @@
 <script>
+	import { Image, Paragraph } from '$lib';
+	
 	import nature from '$docs/assets/images/nature2.jpg?as=run';
-	import Image from '$lib/components/base/image/Image.svelte';
-	import Text from '$lib/components/base/text/Text.svelte';
 </script>
 
 <div
@@ -14,6 +14,6 @@
 		containerClasses="border-base-300 dark:border-base-700 overflow-hidden max-w-full max-h-20 rounded-2xl border rounded-2xl overflow-hidden"
 	/>
 
-	<Text class="mt-2 font-semibold">Card Title</Text>
-	<Text class="text-xs font-normal">Card Subtitle</Text>
+	<Paragraph class="mt-2 font-semibold">Card Title</Paragraph>
+	<Paragraph class="text-xs font-normal">Card Subtitle</Paragraph>
 </div>

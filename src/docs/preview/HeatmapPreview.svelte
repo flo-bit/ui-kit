@@ -11,7 +11,7 @@
 <Subheading class="mb-6">Heatmap</Subheading>
 
 <div class="max-w-full">
-	<ScrollArea type="hover" class="w-full pb-2" orientation="horizontal">
+	<ScrollArea class="w-full pb-2" orientation="horizontal">
 		<Heatmap data={heatmapData} />
 	</ScrollArea>
 </div>

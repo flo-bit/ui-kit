@@ -1,10 +1,9 @@
 <script>
-	import { Box, Button } from '$lib';
-	import Text from '$lib/components/base/text/Text.svelte';
+	import { Box, Button, Paragraph } from '$lib';
 </script>
 
 <Box class="flex items-center justify-between gap-2">
-	<Text>Are you sure?</Text>
+	<Paragraph>Are you sure?</Paragraph>
 
 	<div>
 		<Button tabindex={-1} variant="secondary" size="iconSm">

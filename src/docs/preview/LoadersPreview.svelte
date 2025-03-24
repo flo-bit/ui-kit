@@ -2,7 +2,7 @@
 	import { Subheading } from '$lib/components/base/heading';
 	import { Progress } from '$lib/components/extra/progress';
 	import { PulseLoader } from '$lib/components/extra/pulse-loader';
-	import { Text } from '$lib/components/base/text';
+	import { Paragraph } from '$lib/components/base/paragraph';
 
 	let progress = $state(20);
 
@@ -14,10 +14,10 @@
 </script>
 
 <Subheading class="mb-2">Loader</Subheading>
-<Text class="mt-4 mb-2">Bar Loader</Text>
+<Paragraph class="mt-4 mb-2">Bar Loader</Paragraph>
 
 <Progress {progress} />
 
-<Text class="mt-4 mb-2">Pulse Loader</Text>
+<Paragraph class="mt-4 mb-2">Pulse Loader</Paragraph>
 
 <PulseLoader />

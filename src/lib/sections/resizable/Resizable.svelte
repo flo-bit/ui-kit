@@ -3,11 +3,6 @@
 	import { PaneGroup, Pane, PaneResizer } from 'paneforge';
 	import { draggable, droppable, type DragDropState } from './dragndrop';
 
-	import TimerPreview from '$docs/preview/TimerPreview.svelte';
-	import WaveformAudioPlayerPreview from '$docs/preview/WaveformAudioPlayerPreview.svelte';
-	import ThemeToggle from '$lib/components/base/theme-toggle/ThemeToggle.svelte';
-	import SelectTheme from '$docs/site-components/SelectTheme.svelte';
-
 	let contentToPanes = $state({
 		first: '#pane1',
 		second: '#pane2',
@@ -94,10 +89,6 @@
 			<button class="handle bg-base-500/5 absolute top-0 right-0 left-0 h-5 w-full cursor-grab">
 				<span class="sr-only">drag</span>
 			</button>
-
-			<ThemeToggle class="absolute top-6 right-2" />
-
-			<SelectTheme />
 		</div>
 	</div>
 </Portal>
@@ -111,8 +102,6 @@
 			<button class="handle bg-base-500/5 absolute top-0 right-0 left-0 h-5 w-full cursor-grab">
 				<span class="sr-only">drag</span>
 			</button>
-
-			<WaveformAudioPlayerPreview />
 		</div>
 	</div>
 </Portal>
@@ -126,8 +115,6 @@
 			<button class="handle bg-base-500/5 absolute top-0 right-0 left-0 h-5 w-full cursor-grab">
 				<span class="sr-only">drag</span>
 			</button>
-
-			<TimerPreview />
 		</div>
 	</div>
 </Portal>

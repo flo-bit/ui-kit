@@ -1,8 +1,5 @@
 <script>
-	import { Subheading } from '$lib/components/base/heading';
-	import Heading from '$lib/components/base/heading/Heading.svelte';
 	import Prose from '$lib/components/base/prose/Prose.svelte';
-	import Text from '$lib/components/base/text/Text.svelte';
 </script>
 
 <div class="w-full">

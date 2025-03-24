@@ -1,5 +1,5 @@
 <script>
-	import Box from '$lib/components/base/box/Box.svelte';
+	import { Box } from '$lib';
 </script>
 
 # Prose

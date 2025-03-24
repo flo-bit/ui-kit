@@ -1,8 +1,7 @@
 <script>
-	import Box from '$lib/components/base/box/Box.svelte';
-	import Text from '$lib/components/base/text/Text.svelte';
+	import { Paragraph, Box } from '$lib';
 </script>
 
 <Box>
-	<Text>This is a box, put your stuff here.</Text>
+	<Paragraph>This is a box, put your stuff here.</Paragraph>
 </Box>

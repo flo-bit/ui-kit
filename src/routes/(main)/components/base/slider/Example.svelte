@@ -7,7 +7,7 @@
 	let value2 = $state(42);
 </script>
 
-<Slider bind:value />
+<Slider bind:value={value} type="single" />
 
 <h3>With Number</h3>
-<SliderNumber bind:value={value2} />
+<SliderNumber bind:value={value2} type="single" />
