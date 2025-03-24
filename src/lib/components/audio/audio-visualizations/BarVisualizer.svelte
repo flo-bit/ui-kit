@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ThemeWatcher } from '$lib/helper/ThemeWatcher.svelte';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 	import { onMount } from 'svelte';
 
 	let {

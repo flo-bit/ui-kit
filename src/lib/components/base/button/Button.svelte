@@ -2,7 +2,7 @@
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 	import { type VariantProps, tv } from 'tailwind-variants';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 
 	export const buttonVariants = tv({
 		base: 'touch-manipulation hover:cursor-pointer backdrop-blur-md motion-safe:focus-visible:transition-transform focus-visible:outline-2 outline-offset-2 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl active:scale-95 text-sm font-medium motion-safe:transition-all disabled:pointer-events-none disabled:opacity-50 duration-300 active:duration-100 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',

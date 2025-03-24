@@ -1,6 +1,6 @@
 {
 	"name": "fuchs",
-	"version": "0.0.18",
+	"version": "0.0.22",
 	"type": "module",
 	"description": "Beautiful UI components built with Tailwind 4 and Svelte 5",
 	"homepage": "https://flo-bit.dev/ui-kit",
@@ -16,8 +16,9 @@
 		"build:package": "vite build && npm run prepack",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
+		"shaders": "vite build --config vite.shaders.ts",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"prepack": "svelte-kit sync && svelte-package && publint",
+		"prepack": "svelte-kit sync && svelte-package && npm run shaders && publint",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint ."
@@ -104,5 +105,7 @@
 		"wavesurfer.js": "^7.9.1"
 	},
 	"license": "MIT",
-	"bin": "dist/cli.js"
+	"bin": {
+		"fuchs": "dist/cli.js"
+	}
 }

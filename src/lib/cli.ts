@@ -47,6 +47,42 @@ async function downloadZip(url: string, dest: string) {
 	console.log('Download complete.');
 }
 
+function copyRecursive(src: string, dest: string) {
+	const stats = fs.statSync(src);
+	if (stats.isDirectory()) {
+		if (!fs.existsSync(dest)) {
+			fs.mkdirSync(dest);
+		}
+		const entries = fs.readdirSync(src);
+		for (const entry of entries) {
+			copyRecursive(path.join(src, entry), path.join(dest, entry));
+		}
+	} else {
+		fs.copyFileSync(src, dest);
+	}
+}
+
+function replaceInFiles(dir: string, searchStr: string, replaceStr: string) {
+	const entries = fs.readdirSync(dir, { withFileTypes: true });
+	for (const entry of entries) {
+		const fullPath = path.join(dir, entry.name);
+		if (entry.isDirectory()) {
+			replaceInFiles(fullPath, searchStr, replaceStr);
+		} else {
+			try {
+				const content = fs.readFileSync(fullPath, 'utf8');
+				if (content.includes(searchStr)) {
+					const newContent = content.split(searchStr).join(replaceStr);
+					fs.writeFileSync(fullPath, newContent, 'utf8');
+					console.log(`Updated ${fullPath}`);
+				}
+			} catch (err) {
+				console.error('Error:', (err as Error).message);
+			}
+		}
+	}
+}
+
 try {
 	await downloadZip(zipUrl, zipPath);
 
@@ -71,24 +107,12 @@ try {
 		fs.mkdirSync(destDir, { recursive: true });
 	}
 
-	function copyRecursive(src: string, dest: string) {
-		const stats = fs.statSync(src);
-		if (stats.isDirectory()) {
-			if (!fs.existsSync(dest)) {
-				fs.mkdirSync(dest);
-			}
-			const entries = fs.readdirSync(src);
-			for (const entry of entries) {
-				copyRecursive(path.join(src, entry), path.join(dest, entry));
-			}
-		} else {
-			fs.copyFileSync(src, dest);
-		}
-	}
-
 	copyRecursive(sourcePath, destDir);
 	console.log(`Component "${componentName}" successfully copied to ${destDir}`);
 
+	replaceInFiles(destDir, '$lib', 'fuchs');
+
+	// Optionally, clean up temporary files
 	// fs.rmSync(tmpDir, { recursive: true, force: true });
 } catch (err) {
 	console.error('Error:', (err as Error).message);

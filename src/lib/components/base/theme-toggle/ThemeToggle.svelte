@@ -7,7 +7,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Button, { type ButtonProps } from '../button/Button.svelte';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 
 	onMount(() => {
 		// load from local storage

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 	import type { WithChildren, WithElementRef } from 'bits-ui';
 	import { createNoise3D } from 'simplex-noise';
 	import { onMount } from 'svelte';

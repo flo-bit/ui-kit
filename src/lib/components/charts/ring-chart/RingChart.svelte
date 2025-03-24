@@ -2,7 +2,7 @@
 	import { PieChart, Tooltip } from 'layerchart';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { WithElementRef } from 'bits-ui';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 
 	const defaultColors = [
 		{ key: 0, color: 'var(--color-accent-800)' },

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 
 	const { class: className, id }: { class?: string; id?: string } = $props();
 

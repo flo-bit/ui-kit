@@ -3,7 +3,7 @@
 	import Scene, { type Props } from './Scene.svelte';
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 
 	const {
 		class: className,

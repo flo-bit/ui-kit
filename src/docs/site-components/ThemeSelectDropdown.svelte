@@ -2,7 +2,7 @@
 	import { buttonVariants } from '$lib/components/base/button';
 	import * as Popover from '$lib/components/base/popover';
 	import SelectTheme from './SelectTheme.svelte';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 </script>
 
 <Popover.Root>

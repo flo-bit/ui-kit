@@ -1,7 +1,7 @@
 <script lang="ts" module>
 	import type { WithElementRef, WithoutChildren } from 'bits-ui';
 	import { type VariantProps, tv } from 'tailwind-variants';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 
 	import type { HTMLTextareaAttributes } from 'svelte/elements';
 

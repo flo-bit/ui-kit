@@ -6,7 +6,7 @@
 	import { scaleTime } from 'd3-scale';
 	import { formatDate, PeriodType } from '@layerstack/utils';
 	import { format } from 'date-fns';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 
 	const defaultValueFormat = (value: any) => {
 		return formatDate(value, PeriodType.Month, { variant: 'short' });

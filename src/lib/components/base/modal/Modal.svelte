@@ -2,7 +2,7 @@
 	import type { Snippet } from 'svelte';
 	import { Dialog, type WithoutChild } from 'bits-ui';
 	import { Button, type ButtonProps } from '../button';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 
 	type Props = Dialog.RootProps & {
 		title?: string;

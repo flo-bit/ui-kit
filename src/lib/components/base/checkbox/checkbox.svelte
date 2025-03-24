@@ -1,7 +1,7 @@
 <script lang="ts" module>
 	import { Checkbox as CheckboxPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
 	import { type VariantProps, tv } from 'tailwind-variants';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 
 	export const checkboxVariants = tv({
 		base: 'peer cursor-pointer box-content size-4 shrink-0 inline-flex items-center justify-center rounded-2xl border outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-50',

@@ -1,6 +1,6 @@
 <script lang="ts">
 	// todo convert to radio group
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 

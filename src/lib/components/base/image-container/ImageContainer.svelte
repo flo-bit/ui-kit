@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 	import Image, { type ImageProps } from '../image/Image.svelte';
 
 	let { ref = $bindable(null), containerClasses, ...restProps }: ImageProps = $props();

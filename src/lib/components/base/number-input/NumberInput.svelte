@@ -2,7 +2,7 @@
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 	import { type VariantProps, tv } from 'tailwind-variants';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 
 	export const numberInputVariants = tv({
 		base: 'group flex w-full max-w-44 touch-manipulation items-stretch justify-between rounded-2xl ring focus-within:ring-2',

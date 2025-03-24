@@ -1,7 +1,7 @@
 <script lang="ts" module>
 	import type { WithElementRef } from 'bits-ui';
 	import { type VariantProps, tv } from 'tailwind-variants';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 
 	import type { HTMLInputAttributes, HTMLInputTypeAttribute } from 'svelte/elements';
 

@@ -2,7 +2,7 @@
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { Avatar } from '.';
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 
 	let {
 		users,

@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { cn } from '$lib/utils';
+	import { cn } from '$lib';
 	import type { HTMLImgAttributes } from 'svelte/elements';
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 
