@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { cn } from '$lib';
-	import * as Popover from '$lib/components/base/popover';
+	import { Popover } from '$lib/components/base/popover/index';
 	import {
 		ColorPicker,
 		type OKhsv,
@@ -50,18 +50,21 @@
 	}
 </script>
 
-<Popover.Root>
-	<Popover.Trigger
-		class={cn(
-			'focus-visible:outline-base-900 dark:focus-visible:outline-base-100 cursor-pointer rounded-full focus-visible:outline-2 focus-visible:outline-offset-2'
-		)}
-	>
-		<div
-			class="border-base-300 dark:border-base-700 focus-visible:outline-accent-500 z-10 size-8 rounded-full border"
-			style={`background-color: rgb(${internalColor.r * 255}, ${internalColor.g * 255}, ${internalColor.b * 255});`}
-		></div>
-	</Popover.Trigger>
-	<Popover.Content {side} {sideOffset}>
-		<ColorPicker bind:rgb bind:oklab bind:okhsv class={className} {onchange} />
-	</Popover.Content>
-</Popover.Root>
+<Popover {side} {sideOffset}>
+	{#snippet child({ props })}
+		<button
+			{...props}
+			class={cn(
+				'focus-visible:outline-base-900 dark:focus-visible:outline-base-100 cursor-pointer rounded-full focus-visible:outline-2 focus-visible:outline-offset-2'
+			)}
+		>
+			<div
+				class="border-base-300 dark:border-base-700 focus-visible:outline-accent-500 z-10 size-8 rounded-full border"
+				style={`background-color: rgb(${internalColor.r * 255}, ${internalColor.g * 255}, ${internalColor.b * 255});`}
+			></div>
+			<span class="sr-only">Pick a color</span>
+		</button>
+	{/snippet}
+
+	<ColorPicker bind:rgb bind:oklab bind:okhsv class={className} {onchange} />
+</Popover>

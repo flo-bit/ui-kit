@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { Accordion as AccordionPrimitive } from 'bits-ui';
-	import { cn } from '$lib';
 	import AccordionContent from './accordion-content.svelte';
 	import { AccordionTrigger } from '.';
+	import { cn } from '$lib';
 
 	let {
 		ref = $bindable(null),

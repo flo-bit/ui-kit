@@ -10,8 +10,10 @@ export {
 	Trigger,
 	Close,
 	//
-	Root as Popover,
+	Root as PopoverRoot,
 	Content as PopoverContent,
 	Trigger as PopoverTrigger,
 	Close as PopoverClose
 };
+
+export { default as Popover } from './Popover.svelte';

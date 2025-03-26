@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { cn, buttonVariants, type ButtonSize, type ButtonVariant } from '$lib';
-	import * as Popover from '.';
 	import { Popover as PopoverPrimitive } from 'bits-ui';
+	import { Content } from '.';
+	const Root = PopoverPrimitive.Root;
+	const Trigger = PopoverPrimitive.Trigger;
 
 	type Props = PopoverPrimitive.RootProps & {
 		triggerProps?: PopoverPrimitive.TriggerProps;
@@ -31,26 +33,27 @@
 		sideOffset = 10,
 
 		child: myChild,
+		class: className,
 		...restProps
 	}: Props = $props();
 </script>
 
-<Popover.Root bind:open {onOpenChange}>
+<Root bind:open {onOpenChange}>
 	{#if myChild}
-		<Popover.Trigger class={triggerClasses} bind:ref={triggerRef}>
+		<Trigger class={triggerClasses} bind:ref={triggerRef}>
 			{#snippet child({ props })}
 				{@render myChild?.({ props })}
 			{/snippet}
-		</Popover.Trigger>
+		</Trigger>
 	{:else}
-		<Popover.Trigger
+		<Trigger
 			class={cn(buttonVariants({ variant: triggerVariant, size: triggerSize }), triggerClasses)}
 			bind:ref={triggerRef}
 		>
 			{triggerText}
-		</Popover.Trigger>
+		</Trigger>
 	{/if}
-	<Popover.Content {side} {sideOffset} {...restProps}>
+	<Content {side} {sideOffset} class={className} {...restProps}>
 		{@render children?.()}
-	</Popover.Content>
-</Popover.Root>
+	</Content>
+</Root>

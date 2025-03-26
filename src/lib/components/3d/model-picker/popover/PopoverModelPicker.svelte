@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { cn, ModelPicker } from '$lib';
-	import { buttonVariants } from '$lib/components/base/button';
-	import * as Popover from '$lib/components/base/popover';
+	import { ModelPicker } from '$lib';
+	import { Popover } from '$lib/components/base/popover';
 
 	let {
 		items,
@@ -24,23 +23,21 @@
 	let ref = $state(null);
 </script>
 
-<Popover.Root bind:open>
-	<Popover.Trigger class={cn(buttonVariants(), triggerClasses)}>
-		{title}
-	</Popover.Trigger>
-	<Popover.Content
-		side={'top'}
-		sideOffset={10}
-		class="mx-2 max-h-[60dvh] w-full max-w-[calc(100vw-1rem)] overflow-y-scroll"
-	>
-		<ModelPicker
-			{items}
-			{alwaysRotate}
-			onselect={({ path, label }) => {
-				onselect?.({ path, label });
-				open = false;
-			}}
-			{canvasClasses}
-		/>
-	</Popover.Content>
-</Popover.Root>
+<Popover
+	bind:open
+	{triggerClasses}
+	side={'top'}
+	sideOffset={10}
+	triggerText={title}
+	class="mx-2 max-h-[60dvh] w-full max-w-[calc(100vw-1rem)] overflow-y-scroll"
+>
+	<ModelPicker
+		{items}
+		{alwaysRotate}
+		onselect={({ path, label }) => {
+			onselect?.({ path, label });
+			open = false;
+		}}
+		{canvasClasses}
+	/>
+</Popover>
