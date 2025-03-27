@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex w-full flex-col gap-4">
-	<ChatBubble side="right" variant="secondary">
+	<ChatBubble side="right">
 		<p>Hello there</p>
 	</ChatBubble>
 

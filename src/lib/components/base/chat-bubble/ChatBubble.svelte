@@ -61,7 +61,7 @@
 	let {
 		ref = $bindable(null),
 		class: className,
-		variant = 'primary',
+		variant,
 		size = 'md',
 		children,
 		side = 'left',
@@ -71,10 +71,14 @@
 		size?: BadgeSize;
 		side?: 'left' | 'right';
 	} = $props();
+
+	if (variant === undefined) {
+		variant = side === 'right' ? 'primary' : 'secondary';
+	}
 </script>
 
 <div class="flex">
-	{#if side === 'left'}
+	{#if side === 'right'}
 		<div class="grow"></div>
 	{/if}
 
@@ -86,7 +90,7 @@
 		{@render children?.()}
 	</span>
 
-	{#if side === 'right'}
+	{#if side === 'left'}
 		<div class="grow"></div>
 	{/if}
 </div>

@@ -15,7 +15,7 @@
 	import { ChatBubble } from 'fuchs';
 </script>
 
-<ChatBubble side="right" variant="secondary">
+<ChatBubble side="right">
 	<p>Hello there</p>
 </ChatBubble>
 
