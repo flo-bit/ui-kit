@@ -1,5 +1,3 @@
-<img width="700" alt="open-graph" src="https://github.com/user-attachments/assets/912cf6b4-16f6-4a9e-a9cf-1add9d271f76" />
-
 # 🦊 fox ui
 
 > **This is a public alpha release. Expect bugs and breaking changes.**
@@ -63,3 +61,18 @@ npm install fuchs
 
 <Button onclick={() => alert('clicked')}>Click me</Button>
 ```
+
+## Development
+
+If you want to contribute to the project, please open an issue first describing the feature you want to add.
+
+Clone the repo, install dependencies and run the dev server
+
+```bash
+git clone https://github.com/flo-bit/ui-kit.git
+cd ui-kit
+npm install
+npm run dev
+```
+
+The ui-kit library is located in `src/lib`, the documentation is in `src/docs`.

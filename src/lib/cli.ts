@@ -1,5 +1,14 @@
 #!/usr/bin/env node
 
+/**
+ * TODO:
+ * 
+ * - add exports to lib/fuchs/index.ts
+ * - add dependent components to each component
+ * - add option to also add dependent components
+ * - choose between importing dependent components from fuchs or from $lib/fuchs
+ */
+
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -11,7 +20,8 @@ import { spinner, log } from '@clack/prompts';
 import { Command } from 'commander';
 
 // @ts-expect-error - this works when used as a package (cause it will be moved to dist/cli.js)
-import { version } from '../package.json' with { type: 'json' };
+import pkg from '../package.json' with { type: 'json' };
+const version = pkg.version;
 // in dev hardcode the version instead
 // const version = '0.0.25';
 
