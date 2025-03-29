@@ -39,7 +39,6 @@ export { default as Subheading } from '$lib/components/base/heading/Subheading.s
 
 export { default as AddCopyCodeButtons } from '$lib/components/base/copy-code-button/AddCopyCodeButtons.svelte';
 
-
 // colors components
 export { default as ColorGradientPicker } from '$lib/components/colors/color-gradient-picker/ColorGradientPicker.svelte';
 export { ColorPicker, PopoverColorPicker } from '$lib/components/colors/color-picker';

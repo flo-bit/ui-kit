@@ -32,7 +32,8 @@
 							href={base + `/components/${category.href}/${card.href}`}
 							class="focus-visible:outline-accent-500 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2"
 						>
-							<span class="text-base-900 dark:text-base-50 mx-2 text-sm font-semibold group-hover:text-accent-600 group-hover:dark:text-accent-400 transition-colors duration-150"
+							<span
+								class="text-base-900 dark:text-base-50 group-hover:text-accent-600 group-hover:dark:text-accent-400 mx-2 text-sm font-semibold transition-colors duration-150"
 								>{card.label}</span
 							>
 							<span class="absolute inset-0"></span>

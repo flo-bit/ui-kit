@@ -4,7 +4,7 @@
 	import FullscreenVideoPlayer, {
 		videoPlayer
 	} from '$lib/components/extra/video-player/FullscreenVideoPlayer.svelte';
-	
+
 	import VideoPlayer from '$lib/components/extra/video-player/VideoPlayer.svelte';
 </script>
 

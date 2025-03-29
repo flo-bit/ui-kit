@@ -36,20 +36,20 @@
 
 <h3>Preset Alerts</h3>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+<div class="grid grid-cols-1 gap-2 md:grid-cols-2">
 	<Alert title="Warning alert" type="warning">
 		<span>Alert Description</span>
 	</Alert>
 
-    <Alert title="Error alert" type="error">
-    	<span>Alert Description</span>
-    </Alert>
+	<Alert title="Error alert" type="error">
+		<span>Alert Description</span>
+	</Alert>
 
-    <Alert title="Success alert" type="success">
-    	<span>Alert Description</span>
-    </Alert>
+	<Alert title="Success alert" type="success">
+		<span>Alert Description</span>
+	</Alert>
 
-    <Alert title="Info alert" type="info">
-    	<span>Alert Description</span>
-    </Alert>
+	<Alert title="Info alert" type="info">
+		<span>Alert Description</span>
+	</Alert>
 </div>

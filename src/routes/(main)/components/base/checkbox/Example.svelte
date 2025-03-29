@@ -20,7 +20,7 @@
 
 <h3>With Label</h3>
 
-<div class="flex items-center space-x-2 not-prose">
+<div class="not-prose flex items-center space-x-2">
 	<Checkbox id="terms" aria-labelledby="terms-label" variant="secondary" />
 	<Label
 		id="terms-label"

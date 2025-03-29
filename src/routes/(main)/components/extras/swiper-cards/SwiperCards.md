@@ -14,11 +14,7 @@
 <script lang="ts">
 	import { CardSwiper } from 'fuchs';
 
-	const profiles = [
-		'image1.webp',
-		'image2.webp',
-		'image3.webp',
-	];
+	const profiles = ['image1.webp', 'image2.webp', 'image3.webp'];
 </script>
 
 <div class="h-[70vh] w-full">

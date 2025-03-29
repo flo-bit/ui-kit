@@ -2,7 +2,7 @@
 
 /**
  * TODO:
- * 
+ *
  * - add exports to lib/fuchs/index.ts
  * - add dependent components to each component
  * - add option to also add dependent components

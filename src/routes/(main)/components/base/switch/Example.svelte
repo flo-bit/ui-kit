@@ -5,7 +5,7 @@
 	let checked2 = $state(true);
 </script>
 
-<div class="flex flex-col gap-2 not-prose">
+<div class="not-prose flex flex-col gap-2">
 	<Switch bind:checked onCheckedChange={() => (checked2 = !checked2)} />
 	<Switch bind:checked={checked2} onCheckedChange={() => (checked = !checked)} />
 	<Switch disabled />
@@ -13,7 +13,7 @@
 
 <h3>With Label</h3>
 
-<div class="flex items-center space-x-2 not-prose">
+<div class="not-prose flex items-center space-x-2">
 	<Switch id="terms-switch" aria-labelledby="terms-switch-label" />
 	<Label
 		id="terms-switch-label"

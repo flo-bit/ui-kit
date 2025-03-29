@@ -1,6 +1,6 @@
 <script>
 	import { Image, Paragraph } from '$lib';
-	
+
 	import nature from '$docs/assets/images/nature2.jpg?as=run';
 </script>
 

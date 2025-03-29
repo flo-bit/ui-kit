@@ -3,7 +3,7 @@
 	import Head from '$lib/components/base/head/Head.svelte';
 	import BodyScrollArea from '$lib/components/base/scroll-area/BodyScrollArea.svelte';
 	import { Toaster } from '$lib/components/base/sonner';
-	
+
 	import '../app.css';
 	import '../prism.css';
 

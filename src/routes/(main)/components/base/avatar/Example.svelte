@@ -4,7 +4,7 @@
 
 <h3>Single Avatar</h3>
 
-<div class="flex items-center gap-2 not-prose">
+<div class="not-prose flex items-center gap-2">
 	<Avatar fallback="AB" />
 	<Avatar />
 	<Avatar src="https://github.com/flo-bit.png" alt="flo-bit" fallback="FB" />

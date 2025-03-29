@@ -1,16 +1,16 @@
 <script>
-
-	import { Button } from "$lib";
-
+	import { Button } from '$lib';
 </script>
 
-<div class="flex relative p-8">
-	<div class="bg-base-200/50 dark:bg-base-800/50 rounded-xl p-4 h-24 w-16 border border-base-300/50 dark:border-base-700/50">
-	</div>
-	<div class="-ml-8 bg-base-200 dark:bg-base-800 rounded-xl p-4 h-24 w-16 rotate-12 border border-base-300 dark:border-base-700">
-	</div>
+<div class="relative flex p-8">
+	<div
+		class="bg-base-200/50 dark:bg-base-800/50 border-base-300/50 dark:border-base-700/50 h-24 w-16 rounded-xl border p-4"
+	></div>
+	<div
+		class="bg-base-200 dark:bg-base-800 border-base-300 dark:border-base-700 -ml-8 h-24 w-16 rotate-12 rounded-xl border p-4"
+	></div>
 
-	<div class="absolute bottom-2 flex w-full justify-between px-2 -ml-10">
+	<div class="absolute bottom-2 -ml-10 flex w-full justify-between px-2">
 		<Button size="iconSm">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

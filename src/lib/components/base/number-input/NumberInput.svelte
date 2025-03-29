@@ -89,7 +89,7 @@
 
 	let animated = $state(true);
 	let showCaret = $state(true);
-	
+
 	function handleInput() {
 		if (!inputRef) return;
 		animated = false;

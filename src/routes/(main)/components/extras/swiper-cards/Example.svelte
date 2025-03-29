@@ -28,7 +28,7 @@
 	let swipe: (direction: 'left' | 'right') => void;
 </script>
 
-<div class="relative h-[70vh] w-full not-prose">
+<div class="not-prose relative h-[70vh] w-full">
 	<CardSwiper
 		cardData={(i) => ({
 			title: `Card ${i}`,

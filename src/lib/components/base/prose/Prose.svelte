@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { AddCopyCodeButtons } from '$lib';
-	
+
 	let { children } = $props();
 
 	// this is fucking hacky, todo fix that

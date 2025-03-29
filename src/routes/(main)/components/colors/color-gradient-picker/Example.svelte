@@ -39,4 +39,4 @@
 	}
 </script>
 
-<ColorGradientPicker class="mt-8 not-prose" bind:colors />
+<ColorGradientPicker class="not-prose mt-8" bind:colors />

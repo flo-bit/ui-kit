@@ -20,7 +20,7 @@
 
 <h3>In a grid</h3>
 
-<div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 not-prose">
+<div class="not-prose grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
 	<ImageCard
 		src={nature1}
 		alt="Nature 1"
