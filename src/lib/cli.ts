@@ -33,8 +33,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const githubUser = 'flo-bit';
 const repoName = 'ui-kit';
-const branch = 'main';
-const zipUrl = `https://github.com/${githubUser}/${repoName}/archive/refs/heads/${branch}.zip`;
+const zipUrl = `https://github.com/${githubUser}/${repoName}/archive/refs/heads/${version}.zip`;
 const tmpDir = path.join(__dirname, 'tmp');
 const zipPath = path.join(tmpDir, `repo-${version}.zip`);
 
@@ -44,8 +43,8 @@ program
 	.command('add')
 	.description('Add a new component to the project')
 	.argument('<component-name>', 'name of the component to add')
-	.action((component) => {
-		addComponent(component);
+	.action((component: string) => {
+		addComponent(component.toLowerCase());
 	});
 
 program.parse();
@@ -134,7 +133,7 @@ async function addComponent(componentName: string) {
 		log.info('Repository already downloaded');
 		packageFolder = extractDir;
 	}
-	packageFolder = path.join(packageFolder, `${repoName}-${branch}`);
+	packageFolder = path.join(packageFolder, `${repoName}-${version}`);
 
 	const sourcePath = path.join(packageFolder, 'src', 'lib', relativePath);
 	if (!fs.existsSync(sourcePath)) {

@@ -3,7 +3,6 @@ import type { Component } from 'svelte';
 export type PropType = {
 	type: string;
 	definition: string | Component;
-	stringDefinition: string;
 };
 
 export type PropSchema = {
@@ -23,6 +22,5 @@ export type PropObj<T> = {
 
 export type APISchema<T = Record<string, unknown>> = {
 	title: string;
-	description: string;
 	props?: PropObj<T>;
 };

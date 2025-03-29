@@ -11,11 +11,11 @@
 This ui kit's main aim is to help you build webapps that look good very fast.
 
 It's not designed to be super customizable, but instead offers you a
-bunch of good-looking-by-default components.
+bunch of good-looking-by-default components that are as easy to use as possible.
 
 ## Two colors
 
-Still all apps looking the same is kinda boring, so there are is one easy and quick way to customize all components.
+Still all apps looking the same is kinda boring, so there is one easy and quick way to customize all components.
 
 The main idea is having two colors (in all tailwind shades from 50 up to 950):
 
@@ -29,17 +29,26 @@ You can try it out by setting the current theme colors in the navbar for this do
 I'm a big fan of the philosophy of copying components (shadcn-style) for better customization,
 but also I think the quickest way to build something is to just install the package and use it.
 
-So the plan is to have both options (currently only installing as a package is available,
-but you can copy what you need from the [source code](https://github.com/flo-bit/ui-kit/tree/main/src/lib/components/base)
-though some imports might need to be adjusted).
+So the plan is to have both options (usually you start by just using the package and if you
+eventually need to customize a component you add it to your project),
+currently the recommended way to use it is installing as a package,
+but a cli tool is in the works and can already be tested with the base components by running:
+
+```bash
+npx fuchs add [component-name]
+```
+
+(Note: this still needs you to install `fuchs` as a package first).
 
 ## Lots of components
 
-While currently only the base and some other components are visible, there are lots of components in the pipeline.
-The aim is to have a component library that has lots of components that are useful for building
-webapps/websites/games, all in a consistent style/theme.
+Contrary to other component libraries that offer only some base components and expect you to built the rest,
+this library is aiming to have a component library that has lots of different components that are
+useful for building webapps/websites/games, all in a consistent style/theme.
 
-See here for a few examples of work in progress components (some may be partially broken):
+Scroll down the sidebar or main page for examples of specialised components (section `Color`, `Extra` and `3D` components)
+
+Also see here for a few examples of work in progress components (some may be partially broken):
 
 ### graphs
 
@@ -47,19 +56,13 @@ See here for a few examples of work in progress components (some may be partiall
 - [heatmap](/ui-kit/components/graphs/heatmap/)
 - [line chart](/ui-kit/components/graphs/line-graph/)
 
-### extras
-
-- [swiper cards](/ui-kit/components/extras/swiper-cards/)
-
 ### social
 
 - [github-corner](/ui-kit/components/social/github-corner/)
 - [star rating](/ui-kit/components/social/star-rating/)
 - [social media post](/ui-kit/components/social/post/)
 
-### 3d
-
-- [model-picker](/ui-kit/components/3d/model-picker/)
+If you have a suggestion for a new component, please open an issue on [github](https://github.com/flo-bit/ui-kit/issues).
 
 ## Works without javascript when possible & is accessible
 
@@ -92,4 +95,5 @@ You can also reach me on [bluesky](https://bsky.app/profile/flo-bit.dev).
 
 ## Credits
 
-This ui kit is largely based on [bits-ui](https://bits-ui.com/).
+The base components of this ui kit are largely based on [bits-ui](https://bits-ui.com/) and I've taken lots of inspiration
+from [shadcn-svelte](https://www.shadcn-svelte.com/).

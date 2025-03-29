@@ -1,6 +1,6 @@
 {
 	"name": "fuchs",
-	"version": "0.0.27",
+	"version": "0.0.28",
 	"type": "module",
 	"description": "Beautiful UI components built with Tailwind 4 and Svelte 5",
 	"homepage": "https://flo-bit.dev/ui-kit",

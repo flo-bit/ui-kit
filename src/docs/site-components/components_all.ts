@@ -14,7 +14,7 @@ export const components: {
 		href: 'base'
 	},
 	{
-		name: 'Colors',
+		name: 'Color components',
 		components: colorComponents,
 		href: 'colors'
 	},

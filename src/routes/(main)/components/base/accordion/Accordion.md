@@ -1,7 +1,6 @@
 <script lang="ts">
 	import AccordionExample from './Example.svelte';
-
-	import Api from '$docs/site-components/API.svelte';
+	import AccordionProps from './Props.svelte';
 </script>
 
 # Accordion
@@ -18,11 +17,19 @@
 </script>
 
 <Accordion type="single">
-	<AccordionItem value="item-1" title="Is it accessible?">
+	<AccordionItem title="Is it accessible?">
 		Yes. It adheres to the WAI-ARIA design pattern.
 	</AccordionItem>
-	<AccordionItem value="item-2" title="Are you sure?">
+	<AccordionItem title="Are you sure?">
 		I mean, I hope so? It's based on the bits-ui accordion component, so if not it's not my fault 😅
 	</AccordionItem>
 </Accordion>
 ```
+
+## API Reference
+
+<AccordionProps />
+
+## Credits
+
+This component is based on the [bits-ui accordion component](https://bits-ui.com/docs/components/accordion).

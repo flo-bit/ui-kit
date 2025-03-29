@@ -3,10 +3,10 @@
 </script>
 
 <Accordion type="single">
-	<AccordionItem value="item-1" title="Is it accessible?">
+	<AccordionItem title="Is it accessible?">
 		Yes. It adheres to the WAI-ARIA design pattern.
 	</AccordionItem>
-	<AccordionItem value="item-2" title="Are you sure?">
+	<AccordionItem title="Are you sure?">
 		I mean, I hope so? It's based on the <a
 			href="https://bits-ui.com/docs/components/accordion"
 			target="_blank">bits-ui accordion component</a
