@@ -1,6 +1,6 @@
 {
 	"name": "fuchs",
-	"version": "0.0.25",
+	"version": "0.0.26",
 	"type": "module",
 	"description": "Beautiful UI components built with Tailwind 4 and Svelte 5",
 	"homepage": "https://flo-bit.dev/ui-kit",
@@ -26,7 +26,10 @@
 	"files": [
 		"dist",
 		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
+		"!dist/**/*.spec.*",
+		"src/lib",
+		"!src/lib/**/*.test.*",
+		"!src/lib/**/*.spec.*"
 	],
 	"sideEffects": [
 		"**/*.css"

@@ -9,7 +9,11 @@ import fetch from 'node-fetch';
 import AdmZip from 'adm-zip';
 import { spinner, log } from '@clack/prompts';
 import { Command } from 'commander';
-import { version } from '../../package.json' with { type: 'json' };
+
+// @ts-expect-error - this works when used as a package (cause it will be moved to dist/cli.js)
+import { version } from '../package.json' with { type: 'json' };
+// in dev hardcode the version instead
+// const version = '0.0.25';
 
 const program = new Command();
 
