@@ -50,7 +50,7 @@
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 24 24"
 			fill="currentColor"
-			class="text-base-400 dark:text-base-600 absolute top-1/2 left-1/2 mt-1 size-full -translate-x-1/2 -translate-y-1/2"
+			class="text-base-400 dark:text-base-600 absolute top-1/2 left-1/2 mt-[15%] size-full -translate-x-1/2 -translate-y-1/2"
 		>
 			<path
 				fill-rule="evenodd"
