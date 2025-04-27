@@ -1,6 +1,6 @@
 <script>
 	import { VoxelArt } from '$lib';
-	import data from '$docs/assets/model-apple.json';
+	import data from '$docs/assets/chair.json';
 </script>
 
 <VoxelArt

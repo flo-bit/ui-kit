@@ -14,6 +14,12 @@
 		{ rgb: { r: 0, g: 0, b: 0 }, position: 1 }
 	]);
 
+	let colors2 = $state([
+		{ rgb: { r: 0, g: 0, b: 0 }, position: 0 },
+		{ rgb: { r: 0, g: 0, b: 0 }, position: 0.5 },
+		{ rgb: { r: 0, g: 0, b: 0 }, position: 1 }
+	]);
+
 	onMount(() => {
 		const theme = new ThemeWatcher();
 		const accentColor = theme.getCSSVar('--color-accent-500');
@@ -36,7 +42,23 @@
 		colors.forEach((color, index) => {
 			colors[index].rgb = oklch_to_rgb({ ...theme, h: theme.h + index * 30 });
 		});
+
+		colors2 = [
+			{ rgb: { r: 0, g: 0, b: 0 }, position: 0 },
+			{ rgb: { r: 0, g: 0, b: 0 }, position: 0.5 },
+			{ rgb: { r: 0, g: 0, b: 0 }, position: 1 }
+		];
+
+		colors2.forEach((color, index) => {
+			colors2[index].rgb = oklch_to_rgb({ ...theme, h: theme.h + index * 30 });
+		});
 	}
 </script>
 
-<ColorGradientPicker class="not-prose mt-8" bind:colors />
+<ColorGradientPicker class="not-prose mt-8" bind:colors onchange={() => {
+	console.log('hello there');
+}} />
+
+<h3>Small</h3>
+
+<ColorGradientPicker class="not-prose mt-8" bind:colors={colors2} size="sm" />

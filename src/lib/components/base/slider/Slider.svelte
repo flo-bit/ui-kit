@@ -8,7 +8,9 @@
 		orientation = 'horizontal',
 		class: className,
 		tabindex = undefined,
-		type = 'single'
+		type = 'single',
+		min = 0,
+		max = 100
 	}: WithoutChildrenOrChild<SliderPrimitive.RootProps> = $props();
 </script>
 
@@ -27,6 +29,8 @@ get along, so we shut typescript up by casting `value` to `never`.
 	)}
 	{tabindex}
 	{type}
+	{min}
+	{max}
 >
 	{#snippet children({ thumbs })}
 		<span

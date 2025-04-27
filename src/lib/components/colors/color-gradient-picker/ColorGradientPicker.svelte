@@ -1,30 +1,22 @@
 <script lang="ts">
 	import { cn } from '$lib';
 	import * as Popover from '$lib/components/base/popover';
-	import {
-		ColorPicker,
-		type OKhsv,
-		type OKlab,
-		type RGB
-	} from '$lib/components/colors/color-picker/base';
-	import { onMount } from 'svelte';
-	import { type OKlch } from '../color-picker/base/color';
+	import { ColorPicker, type RGB } from '$lib/components/colors/color-picker/base';
 	import { DragGesture } from '@use-gesture/vanilla';
 	import Button from '$lib/components/base/button/Button.svelte';
 
 	type ColorStop = { rgb: RGB; position: number };
 
 	let initialColors: ColorStop[] = $state([
-		{ rgb: { r: 0, g: 0, b: 0 }, position: 0 },
-		{ rgb: { r: 1, g: 0, b: 0 }, position: 0.25 },
-		{ rgb: { r: 0, g: 1, b: 0 }, position: 0.5 },
-		{ rgb: { r: 0, g: 0, b: 1 }, position: 0.75 },
-		{ rgb: { r: 1, g: 1, b: 0 }, position: 1 }
+		{ rgb: { r: 0, g: 0, b: 1 }, position: 0 },
+		{ rgb: { r: 1, g: 0, b: 0 }, position: 1 }
 	]);
 
 	let {
 		colors = $bindable(initialColors),
 		class: className,
+		defaultNewColor = { r: 0, g: 0, b: 0 },
+		size = 'default',
 		onchange
 	}: {
 		rgb?: RGB;
@@ -33,7 +25,11 @@
 
 		class?: string;
 
-		onchange?: (color: { hex: string; rgb: RGB; oklab: OKlab; okhsv: OKhsv; oklch: OKlch }) => void;
+		defaultNewColor?: RGB;
+
+		size?: 'default' | 'sm';
+
+		onchange?: (colors: ColorStop[]) => void;
 	} = $props();
 
 	const gradientString = $derived(
@@ -75,6 +71,8 @@
 
 						if (state.tap) {
 							allOpen[i] = !allOpen[i];
+						} else {
+							onchange?.(colors);
 						}
 					},
 					{
@@ -106,7 +104,8 @@
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <div
 	class={cn(
-		'border-base-400 dark:border-base-600 relative h-8 w-full cursor-pointer touch-none rounded-2xl border',
+		'border-base-400 dark:border-base-600 relative w-full cursor-pointer touch-none rounded-2xl border',
+		size === 'sm' ? 'h-4' : 'h-8',
 		className
 	)}
 	style={'background: ' + gradientString}
@@ -122,13 +121,20 @@
 		// get the position of the click
 		const position = (e.clientX - rect.left) / (gradientRef?.clientWidth ?? 1);
 		// add a new color
-		colors.push({ rgb: { r: 0, g: 0, b: 0 }, position: position });
+		colors.push({
+			rgb: { r: defaultNewColor.r, g: defaultNewColor.g, b: defaultNewColor.b },
+			position: position
+		});
 		colorsRef.push(null);
 		allOpen.push(true);
+		onchange?.(colors);
 	}}
 	onkeydown={(e) => {
 		if (e.key === '+') {
-			colors.push({ rgb: { r: 0, g: 0, b: 0 }, position: 0.5 });
+			colors.push({
+				rgb: { r: defaultNewColor.r, g: defaultNewColor.g, b: defaultNewColor.b },
+				position: 0.5
+			});
 			colorsRef.push(null);
 			allOpen.push(true);
 		}
@@ -138,8 +144,9 @@
 		<Popover.Root bind:open={() => getOpen(i), (open) => {}}>
 			<Popover.Trigger
 				class={cn(
-					'absolute -top-4 left-0 touch-none',
-					'focus-visible:outline-base-900 dark:focus-visible:outline-base-100 cursor-pointer rounded-full focus-visible:outline-2 focus-visible:outline-offset-2'
+					'absolute left-0 touch-none',
+					'focus-visible:outline-base-900 dark:focus-visible:outline-base-100 cursor-pointer rounded-full focus-visible:outline-2 focus-visible:outline-offset-2',
+					size === 'sm' ? '-top-1.5' : '-top-4'
 				)}
 				style={`left: calc(${color.position * 100}% - 16px)`}
 				bind:ref={colorsRef[i]}
@@ -153,7 +160,10 @@
 				}}
 			>
 				<div
-					class="ring-base-400 dark:ring-base-500 focus-visible:outline-accent-500 shadow-base-900/50 z-10 size-8 rounded-full shadow-lg ring"
+					class={cn(
+						'ring-base-400 dark:ring-base-500 focus-visible:outline-accent-500 shadow-base-900/50 z-10 rounded-full shadow-lg ring',
+						size === 'sm' ? 'size-6' : 'size-8'
+					)}
 					style={`background-color: rgb(${color.rgb.r * 255}, ${color.rgb.g * 255}, ${color.rgb.b * 255});`}
 				></div>
 			</Popover.Trigger>
@@ -169,16 +179,23 @@
 				onkeydown={(e) => {
 					if (e.key === 'Backspace' && colors.length > 2) {
 						colors.splice(i, 1);
+						onchange?.(colors);
 					}
 				}}
 			>
-				<ColorPicker bind:rgb={colors[i].rgb} />
+				<ColorPicker
+					bind:rgb={colors[i].rgb}
+					onchange={() => {
+						onchange?.(colors);
+					}}
+				/>
 
 				{#if colors.length > 2}
 					<Button
 						class="mt-4"
 						onclick={() => {
 							colors.splice(i, 1);
+							onchange?.(colors);
 						}}
 						size="sm"
 					>

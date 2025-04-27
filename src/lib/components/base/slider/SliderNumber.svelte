@@ -9,12 +9,23 @@
 		orientation = 'horizontal',
 		class: className,
 		tabindex = undefined,
-		type = 'single'
+		type = 'single',
+		min = 0,
+		max = 100
 	}: WithoutChildrenOrChild<SliderPrimitive.RootProps> = $props();
 </script>
 
 <div class="flex items-center gap-6">
-	<Slider bind:value bind:ref {orientation} class={className} {tabindex} {type} />
+	<Slider
+		bind:value={value as never}
+		bind:ref
+		{orientation}
+		class={className}
+		{tabindex}
+		{type}
+		{min}
+		{max}
+	/>
 
 	<NumberFlow
 		{value}

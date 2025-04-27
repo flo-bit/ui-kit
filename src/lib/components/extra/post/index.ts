@@ -97,15 +97,15 @@ export function blueskyPostToPostData(post: any): PostData {
 		createdAt: post.createdAt,
 
 		embed: {
-			type: blueskyEmbedTypeToEmbedType(post.embed.$type),
+			type: blueskyEmbedTypeToEmbedType(post.embed?.$type),
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
-			images: post.embed.images?.map((image: any) => ({
+			images: post.embed?.images?.map((image: any) => ({
 				alt: image.alt,
 				thumb: image.thumb,
 				aspectRatio: image.aspectRatio,
 				fullsize: image.fullsize
 			})),
-			external: post.embed.external
+			external: post.embed?.external
 				? {
 						href: post.embed.external.uri,
 						title: post.embed.external.title,

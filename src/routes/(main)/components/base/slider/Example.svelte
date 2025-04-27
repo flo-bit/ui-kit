@@ -10,4 +10,5 @@
 <Slider bind:value type="single" />
 
 <h3>With Number</h3>
-<SliderNumber bind:value={value2} type="single" />
+
+<SliderNumber bind:value={value2} type="single" max={50} min={10} />
