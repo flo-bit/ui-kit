@@ -38,3 +38,6 @@ export { default as AddCopyCodeButtons } from '$lib/components/base/copy-code-bu
 
 export { Toggle } from '$lib/components/base/toggle';
 export { ToggleGroup, ToggleGroupItem } from '$lib/components/base/toggle-group';
+
+export { default as BlueskyLoginModal } from '$lib/components/base/modal/BlueskyLoginModal.svelte';
+export { blueskyLoginModalState } from '$lib/components/base/modal/BlueskyLoginModal.svelte';

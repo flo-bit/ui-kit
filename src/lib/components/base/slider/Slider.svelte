@@ -10,7 +10,8 @@
 		tabindex = undefined,
 		type = 'single',
 		min = 0,
-		max = 100
+		max = 100,
+		...props
 	}: WithoutChildrenOrChild<SliderPrimitive.RootProps> = $props();
 </script>
 
@@ -20,7 +21,7 @@ get along, so we shut typescript up by casting `value` to `never`.
 -->
 <SliderPrimitive.Root
 	bind:ref
-	bind:value={value as never}
+	bind:value={value}
 	{orientation}
 	class={cn(
 		"relative flex touch-none items-center select-none data-[orientation='horizontal']:w-full data-[orientation='vertical']:h-full",
@@ -31,6 +32,7 @@ get along, so we shut typescript up by casting `value` to `never`.
 	{type}
 	{min}
 	{max}
+	{...props}
 >
 	{#snippet children({ thumbs })}
 		<span

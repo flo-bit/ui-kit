@@ -11,13 +11,14 @@
 		tabindex = undefined,
 		type = 'single',
 		min = 0,
-		max = 100
+		max = 100,
+		...props
 	}: WithoutChildrenOrChild<SliderPrimitive.RootProps> = $props();
 </script>
 
 <div class="flex items-center gap-6">
 	<Slider
-		bind:value={value as never}
+		bind:value
 		bind:ref
 		{orientation}
 		class={className}
@@ -25,6 +26,7 @@
 		{type}
 		{min}
 		{max}
+		{...props}
 	/>
 
 	<NumberFlow
