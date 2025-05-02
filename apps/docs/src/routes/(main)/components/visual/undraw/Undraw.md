@@ -22,7 +22,7 @@
 
 ```svelte
 <script lang="ts">
-	import { Undraw } from 'fuchs';
+	import { Undraw } from '@fuxui/visual';
 
 	import svg from './your-illustration.svg?raw';
 </script>

@@ -7,11 +7,7 @@
 </script>
 
 <script lang="ts">
-	import { Button } from '../button';
-	import Modal from './Modal.svelte';
-	import { Subheading } from '../heading';
-	import { Label } from '../label';
-	import Input from '../input/Input.svelte';
+	import { Button, Modal, Subheading, Label, Input } from '@fuxui/base';
 
 	let value = $state('');
 	let error: string | null = $state(null);
@@ -20,7 +16,7 @@
 	let {
 		login
 	}: {
-		login: (handle: string) => Promise<void>;
+		login: (handle: string) => Promise<boolean | undefined>;
 	} = $props();
 
 	async function onSubmit(evt: Event) {
@@ -31,7 +27,12 @@
 		loading = true;
 
 		try {
-			await login(value);
+			const hide = await login(value);
+
+			if (hide) {
+				blueskyLoginModalState.hide();
+				value = '';
+			}
 		} catch (err) {
 			error = err instanceof Error ? err.message : String(err);
 		} finally {
@@ -45,7 +46,7 @@
 <Modal
 	bind:open={blueskyLoginModalState.open}
 	class="max-w-sm gap-2 p-4 sm:p-6"
-	onOpenAutoFocus={(e) => {
+	onOpenAutoFocus={(e: Event) => {
 		e.preventDefault();
 		input?.focus();
 	}}

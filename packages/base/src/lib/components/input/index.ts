@@ -5,12 +5,4 @@ import Root, {
 	inputVariants
 } from './Input.svelte';
 
-export {
-	Root,
-	type InputProps as Props,
-	Root as Input,
-	inputVariants,
-	type InputProps,
-	type InputSize,
-	type InputVariant
-};
+export { type InputProps, Root as Input, inputVariants, type InputSize, type InputVariant };

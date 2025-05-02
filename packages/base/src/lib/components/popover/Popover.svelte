@@ -1,13 +1,8 @@
-<script lang="ts">
-	import { buttonVariants, type ButtonSize, type ButtonVariant } from '../button';
-	import { Popover as PopoverPrimitive } from 'bits-ui';
-	import { Content } from '.';
-	import { cn } from '../../utils';
-	
+<script lang="ts" module>
 	const Root = PopoverPrimitive.Root;
 	const Trigger = PopoverPrimitive.Trigger;
 
-	type Props = PopoverPrimitive.RootProps & {
+	export type PopoverProps = PopoverPrimitive.RootProps & {
 		triggerProps?: PopoverPrimitive.TriggerProps;
 		text?: string;
 
@@ -19,6 +14,13 @@
 		triggerRef?: HTMLButtonElement | null;
 	} & PopoverPrimitive.ContentProps &
 		PopoverPrimitive.TriggerProps;
+</script>
+
+<script lang="ts">
+	import { buttonVariants, type ButtonSize, type ButtonVariant } from '../button';
+	import { Popover as PopoverPrimitive } from 'bits-ui';
+	import { PopoverContent } from '.';
+	import { cn } from '../../utils';
 
 	let {
 		open = $bindable(false),
@@ -37,7 +39,7 @@
 		child: myChild,
 		class: className,
 		...restProps
-	}: Props = $props();
+	}: PopoverProps = $props();
 </script>
 
 <Root bind:open {onOpenChange}>
@@ -55,7 +57,7 @@
 			{triggerText}
 		</Trigger>
 	{/if}
-	<Content {side} {sideOffset} class={className} {...restProps}>
+	<PopoverContent {side} {sideOffset} class={className} {...restProps}>
 		{@render children?.()}
-	</Content>
+	</PopoverContent>
 </Root>

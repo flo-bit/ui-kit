@@ -1,7 +1,2 @@
-import Root from './ThemeToggle.svelte';
-
-export {
-	Root,
-	//
-	Root as ThemeToggle
-};
+export { default as ThemeToggle } from './ThemeToggle.svelte';
+export { theme } from './ThemeToggle.svelte';

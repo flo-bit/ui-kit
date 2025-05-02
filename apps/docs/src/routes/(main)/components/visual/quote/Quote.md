@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { Quote } from 'fuchs';
+	import { Quote } from '@fuxui/visual';
 </script>
 
 <Quote

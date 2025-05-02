@@ -31,14 +31,8 @@ but also I think the quickest way to build something is to just install the pack
 
 So the plan is to have both options (usually you start by just using the package and if you
 eventually need to customize a component you add it to your project),
-currently the recommended way to use it is installing as a package,
-but a cli tool is in the works and can already be tested with the base components by running:
-
-```bash
-npx fuchs add [component-name]
-```
-
-(Note: this still needs you to install `fuchs` as a package first).
+currently the only way to use it is installing as a package,
+but a cli tool is in the works.
 
 ## Lots of components
 

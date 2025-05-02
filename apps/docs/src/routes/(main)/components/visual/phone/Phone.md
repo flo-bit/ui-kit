@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { Phone } from 'fuchs';
+	import { Phone } from '@fuxui/visual';
 </script>
 
 <Phone>

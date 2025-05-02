@@ -3,6 +3,7 @@ import CardExcalidraw from '$lib/cards/visual/CardExcalidraw.svelte';
 import CardPhone from '$lib/cards/visual/CardPhone.svelte';
 import CardQuote from '$lib/cards/visual/CardQuote.svelte';
 import CardUndraw from '$lib/cards/visual/CardUndraw.svelte';
+import CardImageMasonry from '$lib/cards/visual/CardImageMasonry.svelte';
 
 export const visualComponents: ComponentCard[] = [
 	{
@@ -24,5 +25,10 @@ export const visualComponents: ComponentCard[] = [
 		component: CardUndraw,
 		label: 'Undraw',
 		href: 'undraw'
+	},
+	{
+		component: CardImageMasonry,
+		label: 'Image Masonry',
+		href: 'image-masonry'
 	}
 ].sort((a, b) => a.label.localeCompare(b.label));

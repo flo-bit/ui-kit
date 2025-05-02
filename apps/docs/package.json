@@ -21,6 +21,7 @@
 		"@fuxui/3d": "workspace:*",
 		"@fuxui/time": "workspace:*",
 		"@fuxui/visual": "workspace:*",
+		"@fuxui/social": "workspace:*",
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",

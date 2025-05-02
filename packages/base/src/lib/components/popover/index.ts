@@ -5,11 +5,6 @@ const Trigger = PopoverPrimitive.Trigger;
 const Close = PopoverPrimitive.Close;
 
 export {
-	Root,
-	Content,
-	Trigger,
-	Close,
-	//
 	Root as PopoverRoot,
 	Content as PopoverContent,
 	Trigger as PopoverTrigger,
@@ -17,3 +12,4 @@ export {
 };
 
 export { default as Popover } from './Popover.svelte';
+export type { PopoverProps } from './Popover.svelte';
