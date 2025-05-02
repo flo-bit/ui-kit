@@ -1,5 +1,5 @@
 {
-  "name": "with-svelte",
+  "name": "fuxui",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -25,5 +25,6 @@
     "onlyBuiltDependencies": [
       "esbuild"
     ]
-  }
+  },
+  "license": "MIT"
 }
