@@ -19,13 +19,13 @@ npx sv create my-project
 ### 2. Install fuchs
 
 ```bash
-npm install fuchs
+npm install @fuxui/base
 ```
 
 ### 3. set theme variables in your app.css (changing `zinc` and `emerald` to your preferred colors, using find and replace).
 
 ```css
-@source "../node_modules/fuchs";
+@source "../node_modules/@fuxui";
 
 @theme {
 	--color-base-50: var(--color-zinc-50);
@@ -58,7 +58,7 @@ npm install fuchs
 
 ```svelte
 <script>
-	import { Button } from 'fuchs';
+	import { Button } from '@fuxui/base';
 </script>
 
 <Button onclick={() => alert('clicked')}>Click me</Button>
@@ -73,8 +73,8 @@ Clone the repo, install dependencies and run the dev server
 ```bash
 git clone https://github.com/flo-bit/ui-kit.git
 cd ui-kit
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
-The ui-kit library is located in `src/lib`, the documentation is in `src/docs`.
+This ui kit is organized as a monorepo, with `apps/docs` being the documentation and the ui-kit library being split into multiple packages in `packages/`.
