@@ -1,23 +1,18 @@
 <script lang="ts">
-	import { AddCopyCodeButtons } from '../copy-code-button';
+	import type { Snippet } from 'svelte';
+	import { cn } from '../../utils';
 
-	let { children } = $props();
-
-	// this is fucking hacky, todo fix that
+	let { children, class: className }: { children: Snippet; class?: string } = $props();
 </script>
 
 <div
-	class="prose prose-base prose-sm prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-600 prose-pre:rounded-2xl w-full max-w-2xl dark:hidden"
+	class={cn(
+		'prose dark:prose-invert prose-sm prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-600 prose-pre:rounded-2xl w-full max-w-2xl',
+		className
+	)}
 >
 	{@render children?.()}
 </div>
-<div
-	class="prose prose-sm prose-base-dark dark:prose-invert prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-400 prose-pre:rounded-2xl hidden w-full max-w-2xl dark:block"
->
-	{@render children?.()}
-</div>
-
-<AddCopyCodeButtons />
 
 <style>
 	.prose-base {
@@ -39,6 +34,26 @@
 		--tw-prose-pre-bg: var(--color-base-800);
 		--tw-prose-th-borders: var(--color-base-300);
 		--tw-prose-td-borders: var(--color-base-200);
+
+
+		--tw-prose-invert-body: var(--color-base-300);
+		--tw-prose-invert-headings: var(--color-white);
+		--tw-prose-invert-lead: var(--color-base-400);
+		--tw-prose-invert-links: var(--color-white);
+		--tw-prose-invert-bold: var(--color-white);
+		--tw-prose-invert-counters: var(--color-base-400);
+		--tw-prose-invert-bullets: var(--color-base-600);
+		--tw-prose-invert-hr: var(--color-base-700);
+		--tw-prose-invert-quotes: var(--color-base-100);
+		--tw-prose-invert-quote-borders: var(--color-base-700);
+		--tw-prose-invert-captions: var(--color-base-400);
+		--tw-prose-invert-kbd: var(--color-white);
+		--tw-prose-invert-kbd-shadows: var(--color-white);
+		--tw-prose-invert-code: var(--color-white);
+		--tw-prose-invert-pre-code: var(--color-base-300);
+		--tw-prose-invert-pre-bg: rgb(0 0 0 / 50%);
+		--tw-prose-invert-th-borders: var(--color-base-600);
+		--tw-prose-invert-td-borders: var(--color-base-700);
 	}
 
 	.prose-base-dark {

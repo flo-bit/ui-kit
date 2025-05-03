@@ -27,7 +27,6 @@
 		updateColors(oklch);
 
 		theme.subscribe(() => {
-			console.log('theme changed');
 			const accentColor = theme.getCSSVar('--color-accent-500');
 			let oklch = oklch_string_to_oklch(accentColor);
 			updateColors(oklch);
@@ -59,9 +58,6 @@
 <ColorGradientPicker
 	class="not-prose mt-8"
 	bind:colors
-	onchange={() => {
-		console.log('hello there');
-	}}
 />
 
 <h3>Small</h3>

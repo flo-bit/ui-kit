@@ -4,7 +4,7 @@
 </script>
 
 
-<BlueskyLogin login={async (handle) => {
+<BlueskyLogin login={async (handle: string) => {
 	if(!handle) {
 		toast.error('Please enter a handle');
 		return false;

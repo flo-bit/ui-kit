@@ -3,16 +3,14 @@
 	import CopyCodeButton from './CopyCodeButton.svelte';
 
 	onMount(() => {
-		addButtons();
+		addButton?.();
 	});
 
-	// afterNavigate(() => {
-	// 	addButtons();
-	// });
+	let { addButton = $bindable(() => {}) }: { addButton?: () => void } = $props();
 
 	let codeblocks: { element: HTMLElement; text?: string }[] = $state([]);
 
-	function addButtons() {
+	addButton = () => {
 		const preElements = Array.from(document.querySelectorAll('pre'));
 		for (let pre of preElements) {
 			if (pre.classList.contains('wrapped')) continue;
@@ -29,7 +27,7 @@
 
 			codeblocks.push({ element: wrapper, text: pre.innerText });
 		}
-	}
+	};
 </script>
 
 {#each codeblocks as codeblock}

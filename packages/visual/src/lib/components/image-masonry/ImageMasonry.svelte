@@ -81,7 +81,6 @@
 				<button
 					class="z-20 cursor-pointer"
 					onclick={() => {
-						console.log('clicked');
 						image.onclick?.();
 					}}
 				>

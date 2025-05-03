@@ -14,7 +14,7 @@
 <div
 	class={cn(
 		'header fixed top-0 right-0 left-0 z-50 flex h-16 items-center justify-between p-2',
-		hasSidebar ? 'lg:left-72 xl:left-80' : '',
+		hasSidebar ? 'lg:left-72' : '',
 		className
 	)}
 	{...restProps}

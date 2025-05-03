@@ -408,9 +408,15 @@ importers:
       bits-ui:
         specifier: ^1.4.3
         version: 1.4.3(svelte@5.28.1)
+      emoji-picker-element:
+        specifier: ^1.26.3
+        version: 1.26.3
       hls.js:
         specifier: ^1.6.2
         version: 1.6.2
+      is-emoji-supported:
+        specifier: ^0.0.5
+        version: 0.0.5
       plyr:
         specifier: ^3.7.8
         version: 3.7.8
@@ -2255,6 +2261,10 @@ packages:
     resolution: {integrity: sha512-/pjZsA1b4RPHbeWZQn66SWS8nZZWLQQ23oE3Eam7aroEFGEvwKAsJfZ9ytiEMycfzXWpca4FA9QIOehf7PocBQ==, tarball: https://registry.npmjs.org/earcut/-/earcut-2.2.4.tgz}
     dev: false
 
+  /emoji-picker-element@1.26.3:
+    resolution: {integrity: sha512-fOMG44d/3OqTe1pPqlu5H4ZtWg7gK4Le6Bt24JTKtDyce5+EO3Mo8WA95cKHbPSsSsg7ehM12M1x3Y6U6fgvTQ==, tarball: https://registry.npmjs.org/emoji-picker-element/-/emoji-picker-element-1.26.3.tgz}
+    dev: false
+
   /encoding-sniffer@0.2.0:
     resolution: {integrity: sha512-ju7Wq1kg04I3HtiYIOrUrdfdDvkyO9s5XM8QAj/bN61Yo/Vb4vgJxy5vi4Yxk01gWHbrofpPtpxM8bKger9jhg==, tarball: https://registry.npmjs.org/encoding-sniffer/-/encoding-sniffer-0.2.0.tgz}
     dependencies:
@@ -2711,6 +2721,10 @@ packages:
 
   /inline-style-parser@0.2.4:
     resolution: {integrity: sha512-0aO8FkhNZlj/ZIbNi7Lxxr12obT7cL1moPfE4tg1LkX7LlLfC6DeX4l2ZEud1ukP9jNQyNnfzQVqwbwmAATY4Q==, tarball: https://registry.npmjs.org/inline-style-parser/-/inline-style-parser-0.2.4.tgz}
+    dev: false
+
+  /is-emoji-supported@0.0.5:
+    resolution: {integrity: sha512-WOlXUhDDHxYqcSmFZis+xWhhqXiK2SU0iYiqmth5Ip0FHLZQAt9rKL5ahnilE8/86WH8tZ3bmNNNC+bTzamqlw==, tarball: https://registry.npmjs.org/is-emoji-supported/-/is-emoji-supported-0.0.5.tgz}
     dev: false
 
   /is-extglob@2.1.1:

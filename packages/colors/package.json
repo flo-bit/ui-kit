@@ -24,12 +24,25 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/types.d.ts",
-      "svelte": "./dist/index.js"
+      "types": "./src/lib/types.d.ts",
+      "svelte": "./src/lib/index.ts"
     }
   },
-  "types": "./dist/types.d.ts",
-  "svelte": "./dist/index.js",
+  "types": "./src/lib/types.d.ts",
+  "svelte": "./src/lib/index.ts",
+  "publishOverrides": {
+    "files": [
+      "dist"
+    ],
+    "svelte": "./dist/index.js",
+    "exports": {
+      ".": {
+        "types": "./dist/types.d.ts",
+        "svelte": "./dist/index.js"
+      }
+    },
+    "types": "./dist/types.d.ts"
+  },
   "devDependencies": {
     "@eslint/compat": "^1.2.5",
     "@eslint/js": "^9.18.0",

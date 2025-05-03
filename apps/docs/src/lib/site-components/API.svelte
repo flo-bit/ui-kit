@@ -3,8 +3,6 @@
 	import { Button, Popover, Badge } from '@fuxui/base';
 
 	const { props }: { props: APISchema } = $props();
-
-	console.log(props);
 </script>
 
 <h4 class="not-prose text-base-900 dark:text-base-50 mt-12 mb-2 text-lg font-semibold">

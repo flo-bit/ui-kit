@@ -7,6 +7,7 @@ export * from './button';
 export * from './card';
 export * from './chat-bubble';
 export * from './checkbox';
+export * from './copy-code-button';
 export * from './head';
 export * from './heading';
 export * from './image';

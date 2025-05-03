@@ -62,8 +62,6 @@
 			toast.success('clicked');
 		}
 	}));
-
-	console.log(images);
 </script>
 
 <ImageMasonry {images} />
