@@ -3,6 +3,7 @@
 
 	import Logo from './Logo.svelte';
 	import ThemeSelectDropdown from './ThemeSelectDropdown.svelte';
+	import { Github } from '@fuxui/social';
 
 	let { hasSidebar = false, showLogo = true } = $props();
 </script>
@@ -30,6 +31,6 @@
 		<ThemeSelectDropdown />
 		<ThemeToggle />
 
-		<!-- <Github href="https://github.com/flo-bit/ui-kit" class="mr-2 p-2" /> -->
+		<Github href="https://github.com/flo-bit/ui-kit" class="mr-2 p-2" />
 	</div>
 </Navbar>

@@ -23,6 +23,7 @@ import CardSelect from '$lib/cards/base/CardSelect.svelte';
 
 import type { Component } from 'svelte';
 import CardPopover from '$lib/cards/base/CardPopover.svelte';
+import CardSidebar from '$lib/cards/base/CardSidebar.svelte';
 
 export type ComponentCard = {
 	component: Component;
@@ -148,5 +149,10 @@ export const baseComponents: ComponentCard[] = [
 		component: CardPopover,
 		label: 'Popover',
 		href: 'popover'
+	},
+	{
+		component: CardSidebar,
+		label: 'Sidebar',
+		href: 'sidebar'
 	}
 ].sort((a, b) => a.label.localeCompare(b.label));
