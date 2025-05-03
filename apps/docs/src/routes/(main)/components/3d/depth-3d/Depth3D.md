@@ -16,7 +16,7 @@
 
 ```svelte
 <script lang="ts">
-	import { Depth3D } from 'fuchs';
+	import { Depth3D } from '@fuxui/3d';
 </script>
 
 <Depth3D

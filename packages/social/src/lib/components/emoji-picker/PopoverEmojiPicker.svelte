@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Popover, type PopoverProps, cn } from '@fuxui/base';
 	import EmojiPicker from './EmojiPicker.svelte';
-	import type { Emoji } from './emoji';
+	import type { NativeEmoji } from './emoji';
 	import type { Snippet } from 'svelte';
 
 	let {
@@ -12,7 +12,7 @@
 		triggerRef = $bindable(null),
 		...props
 	}: {
-		onpicked?: (emoji: Emoji) => void;
+		onpicked?: (emoji: NativeEmoji) => void;
 		children?: Snippet;
 		class?: string;
 	} & PopoverProps = $props();

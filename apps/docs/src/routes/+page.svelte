@@ -5,6 +5,7 @@
 	import Navbar from '$lib/site-components/Navbar.svelte';
 	import Sidebar from '$lib/site-components/Sidebar.svelte';
 	import { components } from '$lib/site-components/components_all';
+	import { dev } from '$app/environment';
 
 	let count = components.flatMap((c) => c.components).length;
 </script>
@@ -14,9 +15,12 @@
 
 <div class="mx-auto flex w-full max-w-6xl flex-col items-start justify-center gap-8 px-8 py-24">
 	<h1
-		class="text-base-950 dark:text-base-50 mt-16 mb-4 max-w-2xl text-4xl font-bold tracking-tight text-pretty md:text-5xl md:leading-14"
+		class="text-base-950 dark:text-base-50 md:leading-14 mb-4 mt-16 max-w-2xl text-pretty text-4xl font-bold tracking-tight md:text-5xl"
 	>
-		{count} UI components built with Tailwind 4 and Svelte 5
+		{#if dev}
+			{count}
+		{/if}
+		UI components built with Tailwind 4 and Svelte 5
 	</h1>
 
 	<div class="mb-16 flex gap-2">

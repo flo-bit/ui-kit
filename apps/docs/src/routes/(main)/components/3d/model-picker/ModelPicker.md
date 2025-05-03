@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { ModelPicker } from 'fuchs';
+	import { ModelPicker } from '@fuxui/3d';
 
 	const items = [
 		{

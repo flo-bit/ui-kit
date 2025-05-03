@@ -60,11 +60,4 @@ export const allGroups = [
 	svg: string;
 }[];
 
-export type Emoji = {
-	annotation: string;
-	group: number;
-	order: number;
-	shortcodes: string[];
-	tags: string[];
-	unicode: string;
-};
+export type { NativeEmoji } from 'emoji-picker-element/shared';

@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { Button, Timer, TimerState } from 'fuchs';
+	import { Button, Timer, TimerState } from '@fuxui/time';
 
 	let timer = $state(new TimerState(1000 * 60 * 60));
 </script>
