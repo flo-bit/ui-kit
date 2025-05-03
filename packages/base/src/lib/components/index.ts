@@ -26,6 +26,7 @@ export * from './sidebar';
 export * from './slider';
 export * from './sonner';
 export * from './switch';
+export * from './tabs';
 export * from './textarea';
 export * from './theme-toggle';
 export * from './toggle';
