@@ -1,5 +1,11 @@
 # @fuxui/social
 
+## 0.0.4
+
+### Patch Changes
+
+- 0138677: small fixes emoji picker
+
 ## 0.0.3
 
 ### Patch Changes
