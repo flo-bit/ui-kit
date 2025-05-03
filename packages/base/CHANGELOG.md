@@ -1,5 +1,11 @@
 # @fuxui/base
 
+## 0.0.6
+
+### Patch Changes
+
+- 0ff724f: add tabs
+
 ## 0.0.5
 
 ### Patch Changes
