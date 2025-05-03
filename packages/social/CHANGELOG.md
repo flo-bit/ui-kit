@@ -1,5 +1,11 @@
 # @fuxui/social
 
+## 0.0.5
+
+### Patch Changes
+
+- dd21aaa: improve emoji picker
+
 ## 0.0.4
 
 ### Patch Changes
