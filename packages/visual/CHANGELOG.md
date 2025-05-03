@@ -1,5 +1,13 @@
 # @fuxui/visual
 
+## 0.0.6
+
+### Patch Changes
+
+- 741c208: bump
+- Updated dependencies [741c208]
+  - @fuxui/base@0.0.5
+
 ## 0.0.5
 
 ### Patch Changes

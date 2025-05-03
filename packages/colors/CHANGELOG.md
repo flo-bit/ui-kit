@@ -1,5 +1,13 @@
 # @fuxui/colors
 
+## 0.1.4
+
+### Patch Changes
+
+- 741c208: bump
+- Updated dependencies [741c208]
+  - @fuxui/base@0.0.5
+
 ## 0.1.3
 
 ### Patch Changes

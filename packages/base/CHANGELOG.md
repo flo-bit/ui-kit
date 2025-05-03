@@ -1,5 +1,11 @@
 # @fuxui/base
 
+## 0.0.5
+
+### Patch Changes
+
+- 741c208: bump
+
 ## 0.0.4
 
 ### Patch Changes
