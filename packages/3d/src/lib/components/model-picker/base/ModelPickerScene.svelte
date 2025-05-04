@@ -37,7 +37,8 @@
 
 <T.PerspectiveCamera makeDefault position={[0, 0, 2]} fov={50} near={0.1} far={10} />
 
-<T.DirectionalLight args={[0xffffff, 1]} position={[-1, 1, 1]} />
+<T.DirectionalLight args={[0xffffff, 2]} position={[-1, 1, 1]} />
+<T.AmbientLight args={[0xffffff, 0.7]} />
 
 <T.Group rotation={[0.5, rotation + 2.5, 0]}>
 	<T.Group bind:ref={group}>

@@ -8,7 +8,7 @@
 	import { onMount } from 'svelte';
 	import { Button, type ButtonProps } from '../button';
 	import { cn } from '../../utils';
-	
+
 	onMount(() => {
 		// load from local storage
 		const savedDarkMode = localStorage.getItem('darkMode');
@@ -50,7 +50,7 @@
 		setTheme(theme.dark);
 	}
 
-	const { class: className, ...restProps }: ButtonProps = $props();
+	let { class: className, ref = $bindable(null), ...restProps }: ButtonProps = $props();
 </script>
 
 <Button
@@ -60,6 +60,7 @@
 		'theme-toggle focus-visible:outline-base-900 dark:focus-visible:outline-base-100 flex items-center justify-center rounded-2xl focus-visible:outline-2',
 		className
 	)}
+	bind:ref
 	{...restProps}
 	size="icon"
 >
@@ -69,7 +70,7 @@
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
 		stroke="currentColor"
-		class="block size-5! transition-colors duration-500 dark:hidden"
+		class="size-5! block transition-colors duration-500 dark:hidden"
 	>
 		<path
 			stroke-linecap="round"
@@ -83,7 +84,7 @@
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
 		stroke="currentColor"
-		class="hidden size-5! transition-colors duration-500 dark:block dark:text-white"
+		class="size-5! hidden transition-colors duration-500 dark:block dark:text-white"
 	>
 		<path
 			stroke-linecap="round"

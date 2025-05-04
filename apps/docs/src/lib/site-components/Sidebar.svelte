@@ -28,7 +28,7 @@
 			variant="ghost"
 			onclick={handleClick}
 			href="{base}/docs/quick-start"
-			class="mb-1 w-full justify-start">Quick Start</Button
+			class="mb-1 w-full justify-start backdrop-blur-none">Quick Start</Button
 		>
 		<Button
 			data-current={page.url.pathname === `${base}/docs/philosophy`}
@@ -36,14 +36,14 @@
 			variant="ghost"
 			onclick={handleClick}
 			href="{base}/docs/philosophy"
-			class="mb-1 w-full justify-start">Philosophy</Button
+			class="mb-1 w-full justify-start backdrop-blur-none">Philosophy</Button
 		>
 		<Button
 			data-sveltekit-keepfocus
 			variant="ghost"
 			onclick={handleClick}
 			href="{base}/docs/theme"
-			class="mb-6 w-full justify-start">Theme</Button
+			class="mb-6 w-full justify-start backdrop-blur-none">Theme</Button
 		>
 
 		<Accordion type="multiple" class="w-full" value={components.map((c) => c.href)}>
@@ -62,7 +62,7 @@
 							variant="ghost"
 							onclick={handleClick}
 							href="{base}/components/{category.href}/{component.href}"
-							class="w-full justify-start">{component.label}</Button
+							class="w-full justify-start backdrop-blur-none">{component.label}</Button
 						>
 					{/each}
 				</AccordionItem>

@@ -10,7 +10,7 @@
 
 <Navbar {hasSidebar}>
 	<div class="flex items-center gap-2">
-		<Button variant="link" class="block font-normal lg:hidden" popovertarget="mobile-menu">
+		<Button variant="link" class="block font-normal lg:hidden backdrop-blur-none" popovertarget="mobile-menu">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
@@ -29,7 +29,7 @@
 	</div>
 	<div class="flex items-end gap-3">
 		<ThemeSelectDropdown />
-		<ThemeToggle />
+		<ThemeToggle class="backdrop-blur-none" />
 
 		<Github href="https://github.com/flo-bit/ui-kit" class="mr-2 p-2" />
 	</div>

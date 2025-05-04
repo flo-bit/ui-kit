@@ -18,7 +18,7 @@
 	} & PopoverProps = $props();
 </script>
 
-<Popover {...props} bind:triggerRef bind:open class={cn('px-0 pb-0 pt-1', className)}>
+<Popover {...props} bind:triggerRef bind:open class={cn('p-0', className)}>
 	{@render children?.()}
 	<EmojiPicker {onpicked} />
 </Popover>

@@ -51,7 +51,7 @@
 	}
 </script>
 
-<Popover {side} {sideOffset}>
+<Popover {side} {sideOffset} class={cn('p-1 pr-0 pl-2')}>
 	{#snippet child({ props })}
 		<button
 			{...props}

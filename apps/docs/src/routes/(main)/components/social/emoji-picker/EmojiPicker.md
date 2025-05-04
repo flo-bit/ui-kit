@@ -15,5 +15,6 @@
 	import { EmojiPicker } from '@fuxui/social';
 </script>
 
-<EmojiPicker />
+<EmojiPicker 
+	onpicked={(emoji) => console.log('selected emoji: ' + emoji.unicode)} />
 ```

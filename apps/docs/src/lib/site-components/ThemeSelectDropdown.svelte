@@ -8,7 +8,7 @@
 		<button {...props}
 		class={cn(
 			buttonVariants({ variant: 'link', size: 'default' }),
-			'flex cursor-pointer items-center gap-0 -space-x-2'
+			'flex cursor-pointer items-center gap-0 -space-x-2 backdrop-blur-none'
 		)}
 	>
 		<div
