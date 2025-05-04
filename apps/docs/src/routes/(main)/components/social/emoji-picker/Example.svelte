@@ -1,16 +1,22 @@
 <script lang="ts">
-	import { Button, toast } from '@fuxui/base';
+	import { Button } from '@fuxui/base';
 	import { EmojiPicker, PopoverEmojiPicker } from '@fuxui/social';
+
+	let emojis: string[] = $state([]);
 </script>
 
-<EmojiPicker onpicked={(emoji) => toast('selected emoji: ' + emoji.unicode)} />
+<div class="mb-4 flex h-14 flex-wrap items-center gap-2 text-2xl">
+	<div class="text-sm font-medium">Last picked emojis:</div>
+	{#each emojis.slice(0, 5) as emoji}
+		<div>{emoji}</div>
+	{/each}
+</div>
+
+<EmojiPicker onpicked={(emoji) => emojis.unshift(emoji.unicode)} />
 
 <h3>Popover Emoji Picker</h3>
 
-<PopoverEmojiPicker
-	onpicked={(emoji) => toast('selected emoji: ' + emoji.unicode)}
-	triggerText="Emoji Picker"
->
+<PopoverEmojiPicker onpicked={(emoji) => emojis.unshift(emoji.unicode)} triggerText="Emoji Picker">
 	{#snippet child({ props })}
 		<Button size="iconLg" {...props}>
 			<svg

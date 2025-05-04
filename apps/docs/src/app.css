@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+@plugin 'tailwindcss-animate';
 
 @source '../../../packages';
 
