@@ -1,5 +1,13 @@
 # @fuxui/visual
 
+## 0.0.9
+
+### Patch Changes
+
+- 2cea8f9: add confetti, fix color gradient picker, add form action to bluesky login
+- Updated dependencies [2cea8f9]
+  - @fuxui/colors@0.1.7
+
 ## 0.0.8
 
 ### Patch Changes
