@@ -8,6 +8,7 @@
 
 <script lang="ts">
 	import { Button, Modal, Subheading, Label, Input } from '@fuxui/base';
+	import type { BlueskyLoginProps } from '.';
 
 	let value = $state('');
 	let error: string | null = $state(null);
@@ -17,14 +18,10 @@
 		login,
 		formAction,
 		formMethod = 'get'
-	}: {
-		login: (handle: string) => Promise<boolean | undefined>;
-		formAction?: string;
-		formMethod?: 'dialog' | 'get' | 'post' | 'DIALOG' | 'GET' | 'POST' | null | undefined;
-	} = $props();
+	}: BlueskyLoginProps = $props();
 
 	async function onSubmit(evt: Event) {
-		if (formAction) return;
+		if (formAction || !login) return;
 
 		evt.preventDefault();
 		if (loading) return;
