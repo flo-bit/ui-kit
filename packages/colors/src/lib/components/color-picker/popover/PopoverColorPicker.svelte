@@ -1,13 +1,8 @@
 <script lang="ts">
 	import { cn, Popover } from '@fuxui/base';
 
-	import {
-		ColorPicker,
-		type OKhsv,
-		type OKlab,
-		type RGB
-	} from '../base';
-	
+	import { ColorPicker, type OKhsv, type OKlab, type RGB } from '../base';
+
 	import { okhsv_to_rgb, oklab_to_rgb, type OKlch } from '../base/color';
 
 	let {
@@ -51,7 +46,7 @@
 	}
 </script>
 
-<Popover {side} {sideOffset} class={cn('p-1 pr-0 pl-2')}>
+<Popover {side} {sideOffset} class="p-1 pl-2 pr-0">
 	{#snippet child({ props })}
 		<button
 			{...props}

@@ -53,6 +53,7 @@
     "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",
     "@tailwindcss/vite": "^4.1.5",
+    "@types/canvas-confetti": "^1.9.0",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-svelte": "^3.0.0",
@@ -69,7 +70,9 @@
   },
   "dependencies": {
     "@fuxui/base": "workspace:*",
+    "@fuxui/colors": "workspace:*",
     "bits-ui": "^1.4.3",
+    "canvas-confetti": "^1.9.3",
     "cheerio": "^1.0.0"
   },
   "peerDependencies": {

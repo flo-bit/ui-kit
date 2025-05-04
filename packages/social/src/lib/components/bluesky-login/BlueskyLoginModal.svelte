@@ -14,12 +14,18 @@
 	let loading = $state(false);
 
 	let {
-		login
+		login,
+		formAction,
+		formMethod = 'get'
 	}: {
 		login: (handle: string) => Promise<boolean | undefined>;
+		formAction?: string;
+		formMethod?: 'dialog' | 'get' | 'post' | 'DIALOG' | 'GET' | 'POST' | null | undefined;
 	} = $props();
 
 	async function onSubmit(evt: Event) {
+		if (formAction) return;
+
 		evt.preventDefault();
 		if (loading) return;
 
@@ -51,7 +57,7 @@
 		input?.focus();
 	}}
 >
-	<form onsubmit={onSubmit} class="flex flex-col gap-2">
+	<form onsubmit={onSubmit} action={formAction} method={formMethod} class="flex flex-col gap-2">
 		<Subheading class="mb-1 inline-flex items-center gap-2 text-xl font-bold">
 			<svg
 				fill="currentColor"
@@ -99,7 +105,7 @@
 			<p class="text-accent-500 mt-2 text-sm font-medium">{error}</p>
 		{/if}
 
-		<Button type="submit" class="mt-2 ml-auto w-full md:w-auto" disabled={loading}
+		<Button type="submit" class="ml-auto mt-2 w-full md:w-auto" disabled={loading}
 			>{loading ? 'Loading...' : 'Login'}</Button
 		>
 	</form>

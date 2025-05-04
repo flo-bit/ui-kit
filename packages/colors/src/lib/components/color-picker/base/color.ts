@@ -1,4 +1,14 @@
-import { convert, OKHSL, OKHSV, OKLab, OKLCH, sRGB } from '@texel/color';
+import {
+	convert,
+	OKHSL,
+	OKHSV,
+	OKLab,
+	OKLCH,
+	RGBToHex,
+	sRGB,
+	deserialize,
+	listColorSpaces
+} from '@texel/color';
 
 export type Color = string | RGB | OKlab | OKhsv | OKlch;
 
@@ -136,3 +146,15 @@ export function okhsv_to_hex(okhsv: OKhsv): string {
 	const rgb = okhsv_to_rgb(okhsv);
 	return rgb_to_hex(rgb);
 }
+
+export function convertCSSToHex(css: string): string {
+	const { id, coords } = deserialize(css);
+	const space = listColorSpaces().find((f) => id === f.id);
+	if (!space) {
+		throw new Error('Invalid color space');
+	}
+	const rgb = convert(coords, space, sRGB);
+	return RGBToHex(rgb);
+}
+
+export { deserialize, convert, listColorSpaces, sRGB, OKLab, OKLCH, OKHSV, OKHSL };
