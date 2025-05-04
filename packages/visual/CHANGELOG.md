@@ -1,5 +1,12 @@
 # @fuxui/visual
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [102c3a5]
+  - @fuxui/base@0.0.7
+
 ## 0.0.7
 
 ### Patch Changes
