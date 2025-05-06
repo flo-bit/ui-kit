@@ -1,5 +1,11 @@
 # @fuxui/social
 
+## 0.0.9
+
+### Patch Changes
+
+- 922c837: fix bluesky login
+
 ## 0.0.8
 
 ### Patch Changes
