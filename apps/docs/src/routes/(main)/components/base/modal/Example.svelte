@@ -21,8 +21,8 @@
 
 <Modal bind:open={openCustom} closeButton={false}>
 	<Subheading>
-	You can put anything in here... Like an image:
-</Subheading>
+		You can put anything in here... Like an image:
+	</Subheading>
 
 	<ImageContainer
 		src={cute}

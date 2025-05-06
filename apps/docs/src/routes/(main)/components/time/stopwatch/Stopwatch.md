@@ -12,7 +12,8 @@
 
 ```svelte
 <script lang="ts">
-	import { Button, Stopwatch, StopwatchState } from '@fuxui/time';
+	import { Button } from '@fuxui/base';
+	import { Stopwatch, StopwatchState } from '@fuxui/time';
 
 	let stopwatch: StopwatchState | undefined = $state();
 </script>
