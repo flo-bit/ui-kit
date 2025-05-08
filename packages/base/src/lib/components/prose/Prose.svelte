@@ -5,7 +5,7 @@
 	import { cn } from '../../utils';
 
 	export const proseVariants = tv({
-		base: 'prose dark:prose-invert prose-sm prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-400 prose-pre:rounded-2xl w-full max-w-none',
+		base: 'prose dark:prose-invert prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-400 prose-pre:rounded-2xl w-full max-w-none',
 		variants: {
 			size: {
 				default: 'prose-sm',
