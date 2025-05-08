@@ -1,5 +1,11 @@
 # @fuxui/base
 
+## 0.0.9
+
+### Patch Changes
+
+- 9324633: fix prose size prop
+
 ## 0.0.8
 
 ### Patch Changes
