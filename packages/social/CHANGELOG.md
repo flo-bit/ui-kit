@@ -1,5 +1,12 @@
 # @fuxui/social
 
+## 0.0.10
+
+### Patch Changes
+
+- Updated dependencies [28e715d]
+  - @fuxui/base@0.0.8
+
 ## 0.0.9
 
 ### Patch Changes
