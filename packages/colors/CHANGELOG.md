@@ -1,5 +1,13 @@
 # @fuxui/colors
 
+## 0.1.8
+
+### Patch Changes
+
+- 28e715d: small fixes
+- Updated dependencies [28e715d]
+  - @fuxui/base@0.0.8
+
 ## 0.1.7
 
 ### Patch Changes
