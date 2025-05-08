@@ -2,8 +2,8 @@
 	import { Button, ThemeToggle, Navbar } from '@fuxui/base';
 
 	import Logo from './Logo.svelte';
-	import ThemeSelectDropdown from './ThemeSelectDropdown.svelte';
 	import { Github } from '@fuxui/social';
+	import { SelectThemePopover } from '@fuxui/colors';
 
 	let { hasSidebar = false, showLogo = true } = $props();
 </script>
@@ -28,7 +28,7 @@
 		<Logo class={showLogo ? 'lg:ml-5' : 'lg:hidden'} />
 	</div>
 	<div class="flex items-end gap-3">
-		<ThemeSelectDropdown />
+		<SelectThemePopover />
 		<ThemeToggle class="backdrop-blur-none" />
 
 		<Github href="https://github.com/flo-bit/ui-kit" class="mr-2 p-2" />

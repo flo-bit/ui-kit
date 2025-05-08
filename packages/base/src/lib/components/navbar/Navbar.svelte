@@ -13,7 +13,7 @@
 
 <div
 	class={cn(
-		'header fixed top-1 right-0 mx-1 left-0 z-50 flex h-16 items-center justify-between p-2 shadow-lg rounded-2xl border border-base-200 dark:border-base-300/10 overflow-hidden',
+		'header fixed top-1 right-0 mx-1 left-0 z-50 flex h-16 items-center justify-between p-2 shadow-lg rounded-2xl border border-base-400/30 dark:border-base-300/10 overflow-hidden',
 		hasSidebar ? 'lg:left-74' : '',
 		className
 	)}
