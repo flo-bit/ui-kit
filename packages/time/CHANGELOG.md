@@ -1,5 +1,12 @@
 # @fuxui/time
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [28e715d]
+  - @fuxui/base@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes
