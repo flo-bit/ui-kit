@@ -1,5 +1,12 @@
 # @fuxui/3d
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies [9324633]
+  - @fuxui/base@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes
