@@ -1,5 +1,13 @@
 # @fuxui/time
 
+## 0.0.10
+
+### Patch Changes
+
+- 9fc83c3: bump
+- Updated dependencies [9fc83c3]
+  - @fuxui/base@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes
