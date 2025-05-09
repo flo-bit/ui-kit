@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex items-center gap-2">
-	<ToggleGroup type="single">
+	<ToggleGroup type="single" value="1">
 		<ToggleGroupItem value="1">1</ToggleGroupItem>
 		<ToggleGroupItem value="2">2</ToggleGroupItem>
 		<ToggleGroupItem value="3">3</ToggleGroupItem>

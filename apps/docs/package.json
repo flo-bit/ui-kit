@@ -21,6 +21,7 @@
 		"@fuxui/colors": "workspace:*",
 		"@fuxui/social": "workspace:*",
 		"@fuxui/time": "workspace:*",
+		"@fuxui/text": "workspace:*",
 		"@fuxui/visual": "workspace:*",
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/kit": "^2.16.0",

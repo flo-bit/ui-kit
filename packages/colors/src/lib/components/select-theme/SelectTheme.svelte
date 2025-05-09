@@ -47,12 +47,14 @@
 		defaultAccentColor = 'pink',
 		defaultBaseColor = 'stone',
 		selectAccentColor = true,
-		selectBaseColor = true
+		selectBaseColor = true,
+		onchanged
 	}: {
 		defaultAccentColor?: string;
 		defaultBaseColor?: string;
 		selectAccentColor?: boolean;
 		selectBaseColor?: boolean;
+		onchanged?: (accentColor: string, baseColor: string) => void;
 	} = $props();
 
 	onMount(() => {
@@ -90,6 +92,8 @@
 			window.dispatchEvent(
 				new CustomEvent('theme-changed', { detail: { accentColor: color.label } })
 			);
+
+			onchanged?.(color.label, previous.label);
 		}}
 		class="w-64"
 	/>
@@ -113,6 +117,8 @@
 			window.dispatchEvent(
 				new CustomEvent('theme-changed', { detail: { baseColor: color.label } })
 			);
+
+			onchanged?.(color.label, previous.label);
 		}}
 	/>
 {/if}

@@ -2,7 +2,7 @@
 	import Example from './Example.svelte';
 </script>
 
-# Toggle
+# Toggle Group
 
 ## Example
 
@@ -12,8 +12,14 @@
 
 ```svelte
 <script>
-	import { Toggle } from '@fuxui/base';
+	import { ToggleGroup, ToggleGroupItem } from '@fuxui/base';
+
+	let value = $state('1');
 </script>
 
-<Toggle>Toggle</Toggle>
+<ToggleGroup type="single" bind:value>
+	<ToggleGroupItem value="1">1</ToggleGroupItem>
+	<ToggleGroupItem value="2">2</ToggleGroupItem>
+	<ToggleGroupItem value="3">3</ToggleGroupItem>
+</ToggleGroup>
 ```

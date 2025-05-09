@@ -6,12 +6,14 @@
 		defaultAccentColor = 'pink',
 		defaultBaseColor = 'stone',
 		selectAccentColor = true,
-		selectBaseColor = true
+		selectBaseColor = true,
+		onchanged
 	}: {
 		defaultAccentColor?: string;
 		defaultBaseColor?: string;
 		selectAccentColor?: boolean;
 		selectBaseColor?: boolean;
+		onchanged?: (accentColor: string, baseColor: string) => void;
 	} = $props();
 </script>
 
@@ -37,5 +39,11 @@
 			{/if}
 		</button>
 	{/snippet}
-	<SelectTheme {defaultAccentColor} {defaultBaseColor} {selectAccentColor} {selectBaseColor} />
+	<SelectTheme
+		{defaultAccentColor}
+		{defaultBaseColor}
+		{selectAccentColor}
+		{selectBaseColor}
+		{onchanged}
+	/>
 </Popover>

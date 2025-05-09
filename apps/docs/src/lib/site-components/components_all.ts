@@ -2,6 +2,7 @@ import { threeDComponents } from './components_3d';
 import { type ComponentCard, baseComponents } from './components_base';
 import { colorsComponents } from './components_colors';
 import { socialComponents } from './components_social';
+import { textComponents } from './components_text';
 import { timeComponents } from './components_time';
 import { visualComponents } from './components_visual';
 
@@ -26,9 +27,14 @@ export const components: {
 		href: 'social'
 	},
 	{
-		name: '3D',
-		components: threeDComponents,
-		href: '3d'
+		name: 'Text',
+		components: textComponents,
+		href: 'text'
+	},
+	{
+		name: 'Visual',
+		components: visualComponents,
+		href: 'visual'
 	},
 	{
 		name: 'Time',
@@ -36,8 +42,8 @@ export const components: {
 		href: 'time'
 	},
 	{
-		name: 'Visual',
-		components: visualComponents,
-		href: 'visual'
+		name: '3D',
+		components: threeDComponents,
+		href: '3d'
 	}
 ];

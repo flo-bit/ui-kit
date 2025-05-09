@@ -25,6 +25,8 @@ import type { Component } from 'svelte';
 import CardPopover from '$lib/cards/base/CardPopover.svelte';
 import CardSidebar from '$lib/cards/base/CardSidebar.svelte';
 import CardTabs from '$lib/cards/base/CardTabs.svelte';
+import CardToggle from '$lib/cards/base/CardToggle.svelte';
+import CardToggleGroup from '$lib/cards/base/CardToggleGroup.svelte';
 
 export type ComponentCard = {
 	component: Component;
@@ -160,5 +162,15 @@ export const baseComponents: ComponentCard[] = [
 		component: CardTabs,
 		label: 'Tabs',
 		href: 'tabs'
+	},
+	{
+		component: CardToggle,
+		label: 'Toggle',
+		href: 'toggle'
+	},
+	{
+		component: CardToggleGroup,
+		label: 'Toggle Group',
+		href: 'toggle-group'
 	}
 ].sort((a, b) => a.label.localeCompare(b.label));

@@ -13,7 +13,9 @@
 ```svelte
 <script>
 	import { Toggle } from '@fuxui/base';
+
+	let pressed = $state(false);
 </script>
 
-<Toggle>Toggle</Toggle>
+<Toggle bind:pressed>Toggle</Toggle>
 ```
