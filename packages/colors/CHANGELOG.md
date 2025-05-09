@@ -1,5 +1,13 @@
 # @fuxui/colors
 
+## 0.1.10
+
+### Patch Changes
+
+- 9fc83c3: bump
+- Updated dependencies [9fc83c3]
+  - @fuxui/base@0.0.10
+
 ## 0.1.9
 
 ### Patch Changes
