@@ -1,5 +1,11 @@
 # @fuxui/base
 
+## 0.2.1
+
+### Patch Changes
+
+- f7b9986: change select, improve rich text editor
+
 ## 0.0.10
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @fuxui/time
 
+## 0.2.1
+
+### Patch Changes
+
+- f7b9986: change select, improve rich text editor
+- Updated dependencies [f7b9986]
+  - @fuxui/base@0.2.1
+
 ## 0.0.10
 
 ### Patch Changes
