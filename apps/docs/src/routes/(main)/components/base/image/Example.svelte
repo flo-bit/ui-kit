@@ -1,8 +1,8 @@
 <script>
 	import { ImageContainer } from '@fuxui/base';
 
-	import cute from '$lib/assets/images/cute.jpg';
-	import cute2 from '$lib/assets/images/cute2.jpg';
+	import cute from '$lib/assets/images/cute.webp';
+	import cute2 from '$lib/assets/images/cute2.webp';
 </script>
 
 <ImageContainer src={cute} alt="Such a cute animal" containerClasses="not-prose max-w-64" />

@@ -1,7 +1,7 @@
 <script>
 	import { Image, Paragraph } from '@fuxui/base';
 
-	import nature from '$lib/assets/images/nature2.jpg';
+	import nature from '$lib/assets/images/nature2.webp';
 </script>
 
 <div

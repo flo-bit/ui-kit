@@ -1,6 +1,6 @@
 <script>
 	import { Quote } from '@fuxui/visual';
-	import einstein from '$lib/assets/images/einstein.png';
+	import einstein from '$lib/assets/images/einstein.webp';
 </script>
 
 <Quote

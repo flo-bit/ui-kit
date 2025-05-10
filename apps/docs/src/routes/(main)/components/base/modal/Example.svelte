@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button, Modal, toast, ImageContainer, Subheading } from '@fuxui/base';
 
-	import cute from '$lib/assets/images/cute.jpg';
+	import cute from '$lib/assets/images/cute.webp';
 
 	let openDefault = $state(false);
 	let openCustom = $state(false);

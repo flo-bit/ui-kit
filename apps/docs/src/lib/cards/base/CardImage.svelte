@@ -1,5 +1,5 @@
 <script>
-	import cute from '$lib/assets/images/cute.jpg';
+	import cute from '$lib/assets/images/cute.webp';
 	import { Image } from '@fuxui/base';
 </script>
 

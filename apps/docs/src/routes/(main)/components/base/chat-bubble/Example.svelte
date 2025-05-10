@@ -1,7 +1,7 @@
 <script>
 	import { Box, ChatBubble, ImageContainer } from '@fuxui/base';
 
-	import cute from '$lib/assets/images/cute.jpg';
+	import cute from '$lib/assets/images/cute.webp';
 </script>
 
 <Box class="not-prose flex flex-col gap-3">

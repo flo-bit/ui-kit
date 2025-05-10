@@ -1,9 +1,9 @@
 <script>
 	import { ImageCard, toast} from '@fuxui/base';
 
-	import nature1 from '$lib/assets/images/nature1.jpg';
-	import nature2 from '$lib/assets/images/nature2.jpg';
-	import nature3 from '$lib/assets/images/nature3.jpg';
+	import nature1 from '$lib/assets/images/nature1.webp';
+	import nature2 from '$lib/assets/images/nature2.webp';
+	import nature3 from '$lib/assets/images/nature3.webp';
 </script>
 
 <h3>Full width</h3>
