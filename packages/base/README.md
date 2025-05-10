@@ -1,80 +1,40 @@
 # 🦊 fox ui
 
-> **This is a public alpha release. Expect bugs and breaking changes.**
+svelte 5 + tailwind 4 ui kit, base components
 
-svelte v5 + tailwind v4
+- [Accordion](https://flo-bit.dev/ui-kit/components/base/accordion)
+- [Alert](https://flo-bit.dev/ui-kit/components/base/alert)
+- [Avatar](https://flo-bit.dev/ui-kit/components/base/avatar)
+- [Badge](https://flo-bit.dev/ui-kit/components/base/badge)
+- [Box](https://flo-bit.dev/ui-kit/components/base/box)
+- [Button](https://flo-bit.dev/ui-kit/components/base/button)
+- [Card](https://flo-bit.dev/ui-kit/components/base/cards)
+- [Chat Bubble](https://flo-bit.dev/ui-kit/components/base/chat-bubble)
+- [Checkbox](https://flo-bit.dev/ui-kit/components/base/checkbox)
+- [Head](https://flo-bit.dev/ui-kit/components/base/head)
+- [Heading](https://flo-bit.dev/ui-kit/components/base/image)
+- [Modals](https://flo-bit.dev/ui-kit/components/base/modal)
+- [Number Input](https://flo-bit.dev/ui-kit/components/base/number-input)
+- [Popover](https://flo-bit.dev/ui-kit/components/base/popover)
+- [Prose](https://flo-bit.dev/ui-kit/components/base/prose)
+- [Scroll Area](https://flo-bit.dev/ui-kit/components/base/scroll-area)
+- [Select](https://flo-bit.dev/ui-kit/components/base/select)
+- [Sidebar](https://flo-bit.dev/ui-kit/components/base/sidebar)
+- [Slider](https://flo-bit.dev/ui-kit/components/base/slider)
+- [Sonner](https://flo-bit.dev/ui-kit/components/base/sonner)
+- [Switch](https://flo-bit.dev/ui-kit/components/base/switch)
+- [Tabs](https://flo-bit.dev/ui-kit/components/base/tabs)
+- [Textarea](https://flo-bit.dev/ui-kit/components/base/textarea)
+- [Toggle](https://flo-bit.dev/ui-kit/components/base/toggle)
+- [Toggle Group](https://flo-bit.dev/ui-kit/components/base/toggle-group)
+- [Tooltip](https://flo-bit.dev/ui-kit/components/base/tooltip)
+
+> **This is a public alpha release. Expect bugs and breaking changes.**
 
 [See all components here](https://flo-bit.dev/ui-kit)
 
+For a guide on how to use this ui kit, see the [Quickstart Guide](https://flo-bit.dev/ui-kit/docs/quick-start).
+
 Read more about [the philosophy/aim of this project here](https://flo-bit.dev/ui-kit/docs/philosophy).
 
-## Quickstart
-
-### 1. Create a new svelte project with tailwind css (including `@tailwindcss/typography` and `@tailwindcss/forms` plugins)
-
-```bash
-npx sv create my-project
-```
-
-### 2. Install fuchs-ui
-
-```bash
-npm install @fuxui/base
-```
-
-### 3. set theme variables in your app.css (changing `zinc` and `emerald` to your preferred colors, using find and replace).
-
-```css
-@source "../node_modules/@fuxui";
-
-@theme {
-	--color-base-50: var(--color-zinc-50);
-	--color-base-100: var(--color-zinc-100);
-	--color-base-200: var(--color-zinc-200);
-	--color-base-300: var(--color-zinc-300);
-	--color-base-400: var(--color-zinc-400);
-	--color-base-500: var(--color-zinc-500);
-	--color-base-600: var(--color-zinc-600);
-	--color-base-700: var(--color-zinc-700);
-	--color-base-800: var(--color-zinc-800);
-	--color-base-900: var(--color-zinc-900);
-	--color-base-950: var(--color-zinc-950);
-
-	--color-accent-50: var(--color-emerald-50);
-	--color-accent-100: var(--color-emerald-100);
-	--color-accent-200: var(--color-emerald-200);
-	--color-accent-300: var(--color-emerald-300);
-	--color-accent-400: var(--color-emerald-400);
-	--color-accent-500: var(--color-emerald-500);
-	--color-accent-600: var(--color-emerald-600);
-	--color-accent-700: var(--color-emerald-700);
-	--color-accent-800: var(--color-emerald-800);
-	--color-accent-900: var(--color-emerald-900);
-	--color-accent-950: var(--color-emerald-950);
-}
-```
-
-### 4. Use the components
-
-```svelte
-<script>
-	import { Button } from '@fuxui/base';
-</script>
-
-<Button onclick={() => alert('clicked')}>Click me</Button>
-```
-
-## Development
-
-If you want to contribute to the project, please open an issue first describing the feature you want to add.
-
-Clone the repo, install dependencies and run the dev server
-
-```bash
-git clone https://github.com/flo-bit/ui-kit.git
-cd ui-kit
-pnpm install
-pnpm run dev
-```
-
-The ui-kit library is located in `packages/` (`packages/base` for the base package), the documentation is in `apps/docs`.
+For more information about development, contributing and the like, see the main [README](https://github.com/flo-bit/ui-kit/blob/main/README.md).

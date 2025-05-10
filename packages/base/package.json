@@ -1,7 +1,7 @@
 {
   "name": "@fuxui/base",
   "private": false,
-  "version": "0.0.9",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite dev",
@@ -78,5 +78,20 @@
   "peerDependencies": {
     "svelte": ">=5",
     "tailwindcss": ">=3"
-  }
+  },
+  "keywords": [
+    "svelte",
+    "ui-kit",
+    "3d",
+    "components"
+  ],
+  "description": "ui kit - svelte 5 + tailwind 4 - base components",
+  "homepage": "https://flo-bit.dev/ui-kit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flo-bit/ui-kit.git"
+  },
+  "author": "flo-bit (http://flo-bit.dev/)",
+  "bugs": "https://github.com/flo-bit/ui-kit/issues",
+  "license": "MIT"
 }

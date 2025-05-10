@@ -1,80 +1,16 @@
 # 🦊 fox ui
 
-> **This is a public alpha release. Expect bugs and breaking changes.**
+svelte 5 + tailwind 4 ui kit, text components
 
-svelte v5 + tailwind v4
+- [Plain Text Editor](https://flo-bit.dev/ui-kit/components/text/plain-text-editor)
+- [Rich Text Editor](https://flo-bit.dev/ui-kit/components/text/rich-text-editor)
+
+> **This is a public alpha release. Expect bugs and breaking changes.**
 
 [See all components here](https://flo-bit.dev/ui-kit)
 
+For a guide on how to use this ui kit, see the [Quickstart Guide](https://flo-bit.dev/ui-kit/docs/quick-start).
+
 Read more about [the philosophy/aim of this project here](https://flo-bit.dev/ui-kit/docs/philosophy).
 
-## Quickstart
-
-### 1. Create a new svelte project with tailwind css (including `@tailwindcss/typography` and `@tailwindcss/forms` plugins)
-
-```bash
-npx sv create my-project
-```
-
-### 2. Install fuchs-ui
-
-```bash
-npm install @fuxui/base
-```
-
-### 3. set theme variables in your app.css (changing `zinc` and `emerald` to your preferred colors, using find and replace).
-
-```css
-@source "../node_modules/@fuxui";
-
-@theme {
-	--color-base-50: var(--color-zinc-50);
-	--color-base-100: var(--color-zinc-100);
-	--color-base-200: var(--color-zinc-200);
-	--color-base-300: var(--color-zinc-300);
-	--color-base-400: var(--color-zinc-400);
-	--color-base-500: var(--color-zinc-500);
-	--color-base-600: var(--color-zinc-600);
-	--color-base-700: var(--color-zinc-700);
-	--color-base-800: var(--color-zinc-800);
-	--color-base-900: var(--color-zinc-900);
-	--color-base-950: var(--color-zinc-950);
-
-	--color-accent-50: var(--color-emerald-50);
-	--color-accent-100: var(--color-emerald-100);
-	--color-accent-200: var(--color-emerald-200);
-	--color-accent-300: var(--color-emerald-300);
-	--color-accent-400: var(--color-emerald-400);
-	--color-accent-500: var(--color-emerald-500);
-	--color-accent-600: var(--color-emerald-600);
-	--color-accent-700: var(--color-emerald-700);
-	--color-accent-800: var(--color-emerald-800);
-	--color-accent-900: var(--color-emerald-900);
-	--color-accent-950: var(--color-emerald-950);
-}
-```
-
-### 4. Use the components
-
-```svelte
-<script>
-	import { Button } from '@fuxui/base';
-</script>
-
-<Button onclick={() => alert('clicked')}>Click me</Button>
-```
-
-## Development
-
-If you want to contribute to the project, please open an issue first describing the feature you want to add.
-
-Clone the repo, install dependencies and run the dev server
-
-```bash
-git clone https://github.com/flo-bit/ui-kit.git
-cd ui-kit
-pnpm install
-pnpm run dev
-```
-
-The ui-kit library is located in `packages/` (`packages/base` for the base package), the documentation is in `apps/docs`.
+For more information about development, contributing and the like, see the main [README](https://github.com/flo-bit/ui-kit/blob/main/README.md).

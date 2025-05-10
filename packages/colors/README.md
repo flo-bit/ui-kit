@@ -1,38 +1,17 @@
-# sv
+# 🦊 fox ui
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+svelte 5 + tailwind 4 ui kit, colors components
 
-## Creating a project
+- [Color Gradient Picker](https://flo-bit.dev/ui-kit/components/colors/color-gradient-picker)
+- [Color Picker](https://flo-bit.dev/ui-kit/components/colors/color-picker)
+- [Color Select](https://flo-bit.dev/ui-kit/components/colors/color-select)
 
-If you're seeing this, you've probably already done this step. Congrats!
+> **This is a public alpha release. Expect bugs and breaking changes.**
 
-```bash
-# create a new project in the current directory
-npx sv create
+[See all components here](https://flo-bit.dev/ui-kit)
 
-# create a new project in my-app
-npx sv create my-app
-```
+For a guide on how to use this ui kit, see the [Quickstart Guide](https://flo-bit.dev/ui-kit/docs/quick-start).
 
-## Developing
+Read more about [the philosophy/aim of this project here](https://flo-bit.dev/ui-kit/docs/philosophy).
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+For more information about development, contributing and the like, see the main [README](https://github.com/flo-bit/ui-kit/blob/main/README.md).
