@@ -4,15 +4,16 @@
 	import StarterKit from '@tiptap/starter-kit';
 	import Placeholder from '@tiptap/extension-placeholder';
 	import Image from '@tiptap/extension-image';
-	import { common, createLowlight } from 'lowlight';
+	import { all, createLowlight } from 'lowlight';
 	import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
 	import BubbleMenu from '@tiptap/extension-bubble-menu';
-	import Strike from '@tiptap/extension-strike';
 	import Underline from '@tiptap/extension-underline';
 	import Link from '@tiptap/extension-link';
+	import RichTextEditorMenu from './RichTextEditorMenu.svelte';
+	import type { RichTextTypes } from '.';
+	import RichTextEditorLinkMenu from './RichTextEditorLinkMenu.svelte';
 
 	import './code.css';
-	import { Button, Input, Toggle } from '@fuxui/base';
 
 	let {
 		content = $bindable({}),
@@ -26,17 +27,21 @@
 		ref?: HTMLDivElement | null;
 	} = $props();
 
-	const lowlight = createLowlight(common);
+	const lowlight = createLowlight(all);
 
 	let hasFocus = true;
 
 	let menu: HTMLElement | null = $state(null);
+	let menuLink: HTMLElement | null = $state(null);
+
+	let selectedType: RichTextTypes = $state('paragraph');
 
 	let isBold = $state(false);
 	let isItalic = $state(false);
 	let isUnderline = $state(false);
 	let isStrikethrough = $state(false);
 	let isLink = $state(false);
+	let isImage = $state(false);
 
 	onMount(() => {
 		if (!ref) return;
@@ -44,9 +49,13 @@
 		let extensions = [
 			StarterKit.configure({
 				dropcursor: {
-					class: 'text-base-500'
+					class: 'text-accent-500/30 rounded-2xl',
+					width: 2
 				},
-				codeBlock: false
+				codeBlock: false,
+				heading: {
+					levels: [1, 2, 3]
+				}
 			}),
 			Placeholder.configure({ placeholder }),
 			// Only use CustomImage, not the standard Image extension
@@ -66,11 +75,20 @@
 					return (
 						!editor.isActive('image') &&
 						!editor.view.state.selection.empty &&
-						!editor.isActive('codeBlock')
+						!editor.isActive('codeBlock') &&
+						!editor.isActive('link')
 					);
-				}
+				},
+				pluginKey: 'bubble-menu-marks'
 			}),
-			Strike.configure({}),
+			BubbleMenu.configure({
+				element: menuLink,
+				shouldShow: ({ editor }) => {
+					// only show if link is selected
+					return editor.isActive('link') && !editor.view.state.selection.empty;
+				},
+				pluginKey: 'bubble-menu-links'
+			}),
 			Underline.configure({}),
 			Link.configure({
 				openOnClick: false,
@@ -102,13 +120,31 @@
 				isUnderline = ctx.editor.isActive('underline');
 				isStrikethrough = ctx.editor.isActive('strike');
 				isLink = ctx.editor.isActive('link');
+				isImage = ctx.editor.isActive('image');
 
-				if (!isLink) showLinkEdit = false;
+				if (ctx.editor.isActive('heading', { level: 1 })) {
+					selectedType = 'heading-1';
+				} else if (ctx.editor.isActive('heading', { level: 2 })) {
+					selectedType = 'heading-2';
+				} else if (ctx.editor.isActive('heading', { level: 3 })) {
+					selectedType = 'heading-3';
+				} else if (ctx.editor.isActive('blockquote')) {
+					selectedType = 'blockquote';
+				} else if (ctx.editor.isActive('code')) {
+					selectedType = 'code';
+				} else if (ctx.editor.isActive('bulletList')) {
+					selectedType = 'bullet-list';
+				} else if (ctx.editor.isActive('orderedList')) {
+					selectedType = 'ordered-list';
+				} else {
+					selectedType = 'paragraph';
+				}
 			},
 			content
 		});
 
 		menu?.classList.remove('hidden');
+		menuLink?.classList.remove('hidden');
 	});
 
 	// Flag to track whether a file is being dragged over the drop area
@@ -217,9 +253,27 @@
 
 	let link = $state('');
 
-	let showLinkEdit = $state(false);
-
 	let linkInput: HTMLInputElement | null = $state(null);
+
+	function clickedLink() {
+		if (isLink) {
+			//tiptap?.chain().focus().unsetLink().run();
+			// get current link
+			link = editor?.getAttributes('link').href;
+
+			setTimeout(() => {
+				linkInput?.focus();
+			}, 100);
+		} else {
+			link = '';
+			// set link
+			editor?.chain().focus().setLink({ href: link }).run();
+
+			setTimeout(() => {
+				linkInput?.focus();
+			}, 100);
+		}
+	}
 </script>
 
 <div
@@ -232,208 +286,26 @@
 	role="region"
 ></div>
 
-<div
-	bind:this={menu}
-	class="menu bg-base-50 dark:bg-base-900 relative hidden w-fit rounded-2xl px-1 py-1 shadow-lg backdrop-blur-sm"
->
-	{#if !showLinkEdit}
-		<Toggle
-			size="sm"
-			onclick={() => editor?.chain().focus().toggleBold().run()}
-			bind:pressed={isBold}
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 24 24"
-				fill="currentColor"
-				class="size-6"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M5.246 3.744a.75.75 0 0 1 .75-.75h7.125a4.875 4.875 0 0 1 3.346 8.422 5.25 5.25 0 0 1-2.97 9.58h-7.5a.75.75 0 0 1-.75-.75V3.744Zm7.125 6.75a2.625 2.625 0 0 0 0-5.25H8.246v5.25h4.125Zm-4.125 2.251v6h4.5a3 3 0 0 0 0-6h-4.5Z"
-					clip-rule="evenodd"
-				/>
-			</svg>
+<RichTextEditorMenu
+	bind:ref={menu}
+	{editor}
+	{isBold}
+	{isItalic}
+	{isUnderline}
+	{isStrikethrough}
+	{isLink}
+	{isImage}
+	{clickedLink}
+	{processImageFile}
+	bind:selectedType
+/>
 
-			<span class="sr-only">Bold</span>
-		</Toggle>
+<RichTextEditorLinkMenu
+	bind:ref={menuLink}
+	{editor}
+	bind:link
+/>
 
-		<Toggle
-			size="sm"
-			onclick={() => editor?.chain().focus().toggleItalic().run()}
-			bind:pressed={isItalic}
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 24 24"
-				fill="currentColor"
-				class="size-6"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M10.497 3.744a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-3.275l-5.357 15.002h2.632a.75.75 0 1 1 0 1.5h-7.5a.75.75 0 1 1 0-1.5h3.275l5.357-15.002h-2.632a.75.75 0 0 1-.75-.75Z"
-					clip-rule="evenodd"
-				/>
-			</svg>
-
-			<span class="sr-only">Italic</span>
-		</Toggle>
-
-		<Toggle
-			size="sm"
-			onclick={() => editor?.chain().focus().toggleUnderline().run()}
-			bind:pressed={isUnderline}
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 24 24"
-				fill="currentColor"
-				class="size-6"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M5.995 2.994a.75.75 0 0 1 .75.75v7.5a5.25 5.25 0 1 0 10.5 0v-7.5a.75.75 0 0 1 1.5 0v7.5a6.75 6.75 0 1 1-13.5 0v-7.5a.75.75 0 0 1 .75-.75Zm-3 17.252a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5h-16.5a.75.75 0 0 1-.75-.75Z"
-					clip-rule="evenodd"
-				/>
-			</svg>
-
-			<span class="sr-only">Underline</span>
-		</Toggle>
-
-		<Toggle
-			size="sm"
-			onclick={() => editor?.chain().focus().toggleStrike().run()}
-			bind:pressed={isStrikethrough}
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 24 24"
-				fill="currentColor"
-				class="size-6"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M9.657 4.728c-1.086.385-1.766 1.057-1.979 1.85-.214.8.046 1.733.81 2.616.746.862 1.93 1.612 3.388 2.003.07.019.14.037.21.053h8.163a.75.75 0 0 1 0 1.5h-8.24a.66.66 0 0 1-.02 0H3.75a.75.75 0 0 1 0-1.5h4.78a7.108 7.108 0 0 1-1.175-1.074C6.372 9.042 5.849 7.61 6.229 6.19c.377-1.408 1.528-2.38 2.927-2.876 1.402-.497 3.127-.55 4.855-.086A8.937 8.937 0 0 1 16.94 4.6a.75.75 0 0 1-.881 1.215 7.437 7.437 0 0 0-2.436-1.14c-1.473-.394-2.885-.331-3.966.052Zm6.533 9.632a.75.75 0 0 1 1.03.25c.592.974.846 2.094.55 3.2-.378 1.408-1.529 2.38-2.927 2.876-1.402.497-3.127.55-4.855.087-1.712-.46-3.168-1.354-4.134-2.47a.75.75 0 0 1 1.134-.982c.746.862 1.93 1.612 3.388 2.003 1.473.394 2.884.331 3.966-.052 1.085-.384 1.766-1.056 1.978-1.85.169-.628.046-1.33-.381-2.032a.75.75 0 0 1 .25-1.03Z"
-					clip-rule="evenodd"
-				/>
-			</svg>
-
-			<span class="sr-only">Strikethrough</span>
-		</Toggle>
-
-		<Toggle
-			size="sm"
-			onclick={() => {
-				if (isLink) {
-					//tiptap?.chain().focus().unsetLink().run();
-					// get current link
-					link = editor?.getAttributes('link').href;
-					showLinkEdit = true;
-
-					setTimeout(() => {
-						linkInput?.focus();
-					}, 10);
-				} else {
-					link = '';
-					showLinkEdit = true;
-
-					setTimeout(() => {
-						linkInput?.focus();
-					}, 10);
-				}
-			}}
-			bind:pressed={isLink}
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 24 24"
-				fill="currentColor"
-				class="size-6"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M19.902 4.098a3.75 3.75 0 0 0-5.304 0l-4.5 4.5a3.75 3.75 0 0 0 1.035 6.037.75.75 0 0 1-.646 1.353 5.25 5.25 0 0 1-1.449-8.45l4.5-4.5a5.25 5.25 0 1 1 7.424 7.424l-1.757 1.757a.75.75 0 1 1-1.06-1.06l1.757-1.757a3.75 3.75 0 0 0 0-5.304Zm-7.389 4.267a.75.75 0 0 1 1-.353 5.25 5.25 0 0 1 1.449 8.45l-4.5 4.5a5.25 5.25 0 1 1-7.424-7.424l1.757-1.757a.75.75 0 1 1 1.06 1.06l-1.757 1.757a3.75 3.75 0 1 0 5.304 5.304l4.5-4.5a3.75 3.75 0 0 0-1.035-6.037.75.75 0 0 1-.354-1Z"
-					clip-rule="evenodd"
-				/>
-			</svg>
-
-			<span class="sr-only">Link</span>
-		</Toggle>
-	{:else}
-		<div class="flex items-center gap-1">
-			<Input
-				bind:ref={linkInput}
-				sizeVariant="sm"
-				bind:value={link}
-				placeholder="Enter link"
-				onblur={() => {
-					if (link === '') {
-						editor?.chain().focus().unsetLink().run();
-					} else {
-						editor?.chain().focus().setLink({ href: link }).run();
-					}
-				}}
-				onkeydown={(e) => {
-					if (e.key === 'Enter') {
-						if (link === '') {
-							editor?.chain().focus().unsetLink().run();
-						} else {
-							editor?.chain().focus().setLink({ href: link }).run();
-						}
-						showLinkEdit = false;
-					}
-				}}
-			/>
-			<Button
-				size="iconSm"
-				onclick={() => {
-					if (link === '') {
-						editor?.chain().focus().unsetLink().run();
-					} else {
-						editor?.chain().focus().setLink({ href: link }).run();
-					}
-					showLinkEdit = false;
-				}}
-			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="1.5"
-					stroke="currentColor"
-					class="size-6"
-				>
-					<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-				</svg>
-
-				<span class="sr-only">save link</span>
-			</Button>
-			<Button
-				size="iconSm"
-				onclick={() => {
-					editor?.chain().focus().unsetLink().run();
-					showLinkEdit = false;
-				}}
-				variant="ghost"
-			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="1.5"
-					stroke="currentColor"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
-					/>
-				</svg>
-				<span class="sr-only">remove link</span>
-			</Button>
-		</div>
-	{/if}
-</div>
 
 <style>
 	:global(.tiptap) {
