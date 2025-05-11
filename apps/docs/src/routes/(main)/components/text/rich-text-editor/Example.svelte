@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Prose } from '@fuxui/base';
 	import { RichTextEditor } from '@fuxui/text';
 
 	let content = $state('');
@@ -7,5 +8,7 @@
 <div
 	class="border-base-300/50 bg-base-300/20 dark:border-base-800/50 dark:bg-base-900/30 text-base-900 dark:text-base-100 relative isolate min-h-24 w-full rounded-2xl border p-4 backdrop-blur-2xl"
 >
-	<RichTextEditor bind:content placeholder="Write something..." />
+	<Prose size="md">
+		<RichTextEditor bind:content />
+	</Prose>
 </div>

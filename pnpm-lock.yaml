@@ -538,18 +538,33 @@ importers:
       '@tiptap/extension-text':
         specifier: ^2.12.0
         version: 2.12.0(@tiptap/core@2.12.0)
+      '@tiptap/extension-typography':
+        specifier: ^2.12.0
+        version: 2.12.0(@tiptap/core@2.12.0)
       '@tiptap/extension-underline':
         specifier: ^2.12.0
         version: 2.12.0(@tiptap/core@2.12.0)
+      '@tiptap/pm':
+        specifier: ^2.12.0
+        version: 2.12.0
       '@tiptap/starter-kit':
         specifier: ^2.12.0
         version: 2.12.0
+      '@tiptap/suggestion':
+        specifier: ^2.12.0
+        version: 2.12.0(@tiptap/core@2.12.0)(@tiptap/pm@2.12.0)
       bits-ui:
         specifier: ^1.4.3
         version: 1.4.3(svelte@5.28.1)
       lowlight:
         specifier: ^3.3.0
         version: 3.3.0
+      state:
+        specifier: link:@tiptap/pm/state
+        version: link:@tiptap/pm/state
+      tippy.js:
+        specifier: ^6.3.7
+        version: 6.3.7
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.5
@@ -2122,6 +2137,14 @@ packages:
       '@tiptap/core': 2.12.0(@tiptap/pm@2.12.0)
     dev: false
 
+  /@tiptap/extension-typography@2.12.0(@tiptap/core@2.12.0):
+    resolution: {integrity: sha512-Sh95D8ON3KcGR/6wQ1B2PwVQNQXSHItQFodDAEgT9c6CCPzrz0omLWJvG7lx7NzMoZ7cvPE/BBoEujsDIT1XRA==, tarball: https://registry.npmjs.org/@tiptap/extension-typography/-/extension-typography-2.12.0.tgz}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+    dependencies:
+      '@tiptap/core': 2.12.0(@tiptap/pm@2.12.0)
+    dev: false
+
   /@tiptap/extension-underline@2.12.0(@tiptap/core@2.12.0):
     resolution: {integrity: sha512-u95lrUCesw1SN3BXY4xrgfSuxtoCYmJ9uaU7IVVOu0zVsDFtLlOa82kd63KVF+URL0kMdO+FBmvdS6d8Era70Q==, tarball: https://registry.npmjs.org/@tiptap/extension-underline/-/extension-underline-2.12.0.tgz}
     peerDependencies:
@@ -2176,6 +2199,16 @@ packages:
       '@tiptap/extension-strike': 2.12.0(@tiptap/core@2.12.0)
       '@tiptap/extension-text': 2.12.0(@tiptap/core@2.12.0)
       '@tiptap/extension-text-style': 2.12.0(@tiptap/core@2.12.0)
+      '@tiptap/pm': 2.12.0
+    dev: false
+
+  /@tiptap/suggestion@2.12.0(@tiptap/core@2.12.0)(@tiptap/pm@2.12.0):
+    resolution: {integrity: sha512-bsXLoZbjUo1oOF1Z+XSfoGzbcnrTcYtJdfylM/FerMLU9T12dhsM/Ri2SKLX4IR5D0HJ07FcsEHCrGEy8Y5y0A==, tarball: https://registry.npmjs.org/@tiptap/suggestion/-/suggestion-2.12.0.tgz}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+      '@tiptap/pm': ^2.7.0
+    dependencies:
+      '@tiptap/core': 2.12.0(@tiptap/pm@2.12.0)
       '@tiptap/pm': 2.12.0
     dev: false
 

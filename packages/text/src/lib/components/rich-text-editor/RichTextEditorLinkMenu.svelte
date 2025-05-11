@@ -5,14 +5,18 @@
 	let {
 		editor,
 		link = $bindable(''),
-		ref = $bindable(null)
+		ref = $bindable(null),
+		linkInput = $bindable(null)
 	}: {
 		editor: Editor | null;
 		link: string;
 		ref: HTMLElement | null;
+		linkInput: HTMLInputElement | null;
 	} = $props();
 
-	let linkInput: HTMLInputElement | null = $state(null);
+	function processLink(link: string) {
+		return link.includes(':') ? link : `http://${link}`;
+	}
 </script>
 
 <div
@@ -27,17 +31,17 @@
 			placeholder="Enter link"
 			onblur={() => {
 				if (link === '') {
-					editor?.chain().focus().unsetLink().run();
+					editor?.chain().focus().extendMarkRange('link').unsetLink().run();
 				} else {
-					editor?.chain().focus().setLink({ href: link }).run();
+					editor?.chain().focus().extendMarkRange('link').setLink({ href: processLink(link) }).run();
 				}
 			}}
 			onkeydown={(e: KeyboardEvent) => {
 				if (e.key === 'Enter') {
 					if (link === '') {
-						editor?.chain().focus().unsetLink().run();
+						editor?.chain().focus().extendMarkRange('link').unsetLink().run();
 					} else {
-						editor?.chain().focus().setLink({ href: link }).run();
+						editor?.chain().focus().extendMarkRange('link').setLink({ href: processLink(link) }).run();
 					}
 				}
 			}}
@@ -46,9 +50,9 @@
 			size="iconSm"
 			onclick={() => {
 				if (link === '') {
-					editor?.chain().focus().unsetLink().run();
+					editor?.chain().focus().extendMarkRange('link').unsetLink().run();
 				} else {
-					editor?.chain().focus().setLink({ href: link }).run();
+					editor?.chain().focus().extendMarkRange('link').setLink({ href: processLink(link) }).run();
 				}
 			}}
 		>
@@ -68,7 +72,7 @@
 		<Button
 			size="iconSm"
 			onclick={() => {
-				editor?.chain().focus().unsetLink().run();
+				editor?.chain().focus().extendMarkRange('link').unsetLink().run();
 			}}
 			variant="ghost"
 		>

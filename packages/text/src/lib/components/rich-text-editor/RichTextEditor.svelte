@@ -12,12 +12,14 @@
 	import RichTextEditorMenu from './RichTextEditorMenu.svelte';
 	import type { RichTextTypes } from '.';
 	import RichTextEditorLinkMenu from './RichTextEditorLinkMenu.svelte';
+	import Slash, { suggestion } from './slash-menu';
+	import Typography from '@tiptap/extension-typography'
 
 	import './code.css';
 
 	let {
 		content = $bindable({}),
-		placeholder = 'Write something ...',
+		placeholder = 'Write or press / for commands',
 		editor = $bindable(null),
 		ref = $bindable(null)
 	}: {
@@ -57,8 +59,15 @@
 					levels: [1, 2, 3]
 				}
 			}),
-			Placeholder.configure({ placeholder }),
-			// Only use CustomImage, not the standard Image extension
+			Placeholder.configure({
+				placeholder: ({ node }) => {
+					// only show in paragraphs
+					if (node.type.name === 'paragraph' || node.type.name === 'heading') {
+						return placeholder;
+					}
+					return '';
+				}
+			}),
 			Image.configure({
 				HTMLAttributes: {
 					class: 'max-w-full object-contain relative rounded-2xl'
@@ -94,7 +103,16 @@
 				openOnClick: false,
 				autolink: true,
 				defaultProtocol: 'https'
-			})
+			}),
+			Slash.configure({
+				suggestion: suggestion({
+					char: '/',
+					pluginKey: 'slash',
+					switchTo,
+					processImageFile
+				})
+			}),
+			Typography.configure()
 		];
 
 		editor = new Editor({
@@ -274,6 +292,26 @@
 			}, 100);
 		}
 	}
+
+	function switchTo(value: RichTextTypes) {
+		editor?.chain().focus().setParagraph().run();
+
+		if (value === 'heading-1') {
+			editor?.chain().focus().setNode('heading', { level: 1 }).run();
+		} else if (value === 'heading-2') {
+			editor?.chain().focus().setNode('heading', { level: 2 }).run();
+		} else if (value === 'heading-3') {
+			editor?.chain().focus().setNode('heading', { level: 3 }).run();
+		} else if (value === 'blockquote') {
+			editor?.chain().focus().setBlockquote().run();
+		} else if (value === 'code') {
+			editor?.chain().focus().setCodeBlock().run();
+		} else if (value === 'bullet-list') {
+			editor?.chain().focus().toggleBulletList().run();
+		} else if (value === 'ordered-list') {
+			editor?.chain().focus().toggleOrderedList().run();
+		}
+	}
 </script>
 
 <div
@@ -297,15 +335,11 @@
 	{isImage}
 	{clickedLink}
 	{processImageFile}
+	{switchTo}
 	bind:selectedType
 />
 
-<RichTextEditorLinkMenu
-	bind:ref={menuLink}
-	{editor}
-	bind:link
-/>
-
+<RichTextEditorLinkMenu bind:ref={menuLink} {editor} bind:link bind:linkInput />
 
 <style>
 	:global(.tiptap) {
@@ -323,5 +357,25 @@
 				outline: 3px solid var(--color-accent-500);
 			}
 		}
+
+		:global(blockquote p:first-of-type::before) {
+			content: none;
+		}
+
+		:global(blockquote p:last-of-type::after) {
+			content: none;
+		}
+
+		:global(blockquote p) {
+			font-style: normal;
+		}
+	}
+
+	:global(.tiptap .is-empty::before) {
+		color: var(--color-base-500);
+		content: attr(data-placeholder);
+		float: left;
+		height: 0;
+		pointer-events: none;
 	}
 </style>

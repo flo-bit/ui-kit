@@ -15,7 +15,8 @@
 		clickedLink,
 		selectedType = $bindable('paragraph'),
 		ref = $bindable(null),
-		processImageFile
+		processImageFile,
+		switchTo
 	}: {
 		editor: Editor | null;
 		isBold: boolean;
@@ -28,6 +29,7 @@
 		selectedType: RichTextTypes;
 		ref: HTMLElement | null;
 		processImageFile: (file: File, input: HTMLInputElement) => void;
+		switchTo: (value: RichTextTypes) => void;
 	} = $props();
 
 	$inspect(isBold);
@@ -41,6 +43,7 @@
 	}
 
 	let fileInput = $state<HTMLInputElement | null>(null);
+
 </script>
 
 <div
@@ -49,25 +52,7 @@
 >
 	<Select
 		onValueChange={(value) => {
-			editor?.chain().focus().unsetAllMarks().run();
-
-			if (value === 'heading-1') {
-				editor?.chain().focus().setNode('heading', { level: 1 }).run();
-			} else if (value === 'heading-2') {
-				editor?.chain().focus().setNode('heading', { level: 2 }).run();
-			} else if (value === 'heading-3') {
-				editor?.chain().focus().setNode('heading', { level: 3 }).run();
-			} else if (value === 'blockquote') {
-				editor?.chain().focus().setBlockquote().run();
-			} else if (value === 'code') {
-				editor?.chain().focus().setCodeBlock().run();
-			} else if (value === 'bullet-list') {
-				editor?.chain().focus().toggleBulletList().run();
-			} else if (value === 'ordered-list') {
-				editor?.chain().focus().toggleOrderedList().run();
-			} else if (value === 'paragraph') {
-				editor?.chain().focus().setParagraph().run();
-			}
+			switchTo(value as RichTextTypes);
 		}}
 		type="single"
 		items={[
