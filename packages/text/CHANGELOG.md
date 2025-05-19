@@ -1,5 +1,11 @@
 # @fuxui/time
 
+## 0.2.3
+
+### Patch Changes
+
+- 6795280: improve rich text editor
+
 ## 0.2.2
 
 ### Patch Changes
