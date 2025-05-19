@@ -1,5 +1,11 @@
 # @fuxui/colors
 
+## 0.2.2
+
+### Patch Changes
+
+- 6795280: improve color picker
+
 ## 0.2.1
 
 ### Patch Changes
