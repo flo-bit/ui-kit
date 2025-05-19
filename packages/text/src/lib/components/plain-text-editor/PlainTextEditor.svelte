@@ -15,6 +15,7 @@
 		editor = $bindable(null),
 		allowMultiline = false,
 		onupdate,
+		ontransaction,
 		...props
 	}: {
 		class?: string;
@@ -24,6 +25,7 @@
 		editor?: Editor | null;
 		allowMultiline?: boolean;
 		onupdate?: (value: string) => void;
+		ontransaction?: () => void;
 	} = $props();
 
 	onMount(async () => {
@@ -92,6 +94,9 @@
 				onupdate?.(editor?.getText() ?? '');
 
 				value = editor?.getText() ?? '';
+			},
+			onTransaction: () => {
+				ontransaction?.();
 			},
 
 			content: value,

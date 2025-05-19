@@ -89,6 +89,7 @@
     "bits-ui": "^1.4.3",
     "lowlight": "^3.3.0",
     "state": "link:@tiptap/pm/state",
+    "svelte-tiptap": "^2.1.0",
     "tippy.js": "^6.3.7"
   },
   "peerDependencies": {

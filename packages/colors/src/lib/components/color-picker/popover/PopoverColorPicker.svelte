@@ -12,7 +12,9 @@
 		sideOffset = 10,
 		side = 'bottom',
 		class: className,
-		onchange
+		onchange,
+		quickSelects = $bindable([]),
+		...restProps
 	}: {
 		rgb?: RGB;
 		oklab?: OKlab;
@@ -21,6 +23,12 @@
 		sideOffset?: number;
 		side?: 'top' | 'right' | 'bottom' | 'left';
 		onchange?: (color: { hex: string; rgb: RGB; oklab: OKlab; okhsv: OKhsv; oklch: OKlch }) => void;
+		quickSelects?: {
+			label: string;
+			rgb?: RGB;
+			oklab?: OKlab;
+			okhsv?: OKhsv;
+		}[];
 	} = $props();
 
 	let internalColor = $derived(convertToInternal(rgb, oklab, okhsv));
@@ -51,16 +59,17 @@
 		<button
 			{...props}
 			class={cn(
-				'focus-visible:outline-base-900 dark:focus-visible:outline-base-100 cursor-pointer rounded-full focus-visible:outline-2 focus-visible:outline-offset-2'
+				'focus-visible:outline-base-900 dark:focus-visible:outline-base-100 cursor-pointer rounded-full focus-visible:outline-2 focus-visible:outline-offset-2',
+				'group'
 			)}
 		>
 			<div
-				class="border-base-300 dark:border-base-700 focus-visible:outline-accent-500 z-10 size-8 rounded-full border"
+				class="border-base-300 dark:border-base-700 focus-visible:outline-accent-500 z-10 size-8 rounded-full border group-hover:scale-105 group-active:scale-95 transition-all duration-100"
 				style={`background-color: rgb(${internalColor.r * 255}, ${internalColor.g * 255}, ${internalColor.b * 255});`}
 			></div>
 			<span class="sr-only">Pick a color</span>
 		</button>
 	{/snippet}
 
-	<ColorPicker bind:rgb bind:oklab bind:okhsv class={className} {onchange} />
+	<ColorPicker bind:rgb bind:oklab bind:okhsv class={className} {onchange} {quickSelects} {...restProps} />
 </Popover>

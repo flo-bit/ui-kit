@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
-	import { Editor, type Content } from '@tiptap/core';
+	import { Editor, mergeAttributes, type Content } from '@tiptap/core';
 	import StarterKit from '@tiptap/starter-kit';
 	import Placeholder from '@tiptap/extension-placeholder';
 	import Image from '@tiptap/extension-image';
@@ -8,25 +8,33 @@
 	import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
 	import BubbleMenu from '@tiptap/extension-bubble-menu';
 	import Underline from '@tiptap/extension-underline';
-	import Link from '@tiptap/extension-link';
 	import RichTextEditorMenu from './RichTextEditorMenu.svelte';
 	import type { RichTextTypes } from '.';
 	import RichTextEditorLinkMenu from './RichTextEditorLinkMenu.svelte';
 	import Slash, { suggestion } from './slash-menu';
-	import Typography from '@tiptap/extension-typography'
+	import Typography from '@tiptap/extension-typography';
+	import { RichTextLink } from './RichTextLink';
 
 	import './code.css';
+	import { cn } from '@fuxui/base';
+	import { ImageUploadNode } from './image-upload/ImageUploadNode';
 
 	let {
 		content = $bindable({}),
 		placeholder = 'Write or press / for commands',
 		editor = $bindable(null),
-		ref = $bindable(null)
+		ref = $bindable(null),
+		class: className,
+		onupdate,
+		ontransaction
 	}: {
-		content: Content;
+		content?: Content;
 		placeholder?: string;
 		editor?: Editor | null;
 		ref?: HTMLDivElement | null;
+		class?: string;
+		onupdate?: (content: Content) => void;
+		ontransaction?: () => void;
 	} = $props();
 
 	const lowlight = createLowlight(all);
@@ -44,6 +52,38 @@
 	let isStrikethrough = $state(false);
 	let isLink = $state(false);
 	let isImage = $state(false);
+
+	const CustomImage = Image.extend({
+		// addAttributes(this) {
+		// 	return {
+		// 		inline: true,
+		// 		allowBase64: true,
+		// 		HTMLAttributes: {},
+		// 		uploadImageHandler: { default: undefined }
+		// 	};
+		// },
+		renderHTML({ HTMLAttributes }) {
+			const attrs = mergeAttributes(this.options.HTMLAttributes, HTMLAttributes, {
+				uploadImageHandler: undefined
+			});
+			const isLocal = attrs['data-local'] === 'true';
+
+			// if (isLocal) {
+			// 	// For local images, wrap in a container with a label
+			// 	return [
+			// 		'div',
+			// 		{ class: 'image-container' },
+			// 		['img', { ...attrs, class: `${attrs.class || ''} local-image` }],
+			// 		['span', { class: 'local-image-label' }, 'Local preview']
+			// 	];
+			// }
+
+			console.log('attrs', attrs);
+
+			// For regular images, just return the img tag
+			return ['img', attrs];
+		}
+	});
 
 	onMount(() => {
 		if (!ref) return;
@@ -68,10 +108,11 @@
 					return '';
 				}
 			}),
-			Image.configure({
+			CustomImage.configure({
 				HTMLAttributes: {
 					class: 'max-w-full object-contain relative rounded-2xl'
-				}
+				},
+				allowBase64: true
 			}),
 			CodeBlockLowlight.configure({
 				lowlight,
@@ -85,7 +126,8 @@
 						!editor.isActive('image') &&
 						!editor.view.state.selection.empty &&
 						!editor.isActive('codeBlock') &&
-						!editor.isActive('link')
+						!editor.isActive('link') &&
+						!editor.isActive('imageUpload')
 					);
 				},
 				pluginKey: 'bubble-menu-marks'
@@ -99,7 +141,7 @@
 				pluginKey: 'bubble-menu-links'
 			}),
 			Underline.configure({}),
-			Link.configure({
+			RichTextLink.configure({
 				openOnClick: false,
 				autolink: true,
 				defaultProtocol: 'https'
@@ -112,7 +154,19 @@
 					processImageFile
 				})
 			}),
-			Typography.configure()
+			Typography.configure(),
+			ImageUploadNode.configure({
+				upload: async (file, onProgress, abortSignal) => {
+					console.log('uploading image', file);
+					// wait 2 seconds
+					for(let i = 0; i < 10; i++) {
+						await new Promise((resolve) => setTimeout(resolve, 200));
+						onProgress?.({ progress: i / 10 });
+					}
+
+					return 'https://picsum.photos/200/300';
+				}
+			})
 		];
 
 		editor = new Editor({
@@ -125,6 +179,8 @@
 			},
 			onUpdate: (ctx) => {
 				content = ctx.editor.getJSON();
+				onupdate?.(content);
+				console.log('content', content);
 			},
 			onFocus: () => {
 				hasFocus = true;
@@ -157,12 +213,14 @@
 				} else {
 					selectedType = 'paragraph';
 				}
+				ontransaction?.();
 			},
-			content
+			content: ``
 		});
 
 		menu?.classList.remove('hidden');
 		menuLink?.classList.remove('hidden');
+
 	});
 
 	// Flag to track whether a file is being dragged over the drop area
@@ -175,71 +233,52 @@
 	let localImageUrls: Set<string> = $state(new Set());
 
 	// Process image file to create a local preview
-	function processImageFile(file: File, input?: HTMLInputElement) {
+	async function processImageFile(file: File) {
 		if (!editor) {
 			console.warn('Tiptap editor not initialized');
 			return;
 		}
 
 		try {
-			// Create a local blob URL for the image
 			const localUrl = URL.createObjectURL(file);
 
-			// Store the file for later upload
 			localImages.set(localUrl, file);
 			localImageUrls.add(localUrl);
 
-			// Insert image into editor with the local URL
-			editor
-				.chain()
-				.focus()
-				.insertContent({
-					type: 'image',
-					attrs: {
-						src: localUrl,
-						'data-local': 'true' // Mark as local image
-					}
-				})
-				.run();
+			//editor.commands.setImageUploadNode();
+			editor.chain().focus().setImageUploadNode(
+				{
+					preview: localUrl
+				}
+			).run();
 
-			// Update content state to ensure persistence
-			content = editor.getJSON();
+			// wait 2 seconds
+			// await new Promise((resolve) => setTimeout(resolve, 500));
 
-			// Clear the file input if provided
-			if (input) input.value = '';
+			// content = editor.getJSON();
+
+			// console.log('replacing image url in content');
+			// replaceImageUrlInContent(content, localUrl, 'https://picsum.photos/200/300');
+			// editor.commands.setContent(content);
 		} catch (error) {
 			console.error('Error creating image preview:', error);
 		}
 	}
-	export function handlePaste(node: HTMLElement) {
-		const pasteHandler = (event: ClipboardEvent) => {
-			const items = event.clipboardData?.items;
-			if (!items) return;
-			// Check for image data in clipboard
-			for (const item of Array.from(items)) {
-				if (item.type.startsWith('image/')) {
-					// Get the image file from clipboard
-					const file = item.getAsFile();
-					if (!file) continue;
-					// Prevent default paste behavior
-					event.preventDefault();
-					processImageFile(file);
-					// Only process the first image found
-					return;
-				}
-			}
-		};
 
-		node.addEventListener('paste', pasteHandler);
+	const handlePaste = (event: ClipboardEvent) => {
+		const items = event.clipboardData?.items;
+		if (!items) return;
+		// Check for image data in clipboard
+		for (const item of Array.from(items)) {
+			if (!item.type.startsWith('image/')) continue;
+			const file = item.getAsFile();
+			if (!file) continue;
+			event.preventDefault();
+			processImageFile(file);
+			return;
+		}
+	};
 
-		return {
-			destroy() {
-				node.removeEventListener('paste', pasteHandler);
-			}
-		};
-	}
-
-	// --- Drag-and-drop handlers for image upload ---
 	function handleDragOver(event: DragEvent) {
 		event.preventDefault();
 		event.stopPropagation();
@@ -316,8 +355,8 @@
 
 <div
 	bind:this={ref}
-	class="relative flex-1"
-	use:handlePaste
+	class={cn('relative flex-1', className)}
+	onpaste={handlePaste}
 	ondragover={handleDragOver}
 	ondragleave={handleDragLeave}
 	ondrop={handleDrop}
@@ -353,6 +392,12 @@
 			margin: 1.5rem 0;
 			max-width: 100%;
 
+			&.ProseMirror-selectednode {
+				outline: 3px solid var(--color-accent-500);
+			}
+		}
+
+		:global(div[data-type='image-upload']) {
 			&.ProseMirror-selectednode {
 				outline: 3px solid var(--color-accent-500);
 			}

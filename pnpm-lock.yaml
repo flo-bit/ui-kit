@@ -562,6 +562,9 @@ importers:
       state:
         specifier: link:@tiptap/pm/state
         version: link:@tiptap/pm/state
+      svelte-tiptap:
+        specifier: ^2.1.0
+        version: 2.1.0(@tiptap/core@2.12.0)(@tiptap/extension-bubble-menu@2.12.0)(@tiptap/extension-floating-menu@2.12.0)(@tiptap/pm@2.12.0)(svelte@5.28.1)
       tippy.js:
         specifier: ^6.3.7
         version: 6.3.7
@@ -2004,6 +2007,17 @@ packages:
     dependencies:
       '@tiptap/core': 2.12.0(@tiptap/pm@2.12.0)
       '@tiptap/pm': 2.12.0
+    dev: false
+
+  /@tiptap/extension-floating-menu@2.12.0(@tiptap/core@2.12.0)(@tiptap/pm@2.12.0):
+    resolution: {integrity: sha512-BYpyZx/56KCDksWuJJbhki/uNgt9sACuSSZFH5AN1yS1ISD+EzIxqf6Pzzv8QCoNJ+KcRNVaZsOlOFaJGoyzag==, tarball: https://registry.npmjs.org/@tiptap/extension-floating-menu/-/extension-floating-menu-2.12.0.tgz}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+      '@tiptap/pm': ^2.7.0
+    dependencies:
+      '@tiptap/core': 2.12.0(@tiptap/pm@2.12.0)
+      '@tiptap/pm': 2.12.0
+      tippy.js: 6.3.7
     dev: false
 
   /@tiptap/extension-gapcursor@2.12.0(@tiptap/core@2.12.0)(@tiptap/pm@2.12.0):
@@ -4325,6 +4339,22 @@ packages:
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
     dependencies:
+      svelte: 5.28.1
+    dev: false
+
+  /svelte-tiptap@2.1.0(@tiptap/core@2.12.0)(@tiptap/extension-bubble-menu@2.12.0)(@tiptap/extension-floating-menu@2.12.0)(@tiptap/pm@2.12.0)(svelte@5.28.1):
+    resolution: {integrity: sha512-CtmBM4RzJ7dibuglG6g8YsiyEiaFWAu6qFuX73STuxKFJqoBuqXQWpJqQRttrUWVp/rrrDFjd08zyC1Zzrl/Qg==, tarball: https://registry.npmjs.org/svelte-tiptap/-/svelte-tiptap-2.1.0.tgz}
+    peerDependencies:
+      '@tiptap/core': ^2.0.3
+      '@tiptap/extension-bubble-menu': ^2.0.3
+      '@tiptap/extension-floating-menu': ^2.0.3
+      '@tiptap/pm': ^2.0.3
+      svelte: ^5.0.0
+    dependencies:
+      '@tiptap/core': 2.12.0(@tiptap/pm@2.12.0)
+      '@tiptap/extension-bubble-menu': 2.12.0(@tiptap/core@2.12.0)(@tiptap/pm@2.12.0)
+      '@tiptap/extension-floating-menu': 2.12.0(@tiptap/core@2.12.0)(@tiptap/pm@2.12.0)
+      '@tiptap/pm': 2.12.0
       svelte: 5.28.1
     dev: false
 

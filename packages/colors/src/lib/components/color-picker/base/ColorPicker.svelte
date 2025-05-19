@@ -8,9 +8,10 @@
 		okhsv_to_oklch,
 		rgb_to_hex,
 		oklab_to_okhsv,
-		rgb_to_okhsv
+		rgb_to_okhsv,
+		oklab_to_rgb
 	} from './color';
-	
+
 	import { cn } from '@fuxui/base';
 
 	let {
@@ -18,13 +19,20 @@
 		oklab = $bindable(),
 		okhsv = $bindable(),
 		class: className,
-		onchange
+		onchange,
+		quickSelects = $bindable([])
 	}: {
 		rgb?: RGB;
 		oklab?: OKlab;
 		okhsv?: OKhsv;
 		class?: string;
 		onchange?: (color: { hex: string; rgb: RGB; oklab: OKlab; okhsv: OKhsv; oklch: OKlch }) => void;
+		quickSelects?: {
+			label: string;
+			rgb?: RGB;
+			oklab?: OKlab;
+			okhsv?: OKhsv;
+		}[];
 	} = $props();
 
 	const width = picker_size + slider_width + gap_size + border_size * 2;
@@ -198,6 +206,30 @@
 				break;
 		}
 	}
+
+	function convertToRgb(
+		rgb: RGB | undefined,
+		oklab: OKlab | undefined,
+		okhsv: OKhsv | undefined
+	): RGB {
+		if (okhsv) {
+			return okhsv_to_rgb(okhsv);
+		}
+
+		if (oklab) {
+			return oklab_to_rgb(oklab);
+		}
+
+		if (rgb) {
+			return rgb;
+		}
+
+		throw 'rgb, oklab, or okhsv required';
+	}
+
+	function getRgbString(rgb: RGB) {
+		return `rgb(${rgb.r * 255}, ${rgb.g * 255}, ${rgb.b * 255})`;
+	}
 </script>
 
 <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
@@ -251,3 +283,30 @@
 		</g>
 	</svg>
 </div>
+
+{#if quickSelects.length > 0}
+	<div class="grid grid-cols-7 gap-2 px-2 pt-2 pb-3" 
+	style:width="{width}px">
+		{#each quickSelects as quickSelect}
+			<button
+				class={cn(
+					'focus-visible:outline-base-900 dark:focus-visible:outline-base-100 cursor-pointer rounded-full focus-visible:outline-2 focus-visible:outline-offset-2',
+					'group'
+				)}
+				onclick={() => {
+					color = convertToInternal(quickSelect.rgb, quickSelect.oklab, quickSelect.okhsv);
+
+					update_input();
+				}}
+			>
+				<div
+				class="border-base-300 dark:border-base-700 focus-visible:outline-accent-500 z-10 size-7 rounded-full border group-hover:scale-105 group-active:scale-95 transition-all duration-100"
+					style="background-color: {getRgbString(
+						convertToRgb(quickSelect.rgb, quickSelect.oklab, quickSelect.okhsv)
+					)};"
+				></div>
+				<span class="sr-only">Select {quickSelect.label}</span>
+			</button>
+		{/each}
+	</div>
+{/if}

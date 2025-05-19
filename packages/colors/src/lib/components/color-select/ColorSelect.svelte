@@ -56,7 +56,7 @@
 			class={cn(
 				'group relative flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-current',
 				'has-focus-visible:outline-base-900 dark:has-focus-visible:outline-base-100 has-focus-visible:outline-2 has-focus-visible:outline-offset-0',
-				'has-checked:ring-3',
+				'has-checked:ring-3 hover:scale-105 active:scale-95 transition-all duration-100',
 				colorsClass,
 				getColorClass(color)
 			)}
