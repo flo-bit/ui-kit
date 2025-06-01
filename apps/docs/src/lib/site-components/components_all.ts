@@ -12,7 +12,7 @@ export const components: {
 	href: string;
 }[] = [
 	{
-		name: 'Base components',
+		name: 'Base',
 		components: baseComponents,
 		href: 'base'
 	},

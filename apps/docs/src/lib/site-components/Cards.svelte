@@ -7,7 +7,7 @@
 
 <div class="flex w-full flex-col gap-32">
 	{#each components as category}
-		<div>
+		<div id={category.name} class="scroll-mt-24">
 			<h2 class="text-base-800 dark:text-base-200 mb-12 text-xl font-semibold">{category.name}</h2>
 			<div class="grid w-full grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
 				{#each category.components as card}

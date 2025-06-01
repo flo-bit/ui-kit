@@ -63,3 +63,28 @@ You can change the colors to your liking.
 
 <Button>Click me</Button>
 ```
+
+## More info
+
+### Subpackages
+
+Fox ui is split into multiple subpackages. Simply install a subpackage when you need it, or you can install all of them with:
+
+```bash
+npm install @fuxui/base @fuxui/3d @fuxui/colors @fuxui/social @fuxui/text @fuxui/time @fuxui/visual
+```
+
+### Dark mode
+
+This ui kit is designed to be used in both light and dark mode
+(and switch automatically depending on system settings).
+If you want to disable dark mode, add the following to your app.css:
+
+```css
+@custom-variant dark (&:is(.dark *));
+```
+
+Similarly you can disable light mode:
+
+1. Add the above code to your app.css
+2. Add the `dark` class to the `html` element in your app.
