@@ -1,5 +1,12 @@
 # @fuxui/visual
 
+## 0.2.2
+
+### Patch Changes
+
+- Updated dependencies [6795280]
+  - @fuxui/colors@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes
