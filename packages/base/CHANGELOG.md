@@ -1,5 +1,11 @@
 # @fuxui/base
 
+## 0.2.2
+
+### Patch Changes
+
+- 2ded5da: fix tooltip
+
 ## 0.2.1
 
 ### Patch Changes
