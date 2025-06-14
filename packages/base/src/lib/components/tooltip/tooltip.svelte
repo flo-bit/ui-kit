@@ -8,6 +8,8 @@
 
 		triggerProps?: Tooltip.TriggerProps;
 
+		contentProps?: Tooltip.ContentProps;
+
 		content?: Snippet;
 		text?: string;
 	} & Tooltip.TriggerProps;
@@ -21,6 +23,7 @@
 		triggerProps = {},
 
 		content,
+		contentProps = {},
 		text,
 		...restProps
 	}: Props = $props();
@@ -35,7 +38,7 @@
 		</Tooltip.Trigger>
 
 		<Tooltip.Portal>
-			<TooltipContent sideOffset={6} side="top">
+			<TooltipContent sideOffset={contentProps.sideOffset ?? 6} side={contentProps.side ?? 'top'}>
 				{#if content}
 					{@render content()}
 				{:else}
