@@ -1,5 +1,13 @@
 # @fuxui/social
 
+## 0.2.3
+
+### Patch Changes
+
+- 62d40f1: improve richtexteditor, blueskyloginmodal, tooltip
+- Updated dependencies [62d40f1]
+  - @fuxui/base@0.2.3
+
 ## 0.2.2
 
 ### Patch Changes
