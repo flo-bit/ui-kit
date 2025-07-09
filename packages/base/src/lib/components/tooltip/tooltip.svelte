@@ -38,7 +38,11 @@
 		</Tooltip.Trigger>
 
 		<Tooltip.Portal>
-			<TooltipContent sideOffset={contentProps.sideOffset ?? 6} side={contentProps.side ?? 'top'}>
+			<TooltipContent
+				sideOffset={contentProps.sideOffset ?? 6}
+				side={contentProps.side ?? 'top'}
+				class={contentProps.class}
+			>
 				{#if content}
 					{@render content()}
 				{:else}

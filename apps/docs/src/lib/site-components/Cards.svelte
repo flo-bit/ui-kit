@@ -12,10 +12,10 @@
 			<div class="grid w-full grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
 				{#each category.components as card}
 					<div
-						class="group relative flex flex-col items-start gap-3 transition-opacity duration-150 hover:opacity-90 md:gap-4"
+						class="group relative flex flex-col items-start gap-3 transition-opacity duration-150 md:gap-4"
 					>
 						<div
-							class="bg-base-50 dark:bg-base-900/30 border-base-200 dark:border-base-900 pointer-events-none relative h-44 w-full overflow-hidden rounded-2xl border"
+							class="bg-base-50 dark:bg-base-900/50 shadow-lg backdrop-blur-xl shadow-base-900/10 inset-shadow-sm inset-shadow-base-800/5 dark:inset-shadow-base-400/5 border-base-200 dark:border-base-900 pointer-events-none relative h-44 w-full overflow-hidden rounded-2xl border"
 						>
 							<div
 								class={cn(

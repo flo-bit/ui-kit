@@ -24,12 +24,12 @@
 	>
 		Build Beautiful Apps & Websites Fast
 	</h1>
-
-	<Badge class="fixed bottom-1 left-1">
-		{#if dev}
+	
+	{#if dev}
+		<Badge class="fixed bottom-1 left-1">
 			{count} components
-		{/if}
-	</Badge>
+		</Badge>
+	{/if}
 
 	<div class="mb-16 flex gap-2">
 		<Button href={base + '/docs/quick-start'} class="mb-8">Quick Start</Button>

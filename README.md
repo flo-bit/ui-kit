@@ -74,7 +74,7 @@ Clone the repo, install dependencies and run the dev server
 git clone https://github.com/flo-bit/ui-kit.git
 cd ui-kit
 pnpm install
-pnpm run dev
+pnpm run dev:docs
 ```
 
 This ui kit is organized as a monorepo, with `apps/docs` being the documentation and the ui-kit library being split into multiple packages in `packages/`.

@@ -18,6 +18,7 @@
 	import './code.css';
 	import { cn } from '@fuxui/base';
 	import { ImageUploadNode } from './image-upload/ImageUploadNode';
+	import { Transaction } from '@tiptap/pm/state';
 
 	let {
 		content = $bindable({}),
@@ -33,7 +34,7 @@
 		editor?: Editor | null;
 		ref?: HTMLDivElement | null;
 		class?: string;
-		onupdate?: (content: Content) => void;
+		onupdate?: (content: Content, context: { editor: Editor; transaction: Transaction }) => void;
 		ontransaction?: () => void;
 	} = $props();
 
@@ -159,7 +160,7 @@
 				upload: async (file, onProgress, abortSignal) => {
 					console.log('uploading image', file);
 					// wait 2 seconds
-					for(let i = 0; i < 10; i++) {
+					for (let i = 0; i < 10; i++) {
 						await new Promise((resolve) => setTimeout(resolve, 200));
 						onProgress?.({ progress: i / 10 });
 					}
@@ -179,8 +180,7 @@
 			},
 			onUpdate: (ctx) => {
 				content = ctx.editor.getJSON();
-				onupdate?.(content);
-				console.log('content', content);
+				onupdate?.(content, ctx);
 			},
 			onFocus: () => {
 				hasFocus = true;
@@ -215,12 +215,11 @@
 				}
 				ontransaction?.();
 			},
-			content: ``
+			content
 		});
 
 		menu?.classList.remove('hidden');
 		menuLink?.classList.remove('hidden');
-
 	});
 
 	// Flag to track whether a file is being dragged over the drop area
@@ -246,11 +245,13 @@
 			localImageUrls.add(localUrl);
 
 			//editor.commands.setImageUploadNode();
-			editor.chain().focus().setImageUploadNode(
-				{
+			editor
+				.chain()
+				.focus()
+				.setImageUploadNode({
 					preview: localUrl
-				}
-			).run();
+				})
+				.run();
 
 			// wait 2 seconds
 			// await new Promise((resolve) => setTimeout(resolve, 500));

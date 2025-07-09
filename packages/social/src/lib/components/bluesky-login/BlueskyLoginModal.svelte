@@ -7,30 +7,23 @@
 </script>
 
 <script lang="ts">
-	import { Button, Modal, Subheading, Label, Input } from '@fuxui/base';
+	import { Button, Modal, Subheading, Label, Input, Avatar } from '@fuxui/base';
 	import type { BlueskyLoginProps } from '.';
 
 	let value = $state('');
 	let error: string | null = $state(null);
 	let loading = $state(false);
 
-	let {
-		login,
-		formAction,
-		formMethod = 'get'
-	}: BlueskyLoginProps = $props();
+	let { login, formAction, formMethod = 'get' }: BlueskyLoginProps = $props();
 
-	async function onSubmit(evt: Event) {
-		if (formAction || !login) return;
+	async function onLogin(handle: string) {
+		if (loading || !login) return;
 
-		evt.preventDefault();
-		if (loading) return;
-
-		error = null;
 		loading = true;
+		error = null;
 
 		try {
-			const hide = await login(value);
+			const hide = await login(handle);
 
 			if (hide) {
 				blueskyLoginModalState.hide();
@@ -43,7 +36,28 @@
 		}
 	}
 
+	async function onSubmit(evt: Event) {
+		if (formAction || !login) return;
+		evt.preventDefault();
+
+		await onLogin(value);
+	}
+
 	let input: HTMLInputElement | null = $state(null);
+
+	let lastLogin: { handle: string; avatar: string } | null = $state(null);
+
+	$effect(() => {
+		let lastLoginDid = localStorage.getItem('last-login');
+
+		if (lastLoginDid) {
+			let profile = localStorage.getItem(`profile-${lastLoginDid}`);
+
+			if (profile) {
+				lastLogin = JSON.parse(profile)
+			}
+		}
+	});
 </script>
 
 <Modal
@@ -83,6 +97,24 @@
 			</a>, then come back here.
 		</div>
 
+		{#if lastLogin}
+			<Label for="bluesky-handle" class="mt-4 text-sm">Recent login:</Label>
+			<Button
+				class="max-w-xs overflow-x-hidden justify-start truncate"
+				variant="primary"
+				onclick={() => onLogin(lastLogin?.handle ?? '')}
+				disabled={loading}
+			>
+				<Avatar src={lastLogin.avatar} class="size-6" />
+
+				<div
+					class="text-accent-600 dark:text-accent-400 text-md max-w-full truncate overflow-x-hidden font-semibold"
+				>
+					<p>{loading ? 'Loading...' : lastLogin.handle}</p>
+				</div>
+			</Button>
+		{/if}
+
 		<div class="mt-4 w-full">
 			<Label for="bluesky-handle" class="text-sm">Your handle</Label>
 			<div class="mt-2">
@@ -102,7 +134,7 @@
 			<p class="text-accent-500 mt-2 text-sm font-medium">{error}</p>
 		{/if}
 
-		<Button type="submit" class="ml-auto mt-2 w-full md:w-auto" disabled={loading}
+		<Button type="submit" class="mt-2 ml-auto w-full md:w-auto" disabled={loading}
 			>{loading ? 'Loading...' : 'Login'}</Button
 		>
 	</form>
