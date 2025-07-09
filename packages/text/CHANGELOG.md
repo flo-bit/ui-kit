@@ -1,5 +1,13 @@
 # @fuxui/time
 
+## 0.2.5
+
+### Patch Changes
+
+- 62d40f1: improve richtexteditor, blueskyloginmodal, tooltip
+- Updated dependencies [62d40f1]
+  - @fuxui/base@0.2.3
+
 ## 0.2.4
 
 ### Patch Changes
