@@ -13,7 +13,7 @@
 
 <div
 	class={cn(
-		'header fixed top-1 right-0 mx-1 left-0 z-50 flex h-16 items-center justify-between p-2 shadow-lg rounded-2xl border border-base-400/30 dark:border-base-300/10 overflow-hidden',
+		'header fixed top-2 right-0 left-0 z-50 flex h-16 items-center justify-between p-2 shadow-lg rounded-4xl max-w-6xl mx-2 lg:mx-auto border border-base-400/30 dark:border-base-300/10 overflow-hidden',
 		hasSidebar ? 'lg:left-74' : '',
 		className
 	)}
@@ -21,7 +21,7 @@
 >
 	{@render children?.()}
 	<div
-		class="backdrop from-base-100/50 via-base-50/20 dark:from-base-900/30 dark:via-base-950/10 pointer-events-none absolute inset-0 -z-10 bg-linear-to-b backdrop-blur-md"
+		class="backdrop from-base-200/50 via-base-100/50 inset-shadow-sm rounded-4xl inset-shadow-base-700/5 dark:inset-shadow-base-400/5 dark:from-base-900/50 dark:via-base-900/30 dark:to-base-950/20 pointer-events-none absolute inset-0 -z-10 bg-linear-to-b backdrop-blur-md"
 	></div>
 
 	<div

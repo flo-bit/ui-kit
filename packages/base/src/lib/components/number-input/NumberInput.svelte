@@ -99,6 +99,9 @@
 		} else {
 			const num = parseInt(inputRef.value);
 			if (!isNaN(num) && min <= num && num <= max) next = num;
+			if (inputRef.value === '-') {
+				next = -1;
+			}
 		}
 		inputRef.value = String(next);
 		value = next;

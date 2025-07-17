@@ -28,7 +28,7 @@
 <div
 	class={cn(
 		'group relative flex w-full flex-col gap-5 transition-opacity duration-300 ease-in-out',
-		href || onclick ? 'hover:opacity-80' : '',
+		href || onclick ? '' : '',
 		className
 	)}
 >
@@ -38,7 +38,7 @@
 		containerClasses="w-full rounded-2xl overflow-hidden"
 		class={[
 			'aspect-video w-full object-cover transition-all duration-500 ease-in-out',
-			href || onclick ? 'group-hover:scale-105' : ''
+			href || onclick ? 'group-hover:scale-101 group-hover:brightness-105' : ''
 		]}
 	></ImageContainer>
 	<div class="flex max-w-xl flex-col gap-2">
