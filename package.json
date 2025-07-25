@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
-    "dev:docs": "turbo run dev --filter=docs",
+    "dev": "turbo run dev --filter=docs",
+    "dev:all": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write .",
     "check-types": "turbo run check-types",

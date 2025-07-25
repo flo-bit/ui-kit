@@ -1,21 +1,21 @@
 name: Deploy docs
- 
+
 on:
   push:
-    branches: ["main"]
- 
+    branches: ['main']
+
 jobs:
   build:
     name: Build and deploy docs
     timeout-minutes: 15
     runs-on: ubuntu-latest
- 
+
     steps:
       - name: Check out code
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
- 
+
       - name: Cache turbo build setup
         uses: actions/cache@v4
         with:
@@ -27,22 +27,21 @@ jobs:
       - uses: pnpm/action-setup@v4
         with:
           version: 8.15.6
- 
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
- 
+
       - name: Install dependencies
         run: pnpm install
- 
+
       - name: Build
         run: pnpm build
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
 
-      
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
@@ -74,4 +73,3 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-        

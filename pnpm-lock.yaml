@@ -32,6 +32,9 @@ importers:
 
   apps/docs:
     dependencies:
+      '@atproto/api':
+        specifier: ^0.15.5
+        version: 0.15.5
       '@sveltejs/adapter-static':
         specifier: ^3.0.8
         version: 3.0.8(@sveltejs/kit@2.20.0)

@@ -20,8 +20,8 @@
 		"@fuxui/base": "workspace:*",
 		"@fuxui/colors": "workspace:*",
 		"@fuxui/social": "workspace:*",
-		"@fuxui/time": "workspace:*",
 		"@fuxui/text": "workspace:*",
+		"@fuxui/time": "workspace:*",
 		"@fuxui/visual": "workspace:*",
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/kit": "^2.16.0",
@@ -44,6 +44,7 @@
 		"vite": "^6.2.6"
 	},
 	"dependencies": {
+		"@atproto/api": "^0.15.5",
 		"@sveltejs/adapter-static": "^3.0.8",
 		"mdsvex": "^0.12.5",
 		"tailwindcss-animate": "^1.0.7",

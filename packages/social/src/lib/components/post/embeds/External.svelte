@@ -16,7 +16,7 @@
 		<img
 			src={data.external.thumb}
 			alt={data.external.description}
-			class="absolute inset-0 -z-10 size-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+			class="absolute inset-0 -z-10 size-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-102"
 		/>
 	{/if}
 	<div
