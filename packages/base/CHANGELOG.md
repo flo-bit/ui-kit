@@ -1,5 +1,11 @@
 # @fuxui/base
 
+## 0.2.4
+
+### Patch Changes
+
+- 3d029f8: remove pre styling from prose
+
 ## 0.2.3
 
 ### Patch Changes

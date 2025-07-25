@@ -1,5 +1,15 @@
 # @fuxui/social
 
+## 0.2.5
+
+### Patch Changes
+
+- 0313e22: add first test version nested-comments, add test relativetime
+- Updated dependencies [0313e22]
+- Updated dependencies [3d029f8]
+  - @fuxui/time@0.2.4
+  - @fuxui/base@0.2.4
+
 ## 0.2.4
 
 ### Patch Changes
