@@ -14,4 +14,4 @@
 	onDestroy(() => unregister(instance));
 </script>
 
-<span class={$$props.class}>{text}</span>
+<span class={$$props.class} title={date.toLocaleString()}>{text}</span>

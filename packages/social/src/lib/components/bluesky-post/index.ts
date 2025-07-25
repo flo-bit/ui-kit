@@ -1,6 +1,6 @@
 import { RichText } from '@atproto/api';
 import type { PostData, PostEmbed } from '../post';
-import type { FeedViewPost } from '@atproto/api/dist/client/types/app/bsky/feed/defs';
+import type { FeedViewPost, PostView } from '@atproto/api/dist/client/types/app/bsky/feed/defs';
 
 function blueskyEmbedTypeToEmbedType(type: string) {
 	switch (type) {
@@ -19,34 +19,35 @@ function blueskyEmbedTypeToEmbedType(type: string) {
 }
 
 export function blueskyPostToPostData(
-	data: FeedViewPost,
+	data: PostView,
 	baseUrl: string = 'https://bsky.app'
 ): PostData {
-	const post = data.post;
-	const reason = data.reason;
-	const reply = data.reply?.parent;
-	const replyId = reply?.uri?.split('/').pop();
+	console.log(data);
+	const post = data;
+	// const reason = data.reason;
+	// const reply = data.reply?.parent;
+	// const replyId = reply?.uri?.split('/').pop();
 
 	const id = post.uri.split('/').pop();
 
 	return {
 		id,
 		href: `${baseUrl}/profile/${post.author.handle}/post/${id}`,
-		reposted:
-			reason && reason.$type === 'app.bsky.feed.defs#reasonRepost'
-				? {
-						handle: reason.by.handle,
-						href: `${baseUrl}/profile/${reason.by.handle}`
-					}
-				: undefined,
+		// reposted:
+		// 	reason && reason.$type === 'app.bsky.feed.defs#reasonRepost'
+		// 		? {
+		// 				handle: reason.by.handle,
+		// 				href: `${baseUrl}/profile/${reason.by.handle}`
+		// 			}
+		// 		: undefined,
 
-		replyTo:
-			reply && replyId
-				? {
-						handle: reply.author.handle,
-						href: `${baseUrl}/profile/${reply.author.handle}/post/${replyId}`
-					}
-				: undefined,
+		// replyTo:
+		// 	reply && replyId
+		// 		? {
+		// 				handle: reply.author.handle,
+		// 				href: `${baseUrl}/profile/${reply.author.handle}/post/${replyId}`
+		// 			}
+		// 		: undefined,
 		author: {
 			displayName: post.author.displayName,
 			handle: post.author.handle,

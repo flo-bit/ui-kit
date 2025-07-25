@@ -1,5 +1,4 @@
 <script lang="ts">
-	import RelativeTime from './relative-time';
 	import Embed from './embeds/Embed.svelte';
 	import { cn, Avatar, Prose } from '@fuxui/base';
 	import type { WithChildren, WithElementRef } from 'bits-ui';
@@ -7,6 +6,8 @@
 	import type { PostData } from '.';
 	import PostAction from './PostAction.svelte';
 	import type { Snippet } from 'svelte';
+	import { numberToHumanReadable } from '..';
+	import { RelativeTime } from '@fuxui/time';
 
 	let {
 		ref = $bindable(),
@@ -51,16 +52,6 @@
 
 		logo?: Snippet;
 	} = $props();
-
-	export function numberToHumanReadable(number: number) {
-		if (number < 1000) {
-			return number;
-		}
-		if (number < 1000000) {
-			return `${Math.floor(number / 1000)}k`;
-		}
-		return `${Math.floor(number / 1000000)}m`;
-	}
 </script>
 
 <div
@@ -164,7 +155,7 @@
 				{/if}
 			</div>
 
-			<Prose>
+			<Prose size="md">
 				{#if data.htmlContent}
 					{@html data.htmlContent}
 				{:else}

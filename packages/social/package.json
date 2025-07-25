@@ -70,6 +70,7 @@
   "dependencies": {
     "@atproto/api": "^0.15.5",
     "@fuxui/base": "workspace:*",
+    "@fuxui/time": "workspace:*",
     "@use-gesture/vanilla": "^10.3.1",
     "bits-ui": "^1.4.3",
     "emoji-picker-element": "^1.26.3",

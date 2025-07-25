@@ -7,14 +7,14 @@ interface UpdateState extends RenderState {
 }
 
 // keep track of each instance
-const instances = new Map<Object, UpdateState>();
+const instances = new Map<object, UpdateState>();
 
 // we use a single timer for efficiency and to keep updates in sync
 let updateInterval: number | NodeJS.Timeout;
 
 // register or update instance
 export function register(
-	instance: Object,
+	instance: object,
 	date: Date | number,
 	locale: string,
 	live: boolean,
@@ -51,7 +51,7 @@ export function register(
 	}
 }
 
-export function unregister(instance: Object) {
+export function unregister(instance: object) {
 	instances.delete(instance);
 	if (instances.size === 0) {
 		clearInterval(updateInterval);

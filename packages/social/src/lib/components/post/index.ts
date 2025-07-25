@@ -68,6 +68,8 @@ export type PostData = {
 	embed?: PostEmbed;
 
 	htmlContent?: string;
+
+	replies?: PostData[];
 };
 
 export { default as Post } from './Post.svelte';

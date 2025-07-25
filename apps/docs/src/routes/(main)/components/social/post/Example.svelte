@@ -1,6 +1,9 @@
 <script lang="ts">
-	import { Box } from '@fuxui/base';
+	import { Box, toast } from '@fuxui/base';
 	import { Post } from '@fuxui/social';
+
+	let liked = $state(false);
+	let bookmarked = $state(false);
 </script>
 
 <Box class="not-prose relative flex min-h-24 w-full flex-col gap-8">
@@ -15,8 +18,22 @@
 			createdAt: new Date(Date.now() - 10000).toISOString(),
 			replyCount: 69,
 			repostCount: 42,
-			likeCount: 420
+			likeCount: 420,
 		}}
+		onReplyClick={() => {
+			toast('You clicked on reply');
+		}}
+		onRepostClick={() => {
+			toast('You clicked on repost');
+		}}
+		onLikeClick={() => {
+			liked = !liked;
+		}}
+		liked={liked}
+		onBookmarkClick={() => {
+			bookmarked = !bookmarked;
+		}}
+		bookmarked={bookmarked}
 	>
 		Hello, world!
 	</Post>
