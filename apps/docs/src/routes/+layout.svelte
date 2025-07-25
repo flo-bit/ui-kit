@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Head, Toaster } from '@fuxui/base';
 	import '../app.css';
-	import '../prism.css';
+	
+	import { Head, Toaster } from '@fuxui/base';
 	import { base } from '$app/paths';
 
 	let { children } = $props();
