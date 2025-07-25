@@ -1,8 +1,12 @@
 <script lang="ts">
 	import Example from './Example.svelte';
+	import { Alert } from '@fuxui/base';
 </script>
 
-# Stopwatch
+# Relative Time
+
+<Alert type="info" title="This component is unstyled by default." variant="default">
+</Alert>
 
 ## Example
 
