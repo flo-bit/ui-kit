@@ -1,5 +1,11 @@
 # @fuxui/social
 
+## 0.2.4
+
+### Patch Changes
+
+- 049ca0a: add first version of social media post
+
 ## 0.2.3
 
 ### Patch Changes
