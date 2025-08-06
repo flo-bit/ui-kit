@@ -19,12 +19,20 @@
 		<Badge size="md" class="mt-16" variant="secondary">tailwind 4</Badge>
 		<Badge size="md" class="mt-16" variant="secondary">ui kit</Badge>
 	</div>
-	<h1
+	<div
 		class="text-base-950 dark:text-base-50 md:leading-14 mb-4 max-w-2xl text-pretty text-4xl font-bold tracking-tight md:text-5xl"
 	>
-		Build Beautiful Apps & Websites Fast
-	</h1>
-	
+		<h1>Build Beautiful Apps & Websites Fast</h1>
+		<div class="text-base-700 dark:text-base-300 mt-2 text-sm font-medium tracking-normal">
+			by <Button
+				variant="link"
+				href="https://flo-bit.dev"
+				target="_blank"
+				class="dark:text-accent-300 text-accent-800 px-0 font-medium">flo-bit</Button
+			>
+		</div>
+	</div>
+
 	{#if dev}
 		<Badge class="fixed bottom-1 left-1">
 			{count} components
