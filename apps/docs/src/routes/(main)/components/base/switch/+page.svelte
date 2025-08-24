@@ -1,8 +1,16 @@
 <script lang="ts">
 	import SwitchDocs from './Switch.md';
 	import { Prose } from '@fuxui/base';
+	import TableOfContents from '$lib/site-components/TableOfContents.svelte';
 </script>
 
-<Prose>
-	<SwitchDocs />
-</Prose>
+<div class="flex gap-8">
+	<div class="flex-1 min-w-0">
+		<Prose>
+			<SwitchDocs />
+		</Prose>
+	</div>
+	<div class="hidden xl:block w-64 flex-shrink-0">
+		<TableOfContents />
+	</div>
+</div>
