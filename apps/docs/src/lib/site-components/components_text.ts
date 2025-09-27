@@ -1,5 +1,6 @@
 import CardPlainTextEditor from '$lib/cards/text/CardPlainTextEditor.svelte';
 import CardRichTextEditor from '$lib/cards/text/CardRichTextEditor.svelte';
+import CardAdvancedTextArea from '$lib/cards/text/CardAdvancedTextArea.svelte';
 import type { ComponentCard } from './components_base';
 
 export const textComponents: ComponentCard[] = [
@@ -12,5 +13,10 @@ export const textComponents: ComponentCard[] = [
 		component: CardRichTextEditor,
 		label: 'Rich Text Editor',
 		href: 'rich-text-editor'
+	},
+	{
+		component: CardAdvancedTextArea,
+		label: 'Advanced Text Area',
+		href: 'advanced-text-area'
 	}
 ].sort((a, b) => a.label.localeCompare(b.label));

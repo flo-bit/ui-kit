@@ -78,3 +78,5 @@ pnpm run dev:docs
 ```
 
 This ui kit is organized as a monorepo, with `apps/docs` being the documentation and the ui-kit library being split into multiple packages in `packages/`.
+
+If you change any package (not counting the docs), please run `npx changeset` to update the version of the packages before opening a pull request.
