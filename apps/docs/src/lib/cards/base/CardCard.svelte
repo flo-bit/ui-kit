@@ -1,5 +1,5 @@
 <script>
-	import { Image, Paragraph } from '@fuxui/base';
+	import { Image, Paragraph } from '@foxui/core';
 
 	import nature from '$lib/assets/images/nature2.webp';
 </script>

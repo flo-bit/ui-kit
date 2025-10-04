@@ -1,4 +1,4 @@
-# @fuxui/colors
+# @foxui/colors
 
 ## 0.3.0
 

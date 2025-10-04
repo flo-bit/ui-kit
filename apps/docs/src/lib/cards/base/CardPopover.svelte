@@ -1,5 +1,5 @@
 <script>
-	import { Box, Button, Paragraph } from '@fuxui/base';
+	import { Box, Button, Paragraph } from '@foxui/core';
 </script>
 
 <Box class="flex items-center justify-between gap-2">

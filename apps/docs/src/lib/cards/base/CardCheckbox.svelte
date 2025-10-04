@@ -1,5 +1,5 @@
 <script>
-	import { Checkbox, Label } from '@fuxui/base';
+	import { Checkbox, Label } from '@foxui/core';
 </script>
 
 <div class="flex items-center space-x-2">

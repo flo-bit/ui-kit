@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	
-	import { Head, Toaster } from '@fuxui/base';
+	import { Head, Toaster } from '@foxui/core';
 	import { base } from '$app/paths';
 
 	let { children } = $props();

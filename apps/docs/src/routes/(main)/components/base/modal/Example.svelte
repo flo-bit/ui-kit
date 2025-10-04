@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal, toast, ImageContainer, Subheading } from '@fuxui/base';
+	import { Button, Modal, toast, ImageContainer, Subheading } from '@foxui/core';
 
 	import cute from '$lib/assets/images/cute.webp';
 

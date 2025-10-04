@@ -1,4 +1,4 @@
-# @fuxui/social
+# @foxui/social
 
 ## 0.3.0
 

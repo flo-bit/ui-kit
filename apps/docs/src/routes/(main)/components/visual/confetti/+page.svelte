@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ConfettiDocs from './Confetti.md';
-	import { Prose } from '@fuxui/base';
+	import { Prose } from '@foxui/core';
 </script>
 
 <Prose>

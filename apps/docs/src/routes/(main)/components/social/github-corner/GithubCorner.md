@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { GithubCorner } from '@fuxui/social';
+	import { GithubCorner } from '@foxui/social';
 </script>
 
 <GithubCorner href="https://github.com/flo-bit/ui-kit" />

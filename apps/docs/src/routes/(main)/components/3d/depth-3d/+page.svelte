@@ -1,5 +1,5 @@
 <script>
-	import { Prose } from '@fuxui/base';
+	import { Prose } from '@foxui/core';
 	import Depth3DDocs from './Depth3D.md';
 </script>
 

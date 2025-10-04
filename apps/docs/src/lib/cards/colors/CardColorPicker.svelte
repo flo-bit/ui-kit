@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { ColorPicker } from '@fuxui/colors';
+	import { ColorPicker } from '@foxui/colors';
 	import {
 		oklch_string_to_oklch,
 		oklch_to_rgb
-	} from '@fuxui/colors';
+	} from '@foxui/colors';
 	import { ThemeWatcher } from '$lib/helper/ThemeWatcher.svelte';
 	import { onMount } from 'svelte';
 

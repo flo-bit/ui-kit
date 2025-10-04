@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { ToggleGroup, ToggleGroupItem } from '@fuxui/base';
+	import { ToggleGroup, ToggleGroupItem } from '@foxui/core';
 
 	let value = $state('1');
 </script>

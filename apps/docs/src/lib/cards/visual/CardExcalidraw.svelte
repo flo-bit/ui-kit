@@ -1,5 +1,5 @@
 <script>
-	import { Excalidraw } from '@fuxui/visual';
+	import { Excalidraw } from '@foxui/visual';
 	import svg from '$lib/assets/demo.svg?raw';
 </script>
 

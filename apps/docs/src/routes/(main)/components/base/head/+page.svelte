@@ -1,6 +1,6 @@
 <script lang="ts">
 	import HeadDocs from './Head.md';
-	import { Prose } from '@fuxui/base';
+	import { Prose } from '@foxui/core';
 </script>
 
 <Prose>

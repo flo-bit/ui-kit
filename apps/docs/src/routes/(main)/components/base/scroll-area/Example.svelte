@@ -1,5 +1,5 @@
 <script>
-	import { ScrollArea } from '@fuxui/base';
+	import { ScrollArea } from '@foxui/core';
 
 	let content = `Doggo ipsum puggorino shoob I am bekom fat. Clouds such treat big ol pupper vvv, porgo. Aqua
 		doggo ur givin me a spook corgo heckin good boys heck much ruin diet, ur givin me a spook doggo

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, cn } from '@fuxui/base';
+	import { Badge, cn } from '@foxui/core';
 
 	type Props = {
 		images: {

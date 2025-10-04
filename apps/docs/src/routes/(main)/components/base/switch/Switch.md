@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { Switch } from '@fuxui/base';
+	import { Switch } from '@foxui/core';
 
 	let checked = $state(false);
 </script>

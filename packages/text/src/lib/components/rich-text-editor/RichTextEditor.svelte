@@ -16,7 +16,7 @@
 	import { RichTextLink } from './RichTextLink';
 
 	import './code.css';
-	import { cn } from '@fuxui/base';
+	import { cn } from '@foxui/core';
 	import { ImageUploadNode } from './image-upload/ImageUploadNode';
 	import { Transaction } from '@tiptap/pm/state';
 

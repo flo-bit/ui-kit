@@ -8,7 +8,7 @@ For an example see the Sidebar at the side of this page.
 
 ```svelte
 <script>
-	import { Sidebar } from '@fuxui/base';
+	import { Sidebar } from '@foxui/core';
 </script>
 
 <Sidebar>

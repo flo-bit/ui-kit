@@ -1,5 +1,5 @@
 <script>
-	import { Box } from '@fuxui/base';
+	import { Box } from '@foxui/core';
 </script>
 
 # Box
@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { Box } from '@fuxui/base';
+	import { Box } from '@foxui/core';
 </script>
 
 <Box class="text-sm">This is a box, put your stuff here.</Box>

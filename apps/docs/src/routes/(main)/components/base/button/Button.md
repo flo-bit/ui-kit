@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { Button } from '@fuxui/base';
+	import { Button } from '@foxui/core';
 </script>
 
 <Button variant="primary" size="sm">Button</Button>

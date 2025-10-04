@@ -1,5 +1,5 @@
 <script>
-	import { Box } from '@fuxui/base';
+	import { Box } from '@foxui/core';
 </script>
 
 # Prose
@@ -18,7 +18,7 @@
 
 ```svelte
 <script>
-	import Prose from '@fuxui/base';
+	import Prose from '@foxui/core';
 </script>
 
 <Prose>

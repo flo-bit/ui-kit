@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ModelPicker } from '../';
-	import { Popover } from '@fuxui/base';
+	import { Popover } from '@foxui/core';
 
 	let {
 		items,

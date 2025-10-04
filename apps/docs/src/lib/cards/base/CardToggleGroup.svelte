@@ -1,5 +1,5 @@
 <script>
-	import { cn, toggleVariants } from '@fuxui/base';
+	import { cn, toggleVariants } from '@foxui/core';
 </script>
 
 <div class="flex gap-2">

@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { Tabs } from '@fuxui/base';
+	import { Tabs } from '@foxui/core';
 
 	let active = $state('Tab 1');
 </script>

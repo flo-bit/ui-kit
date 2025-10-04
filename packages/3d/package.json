@@ -1,5 +1,5 @@
 {
-  "name": "@fuxui/3d",
+  "name": "@foxui/3d",
   "private": false,
   "version": "0.3.0",
   "type": "module",
@@ -73,7 +73,7 @@
     "@types/three": "^0.176.0",
     "bits-ui": "^1.4.3",
     "three": "^0.176.0",
-    "@fuxui/base": "workspace:*"
+    "@foxui/core": "workspace:*"
   },
   "peerDependencies": {
     "svelte": ">=5",

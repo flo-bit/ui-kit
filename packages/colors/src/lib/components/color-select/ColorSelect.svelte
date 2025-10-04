@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { cn } from '@fuxui/base';
+	import { cn } from '@foxui/core';
 
 	type Color = { class?: string; label: string; value?: string } | string;
 

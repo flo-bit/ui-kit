@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn, Popover } from '@fuxui/base';
+	import { cn, Popover } from '@foxui/core';
 
 	import { ColorPicker, type OKhsv, type OKlab, type RGB } from '../base';
 

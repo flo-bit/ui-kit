@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { buttonVariants, Popover, cn } from '@fuxui/base';
+	import { buttonVariants, Popover, cn } from '@foxui/core';
 	import SelectTheme from './SelectTheme.svelte';
 
 	let {

@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { Alert } from '@fuxui/base';
+	import { Alert } from '@foxui/core';
 </script>
 
 <Alert title="Alert Title" type="info">

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
-	import { cn } from '@fuxui/base';
+	import { cn } from '@foxui/core';
 
 	const {
 		class: className,

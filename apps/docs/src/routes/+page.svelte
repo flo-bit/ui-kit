@@ -1,6 +1,6 @@
 <script>
 	import { base } from '$app/paths';
-	import { Button, Badge, Subheading } from '@fuxui/base';
+	import { Button, Badge, Subheading } from '@foxui/core';
 	import Cards from '$lib/site-components/Cards.svelte';
 	import Navbar from '$lib/site-components/Navbar.svelte';
 	import Sidebar from '$lib/site-components/Sidebar.svelte';

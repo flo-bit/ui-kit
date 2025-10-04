@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { numberToHumanReadable } from '../';
 	import Comment from './Comment.svelte';
-	import { Avatar, Prose } from '@fuxui/base';
-	import { RelativeTime } from '@fuxui/time';
+	import { Avatar, Prose } from '@foxui/core';
+	import { RelativeTime } from '@foxui/time';
 	import type { PostData } from '../post';
 	import Embed from '../post/embeds/Embed.svelte';
 

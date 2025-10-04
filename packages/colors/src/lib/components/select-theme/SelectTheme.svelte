@@ -11,7 +11,7 @@
 </script>
 
 <script lang="ts">
-	import { Paragraph } from '@fuxui/base';
+	import { Paragraph } from '@foxui/core';
 	import { ColorSelect } from '../';
 	import { onMount } from 'svelte';
 

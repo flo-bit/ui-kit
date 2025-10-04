@@ -1,7 +1,5 @@
 # 🦊 fox ui
 
-This package has been moved to `@foxui/time`.
-
 svelte 5 + tailwind 4 ui kit, time components
 
 - [Stopwatch](https://flo-bit.dev/ui-kit/components/time/stopwatch)

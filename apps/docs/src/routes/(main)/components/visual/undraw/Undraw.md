@@ -1,6 +1,6 @@
 <script lang="ts">
 	import UndrawExample from './Example.svelte';
-	import { Alert } from '@fuxui/base';
+	import { Alert } from '@foxui/core';
 </script>
 
 # Undraw
@@ -22,7 +22,7 @@
 
 ```svelte
 <script lang="ts">
-	import { Undraw } from '@fuxui/visual';
+	import { Undraw } from '@foxui/visual';
 
 	import svg from './your-illustration.svg?raw';
 </script>

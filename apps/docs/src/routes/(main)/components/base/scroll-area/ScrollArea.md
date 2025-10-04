@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { ScrollArea } from '@fuxui/base';
+	import { ScrollArea } from '@foxui/core';
 </script>
 
 <ScrollArea class="h-52 w-96">

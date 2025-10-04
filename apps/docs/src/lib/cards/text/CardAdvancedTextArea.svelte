@@ -1,5 +1,5 @@
 <script>
-	import { AdvancedTextArea } from '@fuxui/text';
+	import { AdvancedTextArea } from '@foxui/text';
 </script>
 
 <AdvancedTextArea></AdvancedTextArea>

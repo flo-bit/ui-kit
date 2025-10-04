@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { Textarea } from '@fuxui/base';
+	import { Textarea } from '@foxui/core';
 
 	let value = $state('');
 </script>

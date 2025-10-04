@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { Avatar, AvatarGroup } from '@fuxui/base';
+	import { Avatar, AvatarGroup } from '@foxui/core';
 </script>
 
 <Avatar src="https://github.com/flo-bit.png" alt="flo-bit" fallback="FB" />

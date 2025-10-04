@@ -1,5 +1,5 @@
 {
-  "name": "@fuxui/time",
+  "name": "@foxui/time",
   "private": false,
   "version": "0.3.0",
   "type": "module",
@@ -70,7 +70,7 @@
   "dependencies": {
     "@number-flow/svelte": "^0.3.7",
     "bits-ui": "^1.4.3",
-    "@fuxui/base": "workspace:*"
+    "@foxui/core": "workspace:*"
   },
   "peerDependencies": {
     "svelte": ">=5",

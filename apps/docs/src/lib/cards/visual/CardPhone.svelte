@@ -1,5 +1,5 @@
 <script>
-	import { Phone } from '@fuxui/visual';
+	import { Phone } from '@foxui/visual';
 </script>
 
 <div class="-mt-20 h-full w-full scale-50">

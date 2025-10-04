@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { ColorPicker, PopoverColorPicker } from '@fuxui/colors';
+	import { ColorPicker, PopoverColorPicker } from '@foxui/colors';
 
 	let rgb = $state({
 		r: 0,

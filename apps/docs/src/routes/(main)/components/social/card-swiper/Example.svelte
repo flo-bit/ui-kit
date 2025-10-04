@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Button } from '@fuxui/base';
-	import { CardSwiper } from '@fuxui/social';
+	import { Button } from '@foxui/core';
+	import { CardSwiper } from '@foxui/social';
 
 	import profile1 from '$lib/assets/profiles/0.webp';
 	import profile2 from '$lib/assets/profiles/1.webp';

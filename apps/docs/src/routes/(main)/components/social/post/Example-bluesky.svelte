@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Box } from '@fuxui/base';
-	import { BlueskyPost, blueskyPostToPostData, Post } from '@fuxui/social';
+	import { Box } from '@foxui/core';
+	import { BlueskyPost, blueskyPostToPostData, Post } from '@foxui/social';
 	import { BskyAgent } from '@atproto/api';
 	import { onMount } from 'svelte';
 	import type { FeedViewPost } from '@atproto/api/dist/client/types/app/bsky/feed/defs';

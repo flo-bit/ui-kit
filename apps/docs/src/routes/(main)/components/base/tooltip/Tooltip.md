@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { Tooltip, Button } from '@fuxui/base';
+	import { Tooltip, Button } from '@foxui/core';
 
 	function handleClick() {
 		console.log('clicked');

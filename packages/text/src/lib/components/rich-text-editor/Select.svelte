@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, cn, toggleVariants } from '@fuxui/base';
+	import { Button, cn, toggleVariants } from '@foxui/core';
 	import { Select, type WithoutChildren } from 'bits-ui';
 	import Icon from './Icon.svelte';
 

@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { Popover } from '@fuxui/base';
+	import { Popover } from '@foxui/core';
 </script>
 
 <!-- default trigger -->

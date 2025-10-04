@@ -1,5 +1,5 @@
 <script>
-	import { VoxelArt } from '@fuxui/3d';
+	import { VoxelArt } from '@foxui/3d';
 	import data from '$lib/assets/apple.json';
 </script>
 

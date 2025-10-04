@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { toast, Button } from '@fuxui/base';
+	import { toast, Button } from '@foxui/core';
 
-	import { ModelPicker, ModalModelPicker, PopoverModelPicker } from '@fuxui/3d';
+	import { ModelPicker, ModalModelPicker, PopoverModelPicker } from '@foxui/3d';
 
 	let open = $state(false);
 

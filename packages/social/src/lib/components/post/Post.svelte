@@ -1,13 +1,13 @@
 <script lang="ts">
 	import Embed from './embeds/Embed.svelte';
-	import { cn, Avatar, Prose } from '@fuxui/base';
+	import { cn, Avatar, Prose } from '@foxui/core';
 	import type { WithChildren, WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { PostData } from '.';
 	import PostAction from './PostAction.svelte';
 	import type { Snippet } from 'svelte';
 	import { numberToHumanReadable } from '..';
-	import { RelativeTime } from '@fuxui/time';
+	import { RelativeTime } from '@foxui/time';
 
 	let {
 		ref = $bindable(),

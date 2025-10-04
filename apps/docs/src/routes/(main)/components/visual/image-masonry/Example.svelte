@@ -1,5 +1,5 @@
 <script>
-	import { ImageMasonry } from '@fuxui/visual';
+	import { ImageMasonry } from '@foxui/visual';
 
 	import profile1 from '$lib/assets/profiles/0.webp';
 	import profile2 from '$lib/assets/profiles/1.webp';
@@ -11,7 +11,7 @@
 	import profile8 from '$lib/assets/profiles/7.webp';
 	import profile9 from '$lib/assets/profiles/8.webp';
 	import profile10 from '$lib/assets/profiles/9.webp';
-	import { toast } from '@fuxui/base';
+	import { toast } from '@foxui/core';
 
 	const images = [
 		{

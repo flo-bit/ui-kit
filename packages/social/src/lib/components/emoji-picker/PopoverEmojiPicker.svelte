@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Popover, type PopoverProps, cn } from '@fuxui/base';
+	import { Popover, type PopoverProps, cn } from '@foxui/core';
 	import EmojiPicker from './EmojiPicker.svelte';
 	import type { NativeEmoji } from './emoji';
 	import type { Snippet } from 'svelte';

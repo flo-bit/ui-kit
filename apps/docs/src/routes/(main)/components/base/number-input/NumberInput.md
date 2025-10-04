@@ -1,5 +1,5 @@
 <script>
-	import { NumberInput } from '@fuxui/base';
+	import { NumberInput } from '@foxui/core';
 </script>
 
 # Number Input
@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { NumberInput } from '@fuxui/base';
+	import { NumberInput } from '@foxui/core';
 
 	let value = $state(0);
 </script>

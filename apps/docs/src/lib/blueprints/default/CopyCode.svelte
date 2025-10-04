@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '@fuxui/base';
+	import { cn } from '@foxui/core';
 	import type { Snippet } from 'svelte';
 
 	let { code, children }: { code: string; children: Snippet } = $props();

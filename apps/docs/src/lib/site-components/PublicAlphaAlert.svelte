@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Alert, cn } from '@fuxui/base';
+	import { Alert, cn } from '@foxui/core';
 
 	let { class: className }: { class?: string } = $props();
 </script>

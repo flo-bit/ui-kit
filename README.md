@@ -19,7 +19,7 @@ npx sv create my-project
 ### 2. Install fuchs
 
 ```bash
-npm install @fuxui/base
+npm install @foxui/core
 ```
 
 ### 3. set theme variables in your app.css (changing `zinc` and `emerald` to your preferred colors, using find and replace).
@@ -58,7 +58,7 @@ npm install @fuxui/base
 
 ```svelte
 <script>
-	import { Button } from '@fuxui/base';
+	import { Button } from '@foxui/core';
 </script>
 
 <Button onclick={() => alert('clicked')}>Click me</Button>

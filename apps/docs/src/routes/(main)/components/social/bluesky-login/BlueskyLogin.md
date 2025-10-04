@@ -14,7 +14,7 @@
 
 ```svelte
 <script lang="ts">
-	import { BlueskyLogin } from '@fuxui/social';
+	import { BlueskyLogin } from '@foxui/social';
 </script>
 
 <BlueskyLogin login={async (handle) => {

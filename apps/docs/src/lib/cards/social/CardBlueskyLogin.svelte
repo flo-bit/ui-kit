@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Subheading, Label, Input, Button } from '@fuxui/base';
+	import { Subheading, Label, Input, Button } from '@foxui/core';
 </script>
 
 <div class="flex items-start flex-col">

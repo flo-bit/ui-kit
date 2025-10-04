@@ -1,7 +1,5 @@
 # 🦊 fox ui
 
-This package has been moved to `@foxui/colors`.
-
 svelte 5 + tailwind 4 ui kit, colors components
 
 - [Color Gradient Picker](https://flo-bit.dev/ui-kit/components/colors/color-gradient-picker)

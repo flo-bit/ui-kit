@@ -1,5 +1,5 @@
 <script>
-	import { Switch, Label } from '@fuxui/base';
+	import { Switch, Label } from '@foxui/core';
 
 	let checked = $state(false);
 	let checked2 = $state(true);

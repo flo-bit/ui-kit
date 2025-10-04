@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Prose } from '@fuxui/base';
-	import { RichTextEditor } from '@fuxui/text';
+	import { Prose } from '@foxui/core';
+	import { RichTextEditor } from '@foxui/text';
 
 	let content = $state('');
 </script>

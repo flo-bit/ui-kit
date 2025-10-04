@@ -14,7 +14,7 @@ In your root layout:
 
 ```svelte
 <script>
-	import { Toaster } from '@fuxui/base';
+	import { Toaster } from '@foxui/core';
 </script>
 
 <Toaster />
@@ -24,7 +24,7 @@ In your page:
 
 ```svelte
 <script>
-	import { Button, toast } from '@fuxui/base';
+	import { Button, toast } from '@foxui/core';
 
 	function handleClick() {
 		toast('Hello there', { description: 'General Kenobi!' });

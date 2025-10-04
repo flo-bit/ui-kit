@@ -1,5 +1,5 @@
 <script>
-	import { Button } from '@fuxui/base';
+	import { Button } from '@foxui/core';
 </script>
 
 <h3>Primary</h3>

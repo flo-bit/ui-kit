@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { EmojiPicker } from '@fuxui/social';
+	import { EmojiPicker } from '@foxui/social';
 </script>
 
 <EmojiPicker 

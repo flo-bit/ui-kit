@@ -5,7 +5,7 @@
 	import { type ParagraphOptions } from '@tiptap/extension-paragraph';
 	import Text from '@tiptap/extension-text';
 	import History from '@tiptap/extension-history';
-	import { cn } from '@fuxui/base';
+	import { cn } from '@foxui/core';
 
 	let {
 		class: className,

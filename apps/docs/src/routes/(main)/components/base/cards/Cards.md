@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { ImageCard } from '@fuxui/base';
+	import { ImageCard } from '@foxui/core';
 </script>
 
 <ImageCard src={'/image.jpg'} alt="" title="Card title" description="Card description" href="#" />

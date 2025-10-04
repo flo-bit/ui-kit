@@ -4,7 +4,7 @@
 	import { onMount, type Snippet } from 'svelte';
 	import { DragGesture, type FullGestureState } from '@use-gesture/vanilla';
 	import type { CardData, Direction, SwipeEventData } from '.';
-	import { Image } from '@fuxui/base';
+	import { Image } from '@foxui/core';
 
 	let {
 		card = DefaultCard,

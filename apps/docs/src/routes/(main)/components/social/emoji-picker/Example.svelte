@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Button } from '@fuxui/base';
-	import { EmojiPicker, PopoverEmojiPicker } from '@fuxui/social';
+	import { Button } from '@foxui/core';
+	import { EmojiPicker, PopoverEmojiPicker } from '@foxui/social';
 
 	let emojis: string[] = $state([]);
 </script>

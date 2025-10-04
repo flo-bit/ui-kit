@@ -17,7 +17,7 @@ Also add the `@tailwindcss/typography` and `@tailwindcss/forms` plugins.
 ## 2. Install fuchs
 
 ```bash
-npm install @fuxui/base
+npm install @foxui/core
 ```
 
 ## 3. Set theme variables in your `app.css`
@@ -58,7 +58,7 @@ You can change the colors to your liking.
 
 ```svelte
 <script>
-	import { Button } from '@fuxui/base';
+	import { Button } from '@foxui/core';
 </script>
 
 <Button>Click me</Button>
@@ -71,7 +71,7 @@ You can change the colors to your liking.
 Fox ui is split into multiple subpackages. Simply install a subpackage when you need it, or you can install all of them with:
 
 ```bash
-npm install @fuxui/base @fuxui/3d @fuxui/colors @fuxui/social @fuxui/text @fuxui/time @fuxui/visual
+npm install @foxui/core @foxui/3d @foxui/colors @foxui/social @foxui/text @foxui/time @foxui/visual
 ```
 
 ### Dark mode

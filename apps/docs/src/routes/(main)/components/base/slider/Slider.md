@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { Slider, SliderNumber } from '@fuxui/base';
+	import { Slider, SliderNumber } from '@foxui/core';
 
 	let value = $state(50);
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar, Button, cn } from '@fuxui/base';
+	import { Avatar, Button, cn } from '@foxui/core';
 
 	let { profile, class: className }: { profile: {
 		banner?: string;

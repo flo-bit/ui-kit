@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, ScrollArea } from '@fuxui/base';
+	import { Button, ScrollArea } from '@foxui/core';
 	import type { Snippet } from 'svelte';
 
 	let {

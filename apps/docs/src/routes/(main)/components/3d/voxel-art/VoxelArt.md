@@ -14,7 +14,7 @@ Create your voxel art model with [this tool](https://voxels.layoutit.com/), down
 
 ```svelte
 <script lang="ts">
-	import { VoxelArt } from '@fuxui/3d';
+	import { VoxelArt } from '@foxui/3d';
 
 	import data from '$lib/assets/model.json';
 </script>

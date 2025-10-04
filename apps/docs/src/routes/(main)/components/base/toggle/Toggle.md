@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { Toggle } from '@fuxui/base';
+	import { Toggle } from '@foxui/core';
 
 	let pressed = $state(false);
 </script>

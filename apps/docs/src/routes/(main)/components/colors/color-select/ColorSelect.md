@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { ColorSelect } from '@fuxui/colors';
+	import { ColorSelect } from '@foxui/colors';
 </script>
 
 <ColorSelect

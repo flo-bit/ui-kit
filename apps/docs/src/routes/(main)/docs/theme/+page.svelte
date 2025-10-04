@@ -1,6 +1,6 @@
 <script>
-	import { Subheading } from '@fuxui/base';
-	import { SelectTheme } from '@fuxui/colors';
+	import { Subheading } from '@foxui/core';
+	import { SelectTheme } from '@foxui/colors';
 </script>
 
 <Subheading class="mb-4">Select Theme</Subheading>

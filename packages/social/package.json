@@ -1,5 +1,5 @@
 {
-  "name": "@fuxui/social",
+  "name": "@foxui/social",
   "private": false,
   "version": "0.3.0",
   "type": "module",
@@ -69,8 +69,8 @@
   },
   "dependencies": {
     "@atproto/api": "^0.15.5",
-    "@fuxui/base": "workspace:*",
-    "@fuxui/time": "workspace:*",
+    "@foxui/core": "workspace:*",
+    "@foxui/time": "workspace:*",
     "@use-gesture/vanilla": "^10.3.1",
     "bits-ui": "^1.4.3",
     "emoji-picker-element": "^1.26.3",

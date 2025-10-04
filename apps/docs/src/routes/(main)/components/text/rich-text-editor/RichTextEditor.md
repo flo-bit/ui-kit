@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { RichTextEditor } from '@fuxui/text';
+	import { RichTextEditor } from '@foxui/text';
 
 	let content = $state('');
 </script>

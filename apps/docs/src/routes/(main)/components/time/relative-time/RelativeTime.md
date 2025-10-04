@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Example from './Example.svelte';
-	import { Alert } from '@fuxui/base';
+	import { Alert } from '@foxui/core';
 </script>
 
 # Relative Time
@@ -16,7 +16,7 @@
 
 ```svelte
 <script lang="ts">
-	import { RelativeTime } from '@fuxui/time';
+	import { RelativeTime } from '@foxui/time';
 </script>
 
 <RelativeTime date={new Date(Date.now() - 10000)} locale="en-US" />

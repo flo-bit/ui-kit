@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Undraw } from '@fuxui/visual';
+	import { Undraw } from '@foxui/visual';
 
 	import svg from '$lib/assets/undraw_yoga.svg?raw';
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Countdown, TimerState } from '@fuxui/time';
+	import { Countdown, TimerState } from '@foxui/time';
 	import { onMount } from 'svelte';
 
 	let timer: TimerState | undefined = $state();

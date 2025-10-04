@@ -1,5 +1,5 @@
 import confetti from 'canvas-confetti';
-import { convertCSSToHex } from '@fuxui/colors';
+import { convertCSSToHex } from '@foxui/colors';
 
 function getCSSVar(variable: string) {
 	return getComputedStyle(document.documentElement).getPropertyValue(variable).trim();

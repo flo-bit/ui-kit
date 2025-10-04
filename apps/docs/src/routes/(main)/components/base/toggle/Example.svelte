@@ -1,5 +1,5 @@
 <script>
-	import { Toggle } from '@fuxui/base';
+	import { Toggle } from '@foxui/core';
 </script>
 
 <div class="flex items-center gap-2">

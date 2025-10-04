@@ -1,5 +1,5 @@
 <script>
-	import { Quote } from '@fuxui/visual';
+	import { Quote } from '@foxui/visual';
 	import einstein from '$lib/assets/images/einstein.webp';
 </script>
 

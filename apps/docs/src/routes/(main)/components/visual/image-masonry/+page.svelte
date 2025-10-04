@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ImageMasonryDocs from './ImageMasonry.md';
-	import { Prose } from '@fuxui/base';
+	import { Prose } from '@foxui/core';
 </script>
 
 <Prose>

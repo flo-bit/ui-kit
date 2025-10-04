@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '@fuxui/base';
+	import { cn } from '@foxui/core';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
 
 	type Props = HTMLAnchorAttributes;

@@ -7,7 +7,7 @@
 </script>
 
 <script lang="ts">
-	import { Button, Modal, Subheading, Label, Input, Avatar } from '@fuxui/base';
+	import { Button, Modal, Subheading, Label, Input, Avatar } from '@foxui/core';
 	import type { BlueskyLoginProps } from '.';
 
 	let value = $state('');

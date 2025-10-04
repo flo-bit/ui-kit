@@ -1,4 +1,4 @@
-# @fuxui/visual
+# @foxui/visual
 
 ## 0.3.0
 

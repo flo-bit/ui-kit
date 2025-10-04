@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { UserProfile } from '@fuxui/social';
+	import { UserProfile } from '@foxui/social';
 </script>
 
 <UserProfile

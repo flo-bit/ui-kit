@@ -4,7 +4,7 @@
 		type WithoutChildrenOrChild
 	} from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { cn, Avatar } from '@fuxui/base';
+	import { cn, Avatar } from '@foxui/core';
 
 	let {
 		quote,

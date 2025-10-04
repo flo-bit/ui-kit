@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { AdvancedTextArea } from '@fuxui/text';
+	import { AdvancedTextArea } from '@foxui/text';
 
 	let content = $state('');
 

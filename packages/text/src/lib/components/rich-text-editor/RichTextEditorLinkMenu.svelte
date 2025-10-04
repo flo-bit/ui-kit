@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Input } from "@fuxui/base";
+	import { Button, Input } from "@foxui/core";
 	import type { Editor } from "@tiptap/core";
 
 	let {

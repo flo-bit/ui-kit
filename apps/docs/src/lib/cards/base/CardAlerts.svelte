@@ -1,5 +1,5 @@
 <script>
-	import { Alert, AlertDescription, AlertTitle } from '@fuxui/base';
+	import { Alert, AlertDescription, AlertTitle } from '@foxui/core';
 </script>
 
 <Alert>

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Box, toast } from '@fuxui/base';
-	import { Post } from '@fuxui/social';
+	import { Box, toast } from '@foxui/core';
+	import { Post } from '@foxui/social';
 
 	let liked = $state(false);
 	let bookmarked = $state(false);

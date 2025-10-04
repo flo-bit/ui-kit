@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { launchConfetti } from '@fuxui/visual';
+	import { launchConfetti } from '@foxui/visual';
 </script>
 
 <Button onclick={() => launchConfetti()}>Launch Confetti</Button>

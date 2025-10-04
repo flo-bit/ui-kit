@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Box, Button, toast } from '@fuxui/base';
-	import { AdvancedTextArea } from '@fuxui/text';
+	import { Box, Button, toast } from '@foxui/core';
+	import { AdvancedTextArea } from '@foxui/text';
 
 	let content = $state('');
 

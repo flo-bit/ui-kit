@@ -1,14 +1,7 @@
 <script>
-	import { Tabs } from '@fuxui/base';
+	import { Tabs } from '@foxui/core';
 
 	let active = $state('Tab 1');
 </script>
 
-<Tabs
-	items={[
-		{ name: 'Tab 1' },
-		{ name: 'Tab 2' },
-		{ name: 'Tab 3' }
-	]}
-	active={active}
-/>
+<Tabs items={[{ name: 'Tab 1' }, { name: 'Tab 2' }, { name: 'Tab 3' }]} {active} />

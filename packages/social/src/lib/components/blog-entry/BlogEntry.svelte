@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, Button } from '@fuxui/base';
+	import { Badge, Button } from '@foxui/core';
 
 	const {
 		title,

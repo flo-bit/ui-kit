@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { StarRating } from '@fuxui/social';
+	import { StarRating } from '@foxui/social';
 </script>
 
 <StarRating rating={4} changeable />

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Alert, AlertDescription, AlertTitle } from '@fuxui/base';
+	import { Alert, AlertDescription, AlertTitle } from '@foxui/core';
 </script>
 
 <div class="flex h-full w-full items-end justify-end">

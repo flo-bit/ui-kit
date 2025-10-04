@@ -1,5 +1,5 @@
 <script>
-	import { Checkbox, Label } from '@fuxui/base';
+	import { Checkbox, Label } from '@foxui/core';
 </script>
 
 <h3>Primary</h3>

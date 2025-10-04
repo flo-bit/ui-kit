@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { Badge, cn } from '@fuxui/base';
+	import { Badge, cn } from '@foxui/core';
 
 	let {
 		class: className

@@ -2,7 +2,7 @@
 	import { Canvas } from '@threlte/core';
 	import { View } from '@threlte/extras';
 	import Scene from './ModelPickerScene.svelte';
-	import { cn } from '@fuxui/base';
+	import { cn } from '@foxui/core';
 	import { CineonToneMapping } from 'three';
 
 	let {

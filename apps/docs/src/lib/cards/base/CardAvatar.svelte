@@ -1,5 +1,5 @@
 <script>
-	import { Avatar } from '@fuxui/base';
+	import { Avatar } from '@foxui/core';
 </script>
 
 <div class="flex items-center gap-2">

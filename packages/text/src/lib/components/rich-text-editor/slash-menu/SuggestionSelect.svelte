@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '@fuxui/base';
+	import { cn } from '@foxui/core';
 	import type { Editor, Range } from '@tiptap/core';
 	import Icon from '../Icon.svelte';
 	import type { RichTextTypes } from '..';

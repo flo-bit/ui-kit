@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { ChatBubble } from '@fuxui/base';
+	import { ChatBubble } from '@foxui/core';
 </script>
 
 <ChatBubble side="right">

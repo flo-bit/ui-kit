@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Box } from '@fuxui/base';
-	import { GithubCorner } from '@fuxui/social';
+	import { Box } from '@foxui/core';
+	import { GithubCorner } from '@foxui/social';
 </script>
 
 <Box class="not-prose relative min-h-24 w-full">

@@ -16,7 +16,7 @@
 
 ```svelte
 <script lang="ts">
-	import { Excalidraw } from '@fuxui/visual';
+	import { Excalidraw } from '@foxui/visual';
 
 	import svg from '$docs/assets/demo.svg?raw';
 </script>

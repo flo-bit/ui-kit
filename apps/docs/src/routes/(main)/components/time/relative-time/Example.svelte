@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Box } from '@fuxui/base';
-	import { RelativeTime } from '@fuxui/time';
+	import { Box } from '@foxui/core';
+	import { RelativeTime } from '@foxui/time';
 </script>
 
 <Box class="min-h-0">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn, Button, Popover } from '@fuxui/base';
+	import { cn, Button, Popover } from '@foxui/core';
 
 	import { ColorPicker, type RGB } from '../color-picker/base';
 	import { DragGesture } from '@use-gesture/vanilla';

@@ -3,7 +3,7 @@
 	import { TimerState } from '../timer';
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { cn } from '@fuxui/base';
+	import { cn } from '@foxui/core';
 
 	let {
 		timer = $bindable(),

@@ -1,7 +1,5 @@
 # 🦊 fox ui
 
-This package has been moved to `@foxui/3d`.
-
 svelte 5 + tailwind 4 ui kit, 3d components
 
 - [Depth 3D](https://flo-bit.dev/ui-kit/components/3d/depth-3d)

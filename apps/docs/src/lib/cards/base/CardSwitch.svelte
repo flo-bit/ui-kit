@@ -1,5 +1,5 @@
 <script>
-	import { Label, Switch } from '@fuxui/base';
+	import { Label, Switch } from '@foxui/core';
 </script>
 
 <div class="flex flex-col gap-6">

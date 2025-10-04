@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from '@fuxui/base';
+	import { Button } from '@foxui/core';
 	import { BlueskyLoginModal, blueskyLoginModalState, type BlueskyLoginProps } from '.';
 
 	let { login, formAction, formMethod }: BlueskyLoginProps = $props();

@@ -1,7 +1,5 @@
 # 🦊 fox ui
 
-This package has been moved to `@foxui/text`.
-
 svelte 5 + tailwind 4 ui kit, text components
 
 - [Plain Text Editor](https://flo-bit.dev/ui-kit/components/text/plain-text-editor)

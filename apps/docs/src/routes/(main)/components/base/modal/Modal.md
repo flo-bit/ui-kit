@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { Modal, Button } from '@fuxui/base';
+	import { Modal, Button } from '@foxui/core';
 
 	let open = $state(false);
 </script>

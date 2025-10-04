@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { Post } from '@fuxui/social';
+	import { Post } from '@foxui/social';
 </script>
 
 <Post

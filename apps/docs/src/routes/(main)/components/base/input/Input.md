@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { Input } from '@fuxui/base';
+	import { Input } from '@foxui/core';
 
 	let value = $state('');
 </script>

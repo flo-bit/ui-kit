@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Box } from '@fuxui/base';
-	import { PlainTextEditor } from '@fuxui/text';
+	import { Box } from '@foxui/core';
+	import { PlainTextEditor } from '@foxui/text';
 
 	let content = $state('');
 </script>

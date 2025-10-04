@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn, ScrollArea } from '@fuxui/base';
+	import { cn, ScrollArea } from '@foxui/core';
 	import { isEmojiSupported } from 'is-emoji-supported';
 	import { allGroups } from './emoji';
 	import Database from 'emoji-picker-element/database';

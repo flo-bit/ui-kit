@@ -1,4 +1,4 @@
-# @fuxui/base
+# @foxui/core
 
 ## 0.3.0
 

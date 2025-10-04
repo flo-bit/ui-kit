@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Modal } from '@fuxui/base';
+	import { Modal } from '@foxui/core';
 	import { ModelPicker } from '..';
 
 	let {

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Box } from '@fuxui/base';
-	import { Stopwatch, StopwatchState } from '@fuxui/time';
+	import { Box } from '@foxui/core';
+	import { Stopwatch, StopwatchState } from '@foxui/time';
 	import { onMount } from 'svelte';
 
 	let stopwatch: StopwatchState | undefined = $state(undefined);

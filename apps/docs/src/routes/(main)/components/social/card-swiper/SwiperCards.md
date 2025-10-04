@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { CardSwiper } from '@fuxui/social';
+	import { CardSwiper } from '@foxui/social';
 
 	const profiles = ['image1.webp', 'image2.webp', 'image3.webp'];
 </script>

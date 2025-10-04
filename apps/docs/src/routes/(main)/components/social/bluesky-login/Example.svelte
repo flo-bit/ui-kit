@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { toast } from '@fuxui/base';
-	import { BlueskyLogin } from '@fuxui/social';
+	import { toast } from '@foxui/core';
+	import { BlueskyLogin } from '@foxui/social';
 </script>
 
 

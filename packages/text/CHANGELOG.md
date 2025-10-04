@@ -1,4 +1,4 @@
-# @fuxui/time
+# @foxui/time
 
 ## 0.3.0
 

@@ -8,7 +8,7 @@ It's recommended to add this to your root layout.
 
 ```svelte
 <script>
-	import { Head } from '@fuxui/base';
+	import { Head } from '@foxui/core';
 </script>
 
 <Head

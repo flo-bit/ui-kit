@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { Select } from '@fuxui/base';
+	import { Select } from '@foxui/core';
 
 	let selected = $state('Apple');
 </script>

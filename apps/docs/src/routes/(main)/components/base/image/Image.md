@@ -12,7 +12,7 @@
 
 ```svelte
 <script>
-	import { ImageContainer } from '@fuxui/base';
+	import { ImageContainer } from '@foxui/core';
 </script>
 
 <ImageContainer src="/image.jpg" alt="Alt tag" />

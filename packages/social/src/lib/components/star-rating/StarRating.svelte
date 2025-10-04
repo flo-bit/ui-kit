@@ -1,6 +1,6 @@
 <script lang="ts">
 	// todo convert to radio group
-	import { cn } from '@fuxui/base';
+	import { cn } from '@foxui/core';
 	import type { WithElementRef, WithoutChildrenOrChild } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 

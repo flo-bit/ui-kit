@@ -1,5 +1,5 @@
 <script>
-	import { Textarea } from '@fuxui/base';
+	import { Textarea } from '@foxui/core';
 </script>
 
 <h3>Primary</h3>

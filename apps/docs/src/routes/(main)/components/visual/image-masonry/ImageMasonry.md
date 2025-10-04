@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { ImageMasonry } from '@fuxui/visual';
+	import { ImageMasonry } from '@foxui/visual';
 
 	const images = [
 		{

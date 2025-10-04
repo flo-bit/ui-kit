@@ -12,7 +12,7 @@
 
 ```svelte
 <script lang="ts">
-	import { ColorGradientPicker } from '@fuxui/colors';
+	import { ColorGradientPicker } from '@foxui/colors';
 
 	let colors = $state([
 		{ rgb: { r: 0, g: 0, b: 1 }, position: 0 }, // blue

@@ -1,5 +1,5 @@
 <script>
-	import { Tooltip, Button, toast } from '@fuxui/base';
+	import { Tooltip, Button, toast } from '@foxui/core';
 
 	function handleClick() {
 		toast.error("Don't click, just hover!");

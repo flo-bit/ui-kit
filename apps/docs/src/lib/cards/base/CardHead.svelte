@@ -1,5 +1,5 @@
 <script>
-	import { Paragraph } from '@fuxui/base';
+	import { Paragraph } from '@foxui/core';
 </script>
 
 <div

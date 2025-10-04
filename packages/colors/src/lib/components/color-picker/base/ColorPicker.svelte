@@ -12,7 +12,7 @@
 		oklab_to_rgb
 	} from './color';
 
-	import { cn } from '@fuxui/base';
+	import { cn } from '@foxui/core';
 
 	let {
 		rgb = $bindable(),
