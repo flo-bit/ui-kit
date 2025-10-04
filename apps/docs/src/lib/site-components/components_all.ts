@@ -12,9 +12,9 @@ export const components: {
 	href: string;
 }[] = [
 	{
-		name: 'Base',
+		name: 'Core',
 		components: baseComponents,
-		href: 'base'
+		href: 'core'
 	},
 	{
 		name: 'Colors',

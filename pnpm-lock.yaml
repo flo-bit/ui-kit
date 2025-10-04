@@ -239,6 +239,100 @@ importers:
         specifier: ^6.2.6
         version: 6.3.2
 
+  packages/all:
+    dependencies:
+      '@foxui/3d':
+        specifier: workspace:*
+        version: link:../3d
+      '@foxui/colors':
+        specifier: workspace:*
+        version: link:../colors
+      '@foxui/core':
+        specifier: workspace:*
+        version: link:../core
+      '@foxui/social':
+        specifier: workspace:*
+        version: link:../social
+      '@foxui/text':
+        specifier: workspace:*
+        version: link:../text
+      '@foxui/time':
+        specifier: workspace:*
+        version: link:../time
+      '@foxui/visual':
+        specifier: workspace:*
+        version: link:../visual
+    devDependencies:
+      '@eslint/compat':
+        specifier: ^1.2.5
+        version: 1.2.5(eslint@9.25.0)
+      '@eslint/js':
+        specifier: ^9.18.0
+        version: 9.25.0
+      '@sveltejs/adapter-auto':
+        specifier: ^6.0.0
+        version: 6.0.0(@sveltejs/kit@2.20.0)
+      '@sveltejs/adapter-static':
+        specifier: ^3.0.8
+        version: 3.0.8(@sveltejs/kit@2.20.0)
+      '@sveltejs/kit':
+        specifier: ^2.16.0
+        version: 2.20.0(@sveltejs/vite-plugin-svelte@5.0.3)(svelte@5.36.16)(vite@6.3.2)
+      '@sveltejs/package':
+        specifier: ^2.3.11
+        version: 2.3.11(svelte@5.36.16)(typescript@5.8.2)
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.0.0
+        version: 5.0.3(svelte@5.36.16)(vite@6.3.2)
+      '@tailwindcss/forms':
+        specifier: ^0.5.9
+        version: 0.5.9(tailwindcss@4.1.5)
+      '@tailwindcss/typography':
+        specifier: ^0.5.15
+        version: 0.5.15(tailwindcss@4.1.5)
+      '@tailwindcss/vite':
+        specifier: ^4.1.5
+        version: 4.1.5(vite@6.3.2)
+      eslint:
+        specifier: ^9.18.0
+        version: 9.25.0
+      eslint-config-prettier:
+        specifier: ^10.0.1
+        version: 10.1.1(eslint@9.25.0)
+      eslint-plugin-svelte:
+        specifier: ^3.0.0
+        version: 3.0.0(eslint@9.25.0)(svelte@5.36.16)
+      globals:
+        specifier: ^16.0.0
+        version: 16.0.0
+      prettier:
+        specifier: ^3.4.2
+        version: 3.5.2
+      prettier-plugin-svelte:
+        specifier: ^3.3.3
+        version: 3.3.3(prettier@3.5.2)(svelte@5.36.16)
+      prettier-plugin-tailwindcss:
+        specifier: ^0.6.11
+        version: 0.6.11(prettier-plugin-svelte@3.3.3)(prettier@3.5.2)
+      svelte:
+        specifier: ^5.0.0
+        version: 5.36.16
+      svelte-check:
+        specifier: ^4.0.0
+        version: 4.1.4(svelte@5.36.16)(typescript@5.8.2)
+      tailwindcss:
+        specifier: ^4.1.5
+        version: 4.1.5
+      typescript:
+        specifier: ^5.0.0
+        version: 5.8.2
+      typescript-eslint:
+        specifier: ^8.20.0
+        version: 8.30.1(eslint@9.25.0)(typescript@5.8.2)
+      vite:
+        specifier: ^6.2.6
+        version: 6.3.2
+
   packages/colors:
     dependencies:
       '@foxui/core':

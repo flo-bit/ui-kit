@@ -25,7 +25,7 @@ npm install @foxui/core
 ### 3. set theme variables in your app.css (changing `zinc` and `emerald` to your preferred colors, using find and replace).
 
 ```css
-@source "../node_modules/@fuxui";
+@source "../node_modules/@foxui";
 
 @theme {
 	--color-base-50: var(--color-zinc-50);

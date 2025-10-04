@@ -14,10 +14,10 @@ npx sv create my-project
 
 Also add the `@tailwindcss/typography` and `@tailwindcss/forms` plugins.
 
-## 2. Install fuchs
+## 2. Install all fox ui components by running:
 
 ```bash
-npm install @foxui/core
+npm install @foxui/all
 ```
 
 ## 3. Set theme variables in your `app.css`
@@ -25,7 +25,7 @@ npm install @foxui/core
 You can change the colors to your liking.
 
 ```css
-@source "../node_modules/@fuxui";
+@source "../node_modules/@foxui";
 
 @theme {
 	--color-base-50: var(--color-zinc-50);
@@ -58,7 +58,7 @@ You can change the colors to your liking.
 
 ```svelte
 <script>
-	import { Button } from '@foxui/core';
+	import { Button } from '@foxui/all';
 </script>
 
 <Button>Click me</Button>
@@ -68,10 +68,11 @@ You can change the colors to your liking.
 
 ### Subpackages
 
-Fox ui is split into multiple subpackages. Simply install a subpackage when you need it, or you can install all of them with:
+Fox UI is split into multiple subpackages to minimize both the bundle size as well as the amount of dependencies. 
+Simply install a package when you need it, or you can install all of them with:
 
 ```bash
-npm install @foxui/core @foxui/3d @foxui/colors @foxui/social @foxui/text @foxui/time @foxui/visual
+npm install @foxui/all
 ```
 
 ### Dark mode
