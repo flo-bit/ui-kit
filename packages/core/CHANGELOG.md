@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.4.1
+
+### Patch Changes
+
+- 7fa87e9: bump "all" package, remove NumberInput
+
 ## 0.4.0
 
 ### Minor Changes
