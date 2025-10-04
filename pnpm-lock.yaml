@@ -54,25 +54,25 @@ importers:
       '@eslint/js':
         specifier: ^9.18.0
         version: 9.25.0
-      '@fuxui/3d':
+      '@foxui/3d':
         specifier: workspace:*
         version: link:../../packages/3d
-      '@fuxui/base':
-        specifier: workspace:*
-        version: link:../../packages/base
-      '@fuxui/colors':
+      '@foxui/colors':
         specifier: workspace:*
         version: link:../../packages/colors
-      '@fuxui/social':
+      '@foxui/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@foxui/social':
         specifier: workspace:*
         version: link:../../packages/social
-      '@fuxui/text':
+      '@foxui/text':
         specifier: workspace:*
         version: link:../../packages/text
-      '@fuxui/time':
+      '@foxui/time':
         specifier: workspace:*
         version: link:../../packages/time
-      '@fuxui/visual':
+      '@foxui/visual':
         specifier: workspace:*
         version: link:../../packages/visual
       '@mdsx/rehype-custom-highlighter':
@@ -150,9 +150,9 @@ importers:
 
   packages/3d:
     dependencies:
-      '@fuxui/base':
+      '@foxui/core':
         specifier: workspace:*
-        version: link:../base
+        version: link:../core
       '@threlte/core':
         specifier: ^8.0.2
         version: 8.0.2(svelte@5.28.1)(three@0.176.0)
@@ -239,102 +239,11 @@ importers:
         specifier: ^6.2.6
         version: 6.3.2
 
-  packages/base:
-    dependencies:
-      '@number-flow/svelte':
-        specifier: ^0.3.7
-        version: 0.3.7(svelte@5.28.1)
-      bits-ui:
-        specifier: ^1.4.3
-        version: 1.4.3(svelte@5.28.1)
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
-      svelte-sonner:
-        specifier: ^0.3.28
-        version: 0.3.28(svelte@5.28.1)
-      tailwind-merge:
-        specifier: ^3.2.0
-        version: 3.2.0
-      tailwind-variants:
-        specifier: ^1.0.0
-        version: 1.0.0(tailwindcss@4.1.5)
-    devDependencies:
-      '@eslint/compat':
-        specifier: ^1.2.5
-        version: 1.2.5(eslint@9.25.0)
-      '@eslint/js':
-        specifier: ^9.18.0
-        version: 9.25.0
-      '@sveltejs/adapter-auto':
-        specifier: ^6.0.0
-        version: 6.0.0(@sveltejs/kit@2.20.0)
-      '@sveltejs/adapter-static':
-        specifier: ^3.0.8
-        version: 3.0.8(@sveltejs/kit@2.20.0)
-      '@sveltejs/kit':
-        specifier: ^2.16.0
-        version: 2.20.0(@sveltejs/vite-plugin-svelte@5.0.3)(svelte@5.28.1)(vite@6.3.2)
-      '@sveltejs/package':
-        specifier: ^2.3.11
-        version: 2.3.11(svelte@5.28.1)(typescript@5.8.2)
-      '@sveltejs/vite-plugin-svelte':
-        specifier: ^5.0.0
-        version: 5.0.3(svelte@5.28.1)(vite@6.3.2)
-      '@tailwindcss/forms':
-        specifier: ^0.5.9
-        version: 0.5.9(tailwindcss@4.1.5)
-      '@tailwindcss/typography':
-        specifier: ^0.5.15
-        version: 0.5.15(tailwindcss@4.1.5)
-      '@tailwindcss/vite':
-        specifier: ^4.1.5
-        version: 4.1.5(vite@6.3.2)
-      eslint:
-        specifier: ^9.18.0
-        version: 9.25.0
-      eslint-config-prettier:
-        specifier: ^10.0.1
-        version: 10.1.1(eslint@9.25.0)
-      eslint-plugin-svelte:
-        specifier: ^3.0.0
-        version: 3.0.0(eslint@9.25.0)(svelte@5.28.1)
-      globals:
-        specifier: ^16.0.0
-        version: 16.0.0
-      prettier:
-        specifier: ^3.4.2
-        version: 3.5.2
-      prettier-plugin-svelte:
-        specifier: ^3.3.3
-        version: 3.3.3(prettier@3.5.2)(svelte@5.28.1)
-      prettier-plugin-tailwindcss:
-        specifier: ^0.6.11
-        version: 0.6.11(prettier-plugin-svelte@3.3.3)(prettier@3.5.2)
-      svelte:
-        specifier: ^5.0.0
-        version: 5.28.1
-      svelte-check:
-        specifier: ^4.0.0
-        version: 4.1.4(svelte@5.28.1)(typescript@5.8.2)
-      tailwindcss:
-        specifier: ^4.1.5
-        version: 4.1.5
-      typescript:
-        specifier: ^5.0.0
-        version: 5.8.2
-      typescript-eslint:
-        specifier: ^8.20.0
-        version: 8.30.1(eslint@9.25.0)(typescript@5.8.2)
-      vite:
-        specifier: ^6.2.6
-        version: 6.3.2
-
   packages/colors:
     dependencies:
-      '@fuxui/base':
+      '@foxui/core':
         specifier: workspace:*
-        version: link:../base
+        version: link:../core
       '@texel/color':
         specifier: ^1.1.10
         version: 1.1.10
@@ -418,15 +327,106 @@ importers:
         specifier: ^1.4.1
         version: 1.4.1(vite@6.3.2)
 
+  packages/core:
+    dependencies:
+      '@number-flow/svelte':
+        specifier: ^0.3.7
+        version: 0.3.7(svelte@5.36.16)
+      bits-ui:
+        specifier: ^1.4.3
+        version: 1.4.3(svelte@5.36.16)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      svelte-sonner:
+        specifier: ^0.3.28
+        version: 0.3.28(svelte@5.36.16)
+      tailwind-merge:
+        specifier: ^3.2.0
+        version: 3.2.0
+      tailwind-variants:
+        specifier: ^1.0.0
+        version: 1.0.0(tailwindcss@4.1.5)
+    devDependencies:
+      '@eslint/compat':
+        specifier: ^1.2.5
+        version: 1.2.5(eslint@9.25.0)
+      '@eslint/js':
+        specifier: ^9.18.0
+        version: 9.25.0
+      '@sveltejs/adapter-auto':
+        specifier: ^6.0.0
+        version: 6.0.0(@sveltejs/kit@2.20.0)
+      '@sveltejs/adapter-static':
+        specifier: ^3.0.8
+        version: 3.0.8(@sveltejs/kit@2.20.0)
+      '@sveltejs/kit':
+        specifier: ^2.16.0
+        version: 2.20.0(@sveltejs/vite-plugin-svelte@5.0.3)(svelte@5.36.16)(vite@6.3.2)
+      '@sveltejs/package':
+        specifier: ^2.3.11
+        version: 2.3.11(svelte@5.36.16)(typescript@5.8.2)
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.0.0
+        version: 5.0.3(svelte@5.36.16)(vite@6.3.2)
+      '@tailwindcss/forms':
+        specifier: ^0.5.9
+        version: 0.5.9(tailwindcss@4.1.5)
+      '@tailwindcss/typography':
+        specifier: ^0.5.15
+        version: 0.5.15(tailwindcss@4.1.5)
+      '@tailwindcss/vite':
+        specifier: ^4.1.5
+        version: 4.1.5(vite@6.3.2)
+      eslint:
+        specifier: ^9.18.0
+        version: 9.25.0
+      eslint-config-prettier:
+        specifier: ^10.0.1
+        version: 10.1.1(eslint@9.25.0)
+      eslint-plugin-svelte:
+        specifier: ^3.0.0
+        version: 3.0.0(eslint@9.25.0)(svelte@5.36.16)
+      globals:
+        specifier: ^16.0.0
+        version: 16.0.0
+      prettier:
+        specifier: ^3.4.2
+        version: 3.5.2
+      prettier-plugin-svelte:
+        specifier: ^3.3.3
+        version: 3.3.3(prettier@3.5.2)(svelte@5.36.16)
+      prettier-plugin-tailwindcss:
+        specifier: ^0.6.11
+        version: 0.6.11(prettier-plugin-svelte@3.3.3)(prettier@3.5.2)
+      svelte:
+        specifier: ^5.0.0
+        version: 5.36.16
+      svelte-check:
+        specifier: ^4.0.0
+        version: 4.1.4(svelte@5.36.16)(typescript@5.8.2)
+      tailwindcss:
+        specifier: ^4.1.5
+        version: 4.1.5
+      typescript:
+        specifier: ^5.0.0
+        version: 5.8.2
+      typescript-eslint:
+        specifier: ^8.20.0
+        version: 8.30.1(eslint@9.25.0)(typescript@5.8.2)
+      vite:
+        specifier: ^6.2.6
+        version: 6.3.2
+
   packages/social:
     dependencies:
       '@atproto/api':
         specifier: ^0.15.5
         version: 0.15.5
-      '@fuxui/base':
+      '@foxui/core':
         specifier: workspace:*
-        version: link:../base
-      '@fuxui/time':
+        version: link:../core
+      '@foxui/time':
         specifier: workspace:*
         version: link:../time
       '@use-gesture/vanilla':
@@ -520,9 +520,9 @@ importers:
 
   packages/text:
     dependencies:
-      '@fuxui/base':
+      '@foxui/core':
         specifier: workspace:*
-        version: link:../base
+        version: link:../core
       '@tiptap/core':
         specifier: ^2.12.0
         version: 2.12.0(@tiptap/pm@2.12.0)
@@ -662,9 +662,9 @@ importers:
 
   packages/time:
     dependencies:
-      '@fuxui/base':
+      '@foxui/core':
         specifier: workspace:*
-        version: link:../base
+        version: link:../core
       '@number-flow/svelte':
         specifier: ^0.3.7
         version: 0.3.7(svelte@5.28.1)
@@ -744,12 +744,12 @@ importers:
 
   packages/visual:
     dependencies:
-      '@fuxui/base':
-        specifier: workspace:*
-        version: link:../base
-      '@fuxui/colors':
+      '@foxui/colors':
         specifier: workspace:*
         version: link:../colors
+      '@foxui/core':
+        specifier: workspace:*
+        version: link:../core
       bits-ui:
         specifier: ^1.4.3
         version: 1.4.3(svelte@5.28.1)
@@ -1486,6 +1486,16 @@ packages:
       svelte: 5.28.1
     dev: false
 
+  /@number-flow/svelte@0.3.7(svelte@5.36.16):
+    resolution: {integrity: sha512-FusxKvImj13+15N+pQrrGsu8cNTQ0BCUWxshNUpPU4opFufVpHO+RMxsYrtZ7xloVL/TjDLpO+SWjrxxx7iPJg==, tarball: https://registry.npmjs.org/@number-flow/svelte/-/svelte-0.3.7.tgz}
+    peerDependencies:
+      svelte: ^4 || ^5
+    dependencies:
+      esm-env: 1.2.2
+      number-flow: 0.5.7
+      svelte: 5.36.16
+    dev: false
+
   /@polka/url@1.0.0-next.28:
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==, tarball: https://registry.npmjs.org/@polka/url/-/url-1.0.0-next.28.tgz}
 
@@ -1762,6 +1772,23 @@ packages:
       semver: 7.7.1
       svelte: 5.28.1
       svelte2tsx: 0.7.36(svelte@5.28.1)(typescript@5.8.2)
+    transitivePeerDependencies:
+      - typescript
+    dev: true
+
+  /@sveltejs/package@2.3.11(svelte@5.36.16)(typescript@5.8.2):
+    resolution: {integrity: sha512-DSMt2U0XNAdoQBYksrmgQi5dKy7jUTVDJLiagS/iXF7AShjAmTbGJQKruBuT/FfYAWvNxfQTSjkXU8eAIjVeNg==, tarball: https://registry.npmjs.org/@sveltejs/package/-/package-2.3.11.tgz}
+    engines: {node: ^16.14 || >=18}
+    hasBin: true
+    peerDependencies:
+      svelte: ^3.44.0 || ^4.0.0 || ^5.0.0-next.1
+    dependencies:
+      chokidar: 4.0.3
+      kleur: 4.1.5
+      sade: 1.8.1
+      semver: 7.7.1
+      svelte: 5.36.16
+      svelte2tsx: 0.7.36(svelte@5.36.16)(typescript@5.8.2)
     transitivePeerDependencies:
       - typescript
     dev: true
@@ -2677,6 +2704,22 @@ packages:
       runed: 0.23.4(svelte@5.28.1)
       svelte: 5.28.1
       svelte-toolbelt: 0.7.1(svelte@5.28.1)
+      tabbable: 6.2.0
+    dev: false
+
+  /bits-ui@1.4.3(svelte@5.36.16):
+    resolution: {integrity: sha512-7D85ZBbUgf/ihL2to5McGs0oGZo0T274NX2Aejak+Ycj69jSqAvGPyTEFkKdf0NMZIxuo5Fz4c4jrljPvpUpMg==, tarball: https://registry.npmjs.org/bits-ui/-/bits-ui-1.4.3.tgz}
+    engines: {node: '>=18', pnpm: '>=8.7.0'}
+    peerDependencies:
+      svelte: ^5.11.0
+    dependencies:
+      '@floating-ui/core': 1.6.9
+      '@floating-ui/dom': 1.6.13
+      '@internationalized/date': 3.8.0
+      esm-env: 1.2.2
+      runed: 0.23.4(svelte@5.36.16)
+      svelte: 5.36.16
+      svelte-toolbelt: 0.7.1(svelte@5.36.16)
       tabbable: 6.2.0
     dev: false
 
@@ -4781,6 +4824,15 @@ packages:
       svelte: 5.28.1
     dev: false
 
+  /runed@0.23.4(svelte@5.36.16):
+    resolution: {integrity: sha512-9q8oUiBYeXIDLWNK5DfCWlkL0EW3oGbk845VdKlPeia28l751VpfesaB/+7pI6rnbx1I6rqoZ2fZxptOJLxILA==, tarball: https://registry.npmjs.org/runed/-/runed-0.23.4.tgz}
+    peerDependencies:
+      svelte: ^5.7.0
+    dependencies:
+      esm-env: 1.2.2
+      svelte: 5.36.16
+    dev: false
+
   /sade@1.8.1:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
     engines: {node: '>=6'}
@@ -4971,12 +5023,12 @@ packages:
       svelte: 5.36.16
     dev: true
 
-  /svelte-sonner@0.3.28(svelte@5.28.1):
+  /svelte-sonner@0.3.28(svelte@5.36.16):
     resolution: {integrity: sha512-K3AmlySeFifF/cKgsYNv5uXqMVNln0NBAacOYgmkQStLa/UoU0LhfAACU6Gr+YYC8bOCHdVmFNoKuDbMEsppJg==, tarball: https://registry.npmjs.org/svelte-sonner/-/svelte-sonner-0.3.28.tgz}
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
     dependencies:
-      svelte: 5.28.1
+      svelte: 5.36.16
     dev: false
 
   /svelte-tiptap@2.1.0(@tiptap/core@2.12.0)(@tiptap/extension-bubble-menu@2.12.0)(@tiptap/extension-floating-menu@2.12.0)(@tiptap/pm@2.12.0)(svelte@5.28.1):
@@ -5007,6 +5059,18 @@ packages:
       svelte: 5.28.1
     dev: false
 
+  /svelte-toolbelt@0.7.1(svelte@5.36.16):
+    resolution: {integrity: sha512-HcBOcR17Vx9bjaOceUvxkY3nGmbBmCBBbuWLLEWO6jtmWH8f/QoWmbyUfQZrpDINH39en1b8mptfPQT9VKQ1xQ==, tarball: https://registry.npmjs.org/svelte-toolbelt/-/svelte-toolbelt-0.7.1.tgz}
+    engines: {node: '>=18', pnpm: '>=8.7.0'}
+    peerDependencies:
+      svelte: ^5.0.0
+    dependencies:
+      clsx: 2.1.1
+      runed: 0.23.4(svelte@5.36.16)
+      style-to-object: 1.0.8
+      svelte: 5.36.16
+    dev: false
+
   /svelte2tsx@0.7.36(svelte@5.28.1)(typescript@5.8.2):
     resolution: {integrity: sha512-nBlERuCZRwmpebC8m0vDqZ9oaKsqW8frQS2l3zwFQW1voQIkItYtHxh1F5OTZEmE0meDIH6cxU36eIOQVOxlCw==, tarball: https://registry.npmjs.org/svelte2tsx/-/svelte2tsx-0.7.36.tgz}
     peerDependencies:
@@ -5016,6 +5080,18 @@ packages:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
       svelte: 5.28.1
+      typescript: 5.8.2
+    dev: true
+
+  /svelte2tsx@0.7.36(svelte@5.36.16)(typescript@5.8.2):
+    resolution: {integrity: sha512-nBlERuCZRwmpebC8m0vDqZ9oaKsqW8frQS2l3zwFQW1voQIkItYtHxh1F5OTZEmE0meDIH6cxU36eIOQVOxlCw==, tarball: https://registry.npmjs.org/svelte2tsx/-/svelte2tsx-0.7.36.tgz}
+    peerDependencies:
+      svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
+      typescript: ^4.9.4 || ^5.0.0
+    dependencies:
+      dedent-js: 1.0.1
+      pascal-case: 3.1.2
+      svelte: 5.36.16
       typescript: 5.8.2
     dev: true
 
