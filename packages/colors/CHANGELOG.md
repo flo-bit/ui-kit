@@ -1,5 +1,16 @@
 # @fuxui/colors
 
+## 0.3.0
+
+### Minor Changes
+
+- 0f528d3: switch from @fuxui to @foxui org
+
+### Patch Changes
+
+- Updated dependencies [0f528d3]
+  - @fuxui/base@0.3.0
+
 ## 0.2.5
 
 ### Patch Changes
