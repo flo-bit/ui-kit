@@ -1,5 +1,7 @@
 # 🦊 fox ui
 
+This package has been moved to `@foxui/social`.
+
 svelte 5 + tailwind 4 ui kit, social components
 
 - [Bluesky Login](https://flo-bit.dev/ui-kit/components/social/bluesky-login)
