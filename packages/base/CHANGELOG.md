@@ -1,5 +1,11 @@
 # @fuxui/base
 
+## 0.3.0
+
+### Minor Changes
+
+- 0f528d3: switch from @fuxui to @foxui org
+
 ## 0.2.4
 
 ### Patch Changes
