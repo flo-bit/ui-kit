@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.4.0
+
+### Minor Changes
+
+- 76dad0e: switch to @foxui org
+
 ## 0.3.0
 
 ### Minor Changes

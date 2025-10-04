@@ -1,5 +1,17 @@
 # @foxui/visual
 
+## 0.4.0
+
+### Minor Changes
+
+- 76dad0e: switch to @foxui org
+
+### Patch Changes
+
+- Updated dependencies [76dad0e]
+  - @foxui/colors@0.4.0
+  - @foxui/core@0.4.0
+
 ## 0.3.0
 
 ### Minor Changes
