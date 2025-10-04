@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.4.2
+
+### Patch Changes
+
+- 1f9d548: improve alerts, buttons, checkboxes
+
 ## 0.4.1
 
 ### Patch Changes
