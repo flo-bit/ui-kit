@@ -1,5 +1,11 @@
 # @fuxui/time
 
+## 0.2.7
+
+### Patch Changes
+
+- 649369c: add advanced-text-area
+
 ## 0.2.6
 
 ### Patch Changes
