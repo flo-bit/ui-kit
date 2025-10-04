@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Select } from '@foxui/core';
+	import { Select } from '@foxui/all';
 
 	let selected = $state('Banana');
 </script>

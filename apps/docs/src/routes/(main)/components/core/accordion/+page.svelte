@@ -1,5 +1,5 @@
 <script>
-	import { Prose } from '@foxui/core';
+	import { Prose } from '@foxui/all';
 	import AccordionDocs from './Accordion.md';
 </script>
 

@@ -4,7 +4,7 @@
 		PopoverColorPicker,
 		oklch_string_to_oklch,
 		oklch_to_rgb
-	} from '@foxui/colors';
+	} from '@foxui/all';
 	import { ThemeWatcher } from '$lib/helper/ThemeWatcher.svelte';
 	import { onMount } from 'svelte';
 

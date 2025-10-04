@@ -1,6 +1,6 @@
 <script>
 	import cute from '$lib/assets/images/cute.webp';
-	import { Image } from '@foxui/core';
+	import { Image } from '@foxui/all';
 </script>
 
 <Image

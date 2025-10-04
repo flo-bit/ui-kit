@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { StarRating } from '@foxui/social';
+	import { StarRating } from '@foxui/all';
 </script>
 
 <div class="flex h-full w-full items-center justify-center">

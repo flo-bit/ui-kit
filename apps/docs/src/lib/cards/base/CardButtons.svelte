@@ -1,5 +1,5 @@
 <script>
-	import { Button } from '@foxui/core';
+	import { Button } from '@foxui/all';
 </script>
 
 <Button tabindex={-1}>Button</Button>

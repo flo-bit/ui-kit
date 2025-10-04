@@ -16,7 +16,6 @@ svelte 5 + tailwind 4 ui kit, base components
 - [Head](https://flo-bit.dev/ui-kit/components/base/head)
 - [Heading](https://flo-bit.dev/ui-kit/components/base/image)
 - [Modals](https://flo-bit.dev/ui-kit/components/base/modal)
-- [Number Input](https://flo-bit.dev/ui-kit/components/base/number-input)
 - [Popover](https://flo-bit.dev/ui-kit/components/base/popover)
 - [Prose](https://flo-bit.dev/ui-kit/components/base/prose)
 - [Scroll Area](https://flo-bit.dev/ui-kit/components/base/scroll-area)

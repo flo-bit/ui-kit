@@ -1,5 +1,5 @@
 <script>
-	import { Avatar, AvatarGroup } from '@foxui/core';
+	import { Avatar, AvatarGroup } from '@foxui/all';
 </script>
 
 <h3>Single Avatar</h3>

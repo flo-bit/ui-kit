@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Popover, Button, toast } from '@foxui/core';
+	import { Popover, Button, toast } from '@foxui/all';
 
 	let open = $state(false);
 

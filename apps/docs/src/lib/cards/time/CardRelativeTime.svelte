@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Box } from '@foxui/core';
-	import { RelativeTime, TimerState } from '@foxui/time';
+	import { Box } from '@foxui/all';
+	import { RelativeTime, TimerState } from '@foxui/all';
 	import { onMount } from 'svelte';
 
 	let timer: TimerState | undefined = $state();

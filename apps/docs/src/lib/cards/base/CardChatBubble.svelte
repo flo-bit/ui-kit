@@ -1,5 +1,5 @@
 <script>
-	import { ChatBubble } from '@foxui/core';
+	import { ChatBubble } from '@foxui/all';
 </script>
 
 <div class="flex w-full flex-col gap-4">

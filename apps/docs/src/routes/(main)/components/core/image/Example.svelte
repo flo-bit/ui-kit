@@ -1,5 +1,5 @@
 <script>
-	import { ImageContainer } from '@foxui/core';
+	import { ImageContainer } from '@foxui/all';
 
 	import cute from '$lib/assets/images/cute.webp';
 	import cute2 from '$lib/assets/images/cute2.webp';

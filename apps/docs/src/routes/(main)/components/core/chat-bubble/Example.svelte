@@ -1,5 +1,5 @@
 <script>
-	import { Box, ChatBubble, ImageContainer } from '@foxui/core';
+	import { Box, ChatBubble, ImageContainer } from '@foxui/all';
 
 	import cute from '$lib/assets/images/cute.webp';
 </script>

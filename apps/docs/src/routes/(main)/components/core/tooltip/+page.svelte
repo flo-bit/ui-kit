@@ -1,6 +1,6 @@
 <script lang="ts">
 	import TooltipDocs from './Tooltip.md';
-	import { Prose } from '@foxui/core';
+	import { Prose } from '@foxui/all';
 </script>
 
 <Prose>

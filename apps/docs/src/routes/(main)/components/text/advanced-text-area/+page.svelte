@@ -1,6 +1,6 @@
 <script lang="ts">
 	import AdvancedTextAreaDocs from './AdvancedTextArea.md';
-	import { Prose } from '@foxui/core';
+	import { Prose } from '@foxui/all';
 </script>
 
 <Prose>

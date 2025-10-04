@@ -1,5 +1,5 @@
 <script>
-	import { ImageCard, toast} from '@foxui/core';
+	import { ImageCard, toast} from '@foxui/all';
 
 	import nature1 from '$lib/assets/images/nature1.webp';
 	import nature2 from '$lib/assets/images/nature2.webp';

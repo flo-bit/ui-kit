@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Slider, SliderNumber } from '@foxui/core';
+	import { Slider, SliderNumber } from '@foxui/all';
 
 	let value = $state(50);
 

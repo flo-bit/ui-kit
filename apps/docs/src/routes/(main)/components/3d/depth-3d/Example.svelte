@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { Depth3D } from '@foxui/3d';
+	import { Depth3D } from '@foxui/all';
 </script>
 
 <div class="flex w-full items-center justify-center">

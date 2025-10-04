@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Accordion, AccordionItem } from '@foxui/core';
+	import { Accordion, AccordionItem } from '@foxui/all';
 </script>
 
 <Accordion type="single">

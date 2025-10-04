@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { UserProfile } from '@foxui/social';
+	import { UserProfile } from '@foxui/all';
 </script>
 
 <div class="flex h-full w-full items-center justify-center">

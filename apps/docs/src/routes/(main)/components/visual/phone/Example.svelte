@@ -1,5 +1,5 @@
 <script>
-	import { Phone } from '@foxui/visual';
+	import { Phone } from '@foxui/all';
 </script>
 
 <Phone>

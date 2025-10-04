@@ -1,4 +1,4 @@
-<script lang="ts" module>
+<!-- <script lang="ts" module>
 	import type { WithElementRef } from 'bits-ui';
 	import { type VariantProps, tv } from 'tailwind-variants';
 	import { cn } from '../../utils';
@@ -198,4 +198,4 @@
 			display: none;
 		}
 	</style>
-</noscript>
+</noscript> -->

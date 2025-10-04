@@ -1,5 +1,5 @@
 <script>
-	import { Input } from '@foxui/core';
+	import { Input } from '@foxui/all';
 </script>
 
 <h3>Primary</h3>

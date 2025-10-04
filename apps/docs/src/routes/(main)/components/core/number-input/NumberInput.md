@@ -1,5 +1,5 @@
 <script>
-	import { NumberInput } from '@foxui/core';
+	import { NumberInput } from '@foxui/all';
 </script>
 
 # Number Input

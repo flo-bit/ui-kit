@@ -1,6 +1,6 @@
 <script lang="ts">
 	import InputDocs from './Input.md';
-	import { Prose } from '@foxui/core';
+	import { Prose } from '@foxui/all';
 </script>
 
 <Prose>

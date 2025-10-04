@@ -1,5 +1,5 @@
 <script>
-	import { Prose } from '@foxui/core';
+	import { Prose } from '@foxui/all';
 	import ModelPickerDocs from './ModelPicker.md';
 </script>
 

@@ -1,5 +1,5 @@
 <script>
-	import { Tabs } from '@foxui/core';
+	import { Tabs } from '@foxui/all';
 
 	let active = $state('Tab 1');
 </script>

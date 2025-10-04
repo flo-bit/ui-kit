@@ -1,5 +1,5 @@
 <script>
-	import { Alert, AlertDescription, AlertTitle } from '@foxui/core';
+	import { Alert, AlertDescription, AlertTitle } from '@foxui/all';
 </script>
 
 <Alert class="mb-2">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Image } from '@foxui/core';
+	import { Image } from '@foxui/all';
 
 	import image from '$lib/assets/models/vehicle-monster-truck.png';
 	import image2 from '$lib/assets/models/vehicle-racer.png';

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Box } from '@foxui/core';
-	import { RelativeTime } from '@foxui/time';
+	import { Box } from '@foxui/all';
+	import { RelativeTime } from '@foxui/all';
 </script>
 
 <Box class="min-h-0">

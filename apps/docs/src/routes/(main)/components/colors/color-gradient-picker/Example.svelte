@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { ColorGradientPicker, ColorPicker, convert, listColorSpaces, sRGB } from '@foxui/colors';
+	import { ColorGradientPicker, ColorPicker, convert, listColorSpaces, sRGB } from '@foxui/all';
 	import { ThemeWatcher } from '$lib/helper/ThemeWatcher.svelte';
 	import { onMount } from 'svelte';
-	import { deserialize } from '@foxui/colors';
-	import { Button, cn, Popover } from '@foxui/core';
+	import { deserialize } from '@foxui/all';
+	import { Button, cn, Popover } from '@foxui/all';
 	import PopoverColorPicker from '../../../../../../../../packages/colors/src/lib/components/color-picker/popover/PopoverColorPicker.svelte';
 
 	let colors = $state([

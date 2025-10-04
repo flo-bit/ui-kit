@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Example from './Example.svelte';
-	import { Alert } from '@foxui/core';
+	import { Alert } from '@foxui/all';
 </script>
 
 # Relative Time

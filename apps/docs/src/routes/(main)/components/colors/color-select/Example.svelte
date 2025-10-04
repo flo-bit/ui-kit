@@ -1,5 +1,5 @@
 <script>
-	import { ColorSelect } from '@foxui/colors';
+	import { ColorSelect } from '@foxui/all';
 </script>
 
 <ColorSelect

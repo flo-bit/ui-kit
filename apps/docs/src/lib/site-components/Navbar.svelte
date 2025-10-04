@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Button, ThemeToggle, Navbar } from '@foxui/core';
+	import { Button, ThemeToggle, Navbar } from '@foxui/all';
 
 	import Logo from './Logo.svelte';
-	import { Github } from '@foxui/social';
-	import { SelectThemePopover } from '@foxui/colors';
+	import { Github } from '@foxui/all';
+	import { SelectThemePopover } from '@foxui/all';
 
 	let { hasSidebar = false, showLogo = true } = $props();
 </script>

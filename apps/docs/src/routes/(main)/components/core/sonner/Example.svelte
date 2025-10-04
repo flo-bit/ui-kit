@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, toast } from '@foxui/core';
+	import { Button, toast } from '@foxui/all';
 </script>
 
 <div class="not-prose flex flex-wrap gap-4">

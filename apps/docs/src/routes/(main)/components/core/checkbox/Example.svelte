@@ -1,5 +1,5 @@
 <script>
-	import { Checkbox, Label } from '@foxui/core';
+	import { Checkbox, Label } from '@foxui/all';
 </script>
 
 <h3>Primary</h3>

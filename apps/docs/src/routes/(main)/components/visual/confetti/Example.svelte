@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { launchConfetti } from '@foxui/visual';
-	import { Button } from '@foxui/core';
+	import { launchConfetti } from '@foxui/all';
+	import { Button } from '@foxui/all';
 	import { onMount } from 'svelte';
 
 	onMount(() => {

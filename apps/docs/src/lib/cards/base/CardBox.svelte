@@ -1,5 +1,5 @@
 <script>
-	import { Paragraph, Box } from '@foxui/core';
+	import { Paragraph, Box } from '@foxui/all';
 </script>
 
 <Box>

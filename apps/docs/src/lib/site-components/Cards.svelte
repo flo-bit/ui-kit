@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { cn } from '@foxui/core';
+	import { cn } from '@foxui/all';
 
 	import { components } from './components_all';
 </script>

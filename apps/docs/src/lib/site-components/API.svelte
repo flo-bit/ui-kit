@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { APISchema } from '$lib/types/schema';
-	import { Button, Popover, Badge } from '@foxui/core';
+	import { Button, Popover, Badge } from '@foxui/all';
 
 	const { props }: { props: APISchema } = $props();
 </script>

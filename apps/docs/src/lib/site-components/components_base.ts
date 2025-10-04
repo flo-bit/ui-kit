@@ -86,11 +86,11 @@ export const baseComponents: ComponentCard[] = [
 		label: 'Modals',
 		href: 'modal'
 	},
-	{
-		component: CardNumberInput,
-		label: 'Number Input',
-		href: 'number-input'
-	},
+	// {
+	// 	component: CardNumberInput,
+	// 	label: 'Number Input',
+	// 	href: 'number-input'
+	// },
 	{
 		component: CardScrollArea,
 		className: 'p-2',

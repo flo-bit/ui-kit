@@ -54,27 +54,9 @@ importers:
       '@eslint/js':
         specifier: ^9.18.0
         version: 9.25.0
-      '@foxui/3d':
+      '@foxui/all':
         specifier: workspace:*
-        version: link:../../packages/3d
-      '@foxui/colors':
-        specifier: workspace:*
-        version: link:../../packages/colors
-      '@foxui/core':
-        specifier: workspace:*
-        version: link:../../packages/core
-      '@foxui/social':
-        specifier: workspace:*
-        version: link:../../packages/social
-      '@foxui/text':
-        specifier: workspace:*
-        version: link:../../packages/text
-      '@foxui/time':
-        specifier: workspace:*
-        version: link:../../packages/time
-      '@foxui/visual':
-        specifier: workspace:*
-        version: link:../../packages/visual
+        version: link:../../packages/all
       '@mdsx/rehype-custom-highlighter':
         specifier: ^0.0.3
         version: 0.0.3

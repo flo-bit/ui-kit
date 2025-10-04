@@ -1,5 +1,5 @@
 <script>
-	import { Badge, Button } from '@foxui/core';
+	import { Badge, Button } from '@foxui/all';
 </script>
 
 <div class="flex w-full flex-col items-center gap-2 py-12">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { UserProfile } from '@foxui/social';
+	import { UserProfile } from '@foxui/all';
 </script>
 
 <UserProfile

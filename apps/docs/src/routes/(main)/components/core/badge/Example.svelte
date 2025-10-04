@@ -1,5 +1,5 @@
 <script>
-	import { Badge } from '@foxui/core';
+	import { Badge } from '@foxui/all';
 </script>
 
 <h3>Primary</h3>

@@ -4,6 +4,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --filter=docs",
+    "build:docs": "turbo run build --filter=docs",
     "dev:all": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write .",

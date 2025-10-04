@@ -1,5 +1,5 @@
 <script>
-	import { Box } from '@foxui/core';
+	import { Box } from '@foxui/all';
 </script>
 
 # Box

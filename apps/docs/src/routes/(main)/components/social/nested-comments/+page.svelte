@@ -3,7 +3,7 @@
 		FeedViewPost,
 		ThreadViewPost
 	} from '@atproto/api/dist/client/types/app/bsky/feed/defs';
-	import { blueskyPostToPostData, NestedComments, Post, type PostData } from '@foxui/social';
+	import { blueskyPostToPostData, NestedComments, Post, type PostData } from '@foxui/all';
 	import { onMount } from 'svelte';
 
 	let mainPost = $state<PostData>();

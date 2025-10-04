@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { base } from '$app/paths';
-	import { Accordion, AccordionItem, Button, Sidebar } from '@foxui/core';
+	import { Accordion, AccordionItem, Button, Sidebar } from '@foxui/all';
 
 	import { components } from './components_all';
 

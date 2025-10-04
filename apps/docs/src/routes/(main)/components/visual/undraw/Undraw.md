@@ -1,6 +1,6 @@
 <script lang="ts">
 	import UndrawExample from './Example.svelte';
-	import { Alert } from '@foxui/core';
+	import { Alert } from '@foxui/all';
 </script>
 
 # Undraw

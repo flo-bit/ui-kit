@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Undraw } from '@foxui/visual';
+	import { Undraw } from '@foxui/all';
 
 	import svg from '$lib/assets/undraw_wireframing.svg?raw';
 </script>
