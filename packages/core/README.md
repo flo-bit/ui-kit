@@ -1,7 +1,5 @@
 # 🦊 fox ui
 
-This package has been moved to `@foxui/core`.
-
 svelte 5 + tailwind 4 ui kit, base components
 
 - [Accordion](https://flo-bit.dev/ui-kit/components/base/accordion)

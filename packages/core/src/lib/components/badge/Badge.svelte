@@ -7,40 +7,39 @@
 		variants: {
 			variant: {
 				primary:
-					'border border-accent-500/20 dark:border-accent-500/20 bg-accent-500/10 dark:bg-accent-500/10 text-accent-700 dark:text-accent-400',
+					'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-accent-500/5 dark:shadow-accent-500/2 inset-shadow-sm inset-shadow-accent-700/5 dark:inset-shadow-accent-500/2 border border-accent-500/15 dark:border-accent-500/15 bg-accent-200/50 dark:bg-accent-950/20 text-accent-900 dark:text-accent-400',
 				primary_shift:
-					'border border-[oklch(from_var(--color-accent-500)_l_c_calc(h+35)_/_0.2)] dark:border-[oklch(from_var(--color-accent-500)_l_c_calc(h+35)_/_0.2)] bg-[oklch(from_var(--color-accent-500)_l_c_calc(h+35)_/_0.1)] text-[oklch(from_var(--color-accent-700)_l_c_calc(h+35))] dark:text-[oklch(from_var(--color-accent-400)_l_c_calc(h+35))]',
+					'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-[oklch(from_var(--color-accent-500)_l_c_calc(h+35)_/_0.05)] dark:shadow-[oklch(from_var(--color-accent-500)_l_c_calc(h+35)_/_0.02)] inset-shadow-sm inset-shadow-[oklch(from_var(--color-accent-700)_l_c_calc(h+35)_/_0.05)] dark:inset-shadow-[oklch(from_var(--color-accent-500)_l_c_calc(h+35)_/_0.02)] border border-[oklch(from_var(--color-accent-500)_l_c_calc(h+35)_/_0.15)] dark:border-[oklch(from_var(--color-accent-500)_l_c_calc(h+35)_/_0.15)] bg-[oklch(from_var(--color-accent-200)_l_c_calc(h+35)_/_0.5)] dark:bg-[oklch(from_var(--color-accent-950)_l_c_calc(h+35)_/_0.2)] text-[oklch(from_var(--color-accent-900)_l_c_calc(h+35))] dark:text-[oklch(from_var(--color-accent-400)_l_c_calc(h+35))]',
 				primary_shift_2:
-					'border border-[oklch(from_var(--color-accent-500)_l_c_calc(h+70)_/_0.2)] dark:border-[oklch(from_var(--color-accent-500)_l_c_calc(h+70)_/_0.2)] bg-[oklch(from_var(--color-accent-500)_l_c_calc(h+70)_/_0.1)] text-[oklch(from_var(--color-accent-700)_l_c_calc(h+70))] dark:text-[oklch(from_var(--color-accent-400)_l_c_calc(h+70))]',
+					'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-[oklch(from_var(--color-accent-500)_l_c_calc(h+70)_/_0.05)] dark:shadow-[oklch(from_var(--color-accent-500)_l_c_calc(h+70)_/_0.02)] inset-shadow-sm inset-shadow-[oklch(from_var(--color-accent-700)_l_c_calc(h+70)_/_0.05)] dark:inset-shadow-[oklch(from_var(--color-accent-500)_l_c_calc(h+70)_/_0.02)] border border-[oklch(from_var(--color-accent-500)_l_c_calc(h+70)_/_0.15)] dark:border-[oklch(from_var(--color-accent-500)_l_c_calc(h+70)_/_0.15)] bg-[oklch(from_var(--color-accent-200)_l_c_calc(h+70)_/_0.5)] dark:bg-[oklch(from_var(--color-accent-950)_l_c_calc(h+70)_/_0.2)] text-[oklch(from_var(--color-accent-900)_l_c_calc(h+70))] dark:text-[oklch(from_var(--color-accent-400)_l_c_calc(h+70))]',
 				secondary:
-					'bg-base-300/30 dark:bg-base-800/50 text-base-900 dark:text-base-50 border border-base-300/50 dark:border-base-700/30',
-
-				red: 'border border-red-500/20 dark:border-red-500/20 bg-red-500/10 dark:bg-red-500/10 text-red-700 dark:text-red-400',
-				yellow:
-					'border border-yellow-500/20 dark:border-yellow-500/20 bg-yellow-500/10 dark:bg-yellow-500/10 text-yellow-700 dark:text-yellow-400',
-				green:
-					'border border-green-500/20 dark:border-green-500/20 bg-green-500/10 dark:bg-green-500/10 text-green-700 dark:text-green-400',
-				blue: 'border border-blue-500/20 dark:border-blue-500/20 bg-blue-500/10 dark:bg-blue-500/10 text-blue-700 dark:text-blue-400',
-				indigo:
-					'border border-indigo-500/20 dark:border-indigo-500/20 bg-indigo-500/10 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400',
-				violet:
-					'border border-violet-500/20 dark:border-violet-500/20 bg-violet-500/10 dark:bg-violet-500/10 text-violet-700 dark:text-violet-400',
-				purple:
-					'border border-purple-500/20 dark:border-purple-500/20 bg-purple-500/10 dark:bg-purple-500/10 text-purple-700 dark:text-purple-400',
-				fuchsia:
-					'border border-fuchsia-500/20 dark:border-fuchsia-500/20 bg-fuchsia-500/10 dark:bg-fuchsia-500/10 text-fuchsia-700 dark:text-fuchsia-400',
-				pink: 'border border-pink-500/20 dark:border-pink-500/20 bg-pink-500/10 dark:bg-pink-500/10 text-pink-700 dark:text-pink-400',
-				rose: 'border border-rose-500/20 dark:border-rose-500/20 bg-rose-500/10 dark:bg-rose-500/10 text-rose-700 dark:text-rose-400',
+					'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-base-500/5 dark:shadow-base-500/2 inset-shadow-sm inset-shadow-base-700/2 dark:inset-shadow-base-500/2 bg-base-300/40 dark:bg-base-800/30 text-base-900 dark:text-base-50 border border-base-300/50 dark:border-base-700/30',
+				red: 'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-red-500/5 dark:shadow-red-500/2 inset-shadow-sm inset-shadow-red-700/5 dark:inset-shadow-red-500/2 border border-red-500/15 dark:border-red-500/15 bg-red-200/50 dark:bg-red-950/20 text-red-900 dark:text-red-400',
 				orange:
-					'border border-orange-500/20 dark:border-orange-500/20 bg-orange-500/10 dark:bg-orange-500/10 text-orange-700 dark:text-orange-400',
+					'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-orange-500/5 dark:shadow-orange-500/2 inset-shadow-sm inset-shadow-orange-700/5 dark:inset-shadow-orange-500/2 border border-orange-500/15 dark:border-orange-500/15 bg-orange-200/50 dark:bg-orange-950/20 text-orange-900 dark:text-orange-400',
 				amber:
-					'border border-amber-500/20 dark:border-amber-500/20 bg-amber-500/10 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400',
-				lime: 'border border-lime-500/20 dark:border-lime-500/20 bg-lime-500/10 dark:bg-lime-500/10 text-lime-700 dark:text-lime-400',
+					'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-amber-500/5 dark:shadow-amber-500/2 inset-shadow-sm inset-shadow-amber-700/5 dark:inset-shadow-amber-500/2 border border-amber-500/15 dark:border-amber-500/15 bg-amber-200/50 dark:bg-amber-950/20 text-amber-900 dark:text-amber-400',
+				yellow:
+					'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-yellow-500/5 dark:shadow-yellow-500/2 inset-shadow-sm inset-shadow-yellow-700/5 dark:inset-shadow-yellow-500/2 border border-yellow-500/15 dark:border-yellow-500/15 bg-yellow-200/50 dark:bg-yellow-950/20 text-yellow-900 dark:text-yellow-400',
+				lime: 'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-lime-500/5 dark:shadow-lime-500/2 inset-shadow-sm inset-shadow-lime-700/5 dark:inset-shadow-lime-500/2 border border-lime-500/15 dark:border-lime-500/15 bg-lime-200/50 dark:bg-lime-950/20 text-lime-900 dark:text-lime-400',
+				green:
+					'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-green-500/5 dark:shadow-green-500/2 inset-shadow-sm inset-shadow-green-700/5 dark:inset-shadow-green-500/2 border border-green-500/15 dark:border-green-500/15 bg-green-200/50 dark:bg-green-950/20 text-green-900 dark:text-green-400',
 				emerald:
-					'border border-emerald-500/20 dark:border-emerald-500/20 bg-emerald-500/10 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400',
-				teal: 'border border-teal-500/20 dark:border-teal-500/20 bg-teal-500/10 dark:bg-teal-500/10 text-teal-700 dark:text-teal-400',
-				cyan: 'border border-cyan-500/20 dark:border-cyan-500/20 bg-cyan-500/10 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-400',
-				sky: 'border border-sky-500/20 dark:border-sky-500/20 bg-sky-500/10 dark:bg-sky-500/10 text-sky-700 dark:text-sky-400'
+					'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-emerald-500/5 dark:shadow-emerald-500/2 inset-shadow-sm inset-shadow-emerald-700/5 dark:inset-shadow-emerald-500/2 border border-emerald-500/15 dark:border-emerald-500/15 bg-emerald-200/50 dark:bg-emerald-950/20 text-emerald-900 dark:text-emerald-400',
+				teal: 'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-teal-500/5 dark:shadow-teal-500/2 inset-shadow-sm inset-shadow-teal-700/5 dark:inset-shadow-teal-500/2 border border-teal-500/15 dark:border-teal-500/15 bg-teal-200/50 dark:bg-teal-950/20 text-teal-900 dark:text-teal-400',
+				cyan: 'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-cyan-500/5 dark:shadow-cyan-500/2 inset-shadow-sm inset-shadow-cyan-700/5 dark:inset-shadow-cyan-500/2 border border-cyan-500/15 dark:border-cyan-500/15 bg-cyan-200/50 dark:bg-cyan-950/20 text-cyan-900 dark:text-cyan-400',
+				sky: 'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-sky-500/5 dark:shadow-sky-500/2 inset-shadow-sm inset-shadow-sky-700/5 dark:inset-shadow-sky-500/2 border border-sky-500/15 dark:border-sky-500/15 bg-sky-200/50 dark:bg-sky-950/20 text-sky-900 dark:text-sky-400',
+				blue: 'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-blue-500/5 dark:shadow-blue-500/2 inset-shadow-sm inset-shadow-blue-700/5 dark:inset-shadow-blue-500/2 border border-blue-500/15 dark:border-blue-500/15 bg-blue-200/50 dark:bg-blue-950/20 text-blue-900 dark:text-blue-400',
+				indigo:
+					'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-indigo-500/5 dark:shadow-indigo-500/2 inset-shadow-sm inset-shadow-indigo-700/5 dark:inset-shadow-indigo-500/2 border border-indigo-500/15 dark:border-indigo-500/15 bg-indigo-200/50 dark:bg-indigo-950/20 text-indigo-900 dark:text-indigo-400',
+				violet:
+					'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-violet-500/5 dark:shadow-violet-500/2 inset-shadow-sm inset-shadow-violet-700/5 dark:inset-shadow-violet-500/2 border border-violet-500/15 dark:border-violet-500/15 bg-violet-200/50 dark:bg-violet-950/20 text-violet-900 dark:text-violet-400',
+				purple:
+					'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-purple-500/5 dark:shadow-purple-500/2 inset-shadow-sm inset-shadow-purple-700/5 dark:inset-shadow-purple-500/2 border border-purple-500/15 dark:border-purple-500/15 bg-purple-200/50 dark:bg-purple-950/20 text-purple-900 dark:text-purple-400',
+				fuchsia:
+					'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-fuchsia-500/5 dark:shadow-fuchsia-500/2 inset-shadow-sm inset-shadow-fuchsia-700/5 dark:inset-shadow-fuchsia-500/2 border border-fuchsia-500/15 dark:border-fuchsia-500/15 bg-fuchsia-200/50 dark:bg-fuchsia-950/20 text-fuchsia-900 dark:text-fuchsia-400',
+				pink: 'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-pink-500/5 dark:shadow-pink-500/2 inset-shadow-sm inset-shadow-pink-700/5 dark:inset-shadow-pink-500/2 border border-pink-500/15 dark:border-pink-500/15 bg-pink-200/50 dark:bg-pink-950/20 text-pink-900 dark:text-pink-400',
+				rose: 'backdrop-blur-md backdrop-brightness-105 shadow-lg shadow-rose-500/5 dark:shadow-rose-500/2 inset-shadow-sm inset-shadow-rose-700/5 dark:inset-shadow-rose-500/2 border border-rose-500/15 dark:border-rose-500/15 bg-rose-200/50 dark:bg-rose-950/20 text-rose-900 dark:text-rose-400'
 			},
 			size: {
 				sm: 'px-2 text-xs py-0.5 [&_svg]:size-3 gap-1.5',
