@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.4.4
+
+### Patch Changes
+
+- ecd3221: add themetoggle, use modewatcher
+
 ## 0.4.3
 
 ### Patch Changes
