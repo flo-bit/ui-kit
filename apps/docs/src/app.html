@@ -12,36 +12,6 @@
 			data-website-id="e6166872-1b90-4b72-8f63-683b95fc010f"
 			data-domains="flo-bit.dev"
 		></script>
-
-		<script>
-			let dark = localStorage.getItem('darkMode');
-			if (dark) {
-				dark = JSON.parse(dark);
-			} else {
-				dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-			}
-
-			var root = document.getElementsByTagName('html')[0];
-			if (dark) {
-				root.classList.add('dark');
-			} else {
-				root.classList.remove('dark');
-			}
-
-			// get accent color from local storage
-			let accentColor = localStorage.getItem('accentColor');
-			if (accentColor) {
-				accentColor = JSON.parse(accentColor);
-				root.classList.add(accentColor);
-			}
-
-			// get base color from local storage
-			let baseColor = localStorage.getItem('baseColor');
-			if (baseColor) {
-				baseColor = JSON.parse(baseColor);
-				root.classList.add(baseColor);
-			}
-		</script>
 	</head>
 	<body
 		data-sveltekit-preload-data="hover"

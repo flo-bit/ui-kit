@@ -1,61 +1,24 @@
-<script lang="ts" module>
-	export const theme = $state({
-		dark: false
-	});
-</script>
-
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { Button, type ButtonProps } from '../button';
 	import { cn } from '../../utils';
+	import { ModeWatcher, toggleMode } from 'mode-watcher';
 
-	onMount(() => {
-		// load from local storage
-		const savedDarkMode = localStorage.getItem('darkMode');
-		if (savedDarkMode) {
-			theme.dark = JSON.parse(savedDarkMode);
-		} else {
-			// prefers color scheme?
-			theme.dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-		}
-
-		// remove local storage
-		// localStorage.removeItem("darkMode");
-		setTheme(theme.dark);
-
-		// recommended method for newer browsers: specify event-type as first argument
-		window
-			.matchMedia('(prefers-color-scheme: dark)')
-			.addEventListener('change', (e) => e.matches && toggleTheme());
-
-		window
-			.matchMedia('(prefers-color-scheme: light)')
-			.addEventListener('change', (e) => e.matches && toggleTheme());
-	});
-
-	function setTheme(dark: Boolean) {
-		var root = document.getElementsByTagName('html')[0];
-
-		if (dark) {
-			root.classList.add('dark');
-		} else {
-			root.classList.remove('dark');
-		}
-	}
-
-	function toggleTheme() {
-		theme.dark = !theme.dark;
-		// save to local storage
-		localStorage.setItem('darkMode', JSON.stringify(theme.dark));
-		setTheme(theme.dark);
-	}
-
-	let { class: className, ref = $bindable(null), ...restProps }: ButtonProps = $props();
+	let {
+		class: className,
+		ref = $bindable(null),
+		defaultMode = 'system',
+		...restProps
+	}: ButtonProps & {
+		defaultMode?: 'light' | 'dark' | 'system';
+	} = $props();
 </script>
+
+<ModeWatcher {defaultMode} />
 
 <Button
 	variant="link"
-	onclick={toggleTheme}
+	onclick={toggleMode}
 	class={cn(
 		'theme-toggle focus-visible:outline-base-900 dark:focus-visible:outline-base-100 flex items-center justify-center rounded-2xl focus-visible:outline-2',
 		className

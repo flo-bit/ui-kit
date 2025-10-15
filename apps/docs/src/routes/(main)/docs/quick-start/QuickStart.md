@@ -14,10 +14,10 @@ npx sv create my-project
 
 Also add the `@tailwindcss/typography` and `@tailwindcss/forms` plugins.
 
-## 2. Install all fox ui components by running:
+## 2. Install the core fox ui components by running:
 
 ```bash
-npm install @foxui/all
+npm install @foxui/core
 ```
 
 ## 3. Set theme variables in your `app.css`
@@ -26,6 +26,8 @@ You can change the colors to your liking.
 
 ```css
 @source "../node_modules/@foxui";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme {
 	--color-base-50: var(--color-zinc-50);
@@ -58,7 +60,7 @@ You can change the colors to your liking.
 
 ```svelte
 <script>
-	import { Button } from '@foxui/all';
+	import { Button } from '@foxui/core';
 </script>
 
 <Button>Click me</Button>
@@ -72,20 +74,19 @@ Fox UI is split into multiple subpackages to minimize both the bundle size as we
 Simply install a package when you need it, or you can install all of them with:
 
 ```bash
-npm install @foxui/all
+npm install @foxui/core @foxui/3d @foxui/colors @foxui/social @foxui/text @foxui/time @foxui/visual
 ```
 
 ### Dark mode
 
-This ui kit is designed to be used in both light and dark mode
-(and switch automatically depending on system settings).
-If you want to disable dark mode, add the following to your app.css:
+This ui kit is designed to be used in both light and dark mode, and can be used in the following ways:
 
+1. light mode only (default), for dark mode only, add the `dark` class to the `html` element in your app.
+
+2. Allow users to switch between modes using the [\<ThemeToggle /\>](/ui-kit/components/core/theme-toggle) component (before being pressed will default mode to system settings).
+
+3. automatically chooses the mode based on the system settings, simply remove the following from your app.css:
 ```css
 @custom-variant dark (&:is(.dark *));
 ```
 
-Similarly you can disable light mode:
-
-1. Add the above code to your app.css
-2. Add the `dark` class to the `html` element in your app.

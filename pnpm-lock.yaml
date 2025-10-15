@@ -414,6 +414,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      mode-watcher:
+        specifier: ^1.1.0
+        version: 1.1.0(svelte@5.36.16)
       svelte-sonner:
         specifier: ^0.3.28
         version: 0.3.28(svelte@5.36.16)
@@ -4224,6 +4227,16 @@ packages:
     resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==, tarball: https://registry.npmjs.org/mitt/-/mitt-3.0.1.tgz}
     dev: false
 
+  /mode-watcher@1.1.0(svelte@5.36.16):
+    resolution: {integrity: sha512-mUT9RRGPDYenk59qJauN1rhsIMKBmWA3xMF+uRwE8MW/tjhaDSCCARqkSuDTq8vr4/2KcAxIGVjACxTjdk5C3g==, tarball: https://registry.npmjs.org/mode-watcher/-/mode-watcher-1.1.0.tgz}
+    peerDependencies:
+      svelte: ^5.27.0
+    dependencies:
+      runed: 0.25.0(svelte@5.36.16)
+      svelte: 5.36.16
+      svelte-toolbelt: 0.7.1(svelte@5.36.16)
+    dev: false
+
   /mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -4902,6 +4915,15 @@ packages:
 
   /runed@0.23.4(svelte@5.36.16):
     resolution: {integrity: sha512-9q8oUiBYeXIDLWNK5DfCWlkL0EW3oGbk845VdKlPeia28l751VpfesaB/+7pI6rnbx1I6rqoZ2fZxptOJLxILA==, tarball: https://registry.npmjs.org/runed/-/runed-0.23.4.tgz}
+    peerDependencies:
+      svelte: ^5.7.0
+    dependencies:
+      esm-env: 1.2.2
+      svelte: 5.36.16
+    dev: false
+
+  /runed@0.25.0(svelte@5.36.16):
+    resolution: {integrity: sha512-7+ma4AG9FT2sWQEA0Egf6mb7PBT2vHyuHail1ie8ropfSjvZGtEAx8YTmUjv/APCsdRRxEVvArNjALk9zFSOrg==, tarball: https://registry.npmjs.org/runed/-/runed-0.25.0.tgz}
     peerDependencies:
       svelte: ^5.7.0
     dependencies:

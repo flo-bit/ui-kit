@@ -20,6 +20,7 @@ import CardTooltip from '$lib/cards/base/CardTooltip.svelte';
 import CardProse from '$lib/cards/base/CardProse.svelte';
 import CardAccordion from '$lib/cards/base/CardAccordion.svelte';
 import CardSelect from '$lib/cards/base/CardSelect.svelte';
+import CardThemeToggle from '$lib/cards/base/CardThemeToggle.svelte';
 
 import type { Component } from 'svelte';
 import CardPopover from '$lib/cards/base/CardPopover.svelte';
@@ -172,5 +173,10 @@ export const baseComponents: ComponentCard[] = [
 		component: CardToggleGroup,
 		label: 'Toggle Group',
 		href: 'toggle-group'
+	},
+	{
+		component: CardThemeToggle,
+		label: 'Theme Toggle',
+		href: 'theme-toggle'
 	}
 ].sort((a, b) => a.label.localeCompare(b.label));
