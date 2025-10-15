@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.4.3
+
+### Patch Changes
+
+- 2c55039: update badge
+
 ## 0.4.2
 
 ### Patch Changes
