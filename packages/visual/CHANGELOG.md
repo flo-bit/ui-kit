@@ -1,5 +1,13 @@
 # @foxui/visual
 
+## 0.4.4
+
+### Patch Changes
+
+- Updated dependencies [ecd3221]
+  - @foxui/core@0.4.4
+  - @foxui/colors@0.4.4
+
 ## 0.4.3
 
 ### Patch Changes
