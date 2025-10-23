@@ -66,6 +66,9 @@
 			variant?: ButtonVariant;
 			size?: ButtonSize;
 			checkCurrent?: boolean;
+
+			hotkey?: string;
+			showHotkey?: boolean;
 		};
 </script>
 
@@ -78,6 +81,8 @@
 		href = undefined,
 		type = 'button',
 		children,
+		hotkey,
+		showHotkey,
 		...restProps
 	}: ButtonProps = $props();
 </script>
@@ -87,17 +92,31 @@
 		bind:this={ref}
 		class={cn('rounded-box', buttonVariants({ variant, size }), className)}
 		{href}
+		aria-keyshortcuts={hotkey}
 		{...restProps}
 	>
 		{@render children?.()}
+
+		{#if showHotkey && hotkey}
+			<span class="text-accent-300 border-accent-300/10 rounded-md border px-1 py-0.5 text-xs"
+				>{hotkey}</span
+			>
+		{/if}
 	</a>
 {:else}
 	<button
 		bind:this={ref}
 		class={cn('rounded-box', buttonVariants({ variant, size }), className)}
 		{type}
+		aria-keyshortcuts={hotkey}
 		{...restProps}
 	>
 		{@render children?.()}
+
+		{#if showHotkey && hotkey}
+			<span class="text-accent-300 border-accent-300/10 rounded-md border px-1 py-0.5 text-xs"
+				>{hotkey}</span
+			>
+		{/if}
 	</button>
 {/if}

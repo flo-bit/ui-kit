@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	
-	import { Head, Toaster } from '@foxui/all';
+	import { Head, Hotkeys, Toaster } from '@foxui/all';
 	import { base } from '$app/paths';
 	import { dev } from '$app/environment';
 
@@ -47,3 +47,5 @@
 		class="pointer-events-none fixed inset-0 -z-50 h-full w-full object-cover brightness-100 filter"
 	/>
 {/if}
+
+<Hotkeys />
