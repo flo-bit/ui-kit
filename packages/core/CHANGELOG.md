@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.4.5
+
+### Patch Changes
+
+- 53bab4c: minor fixes
+
 ## 0.4.4
 
 ### Patch Changes
