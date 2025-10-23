@@ -1,5 +1,15 @@
 # @foxui/social
 
+## 0.4.5
+
+### Patch Changes
+
+- 53bab4c: add linkcard
+- b609a15: fixes
+- Updated dependencies [53bab4c]
+  - @foxui/core@0.4.5
+  - @foxui/time@0.4.5
+
 ## 0.4.4
 
 ### Patch Changes
