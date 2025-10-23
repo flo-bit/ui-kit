@@ -50,20 +50,18 @@ Whenever possible components should work without javascript.
 Also all components should be accessible (to the best of my knowledge).
 Please let me know [if you find any issues there](https://github.com/flo-bit/ui-kit/issues).
 
-## Dark mode
+### Dark mode
 
-This ui kit is designed to be used in both light and dark mode
-(and switch automatically depending on system settings).
-If you want to disable dark mode, add the following to your app.css:
+This ui kit is designed to be used in both light and dark mode, and can be used in the following ways:
 
+1. light mode only (default), for dark mode only, add the `dark` class to the `html` element in your app.
+
+2. Allow users to switch between modes using the [\<ThemeToggle /\>](/ui-kit/components/core/theme-toggle) component (before being pressed will default mode to system settings).
+
+3. automatically chooses the mode based on the system settings, simply remove the following from your app.css:
 ```css
 @custom-variant dark (&:is(.dark *));
 ```
-
-Similarly you can disable light mode:
-
-1. Add the above code to your app.css
-2. Add the `dark` class to the `html` element in your app.
 
 ## Contributing/Feedback
 
