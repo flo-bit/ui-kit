@@ -1,5 +1,12 @@
 # @foxui/3d
 
+## 0.4.4
+
+### Patch Changes
+
+- Updated dependencies [ecd3221]
+  - @foxui/core@0.4.4
+
 ## 0.4.3
 
 ### Patch Changes
