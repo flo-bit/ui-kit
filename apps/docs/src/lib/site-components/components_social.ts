@@ -6,6 +6,7 @@ import CardBlueskyLogin from '$lib/cards/social/CardBlueskyLogin.svelte';
 import CardStarRating from '$lib/cards/social/CardStarRating.svelte';
 import CardEmojiPicker from '$lib/cards/social/CardEmojiPicker.svelte';
 import CardSocialPost from '$lib/cards/social/CardSocialPost.svelte';
+import CardLinkCard from '$lib/cards/social/CardLinkCard.svelte';
 
 export const socialComponents: ComponentCard[] = [
 	{
@@ -42,5 +43,10 @@ export const socialComponents: ComponentCard[] = [
 		component: CardSocialPost,
 		label: 'Social Media Post',
 		href: 'post'
+	},
+	{
+		component: CardLinkCard,
+		label: 'Link Card',
+		href: 'link-card'
 	}
 ].sort((a, b) => a.label.localeCompare(b.label));

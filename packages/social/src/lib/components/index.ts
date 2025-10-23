@@ -9,6 +9,7 @@ export * from './chat';
 export * from './emoji-picker';
 export * from './bluesky-post';
 export * from './nested-comments';
+export * from './link-card';
 
 export function numberToHumanReadable(number: number) {
 	if (number < 1000) {
