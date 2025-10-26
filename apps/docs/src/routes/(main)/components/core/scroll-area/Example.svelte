@@ -1,5 +1,5 @@
 <script>
-	import { ScrollArea } from '@foxui/all';
+	import { ScrollArea, Box } from '@foxui/all';
 
 	let content = `Doggo ipsum puggorino shoob I am bekom fat. Clouds such treat big ol pupper vvv, porgo. Aqua
 		doggo ur givin me a spook corgo heckin good boys heck much ruin diet, ur givin me a spook doggo
@@ -32,8 +32,9 @@
 		diet very jealous pupper, floofs shibe he made many woofs woofer, heckin good boys pupperino.`;
 </script>
 
-<ScrollArea
-	class="border-base-200 dark:border-base-800 text-base-900 dark:text-base-100 bg-base-100 dark:bg-base-900 h-52 w-96 max-w-full rounded-2xl border p-3"
+<Box class="p-0 w-128 max-w-full">
+<ScrollArea class="h-52 px-4 py-2"
 >
 	{content}
 </ScrollArea>
+</Box>

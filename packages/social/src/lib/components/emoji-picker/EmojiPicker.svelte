@@ -1,13 +1,42 @@
+<script lang="ts" module>
+	import { isEmojiSupported } from 'is-emoji-supported';
+
+	import Database from 'emoji-picker-element/database';
+
+	export let emojiDatabase: {
+		db: Database | undefined;
+	} = $state({
+		db: undefined
+	});
+
+	export function loadEmojis() {
+		if(emojiDatabase.db) return;
+
+		import('emoji-picker-element').then(({ Database }) => {
+			emojiDatabase.db = new Database();
+
+			// go through all groups and check if the emoji is supported (will be cached)
+			// so that things appear faster when we select a group
+			for (const group of allGroups) {
+				emojiDatabase.db.getEmojiByGroup(group.id).then((emojis) => {
+					for (const emoji of emojis) {
+						isEmojiSupported(emoji.unicode);
+					}
+				});
+			}
+		});
+		console.log('emojis loaded');
+	}
+</script>
+
 <script lang="ts">
 	import { cn, ScrollArea } from '@foxui/core';
-	import { isEmojiSupported } from 'is-emoji-supported';
 	import { allGroups } from './emoji';
-	import Database from 'emoji-picker-element/database';
 	import type { NativeEmoji } from 'emoji-picker-element/shared';
 	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
 
 	let currentGroup = $state(allGroups[0].id);
-	let db: Database | undefined = $state();
 
 	let {
 		onpicked,
@@ -23,22 +52,9 @@
 		class?: string;
 	} = $props();
 
-	$effect(() => {
-		if (db) return;
-		import('emoji-picker-element').then(({ Database }) => {
-			db = new Database();
-
-			// go through all groups and check if the emoji is supported (will be cached)
-			// so that things appear faster when we select a group
-			for (const group of allGroups) {
-				db.getEmojiByGroup(group.id).then((emojis) => {
-					for (const emoji of emojis) {
-						isEmojiSupported(emoji.unicode);
-					}
-				});
-			}
-		});
-	});
+	onMount(() => {
+		loadEmojis();
+	})
 </script>
 
 <div class={cn('flex flex-col', className)} style="height: {height}px; width: {width}px;">
@@ -46,7 +62,7 @@
 		class="grid w-full select-none space-y-0 px-2"
 		style="height: {height}px; grid-template-columns: repeat({columns}, minmax(0, 1fr));"
 	>
-		{#await db?.getEmojiByGroup(currentGroup) then emojis}
+		{#await emojiDatabase.db?.getEmojiByGroup(currentGroup) then emojis}
 			{#if emojis}
 				{#each emojis as emoji}
 					{#if isEmojiSupported(emoji.unicode)}
@@ -70,12 +86,12 @@
 			<button
 				onclick={() => (currentGroup = group.id)}
 				class={cn(
-					'[&>svg]:size-4.5 relative cursor-pointer [&>svg]:transition-all [&>svg]:duration-100 [&>svg]:hover:scale-105 py-2',
+					'[&>svg]:size-4.5 relative cursor-pointer py-2 [&>svg]:transition-all [&>svg]:duration-100 [&>svg]:hover:scale-105',
 					group.id === currentGroup
 						? 'text-accent-600 dark:text-accent-400'
 						: 'hover:text-accent-700 dark:hover:text-accent-300'
 				)}
-				>
+			>
 				{@html group.svg}
 				<span class="sr-only">{group.name}</span>
 

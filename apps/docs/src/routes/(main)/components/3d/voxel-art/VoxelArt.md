@@ -2,7 +2,7 @@
 	import Example from './Example.svelte';
 </script>
 
-# Depth 3D
+# Voxel Art
 
 ## Example
 
