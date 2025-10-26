@@ -1,5 +1,14 @@
 # @foxui/social
 
+## 0.4.6
+
+### Patch Changes
+
+- f919e9c: hopefully improve emojipicker, improve box
+- Updated dependencies [f919e9c]
+  - @foxui/core@0.4.6
+  - @foxui/time@0.4.6
+
 ## 0.4.5
 
 ### Patch Changes

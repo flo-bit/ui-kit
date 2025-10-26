@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.4.6
+
+### Patch Changes
+
+- f919e9c: hopefully improve emojipicker, improve box
+
 ## 0.4.5
 
 ### Patch Changes
