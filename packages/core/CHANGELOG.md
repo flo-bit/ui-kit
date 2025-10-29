@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.4.7
+
+### Patch Changes
+
+- b9e5ed3: add ref to scrollview
+
 ## 0.4.6
 
 ### Patch Changes
