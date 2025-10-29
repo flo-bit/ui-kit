@@ -22,7 +22,7 @@
 	}
 </script>
 
-<div class={cn('scrollbar', getOrientationClasses(), className)} {...restProps}>
+<div bind:this={ref} class={cn('scrollbar', getOrientationClasses(), className)} {...restProps}>
 	{@render children?.()}
 </div>
 
