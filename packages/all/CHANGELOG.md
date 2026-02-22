@@ -1,5 +1,18 @@
 # @foxui/all
 
+## 0.4.7
+
+### Patch Changes
+
+- Updated dependencies [a1e157b]
+  - @foxui/social@0.4.8
+  - @foxui/core@0.4.8
+  - @foxui/3d@0.4.8
+  - @foxui/colors@0.4.8
+  - @foxui/text@0.4.8
+  - @foxui/time@0.4.8
+  - @foxui/visual@0.4.8
+
 ## 0.4.6
 
 ### Patch Changes
