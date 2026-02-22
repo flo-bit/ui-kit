@@ -1,8 +1,8 @@
 <script lang="ts">
-	import BlueskyLoginDocs from './BlueskyLogin.md';
+	import DownloadButtonDocs from './DownloadButton.md';
 	import { Prose } from '@foxui/all';
 </script>
 
 <Prose>
-	<BlueskyLoginDocs />
+	<DownloadButtonDocs />
 </Prose>

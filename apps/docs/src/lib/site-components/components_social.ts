@@ -26,8 +26,8 @@ export const socialComponents: ComponentCard[] = [
 	},
 	{
 		component: CardBlueskyLogin,
-		label: 'Bluesky Login',
-		href: 'bluesky-login'
+		label: 'Atproto Login',
+		href: 'atproto-login'
 	},
 	{
 		component: CardStarRating,

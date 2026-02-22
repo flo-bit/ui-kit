@@ -2,7 +2,7 @@
 	import Example from './Example.svelte';
 </script>
 
-# Bluesky Login
+# Atproto Login
 
 ## Example
 
@@ -14,13 +14,15 @@
 
 ```svelte
 <script lang="ts">
-	import { BlueskyLogin } from '@foxui/social';
+	import { AtprotoLogin } from '@foxui/social';
 </script>
 
-<BlueskyLogin login={async (handle) => {
-	// do login and return true if login 
-	// is successful and should hide the modal
-}} />
+<AtprotoLogin
+	login={async (handle) => {
+		// do login and return true if login
+		// is successful and should hide the modal
+	}}
+/>
 ```
 
 ### Use with forms
@@ -28,7 +30,7 @@
 Pass in `formAction` and `formMethod` to use the BlueskyLogin component as a form submit handler.
 
 ```svelte
-<BlueskyLogin formAction="/login" formMethod="post" />
+<ATProtoLogin formAction="/login" formMethod="post" />
 ```
 
 And then use like a normal form in your `+page.server.ts` or `+layout.server.ts` file:
@@ -40,6 +42,6 @@ export const actions: Actions = {
 		let handle = formData.get('handle') as string;
 
 		// authorization logic here
-	},
-}
+	}
+};
 ```

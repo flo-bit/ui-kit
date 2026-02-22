@@ -1,6 +1,6 @@
 import { RichText } from '@atproto/api';
 import type { PostData, PostEmbed } from '../post';
-import type { FeedViewPost, PostView } from '@atproto/api/dist/client/types/app/bsky/feed/defs';
+import type { PostView } from '@atproto/api/dist/client/types/app/bsky/feed/defs';
 
 function blueskyEmbedTypeToEmbedType(type: string) {
 	switch (type) {

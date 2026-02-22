@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { Button } from '@foxui/core';
-	import { BlueskyLoginModal, blueskyLoginModalState, type BlueskyLoginProps } from '.';
+	import { AtprotoLoginModal, atProtoLoginModalState, type ATProtoLoginProps } from '.';
 
-	let { login, formAction, formMethod }: BlueskyLoginProps = $props();
+	let { login, formAction, formMethod }: ATProtoLoginProps = $props();
 </script>
 
-<Button onclick={() => blueskyLoginModalState.show()}>
+<Button onclick={() => atProtoLoginModalState.show()}>
 	<svg
 		fill="currentColor"
 		xmlns="http://www.w3.org/2000/svg"
@@ -20,4 +20,4 @@
 	Login
 </Button>
 
-<BlueskyLoginModal {login} {formAction} {formMethod} />
+<AtprotoLoginModal {login} {formAction} {formMethod} />

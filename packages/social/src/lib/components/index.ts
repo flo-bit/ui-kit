@@ -1,4 +1,4 @@
-export * from './bluesky-login';
+export * from './atproto-login';
 export * from './post';
 export * from './star-rating';
 export * from './social-icons';
@@ -10,6 +10,7 @@ export * from './emoji-picker';
 export * from './bluesky-post';
 export * from './nested-comments';
 export * from './link-card';
+export * from './animated-emoji-picker';
 
 export function numberToHumanReadable(number: number) {
 	if (number < 1000) {

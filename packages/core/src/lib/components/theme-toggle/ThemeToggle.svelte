@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { Button, type ButtonProps } from '../button';
 	import { cn } from '../../utils';
 	import { ModeWatcher, toggleMode } from 'mode-watcher';
