@@ -21,7 +21,7 @@
 
 <AccordionPrimitive.Item
 	bind:ref
-	class={cn('border-base-200 dark:border-base-900 border-b', className)}
+	class={cn('border-base-200 dark:border-base-800 border-b group', className)}
 	{...restProps}
 >
 	{#if title}

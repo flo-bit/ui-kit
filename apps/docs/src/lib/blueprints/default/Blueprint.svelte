@@ -13,7 +13,7 @@
 	:global(html.dark .shiki),
 	:global(html.dark .shiki span) {
 		color: var(--shiki-dark) !important;
-		background-color: var(--base-900) !important;
+		background-color: var(--base-800) !important;
 		font-style: var(--shiki-dark-font-style) !important;
 		font-weight: var(--shiki-dark-font-weight) !important;
 		text-decoration: var(--shiki-dark-text-decoration) !important;
@@ -26,6 +26,6 @@
 		border: 1px solid var(--base-200);
 	}
 	:global(html.dark pre.shiki) {
-		border: 1px solid var(--base-800);
+		border: 1px solid var(--base-700);
 	}
 </style>

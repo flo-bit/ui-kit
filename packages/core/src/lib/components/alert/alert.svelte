@@ -9,37 +9,18 @@
 					'backdrop-blur-lg bg-accent-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-accent-700/5 dark:inset-shadow-accent-500/2 shadow-accent-500/5 dark:shadow-accent-500/2 dark:bg-accent-950/20 [&>div:first-of-type]:text-accent-800 [&>svg]:text-accent-700 dark:[&>svg]:text-accent-400 dark:[&>div:first-of-type]:text-accent-300 text-accent-800 dark:text-accent-300 border-accent-500/20 dark:border-accent-500/10',
 				secondary:
 					'backdrop-blur-lg bg-base-200/70 shadow-lg transform-all inset-shadow-sm inset-shadow-base-700/5 dark:inset-shadow-base-500/2 shadow-base-500/5 dark:shadow-base-950/10 dark:bg-base-900/40 [&>div:first-of-type]:text-base-800 [&>svg]:text-base-700 dark:[&>svg]:text-base-400 dark:[&>div:first-of-type]:text-base-200 text-base-800 dark:text-base-300 border-base-500/20 dark:border-base-500/10',
-
-				red: 'backdrop-blur-lg bg-red-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-red-700/5 dark:inset-shadow-red-500/2 shadow-red-500/5 dark:shadow-red-500/2 dark:bg-red-950/20 [&>div:first-of-type]:text-red-800 [&>svg]:text-red-700 dark:[&>svg]:text-red-400 dark:[&>div:first-of-type]:text-red-300 text-red-800 dark:text-red-300 border-red-500/20 dark:border-red-500/10',
-				orange:
-					'backdrop-blur-lg bg-orange-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-orange-700/5 dark:inset-shadow-orange-500/2 shadow-orange-500/5 dark:shadow-orange-500/2 dark:bg-orange-950/20 [&>div:first-of-type]:text-orange-800 [&>svg]:text-orange-700 dark:[&>svg]:text-orange-400 dark:[&>div:first-of-type]:text-orange-300 text-orange-800 dark:text-orange-300 border-orange-500/20 dark:border-orange-500/10',
-				amber:
-					'backdrop-blur-lg bg-amber-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-amber-700/5 dark:inset-shadow-amber-500/2 shadow-amber-500/5 dark:shadow-amber-500/2 dark:bg-amber-950/20 [&>div:first-of-type]:text-amber-800 [&>svg]:text-amber-700 dark:[&>svg]:text-amber-400 dark:[&>div:first-of-type]:text-amber-300 text-amber-800 dark:text-amber-300 border-amber-500/20 dark:border-amber-500/10',
-				yellow:
-					'backdrop-blur-lg bg-yellow-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-yellow-700/5 dark:inset-shadow-yellow-500/2 shadow-yellow-500/5 dark:shadow-yellow-500/2 dark:bg-yellow-950/20 [&>div:first-of-type]:text-yellow-800 [&>svg]:text-yellow-700 dark:[&>svg]:text-yellow-400 dark:[&>div:first-of-type]:text-yellow-300 text-yellow-800 dark:text-yellow-300 border-yellow-500/20 dark:border-yellow-500/10',
-				lime: 'backdrop-blur-lg bg-lime-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-lime-700/5 dark:inset-shadow-lime-500/2 shadow-lime-500/5 dark:shadow-lime-500/2 dark:bg-lime-950/20 [&>div:first-of-type]:text-lime-800 [&>svg]:text-lime-700 dark:[&>svg]:text-lime-400 dark:[&>div:first-of-type]:text-lime-300 text-lime-800 dark:text-lime-300 border-lime-500/20 dark:border-lime-500/10',
-				green:
-					'backdrop-blur-lg bg-green-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-green-700/5 dark:inset-shadow-green-500/2 shadow-green-500/5 dark:shadow-green-500/2 dark:bg-green-950/20 [&>div:first-of-type]:text-green-800 [&>svg]:text-green-700 dark:[&>svg]:text-green-400 dark:[&>div:first-of-type]:text-green-300 text-green-800 dark:text-green-300 border-green-500/20 dark:border-green-500/10',
-				emerald:
-					'backdrop-blur-lg bg-emerald-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-emerald-700/5 dark:inset-shadow-emerald-500/2 shadow-emerald-500/5 dark:shadow-emerald-500/2 dark:bg-emerald-950/20 [&>div:first-of-type]:text-emerald-800 [&>svg]:text-emerald-700 dark:[&>svg]:text-emerald-400 dark:[&>div:first-of-type]:text-emerald-300 text-emerald-800 dark:text-emerald-300 border-emerald-500/20 dark:border-emerald-500/10',
-				teal: 'backdrop-blur-lg bg-teal-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-teal-700/5 dark:inset-shadow-teal-500/2 shadow-teal-500/5 dark:shadow-teal-500/2 dark:bg-teal-950/20 [&>div:first-of-type]:text-teal-800 [&>svg]:text-teal-700 dark:[&>svg]:text-teal-400 dark:[&>div:first-of-type]:text-teal-300 text-teal-800 dark:text-teal-300 border-teal-500/20 dark:border-teal-500/10',
-				cyan: 'backdrop-blur-lg bg-cyan-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-cyan-700/5 dark:inset-shadow-cyan-500/2 shadow-cyan-500/5 dark:shadow-cyan-500/2 dark:bg-cyan-950/20 [&>div:first-of-type]:text-cyan-800 [&>svg]:text-cyan-700 dark:[&>svg]:text-cyan-400 dark:[&>div:first-of-type]:text-cyan-300 text-cyan-800 dark:text-cyan-300 border-cyan-500/20 dark:border-cyan-500/10',
-				sky: 'backdrop-blur-lg bg-sky-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-sky-700/5 dark:inset-shadow-sky-500/2 shadow-sky-500/5 dark:shadow-sky-500/2 dark:bg-sky-950/20 [&>div:first-of-type]:text-sky-800 [&>svg]:text-sky-700 dark:[&>svg]:text-sky-400 dark:[&>div:first-of-type]:text-sky-300 text-sky-800 dark:text-sky-300 border-sky-500/20 dark:border-sky-500/10',
-				blue: 'backdrop-blur-lg bg-blue-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-blue-700/5 dark:inset-shadow-blue-500/2 shadow-blue-500/5 dark:shadow-blue-500/2 dark:bg-blue-950/20 [&>div:first-of-type]:text-blue-800 [&>svg]:text-blue-700 dark:[&>svg]:text-blue-400 dark:[&>div:first-of-type]:text-blue-300 text-blue-800 dark:text-blue-300 border-blue-500/20 dark:border-blue-500/10',
-				indigo:
-					'backdrop-blur-lg bg-indigo-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-indigo-700/5 dark:inset-shadow-indigo-500/2 shadow-indigo-500/5 dark:shadow-indigo-500/2 dark:bg-indigo-950/20 [&>div:first-of-type]:text-indigo-800 [&>svg]:text-indigo-700 dark:[&>svg]:text-indigo-400 dark:[&>div:first-of-type]:text-indigo-300 text-indigo-800 dark:text-indigo-300 border-indigo-500/20 dark:border-indigo-500/10',
-				violet:
-					'backdrop-blur-lg bg-violet-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-violet-700/5 dark:inset-shadow-violet-500/2 shadow-violet-500/5 dark:shadow-violet-500/2 dark:bg-violet-950/20 [&>div:first-of-type]:text-violet-800 [&>svg]:text-violet-700 dark:[&>svg]:text-violet-400 dark:[&>div:first-of-type]:text-violet-300 text-violet-800 dark:text-violet-300 border-violet-500/20 dark:border-violet-500/10',
-				purple:
-					'backdrop-blur-lg bg-purple-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-purple-700/5 dark:inset-shadow-purple-500/2 shadow-purple-500/5 dark:shadow-purple-500/2 dark:bg-purple-950/20 [&>div:first-of-type]:text-purple-800 [&>svg]:text-purple-700 dark:[&>svg]:text-purple-400 dark:[&>div:first-of-type]:text-purple-300 text-purple-800 dark:text-purple-300 border-purple-500/20 dark:border-purple-500/10',
-				fuchsia:
-					'backdrop-blur-lg bg-fuchsia-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-fuchsia-700/5 dark:inset-shadow-fuchsia-500/2 shadow-fuchsia-500/5 dark:shadow-fuchsia-500/2 dark:bg-fuchsia-950/20 [&>div:first-of-type]:text-fuchsia-800 [&>svg]:text-fuchsia-700 dark:[&>svg]:text-fuchsia-400 dark:[&>div:first-of-type]:text-fuchsia-300 text-fuchsia-800 dark:text-fuchsia-300 border-fuchsia-500/20 dark:border-fuchsia-500/10',
-				pink: 'backdrop-blur-lg bg-pink-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-pink-700/5 dark:inset-shadow-pink-500/2 shadow-pink-500/5 dark:shadow-pink-500/2 dark:bg-pink-950/20 [&>div:first-of-type]:text-pink-800 [&>svg]:text-pink-700 dark:[&>svg]:text-pink-400 dark:[&>div:first-of-type]:text-pink-300 text-pink-800 dark:text-pink-300 border-pink-500/20 dark:border-pink-500/10',
-				rose: 'backdrop-blur-lg bg-rose-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-rose-700/5 dark:inset-shadow-rose-500/2 shadow-rose-500/5 dark:shadow-rose-500/2 dark:bg-rose-950/20 [&>div:first-of-type]:text-rose-800 [&>svg]:text-rose-700 dark:[&>svg]:text-rose-400 dark:[&>div:first-of-type]:text-rose-300 text-rose-800 dark:text-rose-300 border-rose-500/20 dark:border-rose-500/10'
+			},
+			type: {
+				default: '',
+				info: 'sky',
+				warning: 'amber',
+				error: 'red',
+				success: 'green'
 			}
 		},
 		defaultVariants: {
-			variant: 'default'
+			variant: 'default',
+			type: 'default'
 		}
 	});
 
@@ -65,21 +46,11 @@
 		title?: string;
 		type?: 'info' | 'warning' | 'success' | 'error';
 	} = $props();
-
-	if (type === 'warning' && variant === undefined) {
-		variant = 'amber';
-	} else if (type === 'error' && variant === undefined) {
-		variant = 'red';
-	} else if (type === 'success' && variant === undefined) {
-		variant = 'green';
-	} else if (type === 'info' && variant === undefined) {
-		variant = 'sky';
-	}
 </script>
 
 <div
 	bind:this={ref}
-	class={cn(alertVariants({ variant: variant ?? 'default' }), className)}
+	class={cn(alertVariants({ variant: variant ?? 'default', type: type ?? 'default' }), className)}
 	{...restProps}
 	role="alert"
 >

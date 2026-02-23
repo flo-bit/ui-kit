@@ -70,7 +70,7 @@ You can change the colors to your liking.
 
 ### Subpackages
 
-Fox UI is split into multiple subpackages to minimize both the bundle size as well as the amount of dependencies. 
+Fox UI is split into multiple subpackages to minimize both the bundle size as well as the amount of dependencies.
 Simply install a package when you need it, or you can install all of them with:
 
 ```bash
@@ -86,7 +86,7 @@ This ui kit is designed to be used in both light and dark mode, and can be used 
 2. Allow users to switch between modes using the [\<ThemeToggle /\>](/ui-kit/components/core/theme-toggle) component (before being pressed will default mode to system settings).
 
 3. automatically chooses the mode based on the system settings, simply remove the following from your app.css:
+
 ```css
 @custom-variant dark (&:is(.dark *));
 ```
-

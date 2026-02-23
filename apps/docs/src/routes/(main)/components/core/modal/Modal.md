@@ -11,18 +11,28 @@
 ## Usage
 
 ```svelte
-<script>
-	import { Modal, Button } from '@foxui/core';
+<script lang="ts">
+	import { Button, Modal, ImageContainer, Subheading } from '@foxui/all';
+
+	import cute from '$lib/assets/images/cute.webp';
 
 	let open = $state(false);
 </script>
 
-<Modal
-	bind:open
-	title="This is the default modal"
-	yesButton={{ onclick: () => console.log('yes') }}
-	noButton={{ onclick: () => console.log('no') }}
-/>
+<Button onclick={() => (open = true)} variant="secondary">Open Modal</Button>
 
-<Button onclick={() => (open = true)}>Open modal</Button>
+<Modal bind:open={open} closeButton={false}>
+	<Subheading>
+		You can put anything in here... Like an image:
+	</Subheading>
+
+	<ImageContainer
+		src={cute}
+		alt="image in modal"
+		useThemeColor
+		containerClasses="max-w-64 mx-auto"
+	/>
+
+	<Button onclick={() => (open = false)}>Cool</Button>
+</Modal>
 ```

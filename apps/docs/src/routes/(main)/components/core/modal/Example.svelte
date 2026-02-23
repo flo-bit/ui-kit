@@ -1,25 +1,14 @@
 <script lang="ts">
-	import { Button, Modal, toast, ImageContainer, Subheading } from '@foxui/all';
+	import { Button, Modal, ImageContainer, Subheading } from '@foxui/all';
 
 	import cute from '$lib/assets/images/cute.webp';
 
-	let openDefault = $state(false);
-	let openCustom = $state(false);
+	let open = $state(false);
 </script>
 
-<Button onclick={() => (openDefault = true)}>Default Modal</Button>
+<Button onclick={() => (open = true)} variant="secondary">Open Modal</Button>
 
-<Button onclick={() => (openCustom = true)} variant="secondary">Custom Modal</Button>
-
-<Modal
-	bind:open={openDefault}
-	title="This is the default modal"
-	description="It has a title, description, and two buttons (yes and no)"
-	yesButton={{ onclick: () => toast('Yes', { description: 'Smart choice' }) }}
-	noButton={{ onclick: () => toast('No', { description: 'Why not though?' }) }}
-/>
-
-<Modal bind:open={openCustom} closeButton={false}>
+<Modal bind:open={open} closeButton={false}>
 	<Subheading>
 		You can put anything in here... Like an image:
 	</Subheading>
@@ -31,5 +20,5 @@
 		containerClasses="max-w-64 mx-auto"
 	/>
 
-	<Button onclick={() => (openCustom = false)}>Cool</Button>
+	<Button onclick={() => (open = false)}>Cool</Button>
 </Modal>

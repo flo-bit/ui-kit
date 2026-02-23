@@ -22,7 +22,7 @@
 
 <div class="relative min-w-0 flex-1">
 	<div
-		class="outline-base-300 focus-within:outline-accent-600 dark:focus-within:outline-accent-500 dark:bg-base-900/50 rounded-2xl bg-white outline-1 -outline-offset-1 focus-within:outline-2 focus-within:-outline-offset-2 dark:outline-white/10"
+		class="outline-base-300 focus-within:outline-accent-600 dark:focus-within:outline-accent-500 dark:bg-base-800/50 rounded-2xl bg-white outline-1 -outline-offset-1 focus-within:outline-2 focus-within:-outline-offset-2 dark:outline-white/10"
 	>
 		<ScrollArea>
 			<textarea
