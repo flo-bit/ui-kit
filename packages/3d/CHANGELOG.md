@@ -1,5 +1,16 @@
 # @foxui/3d
 
+## 0.5.0
+
+### Minor Changes
+
+- 452f928: update dependencies, bump
+
+### Patch Changes
+
+- Updated dependencies [452f928]
+  - @foxui/core@0.5.0
+
 ## 0.4.8
 
 ### Patch Changes

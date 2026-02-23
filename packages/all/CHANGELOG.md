@@ -1,5 +1,22 @@
 # @foxui/all
 
+## 0.5.0
+
+### Minor Changes
+
+- 452f928: update dependencies, bump
+
+### Patch Changes
+
+- Updated dependencies [452f928]
+  - @foxui/3d@0.5.0
+  - @foxui/colors@0.5.0
+  - @foxui/core@0.5.0
+  - @foxui/social@0.5.0
+  - @foxui/text@0.5.0
+  - @foxui/time@0.5.0
+  - @foxui/visual@0.5.0
+
 ## 0.4.7
 
 ### Patch Changes
