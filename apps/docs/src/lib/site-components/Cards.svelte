@@ -15,7 +15,7 @@
 						class="group relative flex flex-col items-start gap-3 transition-opacity duration-150 md:gap-4"
 					>
 						<div
-							class="bg-base-50 dark:bg-base-900/50 shadow-lg backdrop-blur-xl shadow-base-900/10 inset-shadow-sm inset-shadow-base-800/5 dark:inset-shadow-base-400/5 border-base-200 dark:border-base-900 pointer-events-none relative h-44 w-full overflow-hidden rounded-2xl border"
+							class="bg-base-50 dark:bg-base-950/50 shadow-lg backdrop-blur-xl shadow-base-900/10 inset-shadow-sm inset-shadow-base-800/5 dark:inset-shadow-black/50 border-base-200 dark:border-base-800 pointer-events-none relative h-44 w-full overflow-hidden rounded-2xl border"
 						>
 							<div
 								class={cn(
