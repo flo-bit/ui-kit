@@ -1,5 +1,12 @@
 # @foxui/time
 
+## 0.4.8
+
+### Patch Changes
+
+- Updated dependencies [a1e157b]
+  - @foxui/core@0.4.8
+
 ## 0.4.7
 
 ### Patch Changes

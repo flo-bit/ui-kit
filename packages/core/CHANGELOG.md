@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.4.8
+
+### Patch Changes
+
+- a1e157b: small updates, try publishing
+
 ## 0.4.7
 
 ### Patch Changes
