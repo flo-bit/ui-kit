@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.5.0
+
+### Minor Changes
+
+- 452f928: update dependencies, bump
+
 ## 0.4.8
 
 ### Patch Changes
