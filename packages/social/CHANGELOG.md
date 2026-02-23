@@ -1,5 +1,14 @@
 # @foxui/social
 
+## 0.4.8
+
+### Patch Changes
+
+- a1e157b: small updates, try publishing
+- Updated dependencies [a1e157b]
+  - @foxui/core@0.4.8
+  - @foxui/time@0.4.8
+
 ## 0.4.7
 
 ### Patch Changes
