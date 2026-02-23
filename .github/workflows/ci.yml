@@ -39,6 +39,9 @@ jobs:
           node-version: 22
           cache: 'pnpm'
 
+      - name: Install latest npm (>= 11.5.1 for trusted publishing)
+        run: npm install -g npm@latest
+
       - name: Install dependencies
         run: pnpm install
 
@@ -55,7 +58,7 @@ jobs:
           publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
