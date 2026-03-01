@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import { type Editor as CoreEditor, mergeAttributes, type Content } from '@tiptap/core';
 	import { type Editor, createEditor, EditorContent } from 'svelte-tiptap';
 	import StarterKit from '@tiptap/starter-kit';
@@ -105,83 +105,85 @@
 		}
 	}
 
-	editor = createEditor({
-		extensions: [
-			StarterKit.configure({
-				dropcursor: {
-					class: 'text-accent-500/30 rounded-2xl',
-					width: 2
-				},
-				codeBlock: false,
-				heading: {
-					levels: [1, 2, 3]
-				}
-			}),
-			Placeholder.configure({
-				placeholder: ({ node }) => {
-					if (node.type.name === 'paragraph' || node.type.name === 'heading') {
-						return placeholder;
+	onMount(() => {
+		editor = createEditor({
+			extensions: [
+				StarterKit.configure({
+					dropcursor: {
+						class: 'text-accent-500/30 rounded-2xl',
+						width: 2
+					},
+					codeBlock: false,
+					heading: {
+						levels: [1, 2, 3]
 					}
-					return '';
-				}
-			}),
-			CustomImage.configure({
-				HTMLAttributes: {
-					class: 'max-w-full object-contain relative rounded-2xl'
-				},
-				allowBase64: true
-			}),
-			CodeBlockLowlight.configure({
-				lowlight,
-				defaultLanguage: 'js'
-			}),
-			Underline.configure({}),
-			RichTextLink.configure({
-				openOnClick: false,
-				autolink: true,
-				defaultProtocol: 'https'
-			}),
-			Slash.configure({
-				suggestion: suggestion({
-					char: '/',
-					pluginKey: 'slash',
-					switchTo,
-					processImageFile
-				})
-			}),
-			Typography.configure(),
-			Markdown.configure(),
-			ImageUploadNode.configure({
-				upload: async (file, onProgress, abortSignal) => {
-					console.log('uploading image', file);
-					for (let i = 0; i < 10; i++) {
-						await new Promise((resolve) => setTimeout(resolve, 200));
-						onProgress?.({ progress: i / 10 });
+				}),
+				Placeholder.configure({
+					placeholder: ({ node }) => {
+						if (node.type.name === 'paragraph' || node.type.name === 'heading') {
+							return placeholder;
+						}
+						return '';
 					}
+				}),
+				CustomImage.configure({
+					HTMLAttributes: {
+						class: 'max-w-full object-contain relative rounded-2xl'
+					},
+					allowBase64: true
+				}),
+				CodeBlockLowlight.configure({
+					lowlight,
+					defaultLanguage: 'js'
+				}),
+				Underline.configure({}),
+				RichTextLink.configure({
+					openOnClick: false,
+					autolink: true,
+					defaultProtocol: 'https'
+				}),
+				Slash.configure({
+					suggestion: suggestion({
+						char: '/',
+						pluginKey: 'slash',
+						switchTo,
+						processImageFile
+					})
+				}),
+				Typography.configure(),
+				Markdown.configure(),
+				ImageUploadNode.configure({
+					upload: async (file, onProgress, abortSignal) => {
+						console.log('uploading image', file);
+						for (let i = 0; i < 10; i++) {
+							await new Promise((resolve) => setTimeout(resolve, 200));
+							onProgress?.({ progress: i / 10 });
+						}
 
-					return 'https://picsum.photos/200/300';
+						return 'https://picsum.photos/200/300';
+					}
+				})
+			],
+			editorProps: {
+				attributes: {
+					class: 'outline-none'
 				}
-			})
-		],
-		editorProps: {
-			attributes: {
-				class: 'outline-none'
-			}
-		},
-		onUpdate: (ctx) => {
-			content = ctx.editor.getJSON();
-			onupdate?.(content, ctx);
-		},
-		onFocus: () => {
-			hasFocus = true;
-		},
-		onBlur: () => {
-			hasFocus = false;
-		},
-		onTransaction: () => {
-			ontransaction?.();
-		},
-		content
+			},
+			onUpdate: (ctx) => {
+				content = ctx.editor.getJSON();
+				onupdate?.(content, ctx);
+			},
+			onFocus: () => {
+				hasFocus = true;
+			},
+			onBlur: () => {
+				hasFocus = false;
+			},
+			onTransaction: () => {
+				ontransaction?.();
+			},
+			content
+		});
 	});
 
 	const handlePaste = (event: ClipboardEvent) => {
