@@ -35,8 +35,9 @@
 {#if !mobileOnly}
 	<div
 		class={cn(
-			'border-base-200 bg-base-50/50 dark:border-base-300/10 dark:bg-base-950/50 backdrop-blur-xl fixed my-1 ml-0.5 overflow-y-hidden rounded-2xl',
-			'inset-auto left-1 top-0 z-50 block h-[calc(100dvh-0.5rem)] w-72 border shadow-lg lg:hidden',
+			'border-base-400/40 bg-base-200/70 dark:border-base-300/10 dark:bg-base-950/50 backdrop-blur-xl fixed my-1 ml-0.5 overflow-y-hidden rounded-2xl',
+			'inset-auto left-1 top-0 z-50 block h-[calc(100dvh-0.5rem)] w-72 border lg:hidden',
+			'inset-shadow-sm inset-shadow-base-800/10 dark:inset-shadow-black/50',
 			'hidden -translate-x-72 border lg:block lg:w-72 lg:translate-x-0',
 			className
 		)}

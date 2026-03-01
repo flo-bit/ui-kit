@@ -35,7 +35,7 @@
 
 <div
 	class={cn(
-		'border-base-300 bg-base-200 text-base-900 dark:border-base-800 dark:bg-base-900 dark:text-base-50 relative isolate flex size-10 shrink-0 overflow-hidden rounded-full border',
+		'not-prose border-base-300 bg-base-200 text-base-900 dark:border-base-800 dark:bg-base-900 dark:text-base-50 relative isolate flex size-10 shrink-0 overflow-hidden rounded-full border',
 		className
 	)}
 	{...restProps}

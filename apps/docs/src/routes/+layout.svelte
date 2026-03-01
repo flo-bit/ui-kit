@@ -12,7 +12,7 @@
 	let images = ['test.jpg', 'gradient.jpg', 'mountains.jpg', 'dark_mountains.jpg'];
 	let currentImage = $state(0);
 </script>
-
+<!-- 
 <svelte:body
 	onkeydown={(e) => {
 		if(!dev) return;
@@ -25,7 +25,7 @@
 			currentImage = (currentImage - 1 + images.length) % images.length;
 		}
 	}}
-/>
+/> -->
 
 {@render children()}
 

@@ -1,10 +1,14 @@
 <script lang="ts">
-	import { toast } from '@foxui/all';
-	import { AtprotoLogin } from '@foxui/all';
+	import { AtprotoLoginModal, atProtoLoginModalState, Button, toast } from '@foxui/all';
 </script>
 
-<AtprotoLogin
-	login={async (handle: string) => {
+
+
+<Button onclick={() => atProtoLoginModalState.show()}>
+	Login
+</Button>
+
+<AtprotoLoginModal login={async (handle: string) => {
 		if (!handle) {
 			toast.error('Please enter a handle');
 			return false;
@@ -15,5 +19,8 @@
 		}
 		toast.success(`Login successful for ${handle}`);
 		return true;
-	}}
-/>
+	}} signup={async () => {
+		toast.success('Signup successful');
+		atProtoLoginModalState.hide();
+		return true;
+	}} />

@@ -10,38 +10,31 @@
 
 ## Usage
 
-### Client side login
+### Add modal to your `+layout.svelte`
 
 ```svelte
 <script lang="ts">
-	import { AtprotoLogin } from '@foxui/social';
+	import { AtprotoLoginModal } from '@foxui/social';
 </script>
 
-<AtprotoLogin
+<AtprotoLoginModal
 	login={async (handle) => {
 		// do login and return true if login
+		// is successful and should hide the modal
+	}}
+	signup={async () => {
+		// do signup and return true if signup
 		// is successful and should hide the modal
 	}}
 />
 ```
 
-### Use with forms
-
-Pass in `formAction` and `formMethod` to use the BlueskyLogin component as a form submit handler.
+### Open the modal
 
 ```svelte
-<ATProtoLogin formAction="/login" formMethod="post" />
-```
+<script lang="ts">
+	import { atProtoLoginModalState, Button } from '@foxui/all';
+</script>
 
-And then use like a normal form in your `+page.server.ts` or `+layout.server.ts` file:
-
-```ts
-export const actions: Actions = {
-	login: async ({ request }) => {
-		const formData = await request.formData();
-		let handle = formData.get('handle') as string;
-
-		// authorization logic here
-	}
-};
+<Button onclick={() => atProtoLoginModalState.show()}>Login</Button>
 ```

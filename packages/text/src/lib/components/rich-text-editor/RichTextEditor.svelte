@@ -1,24 +1,22 @@
 <script lang="ts">
 	import { onDestroy } from 'svelte';
 	import { type Editor as CoreEditor, mergeAttributes, type Content } from '@tiptap/core';
-	import { type Editor, createEditor, EditorContent, BubbleMenu } from 'svelte-tiptap';
+	import { type Editor, createEditor, EditorContent } from 'svelte-tiptap';
 	import StarterKit from '@tiptap/starter-kit';
 	import Placeholder from '@tiptap/extension-placeholder';
 	import Image from '@tiptap/extension-image';
 	import { all, createLowlight } from 'lowlight';
 	import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
 	import Underline from '@tiptap/extension-underline';
-	import RichTextEditorMenu from './RichTextEditorMenu.svelte';
 	import type { RichTextTypes } from '.';
-	import RichTextEditorLinkMenu from './RichTextEditorLinkMenu.svelte';
 	import Slash, { suggestion } from './slash-menu';
 	import Typography from '@tiptap/extension-typography';
 	import { RichTextLink } from './RichTextLink';
 	import { Markdown } from '@tiptap/markdown';
 
-	import './code.css';
 	import { cn } from '@foxui/core';
 	import { ImageUploadNode } from './image-upload/ImageUploadNode';
+	import { FormattingBubbleMenu } from './formatting-bubble-menu';
 	import type { Transaction } from '@tiptap/pm/state';
 	import type { Readable } from 'svelte/store';
 
@@ -43,15 +41,6 @@
 	const lowlight = createLowlight(all);
 
 	let hasFocus = true;
-
-	let selectedType: RichTextTypes = $state('paragraph');
-
-	let isBold = $state(false);
-	let isItalic = $state(false);
-	let isUnderline = $state(false);
-	let isStrikethrough = $state(false);
-	let isLink = $state(false);
-	let isImage = $state(false);
 
 	const CustomImage = Image.extend({
 		renderHTML({ HTMLAttributes }) {
@@ -189,31 +178,7 @@
 		onBlur: () => {
 			hasFocus = false;
 		},
-		onTransaction: (ctx) => {
-			isBold = ctx.editor.isActive('bold');
-			isItalic = ctx.editor.isActive('italic');
-			isUnderline = ctx.editor.isActive('underline');
-			isStrikethrough = ctx.editor.isActive('strike');
-			isLink = ctx.editor.isActive('link');
-			isImage = ctx.editor.isActive('image');
-
-			if (ctx.editor.isActive('heading', { level: 1 })) {
-				selectedType = 'heading-1';
-			} else if (ctx.editor.isActive('heading', { level: 2 })) {
-				selectedType = 'heading-2';
-			} else if (ctx.editor.isActive('heading', { level: 3 })) {
-				selectedType = 'heading-3';
-			} else if (ctx.editor.isActive('blockquote')) {
-				selectedType = 'blockquote';
-			} else if (ctx.editor.isActive('code')) {
-				selectedType = 'code';
-			} else if (ctx.editor.isActive('bulletList')) {
-				selectedType = 'bullet-list';
-			} else if (ctx.editor.isActive('orderedList')) {
-				selectedType = 'ordered-list';
-			} else {
-				selectedType = 'paragraph';
-			}
+		onTransaction: () => {
 			ontransaction?.();
 		},
 		content
@@ -259,26 +224,6 @@
 		}
 	});
 
-	let link = $state('');
-
-	let linkInput: HTMLInputElement | null = $state(null);
-
-	function clickedLink() {
-		if (isLink) {
-			link = $editor?.getAttributes('link').href;
-
-			setTimeout(() => {
-				linkInput?.focus();
-			}, 100);
-		} else {
-			link = '';
-			$editor?.chain().focus().setLink({ href: link }).run();
-
-			setTimeout(() => {
-				linkInput?.focus();
-			}, 100);
-		}
-	}
 </script>
 
 <div
@@ -296,42 +241,7 @@
 </div>
 
 {#if $editor}
-	<BubbleMenu
-		editor={$editor}
-		shouldShow={({ editor }) => {
-			return (
-				!editor.isActive('image') &&
-				!editor.view.state.selection.empty &&
-				!editor.isActive('codeBlock') &&
-				!editor.isActive('link') &&
-				!editor.isActive('imageUpload')
-			);
-		}}
-		pluginKey="bubble-menu-marks"
-	>
-		<RichTextEditorMenu
-			editor={$editor}
-			{isBold}
-			{isItalic}
-			{isUnderline}
-			{isStrikethrough}
-			{isLink}
-			{isImage}
-			{clickedLink}
-			{processImageFile}
-			{switchTo}
-			bind:selectedType
-		/>
-	</BubbleMenu>
-	<BubbleMenu
-		editor={$editor}
-		shouldShow={({ editor }) => {
-			return editor.isActive('link') && !editor.view.state.selection.empty;
-		}}
-		pluginKey="bubble-menu-links"
-	>
-		<RichTextEditorLinkMenu editor={$editor} bind:link bind:linkInput />
-	</BubbleMenu>
+	<FormattingBubbleMenu editor={$editor} />
 {/if}
 
 <style>
