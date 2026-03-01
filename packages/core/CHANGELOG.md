@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.5.1
+
+### Patch Changes
+
+- df19933: small fixes, improve atproto login
+
 ## 0.5.0
 
 ### Minor Changes

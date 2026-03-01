@@ -1,5 +1,19 @@
 # @foxui/all
 
+## 0.5.1
+
+### Patch Changes
+
+- df19933: small fixes, improve atproto login
+- Updated dependencies [df19933]
+  - @foxui/social@0.5.1
+  - @foxui/3d@0.5.1
+  - @foxui/colors@0.5.1
+  - @foxui/core@0.5.1
+  - @foxui/text@0.5.1
+  - @foxui/time@0.5.1
+  - @foxui/visual@0.5.1
+
 ## 0.5.0
 
 ### Minor Changes
