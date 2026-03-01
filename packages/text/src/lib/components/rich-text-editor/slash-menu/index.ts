@@ -5,7 +5,7 @@ import { PluginKey } from '@tiptap/pm/state';
 import type { SuggestionKeyDownProps, SuggestionProps } from '@tiptap/suggestion';
 import SuggestionSelect from './SuggestionSelect.svelte';
 import { mount, unmount } from 'svelte';
-import tippy, { type GetReferenceClientRect } from 'tippy.js';
+import { computePosition, flip, shift, offset } from '@floating-ui/dom';
 import type { RichTextTypes } from '..';
 
 export default Extension.create({
@@ -139,55 +139,58 @@ export function suggestion({
 
 		render: () => {
 			let component: ReturnType<typeof SuggestionSelect>;
-			let popup: ReturnType<typeof tippy>;
+			let floatingEl: HTMLElement;
+
+			function updatePosition(clientRect: (() => DOMRect | null) | null | undefined) {
+				if (!clientRect || !floatingEl) return;
+				const rect = clientRect();
+				if (!rect) return;
+
+				const virtualRef = {
+					getBoundingClientRect: () => rect
+				};
+
+				computePosition(virtualRef as Element, floatingEl, {
+					placement: 'bottom-start',
+					middleware: [offset(8), flip(), shift({ padding: 8 })]
+				}).then(({ x, y }) => {
+					Object.assign(floatingEl.style, {
+						left: `${x}px`,
+						top: `${y}px`
+					});
+				});
+			}
 
 			return {
 				onStart: (props: SuggestionProps) => {
-					const element = document.createElement('div');
+					floatingEl = document.createElement('div');
+					floatingEl.style.position = 'absolute';
+					floatingEl.style.zIndex = '50';
+					document.body.appendChild(floatingEl);
 
 					component = mount(SuggestionSelect, {
-						target: element,
+						target: floatingEl,
 						props
 					});
 
-					if (!props.clientRect) {
-						return;
-					}
-
-					popup = tippy('body', {
-						getReferenceClientRect: props.clientRect as GetReferenceClientRect,
-						appendTo: () => document.body,
-						content: element,
-						showOnCreate: true,
-						interactive: true,
-						trigger: 'manual',
-						placement: 'bottom-start'
-					});
+					updatePosition(props.clientRect);
 				},
 				onUpdate: (props: SuggestionProps) => {
 					component.setItems(props.items);
 					component.setRange(props.range);
-
-					if (!props.clientRect) {
-						return;
-					}
-
-					popup[0].setProps({
-						getReferenceClientRect: props.clientRect as GetReferenceClientRect
-					});
+					updatePosition(props.clientRect);
 				},
 				onKeyDown: (props: SuggestionKeyDownProps) => {
 					if (props.event.key === 'Escape') {
-						popup[0].hide();
-
+						floatingEl.style.display = 'none';
 						return true;
 					}
 
 					return component.onKeyDown(props.event);
 				},
 				onExit: () => {
-					popup[0].destroy();
 					unmount(component);
+					floatingEl.remove();
 				}
 			};
 		}

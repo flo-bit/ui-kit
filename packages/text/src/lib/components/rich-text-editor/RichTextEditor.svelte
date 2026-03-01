@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
-	import { Editor, mergeAttributes, type Content } from '@tiptap/core';
+	import { onDestroy } from 'svelte';
+	import { type Editor as CoreEditor, mergeAttributes, type Content } from '@tiptap/core';
+	import { type Editor, createEditor, EditorContent, BubbleMenu } from 'svelte-tiptap';
 	import StarterKit from '@tiptap/starter-kit';
 	import Placeholder from '@tiptap/extension-placeholder';
 	import Image from '@tiptap/extension-image';
 	import { all, createLowlight } from 'lowlight';
 	import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
-	import BubbleMenu from '@tiptap/extension-bubble-menu';
 	import Underline from '@tiptap/extension-underline';
 	import RichTextEditorMenu from './RichTextEditorMenu.svelte';
 	import type { RichTextTypes } from '.';
@@ -14,16 +14,18 @@
 	import Slash, { suggestion } from './slash-menu';
 	import Typography from '@tiptap/extension-typography';
 	import { RichTextLink } from './RichTextLink';
+	import { Markdown } from '@tiptap/markdown';
 
 	import './code.css';
 	import { cn } from '@foxui/core';
 	import { ImageUploadNode } from './image-upload/ImageUploadNode';
-	import { Transaction } from '@tiptap/pm/state';
+	import type { Transaction } from '@tiptap/pm/state';
+	import type { Readable } from 'svelte/store';
 
 	let {
 		content = $bindable({}),
 		placeholder = 'Write or press / for commands',
-		editor = $bindable(null),
+		editor = $bindable(),
 		ref = $bindable(null),
 		class: className,
 		onupdate,
@@ -31,19 +33,16 @@
 	}: {
 		content?: Content;
 		placeholder?: string;
-		editor?: Editor | null;
+		editor?: Readable<Editor>;
 		ref?: HTMLDivElement | null;
 		class?: string;
-		onupdate?: (content: Content, context: { editor: Editor; transaction: Transaction }) => void;
+		onupdate?: (content: Content, context: { editor: CoreEditor; transaction: Transaction }) => void;
 		ontransaction?: () => void;
 	} = $props();
 
 	const lowlight = createLowlight(all);
 
 	let hasFocus = true;
-
-	let menu: HTMLElement | null = $state(null);
-	let menuLink: HTMLElement | null = $state(null);
 
 	let selectedType: RichTextTypes = $state('paragraph');
 
@@ -55,41 +54,70 @@
 	let isImage = $state(false);
 
 	const CustomImage = Image.extend({
-		// addAttributes(this) {
-		// 	return {
-		// 		inline: true,
-		// 		allowBase64: true,
-		// 		HTMLAttributes: {},
-		// 		uploadImageHandler: { default: undefined }
-		// 	};
-		// },
 		renderHTML({ HTMLAttributes }) {
 			const attrs = mergeAttributes(this.options.HTMLAttributes, HTMLAttributes, {
 				uploadImageHandler: undefined
 			});
-			const isLocal = attrs['data-local'] === 'true';
-
-			// if (isLocal) {
-			// 	// For local images, wrap in a container with a label
-			// 	return [
-			// 		'div',
-			// 		{ class: 'image-container' },
-			// 		['img', { ...attrs, class: `${attrs.class || ''} local-image` }],
-			// 		['span', { class: 'local-image-label' }, 'Local preview']
-			// 	];
-			// }
-
-			console.log('attrs', attrs);
-
-			// For regular images, just return the img tag
 			return ['img', attrs];
 		}
 	});
 
-	onMount(() => {
-		if (!ref) return;
+	// Flag to track whether a file is being dragged over the drop area
+	let isDragOver = $state(false);
 
-		let extensions = [
+	// Store local image files for later upload
+	let localImages: Map<string, File> = $state(new Map());
+
+	// Track which image URLs in the editor are local previews
+	let localImageUrls: Set<string> = $state(new Set());
+
+	// Process image file to create a local preview
+	async function processImageFile(file: File) {
+		if (!$editor) {
+			console.warn('Tiptap editor not initialized');
+			return;
+		}
+
+		try {
+			const localUrl = URL.createObjectURL(file);
+
+			localImages.set(localUrl, file);
+			localImageUrls.add(localUrl);
+
+			$editor
+				.chain()
+				.focus()
+				.setImageUploadNode({
+					preview: localUrl
+				})
+				.run();
+		} catch (error) {
+			console.error('Error creating image preview:', error);
+		}
+	}
+
+	function switchTo(value: RichTextTypes) {
+		$editor?.chain().focus().setParagraph().run();
+
+		if (value === 'heading-1') {
+			$editor?.chain().focus().setNode('heading', { level: 1 }).run();
+		} else if (value === 'heading-2') {
+			$editor?.chain().focus().setNode('heading', { level: 2 }).run();
+		} else if (value === 'heading-3') {
+			$editor?.chain().focus().setNode('heading', { level: 3 }).run();
+		} else if (value === 'blockquote') {
+			$editor?.chain().focus().setBlockquote().run();
+		} else if (value === 'code') {
+			$editor?.chain().focus().setCodeBlock().run();
+		} else if (value === 'bullet-list') {
+			$editor?.chain().focus().toggleBulletList().run();
+		} else if (value === 'ordered-list') {
+			$editor?.chain().focus().toggleOrderedList().run();
+		}
+	}
+
+	editor = createEditor({
+		extensions: [
 			StarterKit.configure({
 				dropcursor: {
 					class: 'text-accent-500/30 rounded-2xl',
@@ -102,7 +130,6 @@
 			}),
 			Placeholder.configure({
 				placeholder: ({ node }) => {
-					// only show in paragraphs
 					if (node.type.name === 'paragraph' || node.type.name === 'heading') {
 						return placeholder;
 					}
@@ -119,28 +146,6 @@
 				lowlight,
 				defaultLanguage: 'js'
 			}),
-			BubbleMenu.configure({
-				element: menu,
-				shouldShow: ({ editor }) => {
-					// dont show if image selected or no selection or is code block
-					return (
-						!editor.isActive('image') &&
-						!editor.view.state.selection.empty &&
-						!editor.isActive('codeBlock') &&
-						!editor.isActive('link') &&
-						!editor.isActive('imageUpload')
-					);
-				},
-				pluginKey: 'bubble-menu-marks'
-			}),
-			BubbleMenu.configure({
-				element: menuLink,
-				shouldShow: ({ editor }) => {
-					// only show if link is selected
-					return editor.isActive('link') && !editor.view.state.selection.empty;
-				},
-				pluginKey: 'bubble-menu-links'
-			}),
 			Underline.configure({}),
 			RichTextLink.configure({
 				openOnClick: false,
@@ -156,10 +161,10 @@
 				})
 			}),
 			Typography.configure(),
+			Markdown.configure(),
 			ImageUploadNode.configure({
 				upload: async (file, onProgress, abortSignal) => {
 					console.log('uploading image', file);
-					// wait 2 seconds
 					for (let i = 0; i < 10; i++) {
 						await new Promise((resolve) => setTimeout(resolve, 200));
 						onProgress?.({ progress: i / 10 });
@@ -168,108 +173,55 @@
 					return 'https://picsum.photos/200/300';
 				}
 			})
-		];
+		],
+		editorProps: {
+			attributes: {
+				class: 'outline-none'
+			}
+		},
+		onUpdate: (ctx) => {
+			content = ctx.editor.getJSON();
+			onupdate?.(content, ctx);
+		},
+		onFocus: () => {
+			hasFocus = true;
+		},
+		onBlur: () => {
+			hasFocus = false;
+		},
+		onTransaction: (ctx) => {
+			isBold = ctx.editor.isActive('bold');
+			isItalic = ctx.editor.isActive('italic');
+			isUnderline = ctx.editor.isActive('underline');
+			isStrikethrough = ctx.editor.isActive('strike');
+			isLink = ctx.editor.isActive('link');
+			isImage = ctx.editor.isActive('image');
 
-		editor = new Editor({
-			element: ref,
-			extensions,
-			editorProps: {
-				attributes: {
-					class: 'outline-none'
-				}
-			},
-			onUpdate: (ctx) => {
-				content = ctx.editor.getJSON();
-				onupdate?.(content, ctx);
-			},
-			onFocus: () => {
-				hasFocus = true;
-			},
-			onBlur: () => {
-				hasFocus = false;
-			},
-			onTransaction: (ctx) => {
-				isBold = ctx.editor.isActive('bold');
-				isItalic = ctx.editor.isActive('italic');
-				isUnderline = ctx.editor.isActive('underline');
-				isStrikethrough = ctx.editor.isActive('strike');
-				isLink = ctx.editor.isActive('link');
-				isImage = ctx.editor.isActive('image');
-
-				if (ctx.editor.isActive('heading', { level: 1 })) {
-					selectedType = 'heading-1';
-				} else if (ctx.editor.isActive('heading', { level: 2 })) {
-					selectedType = 'heading-2';
-				} else if (ctx.editor.isActive('heading', { level: 3 })) {
-					selectedType = 'heading-3';
-				} else if (ctx.editor.isActive('blockquote')) {
-					selectedType = 'blockquote';
-				} else if (ctx.editor.isActive('code')) {
-					selectedType = 'code';
-				} else if (ctx.editor.isActive('bulletList')) {
-					selectedType = 'bullet-list';
-				} else if (ctx.editor.isActive('orderedList')) {
-					selectedType = 'ordered-list';
-				} else {
-					selectedType = 'paragraph';
-				}
-				ontransaction?.();
-			},
-			content
-		});
-
-		menu?.classList.remove('hidden');
-		menuLink?.classList.remove('hidden');
+			if (ctx.editor.isActive('heading', { level: 1 })) {
+				selectedType = 'heading-1';
+			} else if (ctx.editor.isActive('heading', { level: 2 })) {
+				selectedType = 'heading-2';
+			} else if (ctx.editor.isActive('heading', { level: 3 })) {
+				selectedType = 'heading-3';
+			} else if (ctx.editor.isActive('blockquote')) {
+				selectedType = 'blockquote';
+			} else if (ctx.editor.isActive('code')) {
+				selectedType = 'code';
+			} else if (ctx.editor.isActive('bulletList')) {
+				selectedType = 'bullet-list';
+			} else if (ctx.editor.isActive('orderedList')) {
+				selectedType = 'ordered-list';
+			} else {
+				selectedType = 'paragraph';
+			}
+			ontransaction?.();
+		},
+		content
 	});
-
-	// Flag to track whether a file is being dragged over the drop area
-	let isDragOver = $state(false);
-
-	// Store local image files for later upload
-	let localImages: Map<string, File> = $state(new Map());
-
-	// Track which image URLs in the editor are local previews
-	let localImageUrls: Set<string> = $state(new Set());
-
-	// Process image file to create a local preview
-	async function processImageFile(file: File) {
-		if (!editor) {
-			console.warn('Tiptap editor not initialized');
-			return;
-		}
-
-		try {
-			const localUrl = URL.createObjectURL(file);
-
-			localImages.set(localUrl, file);
-			localImageUrls.add(localUrl);
-
-			//editor.commands.setImageUploadNode();
-			editor
-				.chain()
-				.focus()
-				.setImageUploadNode({
-					preview: localUrl
-				})
-				.run();
-
-			// wait 2 seconds
-			// await new Promise((resolve) => setTimeout(resolve, 500));
-
-			// content = editor.getJSON();
-
-			// console.log('replacing image url in content');
-			// replaceImageUrlInContent(content, localUrl, 'https://picsum.photos/200/300');
-			// editor.commands.setContent(content);
-		} catch (error) {
-			console.error('Error creating image preview:', error);
-		}
-	}
 
 	const handlePaste = (event: ClipboardEvent) => {
 		const items = event.clipboardData?.items;
 		if (!items) return;
-		// Check for image data in clipboard
 		for (const item of Array.from(items)) {
 			if (!item.type.startsWith('image/')) continue;
 			const file = item.getAsFile();
@@ -305,8 +257,6 @@
 		for (const localUrl of localImageUrls) {
 			URL.revokeObjectURL(localUrl);
 		}
-
-		editor?.destroy();
 	});
 
 	let link = $state('');
@@ -315,41 +265,18 @@
 
 	function clickedLink() {
 		if (isLink) {
-			//tiptap?.chain().focus().unsetLink().run();
-			// get current link
-			link = editor?.getAttributes('link').href;
+			link = $editor?.getAttributes('link').href;
 
 			setTimeout(() => {
 				linkInput?.focus();
 			}, 100);
 		} else {
 			link = '';
-			// set link
-			editor?.chain().focus().setLink({ href: link }).run();
+			$editor?.chain().focus().setLink({ href: link }).run();
 
 			setTimeout(() => {
 				linkInput?.focus();
 			}, 100);
-		}
-	}
-
-	function switchTo(value: RichTextTypes) {
-		editor?.chain().focus().setParagraph().run();
-
-		if (value === 'heading-1') {
-			editor?.chain().focus().setNode('heading', { level: 1 }).run();
-		} else if (value === 'heading-2') {
-			editor?.chain().focus().setNode('heading', { level: 2 }).run();
-		} else if (value === 'heading-3') {
-			editor?.chain().focus().setNode('heading', { level: 3 }).run();
-		} else if (value === 'blockquote') {
-			editor?.chain().focus().setBlockquote().run();
-		} else if (value === 'code') {
-			editor?.chain().focus().setCodeBlock().run();
-		} else if (value === 'bullet-list') {
-			editor?.chain().focus().toggleBulletList().run();
-		} else if (value === 'ordered-list') {
-			editor?.chain().focus().toggleOrderedList().run();
 		}
 	}
 </script>
@@ -362,24 +289,50 @@
 	ondragleave={handleDragLeave}
 	ondrop={handleDrop}
 	role="region"
-></div>
+>
+	{#if $editor}
+		<EditorContent editor={$editor} />
+	{/if}
+</div>
 
-<RichTextEditorMenu
-	bind:ref={menu}
-	{editor}
-	{isBold}
-	{isItalic}
-	{isUnderline}
-	{isStrikethrough}
-	{isLink}
-	{isImage}
-	{clickedLink}
-	{processImageFile}
-	{switchTo}
-	bind:selectedType
-/>
-
-<RichTextEditorLinkMenu bind:ref={menuLink} {editor} bind:link bind:linkInput />
+{#if $editor}
+	<BubbleMenu
+		editor={$editor}
+		shouldShow={({ editor }) => {
+			return (
+				!editor.isActive('image') &&
+				!editor.view.state.selection.empty &&
+				!editor.isActive('codeBlock') &&
+				!editor.isActive('link') &&
+				!editor.isActive('imageUpload')
+			);
+		}}
+		pluginKey="bubble-menu-marks"
+	>
+		<RichTextEditorMenu
+			editor={$editor}
+			{isBold}
+			{isItalic}
+			{isUnderline}
+			{isStrikethrough}
+			{isLink}
+			{isImage}
+			{clickedLink}
+			{processImageFile}
+			{switchTo}
+			bind:selectedType
+		/>
+	</BubbleMenu>
+	<BubbleMenu
+		editor={$editor}
+		shouldShow={({ editor }) => {
+			return editor.isActive('link') && !editor.view.state.selection.empty;
+		}}
+		pluginKey="bubble-menu-links"
+	>
+		<RichTextEditorLinkMenu editor={$editor} bind:link bind:linkInput />
+	</BubbleMenu>
+{/if}
 
 <style>
 	:global(.tiptap) {

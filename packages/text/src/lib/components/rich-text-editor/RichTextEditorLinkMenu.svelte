@@ -5,12 +5,10 @@
 	let {
 		editor,
 		link = $bindable(''),
-		ref = $bindable(null),
 		linkInput = $bindable(null)
 	}: {
 		editor: Editor | null;
 		link: string;
-		ref: HTMLElement | null;
 		linkInput: HTMLInputElement | null;
 	} = $props();
 
@@ -20,8 +18,7 @@
 </script>
 
 <div
-	bind:this={ref}
-	class="menu bg-base-50 dark:bg-base-900 relative hidden w-fit rounded-2xl px-1 py-1 shadow-lg backdrop-blur-sm"
+	class="menu bg-base-50 dark:bg-base-900 relative w-fit rounded-2xl px-1 py-1 shadow-lg backdrop-blur-sm"
 >
 	<div class="flex items-center gap-1">
 		<Input

@@ -14,7 +14,6 @@
 		isLink,
 		clickedLink,
 		selectedType = $bindable('paragraph'),
-		ref = $bindable(null),
 		processImageFile,
 		switchTo
 	}: {
@@ -27,12 +26,9 @@
 		isLink: boolean;
 		clickedLink: () => void;
 		selectedType: RichTextTypes;
-		ref: HTMLElement | null;
 		processImageFile: (file: File, input: HTMLInputElement) => void;
 		switchTo: (value: RichTextTypes) => void;
 	} = $props();
-
-	$inspect(isBold);
 
 	function handleFileProcess(event: Event) {
 		const input = event.target as HTMLInputElement;
@@ -47,8 +43,7 @@
 </script>
 
 <div
-	bind:this={ref}
-	class="bg-base-50 dark:bg-base-900 border-base-500/20 dark:border-base-700/20 relative hidden w-fit rounded-2xl border px-1 py-1 shadow-lg backdrop-blur-sm"
+	class="bg-base-50 dark:bg-base-900 border-base-500/20 dark:border-base-700/20 relative w-fit rounded-2xl border px-1 py-1 shadow-lg backdrop-blur-sm"
 >
 	<Select
 		onValueChange={(value) => {
