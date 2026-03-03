@@ -1,5 +1,11 @@
 # @foxui/social
 
+## 0.5.4
+
+### Patch Changes
+
+- d7111c5: another small bsky post fix :/
+
 ## 0.5.3
 
 ### Patch Changes
