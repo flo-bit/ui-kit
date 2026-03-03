@@ -1,5 +1,11 @@
 # @foxui/social
 
+## 0.5.3
+
+### Patch Changes
+
+- 27b0b1c: small bluesky post fix
+
 ## 0.5.2
 
 ### Patch Changes
