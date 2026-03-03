@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.5.2
+
+### Patch Changes
+
+- 9167f3c: improve social post and bluesky post, add sanitize function
+
 ## 0.5.1
 
 ### Patch Changes

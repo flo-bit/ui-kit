@@ -1,5 +1,12 @@
 # @foxui/3d
 
+## 0.5.2
+
+### Patch Changes
+
+- Updated dependencies [9167f3c]
+  - @foxui/core@0.5.2
+
 ## 0.5.1
 
 ### Patch Changes
