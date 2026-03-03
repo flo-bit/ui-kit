@@ -68,7 +68,8 @@
     "vite": "^7.3.1"
   },
   "dependencies": {
-    "@atproto/api": "^0.18.21",
+    "@atcute/bluesky": "^3.2.19",
+    "@atcute/bluesky-richtext-segmenter": "^3.0.0",
     "@foxui/core": "workspace:*",
     "@foxui/time": "workspace:*",
     "@use-gesture/vanilla": "^10.3.1",

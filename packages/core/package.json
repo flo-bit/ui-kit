@@ -71,6 +71,7 @@
     "@number-flow/svelte": "^0.3.12",
     "bits-ui": "^2.16.2",
     "clsx": "^2.1.1",
+    "dompurify": "^3.3.1",
     "mode-watcher": "^1.1.0",
     "svelte-sonner": "^1.0.7",
     "tailwind-merge": "^3.5.0",

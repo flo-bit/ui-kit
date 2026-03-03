@@ -3,13 +3,14 @@
 
 	const { data }: { data: PostEmbedExternal } = $props();
 
+	// svelte-ignore state_referenced_locally
 	const domain = new URL(data.external.href).hostname.replace('www.', '');
 </script>
 
 <article
 	class={[
-		'group dark:bg-base-900 bg-base-200 border-base-300 dark:border-base-600/30 max-w-md relative isolate flex flex-col justify-end overflow-hidden rounded-2xl border p-4',
-		data.external.thumb ? 'aspect-[16/9]' : ''
+		'group dark:bg-base-900 bg-base-200 border-base-300 dark:border-base-600/30 relative isolate flex max-w-md flex-col justify-end overflow-hidden rounded-2xl border p-4',
+		data.external.thumb ? 'aspect-video' : ''
 	]}
 >
 	{#if data.external.thumb}
@@ -20,7 +21,7 @@
 		/>
 	{/if}
 	<div
-		class="dark:from-base-950/90 dark:via-base-950/40 from-base-50/90 via-base-50/40 absolute inset-0 -z-10 bg-gradient-to-t"
+		class="dark:from-base-950/90 dark:via-base-950/40 from-base-50/90 via-base-50/40 absolute inset-0 -z-10 bg-linear-to-t"
 	></div>
 
 	<div

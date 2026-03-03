@@ -1,14 +1,17 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Hls from 'hls.js';
 	import type { PostEmbedVideo } from '..';
 
 	const { data }: { data: PostEmbedVideo } = $props();
 
 	onMount(async () => {
-		const Plyr = (await import('plyr')).default;
+		const [{ default: Plyr }, { default: Hls }] = await Promise.all([
+			import('plyr'),
+			import('hls.js')
+		]);
+
 		if (Hls.isSupported()) {
-			var hls = new Hls();
+			const hls = new Hls();
 			hls.loadSource(data.video.playlist);
 			hls.attachMedia(element);
 		}

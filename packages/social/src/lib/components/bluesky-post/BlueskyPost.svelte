@@ -1,22 +1,43 @@
 <script lang="ts">
-	import type { FeedViewPost } from '@atproto/api/dist/client/types/app/bsky/feed/defs';
 	import { Post } from '../post';
 	import { blueskyPostToPostData } from '.';
 	import type { Snippet } from 'svelte';
+	import type { PostView } from '@atcute/bluesky/types/app/feed/defs';
 
 	let {
 		feedViewPost,
+		reason,
 		children,
 		showLogo = false,
+		showAvatar = true,
+		compact = false,
+		showImages = true,
+		showExternal = true,
+		showVideo = true,
+		showQuotes = true,
 		...restProps
-	}: { feedViewPost?: FeedViewPost; children?: Snippet; showLogo?: boolean } = $props();
+	}: {
+		feedViewPost?: PostView;
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		reason?: any;
+		children?: Snippet;
+		showLogo?: boolean;
+		showAvatar?: boolean;
+		compact?: boolean;
+		showImages?: boolean;
+		showExternal?: boolean;
+		showVideo?: boolean;
+		showQuotes?: boolean;
+	} = $props();
 
-	const postData = $derived(feedViewPost ? blueskyPostToPostData(feedViewPost) : undefined);
+	const postData = $derived(
+		feedViewPost ? blueskyPostToPostData(feedViewPost, undefined, reason) : undefined
+	);
 </script>
 
 {#snippet logo()}
 	<a
-		class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-500"
+		class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-500 accent:text-accent-900 accent:hover:text-accent-800"
 		href={postData?.href}
 	>
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="size-4" viewBox="0 0 600 530">
@@ -30,7 +51,21 @@
 {/snippet}
 
 {#if postData}
-	<Post data={postData} logo={showLogo ? logo : undefined} {...restProps}>
+	<Post
+		data={postData}
+		replyHref={postData?.href}
+		repostHref={postData?.href}
+		likeHref={postData?.href}
+		showBookmark={false}
+		logo={showLogo ? logo : undefined}
+		{showAvatar}
+		{compact}
+		{showImages}
+		{showExternal}
+		{showVideo}
+		{showQuotes}
+		{...restProps}
+	>
 		{@render children?.()}
 	</Post>
 {/if}

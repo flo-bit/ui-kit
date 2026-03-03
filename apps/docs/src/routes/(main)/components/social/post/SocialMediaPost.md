@@ -1,12 +1,13 @@
 <script lang="ts">
-	import GithubCornerExample from './Example.svelte';
+	import PostExample from './Example.svelte';
+	import BlueskyExample from './Example-bluesky.svelte';
 </script>
 
 # Social Media Post
 
 ## Example
 
-<GithubCornerExample />
+<PostExample />
 
 ## Usage
 
@@ -32,3 +33,9 @@
 	Hello, world!
 </Post>
 ```
+
+## Bluesky Posts
+
+Live posts loaded from the Bluesky API:
+
+<BlueskyExample />

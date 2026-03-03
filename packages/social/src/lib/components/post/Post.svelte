@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Embed from './embeds/Embed.svelte';
-	import { cn, Avatar, Prose } from '@foxui/core';
+	import { cn, sanitize } from '@foxui/core';
 	import type { WithChildren, WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import type { PostData } from '.';
+	import type { PostData, PostImageData, QuotedPostData } from '.';
 	import PostAction from './PostAction.svelte';
 	import type { Snippet } from 'svelte';
 	import { numberToHumanReadable } from '..';
 	import { RelativeTime } from '@foxui/time';
+	import PostEmbed from './PostEmbed.svelte';
 
 	let {
 		ref = $bindable(),
@@ -26,11 +26,27 @@
 		onLikeClick,
 		onBookmarkClick,
 
+		replyHref,
+		repostHref,
+		likeHref,
+
+		onclickimage,
+		onclickpost,
+		onclickhandle,
+
 		customActions,
 
 		children,
 
-		logo
+		logo,
+
+		showAvatar = true,
+		compact = false,
+
+		showImages = true,
+		showExternal = true,
+		showVideo = true,
+		showQuotes = true
 	}: WithElementRef<WithChildren<HTMLAttributes<HTMLDivElement>>> & {
 		data: PostData;
 		class?: string;
@@ -48,10 +64,40 @@
 		onLikeClick?: () => void;
 		onBookmarkClick?: () => void;
 
+		replyHref?: string;
+		repostHref?: string;
+		likeHref?: string;
+
+		onclickimage?: (image: PostImageData) => void;
+		onclickpost?: (data: PostData | QuotedPostData, href?: string) => void;
+		onclickhandle?: (handle: string, href?: string) => void;
+
 		customActions?: Snippet;
 
 		logo?: Snippet;
+
+		showAvatar?: boolean;
+		compact?: boolean;
+
+		showImages?: boolean;
+		showExternal?: boolean;
+		showVideo?: boolean;
+		showQuotes?: boolean;
 	} = $props();
+
+	function handleContentClick(e: MouseEvent) {
+		if (!onclickhandle) return;
+		const target = (e.target as HTMLElement).closest('a');
+		if (!target) return;
+		const href = target.getAttribute('href');
+		if (!href) return;
+		// Match profile links like /profile/did:... or /profile/handle
+		const match = href.match(/\/profile\/([^/]+)$/);
+		if (match) {
+			e.preventDefault();
+			onclickhandle(match[1], href);
+		}
+	}
 </script>
 
 <div
@@ -75,55 +121,131 @@
 
 			<div class="inline-flex gap-1">
 				reposted by
-				<a
-					href={data.reposted.href}
-					class="hover:text-accent-600 dark:hover:text-accent-400 font-bold"
-				>
-					@{data.reposted.handle}
-				</a>
+				{#if onclickhandle}
+					<button
+						class="hover:text-accent-600 dark:hover:text-accent-400 cursor-pointer font-bold"
+						onclick={() => onclickhandle(data.reposted!.handle, data.reposted!.href)}
+					>
+						@{data.reposted.handle}
+					</button>
+				{:else}
+					<a
+						href={data.reposted.href}
+						target="_blank"
+						class="hover:text-accent-600 dark:hover:text-accent-400 font-bold"
+					>
+						@{data.reposted.handle}
+					</a>
+				{/if}
 			</div>
 		</div>
 	{/if}
 	{#if data.replyTo}
 		<div class="mb-3 inline-flex items-center gap-2 text-xs">
-			
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-3">
-				<path fill-rule="evenodd" d="M14.47 2.47a.75.75 0 0 1 1.06 0l6 6a.75.75 0 0 1 0 1.06l-6 6a.75.75 0 1 1-1.06-1.06l4.72-4.72H9a5.25 5.25 0 1 0 0 10.5h3a.75.75 0 0 1 0 1.5H9a6.75 6.75 0 0 1 0-13.5h10.19l-4.72-4.72a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-			  </svg>
-			  
-			  
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="currentColor"
+				class="size-3"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M14.47 2.47a.75.75 0 0 1 1.06 0l6 6a.75.75 0 0 1 0 1.06l-6 6a.75.75 0 1 1-1.06-1.06l4.72-4.72H9a5.25 5.25 0 1 0 0 10.5h3a.75.75 0 0 1 0 1.5H9a6.75 6.75 0 0 1 0-13.5h10.19l-4.72-4.72a.75.75 0 0 1 0-1.06Z"
+					clip-rule="evenodd"
+				/>
+			</svg>
+
 			<div class="inline-flex gap-1">
 				replying to
-				<a
-					href={data.replyTo.href}
-					class="hover:text-accent-600 dark:hover:text-accent-400 font-bold"
-				>
-					@{data.replyTo.handle}
-				</a>
+				{#if onclickhandle}
+					<button
+						class="hover:text-accent-600 dark:hover:text-accent-400 cursor-pointer font-bold"
+						onclick={() => onclickhandle(data.replyTo!.handle, data.replyTo!.href)}
+					>
+						@{data.replyTo.handle}
+					</button>
+				{:else}
+					<a
+						href={data.replyTo.href}
+						target="_blank"
+						class="hover:text-accent-600 dark:hover:text-accent-400 font-bold"
+					>
+						@{data.replyTo.handle}
+					</a>
+				{/if}
 			</div>
 		</div>
 	{/if}
 	<div class="flex gap-4">
-		<Avatar src={data.author.avatar} />
+		{#if showAvatar && data.author.avatar}
+			{#if onclickhandle}
+				<button
+					class="flex-shrink-0 cursor-pointer"
+					onclick={() => onclickhandle(data.author.handle, data.author.href)}
+				>
+					<img
+						src={data.author.avatar}
+						alt=""
+						class={compact
+							? 'size-7 rounded-full object-cover'
+							: 'size-10 rounded-full object-cover'}
+					/>
+				</button>
+			{:else}
+				<a href={data.author.href} target="_blank" class="flex-shrink-0">
+					<img
+						src={data.author.avatar}
+						alt=""
+						class={compact
+							? 'size-7 rounded-full object-cover'
+							: 'size-10 rounded-full object-cover'}
+					/>
+				</a>
+			{/if}
+		{/if}
 
-		<div class="w-full">
+		<div class="min-w-0 w-full">
 			<div class="mb-1 flex items-start justify-between gap-2">
 				<div class="flex items-start gap-4">
-					{#if data.author.href}
-						<a
-							class="hover:bg-accent-900/5 group/post-author -mx-2 -my-0.5 flex flex-col items-baseline gap-x-2 gap-y-0.5 rounded-xl px-2 py-0.5 sm:flex-row"
-							href={data.author.href}
+					{#if onclickhandle}
+						<button
+							class="hover:bg-accent-900/5 accent:hover:bg-accent-100/10 group/post-author -mx-2 -my-0.5 flex cursor-pointer flex-col items-baseline gap-x-2 gap-y-0.5 rounded-xl px-2 py-0.5 sm:flex-row"
+							onclick={() => onclickhandle(data.author.handle, data.author.href)}
 						>
 							{#if data.author.displayName}
 								<div
-									class="text-base-900 group-hover/post-author:text-accent-600 dark:text-base-50 dark:group-hover/post-author:text-accent-300 text-sm font-semibold leading-tight"
+									class="text-base-900 group-hover/post-author:text-accent-600 dark:text-base-50 dark:group-hover/post-author:text-accent-300 accent:group-hover/post-author:text-accent-950 line-clamp-1 text-sm leading-tight font-semibold"
 								>
 									{data.author.displayName}
 								</div>
 							{/if}
 							<div
 								class={cn(
-									'group-hover/post-author:text-accent-600 dark:group-hover/post-author:text-accent-400 text-sm',
+									'group-hover/post-author:text-accent-600 dark:group-hover/post-author:text-accent-400 accent:text-accent-950 accent:group-hover/post-author:text-accent-900 text-sm',
+									!data.author.displayName
+										? 'text-base-900 dark:text-base-50 font-semibold'
+										: 'text-base-600 dark:text-base-400'
+								)}
+							>
+								@{data.author.handle}
+							</div>
+						</button>
+					{:else if data.author.href}
+						<a
+							class="hover:bg-accent-900/5 accent:hover:bg-accent-100/10 group/post-author -mx-2 -my-0.5 flex flex-col items-baseline gap-x-2 gap-y-0.5 rounded-xl px-2 py-0.5 sm:flex-row"
+							href={data.author.href}
+							target="_blank"
+						>
+							{#if data.author.displayName}
+								<div
+									class="text-base-900 group-hover/post-author:text-accent-600 dark:text-base-50 dark:group-hover/post-author:text-accent-300 accent:group-hover/post-author:text-accent-950 line-clamp-1 text-sm leading-tight font-semibold"
+								>
+									{data.author.displayName}
+								</div>
+							{/if}
+							<div
+								class={cn(
+									'group-hover/post-author:text-accent-600 dark:group-hover/post-author:text-accent-400 accent:text-accent-950 accent:group-hover/post-author:text-accent-900 text-sm',
 									!data.author.displayName
 										? 'text-base-900 dark:text-base-50 font-semibold'
 										: 'text-base-600 dark:text-base-400'
@@ -136,16 +258,21 @@
 						<div
 							class="-mx-2 -my-0.5 flex flex-col items-baseline gap-x-2 gap-y-0.5 rounded-xl px-2 py-0.5 sm:flex-row"
 						>
-							<div class="text-base-900 dark:text-base-50 text-sm font-semibold leading-tight">
+							<div class="text-base-900 dark:text-base-50 text-sm leading-tight font-semibold">
 								{data.author.displayName}
 							</div>
-							<div class="text-base-600 dark:text-base-400 text-sm">
+							<div class="text-base-600 dark:text-base-400 accent:text-accent-950 text-sm">
 								@{data.author.handle}
 							</div>
 						</div>
 					{/if}
 
-					<div class="text-base-600 dark:text-base-400 block text-sm no-underline">
+					<div
+						class={cn(
+							'text-base-600 dark:text-base-400 accent:text-accent-950 block no-underline',
+							compact ? 'text-xs' : 'text-sm'
+						)}
+					>
 						<RelativeTime date={new Date(data.createdAt)} locale="en" />
 					</div>
 				</div>
@@ -155,22 +282,36 @@
 				{/if}
 			</div>
 
-			<Prose size="md">
+			<!-- svelte-ignore a11y_click_events_have_key_events -->
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
+			<div
+				class={cn('post-content break-words', compact ? 'text-sm' : 'text-base')}
+				onclick={onclickhandle ? handleContentClick : undefined}
+			>
 				{#if data.htmlContent}
-					{@html data.htmlContent}
+					{@html sanitize(data.htmlContent, { ADD_ATTR: ['target'] })}
 				{:else}
 					{@render children?.()}
 				{/if}
-			</Prose>
+			</div>
 
-			{#if data.embed}
-				<Embed embed={data.embed} />
-			{/if}
+			<PostEmbed
+				{data}
+				{showImages}
+				{showExternal}
+				{showVideo}
+				{showQuotes}
+				{onclickimage}
+				{onclickpost}
+				{onclickhandle}
+			/>
 
-			{#if showReply || showRepost || showLike || showBookmark || customActions}
-				<div class="text-base-500 dark:text-base-400 mt-4 flex justify-between gap-2">
+			{#if !compact && (showReply || showRepost || showLike || showBookmark || customActions)}
+				<div
+					class="text-base-500 dark:text-base-400 accent:text-base-900 mt-4 flex justify-between gap-2"
+				>
 					{#if showReply}
-						<PostAction onclick={onReplyClick}>
+						<PostAction onclick={onReplyClick} href={replyHref}>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"
@@ -192,7 +333,7 @@
 					{/if}
 
 					{#if showRepost}
-						<PostAction onclick={onRepostClick}>
+						<PostAction onclick={onRepostClick} href={repostHref}>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"
@@ -216,6 +357,7 @@
 						<PostAction
 							class={liked ? 'text-accent-700 dark:text-accent-500 font-semibold' : ''}
 							onclick={onLikeClick}
+							href={likeHref}
 						>
 							{#if liked}
 								<svg
@@ -292,3 +434,13 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.post-content :global(a) {
+		color: var(--color-accent-600);
+	}
+
+	:global(.dark) .post-content :global(a) {
+		color: var(--color-accent-400);
+	}
+</style>

@@ -1,8 +1,5 @@
 <script lang="ts">
-	import type {
-		FeedViewPost,
-		ThreadViewPost
-	} from '@atproto/api/dist/client/types/app/bsky/feed/defs';
+	import type { ThreadViewPost } from '@atcute/bluesky/types/app/feed/defs';
 	import { blueskyPostToPostData, NestedComments, Post, type PostData } from '@foxui/all';
 	import { onMount } from 'svelte';
 
