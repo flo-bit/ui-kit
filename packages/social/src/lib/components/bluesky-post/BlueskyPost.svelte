@@ -56,7 +56,6 @@
 		replyHref={postData?.href}
 		repostHref={postData?.href}
 		likeHref={postData?.href}
-		showBookmark={false}
 		logo={showLogo ? logo : undefined}
 		{showAvatar}
 		{compact}
