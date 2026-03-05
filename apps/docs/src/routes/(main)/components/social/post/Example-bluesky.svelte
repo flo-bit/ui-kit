@@ -27,6 +27,6 @@
 
 <Box class="not-prose relative flex min-h-24 w-full flex-col gap-8 p-8">
 	{#each posts as { post, reason } (post.uri)}
-		<BlueskyPost feedViewPost={post} {reason} showLogo showAvatar={false}></BlueskyPost>
+		<BlueskyPost data={post} {reason} showLogo showAvatar={true}></BlueskyPost>
 	{/each}
 </Box>

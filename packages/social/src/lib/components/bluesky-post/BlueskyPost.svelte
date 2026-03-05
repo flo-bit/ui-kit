@@ -1,14 +1,22 @@
 <script lang="ts">
 	import { Post } from '../post';
+	import type { PostProps } from '../post/types';
 	import { blueskyPostToPostData } from '.';
-	import type { Snippet } from 'svelte';
 	import type { PostView } from '@atcute/bluesky/types/app/feed/defs';
 
+	type BlueskyPostProps = Omit<PostProps, 'data'> & {
+		data?: PostView;
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		reason?: any;
+		showLogo?: boolean;
+	};
+
 	let {
-		feedViewPost,
+		data,
 		reason,
 		children,
 		showLogo = false,
+		logo,
 		showAvatar = true,
 		compact = false,
 		showImages = true,
@@ -16,26 +24,14 @@
 		showVideo = true,
 		showQuotes = true,
 		...restProps
-	}: {
-		feedViewPost?: PostView;
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		reason?: any;
-		children?: Snippet;
-		showLogo?: boolean;
-		showAvatar?: boolean;
-		compact?: boolean;
-		showImages?: boolean;
-		showExternal?: boolean;
-		showVideo?: boolean;
-		showQuotes?: boolean;
-	} = $props();
+	}: BlueskyPostProps = $props();
 
 	const postData = $derived(
-		feedViewPost ? blueskyPostToPostData(feedViewPost, undefined, reason) : undefined
+		data ? blueskyPostToPostData(data, undefined, reason) : undefined
 	);
 </script>
 
-{#snippet logo()}
+{#snippet defaultLogo()}
 	<a
 		class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-500 accent:text-accent-900 accent:hover:text-accent-800"
 		href={postData?.href}
@@ -57,7 +53,8 @@
 		replyHref={postData?.href}
 		repostHref={postData?.href}
 		likeHref={postData?.href}
-		logo={showLogo ? logo : undefined}
+		timestampHref={postData?.href}
+		logo={logo ?? (showLogo ? defaultLogo : undefined)}
 		{showAvatar}
 		{compact}
 		{showImages}

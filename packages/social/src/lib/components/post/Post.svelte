@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { cn, sanitize } from '@foxui/core';
-	import type { WithChildren, WithElementRef } from 'bits-ui';
+	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import type { PostData, PostImageData, QuotedPostData } from '.';
+	import type { PostProps } from './types';
 	import PostAction from './PostAction.svelte';
-	import type { Snippet } from 'svelte';
 	import { numberToHumanReadable } from '..';
 	import { RelativeTime } from '@foxui/time';
 	import PostEmbed from './PostEmbed.svelte';
@@ -34,6 +33,9 @@
 		onclickpost,
 		onclickhandle,
 
+		timestampHref,
+		ontimestampclick,
+
 		customActions,
 
 		children,
@@ -47,43 +49,7 @@
 		showExternal = true,
 		showVideo = true,
 		showQuotes = true
-	}: WithElementRef<WithChildren<HTMLAttributes<HTMLDivElement>>> & {
-		data: PostData;
-		class?: string;
-
-		bookmarked?: boolean;
-		liked?: boolean;
-
-		showReply?: boolean;
-		showRepost?: boolean;
-		showLike?: boolean;
-		showBookmark?: boolean;
-
-		onReplyClick?: () => void;
-		onRepostClick?: () => void;
-		onLikeClick?: () => void;
-		onBookmarkClick?: () => void;
-
-		replyHref?: string;
-		repostHref?: string;
-		likeHref?: string;
-
-		onclickimage?: (image: PostImageData) => void;
-		onclickpost?: (data: PostData | QuotedPostData, href?: string) => void;
-		onclickhandle?: (handle: string, href?: string) => void;
-
-		customActions?: Snippet;
-
-		logo?: Snippet;
-
-		showAvatar?: boolean;
-		compact?: boolean;
-
-		showImages?: boolean;
-		showExternal?: boolean;
-		showVideo?: boolean;
-		showQuotes?: boolean;
-	} = $props();
+	}: WithElementRef<HTMLAttributes<HTMLDivElement>> & PostProps = $props();
 
 	function handleContentClick(e: MouseEvent) {
 		if (!onclickhandle) return;
@@ -267,14 +233,37 @@
 						</div>
 					{/if}
 
-					<div
-						class={cn(
-							'text-base-600 dark:text-base-400 accent:text-accent-950 block no-underline',
-							compact ? 'text-xs' : 'text-sm'
-						)}
-					>
-						<RelativeTime date={new Date(data.createdAt)} locale="en" />
-					</div>
+					{#if timestampHref}
+						<a
+							href={timestampHref}
+							target="_blank"
+							class={cn(
+								'text-base-600 dark:text-base-400 accent:text-accent-950 hover:text-accent-600 dark:hover:text-accent-400 block no-underline',
+								compact ? 'text-xs' : 'text-sm'
+							)}
+						>
+							<RelativeTime date={new Date(data.createdAt)} locale="en" />
+						</a>
+					{:else if ontimestampclick}
+						<button
+							onclick={ontimestampclick}
+							class={cn(
+								'text-base-600 dark:text-base-400 accent:text-accent-950 hover:text-accent-600 dark:hover:text-accent-400 block cursor-pointer',
+								compact ? 'text-xs' : 'text-sm'
+							)}
+						>
+							<RelativeTime date={new Date(data.createdAt)} locale="en" />
+						</button>
+					{:else}
+						<div
+							class={cn(
+								'text-base-600 dark:text-base-400 accent:text-accent-950 block no-underline',
+								compact ? 'text-xs' : 'text-sm'
+							)}
+						>
+							<RelativeTime date={new Date(data.createdAt)} locale="en" />
+						</div>
+					{/if}
 				</div>
 
 				{#if logo}
