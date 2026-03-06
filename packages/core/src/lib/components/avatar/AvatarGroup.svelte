@@ -30,12 +30,12 @@
 </script>
 
 <div class={cn('flex -space-x-2 overflow-hidden', className)} bind:this={ref} {...restProps}>
-	{#each users as user}
+	{#each users as user, index (index)}
 		<Avatar
 			src={user.src}
 			alt={user.alt}
 			fallback={user.fallback}
-			class={cn('border-base-50 dark:border-base-950 border-2', avatarClass)}
+			class={cn('border-base-50 dark:border-base-900 border-2', avatarClass)}
 			{imageClass}
 			{fallbackClass}
 		/>
