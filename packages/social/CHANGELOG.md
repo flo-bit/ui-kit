@@ -1,5 +1,13 @@
 # @foxui/social
 
+## 0.6.1
+
+### Patch Changes
+
+- Updated dependencies [af54701]
+  - @foxui/core@0.6.0
+  - @foxui/time@0.5.3
+
 ## 0.6.0
 
 ### Minor Changes

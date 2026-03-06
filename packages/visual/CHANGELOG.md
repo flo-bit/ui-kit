@@ -1,5 +1,13 @@
 # @foxui/visual
 
+## 0.5.3
+
+### Patch Changes
+
+- Updated dependencies [af54701]
+  - @foxui/core@0.6.0
+  - @foxui/colors@0.5.3
+
 ## 0.5.2
 
 ### Patch Changes

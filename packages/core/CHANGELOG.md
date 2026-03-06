@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.6.0
+
+### Minor Changes
+
+- af54701: add haptics
+
 ## 0.5.2
 
 ### Patch Changes
