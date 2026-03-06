@@ -1,5 +1,19 @@
 # @foxui/all
 
+## 0.5.7
+
+### Patch Changes
+
+- 5622c33: try fixing types
+- Updated dependencies [5622c33]
+  - @foxui/colors@0.5.4
+  - @foxui/social@0.6.2
+  - @foxui/visual@0.5.4
+  - @foxui/core@0.6.1
+  - @foxui/text@0.5.4
+  - @foxui/time@0.5.4
+  - @foxui/3d@0.5.4
+
 ## 0.5.6
 
 ### Patch Changes
