@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { cn } from '@foxui/all';
 
 	import { components } from './components_all';
 </script>
@@ -18,14 +17,13 @@
 							class="bg-base-200/40 dark:bg-base-950/50 inset-shadow-sm inset-shadow-base-800/7 dark:inset-shadow-black/50 border-base-300/70 dark:border-base-800 pointer-events-none relative h-44 w-full overflow-hidden rounded-2xl border"
 						>
 							<div
-								class={cn(
-									'absolute inset-0 flex h-full w-full flex-col items-center justify-center gap-2 p-6 transition-transform duration-300 will-change-transform group-hover:scale-103',
-									card.className
-								)}
+								class="absolute inset-0 flex h-full w-full flex-col items-center justify-center gap-2 p-6 transition-transform duration-300 will-change-transform group-hover:scale-103"
 								aria-hidden="true"
 								tabindex="-1"
 							>
-								<card.component />
+								{#if card.component}
+									<card.component />
+								{/if}
 							</div>
 						</div>
 						<a

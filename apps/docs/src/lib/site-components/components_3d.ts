@@ -1,22 +1,10 @@
-import type { ComponentCard } from './components_base';
-import CardDepth3D from '$lib/cards/3d/CardDepth3D.svelte';
-import CardVoxelArt from '$lib/cards/3d/CardVoxelArt.svelte';
-import CardModelPicker from '$lib/cards/3d/CardModelPicker.svelte';
+import depth3d from '$lib/docs/3d/depth-3d';
+import voxelArt from '$lib/docs/3d/voxel-art';
+import modelPicker from '$lib/docs/3d/model-picker';
+import { toComponentCard, type ComponentCard } from '$lib/types/schema';
 
 export const threeDComponents: ComponentCard[] = [
-	{
-		component: CardDepth3D,
-		label: 'Depth 3D',
-		href: 'depth-3d'
-	},
-	{
-		component: CardVoxelArt,
-		label: 'Voxel Art',
-		href: 'voxel-art'
-	},
-	{
-		component: CardModelPicker,
-		label: 'Model Picker',
-		href: 'model-picker'
-	}
-].sort((a, b) => a.label.localeCompare(b.label));
+	depth3d,
+	voxelArt,
+	modelPicker,
+].map(toComponentCard).sort((a, b) => a.label.localeCompare(b.label));

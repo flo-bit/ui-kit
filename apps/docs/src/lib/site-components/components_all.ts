@@ -1,4 +1,5 @@
-import { type ComponentCard, baseComponents } from './components_base';
+import type { ComponentCard } from '$lib/types/schema';
+import { baseComponents } from './components_base';
 import { colorsComponents } from './components_colors';
 import { socialComponents } from './components_social';
 import { textComponents } from './components_text';

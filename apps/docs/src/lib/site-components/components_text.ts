@@ -1,22 +1,10 @@
-import CardPlainTextEditor from '$lib/cards/text/CardPlainTextEditor.svelte';
-import CardRichTextEditor from '$lib/cards/text/CardRichTextEditor.svelte';
-import CardAdvancedTextArea from '$lib/cards/text/CardAdvancedTextArea.svelte';
-import type { ComponentCard } from './components_base';
+import plainTextEditor from '$lib/docs/text/plain-text-editor';
+import richTextEditor from '$lib/docs/text/rich-text-editor';
+import advancedTextArea from '$lib/docs/text/advanced-text-area';
+import { toComponentCard, type ComponentCard } from '$lib/types/schema';
 
 export const textComponents: ComponentCard[] = [
-	{
-		component: CardPlainTextEditor,
-		label: 'Plain Text Editor',
-		href: 'plain-text-editor'
-	},
-	{
-		component: CardRichTextEditor,
-		label: 'Rich Text Editor',
-		href: 'rich-text-editor'
-	},
-	{
-		component: CardAdvancedTextArea,
-		label: 'Advanced Text Area',
-		href: 'advanced-text-area'
-	}
-].sort((a, b) => a.label.localeCompare(b.label));
+	plainTextEditor,
+	richTextEditor,
+	advancedTextArea,
+].map(toComponentCard).sort((a, b) => a.label.localeCompare(b.label));

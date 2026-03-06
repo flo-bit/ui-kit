@@ -1,0 +1,5 @@
+## Usage
+
+```svelte
+<ImageMasonry {images} />
+```

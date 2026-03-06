@@ -1,40 +1,16 @@
-import type { ComponentCard } from './components_base';
-import CardExcalidraw from '$lib/cards/visual/CardExcalidraw.svelte';
-import CardPhone from '$lib/cards/visual/CardPhone.svelte';
-import CardQuote from '$lib/cards/visual/CardQuote.svelte';
-import CardUndraw from '$lib/cards/visual/CardUndraw.svelte';
-import CardImageMasonry from '$lib/cards/visual/CardImageMasonry.svelte';
-import CardConfetti from '$lib/cards/visual/CardConfetti.svelte';
+import excalidraw from '$lib/docs/visual/excalidraw';
+import phone from '$lib/docs/visual/phone';
+import quote from '$lib/docs/visual/quote';
+import undraw from '$lib/docs/visual/undraw';
+import imageMasonry from '$lib/docs/visual/image-masonry';
+import confetti from '$lib/docs/visual/confetti';
+import { toComponentCard, type ComponentCard } from '$lib/types/schema';
 
 export const visualComponents: ComponentCard[] = [
-	{
-		component: CardExcalidraw,
-		label: 'Excalidraw',
-		href: 'excalidraw'
-	},
-	{
-		component: CardPhone,
-		label: 'Phone',
-		href: 'phone'
-	},
-	{
-		component: CardQuote,
-		label: 'Quote',
-		href: 'quote'
-	},
-	{
-		component: CardUndraw,
-		label: 'Undraw',
-		href: 'undraw'
-	},
-	{
-		component: CardImageMasonry,
-		label: 'Image Masonry',
-		href: 'image-masonry'
-	},
-	{
-		component: CardConfetti,
-		label: 'Confetti',
-		href: 'confetti'
-	}
-].sort((a, b) => a.label.localeCompare(b.label));
+	excalidraw,
+	phone,
+	quote,
+	undraw,
+	imageMasonry,
+	confetti,
+].map(toComponentCard).sort((a, b) => a.label.localeCompare(b.label));
