@@ -65,10 +65,15 @@
 		WithElementRef<HTMLAnchorAttributes> & {
 			variant?: ButtonVariant;
 			size?: ButtonSize;
+			haptics?: boolean;
 		};
 </script>
 
 <script lang="ts">
+	import { createWebHaptics } from 'web-haptics/svelte';
+	import { onDestroy } from 'svelte';
+	import { hapticsConfig } from '../../haptics/config';
+
 	let {
 		class: className,
 		variant = 'primary',
@@ -76,9 +81,14 @@
 		ref = $bindable(null),
 		href = undefined,
 		type = 'button',
+		haptics,
+		onclick,
 		children,
 		...restProps
 	}: ButtonProps = $props();
+
+	const { trigger, destroy } = createWebHaptics();
+	onDestroy(destroy);
 </script>
 
 {#if href}
@@ -86,6 +96,10 @@
 		bind:this={ref}
 		class={cn(buttonVariants({ variant, size }), className)}
 		{href}
+		onclick={(e) => {
+			if (onclick && haptics !== false && hapticsConfig.enabled) trigger();
+			onclick?.(e);
+		}}
 		{...restProps}
 	>
 		{@render children?.()}
@@ -95,6 +109,10 @@
 		bind:this={ref}
 		class={cn(buttonVariants({ variant, size }), className)}
 		{type}
+		onclick={(e) => {
+			if (onclick && haptics !== false && hapticsConfig.enabled) trigger();
+			onclick?.(e);
+		}}
 		{...restProps}
 	>
 		{@render children?.()}

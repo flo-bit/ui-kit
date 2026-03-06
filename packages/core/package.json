@@ -75,7 +75,8 @@
     "mode-watcher": "^1.1.0",
     "svelte-sonner": "^1.0.7",
     "tailwind-merge": "^3.5.0",
-    "tailwind-variants": "^3.2.2"
+    "tailwind-variants": "^3.2.2",
+    "web-haptics": "^0.0.6"
   },
   "peerDependencies": {
     "svelte": ">=5",

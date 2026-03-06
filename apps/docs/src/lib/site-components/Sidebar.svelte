@@ -43,7 +43,15 @@
 			variant="ghost"
 			onclick={handleClick}
 			href="{base}/docs/theme"
-			class="mb-6 w-full justify-start backdrop-blur-none">Theme</Button
+			class="mb-1 w-full justify-start backdrop-blur-none">Theme</Button
+		>
+		<Button
+			data-current={page.url.pathname === `${base}/docs/haptics`}
+			data-sveltekit-keepfocus
+			variant="ghost"
+			onclick={handleClick}
+			href="{base}/docs/haptics"
+			class="mb-6 w-full justify-start backdrop-blur-none">Haptics</Button
 		>
 
 		<Accordion type="multiple" class="w-full" value={components.map((c) => c.href)}>

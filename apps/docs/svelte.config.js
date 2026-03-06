@@ -16,7 +16,7 @@ const config = {
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		adapter: adapter(),
 		paths: {
-			base: '/ui-kit'
+			base: process.argv.includes('dev') ? '' : '/ui-kit'
 		}
 	},
 	extensions: ['.svelte', '.md']

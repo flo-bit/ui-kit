@@ -4,3 +4,5 @@ export { cn } from './utils';
 export * from './components/';
 
 export { sanitize } from './sanitize';
+
+export { hapticsConfig } from './haptics/config';
