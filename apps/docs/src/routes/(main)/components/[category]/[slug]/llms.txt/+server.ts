@@ -2,10 +2,21 @@ import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import type { ComponentDoc, APISchema, PropType } from '$lib/types/schema';
 
+export const prerender = true;
+
 const modules = import.meta.glob('/src/lib/docs/*/*/index.ts', { eager: true }) as Record<
 	string,
 	{ default: ComponentDoc }
 >;
+
+export function entries() {
+	const entries: { category: string; slug: string }[] = [];
+	for (const path of Object.keys(modules)) {
+		const match = path.match(/\/src\/lib\/docs\/([^/]+)\/([^/]+)\/index\.ts$/);
+		if (match) entries.push({ category: match[1], slug: match[2] });
+	}
+	return entries;
+}
 
 const rawDocs = import.meta.glob('/src/lib/docs/*/*/Documentation.md', {
 	query: '?raw',

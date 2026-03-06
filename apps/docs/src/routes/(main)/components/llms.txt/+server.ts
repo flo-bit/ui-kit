@@ -1,5 +1,7 @@
 import type { ComponentDoc } from '$lib/types/schema';
 
+export const prerender = true;
+
 const BASE_URL = 'https://flo-bit.dev/ui-kit';
 
 const categories = [
