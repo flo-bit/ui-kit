@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.6.1
+
+### Patch Changes
+
+- 5622c33: try fixing types
+
 ## 0.6.0
 
 ### Minor Changes

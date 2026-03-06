@@ -1,5 +1,14 @@
 # @foxui/visual
 
+## 0.5.4
+
+### Patch Changes
+
+- 5622c33: try fixing types
+- Updated dependencies [5622c33]
+  - @foxui/colors@0.5.4
+  - @foxui/core@0.6.1
+
 ## 0.5.3
 
 ### Patch Changes
