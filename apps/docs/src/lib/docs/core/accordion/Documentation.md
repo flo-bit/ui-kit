@@ -10,7 +10,3 @@
 	</AccordionItem>
 </Accordion>
 ```
-
-## Credits
-
-This component is based on the [bits-ui accordion component](https://bits-ui.com/docs/components/accordion).

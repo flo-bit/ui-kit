@@ -1,7 +1,7 @@
-import type { APISchema } from '$lib/types/schema';
 import Docs from './Documentation.md';
 import Example from './Example.svelte';
 import Card from './Card.svelte';
+import api from './api';
 
 export default {
 	slug: 'accordion',
@@ -9,83 +9,13 @@ export default {
 	docs: Docs,
 	example: Example,
 	card: Card,
-	api: [
+	api,
+	sources: [
 		{
-			title: 'Accordion',
-			description:
-				'A vertically stacked set of interactive headings that each reveal a section of content.',
-			props: {
-				children: {
-					type: 'Snippet',
-					description:
-						'The children content to render. Should be a list of AccordionItem components.',
-					required: true
-				},
-				type: {
-					type: { type: 'enum', definition: "'single' | 'multiple'" },
-					description:
-						"If set to 'multiple', the accordion will allow multiple items to be open at the same time. If set to single, the accordion will only allow a single item to be open.",
-					required: true
-				},
-				value: {
-					type: { type: 'union', definition: 'string | string[]' },
-					description:
-						'The value of the accordion item that is currently open. If type is set to "multiple", this will be an array of strings. If type is set to "single", this will be a string.',
-					bindable: true
-				},
-				onValueChange: {
-					type: {
-						type: 'function',
-						definition: '(value: string) => void | (value: string[]) => void'
-					},
-					description: 'A function that is called when the value of the accordion item changes.'
-				},
-				disabled: {
-					type: 'boolean',
-					description: 'Whether the accordion is disabled.',
-					default: 'false'
-				},
-				ref: {
-					type: 'HTMLDivElement',
-					description:
-						'The underlying DOM element being rendered. You can bind to this to get a reference to the element.',
-					bindable: true
-				}
-			}
-		},
-		{
-			title: 'AccordionItem',
-			description: 'A single collapsible section within the accordion.',
-			props: {
-				title: {
-					type: 'string',
-					description:
-						'The title of the accordion item, displayed both when the item is closed or open.',
-					required: true
-				},
-				children: {
-					type: 'Snippet',
-					description:
-						'The children content to render. The content is displayed when the item is open.',
-					required: true
-				},
-				value: {
-					type: 'string',
-					description:
-						'The value of the accordion item. This is used to identify when the item is open or closed. If not provided, a unique ID will be generated for this value.'
-				},
-				disabled: {
-					type: 'boolean',
-					description: 'Whether the accordion item is disabled.',
-					default: 'false'
-				},
-				ref: {
-					type: 'HTMLDivElement',
-					description:
-						'The underlying DOM element being rendered. You can bind to this to get a reference to the element.',
-					bindable: true
-				}
-			}
+			href: 'https://bits-ui.com/docs/components/accordion',
+			label: 'bits-ui accordion',
+			package: 'bits-ui',
+			component: 'Accordion'
 		}
-	] satisfies APISchema[]
+	]
 };

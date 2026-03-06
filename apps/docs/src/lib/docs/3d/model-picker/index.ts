@@ -8,4 +8,10 @@ export default {
 	docs: Docs,
 	example: Example,
 	card: Card,
+	sources: [
+		{
+			href: 'https://kenney.nl/assets/toy-car-kit',
+			label: 'Toy Car Kit by Kenney'
+		}
+	]
 };

@@ -21,7 +21,3 @@ You can also pass a `colorMap` prop to the component to change the colors of the
 	}}
 />
 ```
-
-## Credits
-
-- inspired by [this article](https://tympanus.net/codrops/2025/03/03/css-meets-voxel-art-building-a-rendering-engine-with-stacked-grids/)

@@ -26,6 +26,13 @@ export type APISchema<T = Record<string, unknown>> = {
 	props?: PropObj<T>;
 };
 
+export type ComponentSource = {
+	href: string;
+	label: string;
+	package?: string;
+	component?: string;
+};
+
 export type ComponentDoc = {
 	slug: string;
 	title: string;
@@ -33,19 +40,6 @@ export type ComponentDoc = {
 	example?: Component;
 	card?: Component;
 	api?: APISchema[];
+	sources?: ComponentSource[];
 };
 
-// Used by Cards.svelte and Sidebar.svelte for rendering
-export type ComponentCard = {
-	component?: Component;
-	label: string;
-	href: string;
-};
-
-export function toComponentCard(doc: ComponentDoc): ComponentCard {
-	return {
-		component: doc.card,
-		label: doc.title,
-		href: doc.slug
-	};
-}

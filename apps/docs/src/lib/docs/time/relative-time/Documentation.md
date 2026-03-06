@@ -10,7 +10,3 @@
 ```svelte
 <RelativeTime date={new Date(Date.now() - 10000)} locale="en-US" />
 ```
-
-## Credits
-
-- Based on [svelte-relative-time](https://github.com/CaptainCodeman/svelte-relative-time)

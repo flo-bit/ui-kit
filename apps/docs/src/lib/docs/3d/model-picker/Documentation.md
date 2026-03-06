@@ -8,7 +8,3 @@
 	}}
 />
 ```
-
-## Credits
-
-- Models from [Toy Car Kit](https://kenney.nl/assets/toy-car-kit) by [Kenney](https://kenney.nl)

@@ -8,4 +8,10 @@ export default {
 	docs: Docs,
 	example: Example,
 	card: Card,
+	sources: [
+		{
+			href: 'https://number-flow.barvian.me/',
+			label: 'number-flow'
+		}
+	]
 };

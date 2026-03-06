@@ -8,4 +8,10 @@ export default {
 	docs: Docs,
 	example: Example,
 	card: Card,
+	sources: [
+		{
+			href: 'https://github.com/CaptainCodeman/svelte-relative-time',
+			label: 'svelte-relative-time'
+		}
+	]
 };

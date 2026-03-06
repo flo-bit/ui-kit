@@ -1,44 +1,35 @@
-import type { ComponentCard } from '$lib/types/schema';
-import { baseComponents } from './components_base';
-import { colorsComponents } from './components_colors';
-import { socialComponents } from './components_social';
-import { textComponents } from './components_text';
-import { timeComponents } from './components_time';
-import { visualComponents } from './components_visual';
+import type { ComponentDoc } from '$lib/types/schema';
+import type { Component } from 'svelte';
 
-export const components: {
-	name: string;
-	components: ComponentCard[];
-	href: string;
-}[] = [
-	{
-		name: 'Core',
-		components: baseComponents,
-		href: 'core'
-	},
-	{
-		name: 'Colors',
-		components: colorsComponents,
-		href: 'colors'
-	},
-	{
-		name: 'Social',
-		components: socialComponents,
-		href: 'social'
-	},
-	{
-		name: 'Text',
-		components: textComponents,
-		href: 'text'
-	},
-	{
-		name: 'Visual',
-		components: visualComponents,
-		href: 'visual'
-	},
-	{
-		name: 'Time',
-		components: timeComponents,
-		href: 'time'
-	}
+const categories = [
+	{ slug: 'core', label: 'Core' },
+	{ slug: 'colors', label: 'Colors' },
+	{ slug: 'social', label: 'Social' },
+	{ slug: 'text', label: 'Text' },
+	{ slug: 'visual', label: 'Visual' },
+	{ slug: 'time', label: 'Time' }
 ];
+
+const modules = import.meta.glob('/src/lib/docs/*/*/index.ts', { eager: true }) as Record<
+	string,
+	{ default: ComponentDoc }
+>;
+
+export const components = categories.map((category) => {
+	const comps = Object.entries(modules)
+		.filter(([path]) => path.startsWith(`/src/lib/docs/${category.slug}/`))
+		.map(([, mod]) => mod.default)
+		.filter((doc) => doc.card)
+		.sort((a, b) => a.title.localeCompare(b.title))
+		.map((doc) => ({
+			component: doc.card as Component,
+			label: doc.title,
+			href: doc.slug
+		}));
+
+	return {
+		name: category.label,
+		href: category.slug,
+		components: comps
+	};
+});
