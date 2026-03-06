@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { cn } from '../../utils';
-	import { Select, type WithoutChildren } from 'bits-ui';
+	import { Select as SelectPrimitive, type WithoutChildren } from 'bits-ui';
 
-	type Props = WithoutChildren<Select.RootProps> & {
+	type Props = WithoutChildren<SelectPrimitive.RootProps> & {
 		placeholder?: string;
 		items: { value: string; label: string; disabled?: boolean }[];
-		contentProps?: WithoutChildren<Select.ContentProps>;
+		contentProps?: WithoutChildren<SelectPrimitive.ContentProps>;
 	};
 
 	let { value = $bindable(), items, contentProps, placeholder, ...restProps }: Props = $props();
@@ -13,8 +13,8 @@
 	const selectedLabel = $derived(items.find((item) => item.value === value)?.label);
 </script>
 
-<Select.Root bind:value={value as never} {...restProps}>
-	<Select.Trigger>
+<SelectPrimitive.Root bind:value={value as never} {...restProps}>
+	<SelectPrimitive.Trigger>
 		<div
 			class="bg-accent-500/10 border-accent-700/20 text-accent-800 dark:text-accent-300 inline-flex min-w-28 items-center justify-between gap-1 rounded-2xl border px-3 py-1 font-medium"
 		>
@@ -31,9 +31,9 @@
 				<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
 			</svg>
 		</div>
-	</Select.Trigger>
-	<Select.Portal>
-		<Select.Content
+	</SelectPrimitive.Trigger>
+	<SelectPrimitive.Portal>
+		<SelectPrimitive.Content
 			{...contentProps}
 			class={cn(
 				'bg-base-50/50 border-base-500/20 overflow-hidden rounded-2xl border shadow-lg backdrop-blur-xl',
@@ -43,10 +43,10 @@
 			)}
 			sideOffset={6}
 		>
-			<Select.ScrollUpButton>up</Select.ScrollUpButton>
-			<Select.Viewport class="divide-base-300 dark:divide-base-800 divide-y text-sm">
+			<SelectPrimitive.ScrollUpButton>up</SelectPrimitive.ScrollUpButton>
+			<SelectPrimitive.Viewport class="divide-base-300 dark:divide-base-800 divide-y text-sm">
 				{#each items as { value, label, disabled } (value)}
-					<Select.Item {value} {label} {disabled}>
+					<SelectPrimitive.Item {value} {label} {disabled}>
 						{#snippet children({ selected })}
 							<div
 								class={cn(
@@ -79,10 +79,10 @@
 								{label}
 							</div>
 						{/snippet}
-					</Select.Item>
+					</SelectPrimitive.Item>
 				{/each}
-			</Select.Viewport>
-			<Select.ScrollDownButton>down</Select.ScrollDownButton>
-		</Select.Content>
-	</Select.Portal>
-</Select.Root>
+			</SelectPrimitive.Viewport>
+			<SelectPrimitive.ScrollDownButton>down</SelectPrimitive.ScrollDownButton>
+		</SelectPrimitive.Content>
+	</SelectPrimitive.Portal>
+</SelectPrimitive.Root>

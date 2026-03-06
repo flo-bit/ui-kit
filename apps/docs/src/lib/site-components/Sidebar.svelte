@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { base } from '$app/paths';
+	import { base, resolve } from '$app/paths';
 	import { Accordion, AccordionItem, Button, Sidebar } from '@foxui/all';
 
 	import { components } from './components_all';
@@ -9,8 +9,7 @@
 
 	let { mobileOnly = false } = $props();
 
-	const handleClick = (e: MouseEvent) => {
-		// close the mobile menu
+	const handleClick = () => {
 		const popover = document.getElementById('mobile-menu');
 		if (popover) {
 			popover.hidePopover();
@@ -27,7 +26,7 @@
 			data-sveltekit-keepfocus
 			variant="ghost"
 			onclick={handleClick}
-			href="{base}/docs/quick-start"
+			href={resolve('/docs/quick-start')}
 			class="mb-1 w-full justify-start backdrop-blur-none">Quick Start</Button
 		>
 		<Button
@@ -35,14 +34,14 @@
 			data-sveltekit-keepfocus
 			variant="ghost"
 			onclick={handleClick}
-			href="{base}/docs/philosophy"
+			href={resolve('/docs/philosophy')}
 			class="mb-1 w-full justify-start backdrop-blur-none">Philosophy</Button
 		>
 		<Button
 			data-sveltekit-keepfocus
 			variant="ghost"
 			onclick={handleClick}
-			href="{base}/docs/theme"
+			href={resolve('/docs/theme')}
 			class="mb-1 w-full justify-start backdrop-blur-none">Theme</Button
 		>
 		<Button
@@ -50,12 +49,12 @@
 			data-sveltekit-keepfocus
 			variant="ghost"
 			onclick={handleClick}
-			href="{base}/docs/haptics"
+			href={resolve('/docs/haptics')}
 			class="mb-6 w-full justify-start backdrop-blur-none">Haptics</Button
 		>
 
 		<Accordion type="multiple" class="w-full" value={components.map((c) => c.href)}>
-			{#each components as category}
+			{#each components as category (category.href)}
 				<AccordionItem
 					value={category.href}
 					class="border-0"
@@ -63,13 +62,13 @@
 					triggerClasses="text-sm px-3 py-1 font-semibold"
 					contentClasses="flex flex-col gap-1 items-start px-1"
 				>
-					{#each category.components as component}
+					{#each category.components as component (component.href)}
 						<Button
 							data-current={page.url.pathname === `${base}/components/${category.href}/${component.href}`}
 							data-sveltekit-keepfocus
 							variant="ghost"
 							onclick={handleClick}
-							href="{base}/components/{category.href}/{component.href}"
+							href={resolve(`/components/${category.href}/${component.href}`)}
 							class="w-full justify-start backdrop-blur-none">{component.label}</Button
 						>
 					{/each}

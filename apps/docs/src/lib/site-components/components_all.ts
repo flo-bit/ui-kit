@@ -1,4 +1,3 @@
-import { threeDComponents } from './components_3d';
 import { type ComponentCard, baseComponents } from './components_base';
 import { colorsComponents } from './components_colors';
 import { socialComponents } from './components_social';
@@ -40,10 +39,5 @@ export const components: {
 		name: 'Time',
 		components: timeComponents,
 		href: 'time'
-	},
-	{
-		name: '3D',
-		components: threeDComponents,
-		href: '3d'
 	}
 ];

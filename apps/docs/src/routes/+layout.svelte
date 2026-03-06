@@ -1,8 +1,8 @@
 <script lang="ts">
+	import { asset } from '$app/paths';
 	import '../app.css';
 	
 	import { Head, Toaster } from '@foxui/all';
-	import { base } from '$app/paths';
 
 	let { children } = $props();
 </script>
@@ -12,7 +12,7 @@
 <Head
 	title="fox ui"
 	description="🦊 fox ui, svelte 5 & tailwind 4"
-	image={base + '/opengraph.png'}
+	image={asset('/opengraph.png')}
 	url="https://flo-bit.dev/ui-kit"
 	emojiFavicon="🦊"
 />

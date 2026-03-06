@@ -1,5 +1,5 @@
 <script>
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import { Button, Badge } from '@foxui/all';
 	import Cards from '$lib/site-components/Cards.svelte';
 	import Navbar from '$lib/site-components/Navbar.svelte';
@@ -30,8 +30,8 @@
 	</div>
 
 	<div class="mb-0 flex gap-2">
-		<Button href={base + '/docs/quick-start'} class="mb-8">Quick Start</Button>
-		<Button variant="link" href={base + '/docs/philosophy'} class="mb-8"
+		<Button href={resolve('/docs/quick-start')} class="mb-8">Quick Start</Button>
+		<Button variant="link" href={resolve('/docs/philosophy')} class="mb-8"
 			>Learn more <span>&rarr;</span></Button
 		>
 	</div>

@@ -1,18 +1,18 @@
 <script lang="ts">
-	import { Tooltip } from 'bits-ui';
+	import { Tooltip as TooltipPrimitive } from 'bits-ui';
 	import { type Snippet } from 'svelte';
 	import { TooltipContent } from '.';
 
-	type Props = Tooltip.RootProps & {
+	type Props = TooltipPrimitive.RootProps & {
 		withContext?: boolean;
 
-		triggerProps?: Tooltip.TriggerProps;
+		triggerProps?: TooltipPrimitive.TriggerProps;
 
-		contentProps?: Tooltip.ContentProps;
+		contentProps?: TooltipPrimitive.ContentProps;
 
 		content?: Snippet;
 		text?: string;
-	} & Tooltip.TriggerProps;
+	} & TooltipPrimitive.TriggerProps;
 
 	let {
 		open = $bindable(false),
@@ -30,14 +30,14 @@
 </script>
 
 {#snippet root()}
-	<Tooltip.Root bind:open {...restProps}>
-		<Tooltip.Trigger {...triggerProps}>
+	<TooltipPrimitive.Root bind:open {...restProps}>
+		<TooltipPrimitive.Trigger {...triggerProps}>
 			{#snippet child({ props })}
 				{@render myChild?.({ props })}
 			{/snippet}
-		</Tooltip.Trigger>
+		</TooltipPrimitive.Trigger>
 
-		<Tooltip.Portal>
+		<TooltipPrimitive.Portal>
 			<TooltipContent
 				sideOffset={contentProps.sideOffset ?? 6}
 				side={contentProps.side ?? 'top'}
@@ -49,14 +49,14 @@
 					{text}
 				{/if}
 			</TooltipContent>
-		</Tooltip.Portal>
-	</Tooltip.Root>
+		</TooltipPrimitive.Portal>
+	</TooltipPrimitive.Root>
 {/snippet}
 
 {#if withContext}
-	<Tooltip.Provider>
+	<TooltipPrimitive.Provider>
 		{@render root()}
-	</Tooltip.Provider>
+	</TooltipPrimitive.Provider>
 {:else}
 	{@render root()}
 {/if}
