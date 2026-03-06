@@ -5,6 +5,8 @@
 <Api
 	props={{
 		title: 'Accordion',
+		description:
+			'A vertically stacked set of interactive headings that each reveal a section of content.',
 		props: {
 			children: {
 				type: 'Snippet',
@@ -49,6 +51,7 @@
 <Api
 	props={{
 		title: 'AccordionItem',
+		description: 'A single collapsible section within the accordion.',
 		props: {
 			title: {
 				type: 'string',

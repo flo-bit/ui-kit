@@ -22,5 +22,6 @@ export type PropObj<T> = {
 
 export type APISchema<T = Record<string, unknown>> = {
 	title: string;
+	description?: string;
 	props?: PropObj<T>;
 };
