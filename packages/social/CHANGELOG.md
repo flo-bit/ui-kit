@@ -1,5 +1,11 @@
 # @foxui/social
 
+## 0.6.0
+
+### Minor Changes
+
+- cb600eb: improve bluesky post (changes api)
+
 ## 0.5.4
 
 ### Patch Changes

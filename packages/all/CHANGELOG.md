@@ -1,5 +1,12 @@
 # @foxui/all
 
+## 0.5.5
+
+### Patch Changes
+
+- Updated dependencies [cb600eb]
+  - @foxui/social@0.6.0
+
 ## 0.5.4
 
 ### Patch Changes
