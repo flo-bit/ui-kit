@@ -1,292 +1,74 @@
 <script lang="ts">
-	import { onDestroy, onMount } from 'svelte';
-	import { type Editor as CoreEditor, mergeAttributes, type Content } from '@tiptap/core';
-	import { type Editor, createEditor, EditorContent } from 'svelte-tiptap';
-	import StarterKit from '@tiptap/starter-kit';
-	import Placeholder from '@tiptap/extension-placeholder';
-	import Image from '@tiptap/extension-image';
-	import { all, createLowlight } from 'lowlight';
-	import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
-	import Underline from '@tiptap/extension-underline';
-	import type { RichTextTypes } from '.';
-	import Slash, { suggestion } from './slash-menu';
-	import Typography from '@tiptap/extension-typography';
-	import { RichTextLink } from './RichTextLink';
-	import { Markdown } from '@tiptap/markdown';
-
-	import { cn } from '@foxui/core';
-	import { ImageUploadNode } from './image-upload/ImageUploadNode';
-	import { FormattingBubbleMenu } from './formatting-bubble-menu';
-	import type { Transaction } from '@tiptap/pm/state';
-	import type { Readable } from 'svelte/store';
+	import { CoreRichTextEditor } from '../core-rich-text-editor/';
+	import type { BaseEditorProps } from '../core-rich-text-editor/types';
+	import FormattingBubbleMenu from '../rich-text-bubble-menu/FormattingBubbleMenu.svelte';
+	import { SlashMenu } from '../slash-menu';
+	import { ImageExtension, EditableImage } from '../image';
+	import type { ImageUploadFn } from '../image';
+	import { EmbedExtension } from '../embed/EmbedExtension';
+	import EmbedModal from '../embed/EmbedModal.svelte';
+	import { youtubeEmbed } from '../embed/helpers';
+	import type { EmbedDefinition } from '../embed/helpers';
 
 	let {
-		content = $bindable({}),
-		placeholder = 'Write or press / for commands',
+		content = $bindable(),
 		editor = $bindable(),
 		ref = $bindable(null),
-		class: className,
-		onupdate,
-		ontransaction
-	}: {
-		content?: Content;
-		placeholder?: string;
-		editor?: Readable<Editor>;
-		ref?: HTMLDivElement | null;
-		class?: string;
-		onupdate?: (content: Content, context: { editor: CoreEditor; transaction: Transaction }) => void;
-		ontransaction?: () => void;
+		bubbleMenu = true,
+		slashMenu = true,
+		image = undefined,
+		embeds = undefined,
+		extraExtensions,
+		...restProps
+	}: Omit<BaseEditorProps, 'extraExtensions'> & {
+		/** Show the formatting bubble menu on text selection. @default true */
+		bubbleMenu?: boolean;
+		/** Show the slash command menu when typing "/". @default true */
+		slashMenu?: boolean;
+		/** Enable image uploads. Pass an upload function, or `false` to disable. When provided, ImageExtension is added with EditableImage. */
+		image?: ImageUploadFn | false;
+		/** Enable embeds. Pass an array of EmbedDefinitions, `true` for YouTube only, or `false` to disable. @default undefined */
+		embeds?: EmbedDefinition[] | boolean;
+		extraExtensions?: BaseEditorProps['extraExtensions'];
 	} = $props();
 
-	const lowlight = createLowlight(all);
+	let imageExtensions = $derived(
+		image
+			? [ImageExtension.configure({ upload: image, imageComponent: EditableImage })]
+			: []
+	);
 
-	let hasFocus = true;
+	let embedDefinitions = $derived(
+		embeds === true ? [youtubeEmbed] : Array.isArray(embeds) ? embeds : []
+	);
 
-	const CustomImage = Image.extend({
-		renderHTML({ HTMLAttributes }) {
-			const attrs = mergeAttributes(this.options.HTMLAttributes, HTMLAttributes, {
-				uploadImageHandler: undefined
-			});
-			return ['img', attrs];
-		}
-	});
+	let embedExtensions = $derived(
+		embedDefinitions.length > 0
+			? [EmbedExtension.configure({ embeds: embedDefinitions })]
+			: []
+	);
 
-	// Flag to track whether a file is being dragged over the drop area
-	let isDragOver = $state(false);
-
-	// Store local image files for later upload
-	let localImages: Map<string, File> = $state(new Map());
-
-	// Track which image URLs in the editor are local previews
-	let localImageUrls: Set<string> = $state(new Set());
-
-	// Process image file to create a local preview
-	async function processImageFile(file: File) {
-		if (!$editor) {
-			console.warn('Tiptap editor not initialized');
-			return;
-		}
-
-		try {
-			const localUrl = URL.createObjectURL(file);
-
-			localImages.set(localUrl, file);
-			localImageUrls.add(localUrl);
-
-			$editor
-				.chain()
-				.focus()
-				.setImageUploadNode({
-					preview: localUrl
-				})
-				.run();
-		} catch (error) {
-			console.error('Error creating image preview:', error);
-		}
-	}
-
-	function switchTo(value: RichTextTypes) {
-		$editor?.chain().focus().setParagraph().run();
-
-		if (value === 'heading-1') {
-			$editor?.chain().focus().setNode('heading', { level: 1 }).run();
-		} else if (value === 'heading-2') {
-			$editor?.chain().focus().setNode('heading', { level: 2 }).run();
-		} else if (value === 'heading-3') {
-			$editor?.chain().focus().setNode('heading', { level: 3 }).run();
-		} else if (value === 'blockquote') {
-			$editor?.chain().focus().setBlockquote().run();
-		} else if (value === 'code') {
-			$editor?.chain().focus().setCodeBlock().run();
-		} else if (value === 'bullet-list') {
-			$editor?.chain().focus().toggleBulletList().run();
-		} else if (value === 'ordered-list') {
-			$editor?.chain().focus().toggleOrderedList().run();
-		}
-	}
-
-	onMount(() => {
-		editor = createEditor({
-			extensions: [
-				StarterKit.configure({
-					dropcursor: {
-						class: 'text-accent-500/30 rounded-2xl',
-						width: 2
-					},
-					codeBlock: false,
-					heading: {
-						levels: [1, 2, 3]
-					}
-				}),
-				Placeholder.configure({
-					placeholder: ({ node }) => {
-						if (node.type.name === 'paragraph' || node.type.name === 'heading') {
-							return placeholder;
-						}
-						return '';
-					}
-				}),
-				CustomImage.configure({
-					HTMLAttributes: {
-						class: 'max-w-full object-contain relative rounded-2xl'
-					},
-					allowBase64: true
-				}),
-				CodeBlockLowlight.configure({
-					lowlight,
-					defaultLanguage: 'js'
-				}),
-				Underline.configure({}),
-				RichTextLink.configure({
-					openOnClick: false,
-					autolink: true,
-					defaultProtocol: 'https'
-				}),
-				Slash.configure({
-					suggestion: suggestion({
-						char: '/',
-						pluginKey: 'slash',
-						switchTo,
-						processImageFile
-					})
-				}),
-				Typography.configure(),
-				Markdown.configure(),
-				ImageUploadNode.configure({
-					upload: async (file, onProgress, abortSignal) => {
-						console.log('uploading image', file);
-						for (let i = 0; i < 10; i++) {
-							await new Promise((resolve) => setTimeout(resolve, 200));
-							onProgress?.({ progress: i / 10 });
-						}
-
-						return 'https://picsum.photos/200/300';
-					}
-				})
-			],
-			editorProps: {
-				attributes: {
-					class: 'outline-none'
-				}
-			},
-			onUpdate: (ctx) => {
-				content = ctx.editor.getJSON();
-				onupdate?.(content, ctx);
-			},
-			onFocus: () => {
-				hasFocus = true;
-			},
-			onBlur: () => {
-				hasFocus = false;
-			},
-			onTransaction: () => {
-				ontransaction?.();
-			},
-			content
-		});
-	});
-
-	const handlePaste = (event: ClipboardEvent) => {
-		const items = event.clipboardData?.items;
-		if (!items) return;
-		for (const item of Array.from(items)) {
-			if (!item.type.startsWith('image/')) continue;
-			const file = item.getAsFile();
-			if (!file) continue;
-			event.preventDefault();
-			processImageFile(file);
-			return;
-		}
-	};
-
-	function handleDragOver(event: DragEvent) {
-		event.preventDefault();
-		event.stopPropagation();
-		isDragOver = true;
-	}
-	function handleDragLeave(event: DragEvent) {
-		event.preventDefault();
-		event.stopPropagation();
-		isDragOver = false;
-	}
-	function handleDrop(event: DragEvent) {
-		event.preventDefault();
-		event.stopPropagation();
-		isDragOver = false;
-		if (!event.dataTransfer?.files?.length) return;
-		const file = event.dataTransfer.files[0];
-		if (file?.type.startsWith('image/')) {
-			processImageFile(file);
-		}
-	}
-
-	onDestroy(() => {
-		for (const localUrl of localImageUrls) {
-			URL.revokeObjectURL(localUrl);
-		}
-	});
-
+	let allExtraExtensions = $derived([
+		...imageExtensions,
+		...embedExtensions,
+		...(extraExtensions ?? [])
+	]);
 </script>
 
-<div
-	bind:this={ref}
-	class={cn('relative flex-1', className)}
-	onpaste={handlePaste}
-	ondragover={handleDragOver}
-	ondragleave={handleDragLeave}
-	ondrop={handleDrop}
-	role="region"
+<CoreRichTextEditor
+	bind:content
+	bind:editor
+	bind:ref
+	extraExtensions={allExtraExtensions}
+	{...restProps}
 >
-	{#if $editor}
-		<EditorContent editor={$editor} />
+	{#if bubbleMenu}
+		<FormattingBubbleMenu {editor} />
 	{/if}
-</div>
-
-{#if $editor}
-	<FormattingBubbleMenu editor={$editor} />
-{/if}
-
-<style>
-	:global(.tiptap) {
-		:first-child {
-			margin-top: 0;
-		}
-
-		:global(img) {
-			display: block;
-			height: auto;
-			margin: 1.5rem 0;
-			max-width: 100%;
-
-			&.ProseMirror-selectednode {
-				outline: 3px solid var(--color-accent-500);
-			}
-		}
-
-		:global(div[data-type='image-upload']) {
-			&.ProseMirror-selectednode {
-				outline: 3px solid var(--color-accent-500);
-			}
-		}
-
-		:global(blockquote p:first-of-type::before) {
-			content: none;
-		}
-
-		:global(blockquote p:last-of-type::after) {
-			content: none;
-		}
-
-		:global(blockquote p) {
-			font-style: normal;
-		}
-	}
-
-	:global(.tiptap .is-empty::before) {
-		color: var(--color-base-500);
-		content: attr(data-placeholder);
-		float: left;
-		height: 0;
-		pointer-events: none;
-	}
-</style>
+	{#if slashMenu}
+		<SlashMenu editor={$editor} />
+	{/if}
+	{#if embedDefinitions.length > 0}
+		<EmbedModal editor={$editor} />
+	{/if}
+</CoreRichTextEditor>

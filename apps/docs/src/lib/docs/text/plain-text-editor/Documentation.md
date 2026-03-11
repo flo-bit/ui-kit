@@ -7,5 +7,5 @@
 	let content = $state('');
 </script>
 
-<PlainTextEditor bind:value={content} placeholder="Write something..." />
+<PlainTextEditor bind:content placeholder="Write something..." />
 ```

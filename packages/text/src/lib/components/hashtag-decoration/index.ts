@@ -1,0 +1,1 @@
+export { HashtagDecoration } from './HashtagDecoration';

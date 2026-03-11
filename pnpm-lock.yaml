@@ -514,6 +514,9 @@ importers:
       '@foxui/core':
         specifier: workspace:*
         version: link:../core
+      '@foxui/text':
+        specifier: workspace:*
+        version: link:../text
       '@foxui/time':
         specifier: workspace:*
         version: link:../time

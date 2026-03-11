@@ -5,9 +5,9 @@ export default [
 		title: 'PlainTextEditor',
 		description: 'A plain text editor powered by TipTap, with optional single-line mode.',
 		props: {
-			value: {
-				type: 'string',
-				description: 'The current text content.',
+			content: {
+				type: 'Content',
+				description: 'The editor content (TipTap Content type).',
 				default: "''",
 				bindable: true
 			},

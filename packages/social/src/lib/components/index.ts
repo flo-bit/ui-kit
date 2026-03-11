@@ -12,6 +12,7 @@ export * from './nested-comments';
 export * from './link-card';
 export * from './animated-emoji-picker';
 export * from './atproto-handle-popup';
+export * from './bluesky-post-creator';
 
 export function numberToHumanReadable(number: number) {
 	if (number < 1000) {

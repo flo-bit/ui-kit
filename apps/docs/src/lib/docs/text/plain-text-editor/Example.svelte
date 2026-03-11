@@ -6,6 +6,6 @@
 </script>
 
 <Box class="not-prose text-lg font-semibold">
-	<PlainTextEditor bind:value={content} placeholder="Write something..." />
+	<PlainTextEditor bind:content placeholder="Write something..." />
 </Box>
 

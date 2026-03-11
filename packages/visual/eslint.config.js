@@ -18,7 +18,10 @@ export default ts.config(
 	...svelte.configs.prettier,
 	{
 		languageOptions: {
-			globals: { ...globals.browser, ...globals.node }
+			globals: { ...globals.browser, ...globals.node },
+			parserOptions: {
+				tsconfigRootDir: fileURLToPath(new URL('.', import.meta.url))
+			}
 		},
 		rules: { 'no-undef': 'off' }
 	},
