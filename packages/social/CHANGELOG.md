@@ -1,5 +1,15 @@
 # @foxui/social
 
+## 0.6.3
+
+### Patch Changes
+
+- 8672aa3: add bluesky post creator, refactor text package, small fixes
+- Updated dependencies [8672aa3]
+  - @foxui/text@0.6.0
+  - @foxui/time@0.6.0
+  - @foxui/core@0.6.2
+
 ## 0.6.2
 
 ### Patch Changes

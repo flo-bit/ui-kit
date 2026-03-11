@@ -1,5 +1,16 @@
 # @foxui/3d
 
+## 0.6.0
+
+### Minor Changes
+
+- 8672aa3: add bluesky post creator, refactor text package, small fixes
+
+### Patch Changes
+
+- Updated dependencies [8672aa3]
+  - @foxui/core@0.6.2
+
 ## 0.5.4
 
 ### Patch Changes

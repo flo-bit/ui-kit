@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.6.2
+
+### Patch Changes
+
+- 8672aa3: add bluesky post creator, refactor text package, small fixes
+
 ## 0.6.1
 
 ### Patch Changes

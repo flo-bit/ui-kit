@@ -1,5 +1,17 @@
 # @foxui/visual
 
+## 0.6.0
+
+### Minor Changes
+
+- 8672aa3: add bluesky post creator, refactor text package, small fixes
+
+### Patch Changes
+
+- Updated dependencies [8672aa3]
+  - @foxui/colors@0.6.0
+  - @foxui/core@0.6.2
+
 ## 0.5.4
 
 ### Patch Changes
