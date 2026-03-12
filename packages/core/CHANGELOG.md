@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.8.0
+
+### Minor Changes
+
+- 5aa31d4: revert peer deps change, update number-flow
+
 ## 0.7.0
 
 ### Minor Changes
