@@ -1,5 +1,18 @@
 # @foxui/social
 
+## 0.7.0
+
+### Minor Changes
+
+- 119b217: move stuff to peer deps
+
+### Patch Changes
+
+- Updated dependencies [119b217]
+  - @foxui/core@0.7.0
+  - @foxui/text@0.7.0
+  - @foxui/time@0.7.0
+
 ## 0.6.3
 
 ### Patch Changes
