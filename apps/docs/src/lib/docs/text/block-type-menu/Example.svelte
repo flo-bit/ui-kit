@@ -5,7 +5,7 @@
 	let editor = $state<Readable<SvelteTiptap.Editor>>();
 </script>
 
-<Box class="not-prose space-y-2">
+<Box>
 	{#if $editor}
 		<BlockTypeMenu {editor} />
 	{/if}

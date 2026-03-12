@@ -72,10 +72,10 @@
     "@threlte/core": "^8.4.0",
     "@threlte/extras": "^9.8.1",
     "@types/three": "^0.183.1",
-    "bits-ui": "^2.16.2",
     "three": "^0.183.1"
   },
   "peerDependencies": {
+    "bits-ui": "^2.16.2",
     "svelte": ">=5",
     "tailwindcss": ">=3"
   },

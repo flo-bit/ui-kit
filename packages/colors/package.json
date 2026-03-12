@@ -72,10 +72,10 @@
   "dependencies": {
     "@foxui/core": "workspace:*",
     "@texel/color": "^1.1.11",
-    "@use-gesture/vanilla": "^10.3.1",
-    "bits-ui": "^2.16.2"
+    "@use-gesture/vanilla": "^10.3.1"
   },
   "peerDependencies": {
+    "bits-ui": "^2.16.2",
     "svelte": ">=5",
     "tailwindcss": ">=3"
   },

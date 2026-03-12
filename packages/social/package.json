@@ -74,13 +74,13 @@
     "@foxui/text": "workspace:*",
     "@foxui/time": "workspace:*",
     "@use-gesture/vanilla": "^10.3.1",
-    "bits-ui": "^2.16.2",
     "emoji-picker-element": "^1.29.0",
     "hls.js": "^1.6.15",
     "is-emoji-supported": "^0.0.5",
     "plyr": "^3.8.4"
   },
   "peerDependencies": {
+    "bits-ui": "^2.16.2",
     "svelte": ">=5",
     "tailwindcss": ">=3"
   },

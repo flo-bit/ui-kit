@@ -71,11 +71,11 @@
   "dependencies": {
     "@foxui/colors": "workspace:*",
     "@foxui/core": "workspace:*",
-    "bits-ui": "^2.16.2",
     "canvas-confetti": "^1.9.4",
     "cheerio": "^1.2.0"
   },
   "peerDependencies": {
+    "bits-ui": "^2.16.2",
     "svelte": ">=5",
     "tailwindcss": ">=3"
   },
