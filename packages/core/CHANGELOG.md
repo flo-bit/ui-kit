@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.7.0
+
+### Minor Changes
+
+- 119b217: move stuff to peer deps
+
 ## 0.6.2
 
 ### Patch Changes
