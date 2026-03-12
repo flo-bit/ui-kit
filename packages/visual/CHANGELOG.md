@@ -1,5 +1,17 @@
 # @foxui/visual
 
+## 0.8.0
+
+### Minor Changes
+
+- 5aa31d4: revert peer deps change, update number-flow
+
+### Patch Changes
+
+- Updated dependencies [5aa31d4]
+  - @foxui/colors@0.8.0
+  - @foxui/core@0.8.0
+
 ## 0.7.0
 
 ### Minor Changes
