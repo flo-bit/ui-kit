@@ -1,5 +1,17 @@
 # @foxui/visual
 
+## 0.7.0
+
+### Minor Changes
+
+- 119b217: move stuff to peer deps
+
+### Patch Changes
+
+- Updated dependencies [119b217]
+  - @foxui/colors@0.7.0
+  - @foxui/core@0.7.0
+
 ## 0.6.0
 
 ### Minor Changes
