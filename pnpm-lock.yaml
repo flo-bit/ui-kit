@@ -406,8 +406,8 @@ importers:
   packages/core:
     dependencies:
       '@number-flow/svelte':
-        specifier: ^0.3.12
-        version: 0.3.12(svelte@5.53.2)
+        specifier: ^0.4.0
+        version: 0.4.0(svelte@5.53.2)
       bits-ui:
         specifier: ^2.16.2
         version: 2.16.2(@internationalized/date@3.11.0)(@sveltejs/kit@2.53.0(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.53.2)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.31.1)(yaml@2.8.2)))(svelte@5.53.2)(typescript@5.9.3)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.31.1)(yaml@2.8.2)))(svelte@5.53.2)
@@ -763,8 +763,8 @@ importers:
         specifier: workspace:*
         version: link:../core
       '@number-flow/svelte':
-        specifier: ^0.3.12
-        version: 0.3.12(svelte@5.53.2)
+        specifier: ^0.4.0
+        version: 0.4.0(svelte@5.53.2)
       bits-ui:
         specifier: ^2.16.2
         version: 2.16.2(@internationalized/date@3.11.0)(@sveltejs/kit@2.53.0(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.53.2)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.31.1)(yaml@2.8.2)))(svelte@5.53.2)(typescript@5.9.3)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.31.1)(yaml@2.8.2)))(svelte@5.53.2)
@@ -1492,8 +1492,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==, tarball: https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz}
     engines: {node: '>= 8'}
 
-  '@number-flow/svelte@0.3.12':
-    resolution: {integrity: sha512-WIXrxj9UMLbGMOzj4xWOOj8FLuCwFWUcKos7C7igvIaHVRdmrG7regrQWkJxR3XqnXt4RaUHQpvb1QZY2sIjwg==, tarball: https://registry.npmjs.org/@number-flow/svelte/-/svelte-0.3.12.tgz}
+  '@number-flow/svelte@0.4.0':
+    resolution: {integrity: sha512-9tnowrlZlBV3IVe3Gm1V7yXSf4Ugag2k7iW45xqb04HXSa1ApEImopvGWAjJpHDvS849o+UCb0YH461Mtde9lA==, tarball: https://registry.npmjs.org/@number-flow/svelte/-/svelte-0.4.0.tgz}
     peerDependencies:
       svelte: ^4 || ^5
 
@@ -3280,8 +3280,8 @@ packages:
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==, tarball: https://registry.npmjs.org/nth-check/-/nth-check-2.1.1.tgz}
 
-  number-flow@0.5.11:
-    resolution: {integrity: sha512-6Muz6RFuZjLQ/93XH3lyMdeL/8Wc41OjRRRt2uAnKXbqcKp9Ov8jvR7nqEv1U3CFs21mMOwC7U6XVRyFGtDQeg==, tarball: https://registry.npmjs.org/number-flow/-/number-flow-0.5.11.tgz}
+  number-flow@0.6.0:
+    resolution: {integrity: sha512-K8flNq2Wqus53vjp/btVo3qXFkagF8dIdYavreBfE7hlvFFG/b1HMGEH6nZL+mlrJ+4lbLP9OmPv3t2rmRkpSQ==, tarball: https://registry.npmjs.org/number-flow/-/number-flow-0.6.0.tgz}
 
   obug@2.1.1:
     resolution: {integrity: sha512-uTqF9MuPraAQ+IsnPf366RG4cP9RtUi7MLO1N3KEc+wb0a6yKpeL0lmk2IB1jY5KHPAlTc6T/JRdC/YqxHNwkQ==, tarball: https://registry.npmjs.org/obug/-/obug-2.1.1.tgz}
@@ -4794,10 +4794,10 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@number-flow/svelte@0.3.12(svelte@5.53.2)':
+  '@number-flow/svelte@0.4.0(svelte@5.53.2)':
     dependencies:
       esm-env: 1.2.2
-      number-flow: 0.5.11
+      number-flow: 0.6.0
       svelte: 5.53.2
 
   '@polka/url@1.0.0-next.29': {}
@@ -6904,7 +6904,7 @@ snapshots:
     dependencies:
       boolbase: 1.0.0
 
-  number-flow@0.5.11:
+  number-flow@0.6.0:
     dependencies:
       esm-env: 1.2.2
 

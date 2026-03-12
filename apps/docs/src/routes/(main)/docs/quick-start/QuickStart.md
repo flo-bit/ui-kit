@@ -17,7 +17,7 @@ Also add the `@tailwindcss/typography` and `@tailwindcss/forms` plugins.
 ## 2. Install the core fox ui components by running:
 
 ```bash
-npm install @foxui/core bits-ui mode-watcher svelte-sonner @number-flow/svelte
+npm install @foxui/core
 ```
 
 ## 3. Set theme variables in your `app.css`
@@ -74,7 +74,7 @@ Fox UI is split into multiple subpackages to minimize both the bundle size as we
 Simply install a package when you need it, or you can install all of them with:
 
 ```bash
-npm install @foxui/core @foxui/3d @foxui/colors @foxui/social @foxui/text @foxui/time @foxui/visual bits-ui mode-watcher svelte-sonner @number-flow/svelte
+npm install @foxui/core @foxui/3d @foxui/colors @foxui/social @foxui/text @foxui/time @foxui/visual
 ```
 
 ### Dark mode

@@ -77,10 +77,10 @@
     "emoji-picker-element": "^1.29.0",
     "hls.js": "^1.6.15",
     "is-emoji-supported": "^0.0.5",
+    "bits-ui": "^2.16.2",
     "plyr": "^3.8.4"
   },
   "peerDependencies": {
-    "bits-ui": "^2.16.2",
     "svelte": ">=5",
     "tailwindcss": ">=3"
   },
