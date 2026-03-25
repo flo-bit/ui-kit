@@ -1,5 +1,11 @@
 # @foxui/social
 
+## 0.8.2
+
+### Patch Changes
+
+- be3fc8d: improve atproto login modal
+
 ## 0.8.1
 
 ### Patch Changes
