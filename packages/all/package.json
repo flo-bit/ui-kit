@@ -1,7 +1,7 @@
 {
   "name": "@foxui/all",
   "private": false,
-  "version": "0.6.2",
+  "version": "0.6.3",
   "type": "module",
   "scripts": {
     "dev": "vite dev",
