@@ -48,7 +48,7 @@
 <div
 	bind:this={ref}
 	class={cn(
-		'not-prose group border-base-300 dark:border-base-900 bg-base-200/50 dark:bg-base-950/50 group relative isolate my-6 flex aspect-[1200/630] max-w-lg flex-col justify-end overflow-hidden rounded-2xl border p-4',
+		'not-prose group border-base-400 dark:border-base-800 bg-base-200/50 dark:bg-base-950/50 group relative isolate my-6 flex aspect-1200/630 max-w-lg flex-col justify-end overflow-hidden rounded-2xl border p-4',
 		'focus-within:outline-accent-500 focus-within:outline-2 focus-within:outline-offset-2',
 		className
 	)}
@@ -80,7 +80,7 @@
 
 	{#if showGradient}
 		<div
-			class="from-base-200/90 to-base-200/40 dark:from-base-950 dark:to-base-950/60 absolute inset-0 -z-10 rounded-xl bg-gradient-to-t"
+			class="from-base-300/90 via-base-300/40 dark:from-base-950 dark:via-base-950/40 absolute inset-0 -z-10 rounded-xl bg-linear-to-t inset-shadow-sm inset-shadow-base-950/20 dark:inset-shadow-base-950/60"
 		></div>
 	{/if}
 

@@ -27,7 +27,8 @@
 
 		showAvatar = true,
 		compact = false,
-		target = '_blank'
+		target = '_blank',
+		extraEmbeds
 	}: WithElementRef<HTMLAttributes<HTMLDivElement>> & PostProps = $props();
 </script>
 
@@ -156,6 +157,12 @@
 				{#each embeds as embed}
 					<Embed {embed} {showSensitive} />
 				{/each}
+			{/if}
+
+			{#if extraEmbeds}
+				<div class="flex flex-col gap-2 pt-3 text-sm">
+					{@render extraEmbeds()}
+				</div>
 			{/if}
 
 			{#if actions}

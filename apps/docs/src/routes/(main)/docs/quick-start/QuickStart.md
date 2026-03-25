@@ -28,6 +28,8 @@ Add the following to your `app.css` to import the theme (which includes the base
 @custom-variant dark (&:is(.dark *));
 
 @import '@foxui/core/theme.css';
+
+@source "../node_modules/@foxui";
 ```
 
 ## 4. Use a component

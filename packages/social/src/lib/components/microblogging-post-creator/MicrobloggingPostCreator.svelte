@@ -1,5 +1,4 @@
 <script lang="ts" module>
-	import type { Snippet } from 'svelte';
 	import type { Readable } from 'svelte/store';
 	import type { MentionItem, JSONContent, SvelteTiptap } from '@foxui/text';
 	import type { LinkAddedEvent } from '@foxui/text';
@@ -11,6 +10,7 @@
 </script>
 
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import {
 		PlainTextEditor,
 		MentionNode,
@@ -47,10 +47,12 @@
 		editor = $bindable<Readable<SvelteTiptap.Editor>>(),
 		ref = $bindable<HTMLDivElement | null>(null),
 		searchMentions,
-		embed = $bindable<unknown>(undefined),
 		onlinkadded,
-		embedPreview,
-		mentionItem: mentionItemSnippet
+		onimageadded,
+		onvideoadded,
+		mentionItem: mentionItemSnippet,
+		textEditorClass = "",
+		children
 	}: {
 		class?: string;
 		placeholder?: string;
@@ -60,20 +62,75 @@
 		editor?: Readable<SvelteTiptap.Editor>;
 		ref?: HTMLDivElement | null;
 		searchMentions?: (query: string) => Promise<MentionItem[]>;
-		embed?: unknown;
 		onlinkadded?: (event: LinkAddedEvent) => void;
-		embedPreview?: Snippet<[{ embed: unknown; removeEmbed: () => void }]>;
+		onimageadded?: (files: File[]) => void;
+		onvideoadded?: (files: File[]) => void;
 		mentionItem?: Snippet<
 			[{ item: MentionItem; isActive: boolean; select: () => void }]
 		>;
+		textEditorClass?: string;
+		children?: Snippet;
 	} = $props();
+
+	let acceptsMedia = $derived(!!onimageadded || !!onvideoadded);
+	let dragCounter = $state(0);
+	let dragging = $derived(dragCounter > 0);
+
+	function handleFiles(files: File[]) {
+		const images = files.filter((f) => f.type.startsWith('image/'));
+		const videos = files.filter((f) => f.type.startsWith('video/'));
+		if (images.length && onimageadded) onimageadded(images);
+		if (videos.length && onvideoadded) onvideoadded(videos);
+	}
+
+	function handlePaste(e: ClipboardEvent) {
+		if (!acceptsMedia || !e.clipboardData?.files.length) return;
+		const files = Array.from(e.clipboardData.files).filter(
+			(f) =>
+				(onimageadded && f.type.startsWith('image/')) ||
+				(onvideoadded && f.type.startsWith('video/'))
+		);
+		if (files.length) {
+			e.preventDefault();
+			handleFiles(files);
+		}
+	}
+
+	function handleDrop(e: DragEvent) {
+		dragCounter = 0;
+		if (!acceptsMedia || !e.dataTransfer?.files.length) return;
+		const files = Array.from(e.dataTransfer.files).filter(
+			(f) =>
+				(onimageadded && f.type.startsWith('image/')) ||
+				(onvideoadded && f.type.startsWith('video/'))
+		);
+		if (files.length) {
+			e.preventDefault();
+			handleFiles(files);
+		}
+	}
+
+	function handleDragEnter(e: DragEvent) {
+		if (!acceptsMedia) return;
+		e.preventDefault();
+		dragCounter++;
+	}
+
+	function handleDragOver(e: DragEvent) {
+		if (!acceptsMedia) return;
+		e.preventDefault();
+	}
+
+	function handleDragLeave() {
+		dragCounter--;
+	}
 
 	let charCount = $derived(content.text.length);
 	let remaining = $derived(maxLength - charCount);
 
 	let extraExtensions = $derived.by(() => {
 		const exts: any[] = [
-			LinkExtension.configure({ onlinkadded: handleLinkAdded }),
+			LinkExtension.configure({ onlinkadded }),
 			HashtagDecoration
 		];
 		if (searchMentions) {
@@ -87,20 +144,26 @@
 		}
 		return exts;
 	});
-
-	function handleLinkAdded(event: LinkAddedEvent) {
-		if (!embed) {
-			embed = { type: 'link', url: event.href, text: event.text };
-		}
-		onlinkadded?.(event);
-	}
-
-	function removeEmbed() {
-		embed = undefined;
-	}
 </script>
 
-<div class={cn('relative', className)}>
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<div
+	class={cn('relative', className)}
+	onpaste={handlePaste}
+	ondrop={handleDrop}
+	ondragenter={handleDragEnter}
+	ondragover={handleDragOver}
+	ondragleave={handleDragLeave}
+>
+	{#if dragging}
+		<div
+			class="border-accent-500 bg-accent-500/10 absolute inset-0 z-10 flex items-center justify-center rounded-lg border-2 border-dashed"
+		>
+			<span class="text-accent-600 dark:text-accent-400 text-sm font-medium">
+				Drop {onimageadded && onvideoadded ? 'image or video' : onimageadded ? 'image' : 'video'} here
+			</span>
+		</div>
+	{/if}
 	<PlainTextEditor
 		bind:editor
 		bind:ref
@@ -111,16 +174,15 @@
 			content = { text: extractText(json), json };
 			onupdate?.(content);
 		}}
+		class={textEditorClass}
 	>
 		{#if searchMentions && $editor}
 			<MentionMenu editor={$editor} items={searchMentions} item={mentionItemSnippet} />
 		{/if}
 	</PlainTextEditor>
 
-	{#if embed && embedPreview}
-		<div class="mt-2">
-			{@render embedPreview({ embed, removeEmbed })}
-		</div>
+	{#if children}
+		{@render children()}
 	{/if}
 
 	{#if maxLength}

@@ -33,6 +33,10 @@
 }
 
 @layer base {
+	body {
+		@apply bg-base-100 text-base-950 dark:bg-base-900 dark:text-base-50;
+	}
+
 	:root {
 		--accent-50: var(--color-pink-50);
 		--accent-100: var(--color-pink-100);

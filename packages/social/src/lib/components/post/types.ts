@@ -50,6 +50,7 @@ export type PostProps = {
 
 	embeds?: Embed[];
 	showSensitive?: boolean;
+	extraEmbeds?: Snippet;
 
 	actions?: ActionButtonsProps;
 

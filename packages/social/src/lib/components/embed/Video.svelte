@@ -18,24 +18,41 @@
 		initPlayer();
 	});
 
+	function isHlsSource(url: string) {
+		return url.endsWith('.m3u8') || url.includes('/playlist/');
+	}
+
 	async function initPlayer() {
-		const [{ default: Plyr }, { default: Hls }] = await Promise.all([
-			import('plyr'),
-			import('hls.js')
-		]);
+		const src = data.video.playlist;
 
-		if (Hls.isSupported()) {
-			const hls = new Hls();
-			hls.loadSource(data.video.playlist);
-			hls.attachMedia(element);
+		if (isHlsSource(src)) {
+			const [{ default: Plyr }, { default: Hls }] = await Promise.all([
+				import('plyr'),
+				import('hls.js')
+			]);
+
+			if (Hls.isSupported()) {
+				const hls = new Hls();
+				hls.loadSource(src);
+				hls.attachMedia(element);
+			}
+
+			new Plyr(element, {
+				controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+				ratio: data.video.aspectRatio
+					? `${data.video.aspectRatio.width}:${data.video.aspectRatio.height}`
+					: '16:9'
+			});
+		} else {
+			element.src = src;
+			const { default: Plyr } = await import('plyr');
+			new Plyr(element, {
+				controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+				ratio: data.video.aspectRatio
+					? `${data.video.aspectRatio.width}:${data.video.aspectRatio.height}`
+					: '16:9'
+			});
 		}
-
-		new Plyr(element, {
-			controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-			ratio: data.video.aspectRatio
-				? `${data.video.aspectRatio.width}:${data.video.aspectRatio.height}`
-				: '16:9'
-		});
 	}
 
 	function reveal() {

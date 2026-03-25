@@ -15,7 +15,7 @@
 </script>
 
 <Box
-	class="not-prose divide-base-200/50 dark:divide-base-800/70 relative flex h-96 w-full flex-col divide-y overflow-y-scroll"
+	class="not-prose divide-base-200/50 dark:divide-base-800/70 relative flex h-96 max-w-lg flex-col divide-y overflow-y-scroll"
 >
 	{#each feed as item (item.post.uri)}
 		<div class="py-4 first:pt-0 last:pb-0">

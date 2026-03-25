@@ -14,6 +14,9 @@
 		baseUrl?: string;
 		hrefs?: BlueskyHrefs;
 		showLogo?: boolean;
+
+		liked?: boolean;
+		bookmarked?: boolean;
 	};
 
 	let {
@@ -27,6 +30,10 @@
 		showAvatar = true,
 		compact = false,
 		target = '_blank',
+
+		liked,
+		bookmarked,
+
 		...restProps
 	}: BlueskyPostProps = $props();
 
@@ -58,7 +65,8 @@
 		actions={{
 			reply: { count: result.postData.replyCount, href: result.postData.href },
 			repost: { count: result.postData.repostCount, href: result.postData.href },
-			like: { count: result.postData.likeCount, href: result.postData.href }
+			like: { count: result.postData.likeCount, href: result.postData.href, active: liked },
+			bookmark: bookmarked ? { active: true } : undefined
 		}}
 		timestamp={{ href: result.postData.href }}
 		logo={logo ?? (showLogo ? defaultLogo : undefined)}

@@ -9,6 +9,7 @@ export type {
 	Embed
 } from './types';
 
+export { default as EmbedImage } from './Image.svelte';
 export { default as EmbedImages } from './Images.svelte';
 export { default as EmbedExternal } from './External.svelte';
 export { default as EmbedVideo } from './Video.svelte';

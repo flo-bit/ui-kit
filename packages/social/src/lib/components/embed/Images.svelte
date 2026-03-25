@@ -1,5 +1,6 @@
 <script lang="ts">
-	import type { EmbedImageData, ImageData } from './types';
+	import type { EmbedImageData } from './types';
+	import Image from './Image.svelte';
 
 	const {
 		data,
@@ -11,42 +12,6 @@
 
 	let revealed = $state(false);
 </script>
-
-{#snippet imageSnippet(image: ImageData, className?: string)}
-	{#if data.onclick}
-		<button class="cursor-pointer" onclick={() => data.onclick!(image)}>
-			<img
-				loading="lazy"
-				src={image.thumb}
-				alt={image.alt}
-				width={image.aspectRatio?.width}
-				height={image.aspectRatio?.height}
-				style={image.aspectRatio
-					? `aspect-ratio: ${image.aspectRatio.width} / ${image.aspectRatio.height}`
-					: 'aspect-ratio: 1 / 1'}
-				class={[
-					'border-base-500/20 dark:border-base-400/20 accent:border-accent-900 max-h-160 w-full max-w-full rounded-2xl border object-cover',
-					className
-				]}
-			/>
-		</button>
-	{:else}
-		<img
-			loading="lazy"
-			src={image.thumb}
-			alt={image.alt}
-			width={image.aspectRatio?.width}
-			height={image.aspectRatio?.height}
-			style={image.aspectRatio
-				? `aspect-ratio: ${image.aspectRatio.width} / ${image.aspectRatio.height}`
-				: 'aspect-ratio: 1 / 1'}
-			class={[
-				'border-base-500/20 dark:border-base-400/20 accent:border-accent-900 max-h-160 w-full max-w-full rounded-2xl border object-cover',
-				className
-			]}
-		/>
-	{/if}
-{/snippet}
 
 {#if data.sensitive && showSensitive && !revealed}
 	{@const firstImage = data.images[0]}
@@ -60,11 +25,11 @@
 		Sensitive content, click to show.
 	</button>
 {:else if data.images.length === 1}
-	{@render imageSnippet(data.images[0])}
+	<Image image={data.images[0]} onclick={data.onclick} />
 {:else}
 	<div class="columns-2 gap-4">
 		{#each data.images as image (image.thumb)}
-			{@render imageSnippet(image, 'mb-4')}
+			<Image {image} onclick={data.onclick} class="mb-4" />
 		{/each}
 	</div>
 {/if}

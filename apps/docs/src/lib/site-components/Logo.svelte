@@ -11,8 +11,8 @@
 
 <div class={cn('flex items-center gap-2', className)}>
 	<a
-		class="text-base-950 dark:text-base-50 focus-visible:outline-base-900 dark:focus-visible:outline-base-50 rounded-xl font-semibold focus-visible:outline-2 focus-visible:outline-offset-4"
-		href={resolve('/')}>🦊 fox ui</a
+		class="text-base-950 dark:text-base-50 focus-visible:outline-base-900 dark:focus-visible:outline-base-50 rounded-xl font-semibold focus-visible:outline-2 focus-visible:outline-offset-4 flex gap-2"
+		href={resolve('/')}>🦊 <span class="hidden sm:block">fox ui</span></a
 	>
 	<Badge>alpha</Badge>
 </div>

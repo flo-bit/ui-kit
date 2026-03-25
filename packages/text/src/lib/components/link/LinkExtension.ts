@@ -1,5 +1,6 @@
 import { Extension, InputRule, markInputRule, markPasteRule, PasteRule } from '@tiptap/core';
 import { Link } from '@tiptap/extension-link';
+import { Plugin, PluginKey } from '@tiptap/pm/state';
 import { AddMarkStep } from '@tiptap/pm/transform';
 import type { LinkExtensionOptions } from './helpers';
 
@@ -52,16 +53,28 @@ export const LinkExtension = Extension.create<LinkExtensionOptions>({
 		};
 	},
 
-	onTransaction({ transaction }) {
-		const onlinkadded = this.options.onlinkadded;
-		if (!onlinkadded || !transaction.docChanged) return;
+	addProseMirrorPlugins() {
+		const ext = this;
+		return [
+			new Plugin({
+				key: new PluginKey('linkAddedDetector'),
+				appendTransaction(transactions, _oldState, newState) {
+					const onlinkadded = ext.options.onlinkadded;
+					if (!onlinkadded) return;
 
-		for (const step of transaction.steps) {
-			if (step instanceof AddMarkStep && step.mark.type.name === 'link') {
-				const text = transaction.doc.textBetween(step.from, step.to);
-				onlinkadded({ href: step.mark.attrs.href, text, editor: this.editor });
-			}
-		}
+					for (const transaction of transactions) {
+						for (const step of transaction.steps) {
+							if (step instanceof AddMarkStep && step.mark.type.name === 'link') {
+								const text = newState.doc.textBetween(step.from, step.to);
+								console.log('[LinkExtension] link detected:', { href: step.mark.attrs.href, text });
+								onlinkadded({ href: step.mark.attrs.href, text, editor: ext.editor });
+							}
+						}
+					}
+					return null;
+				}
+			})
+		];
 	},
 
 	addExtensions() {
@@ -109,6 +122,7 @@ export const LinkExtension = Extension.create<LinkExtensionOptions>({
 			},
 			addPasteRules() {
 				return [
+					...(this.parent?.() ?? []),
 					linkPasteRule({
 						find: pasteRegex,
 						type: this.type,
