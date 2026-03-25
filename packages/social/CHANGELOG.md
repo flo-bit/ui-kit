@@ -1,5 +1,11 @@
 # @foxui/social
 
+## 0.8.4
+
+### Patch Changes
+
+- 7a069ee: add nested comments
+
 ## 0.8.3
 
 ### Patch Changes
