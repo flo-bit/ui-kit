@@ -1,14 +1,9 @@
 <script lang="ts">
-	import { AtprotoLoginModal, atProtoLoginModalState, Button, toast } from '@foxui/all';
-</script>
+	import { AtprotoLogin, AtprotoLoginModal, Button, toast, Box } from '@foxui/all';
 
+	let open = $state(false);
 
-
-<Button onclick={() => atProtoLoginModalState.show()}>
-	Login
-</Button>
-
-<AtprotoLoginModal login={async (handle: string) => {
+	async function login(handle: string) {
 		if (!handle) {
 			toast.error('Please enter a handle');
 			return false;
@@ -19,8 +14,26 @@
 		}
 		toast.success(`Login successful for ${handle}`);
 		return true;
-	}} signup={async () => {
+	}
+
+	async function signup() {
 		toast.success('Signup successful');
-		atProtoLoginModalState.hide();
+		open = false;
 		return true;
-	}} />
+	}
+</script>
+
+<div class="flex flex-col">
+	<div>
+		<h3>Modal version</h3>
+		<Button onclick={() => (open = true)}>Open login modal</Button>
+	</div>
+	<div class="pt-4">
+		<h3>Inline version</h3>
+		<Box class="not-prose max-w-sm">
+			<AtprotoLogin {login} {signup} />
+		</Box>
+	</div>
+</div>
+
+<AtprotoLoginModal bind:open {login} {signup} />

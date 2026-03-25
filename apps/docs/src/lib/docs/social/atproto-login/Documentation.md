@@ -3,7 +3,12 @@
 ### Add modal to your `+layout.svelte`
 
 ```svelte
+<script>
+	let open = $state(false);
+</script>
+
 <AtprotoLoginModal
+	bind:open
 	login={async (handle) => {
 		// do login and return true if login
 		// is successful and should hide the modal
@@ -18,5 +23,17 @@
 ### Open the modal
 
 ```svelte
-<Button onclick={() => atProtoLoginModalState.show()}>Login</Button>
+<Button onclick={() => (open = true)}>Login</Button>
+```
+
+### Inline (non-modal) version
+
+Use `AtprotoLogin` to embed the login form directly in a page:
+
+```svelte
+<AtprotoLogin
+	login={async (handle) => {
+		// do login
+	}}
+/>
 ```

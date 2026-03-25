@@ -1,5 +1,5 @@
+export { default as AtprotoLogin } from './AtprotoLogin.svelte';
 export { default as AtprotoLoginModal } from './AtprotoLoginModal.svelte';
-export { atProtoLoginModalState } from './AtprotoLoginModal.svelte';
 
 export type ATProtoLoginProps = {
 	login?: (handle: string) => Promise<boolean | undefined>;
