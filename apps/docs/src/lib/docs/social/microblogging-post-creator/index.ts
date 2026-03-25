@@ -4,8 +4,8 @@ import Card from './Card.svelte';
 import api from './api';
 
 export default {
-	slug: 'bluesky-post-creator',
-	title: 'Bluesky Post Creator',
+	slug: 'microblogging-post-creator',
+	title: 'Microblogging Post Creator',
 	docs: Docs,
 	example: Example,
 	card: Card,

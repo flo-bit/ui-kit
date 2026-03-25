@@ -85,7 +85,8 @@ export function editorJsonToBlueskyPost(json: JSONContent): BlueskyPostContent {
 	processNode(json);
 
 	// Detect hashtags in the final text
-	const hashtagRegex = /(?<=^|\s)#([a-zA-Z\u00C0-\u024F\u1E00-\u1EFF][\w\u00C0-\u024F\u1E00-\u1EFF]*)/g;
+	const hashtagRegex =
+		/(?<=^|\s)#([a-zA-Z\u00C0-\u024F\u1E00-\u1EFF][\w\u00C0-\u024F\u1E00-\u1EFF]*)/g;
 	let match;
 	while ((match = hashtagRegex.exec(text)) !== null) {
 		const fullMatch = match[0];

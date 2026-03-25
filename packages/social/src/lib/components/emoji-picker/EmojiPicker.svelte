@@ -15,15 +15,12 @@
 		import('emoji-picker-element').then(({ Database }) => {
 			emojiDatabase.db = new Database();
 
-			// go through all groups and check if the emoji is supported (will be cached)
-			// so that things appear faster when we select a group
-			for (const group of allGroups) {
-				emojiDatabase.db.getEmojiByGroup(group.id).then((emojis) => {
-					for (const emoji of emojis) {
-						isEmojiSupported(emoji.unicode);
-					}
-				});
-			}
+			// only pre-cache the first group, others get cached on demand when selected
+			emojiDatabase.db.getEmojiByGroup(allGroups[0].id).then((emojis) => {
+				for (const emoji of emojis) {
+					isEmojiSupported(emoji.unicode);
+				}
+			});
 		});
 		console.log('emojis loaded');
 	}

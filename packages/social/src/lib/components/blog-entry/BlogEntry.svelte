@@ -26,7 +26,7 @@
 
 <article class="group relative isolate flex w-full flex-col gap-8 md:flex-row">
 	{#if image}
-		<div class="relative aspect-[16/9] md:w-64 md:shrink-0">
+		<div class="relative aspect-video md:w-64 md:shrink-0">
 			<img
 				src={image}
 				alt=""
@@ -39,7 +39,7 @@
 		</div>
 	{/if}
 	<div>
-		<div class={'flex max-h-8.5 flex-wrap items-center gap-2 overflow-hidden p-1 text-xs'}>
+		<div class="flex max-h-8.5 flex-wrap items-center gap-2 overflow-hidden p-1 text-xs">
 			<time datetime={date.toISOString()} class="text-base-500 mr-2 shrink-0">
 				{date.toLocaleDateString('en-us', {
 					year: 'numeric',

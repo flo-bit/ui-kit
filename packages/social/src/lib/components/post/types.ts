@@ -1,82 +1,6 @@
 import type { Snippet } from 'svelte';
-
-export type PostImageData = {
-	alt: string;
-	thumb: string;
-	fullsize: string;
-	aspectRatio?: {
-		width: number;
-		height: number;
-	};
-};
-
-export type PostEmbedImage = {
-	type: 'images';
-	images: PostImageData[];
-};
-
-export type PostEmbedExternal = {
-	type: 'external';
-
-	external: {
-		href: string;
-		thumb: string;
-		title: string;
-		description: string;
-	};
-};
-
-export type PostEmbedVideo = {
-	type: 'video';
-
-	video: {
-		playlist: string;
-
-		thumb: string;
-		alt: string;
-
-		aspectRatio?: {
-			width: number;
-			height: number;
-		};
-	};
-};
-
-export type QuotedPostData = {
-	author: {
-		displayName: string;
-		handle: string;
-		avatar?: string;
-		href?: string;
-	};
-	href?: string;
-	htmlContent?: string;
-	createdAt?: string;
-	embed?: PostEmbed;
-};
-
-export type PostEmbedRecord = {
-	type: 'record';
-	record: QuotedPostData;
-};
-
-export type PostEmbedRecordWithMedia = {
-	type: 'recordWithMedia';
-	record: QuotedPostData;
-	media: PostEmbed;
-};
-
-export type UnknownEmbed = {
-	type: 'unknown';
-} & Record<string, unknown>;
-
-export type PostEmbed =
-	| PostEmbedImage
-	| PostEmbedExternal
-	| PostEmbedVideo
-	| PostEmbedRecord
-	| PostEmbedRecordWithMedia
-	| UnknownEmbed;
+import type { Embed } from '../embed';
+import type { ActionButtonsProps } from '../action-buttons';
 
 export type PostData = {
 	href?: string;
@@ -92,13 +16,13 @@ export type PostData = {
 		href?: string;
 	};
 
-	replyCount: number;
-	repostCount: number;
-	likeCount: number;
+	replyCount?: number;
+	repostCount?: number;
+	likeCount?: number;
 
 	createdAt: string;
 
-	embed?: PostEmbed;
+	embeds?: Embed[];
 
 	htmlContent?: string;
 
@@ -107,44 +31,35 @@ export type PostData = {
 	labels?: string[];
 };
 
+export type PostHeaderProps = {
+	author: PostData['author'];
+	createdAt: string;
+	timestamp?: { href?: string; onclick?: () => void };
+	onclickhandle?: (handle: string, href?: string) => void;
+	showAvatar?: boolean;
+	compact?: boolean;
+	logo?: Snippet;
+	target?: string;
+	class?: string;
+};
+
 export type PostProps = {
 	data: PostData;
 	class?: string;
 	children?: Snippet;
 
-	bookmarked?: boolean;
-	liked?: boolean;
+	embeds?: Embed[];
+	showSensitive?: boolean;
 
-	showReply?: boolean;
-	showRepost?: boolean;
-	showLike?: boolean;
-	showBookmark?: boolean;
+	actions?: ActionButtonsProps;
 
-	onReplyClick?: () => void;
-	onRepostClick?: () => void;
-	onLikeClick?: () => void;
-	onBookmarkClick?: () => void;
-
-	replyHref?: string;
-	repostHref?: string;
-	likeHref?: string;
-
-	onclickimage?: (image: PostImageData) => void;
-	onclickpost?: (data: PostData | QuotedPostData, href?: string) => void;
 	onclickhandle?: (handle: string, href?: string) => void;
 
-	timestampHref?: string;
-	ontimestampclick?: () => void;
-
-	customActions?: Snippet;
+	timestamp?: { href?: string; onclick?: () => void };
 
 	logo?: Snippet;
 
 	showAvatar?: boolean;
 	compact?: boolean;
-
-	showImages?: boolean;
-	showExternal?: boolean;
-	showVideo?: boolean;
-	showQuotes?: boolean;
+	target?: string;
 };

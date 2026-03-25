@@ -4,7 +4,7 @@
 	import { Avatar, Prose } from '@foxui/core';
 	import { RelativeTime } from '@foxui/time';
 	import type { PostData } from '../post';
-	import Embed from '../post/embeds/Embed.svelte';
+	import Embed from '../embed/Embed.svelte';
 
 	const { comment, depth = 0 }: { comment: PostData; depth: number } = $props();
 
@@ -73,8 +73,10 @@
 			{@render top(false)}
 			<Prose>{@html comment.htmlContent}</Prose>
 
-			{#if comment.embed}
-				<Embed embed={comment.embed} />
+			{#if comment.embeds?.length}
+				{#each comment.embeds as embed}
+					<Embed {embed} />
+				{/each}
 			{/if}
 
 			<div class="text-base-500 dark:text-base-400 mt-2 flex gap-8">
@@ -99,7 +101,7 @@
 						/>
 					</svg>
 					<span class="sr-only">Replies</span>
-					{numberToHumanReadable(comment.replyCount)}
+					{numberToHumanReadable(comment.replyCount ?? 0)}
 				</a>
 
 				<a
@@ -123,7 +125,7 @@
 						/>
 					</svg>
 					<span class="sr-only">Likes</span>
-					{numberToHumanReadable(comment.likeCount)}
+					{numberToHumanReadable(comment.likeCount ?? 0)}
 				</a>
 			</div>
 

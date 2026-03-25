@@ -25,7 +25,8 @@
     ".": {
       "types": "./src/lib/index.ts",
       "svelte": "./src/lib/index.ts"
-    }
+    },
+    "./theme.css": "./src/lib/theme.css"
   },
   "types": "./src/lib/index.ts",
   "svelte": "./src/lib/index.ts",
@@ -38,7 +39,8 @@
       ".": {
         "types": "./dist/types.d.ts",
         "svelte": "./dist/index.js"
-      }
+      },
+      "./theme.css": "./dist/theme.css"
     },
     "types": "./dist/types.d.ts"
   },

@@ -1,6 +1,31 @@
-import type { PostData, PostEmbed, QuotedPostData } from '../post';
+import type { Embed, EmbedRecordData } from '../embed';
+import type { PostData } from '../post';
 import type { PostView } from '@atcute/bluesky/types/app/feed/defs';
 import { segmentize, type Facet, type RichtextSegment } from '@atcute/bluesky-richtext-segmenter';
+
+export type BlueskyHrefs = {
+	profile?: (handle: string, did?: string) => string;
+	post?: (handle: string, postId: string) => string;
+	hashtag?: (tag: string) => string;
+};
+
+function defaultHrefs(baseUrl: string): Required<BlueskyHrefs> {
+	return {
+		profile: (handle, did) => `${baseUrl}/profile/${did ?? handle}`,
+		post: (handle, postId) => `${baseUrl}/profile/${handle}/post/${postId}`,
+		hashtag: (tag) => `${baseUrl}/hashtag/${tag}`
+	};
+}
+
+function resolveHrefs(baseUrl: string, hrefs?: BlueskyHrefs): Required<BlueskyHrefs> {
+	const defaults = defaultHrefs(baseUrl);
+	if (!hrefs) return defaults;
+	return {
+		profile: hrefs.profile ?? defaults.profile,
+		post: hrefs.post ?? defaults.post,
+		hashtag: hrefs.hashtag ?? defaults.hashtag
+	};
+}
 
 function escapeHtml(str: string): string {
 	return str
@@ -28,7 +53,11 @@ interface TagFeature {
 
 type Feature = MentionFeature | LinkFeature | TagFeature;
 
-const renderSegment = (segment: RichtextSegment, baseUrl: string) => {
+const renderSegment = (
+	segment: RichtextSegment,
+	hrefs: Required<BlueskyHrefs>,
+	target?: string
+) => {
 	const { text, features } = segment;
 	const escaped = escapeHtml(text);
 
@@ -37,26 +66,31 @@ const renderSegment = (segment: RichtextSegment, baseUrl: string) => {
 	}
 
 	const feature = features[0] as Feature;
+	const targetAttr = target ? ` target="${target}"` : '';
 
 	const createLink = (href: string, text: string) => {
-		return `<a target="_blank" rel="noopener noreferrer nofollow" href="${encodeURI(href)}">${text}</a>`;
+		return `<a${targetAttr} rel="noopener noreferrer nofollow" href="${encodeURI(href)}">${text}</a>`;
 	};
 
 	switch (feature.$type) {
 		case 'app.bsky.richtext.facet#mention':
-			return createLink(`${baseUrl}/profile/${feature.did}`, escaped);
+			return createLink(hrefs.profile(feature.did, feature.did), escaped);
 		case 'app.bsky.richtext.facet#link':
 			return createLink(feature.uri, escaped);
 		case 'app.bsky.richtext.facet#tag':
-			return createLink(`${baseUrl}/hashtag/${feature.tag}`, escaped);
+			return createLink(hrefs.hashtag(feature.tag), escaped);
 		default:
 			return `<span>${escaped}</span>`;
 	}
 };
 
-const RichText = ({ text, facets }: { text: string; facets?: Facet[] }, baseUrl: string) => {
+const RichText = (
+	{ text, facets }: { text: string; facets?: Facet[] },
+	hrefs: Required<BlueskyHrefs>,
+	target?: string
+) => {
 	const segments = segmentize(text, facets);
-	return segments.map((v) => renderSegment(v, baseUrl)).join('');
+	return segments.map((v) => renderSegment(v, hrefs, target)).join('');
 };
 
 function blueskyEmbedTypeToEmbedType(type: string) {
@@ -82,7 +116,12 @@ function blueskyEmbedTypeToEmbedType(type: string) {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function extractQuotedPost(recordView: any, baseUrl: string): QuotedPostData | null {
+function extractQuotedPost(
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	recordView: any,
+	hrefs: Required<BlueskyHrefs>,
+	target?: string
+): EmbedRecordData | null {
 	if (!recordView?.author) return null;
 
 	const id = recordView.uri?.split('/').pop();
@@ -92,19 +131,19 @@ function extractQuotedPost(recordView: any, baseUrl: string): QuotedPostData | n
 
 	let htmlContent = '';
 	if (value?.text) {
-		htmlContent = RichText({ text: value.text, facets: value.facets }, baseUrl).replace(
+		htmlContent = RichText({ text: value.text, facets: value.facets }, hrefs, target).replace(
 			/\n/g,
 			'<br>'
 		);
 	}
 
-	let embed: PostEmbed | undefined;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const firstEmbed = recordView.embeds?.[0] as any;
+	let embed: Embed | undefined;
 	if (firstEmbed) {
 		const embedType = blueskyEmbedTypeToEmbedType(firstEmbed.$type);
 		if (embedType !== 'record' && embedType !== 'recordWithMedia' && embedType !== 'unknown') {
-			embed = convertEmbed(firstEmbed, baseUrl);
+			embed = convertEmbed(firstEmbed, hrefs, target) ?? undefined;
 		}
 	}
 
@@ -113,9 +152,9 @@ function extractQuotedPost(recordView: any, baseUrl: string): QuotedPostData | n
 			displayName: author.displayName || '',
 			handle: author.handle,
 			avatar: author.avatar,
-			href: `${baseUrl}/profile/${author.did}`
+			href: hrefs.profile(author.handle, author.did)
 		},
-		href: `${baseUrl}/profile/${author.handle}/post/${id}`,
+		href: hrefs.post(author.handle, id),
 		htmlContent,
 		createdAt: value?.createdAt,
 		embed
@@ -123,7 +162,12 @@ function extractQuotedPost(recordView: any, baseUrl: string): QuotedPostData | n
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function convertEmbed(embedView: any, baseUrl: string): PostEmbed {
+function convertEmbed(
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	embedView: any,
+	hrefs: Required<BlueskyHrefs>,
+	target?: string
+): Embed | null {
 	const type = blueskyEmbedTypeToEmbedType(embedView?.$type);
 
 	switch (type) {
@@ -149,7 +193,7 @@ function convertEmbed(embedView: any, baseUrl: string): PostEmbed {
 							thumb: embedView.external.thumb
 						}
 					}
-				: { type: 'unknown' };
+				: null;
 		case 'video':
 			return embedView.playlist
 				? {
@@ -161,76 +205,133 @@ function convertEmbed(embedView: any, baseUrl: string): PostEmbed {
 							aspectRatio: embedView.aspectRatio
 						}
 					}
-				: { type: 'unknown' };
+				: null;
 		case 'record': {
-			const record = extractQuotedPost(embedView.record, baseUrl);
-			return record ? { type: 'record', record } : { type: 'unknown' };
-		}
-		case 'recordWithMedia': {
-			const record = extractQuotedPost(embedView.record?.record, baseUrl);
-			const media = embedView.media ? convertEmbed(embedView.media, baseUrl) : undefined;
-			if (record) {
-				return {
-					type: 'recordWithMedia',
-					record,
-					media: media ?? { type: 'unknown' }
-				};
-			}
-			return media ?? { type: 'unknown' };
+			const record = extractQuotedPost(embedView.record, hrefs, target);
+			return record ? { type: 'record', record } : null;
 		}
 		default:
-			return { type: 'unknown' };
+			return null;
 	}
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function convertEmbeds(
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	embedView: any,
+	hrefs: Required<BlueskyHrefs>,
+	target?: string
+): Embed[] {
+	const type = blueskyEmbedTypeToEmbedType(embedView?.$type);
+
+	if (type === 'recordWithMedia') {
+		const embeds: Embed[] = [];
+		if (embedView.media) {
+			const media = convertEmbed(embedView.media, hrefs, target);
+			if (media) embeds.push(media);
+		}
+		const record = extractQuotedPost(embedView.record?.record, hrefs, target);
+		if (record) embeds.push({ type: 'record', record });
+		return embeds;
+	}
+
+	const embed = convertEmbed(embedView, hrefs, target);
+	return embed ? [embed] : [];
+}
+
+const nsfwLabels = ['porn', 'sexual', 'graphic-media', 'nudity'];
+
+function hasNSFWLabel(labels?: string[]): boolean {
+	if (!labels) return false;
+	return labels.some((label) => nsfwLabels.includes(label));
+}
+
+function attachSensitive(embeds: Embed[], labels?: string[]): Embed[] {
+	if (!hasNSFWLabel(labels)) return embeds;
+	return embeds.map((embed) => {
+		if (embed.type === 'images') return { ...embed, sensitive: true };
+		if (embed.type === 'video') return { ...embed, sensitive: true };
+		return embed;
+	});
 }
 
 export function blueskyPostToPostData(
 	data: PostView,
 	baseUrl: string = 'https://bsky.app',
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	reason?: any
-): PostData {
+	reason?: any,
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	reply?: any,
+	hrefs?: BlueskyHrefs,
+	target?: string
+): { postData: PostData; embeds: Embed[] } {
+	const resolvedHrefs = resolveHrefs(baseUrl, hrefs);
 	const post = data;
-	const id = post.uri.split('/').pop();
+	const id = post.uri.split('/').pop() ?? '';
 
 	const reposted =
 		reason?.$type === 'app.bsky.feed.defs#reasonRepost' && reason?.by
 			? {
 					handle: reason.by.handle as string,
-					href: `${baseUrl}/profile/${reason.by.did ?? reason.by.handle}`
+					href: resolvedHrefs.profile(reason.by.handle, reason.by.did)
 				}
 			: undefined;
 
-	return {
+	const replyTo =
+		reply?.parent?.author
+			? {
+					handle: reply.parent.author.handle as string,
+					href: resolvedHrefs.post(
+						reply.parent.author.handle,
+						reply.parent.uri?.split('/').pop() ?? ''
+					)
+				}
+			: undefined;
+
+	const labels = post.labels ? post.labels.map((label) => label.val) : undefined;
+	const embeds = post.embed
+		? attachSensitive(convertEmbeds(post.embed, resolvedHrefs, target), labels)
+		: [];
+
+	const postData: PostData = {
 		id,
-		href: `${baseUrl}/profile/${post.author.handle}/post/${id}`,
+		href: resolvedHrefs.post(post.author.handle, id),
 		reposted,
+		replyTo,
 		author: {
 			displayName: post.author.displayName || '',
 			handle: post.author.handle,
 			avatar: post.author.avatar,
-			href: `${baseUrl}/profile/${post.author.did}`
+			href: resolvedHrefs.profile(post.author.handle, post.author.did)
 		},
 		replyCount: post.replyCount ?? 0,
 		repostCount: post.repostCount ?? 0,
 		likeCount: post.likeCount ?? 0,
 		createdAt: (post.record as { createdAt?: string }).createdAt ?? '',
-
-		embed: post.embed ? convertEmbed(post.embed, baseUrl) : undefined,
-
-		htmlContent: blueskyPostToHTML(post, baseUrl),
-		labels: post.labels ? post.labels.map((label) => label.val) : undefined
+		embeds,
+		htmlContent: blueskyPostToHTML(post, resolvedHrefs, target),
+		labels
 	};
+
+	return { postData, embeds };
 }
 
-export function blueskyPostToHTML(post: PostView, baseUrl: string = 'https://bsky.app') {
+export function blueskyPostToHTML(
+	post: PostView,
+	hrefsOrBaseUrl: Required<BlueskyHrefs> | string = 'https://bsky.app',
+	target?: string
+) {
 	if (!post?.record) {
 		return '';
 	}
 
+	const hrefs =
+		typeof hrefsOrBaseUrl === 'string' ? defaultHrefs(hrefsOrBaseUrl) : hrefsOrBaseUrl;
 	const record = post.record as { text?: string; facets?: Facet[] };
-	const html = RichText({ text: record.text ?? '', facets: record.facets }, baseUrl);
+	const html = RichText({ text: record.text ?? '', facets: record.facets }, hrefs, target);
 
 	return html.replace(/\n/g, '<br>');
 }
 
 export { default as BlueskyPost } from './BlueskyPost.svelte';
+export type { BlueskyHrefs as BlueskyPostHrefs };

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { PostEmbedExternal } from '..';
+	import type { EmbedExternalData } from './types';
 
-	const { data }: { data: PostEmbedExternal } = $props();
+	const { data }: { data: EmbedExternalData } = $props();
 
 	// svelte-ignore state_referenced_locally
 	const domain = new URL(data.external.href).hostname.replace('www.', '');

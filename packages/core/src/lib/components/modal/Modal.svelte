@@ -1,6 +1,6 @@
 <script lang="ts" module>
 	import { Dialog, type WithoutChild } from 'bits-ui';
-	import { cn } from '@foxui/core';
+	import { cn } from '../../utils.js';
 
 	export type ModalProps = Dialog.RootProps & {
 		interactOutsideBehavior?: 'close' | 'ignore';

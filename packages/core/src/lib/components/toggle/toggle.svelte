@@ -8,8 +8,9 @@
 				default: 'bg-base-200/20 dark:bg-base-800/20'
 			},
 			size: {
-				default: 'h-10 min-w-10 px-3 [&_svg]:size-4',
+				xs: 'h-7 min-w-7 px-1.5 [&_svg]:size-3 text-xs rounded-xl',
 				sm: 'h-9 min-w-9 px-2.5 [&_svg]:size-3.5',
+				default: 'h-10 min-w-10 px-3 [&_svg]:size-4',
 				lg: 'h-11 min-w-11 px-4 [&_svg]:size-5',
 			}
 		},

@@ -25,7 +25,7 @@ export default [
 				default: "'default'"
 			},
 			size: {
-				type: { type: 'enum', definition: "'default' | 'sm' | 'lg'" },
+				type: { type: 'enum', definition: "'xs' | 'default' | 'sm' | 'lg'" },
 				description: 'The size of the toggle group items.',
 				default: "'default'"
 			},
@@ -75,7 +75,7 @@ export default [
 				description: 'Override the visual variant for this specific item. Falls back to the parent ToggleGroup variant.'
 			},
 			size: {
-				type: { type: 'enum', definition: "'default' | 'sm' | 'lg'" },
+				type: { type: 'enum', definition: "'xs' | 'default' | 'sm' | 'lg'" },
 				description: 'Override the size for this specific item. Falls back to the parent ToggleGroup size.'
 			},
 			disabled: {

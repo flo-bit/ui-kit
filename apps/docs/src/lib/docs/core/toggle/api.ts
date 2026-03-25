@@ -21,7 +21,7 @@ export default [
 				default: "'default'"
 			},
 			size: {
-				type: { type: 'enum', definition: "'default' | 'sm' | 'lg'" },
+				type: { type: 'enum', definition: "'xs' | 'default' | 'sm' | 'lg'" },
 				description: 'The size of the toggle.',
 				default: "'default'"
 			},
