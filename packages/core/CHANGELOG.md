@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.8.1
+
+### Patch Changes
+
+- d3b697f: improve css stuff, refactor social stuff, update tailwind (+ add new colors)
+
 ## 0.8.0
 
 ### Minor Changes

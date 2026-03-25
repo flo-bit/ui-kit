@@ -1,5 +1,15 @@
 # @foxui/social
 
+## 0.8.1
+
+### Patch Changes
+
+- d3b697f: improve css stuff, refactor social stuff, update tailwind (+ add new colors)
+- Updated dependencies [d3b697f]
+  - @foxui/core@0.8.1
+  - @foxui/text@0.8.1
+  - @foxui/time@0.8.1
+
 ## 0.8.0
 
 ### Minor Changes
