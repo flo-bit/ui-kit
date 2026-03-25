@@ -1,5 +1,13 @@
 # @foxui/visual
 
+## 0.8.2
+
+### Patch Changes
+
+- Updated dependencies [caec940]
+  - @foxui/core@0.8.2
+  - @foxui/colors@0.8.2
+
 ## 0.8.1
 
 ### Patch Changes

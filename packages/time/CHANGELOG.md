@@ -1,5 +1,12 @@
 # @foxui/time
 
+## 0.8.2
+
+### Patch Changes
+
+- Updated dependencies [caec940]
+  - @foxui/core@0.8.2
+
 ## 0.8.1
 
 ### Patch Changes
