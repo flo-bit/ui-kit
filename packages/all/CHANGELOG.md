@@ -1,5 +1,12 @@
 # @foxui/all
 
+## 0.6.6
+
+### Patch Changes
+
+- Updated dependencies [7a069ee]
+  - @foxui/social@0.8.4
+
 ## 0.6.5
 
 ### Patch Changes
