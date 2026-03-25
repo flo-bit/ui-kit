@@ -1,5 +1,18 @@
 # @foxui/social
 
+## 0.8.0
+
+### Minor Changes
+
+- 5aa31d4: revert peer deps change, update number-flow
+
+### Patch Changes
+
+- Updated dependencies [5aa31d4]
+  - @foxui/core@0.8.0
+  - @foxui/text@0.8.0
+  - @foxui/time@0.8.0
+
 ## 0.7.0
 
 ### Minor Changes
