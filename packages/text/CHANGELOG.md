@@ -1,5 +1,13 @@
 # @foxui/time
 
+## 0.8.2
+
+### Patch Changes
+
+- caec940: text: fix link stuff, social: improve post creator, core: add default bg and text color
+- Updated dependencies [caec940]
+  - @foxui/core@0.8.2
+
 ## 0.8.1
 
 ### Patch Changes
