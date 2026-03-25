@@ -14,7 +14,7 @@
 	} = $props();
 </script>
 
-<div class="flex flex-col gap-2 pt-3 text-sm">
+<div class="flex min-w-0 flex-col gap-2 overflow-hidden pt-3 text-sm">
 	{#if embed.type === 'images'}
 		<Images data={embed} {showSensitive} />
 	{:else if embed.type === 'external' && embed.external}

@@ -19,7 +19,7 @@
 {#if reply || repost || like || bookmark || customActions}
 	<div
 		class={cn(
-			'text-base-500 dark:text-base-400 accent:text-base-900 flex justify-start gap-12',
+			'text-base-500 dark:text-base-400 accent:text-base-900 flex flex-wrap justify-start gap-x-12 gap-y-2',
 			className
 		)}
 	>

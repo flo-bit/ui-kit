@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn, sanitize } from '@foxui/core';
+	import { cn, sanitize, Avatar } from '@foxui/core';
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { PostProps } from './types';
@@ -18,6 +18,7 @@
 		actions,
 
 		onclickhandle,
+		onclickavatar,
 
 		timestamp,
 
@@ -34,7 +35,7 @@
 
 <div
 	bind:this={ref}
-	class={cn('text-base-950 dark:text-base-50 transition-colors duration-200', className)}
+	class={cn('text-base-950 dark:text-base-50 min-w-0 transition-colors duration-200', className)}
 >
 	{#if data.reposted}
 		<div class="mb-3 inline-flex items-center gap-2 text-xs">
@@ -109,26 +110,20 @@
 		</div>
 	{/if}
 
-	<div class="flex gap-4">
-		{#if showAvatar && data.author.avatar}
-			{#if onclickhandle}
-				<button
-					class="shrink-0 cursor-pointer"
-					onclick={() => onclickhandle(data.author.handle, data.author.href)}
-				>
-					<img
-						src={data.author.avatar}
-						alt=""
-						class={compact ? 'size-7 rounded-full object-cover' : 'size-10 rounded-full object-cover'}
-					/>
+	<div class="flex min-w-0 items-start gap-4">
+		{#if showAvatar}
+			{@const avatarClass = compact ? 'size-7' : 'size-10'}
+			{#if onclickavatar}
+				<button class="shrink-0 cursor-pointer" onclick={onclickavatar}>
+					<Avatar src={data.author.avatar} class={avatarClass} />
+				</button>
+			{:else if onclickhandle}
+				<button class="shrink-0 cursor-pointer" onclick={() => onclickhandle(data.author.handle, data.author.href)}>
+					<Avatar src={data.author.avatar} class={avatarClass} />
 				</button>
 			{:else}
-				<a href={data.author.href} {target} class="flex-shrink-0">
-					<img
-						src={data.author.avatar}
-						alt=""
-						class={compact ? 'size-7 rounded-full object-cover' : 'size-10 rounded-full object-cover'}
-					/>
+				<a href={data.author.href} {target} class="shrink-0">
+					<Avatar src={data.author.avatar} class={avatarClass} />
 				</a>
 			{/if}
 		{/if}
@@ -145,7 +140,7 @@
 				{target}
 			/>
 
-			<div class={cn('post-content wrap-break-word', compact ? 'text-sm' : 'text-base')}>
+			<div class={cn('post-content break-words', compact ? 'text-sm' : 'text-base')} style="overflow-wrap: anywhere;">
 				{#if data.htmlContent}
 					{@html sanitize(data.htmlContent, { ADD_ATTR: ['target'] })}
 				{:else}

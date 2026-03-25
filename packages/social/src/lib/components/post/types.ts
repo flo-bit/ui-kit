@@ -36,6 +36,7 @@ export type PostHeaderProps = {
 	createdAt: string;
 	timestamp?: { href?: string; onclick?: () => void };
 	onclickhandle?: (handle: string, href?: string) => void;
+	onclickavatar?: () => void;
 	showAvatar?: boolean;
 	compact?: boolean;
 	logo?: Snippet;
@@ -55,6 +56,7 @@ export type PostProps = {
 	actions?: ActionButtonsProps;
 
 	onclickhandle?: (handle: string, href?: string) => void;
+	onclickavatar?: () => void;
 
 	timestamp?: { href?: string; onclick?: () => void };
 
