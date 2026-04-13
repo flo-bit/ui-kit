@@ -1,5 +1,11 @@
 # @foxui/core
 
+## 0.9.0
+
+### Minor Changes
+
+- df8721e: switch to lucide icons
+
 ## 0.8.3
 
 ### Patch Changes
