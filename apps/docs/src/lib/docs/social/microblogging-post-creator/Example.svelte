@@ -9,6 +9,7 @@
 		EmbedImage,
 		Box
 	} from '@foxui/all';
+	import { X } from '@foxui/all/icons';
 	import Avatar from '../../../../../../../packages/core/src/lib/components/avatar/Avatar.svelte';
 
 	let content: MicrobloggingPostContent = $state({ text: '', json: { type: 'doc' } });
@@ -82,20 +83,7 @@
 								class="bg-base-900/60 hover:bg-base-900/80 absolute top-2 right-2 z-10 cursor-pointer rounded-full p-1 text-white"
 								onclick={() => removeEmbed(i)}
 							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke-width="2"
-									stroke="currentColor"
-									class="size-4"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										d="M6 18 18 6M6 6l12 12"
-									/>
-								</svg>
+								<X size={16} strokeWidth={2} />
 							</button>
 						</div>
 					{/each}

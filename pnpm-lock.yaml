@@ -411,6 +411,12 @@ importers:
       '@fontsource-variable/geist-mono':
         specifier: ^5.2.7
         version: 5.2.7
+      '@jis3r/icons':
+        specifier: ^2.7.0
+        version: 2.7.0(svelte@5.53.2)
+      '@lucide/svelte':
+        specifier: ^1.8.0
+        version: 1.8.0(svelte@5.53.2)
       '@number-flow/svelte':
         specifier: ^0.4.0
         version: 0.4.0(svelte@5.53.2)
@@ -1467,6 +1473,11 @@ packages:
   '@internationalized/date@3.11.0':
     resolution: {integrity: sha512-BOx5huLAWhicM9/ZFs84CzP+V3gBW6vlpM02yzsdYC7TGlZJX1OJiEEHcSayF00Z+3jLlm4w79amvSt6RqKN3Q==}
 
+  '@jis3r/icons@2.7.0':
+    resolution: {integrity: sha512-RXee+W1AoWFHtFliLZ7SQxVopAezmCH0xU45HKTvvpDQ+6Y3g6tUHvKOK16J52TM8YsN4WDnsiOmcwau+bHmwg==}
+    peerDependencies:
+      svelte: ^5.0.0
+
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
 
@@ -1482,6 +1493,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@lucide/svelte@1.8.0':
+    resolution: {integrity: sha512-+zYQUKqEOVP5lxbGmxL1OVgGMQtRK91eIJ0bR+3Cr1ts4oQEsQfxyzzd5X47psJlblAuGFrl2xm4YuATjR9oaA==}
+    peerDependencies:
+      svelte: ^5
 
   '@manypkg/find-root@1.1.0':
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
@@ -4758,6 +4774,10 @@ snapshots:
     dependencies:
       '@swc/helpers': 0.5.19
 
+  '@jis3r/icons@2.7.0(svelte@5.53.2)':
+    dependencies:
+      svelte: 5.53.2
+
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -4776,6 +4796,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@lucide/svelte@1.8.0(svelte@5.53.2)':
+    dependencies:
+      svelte: 5.53.2
 
   '@manypkg/find-root@1.1.0':
     dependencies:

@@ -22,12 +22,13 @@ const titles: Record<string, string> = {
 	'quick-start': 'Quick Start',
 	philosophy: 'Philosophy',
 	customization: 'Customization',
+	icons: 'Icons',
 	haptics: 'Haptics',
 	llms: 'Using foxui with AI Assistants'
 };
 
 // Keep a stable sidebar-like order; anything new gets appended alphabetically.
-const order = ['quick-start', 'philosophy', 'customization', 'haptics', 'llms'];
+const order = ['quick-start', 'philosophy', 'customization', 'icons', 'haptics', 'llms'];
 
 // Stable ordering for component categories, matching the sidebar
 const categoryOrder = [
