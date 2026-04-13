@@ -1,5 +1,15 @@
 # @foxui/social
 
+## 0.8.5
+
+### Patch Changes
+
+- de6cd48: add more styling customization options (borders, fonts), small fixes
+- Updated dependencies [de6cd48]
+  - @foxui/core@0.8.3
+  - @foxui/text@0.8.3
+  - @foxui/time@0.8.3
+
 ## 0.8.4
 
 ### Patch Changes

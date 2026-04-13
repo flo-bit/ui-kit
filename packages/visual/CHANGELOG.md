@@ -1,5 +1,14 @@
 # @foxui/visual
 
+## 0.8.3
+
+### Patch Changes
+
+- de6cd48: add more styling customization options (borders, fonts), small fixes
+- Updated dependencies [de6cd48]
+  - @foxui/colors@0.8.3
+  - @foxui/core@0.8.3
+
 ## 0.8.2
 
 ### Patch Changes
