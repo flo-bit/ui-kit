@@ -2,13 +2,13 @@
 	import { type VariantProps, tv } from 'tailwind-variants';
 
 	export const alertVariants = tv({
-		base: 'text-xs relative w-full rounded-2xl border p-4 [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:size-4 [&>svg~*]:pl-7 ',
+		base: 'text-xs relative w-full rounded-ui border p-4 [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:size-4 [&>svg~*]:pl-7 ',
 		variants: {
 			variant: {
 				default:
-					'backdrop-blur-lg bg-accent-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-accent-700/5 dark:inset-shadow-accent-500/2 shadow-accent-500/5 dark:shadow-accent-500/2 dark:bg-accent-950/20 [&>div:first-of-type]:text-accent-800 [&>svg]:text-accent-700 dark:[&>svg]:text-accent-400 dark:[&>div:first-of-type]:text-accent-300 text-accent-800 dark:text-accent-300 border-accent-500/20 dark:border-accent-500/10',
+					'bg-accent-100/70 shadow-lg transform-all inset-shadow-sm inset-shadow-accent-700/5 dark:inset-shadow-accent-500/2 shadow-accent-500/5 dark:shadow-accent-500/2 dark:bg-accent-950/20 [&>div:first-of-type]:text-accent-800 [&>svg]:text-accent-700 dark:[&>svg]:text-accent-400 dark:[&>div:first-of-type]:text-accent-300 text-accent-800 dark:text-accent-300 border-accent-500/20 dark:border-accent-500/10',
 				secondary:
-					'backdrop-blur-lg bg-base-200/70 shadow-lg transform-all inset-shadow-sm inset-shadow-base-700/5 dark:inset-shadow-base-500/2 shadow-base-500/5 dark:shadow-base-950/10 dark:bg-base-900/40 [&>div:first-of-type]:text-base-800 [&>svg]:text-base-700 dark:[&>svg]:text-base-400 dark:[&>div:first-of-type]:text-base-200 text-base-800 dark:text-base-300 border-base-500/20 dark:border-base-500/10',
+					'bg-base-200/70 shadow-lg transform-all inset-shadow-sm inset-shadow-base-700/5 dark:inset-shadow-base-500/2 shadow-base-500/5 dark:shadow-base-950/10 dark:bg-base-900/40 [&>div:first-of-type]:text-base-800 [&>svg]:text-base-700 dark:[&>svg]:text-base-400 dark:[&>div:first-of-type]:text-base-200 text-base-800 dark:text-base-300 border-base-500/20 dark:border-base-500/10',
 			},
 			type: {
 				default: '',

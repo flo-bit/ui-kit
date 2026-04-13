@@ -65,7 +65,7 @@
 
 	{#if !(typeof src === 'string') && blur}
 		<div
-			class="image-blur pointer-events-none absolute inset-0 rounded-2xl backdrop-blur-md data-[loaded=true]:hidden"
+			class="image-blur pointer-events-none absolute inset-0 rounded-ui data-[loaded=true]:hidden"
 			data-loaded={loaded}
 		></div>
 	{/if}

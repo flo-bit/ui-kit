@@ -16,7 +16,7 @@
 <SelectPrimitive.Root bind:value={value as never} {...restProps}>
 	<SelectPrimitive.Trigger>
 		<div
-			class="bg-accent-500/10 border-accent-700/20 text-accent-800 dark:text-accent-300 inline-flex min-w-28 items-center justify-between gap-1 rounded-2xl border px-3 py-1 font-medium"
+			class="bg-accent-500/10 border-accent-700/20 text-accent-800 dark:text-accent-300 inline-flex min-w-28 items-center justify-between gap-1 rounded-ui border px-3 py-1 font-medium transition-colors hover:bg-accent-500/15 dark:hover:bg-accent-500/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500"
 		>
 			{selectedLabel ? selectedLabel : placeholder}
 
@@ -36,7 +36,7 @@
 		<SelectPrimitive.Content
 			{...contentProps}
 			class={cn(
-				'bg-base-50/50 border-base-500/20 overflow-hidden rounded-2xl border shadow-lg backdrop-blur-xl',
+				'bg-base-50/50 border-base-500/20 overflow-hidden rounded-ui border shadow-lg backdrop-blur-xl',
 				'dark:bg-base-900/50 dark:border-base-500/10',
 				'motion-safe:animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
 				contentProps?.class

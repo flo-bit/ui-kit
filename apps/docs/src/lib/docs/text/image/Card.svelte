@@ -1,7 +1,7 @@
 <div class="flex h-full w-full items-center justify-center p-4">
 	<div class="w-full space-y-2">
 		<div
-			class="bg-base-200 dark:bg-base-700 flex h-20 w-full items-center justify-center rounded-lg"
+			class="bg-base-200 dark:bg-base-700 flex h-20 w-full items-center justify-center rounded-ui-sm"
 		>
 			<svg
 				class="text-base-400 h-8 w-8"

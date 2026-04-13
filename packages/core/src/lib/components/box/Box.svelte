@@ -14,7 +14,7 @@
 <div
 	bind:this={ref}
 	class={cn(
-		'border-base-300/50 bg-base-50/70 backdrop-blur-2xl dark:border-base-800/70 dark:bg-base-950/60 text-base-900 dark:text-base-100 w-full rounded-2xl border p-4',
+		'border-base-300/50 bg-base-50/70 dark:border-base-800/70 dark:bg-base-950/60 text-base-900 dark:text-base-100 w-full rounded-ui border p-4',
 		className
 	)}
 	{...restProps}

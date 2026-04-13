@@ -5,7 +5,7 @@
 	import { cn } from '../../utils';
 
 	export const proseVariants = tv({
-		base: 'prose dark:prose-invert prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-400 prose-pre:rounded-2xl w-full max-w-none',
+		base: 'prose dark:prose-invert prose-a:no-underline prose-a:text-accent-600 dark:prose-a:text-accent-400 w-full max-w-none',
 		variants: {
 			size: {
 				default: 'prose-sm',
@@ -40,3 +40,13 @@
 <div bind:this={ref} class={cn("prose-base-color", proseVariants({ size }), className)} {...restProps}>
 	{@render children?.()}
 </div>
+
+<style>
+	div :global(pre) {
+		border-radius: var(--ui-radius) !important;
+	}
+
+	div :global(:not(pre) > code) {
+		border-radius: var(--ui-radius-sm) !important;
+	}
+</style>

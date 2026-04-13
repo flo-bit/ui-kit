@@ -110,7 +110,7 @@
 			extensions: [
 				StarterKit.configure({
 					dropcursor: {
-						class: 'text-accent-500/30 rounded-2xl',
+						class: 'text-accent-500/30 rounded-ui',
 						width: 2
 					},
 					codeBlock: false,
@@ -128,7 +128,7 @@
 				}),
 				CustomImage.configure({
 					HTMLAttributes: {
-						class: 'max-w-full object-contain relative rounded-2xl'
+						class: 'max-w-full object-contain relative rounded-ui'
 					},
 					allowBase64: true
 				}),

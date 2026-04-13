@@ -19,7 +19,7 @@
 
 <NodeViewWrapper
 	as="pre"
-	class="code-block group/code-block relative my-4 overflow-hidden rounded-2xl font-mono text-sm {props.selected
+	class="code-block group/code-block relative my-4 overflow-hidden rounded-ui font-mono text-sm {props.selected
 		? 'ring-2 ring-accent-500'
 		: ''}"
 >
@@ -31,7 +31,7 @@
 		<!-- Copy button -->
 		<button
 			type="button"
-			class="cursor-pointer rounded-lg border border-base-300 bg-base-100 p-1 text-base-600 transition-colors hover:bg-base-200 dark:border-base-600 dark:bg-base-800 dark:text-base-400 dark:hover:bg-base-700"
+			class="cursor-pointer rounded-ui-sm border border-base-300 bg-base-100 p-1 text-base-600 transition-colors hover:bg-base-200 dark:border-base-600 dark:bg-base-800 dark:text-base-400 dark:hover:bg-base-700"
 			onclick={copyCode}
 		>
 			{#if copied}

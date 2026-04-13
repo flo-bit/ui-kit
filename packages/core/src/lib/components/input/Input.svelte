@@ -6,13 +6,13 @@
 	import type { HTMLInputAttributes, HTMLInputTypeAttribute } from 'svelte/elements';
 
 	export const inputVariants = tv({
-		base: 'focus:ring-2 ring-1 ring-inset border-0 focus:transition-transform rounded-2xl text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed duration-300 active:duration-100',
+		base: 'focus:ring-2 ring-1 ring-inset border-0 focus:transition-transform rounded-ui text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed duration-300 active:duration-100',
 		variants: {
 			variant: {
 				primary:
-					'focus:ring-accent-500 dark:focus:ring-accent-500 ring-accent-500/30 dark:ring-accent-500/20 bg-accent-400/5 dark:bg-accent-600/5 text-accent-700 dark:text-accent-400 placeholder:text-accent-700/50 dark:placeholder:text-accent-400/50',
+					'focus:ring-accent-500 dark:focus:ring-accent-500 ring-accent-500/30 dark:ring-accent-500/20 bg-accent-400/5 dark:bg-accent-600/5 text-accent-700 dark:text-accent-400 placeholder:text-accent-700/60 dark:placeholder:text-accent-400/60',
 				secondary:
-					'focus:ring-base-800 dark:focus:ring-base-200 bg-base-100/50 dark:bg-base-900/50 text-base-900 dark:text-base-50 ring-base-200 dark:ring-base-800 placeholder:text-base-900/50 dark:placeholder:text-base-50/50'
+					'focus:ring-base-800 dark:focus:ring-base-200 bg-base-100/50 dark:bg-base-900/50 text-base-900 dark:text-base-50 ring-base-200 dark:ring-base-800 placeholder:text-base-900/60 dark:placeholder:text-base-50/60'
 			},
 			sizeVariant: {
 				default: 'px-3 py-1.5 text-base',

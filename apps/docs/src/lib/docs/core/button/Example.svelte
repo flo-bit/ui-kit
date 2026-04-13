@@ -166,21 +166,21 @@
 <h3>Colors</h3>
 
 <div class="flex flex-wrap items-center gap-2">
-	<Button variant="red">Red</Button>
-	<Button variant="yellow">Yellow</Button>
-	<Button variant="green">Green</Button>
-	<Button variant="blue">Blue</Button>
-	<Button variant="indigo">Indigo</Button>
-	<Button variant="violet">Violet</Button>
-	<Button variant="purple">Purple</Button>
-	<Button variant="fuchsia">Fuchsia</Button>
-	<Button variant="pink">Pink</Button>
-	<Button variant="rose">Rose</Button>
-	<Button variant="orange">Orange</Button>
-	<Button variant="amber">Amber</Button>
-	<Button variant="lime">Lime</Button>
-	<Button variant="emerald">Emerald</Button>
-	<Button variant="teal">Teal</Button>
-	<Button variant="cyan">Cyan</Button>
-	<Button variant="sky">Sky</Button>
+	<Button class="red">Red</Button>
+	<Button class="yellow">Yellow</Button>
+	<Button class="green">Green</Button>
+	<Button class="blue">Blue</Button>
+	<Button class="indigo">Indigo</Button>
+	<Button class="violet">Violet</Button>
+	<Button class="purple">Purple</Button>
+	<Button class="fuchsia">Fuchsia</Button>
+	<Button class="pink">Pink</Button>
+	<Button class="rose">Rose</Button>
+	<Button class="orange">Orange</Button>
+	<Button class="amber">Amber</Button>
+	<Button class="lime">Lime</Button>
+	<Button class="emerald">Emerald</Button>
+	<Button class="teal">Teal</Button>
+	<Button class="cyan">Cyan</Button>
+	<Button class="sky">Sky</Button>
 </div>

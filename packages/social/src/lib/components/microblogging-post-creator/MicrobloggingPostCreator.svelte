@@ -157,7 +157,7 @@
 >
 	{#if dragging}
 		<div
-			class="border-accent-500 bg-accent-500/10 absolute inset-0 z-10 flex items-center justify-center rounded-lg border-2 border-dashed"
+			class="border-accent-500 bg-accent-500/10 absolute inset-0 z-10 flex items-center justify-center rounded-ui-sm border-2 border-dashed"
 		>
 			<span class="text-accent-600 dark:text-accent-400 text-sm font-medium">
 				Drop {onimageadded && onvideoadded ? 'image or video' : onimageadded ? 'image' : 'video'} here

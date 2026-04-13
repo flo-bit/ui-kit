@@ -1,5 +1,5 @@
 <div class="flex h-full w-full items-center justify-center p-4">
-	<div class="bg-base-200 dark:bg-base-700 w-full space-y-1 rounded-lg p-2.5">
+	<div class="bg-base-200 dark:bg-base-700 w-full space-y-1 rounded-ui-sm p-2.5">
 		<div class="flex items-center gap-1">
 			<span class="text-accent-500 text-[9px] font-medium">const</span>
 			<div class="bg-base-300 dark:bg-base-600 h-2 w-8 rounded"></div>

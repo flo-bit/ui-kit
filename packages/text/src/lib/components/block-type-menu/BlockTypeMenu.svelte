@@ -113,7 +113,7 @@
 		<button
 			type="button"
 			class={cn(
-				'rounded-lg px-2 py-1 text-xs font-medium transition-colors',
+				'rounded-ui-sm px-2 py-1 text-xs font-medium transition-colors',
 				activeIds.has(item.id) && (item.id !== 'paragraph' || activeIds.size === 1)
 					? 'bg-accent-500/15 text-accent-700 dark:text-accent-400'
 					: 'text-base-500 hover:bg-base-500/10 hover:text-base-700 dark:hover:text-base-300'

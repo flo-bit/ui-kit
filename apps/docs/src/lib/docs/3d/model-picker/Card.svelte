@@ -12,7 +12,7 @@
 		src={image2}
 		alt="Vehicle Racer"
 		class="scale-125"
-		containerClasses="bg-base-200 rounded-xl dark:bg-base-900"
+		containerClasses="bg-base-200 rounded-ui-sm dark:bg-base-900"
 	/>
 	<Image src={image3} alt="Vehicle Racer Low" class="scale-125" />
 </div>

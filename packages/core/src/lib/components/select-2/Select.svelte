@@ -33,7 +33,7 @@
 				aria-label="align left"
 				value={typeof item === 'string' ? item : item.value}
 				class={[
-					'inline-flex cursor-pointer items-center justify-center rounded-2xl p-1 px-2 transition-all',
+					'inline-flex cursor-pointer items-center justify-center rounded-ui p-1 px-2 transition-all',
 					'text-base-600 hover:text-accent-600 dark:text-base-300 dark:hover:text-accent-400 outline-accent-300',
 					'dark:outline-accent-500/30 data-[state=on]:text-accent-600 dark:data-[state=on]:text-accent-400',
 					'dark:data-[state=on]:bg-accent-700/10 data-[state=on]:bg-accent-500/10 data-[state=on]:outline'

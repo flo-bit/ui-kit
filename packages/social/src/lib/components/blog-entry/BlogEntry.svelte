@@ -30,11 +30,11 @@
 			<img
 				src={image}
 				alt=""
-				class="bg-base-50 dark:bg-base-900 absolute inset-0 h-full w-full rounded-2xl object-cover"
+				class="bg-base-50 dark:bg-base-900 absolute inset-0 h-full w-full rounded-ui object-cover"
 			/>
 
 			<div
-				class="ring-base-900/10 dark:ring-base-100/10 absolute inset-0 rounded-2xl ring-1 ring-inset"
+				class="ring-base-900/10 dark:ring-base-100/10 absolute inset-0 rounded-ui ring-1 ring-inset"
 			></div>
 		</div>
 	{/if}
@@ -69,7 +69,7 @@
 				</a>
 
 				<div
-					class="bg-base-200/30 dark:bg-base-800/30 absolute -inset-2 -z-10 scale-95 opacity-0 transition-all duration-150 group-hover:scale-100 group-hover:opacity-100 sm:rounded-2xl md:-inset-4"
+					class="bg-base-200/30 dark:bg-base-800/30 absolute -inset-2 -z-10 scale-95 opacity-0 transition-all duration-150 group-hover:scale-100 group-hover:opacity-100 sm:rounded-ui md:-inset-4"
 				></div>
 			</div>
 			<p class="text-base-600 dark:text-base-400 mt-5 line-clamp-2 text-sm leading-6">

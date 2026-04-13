@@ -44,7 +44,7 @@
 		{#each items as item, index}
 			<button
 				id="item"
-				class="hover:bg-base-200/40 dark:hover:bg-base-800/40 m-4 inline-block cursor-pointer rounded-2xl p-4 transition-all duration-300 hover:scale-105"
+				class="hover:bg-base-200/40 dark:hover:bg-base-800/40 m-4 inline-block cursor-pointer rounded-ui p-4 transition-all duration-300 hover:scale-105"
 				onclick={() => {
 					states[index].hover = false;
 					onselect?.({ path: item.path, label: item.label });

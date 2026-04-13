@@ -236,7 +236,7 @@
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div
 	class={cn(
-		'focus-visible:outline-base-900 dark:focus-visible:outline-base-100 relative rounded-xl border-none focus-visible:outline-2 focus-visible:outline-offset-2',
+		'focus-visible:outline-base-900 dark:focus-visible:outline-base-100 relative rounded-ui-sm border-none focus-visible:outline-2 focus-visible:outline-offset-2',
 		className
 	)}
 	tabindex="0"
@@ -250,7 +250,7 @@
 		height={picker_size}
 		style:top="{border_size}px"
 		style:left="{border_size}px"
-		class="absolute touch-none rounded-xl"
+		class="absolute touch-none rounded-ui-sm"
 		use:pointer={update_sv}
 		use:render_main_image={color.h}
 	></canvas>
@@ -259,7 +259,7 @@
 		height={picker_size}
 		style:top="{border_size}px"
 		style:left="{picker_size + gap_size}px"
-		class="absolute touch-none rounded-xl"
+		class="absolute touch-none rounded-ui-sm"
 		use:pointer={update_h}
 		use:render_slider_image
 	></canvas>

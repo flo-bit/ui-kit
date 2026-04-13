@@ -117,7 +117,7 @@
 	pluginKey="formatting-bubble-menu"
 >
 	<div
-		class="bg-base-50 dark:bg-base-900 border-base-500/20 dark:border-base-700/20 relative w-fit rounded-2xl border px-1 py-1 shadow-lg backdrop-blur-sm"
+		class="bg-base-50 dark:bg-base-900 border-base-500/20 dark:border-base-700/20 relative w-fit rounded-ui border px-1 py-1 shadow-lg backdrop-blur-sm"
 	>
 		<FormattingToolbar
 			{editor}
@@ -148,7 +148,7 @@
 		pluginKey="link-bubble-menu"
 	>
 		<div
-			class="bg-base-50 dark:bg-base-900 border-base-500/20 dark:border-base-700/20 relative w-fit rounded-2xl border px-1 py-1 shadow-lg backdrop-blur-sm"
+			class="bg-base-50 dark:bg-base-900 border-base-500/20 dark:border-base-700/20 relative w-fit rounded-ui border px-1 py-1 shadow-lg backdrop-blur-sm"
 		>
 			<LinkEditor {editor} />
 		</div>

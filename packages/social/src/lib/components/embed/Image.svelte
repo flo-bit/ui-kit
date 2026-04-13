@@ -24,7 +24,7 @@
 				? `aspect-ratio: ${image.aspectRatio.width} / ${image.aspectRatio.height}`
 				: 'aspect-ratio: 1 / 1'}
 			class={[
-				'border-base-500/20 dark:border-base-400/20 accent:border-accent-900 max-h-160 w-full max-w-full rounded-2xl border object-cover',
+				'border-base-500/20 dark:border-base-400/20 accent:border-accent-900 max-h-160 w-full max-w-full rounded-ui border object-cover',
 				className
 			]}
 		/>
@@ -40,7 +40,7 @@
 			? `aspect-ratio: ${image.aspectRatio.width} / ${image.aspectRatio.height}`
 			: 'aspect-ratio: 1 / 1'}
 		class={[
-			'border-base-500/20 dark:border-base-400/20 accent:border-accent-900 max-h-160 w-full max-w-full rounded-2xl border object-cover',
+			'border-base-500/20 dark:border-base-400/20 accent:border-accent-900 max-h-160 w-full max-w-full rounded-ui border object-cover',
 			className
 		]}
 	/>

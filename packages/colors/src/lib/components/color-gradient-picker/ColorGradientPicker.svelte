@@ -103,7 +103,7 @@
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <div
 	class={cn(
-		'border-base-400 dark:border-base-600 relative w-full cursor-pointer touch-none rounded-2xl border',
+		'border-base-400 dark:border-base-600 relative w-full cursor-pointer touch-none rounded-ui border',
 		size === 'sm' ? 'h-4' : 'h-8',
 		className
 	)}

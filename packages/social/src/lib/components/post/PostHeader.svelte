@@ -40,7 +40,7 @@
 			<div class="flex min-w-0 shrink items-center gap-2 overflow-hidden">
 				{#if onclickhandle}
 					<button
-						class="hover:bg-accent-900/5 accent:hover:bg-accent-100/10 group/post-author -mx-2 -my-0.5 flex min-w-0 cursor-pointer flex-col items-baseline gap-x-2 gap-y-0.5 overflow-hidden rounded-xl px-2 py-0.5 sm:flex-row"
+						class="hover:bg-accent-900/5 accent:hover:bg-accent-100/10 group/post-author -mx-2 -my-0.5 flex min-w-0 cursor-pointer flex-col items-baseline gap-x-2 gap-y-0.5 overflow-hidden rounded-ui-sm px-2 py-0.5 sm:flex-row"
 						onclick={() => onclickhandle(author.handle, author.href)}
 					>
 						{#if author.displayName}
@@ -63,7 +63,7 @@
 					</button>
 				{:else if author.href}
 					<a
-						class="hover:bg-accent-900/5 accent:hover:bg-accent-100/10 group/post-author -mx-2 -my-0.5 flex min-w-0 flex-col items-baseline gap-x-2 gap-y-0.5 overflow-hidden rounded-xl px-2 py-0.5 sm:flex-row"
+						class="hover:bg-accent-900/5 accent:hover:bg-accent-100/10 group/post-author -mx-2 -my-0.5 flex min-w-0 flex-col items-baseline gap-x-2 gap-y-0.5 overflow-hidden rounded-ui-sm px-2 py-0.5 sm:flex-row"
 						href={author.href}
 						{target}
 					>
@@ -87,7 +87,7 @@
 					</a>
 				{:else}
 					<div
-						class="-mx-2 -my-0.5 flex min-w-0 flex-col items-baseline gap-x-2 gap-y-0.5 overflow-hidden rounded-xl px-2 py-0.5 sm:flex-row"
+						class="-mx-2 -my-0.5 flex min-w-0 flex-col items-baseline gap-x-2 gap-y-0.5 overflow-hidden rounded-ui-sm px-2 py-0.5 sm:flex-row"
 					>
 						<div class="text-base-900 dark:text-base-50 text-sm leading-tight font-semibold">
 							{author.displayName}

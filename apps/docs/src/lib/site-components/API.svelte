@@ -51,7 +51,7 @@
 				{/snippet}
 				<div class="max-w-xs text-sm">
 					{#if typeof prop.type.definition === 'string'}
-						<pre class="overflow-x-auto rounded-lg bg-base-800/50 dark:bg-base-900/50 p-2.5 font-mono text-xs text-base-200">{prop.type.definition}</pre>
+						<pre class="overflow-x-auto rounded-ui-sm bg-base-800/50 dark:bg-base-900/50 p-2.5 font-mono text-xs text-base-200">{prop.type.definition}</pre>
 					{:else if isComponent(prop.type.definition)}
 						{@const DefinitionComponent = prop.type.definition}
 						<DefinitionComponent />
@@ -153,7 +153,7 @@
 							</div>
 
 							<!-- Type -->
-							<div class="rounded-lg bg-base-800/50 dark:bg-base-900/50 p-2.5">
+							<div class="rounded-ui-sm bg-base-800/50 dark:bg-base-900/50 p-2.5">
 								{#if typeof prop.type === 'string'}
 									<code class="font-mono text-xs text-base-200">{prop.type}</code>
 								{:else}

@@ -25,7 +25,7 @@
 		<QuotedPost record={embed.record} />
 	{:else if embed.type === 'unknown'}
 		<div
-			class="text-base-700 dark:text-base-300 bg-base-200/50 dark:bg-base-900/50 border-base-300 dark:border-base-600/30 rounded-2xl border p-4 text-sm"
+			class="text-base-700 dark:text-base-300 bg-base-200/50 dark:bg-base-900/50 border-base-300 dark:border-base-600/30 rounded-ui border p-4 text-sm"
 		>
 			Unsupported embed type
 		</div>

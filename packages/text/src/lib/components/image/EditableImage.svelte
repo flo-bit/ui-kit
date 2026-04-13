@@ -27,7 +27,7 @@
 	<img
 		src={props.node.attrs.src}
 		alt={props.node.attrs.alt}
-		class="max-w-full rounded-xl {props.selected ? 'ring-accent-500 ring-2' : ''}"
+		class="max-w-full rounded-ui-sm {props.selected ? 'ring-accent-500 ring-2' : ''}"
 	/>
 
 	<div class="absolute right-2 bottom-2 opacity-0 transition-opacity group-hover/image:opacity-100">
