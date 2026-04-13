@@ -46,6 +46,14 @@
 			class="mb-1 w-full justify-start backdrop-blur-none">Customization</Button
 		>
 		<Button
+			data-current={page.url.pathname === `${base}/docs/icons`}
+			data-sveltekit-keepfocus
+			variant="ghost"
+			onclick={handleClick}
+			href={resolve('/docs/icons')}
+			class="mb-1 w-full justify-start backdrop-blur-none">Icons</Button
+		>
+		<Button
 			data-current={page.url.pathname === `${base}/docs/haptics`}
 			data-sveltekit-keepfocus
 			variant="ghost"

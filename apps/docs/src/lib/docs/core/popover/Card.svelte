@@ -1,5 +1,6 @@
 <script>
 	import { Box, Button, Paragraph } from '@foxui/all';
+	import { Check, X } from '@foxui/all/icons';
 </script>
 
 <Box class="flex items-center justify-between gap-2">
@@ -7,29 +8,11 @@
 
 	<div>
 		<Button tabindex={-1} variant="secondary" size="iconSm">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke-width="1.5"
-				stroke="currentColor"
-				class="size-6"
-			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-			</svg>
+			<X size={24} strokeWidth={1.5} />
 		</Button>
 
 		<Button tabindex={-1} size="iconSm">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke-width="1.5"
-				stroke="currentColor"
-				class="size-6"
-			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-			</svg>
+			<Check size={24} strokeWidth={1.5} />
 		</Button>
 	</div>
 </Box>

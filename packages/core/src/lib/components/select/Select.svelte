@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { cn } from '../../utils';
 	import { Select as SelectPrimitive, type WithoutChildren } from 'bits-ui';
+	import { ChevronDown, Check } from '@jis3r/icons';
 
 	type Props = WithoutChildren<SelectPrimitive.RootProps> & {
 		placeholder?: string;
@@ -20,16 +21,7 @@
 		>
 			{selectedLabel ? selectedLabel : placeholder}
 
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke-width="2.5"
-				stroke="currentColor"
-				class="size-4"
-			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-			</svg>
+			<ChevronDown size={16} strokeWidth={2.5} />
 		</div>
 	</SelectPrimitive.Trigger>
 	<SelectPrimitive.Portal>
@@ -55,20 +47,7 @@
 								)}
 							>
 								{#if selected}
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke-width="2.5"
-										stroke="currentColor"
-										class="size-4"
-									>
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											d="m4.5 12.75 6 6 9-13.5"
-										/>
-									</svg>
+									<Check size={16} strokeWidth={2.5} />
 								{:else}
 									<div class="size-4"></div>
 

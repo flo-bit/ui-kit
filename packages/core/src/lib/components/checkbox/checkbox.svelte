@@ -2,7 +2,7 @@
 	import { Checkbox as CheckboxPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
 	import { type VariantProps, tv } from 'tailwind-variants';
 	import { cn } from '../../utils';
-	import { draw } from 'svelte/transition';
+	import { Check, Minus } from '@jis3r/icons';
 
 	export const checkboxVariants = tv({
 		base: 'peer cursor-pointer box-content shrink-0 inline-flex items-center justify-center rounded-ui-sm border transition-colors duration-100 outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-50',
@@ -54,38 +54,12 @@
 	{...restProps}
 >
 	{#snippet children({ checked, indeterminate })}
+		{@const iconSize = sizeVariant === 'sm' ? 14 : sizeVariant === 'lg' ? 18 : 16}
 		<div class="flex size-4 items-center justify-center text-current">
 			{#if indeterminate}
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="2.5"
-					stroke="currentColor"
-					class={[
-						sizeVariant === 'sm' && 'size-3.5',
-						sizeVariant === 'default' && 'size-4',
-						sizeVariant === 'lg' && 'size-4.5'
-					]}
-				>
-					<path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
-				</svg>
+				<Minus size={iconSize} strokeWidth={2.5} />
 			{:else if checked}
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="3"
-					stroke="currentColor"
-					class={[
-						sizeVariant === 'sm' && 'size-3.5',
-						sizeVariant === 'default' && 'size-4',
-						sizeVariant === 'lg' && 'size-4.5',
-						!checked && 'text-transparent'
-					]}
-				>
-					<path in:draw={{ duration: 100 }} stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-				</svg>
+				<Check size={iconSize} strokeWidth={3} animate />
 			{/if}
 		</div>
 	{/snippet}
