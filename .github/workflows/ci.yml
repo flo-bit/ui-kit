@@ -39,8 +39,8 @@ jobs:
           node-version: 22
           cache: 'pnpm'
 
-      - name: Install latest npm (>= 11.5.1 for trusted publishing)
-        run: npm install -g npm@latest
+      - name: Install npm (>= 11.5.1 for trusted publishing)
+        run: npm install -g npm@11.5.1
 
       - name: Install dependencies
         run: pnpm install
