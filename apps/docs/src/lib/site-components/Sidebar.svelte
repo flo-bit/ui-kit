@@ -38,11 +38,12 @@
 			class="mb-1 w-full justify-start backdrop-blur-none">Philosophy</Button
 		>
 		<Button
+			data-current={page.url.pathname === `${base}/docs/customization`}
 			data-sveltekit-keepfocus
 			variant="ghost"
 			onclick={handleClick}
-			href={resolve('/docs/theme')}
-			class="mb-1 w-full justify-start backdrop-blur-none">Theme</Button
+			href={resolve('/docs/customization')}
+			class="mb-1 w-full justify-start backdrop-blur-none">Customization</Button
 		>
 		<Button
 			data-current={page.url.pathname === `${base}/docs/haptics`}
@@ -50,7 +51,15 @@
 			variant="ghost"
 			onclick={handleClick}
 			href={resolve('/docs/haptics')}
-			class="mb-6 w-full justify-start backdrop-blur-none">Haptics</Button
+			class="mb-1 w-full justify-start backdrop-blur-none">Haptics</Button
+		>
+		<Button
+			data-current={page.url.pathname === `${base}/docs/llms`}
+			data-sveltekit-keepfocus
+			variant="ghost"
+			onclick={handleClick}
+			href={resolve('/docs/llms')}
+			class="mb-6 w-full justify-start backdrop-blur-none">LLMs</Button
 		>
 
 		<Accordion type="multiple" class="w-full" value={components.map((c) => c.href)}>

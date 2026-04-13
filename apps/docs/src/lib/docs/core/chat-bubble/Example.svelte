@@ -25,6 +25,6 @@
 	<ChatBubble side="right">
 		<p>This is me sending you an image</p>
 
-		<ImageContainer src={cute} alt="cute cat" containerClasses="-mx-1.5 rounded-xl" />
+		<ImageContainer src={cute} alt="cute cat" containerClasses="-mx-1.5 rounded-ui-sm" />
 	</ChatBubble>
 </Box>

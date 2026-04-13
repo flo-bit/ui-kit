@@ -72,7 +72,7 @@
 		style={data.video.aspectRatio
 			? `aspect-ratio: ${data.video.aspectRatio.width} / ${data.video.aspectRatio.height}`
 			: 'aspect-ratio: 16 / 9'}
-		class="border-base-500/20 bg-base-200/50 text-base-600 dark:border-base-400/20 dark:bg-base-800/50 dark:text-base-400 accent:border-accent-900 flex w-full cursor-pointer items-center justify-center rounded-2xl border text-center text-sm"
+		class="border-base-500/20 bg-base-200/50 text-base-600 dark:border-base-400/20 dark:bg-base-800/50 dark:text-base-400 accent:border-accent-900 flex w-full cursor-pointer items-center justify-center rounded-ui border text-center text-sm"
 	>
 		Sensitive content, click to show.
 	</button>
@@ -81,7 +81,7 @@
 		style={data.video.aspectRatio
 			? `aspect-ratio: ${data.video.aspectRatio.width} / ${data.video.aspectRatio.height}`
 			: 'aspect-ratio: 16 / 9'}
-		class="border-base-300 dark:border-base-400/40 w-full max-w-full overflow-hidden rounded-2xl border"
+		class="border-base-300 dark:border-base-400/40 w-full max-w-full overflow-hidden rounded-ui border"
 	>
 		<!-- svelte-ignore a11y_media_has_caption -->
 		<video bind:this={element} class="h-full w-full" aria-label={data.video.alt}></video>

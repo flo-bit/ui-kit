@@ -57,7 +57,7 @@
 		unstyled: true,
 		classes: {
 			toast:
-				'group toast min-w-12 w-fit sm:min-w-64 backdrop-blur-lg border rounded-2xl p-4 flex items-center gap-2 sm:fixed sm:bottom-4 sm:right-0 mx-2',
+				'group toast min-w-12 w-fit sm:min-w-64 backdrop-blur-lg border rounded-ui p-4 flex items-center gap-2 sm:fixed sm:bottom-4 sm:right-0 mx-2',
 			title: 'text-base title',
 			description: 'text-xs mt-1 description',
 

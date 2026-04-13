@@ -15,7 +15,7 @@
 		<div>
 			{#if profile.banner}
 				<img
-					class="aspect-3/1 w-full border-b border-base-800 object-cover sm:rounded-xl sm:border"
+					class="aspect-3/1 w-full border-b border-base-800 object-cover sm:rounded-ui-sm sm:border"
 					src={profile.banner}
 					alt=""
 				/>

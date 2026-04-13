@@ -57,21 +57,21 @@
 <h3>Colors</h3>
 
 <div class="flex flex-wrap items-center gap-2">
-	<Badge variant="red">Red</Badge>
-	<Badge variant="yellow">Yellow</Badge>
-	<Badge variant="green">Green</Badge>
-	<Badge variant="blue">Blue</Badge>
-	<Badge variant="indigo">Indigo</Badge>
-	<Badge variant="violet">Violet</Badge>
-	<Badge variant="purple">Purple</Badge>
-	<Badge variant="fuchsia">Fuchsia</Badge>
-	<Badge variant="pink">Pink</Badge>
-	<Badge variant="rose">Rose</Badge>
-	<Badge variant="orange">Orange</Badge>
-	<Badge variant="amber">Amber</Badge>
-	<Badge variant="lime">Lime</Badge>
-	<Badge variant="emerald">Emerald</Badge>
-	<Badge variant="teal">Teal</Badge>
-	<Badge variant="cyan">Cyan</Badge>
-	<Badge variant="sky">Sky</Badge>
+	<Badge class="red">Red</Badge>
+	<Badge class="yellow">Yellow</Badge>
+	<Badge class="green">Green</Badge>
+	<Badge class="blue">Blue</Badge>
+	<Badge class="indigo">Indigo</Badge>
+	<Badge class="violet">Violet</Badge>
+	<Badge class="purple">Purple</Badge>
+	<Badge class="fuchsia">Fuchsia</Badge>
+	<Badge class="pink">Pink</Badge>
+	<Badge class="rose">Rose</Badge>
+	<Badge class="orange">Orange</Badge>
+	<Badge class="amber">Amber</Badge>
+	<Badge class="lime">Lime</Badge>
+	<Badge class="emerald">Emerald</Badge>
+	<Badge class="teal">Teal</Badge>
+	<Badge class="cyan">Cyan</Badge>
+	<Badge class="sky">Sky</Badge>
 </div>

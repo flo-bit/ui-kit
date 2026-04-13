@@ -70,6 +70,8 @@
     "vite": "^7.3.1"
   },
   "dependencies": {
+    "@fontsource-variable/geist": "^5.2.8",
+    "@fontsource-variable/geist-mono": "^5.2.7",
     "@number-flow/svelte": "^0.4.0",
     "bits-ui": "^2.16.2",
     "clsx": "^2.1.1",

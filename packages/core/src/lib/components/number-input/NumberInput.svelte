@@ -4,7 +4,7 @@
 	import { cn } from '../../utils';
 
 	export const numberInputVariants = tv({
-		base: 'group flex w-full max-w-44 touch-manipulation items-stretch justify-between rounded-2xl ring focus-within:ring-2',
+		base: 'group flex w-full max-w-44 touch-manipulation items-stretch justify-between rounded-ui ring focus-within:ring-2',
 		variants: {
 			variant: {
 				primary:

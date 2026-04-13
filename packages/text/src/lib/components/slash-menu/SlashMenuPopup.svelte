@@ -57,7 +57,7 @@
 {#if items.length > 0}
 	<div
 		class={cn(
-			'bg-base-100 dark:bg-base-800 border-base-200 dark:border-base-700 text-base-900 dark:text-base-200 z-50 flex w-fit flex-col rounded-2xl border p-1 shadow-md outline-none',
+			'bg-base-100 dark:bg-base-800 border-base-200 dark:border-base-700 text-base-900 dark:text-base-200 z-50 flex w-fit flex-col rounded-ui border p-1 shadow-md outline-none',
 			className
 		)}
 	>
@@ -72,7 +72,7 @@
 				<button
 					onclick={() => slashItem.command({ editor, range })}
 					class={cn(
-						'flex w-full cursor-pointer items-center gap-2 rounded-xl px-3 py-1.5 text-sm',
+						'flex w-full cursor-pointer items-center gap-2 rounded-ui-sm px-3 py-1.5 text-sm',
 						activeIndex === index
 							? 'bg-accent-500/10 text-accent-700 dark:text-accent-400'
 							: 'hover:bg-accent-500/10'

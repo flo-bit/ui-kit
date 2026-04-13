@@ -35,7 +35,7 @@
 	<ImageContainer
 		{src}
 		{alt}
-		containerClasses="w-full rounded-2xl overflow-hidden"
+		containerClasses="w-full rounded-ui overflow-hidden"
 		class={[
 			'aspect-video w-full object-cover transition-all duration-500 ease-in-out',
 			href || onclick ? 'group-hover:scale-105' : ''

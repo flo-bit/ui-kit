@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="border-base-300 dark:border-base-800 from-base-300/50 dark:from-base-900/50 mx-2 rounded-t-xl border bg-gradient-to-b via-transparent pt-2"
+	class="border-base-300 dark:border-base-800 from-base-300/50 dark:from-base-900/50 mx-2 rounded-t-ui-sm border bg-gradient-to-b via-transparent pt-2"
 >
 	<div class="flex items-center gap-2 px-2">
 		<div class="size-3 rounded-full border border-red-500 bg-red-500/80"></div>
@@ -11,7 +11,7 @@
 		<div class="size-3 rounded-full border border-green-500 bg-green-500/80"></div>
 		<div class="px-2">
 			<div
-				class="border-base-300 dark:border-base-800 from-base-300/50 dark:from-base-900/50 -mb-0.25 flex w-full items-center gap-2 rounded-t-2xl border bg-gradient-to-b via-transparent px-3 pt-2 pb-1"
+				class="border-base-300 dark:border-base-800 from-base-300/50 dark:from-base-900/50 -mb-0.25 flex w-full items-center gap-2 rounded-t-ui border bg-gradient-to-b via-transparent px-3 pt-2 pb-1"
 			>
 				🫠
 				<Paragraph class="text-base-900 dark:text-base-50 line-clamp-1 font-semibold"

@@ -59,14 +59,14 @@
 >
 	{#each images as image}
 		<div
-			class="group relative mb-4 w-full break-inside-avoid-column overflow-hidden rounded-2xl border border-white/15"
+			class="group relative mb-4 w-full break-inside-avoid-column overflow-hidden rounded-ui border border-white/15"
 			style={`aspect-ratio: ${image.width ?? 1} / ${image.height ?? 1}`}
 		>
 			<img
 				src={image.src}
 				alt={image.alt}
 				class={cn(
-					'absolute inset-0 h-full w-full rounded-2xl object-cover',
+					'absolute inset-0 h-full w-full rounded-ui object-cover',
 					image.onclick || image.href ? 'transition-all duration-300 group-hover:scale-105' : ''
 				)}
 				loading="lazy"

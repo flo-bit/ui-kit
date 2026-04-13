@@ -15,7 +15,7 @@
 		</div>
 
 		<div
-			class="text-base-500 dark:text-base-400  space-y-2 pt-6 text-center text-sm"
+			class="text-base-500 dark:text-base-400 space-y-2 pt-6 text-center text-sm"
 		>
 			<p>
 				go back to the

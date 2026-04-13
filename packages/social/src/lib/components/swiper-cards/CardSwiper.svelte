@@ -190,12 +190,12 @@
 
 {#snippet DefaultCard({ image, title, description }: CardData)}
 	<div
-		class="border-base-400 dark:border-base-600 bg-base-50 dark:bg-base-900 relative h-full w-full overflow-hidden rounded-2xl border"
+		class="border-base-400 dark:border-base-600 bg-base-50 dark:bg-base-900 relative h-full w-full overflow-hidden rounded-ui border"
 	>
 		{#key image}
 			{#if image}
 				<Image
-					containerClasses="absolute inset-0 h-full w-full rounded-2xl"
+					containerClasses="absolute inset-0 h-full w-full rounded-ui"
 					src={image}
 					alt={title ?? ''}
 					loading="eager"
@@ -204,7 +204,7 @@
 			{/if}
 		{/key}
 		<div
-			class="from-base-50/80 dark:from-base-950/80 absolute inset-0 rounded-b-xl bg-gradient-to-t via-transparent"
+			class="from-base-50/80 dark:from-base-950/80 absolute inset-0 rounded-b-ui-sm bg-gradient-to-t via-transparent"
 		></div>
 		<div class="absolute bottom-0 flex w-full justify-start px-3 py-16 sm:px-12">
 			<div class="flex flex-col">

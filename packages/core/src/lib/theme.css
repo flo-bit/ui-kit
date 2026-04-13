@@ -1,3 +1,6 @@
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+
 @source "../../";
 @source "@foxui/social";
 @source "@foxui/colors";
@@ -30,11 +33,18 @@
 	--color-accent-800: var(--accent-800);
 	--color-accent-900: var(--accent-900);
 	--color-accent-950: var(--accent-950);
+
+	--radius-ui: var(--ui-radius);
+	--radius-ui-lg: var(--ui-radius-lg);
+	--radius-ui-sm: var(--ui-radius-sm);
+
+	--font-sans: var(--ui-font-sans);
+	--font-mono: var(--ui-font-mono);
 }
 
 @layer base {
 	body {
-		@apply bg-base-100 text-base-950 dark:bg-base-900 dark:text-base-50;
+		@apply bg-base-100 text-base-950 dark:bg-base-900 dark:text-base-50 font-sans;
 	}
 
 	:root {
@@ -61,6 +71,13 @@
 		--base-800: var(--color-stone-800);
 		--base-900: var(--color-stone-900);
 		--base-950: var(--color-stone-950);
+
+		--ui-radius: 1rem;
+		--ui-radius-lg: 1.25rem;
+		--ui-radius-sm: 0.75rem;
+
+		--ui-font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+		--ui-font-mono: 'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 	}
 
 	.red {
@@ -425,6 +442,36 @@
 		--base-800: var(--color-mauve-800);
 		--base-900: var(--color-mauve-900);
 		--base-950: var(--color-mauve-950);
+	}
+
+	.sharp {
+		--ui-radius: 0.375rem;
+		--ui-radius-lg: 0.5rem;
+		--ui-radius-sm: 0.25rem;
+	}
+
+	.pill {
+		--ui-radius: 9999px;
+		--ui-radius-lg: 9999px;
+		--ui-radius-sm: 9999px;
+	}
+
+	.geist {
+		--ui-font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+		--ui-font-mono: 'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	}
+
+	.system-font {
+		--ui-font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+		--ui-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	}
+
+	.serif-font {
+		--ui-font-sans: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+	}
+
+	.mono-font {
+		--ui-font-sans: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 	}
 }
 

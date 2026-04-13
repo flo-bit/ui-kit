@@ -25,7 +25,7 @@
 
 {#if record.onclick}
 	<button
-		class="border-base-300 dark:border-base-600/30 accent:border-accent-300/20 accent:bg-accent-100/10 bg-base-500/10 dark:bg-black/30 hover:bg-base-500/15 dark:hover:bg-black/40 w-full cursor-pointer overflow-hidden rounded-2xl border p-3 text-left text-sm transition-colors"
+		class="border-base-300 dark:border-base-600/30 accent:border-accent-300/20 accent:bg-accent-100/10 bg-base-500/10 dark:bg-black/30 hover:bg-base-500/15 dark:hover:bg-black/40 w-full cursor-pointer overflow-hidden rounded-ui border p-3 text-left text-sm transition-colors"
 		onclick={() => record.onclick!(record, record.href)}
 	>
 		<Post
@@ -38,7 +38,7 @@
 	</button>
 {:else}
 	<div
-		class="border-base-300 dark:border-base-600/30 accent:border-accent-300/20 accent:bg-accent-100/10 bg-base-500/10 dark:bg-black/30 overflow-hidden rounded-2xl border p-3 text-sm"
+		class="border-base-300 dark:border-base-600/30 accent:border-accent-300/20 accent:bg-accent-100/10 bg-base-500/10 dark:bg-black/30 overflow-hidden rounded-ui border p-3 text-sm"
 	>
 		<Post
 			data={postData}

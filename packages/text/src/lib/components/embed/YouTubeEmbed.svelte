@@ -3,11 +3,11 @@
 		$props();
 </script>
 
-<div class="w-full rounded-xl {selected ? 'ring-2 ring-accent-500' : ''}">
+<div class="w-full rounded-ui-sm {selected ? 'ring-2 ring-accent-500' : ''}">
 	<iframe
 		src="https://www.youtube-nocookie.com/embed/{data.videoId}"
 		title={url}
-		class="aspect-video w-full rounded-xl border-0"
+		class="aspect-video w-full rounded-ui-sm border-0"
 		allowfullscreen
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 	></iframe>

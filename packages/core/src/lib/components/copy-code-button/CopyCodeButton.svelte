@@ -26,7 +26,7 @@
 			class={cn(
 				'not-prose focus-visible:outline-base-600 dark:focus-visible:outline-base-400 cursor-pointer focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2',
 				'bg-base-200 inline-flex size-8 items-center justify-center p-1 transition-opacity duration-150 group-hover:opacity-100 [@media(pointer:fine)]:opacity-0',
-				'dark:bg-base-800 border-base-400 dark:border-base-700 dark:hover:bg-base-700 hover:bg-base-300 absolute top-3 right-3 rounded-2xl border'
+				'dark:bg-base-800 border-base-400 dark:border-base-700 dark:hover:bg-base-700 hover:bg-base-300 absolute top-3 right-3 rounded-ui border'
 			)}
 			onclick={clickedCopy}
 		>
@@ -51,7 +51,7 @@
 		<div
 			class={cn(
 				'bg-accent-500/10 border-accent-500/20 text-accent-600 dark:text-accent-400 absolute top-3 right-3',
-				'inline-flex size-8 items-center justify-center rounded-2xl border p-1 transition-opacity duration-500'
+				'inline-flex size-8 items-center justify-center rounded-ui border p-1 transition-opacity duration-500'
 			)}
 		>
 			<svg

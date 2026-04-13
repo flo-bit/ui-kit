@@ -1,5 +1,5 @@
 <div class="w-full px-8">
-	<div class="gradient-background border-base-500 relative h-4 w-full rounded-2xl border">
+	<div class="gradient-background border-base-500 relative h-4 w-full rounded-ui border">
 		<div
 			class="bg-accent-500 border-base-500 absolute -top-3 size-6 rounded-full border"
 			style="left: calc(0% - 12px);"

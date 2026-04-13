@@ -20,7 +20,7 @@
 	}
 
 	:global(html pre.shiki) {
-		border-radius: var(--radius-2xl);
+		border-radius: var(--ui-radius);
 		padding: calc(var(--spacing) * 4);
 		overflow-x: auto;
 		border: 1px solid var(--base-200);

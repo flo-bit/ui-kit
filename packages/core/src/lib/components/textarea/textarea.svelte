@@ -6,7 +6,7 @@
 	import type { HTMLTextareaAttributes } from 'svelte/elements';
 
 	export const inputVariants = tv({
-		base: 'focus:ring-2 ring-1 resize-none ring-inset border-0 focus:transition-transform rounded-2xl text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed duration-300 active:duration-100',
+		base: 'focus:ring-2 ring-1 resize-none ring-inset border-0 focus:transition-transform rounded-ui text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed duration-300 active:duration-100',
 		variants: {
 			variant: {
 				primary:

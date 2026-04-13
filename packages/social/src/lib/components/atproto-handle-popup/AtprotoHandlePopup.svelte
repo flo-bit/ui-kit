@@ -50,13 +50,13 @@
 		/>
 		{#if results.length > 0}
 			<Command.List
-				class="border-base-300 bg-base-50 dark:bg-base-800 dark:border-base-700 absolute z-100 mt-2.5 max-h-[30dvh] w-full overflow-y-auto rounded-2xl border p-1 shadow-lg"
+				class="border-base-300 bg-base-50 dark:bg-base-800 dark:border-base-700 absolute z-100 mt-2.5 max-h-[30dvh] w-full overflow-y-auto rounded-ui border p-1 shadow-lg"
 			>
 				{#each results as actor (actor.did)}
 					<Command.Item
 						value={actor.handle}
 						onSelect={() => select(actor)}
-						class="data-selected:bg-accent-100 dark:data-selected:bg-accent-600/30 my-0.5 flex w-full cursor-pointer items-center gap-2 rounded-xl p-2 px-2"
+						class="data-selected:bg-accent-100 dark:data-selected:bg-accent-600/30 my-0.5 flex w-full cursor-pointer items-center gap-2 rounded-ui-sm p-2 px-2"
 					>
 						<Avatar src={actor.avatar} alt="" class="size-6 rounded-full" />
 						{actor.handle}

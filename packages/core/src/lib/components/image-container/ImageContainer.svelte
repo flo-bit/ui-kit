@@ -9,7 +9,7 @@
 	bind:ref
 	{...restProps}
 	containerClasses={cn(
-		'border-base-300 dark:border-base-700 overflow-hidden rounded-2xl border',
+		'border-base-300 dark:border-base-700 overflow-hidden rounded-ui border',
 		containerClasses
 	)}
 />

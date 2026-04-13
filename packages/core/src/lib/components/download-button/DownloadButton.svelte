@@ -40,7 +40,7 @@
 		<a
 			href={fileUrl}
 			download={fileName}
-			class="dark:group-hover:text-accent-400 group-hover:text-accent-600 mt-4 inline-flex items-center justify-center gap-2 self-start rounded-lg font-medium transition-colors duration-200"
+			class="dark:group-hover:text-accent-400 group-hover:text-accent-600 mt-4 inline-flex items-center justify-center gap-2 self-start rounded-ui-sm font-medium transition-colors duration-200"
 		>
 			Download <span>&rarr;</span>
 			<span class="absolute inset-0"></span>

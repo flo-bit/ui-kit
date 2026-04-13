@@ -37,7 +37,7 @@
 		{#each Array.from({ length: 5 }).map((_, i) => i + 1) as i}
 			<button
 				class={cn(
-					'group focus-visible:outline-base-900 dark:focus-visible:outline-base-100 cursor-pointer rounded-xl focus-visible:outline-2',
+					'group focus-visible:outline-base-900 dark:focus-visible:outline-base-100 cursor-pointer rounded-ui-sm focus-visible:outline-2',
 					buttonClasses
 				)}
 				onclick={() => (rating = i)}

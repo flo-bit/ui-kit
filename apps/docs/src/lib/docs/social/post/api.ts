@@ -51,6 +51,14 @@ export default [
 				description: 'The target attribute for all links in the post.',
 				default: "'_blank'"
 			},
+			extraEmbeds: {
+				type: 'Snippet',
+				description: 'Snippet for rendering custom embeds after the built-in embeds.'
+			},
+			onclickavatar: {
+				type: { type: 'function', definition: '() => void' },
+				description: 'Callback when the avatar is clicked. Takes priority over onclickhandle for the avatar.'
+			},
 			children: {
 				type: 'Snippet',
 				description: 'Post content when not using htmlContent.'

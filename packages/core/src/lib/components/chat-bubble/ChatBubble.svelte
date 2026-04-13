@@ -3,7 +3,7 @@
 	import { cn } from '../../utils';
 
 	export const badgeVariants = tv({
-		base: 'inline-flex items-center flex-col justify-start items-start whitespace-nowrap rounded-2xl text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 duration-300 active:duration-100 [&_svg]:pointer-events-none [&_svg]:shrink-0',
+		base: 'inline-flex items-center flex-col justify-start items-start whitespace-nowrap rounded-ui text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 duration-300 active:duration-100 [&_svg]:pointer-events-none [&_svg]:shrink-0',
 		variants: {
 			variant: {
 				primary:
