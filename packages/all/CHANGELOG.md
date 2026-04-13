@@ -1,5 +1,22 @@
 # @foxui/all
 
+## 0.7.0
+
+### Minor Changes
+
+- df8721e: switch to lucide icons
+
+### Patch Changes
+
+- Updated dependencies [df8721e]
+  - @foxui/core@0.9.0
+  - @foxui/3d@0.8.4
+  - @foxui/colors@0.8.4
+  - @foxui/social@0.8.6
+  - @foxui/text@0.8.4
+  - @foxui/time@0.8.4
+  - @foxui/visual@0.8.4
+
 ## 0.6.7
 
 ### Patch Changes
