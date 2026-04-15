@@ -1,5 +1,11 @@
 # @foxui/visual
 
+## 0.8.5
+
+### Patch Changes
+
+- fc2c707: add animated text
+
 ## 0.8.4
 
 ### Patch Changes
