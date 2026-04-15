@@ -71,9 +71,10 @@
   "dependencies": {
     "@foxui/colors": "workspace:*",
     "@foxui/core": "workspace:*",
-    "canvas-confetti": "^1.9.4",
     "bits-ui": "^2.16.2",
-    "cheerio": "^1.2.0"
+    "canvas-confetti": "^1.9.4",
+    "cheerio": "^1.2.0",
+    "tegaki": "^0.11.1"
   },
   "peerDependencies": {
     "svelte": ">=5",

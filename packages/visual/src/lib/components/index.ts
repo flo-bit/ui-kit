@@ -5,3 +5,4 @@ export * from './quote';
 export * from './undraw';
 export * from './image-masonry';
 export * from './confetti';
+export * from './animated-text';

@@ -868,6 +868,9 @@ importers:
       cheerio:
         specifier: ^1.2.0
         version: 1.2.0
+      tegaki:
+        specifier: ^0.11.1
+        version: 0.11.1(svelte@5.53.2)
     devDependencies:
       '@eslint/compat':
         specifier: ^2.0.2
@@ -3921,6 +3924,23 @@ packages:
   tapable@2.3.0:
     resolution: {integrity: sha512-g9ljZiwki/LfxmQADO3dEY1CbpmXT5Hm2fJ+QaGKwSXUylMybePR7/67YW7jOrrvjEgL1Fmz5kzyAjWVWLlucg==}
     engines: {node: '>=6'}
+
+  tegaki@0.11.1:
+    resolution: {integrity: sha512-Ie4SLKcOTNFoRznLLEsAUzRU+xnOkKt/82qbsFdbbMMoVHDwJnpeynrw3b3mu4XsZFSy6G4YiLYF3zlZ8Ot4BA==}
+    peerDependencies:
+      react: '>=18'
+      solid-js: '>=1'
+      svelte: '>=5'
+      vue: '>=3'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      solid-js:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
 
   term-size@2.2.1:
     resolution: {integrity: sha512-wK0Ri4fOGjv/XPy8SBHZChl8CM7uMc5VML7SqiQ0zG7+J5Vr+RMQDoHa2CNT6KHUnTGIXH34UDMkPzAUyapBZg==}
@@ -7557,6 +7577,10 @@ snapshots:
   tailwindcss@4.2.1: {}
 
   tapable@2.3.0: {}
+
+  tegaki@0.11.1(svelte@5.53.2):
+    optionalDependencies:
+      svelte: 5.53.2
 
   term-size@2.2.1: {}
 
