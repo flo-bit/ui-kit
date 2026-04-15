@@ -6,12 +6,34 @@
 	let results: Profile[] = $state([]);
 	let inputValue = $state('');
 
+	let {
+		value = $bindable(),
+		onselected,
+		ref = $bindable(null),
+		host = 'https://public.api.bsky.app',
+		search: customSearch,
+		limit = 5
+	}: {
+		value?: string;
+		onselected?: (actor: Profile) => void;
+		ref?: HTMLInputElement | null;
+		/** Base URL of the AppView used for handle lookup. */
+		host?: string;
+		/** Custom search override. Receives the query and limit; returns matching profiles. */
+		search?: (q: string, limit: number) => Promise<Profile[]>;
+		limit?: number;
+	} = $props();
+
 	async function search(q: string) {
 		if (!q || q.length < 2) {
 			results = [];
 			return;
 		}
-		results = (await searchActorsTypeahead(q, 5)).actors;
+		if (customSearch) {
+			results = await customSearch(q, limit);
+		} else {
+			results = (await searchActorsTypeahead(q, limit, host)).actors;
+		}
 	}
 
 	function select(actor: Profile) {
@@ -20,16 +42,6 @@
 		value = actor.handle;
 		onselected?.(actor);
 	}
-
-	let {
-		value = $bindable(),
-		onselected,
-		ref = $bindable(null)
-	}: {
-		value?: string;
-		onselected?: (actor: Profile) => void;
-		ref?: HTMLInputElement | null;
-	} = $props();
 </script>
 
 <div class="relative w-full">
@@ -47,6 +59,16 @@
 			class={cn(inputVariants(), 'w-full')}
 			placeholder="handle"
 			aria-label="enter your handle"
+			type="search"
+			name="atproto-handle"
+			autocomplete="off"
+			autocorrect="off"
+			autocapitalize="none"
+			spellcheck="false"
+			data-1p-ignore
+			data-lpignore="true"
+			data-bwignore
+			data-form-type="other"
 		/>
 		{#if results.length > 0}
 			<Command.List

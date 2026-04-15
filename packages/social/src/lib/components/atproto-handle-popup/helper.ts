@@ -25,7 +25,5 @@ export async function searchActorsTypeahead(
 	if (!response.ok) return { actors: [], q };
 
 	const data = await response.json();
-	console.log(data);
-
 	return { actors: data.actors, q };
 }

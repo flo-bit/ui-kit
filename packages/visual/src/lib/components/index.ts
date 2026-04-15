@@ -6,3 +6,5 @@ export * from './undraw';
 export * from './image-masonry';
 export * from './confetti';
 export * from './animated-text';
+export * from './lottie';
+export * from './atmosphere-animation';
