@@ -1,5 +1,12 @@
 # @foxui/all
 
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies [fc2c707]
+  - @foxui/visual@0.8.5
+
 ## 0.7.0
 
 ### Minor Changes
