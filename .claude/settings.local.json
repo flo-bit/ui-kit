@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "mcp__plugin_svelte_svelte__svelte-autofixer",
-      "Bash(npx svelte-check:*)"
+      "Bash(npx svelte-check:*)",
+      "Bash(pnpm check *)"
     ]
   }
 }
