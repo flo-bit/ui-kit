@@ -1,5 +1,11 @@
 # @foxui/visual
 
+## 0.8.6
+
+### Patch Changes
+
+- 9e25d22: update atproto login, add lottie
+
 ## 0.8.5
 
 ### Patch Changes
