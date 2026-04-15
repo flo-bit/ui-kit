@@ -6,6 +6,20 @@ export type ATProtoLoginProps = {
 	signup?: () => Promise<boolean | undefined>;
 	formAction?: string;
 	formMethod?: 'dialog' | 'get' | 'post' | 'DIALOG' | 'GET' | 'POST' | null;
+	/** Base URL of the AppView used for handle lookup. */
+	host?: string;
+	/** Custom search override for the handle popup. */
+	search?: (
+		q: string,
+		limit: number
+	) => Promise<
+		{
+			handle: string;
+			displayName: string;
+			avatar: string;
+			did: string;
+		}[]
+	>;
 };
 
 export function saveRecentLogin(profile: {

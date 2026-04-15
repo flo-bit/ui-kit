@@ -16,6 +16,8 @@
 		formAction,
 		formMethod = 'get',
 		loginOnSelect = true,
+		host,
+		search,
 		class: className,
 		...rest
 	}: ATProtoLoginProps & {
@@ -96,7 +98,7 @@
 	{...rest}
 >
 	<Subheading class="inline-flex items-center gap-2 font-bold">
-		Login with your internet handle
+		Login with your Atmosphere account
 	</Subheading>
 	<div class="mt-1 text-xs font-light text-neutral-800 dark:text-neutral-200">
 		like your bluesky account
@@ -148,7 +150,13 @@
 		</div>
 	{:else if !selectedActor}
 		<div class="mt-4 w-full">
-			<AtprotoHandlePopup bind:value onselected={handleActorSelected} bind:ref={input} />
+			<AtprotoHandlePopup
+				bind:value
+				onselected={handleActorSelected}
+				bind:ref={input}
+				{host}
+				{search}
+			/>
 		</div>
 	{:else}
 		<div

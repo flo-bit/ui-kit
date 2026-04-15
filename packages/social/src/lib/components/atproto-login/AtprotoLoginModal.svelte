@@ -9,7 +9,9 @@
 		signup,
 		formAction,
 		formMethod = 'get',
-		loginOnSelect = true
+		loginOnSelect = true,
+		host,
+		search
 	}: ATProtoLoginProps & { open?: boolean; loginOnSelect?: boolean } = $props();
 
 	async function wrappedLogin(handle: string) {
@@ -30,6 +32,8 @@
 			{formAction}
 			{formMethod}
 			{loginOnSelect}
+			{host}
+			{search}
 		/>
 	{/key}
 </Modal>

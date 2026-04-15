@@ -71,9 +71,11 @@
   "dependencies": {
     "@foxui/colors": "workspace:*",
     "@foxui/core": "workspace:*",
+    "@lottiefiles/dotlottie-web": "^0.71.0",
     "bits-ui": "^2.16.2",
     "canvas-confetti": "^1.9.4",
     "cheerio": "^1.2.0",
+    "lottie-web": "^5.13.0",
     "tegaki": "^0.11.1"
   },
   "peerDependencies": {
