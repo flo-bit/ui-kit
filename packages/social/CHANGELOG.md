@@ -1,5 +1,14 @@
 # @foxui/social
 
+## 0.8.8
+
+### Patch Changes
+
+- Updated dependencies [860223c]
+  - @foxui/core@0.9.1
+  - @foxui/text@0.8.5
+  - @foxui/time@0.8.5
+
 ## 0.8.7
 
 ### Patch Changes

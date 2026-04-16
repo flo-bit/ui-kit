@@ -1,5 +1,12 @@
 # @foxui/colors
 
+## 0.8.5
+
+### Patch Changes
+
+- Updated dependencies [860223c]
+  - @foxui/core@0.9.1
+
 ## 0.8.4
 
 ### Patch Changes
