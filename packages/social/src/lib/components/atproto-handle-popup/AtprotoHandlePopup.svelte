@@ -4,10 +4,9 @@
 	import { Avatar, cn, inputVariants } from '@foxui/core';
 
 	let results: Profile[] = $state([]);
-	let inputValue = $state('');
 
 	let {
-		value = $bindable(),
+		value = $bindable(''),
 		onselected,
 		ref = $bindable(null),
 		host = 'https://public.api.bsky.app',
@@ -38,7 +37,6 @@
 
 	function select(actor: Profile) {
 		results = [];
-		inputValue = '';
 		value = actor.handle;
 		onselected?.(actor);
 	}
@@ -48,12 +46,15 @@
 	<Command.Root shouldFilter={false} class="w-full">
 		<Command.Input
 			bind:ref
-			bind:value={inputValue}
-			oninput={() => search(inputValue)}
+			bind:value
+			oninput={() => search(value)}
+			onblur={() => {
+				results = [];
+			}}
 			onkeydown={(e) => {
-				if (e.key === 'Enter' && results.length === 0 && inputValue) {
+				if (e.key === 'Enter' && results.length === 0 && value) {
 					e.preventDefault();
-					select({ handle: inputValue, displayName: '', avatar: '', did: '' });
+					select({ handle: value, displayName: '', avatar: '', did: '' });
 				}
 			}}
 			class={cn(inputVariants(), 'w-full')}
@@ -72,6 +73,7 @@
 		/>
 		{#if results.length > 0}
 			<Command.List
+				onpointerdown={(e) => e.preventDefault()}
 				class="border-base-300 bg-base-50 dark:bg-base-800 dark:border-base-700 absolute z-100 mt-2.5 max-h-[30dvh] w-full overflow-y-auto rounded-ui border p-1 shadow-lg"
 			>
 				{#each results as actor (actor.did)}
