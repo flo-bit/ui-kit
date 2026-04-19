@@ -1,5 +1,11 @@
 # @foxui/social
 
+## 0.8.9
+
+### Patch Changes
+
+- 3d57f9b: fix atproto login for handles that don't appear in typeahead, and close the typeahead popup when the input loses focus
+
 ## 0.8.8
 
 ### Patch Changes
