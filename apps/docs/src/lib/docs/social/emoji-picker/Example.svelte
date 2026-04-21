@@ -13,11 +13,16 @@
 	{/each}
 </div>
 
-<EmojiPicker onpicked={(emoji) => emojis.unshift(emoji.unicode)} />
+<EmojiPicker search favorites onpicked={(emoji) => emojis.unshift(emoji.unicode)} />
 
 <h3>Popover Emoji Picker</h3>
 
-<PopoverEmojiPicker onpicked={(emoji) => emojis.unshift(emoji.unicode)} triggerText="Emoji Picker">
+<PopoverEmojiPicker
+	search
+	favorites
+	onpicked={(emoji) => emojis.unshift(emoji.unicode)}
+	triggerText="Emoji Picker"
+>
 	{#snippet child({ props })}
 		<Button size="iconLg" {...props}>
 			<Smile size={24} strokeWidth={1.5} />
