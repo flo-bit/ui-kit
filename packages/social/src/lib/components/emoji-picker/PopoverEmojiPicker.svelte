@@ -10,15 +10,19 @@
 		class: className,
 		open = $bindable(false),
 		triggerRef = $bindable(null),
+		search = false,
+		favorites = false,
 		...props
 	}: {
 		onpicked?: (emoji: NativeEmoji) => void;
 		children?: Snippet;
 		class?: string;
+		search?: boolean;
+		favorites?: boolean;
 	} & PopoverProps = $props();
 </script>
 
 <Popover {...props} bind:triggerRef bind:open class={cn('p-0', className)}>
 	{@render children?.()}
-	<EmojiPicker {onpicked} />
+	<EmojiPicker {onpicked} {search} {favorites} />
 </Popover>

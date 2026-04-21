@@ -17,12 +17,23 @@ export default [
 			width: {
 				type: 'number',
 				description: 'The width of the picker in pixels.',
-				default: '344'
+				default: '366'
 			},
 			columns: {
 				type: 'number',
 				description: 'The number of emoji columns.',
-				default: '8'
+				default: '9'
+			},
+			search: {
+				type: 'boolean',
+				description: 'Whether to show a search tab for querying emojis by name.',
+				default: 'false'
+			},
+			favorites: {
+				type: 'boolean',
+				description:
+					'Whether to show a favorites tab of the most-picked emojis (persisted in IndexedDB).',
+				default: 'false'
 			},
 			class: {
 				type: 'string',
@@ -52,6 +63,17 @@ export default [
 			children: {
 				type: 'Snippet',
 				description: 'Custom trigger content.'
+			},
+			search: {
+				type: 'boolean',
+				description: 'Whether to show a search tab for querying emojis by name.',
+				default: 'false'
+			},
+			favorites: {
+				type: 'boolean',
+				description:
+					'Whether to show a favorites tab of the most-picked emojis (persisted in IndexedDB).',
+				default: 'false'
 			},
 			class: {
 				type: 'string',
