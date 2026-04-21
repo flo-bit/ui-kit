@@ -1,5 +1,11 @@
 # @foxui/social
 
+## 0.8.10
+
+### Patch Changes
+
+- 83beb19: add emoji picker search and favourites
+
 ## 0.8.9
 
 ### Patch Changes
